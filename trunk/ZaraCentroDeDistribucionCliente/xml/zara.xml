@@ -1,0 +1,42 @@
+<solicituddistribucion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="zaraSchema.xsd">
+
+	<numero>1000</numero>
+
+	<tienda>
+		<codigoTienda>1</codigoTienda>
+		<nombreTienda>Florida</nombreTienda>
+	</tienda>
+
+	<articulosropa>
+
+		<articuloropa>
+			<codigo>9697001</codigo>
+			<cantidad>50</cantidad>
+		</articuloropa>
+		<articuloropa>
+			<codigo>9697002</codigo>
+			<cantidad>20</cantidad>
+		</articuloropa>
+		<articuloropa>
+			<codigo>9697003</codigo>
+			<cantidad>35</cantidad>
+		</articuloropa>
+
+	</articulosropa>
+
+	<articuloshogar>
+		<articulohogar>
+			<codigo>9001</codigo>
+			<cantidad>50</cantidad>
+		</articulohogar>
+		<articulohogar>
+			<codigo>96002</codigo>
+			<cantidad>20</cantidad>
+		</articulohogar>
+		<articulohogar>
+			<codigo>96003</codigo>
+			<cantidad>35</cantidad>
+		</articulohogar>
+	</articuloshogar>
+
+</solicituddistribucion>
