@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="WINDOWS-1252"?>
 <TSX edition="Java Edition" product="Tom Sawyer Visualization" version="6.0.1">
-    <graphManager id="0">
+    <graphManager id="2">
+        <resources>
+            <shapes>
+                <rectangleShape id="0"/>
+            </shapes>
+            <fonts>
+                <font id="1">
+                    <name value="SansSerif"/>
+                    <bold value="false"/>
+                    <italic value="false"/>
+                    <fontHeight value="10"/>
+                </font>
+            </fonts>
+        </resources>
         <instances>
             <graphs>
-                <graph id="1">
+                <graph id="3">
                     <name/>
                     <margins>
                         <proportional bottom="0.0" left="0.0" right="0.0" top="0.0"/>
@@ -21,8 +34,49 @@
                         <drawNodesBeforeEdges value="true"/>
                     </graphics>
                 </graph>
+                <graph id="4">
+                    <name/>
+                    <nodes>
+                        <node id="5">
+                            <name/>
+                            <center x="-302.5" y="145.5"/>
+                            <size height="108.0" width="128.0"/>
+                            <originalSize height="108.0" width="128.0"/>
+                            <shape resource="0"/>
+                            <url/>
+                            <visible value="true"/>
+                            <resizability value="RESIZABILITY_NO_FIT"/>
+                            <graphics type="ETGenericNodeUI">
+                                <fillColor value="204 204 204"/>
+                                <borderColor value="0 0 0"/>
+                                <transparent value="false"/>
+                                <drawBorder value="true"/>
+                                <textFont resource="1"/>
+                                <textColor value="0 0 0"/>
+                                <justification value="CENTER"/>
+                                <childGraphMark value="true"/>
+                                <PEID value="DCE.F503BBCA-BE0B-C219-AE3E-009835CE3AEE"/>
+                            </graphics>
+                        </node>
+                    </nodes>
+                    <margins>
+                        <proportional bottom="0.0" left="0.0" right="0.0" top="0.0"/>
+                        <constant bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </margins>
+                    <url/>
+                    <graphics type="basicGraph">
+                        <backgroundColor value="255 255 255"/>
+                        <imageUsed/>
+                        <imageTiled value="false"/>
+                        <imageStyle value="WORLD_OFFSET"/>
+                        <imageMinTileStep value="25"/>
+                        <imageX value="0.0"/>
+                        <imageY value="0.0"/>
+                        <drawNodesBeforeEdges value="true"/>
+                    </graphics>
+                </graph>
             </graphs>
-            <rootGraph value="1"/>
+            <rootGraph value="4"/>
         </instances>
     </graphManager>
     <serviceInput type="jlayout">
@@ -108,7 +162,7 @@
                 <optionDefault name="routing:all:graphManager:fixedSize" value="true"/>
             </optionDefaults>
         </defaults>
-        <option context="none" name="all:all:none:graphManager" value="0"/>
+        <option context="none" name="all:all:none:graphManager" value="2"/>
     </serviceInput>
     <preferences>
         <preference name="maximumZoomLevel" value="50.0"/>
