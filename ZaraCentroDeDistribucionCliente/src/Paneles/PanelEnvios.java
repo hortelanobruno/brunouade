@@ -1,12 +1,16 @@
-package GUI;
+package Paneles;
 
 import BusinessLogic.Articulo;
 import BusinessLogic.ControladorMain;
+import GUI.MenuPrincipal;
+
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+
+import Varios.Constantes;
 
 public class PanelEnvios extends javax.swing.JPanel
 {

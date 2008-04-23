@@ -1,4 +1,4 @@
-package GUI;
+package Varios;
 
 import java.io.File;
 import javax.swing.filechooser.*;

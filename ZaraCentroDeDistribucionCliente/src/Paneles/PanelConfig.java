@@ -1,7 +1,12 @@
-package GUI;
+package Paneles;
 
 import BusinessLogic.ControladorMain;
+import GUI.DirectoryChooser;
+import GUI.MenuPrincipal;
+
 import javax.swing.JOptionPane;
+
+import Varios.Constantes;
 
 public class PanelConfig extends javax.swing.JPanel 
 {

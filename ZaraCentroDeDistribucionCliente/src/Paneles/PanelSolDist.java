@@ -1,4 +1,4 @@
-package GUI;
+package Paneles;
 
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloRopa;
@@ -6,12 +6,18 @@ import BusinessLogic.ControladorMain;
 import BusinessLogic.BusinessDelegate;
 import BusinessLogic.SolicitudDistribucion;
 import BusinessLogic.VistaMain;
+import GUI.Dialogo3Opciones;
+import GUI.FileChooser;
+import GUI.MenuPrincipal;
+
 import java.awt.Color;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
+
+import Varios.Constantes;
 
 public class PanelSolDist extends javax.swing.JPanel  
 {

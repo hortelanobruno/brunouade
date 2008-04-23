@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package BusinessLogic;
+package Varios;
 
 import java.io.DataInputStream;
 import java.io.FileInputStream;
