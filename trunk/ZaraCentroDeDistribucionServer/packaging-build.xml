@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Packaging Generator" default="_packaging_generation_">
+<target name="_packaging_generation_" depends="N65540,N65557"/>
+<target name="N65540" description="ServerEJB.jar">
+<jar destfile="ServerEJB.jar">
+<zipfileset dir="bin" includes="**/*.class"/>
+</jar>
+</target>
+<target name="N65557" description="ServerApp.ear">
+<jar destfile="ServerApp.ear">
+<zipfileset dir="." prefix="META-INF">
+<include name="application.xml"/>
+</zipfileset>
+<zipfileset dir=".">
+<include name="ServerEJB.jar"/>
+</zipfileset>
+</jar>
+</target>
+</project>
