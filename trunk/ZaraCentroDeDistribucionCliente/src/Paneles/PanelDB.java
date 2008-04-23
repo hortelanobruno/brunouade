@@ -4,9 +4,11 @@
  * Created on March 31, 2008, 5:24 PM
  */
 
-package GUI;
+package Paneles;
 
 import javax.swing.JFrame;
+
+import GUI.MenuPrincipal;
 
 /**
  *

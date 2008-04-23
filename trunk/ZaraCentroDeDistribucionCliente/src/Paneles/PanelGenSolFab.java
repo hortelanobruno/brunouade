@@ -4,7 +4,9 @@
  * Created on 20 de marzo de 2008, 10:03
  */
 
-package GUI;
+package Paneles;
+
+import GUI.MenuPrincipal;
 
 /**
  *

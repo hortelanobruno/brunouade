@@ -1,4 +1,4 @@
-package GUI;
+package Varios;
 
 public class Constantes 
 {

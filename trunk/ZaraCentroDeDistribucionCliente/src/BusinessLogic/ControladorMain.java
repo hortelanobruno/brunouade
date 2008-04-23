@@ -3,6 +3,8 @@ package BusinessLogic;
 import RemoteMVCFramework.Controlador;
 import RemoteMVCFramework.ProxyModelo;
 import RemoteMVCFramework.Vista;
+import Varios.FileReaderWrapper;
+
 import com.thoughtworks.xstream.XStream;
 import java.io.File;
 import java.io.FileWriter;

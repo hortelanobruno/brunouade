@@ -12,7 +12,11 @@ import javax.swing.JPanel;
 
 public class Dialogo3Opciones extends JDialog
 {
-    private JButton btnPrinc;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JButton btnPrinc;
     private JButton btnStay;
     private JButton btnDetails;
     private JLabel lblMsg;

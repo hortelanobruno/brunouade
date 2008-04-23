@@ -9,6 +9,8 @@ package GUI;
 import java.io.File;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import Varios.XMLFilter;
+
 public class FileChooser extends javax.swing.JDialog 
 {
 	private static final long serialVersionUID = 5644209101189512949L;
