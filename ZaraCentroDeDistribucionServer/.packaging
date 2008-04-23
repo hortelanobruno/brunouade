@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations>
+<archive destination="" exploded="false" name="ServerEJB.jar" used="true">
+<folder excludes="" includes="**/*.class" location="bin" name="bin" prefix="" project="" projectLocation="bin" used="true"/>
+</archive>
+<archive destination="" exploded="false" name="ServerApp.ear" used="true">
+<file location="application.xml" name="application.xml" prefix="META-INF" project="" projectLocation="application.xml" used="true"/>
+<file location="ServerEJB.jar" name="ServerEJB.jar" prefix="" project="" projectLocation="ServerEJB.jar" used="true"/>
+</archive>
+</configurations>

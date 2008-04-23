@@ -1,0 +1,16 @@
+<Zara>
+	<soldis numero='1000'>
+		<Articulo>
+			<Codigo>10100099</Codigo>
+			<Cantidad>500</Cantidad>
+		</Articulo>
+		<Articulo>
+			<Codigo>22200099</Codigo>
+			<Cantidad>200</Cantidad>
+		</Articulo>
+		<Articulo>
+			<Codigo>90999000</Codigo>
+			<Cantidad>350</Cantidad>
+		</Articulo>
+	</soldis>
+</Zara>
