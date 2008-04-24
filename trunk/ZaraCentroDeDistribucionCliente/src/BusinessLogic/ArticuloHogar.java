@@ -6,7 +6,6 @@ public class ArticuloHogar extends Articulo
 	private String detalles; //Alfombra de piel de vaca con patchwork
 	private String composicion;
 	private String categoria;
-	private String linea;
 	private String medidas;
 	
 	public ArticuloHogar()
@@ -42,16 +41,6 @@ public class ArticuloHogar extends Articulo
 	public void setDetalles(String detalles) 
 	{
 		this.detalles = detalles;
-	}
-
-	public String getLinea()
-	{
-		return linea;
-	}
-
-	public void setLinea(String linea) 
-	{
-		this.linea = linea;
 	}
 
 	public String getMedidas() 

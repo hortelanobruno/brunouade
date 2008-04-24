@@ -8,6 +8,7 @@ public abstract class Articulo
 	private int codigo;
 	private String seccion;
 	private String color;
+	private String linea;
         private int cantidad;
         
         public Articulo(int codigo, int cantidad){
@@ -86,4 +87,12 @@ public abstract class Articulo
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+	public String getLinea() {
+		return linea;
+	}
+
+	public void setLinea(String linea) {
+		this.linea = linea;
+	}
 }

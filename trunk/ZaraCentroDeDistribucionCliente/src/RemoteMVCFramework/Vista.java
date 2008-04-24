@@ -10,8 +10,8 @@ package RemoteMVCFramework;
 
 public abstract class Vista
 {
-    ProxyModelo modelo;
-    Controlador controlador;
+    protected ProxyModelo modelo;
+    protected Controlador controlador;
 
     public Vista(ProxyModelo mod) 
     {
