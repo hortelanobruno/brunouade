@@ -48,7 +48,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Codigo Art.", "Descripcion", "Stock Actual", "Stock Solicitado", "Stock Necesario", "Cantidad a Fabricar"
+                "Codigo Art.", "Descripcion", "Stock Actual", "Stock Solicitado", "Stock Minimo a pedir", "Cantidad a Fabricar"
             }
         ) {
             Class[] types = new Class [] {
