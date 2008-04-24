@@ -5,7 +5,6 @@ import BusinessLogic.ArticuloRopa;
 import BusinessLogic.ControladorMain;
 import BusinessLogic.BusinessDelegate;
 import BusinessLogic.SolicitudDistribucion;
-import BusinessLogic.VistaMain;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -23,7 +22,7 @@ public class PanelSolDist extends javax.swing.JPanel
 {
     private static final long serialVersionUID = -7822083574555343999L;
     DefaultTableModel dtm;
-    MenuPrincipal ref;
+    private MenuPrincipal ref;
     
     public PanelSolDist(MenuPrincipal mn) 
     {
@@ -58,7 +57,7 @@ public class PanelSolDist extends javax.swing.JPanel
                 cantidad = articulosropa.elementAt(i).getCantidad();
                 int stock = Integer.valueOf(((BusinessDelegate) (ref.getVistaPadre().getModelo())).getStock(codigo));
                 String descripcion = String.valueOf(((BusinessDelegate) (ref.getVistaPadre().getModelo())).getDescripcion(codigo));
-                int numero = Integer.parseInt(soldis.getNumero());
+                int numero = soldis.getNumero();
 
                 dtm.addRow(new Object[]{numero, codigo, descripcion, cantidad, stock, 0});
                 //System.out.println("cargo" + i);
@@ -73,7 +72,7 @@ public class PanelSolDist extends javax.swing.JPanel
                 cantidad = articuloshogar.elementAt(i).getCantidad();
                 int stock = Integer.valueOf(((BusinessDelegate) (ref.getVistaPadre().getModelo())).getStock(codigo));
                 String descripcion = String.valueOf(((BusinessDelegate) (ref.getVistaPadre().getModelo())).getDescripcion(codigo));
-                int numero = Integer.parseInt(soldis.getNumero());
+                int numero = soldis.getNumero();
 
                 dtm.addRow(new Object[]{numero, codigo, descripcion, cantidad, stock, 0});
             }
@@ -116,14 +115,6 @@ public class PanelSolDist extends javax.swing.JPanel
         }
     }
 
-    public PanelSolDist(MenuPrincipal mn, VistaMain vistaMain) 
-    {
-       initComponents();
-       this.ref = mn;
-       this.vistaMain = vistaMain;
-       this.jLabel2.setText("");
-    }
-    
     public void update()
     {
     	jTable1.setModel(dtm);
@@ -291,5 +282,4 @@ public class PanelSolDist extends javax.swing.JPanel
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
     private FileChooser chooser;
-    private VistaMain vistaMain;
 }

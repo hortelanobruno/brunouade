@@ -3,24 +3,12 @@ package BusinessLogic;
 public class ArticuloRopa extends Articulo 
 {
 	//descripcion: Camiseta Algodon M/C 
-	private String linea;
 	private String talle;
 	private String origen;
-	
 	
 	public ArticuloRopa()
 	{
 		super();
-	}
-	
-	public String getLinea() 
-	{
-		return linea;
-	}
-	
-	public void setLinea(String linea) 
-	{
-		this.linea = linea;
 	}
 	
 	public String getOrigen() 

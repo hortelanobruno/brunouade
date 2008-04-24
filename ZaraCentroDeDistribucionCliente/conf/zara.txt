@@ -1,0 +1,44 @@
+Panel SolDis:
+	3 interacciones con el servidor.
+		
+		-Boton Cargar XML: 0 interaccion: Este boton lee el xml y genera una SolDis.
+				   1 interaccion: Tambien interactua y pide la info de los articulos que estan en SolDis.
+
+		-Boton Guardar:    1 interaccion: En la solDis marca los articulos que son reservados y cuantos para
+				     mandar a fabricar.
+
+Panel Envios:
+	2 interacciones con el servidor.
+
+		-Combo box: 1 interacion: Carga todas las solicitudes que tiene esa tienda.
+
+		-Boton cargar: 0 interaccion: Carga la solicitud en la tabla.
+			       1 interaccion: Obtiene el stock de los articulos que estaban marcados como 
+					      pendientes.
+
+		-Boton enviar: 1 interaccion: Este boton genera la solicitud de envio a tienda, segun lo completado
+					      en las tablas. Todos los articulos tienen que ser satisfechos.
+
+Panel SolFab:
+	2 interacciones con el servidor.
+
+		-Cargar Pendientes: 1 interaccion: Este boton carga de la base de datos los articulos y sus cantidades
+						   que fueron requeridas para la fabricacion.
+
+		-Enviar a fabricar: 1 interaccion: Se genera una solicitud a fabricacion de los articulos que fueron
+						   requeridos para fabricar.
+
+Panel RepArt:
+	2 interacciones con el servidor.
+
+		-Cargar XML: 0 interaccion: Lee el xml y generera Repfab.
+			
+		-Guardar: 1 interaccion: Guarda en la db los articulos recibidos.
+			  1 interaccion: Guarda la RepFab en la db.
+
+Panel newArt:
+	1 interacciones con el servidor.
+
+		-Cargar XML: 0 interaccion: Lee el xml y genera NewArt y lo carga en la tabla.
+
+		-Guardar: 1 interaccion: Guarda los articulos nuevos en las tablas de la base de datos.
