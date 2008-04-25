@@ -529,6 +529,646 @@
       <entry combinedstringid="63,6" colorid="96"/>
     </ColorIDs>
     <ColorTable>
+      <entry colorid="961" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="960" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="959" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="958" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="957" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="956" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="955" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="954" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="953" colorref="251,233,126" combinedstringid="0,0"/>
+      <entry colorid="952" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="951" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="950" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="949" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="948" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="947" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="946" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="945" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="944" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="943" colorref="188,223,198" combinedstringid="0,0"/>
+      <entry colorid="942" colorref="105,191,105" combinedstringid="0,0"/>
+      <entry colorid="941" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="940" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="939" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="938" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="937" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="936" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="935" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="934" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="933" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="932" colorref="251,233,126" combinedstringid="0,0"/>
+      <entry colorid="931" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="930" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="929" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="928" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="927" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="926" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="925" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="924" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="923" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="922" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="921" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="920" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="919" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="918" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="917" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="916" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="915" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="914" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="913" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="912" colorref="251,233,126" combinedstringid="0,0"/>
+      <entry colorid="911" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="910" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="909" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="908" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="907" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="906" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="905" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="904" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="903" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="902" colorref="251,233,126" combinedstringid="0,0"/>
+      <entry colorid="901" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="900" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="899" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="898" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="897" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="896" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="895" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="894" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="893" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="892" colorref="223,233,243" combinedstringid="0,0"/>
+      <entry colorid="891" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="890" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="889" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="888" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="887" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="886" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="885" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="884" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="883" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="882" colorref="0,0,128" combinedstringid="0,0"/>
+      <entry colorid="881" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="880" colorref="211,227,244" combinedstringid="0,0"/>
+      <entry colorid="879" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="878" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="877" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="876" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="875" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="874" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="873" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="872" colorref="255,128,255" combinedstringid="0,0"/>
+      <entry colorid="871" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="870" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="869" colorref="211,227,244" combinedstringid="0,0"/>
+      <entry colorid="868" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="867" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="866" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="865" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="864" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="863" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="862" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="861" colorref="213,237,213" combinedstringid="0,0"/>
+      <entry colorid="860" colorref="103,190,103" combinedstringid="0,0"/>
+      <entry colorid="859" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="858" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="857" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="856" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="855" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="854" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="853" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="852" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="851" colorref="254,243,168" combinedstringid="0,0"/>
+      <entry colorid="850" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="849" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="848" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="847" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="846" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="845" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="844" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="843" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="842" colorref="204,216,227" combinedstringid="0,0"/>
+      <entry colorid="841" colorref="163,184,204" combinedstringid="0,0"/>
+      <entry colorid="840" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="839" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="838" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="837" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="836" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="835" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="834" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="833" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="832" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="831" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="830" colorref="255,128,255" combinedstringid="0,0"/>
+      <entry colorid="829" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="828" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="827" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="826" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="825" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="824" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="823" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="822" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="821" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="820" colorref="170,244,243" combinedstringid="0,0"/>
+      <entry colorid="819" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="818" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="817" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="816" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="815" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="814" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="813" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="812" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="811" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="810" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="809" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="808" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="807" colorref="220,239,244" combinedstringid="0,0"/>
+      <entry colorid="806" colorref="142,203,219" combinedstringid="0,0"/>
+      <entry colorid="805" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="804" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="803" colorref="255,51,0" combinedstringid="0,0"/>
+      <entry colorid="802" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="801" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="800" colorref="255,153,51" combinedstringid="0,0"/>
+      <entry colorid="799" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="798" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="797" colorref="102,102,204" combinedstringid="0,0"/>
+      <entry colorid="796" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="795" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="794" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="793" colorref="238,247,238" combinedstringid="0,0"/>
+      <entry colorid="792" colorref="0,146,0" combinedstringid="0,0"/>
+      <entry colorid="791" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="790" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="789" colorref="255,255,0" combinedstringid="0,0"/>
+      <entry colorid="788" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="787" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="786" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="785" colorref="101,154,210" combinedstringid="0,0"/>
+      <entry colorid="784" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="783" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="782" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="781" colorref="167,240,240" combinedstringid="0,0"/>
+      <entry colorid="780" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="779" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="778" colorref="255,51,0" combinedstringid="0,0"/>
+      <entry colorid="777" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="776" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="775" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="774" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="773" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="772" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="771" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="770" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="769" colorref="255,128,255" combinedstringid="0,0"/>
+      <entry colorid="768" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="767" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="766" colorref="211,227,244" combinedstringid="0,0"/>
+      <entry colorid="765" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="764" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="763" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="762" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="761" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="760" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="759" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="758" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="757" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="756" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="755" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="754" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="753" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="752" colorref="211,227,244" combinedstringid="0,0"/>
+      <entry colorid="751" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="750" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="749" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="748" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="747" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="746" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="745" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="744" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="743" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="742" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="741" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="740" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="739" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="738" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="737" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="736" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="735" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="734" colorref="195,226,203" combinedstringid="0,0"/>
+      <entry colorid="733" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="732" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="731" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="730" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="729" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="728" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="727" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="726" colorref="183,207,188" combinedstringid="0,0"/>
+      <entry colorid="725" colorref="72,132,84" combinedstringid="0,0"/>
+      <entry colorid="724" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="723" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="722" colorref="153,0,51" combinedstringid="0,0"/>
+      <entry colorid="721" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="720" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="719" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="718" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="717" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="716" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="715" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="714" colorref="254,241,187" combinedstringid="0,0"/>
+      <entry colorid="713" colorref="255,204,0" combinedstringid="0,0"/>
+      <entry colorid="712" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="711" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="710" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="709" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="708" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="707" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="706" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="705" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="704" colorref="105,191,105" combinedstringid="0,0"/>
+      <entry colorid="703" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="702" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="701" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="700" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="699" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="698" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="697" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="696" colorref="255,239,208" combinedstringid="0,0"/>
+      <entry colorid="695" colorref="255,182,105" combinedstringid="0,0"/>
+      <entry colorid="694" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="693" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="692" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="691" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="690" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="689" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="688" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="687" colorref="191,235,235" combinedstringid="0,0"/>
+      <entry colorid="686" colorref="50,199,199" combinedstringid="0,0"/>
+      <entry colorid="685" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="684" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="683" colorref="167,240,240" combinedstringid="0,0"/>
+      <entry colorid="682" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="681" colorref="255,225,217" combinedstringid="0,0"/>
+      <entry colorid="680" colorref="255,51,0" combinedstringid="0,0"/>
+      <entry colorid="679" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="678" colorref="255,225,217" combinedstringid="0,0"/>
+      <entry colorid="677" colorref="255,51,0" combinedstringid="0,0"/>
+      <entry colorid="676" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="675" colorref="116,189,136" combinedstringid="0,0"/>
+      <entry colorid="674" colorref="26,120,51" combinedstringid="0,0"/>
+      <entry colorid="673" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="672" colorref="191,235,235" combinedstringid="0,0"/>
+      <entry colorid="671" colorref="50,199,199" combinedstringid="0,0"/>
+      <entry colorid="670" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="669" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="668" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="667" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="666" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="665" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="664" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="663" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="662" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="661" colorref="225,255,255" combinedstringid="0,0"/>
+      <entry colorid="660" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="659" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="658" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="657" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="656" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="655" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="654" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="653" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="652" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="651" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="650" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="649" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="648" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="647" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="646" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="645" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="644" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="643" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="642" colorref="251,233,127" combinedstringid="0,0"/>
+      <entry colorid="641" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="640" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="639" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="638" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="637" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="636" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="635" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="634" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="633" colorref="251,233,126" combinedstringid="0,0"/>
+      <entry colorid="632" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="631" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="630" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="629" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="628" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="627" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="626" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="625" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="624" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="623" colorref="188,223,198" combinedstringid="0,0"/>
+      <entry colorid="622" colorref="105,191,105" combinedstringid="0,0"/>
+      <entry colorid="621" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="620" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="619" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="618" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="617" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="616" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="615" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="614" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="613" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="612" colorref="251,233,126" combinedstringid="0,0"/>
+      <entry colorid="611" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="610" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="609" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="608" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="607" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="606" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="605" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="604" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="603" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="602" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="601" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="600" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="599" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="598" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="597" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="596" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="595" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="594" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="593" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="592" colorref="251,233,126" combinedstringid="0,0"/>
+      <entry colorid="591" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="590" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="589" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="588" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="587" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="586" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="585" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="584" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="583" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="582" colorref="251,233,126" combinedstringid="0,0"/>
+      <entry colorid="581" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="580" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="579" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="578" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="577" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="576" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="575" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="574" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="573" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="572" colorref="223,233,243" combinedstringid="0,0"/>
+      <entry colorid="571" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="570" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="569" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="568" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="567" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="566" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="565" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="564" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="563" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="562" colorref="0,0,128" combinedstringid="0,0"/>
+      <entry colorid="561" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="560" colorref="211,227,244" combinedstringid="0,0"/>
+      <entry colorid="559" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="558" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="557" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="556" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="555" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="554" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="553" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="552" colorref="255,128,255" combinedstringid="0,0"/>
+      <entry colorid="551" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="550" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="549" colorref="211,227,244" combinedstringid="0,0"/>
+      <entry colorid="548" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="547" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="546" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="545" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="544" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="543" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="542" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="541" colorref="213,237,213" combinedstringid="0,0"/>
+      <entry colorid="540" colorref="103,190,103" combinedstringid="0,0"/>
+      <entry colorid="539" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="538" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="537" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="536" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="535" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="534" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="533" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="532" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="531" colorref="254,243,168" combinedstringid="0,0"/>
+      <entry colorid="530" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="529" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="528" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="527" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="526" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="525" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="524" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="523" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="522" colorref="204,216,227" combinedstringid="0,0"/>
+      <entry colorid="521" colorref="163,184,204" combinedstringid="0,0"/>
+      <entry colorid="520" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="519" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="518" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="517" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="516" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="515" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="514" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="513" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="512" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="511" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="510" colorref="255,128,255" combinedstringid="0,0"/>
+      <entry colorid="509" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="508" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="507" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="506" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="505" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="504" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="503" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="502" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="501" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="500" colorref="170,244,243" combinedstringid="0,0"/>
+      <entry colorid="499" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="498" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="497" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="496" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="495" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="494" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="493" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="492" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="491" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="490" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="489" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="488" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="487" colorref="220,239,244" combinedstringid="0,0"/>
+      <entry colorid="486" colorref="142,203,219" combinedstringid="0,0"/>
+      <entry colorid="485" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="484" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="483" colorref="255,51,0" combinedstringid="0,0"/>
+      <entry colorid="482" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="481" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="480" colorref="255,153,51" combinedstringid="0,0"/>
+      <entry colorid="479" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="478" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="477" colorref="102,102,204" combinedstringid="0,0"/>
+      <entry colorid="476" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="475" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="474" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="473" colorref="238,247,238" combinedstringid="0,0"/>
+      <entry colorid="472" colorref="0,146,0" combinedstringid="0,0"/>
+      <entry colorid="471" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="470" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="469" colorref="255,255,0" combinedstringid="0,0"/>
+      <entry colorid="468" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="467" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="466" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="465" colorref="101,154,210" combinedstringid="0,0"/>
+      <entry colorid="464" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="463" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="462" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="461" colorref="167,240,240" combinedstringid="0,0"/>
+      <entry colorid="460" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="459" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="458" colorref="255,51,0" combinedstringid="0,0"/>
+      <entry colorid="457" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="456" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="455" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="454" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="453" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="452" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="451" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="450" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="449" colorref="255,128,255" combinedstringid="0,0"/>
+      <entry colorid="448" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="447" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="446" colorref="211,227,244" combinedstringid="0,0"/>
+      <entry colorid="445" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="444" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="443" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="442" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="441" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="440" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="439" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="438" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="437" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="436" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="435" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="434" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="433" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="432" colorref="211,227,244" combinedstringid="0,0"/>
+      <entry colorid="431" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="430" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="429" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="428" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="427" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="426" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="425" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="424" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="423" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="422" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="421" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="420" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="419" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="418" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="417" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="416" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="415" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="414" colorref="195,226,203" combinedstringid="0,0"/>
+      <entry colorid="413" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="412" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="411" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="410" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="409" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="408" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="407" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="406" colorref="183,207,188" combinedstringid="0,0"/>
+      <entry colorid="405" colorref="72,132,84" combinedstringid="0,0"/>
+      <entry colorid="404" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="403" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="402" colorref="153,0,51" combinedstringid="0,0"/>
+      <entry colorid="401" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="400" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="399" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="398" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="397" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="396" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="395" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="394" colorref="254,241,187" combinedstringid="0,0"/>
+      <entry colorid="393" colorref="255,204,0" combinedstringid="0,0"/>
+      <entry colorid="392" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="391" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="390" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="389" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="388" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="387" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="386" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="385" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="384" colorref="105,191,105" combinedstringid="0,0"/>
+      <entry colorid="383" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="382" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="381" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="380" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="379" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="378" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="377" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="376" colorref="255,239,208" combinedstringid="0,0"/>
+      <entry colorid="375" colorref="255,182,105" combinedstringid="0,0"/>
+      <entry colorid="374" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="373" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="372" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="371" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="370" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="369" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="368" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="367" colorref="191,235,235" combinedstringid="0,0"/>
+      <entry colorid="366" colorref="50,199,199" combinedstringid="0,0"/>
+      <entry colorid="365" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="364" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="363" colorref="167,240,240" combinedstringid="0,0"/>
+      <entry colorid="362" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="361" colorref="255,225,217" combinedstringid="0,0"/>
+      <entry colorid="360" colorref="255,51,0" combinedstringid="0,0"/>
+      <entry colorid="359" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="358" colorref="255,225,217" combinedstringid="0,0"/>
+      <entry colorid="357" colorref="255,51,0" combinedstringid="0,0"/>
+      <entry colorid="356" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="355" colorref="116,189,136" combinedstringid="0,0"/>
+      <entry colorid="354" colorref="26,120,51" combinedstringid="0,0"/>
+      <entry colorid="353" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="352" colorref="191,235,235" combinedstringid="0,0"/>
+      <entry colorid="351" colorref="50,199,199" combinedstringid="0,0"/>
+      <entry colorid="350" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="349" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="348" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="347" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="346" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="345" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="344" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="343" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="342" colorref="255,255,255" combinedstringid="0,0"/>
+      <entry colorid="341" colorref="225,255,255" combinedstringid="0,0"/>
+      <entry colorid="340" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="339" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="338" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="337" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="336" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="335" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="334" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="333" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="332" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="331" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="330" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="329" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="328" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="327" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="326" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="325" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="324" colorref="0,0,0" combinedstringid="0,0"/>
+      <entry colorid="323" colorref="254,254,254" combinedstringid="0,0"/>
+      <entry colorid="322" colorref="251,233,127" combinedstringid="0,0"/>
       <entry colorid="321" colorref="254,254,254" combinedstringid="0,0"/>
       <entry colorid="320" colorref="0,0,0" combinedstringid="0,0"/>
       <entry colorid="319" colorref="0,0,0" combinedstringid="0,0"/>
@@ -1224,7 +1864,7 @@
       <entry fontholderid="1" name="SansSerif" CharSet="0" Height="12" Italic="false" Strikeout="false" Underline="false" Weight="400"/>
     </FontHolderTable>
   </resources>
-  <diagramInfo zoom="0.7" xPos="-953.0" yPos="-40.0" name="Diagrama de clases Cliente" alias="" docs="" diagramKind="Class Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" namespaceMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" diagramXMIID="DCE.9A91173C-A6B7-CA80-C7B7-328F95B533A4"/>
+  <diagramInfo zoom="0.7" xPos="-952.0" yPos="-131.0" name="Diagrama de clases Cliente" alias="" docs="" diagramKind="Class Diagram" lastShowAliasState="false" namespaceToplevelID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" namespaceMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" diagramXMIID="DCE.9A91173C-A6B7-CA80-C7B7-328F95B533A4"/>
   <DCE.A321D3CE-C82F-1F42-CE5D-DCECB4218C3B PEID="DCE.A321D3CE-C82F-1F42-CE5D-DCECB4218C3B" MEID="DCE.BC3A5F02-6B2C-44F2-87BF-2731E41C7C75" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
     <engine name="ClassDrawEngine" editLocked="false">
       <resources>
@@ -1233,13 +1873,15 @@
         <resource type="font" resourceStringID="16" fontID="12"/>
         <resource type="font" resourceStringID="14" fontID="10"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="18" colorID="17"/>
-        <resource type="color" resourceStringID="6" colorID="5"/>
-        <resource type="color" resourceStringID="16" colorID="15"/>
-        <resource type="color" resourceStringID="4" colorID="3"/>
-        <resource type="color" resourceStringID="14" colorID="13"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
+        <resource type="color" resourceStringID="16" colorID="15"/>
+        <resource type="color" resourceStringID="14" colorID="13"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
+        <resource type="color" resourceStringID="6" colorID="5"/>
+        <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
       </resources>
       <compartment name="1" MEID="DCE.BC3A5F02-6B2C-44F2-87BF-2731E41C7C75" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
@@ -1257,8 +1899,10 @@
           <resources>
             <resource type="font" resourceStringID="14" fontID="10"/>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="14" colorID="13"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -1297,6 +1941,7 @@
         <resource type="font" resourceStringID="16" fontID="12"/>
         <resource type="font" resourceStringID="14" fontID="10"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="16" colorID="15"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
@@ -1304,6 +1949,7 @@
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.451EBF47-BF3A-7CBD-D253-A51011B7438B" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -1320,16 +1966,20 @@
           <resources>
             <resource type="font" resourceStringID="14" fontID="10"/>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="14" colorID="13"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.C872C10D-B607-9CD7-20D2-5051FBF856F3" value="# modelo : ProxyModelo" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="14" fontID="10"/>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="14" colorID="13"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -1363,6 +2013,7 @@
         <resource type="font" resourceStringID="16" fontID="12"/>
         <resource type="font" resourceStringID="14" fontID="10"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="16" colorID="15"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
@@ -1370,6 +2021,7 @@
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.FA370992-EC76-6030-95B9-1DD4613EFE02" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -1386,16 +2038,20 @@
           <resources>
             <resource type="font" resourceStringID="14" fontID="10"/>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="14" colorID="13"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.52D2F7B1-E610-9D0B-9A65-245917B17D57" value="# controlador : Controlador" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="14" fontID="10"/>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="14" colorID="13"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -1471,6 +2127,24 @@
             <resource type="color" resourceStringID="16" colorID="15"/>
           </resources>
         </compartment>
+        <compartment name="6" MEID="DCE.26BFFA41-38E3-0E92-CFFA-42EB92415D23" value="+ getSolicitudesDeTienda( tienda : String ) : Vector&lt;Integer&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.5E8A0F8D-5BEE-A9F0-4B6D-3882628CF0DA" value="+ getSolicitud( codigo : int ) : Solicitud" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.50BC8A50-0E76-06B5-DC61-9C0323374B20" value="+ getStockPendientes( sol : Solicitud ) : Vector&lt;Integer&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
       </compartment>
     </engine>
   </DCE.A13E7B8C-9CAE-EE7E-CD86-99F94BADF289>
@@ -1527,6 +2201,30 @@
             <resource type="color" resourceStringID="16" colorID="15"/>
           </resources>
         </compartment>
+        <compartment name="6" MEID="DCE.2830CB68-27AF-8E92-43A0-65D7173B957A" value="+ doGetSolicitudesDeTienda( tienda : String ) : Vector&lt;Integer&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.A72E1527-EFE3-50DA-097F-0CB8671F3ECB" value="+ doGetSolicitud( codigo : int ) : Solicitud" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.B6A7FCBB-4312-A2B4-A992-F9FFB405BF24" value="+ doGetStockPendientes( sol : Solicitud ) : Vector&lt;Integer&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.253A3118-1CDE-7721-F28C-48DC2183D107" value="+ Unnamed(  ) : void" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
       </compartment>
     </engine>
   </DCE.BB6E87AA-261B-4D15-E803-85826D3487EC>
@@ -1536,12 +2234,14 @@
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="16" fontID="12"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="16" colorID="15"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.BEC4DFB7-C476-ADA8-E993-3A08E3561FE3" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -1557,7 +2257,9 @@
         <compartment name="4" MEID="DCE.7A60B67E-8902-0BD2-9C6F-B25C76FD9D8D" value="- princ : MenuPrincipal" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -1591,6 +2293,7 @@
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="16" fontID="12"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="17" colorID="16"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="16" colorID="15"/>
@@ -1598,6 +2301,7 @@
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.7F88E415-1F40-E75D-9A2B-4E7A2F10876A" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -1613,49 +2317,65 @@
         <compartment name="4" MEID="DCE.E1087536-3DD2-3D6A-3FDA-945260C8003E" value="- vistaPadre : VistaMain" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.A676671F-F13D-9C94-38EA-4E661C100C54" value="- activePanel : JPanel" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.C6BD427D-782B-DD5C-0693-57273DF27B9B" value="- instance : MenuPrincipal" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0" isStatic="1">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.4866D44E-26F5-59FB-B03C-1AEB980B7FA4" value="- panelSD : PanelSoldis" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.D3F62D45-01C6-026C-2F98-1218F7B01D8D" value="- panelGSF : PanelGenSolFab" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.A4547AB7-25BA-8D56-CD21-7CA6B46D4117" value="- panelEnvios : PanelEnvios" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.3DD50A39-5B84-7BA6-CC81-B9F483298E16" value="- panelNewArt : PanelNewArt" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.47017A15-DAEA-7B56-0AB9-F84FA89AC1B1" value="- panelRepArt : PanelRepArt" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -1728,6 +2448,7 @@
         <resource type="font" resourceStringID="7" fontID="3"/>
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="16" fontID="12"/>
+        <resource type="font" resourceStringID="13" fontID="9"/>
         <resource type="color" resourceStringID="7" colorID="6"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="16" colorID="15"/>
@@ -1767,6 +2488,24 @@
             <resource type="color" resourceStringID="16" colorID="15"/>
           </resources>
         </compartment>
+        <compartment name="6" MEID="DCE.AD526E70-0D64-7689-165B-D6B9E54C4C52" value="+ getSolicitudesDeTienda( tienda : String ) : Vector&lt;Integer&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.D6B65AE0-B8C0-4D79-2433-982036E855B9" value="+ getSolicitud( codigo : int ) : Solicitud" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.5E4CDC1C-BF50-BD85-F747-D4B4C882286F" value="+ getStockPendientes( sol : Solicitud ) : Vector&lt;Integer&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
       </compartment>
     </engine>
   </DCE.56DCF390-8EAD-2F1B-FF7D-5F45ABC996F2>
@@ -1776,12 +2515,14 @@
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="16" fontID="12"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="16" colorID="15"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.62B84D77-C642-24A7-91E4-0E5FA566B5BE" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -1797,7 +2538,9 @@
         <compartment name="4" MEID="DCE.44DAD969-A707-A95F-14A0-2BB6A2AF4569" value="- ref : MenuPrincipal" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -1840,10 +2583,16 @@
     <engine name="ClassDrawEngine" editLocked="false">
       <resources>
         <resource type="font" resourceStringID="6" fontID="2"/>
+        <resource type="font" resourceStringID="16" fontID="12"/>
+        <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
+        <resource type="color" resourceStringID="16" colorID="15"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="13" colorID="12"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.1619FEB7-3E8D-BD32-F96E-E57097BEC534" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -1856,9 +2605,53 @@
       </compartment>
       <compartment name="3" value="Attributes" textStyles="VCENTER|HCENTER|SINGLELINE">
         <resources/>
+        <compartment name="4" MEID="DCE.2858F5FB-8771-BE5B-561A-4EB4D246057B" value="- ref : MenuPrincipal" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
+            <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
+          </resources>
+        </compartment>
       </compartment>
       <compartment name="5" value="Operations" textStyles="VCENTER|HCENTER|SINGLELINE">
         <resources/>
+        <compartment name="6" MEID="DCE.A06130DE-9710-BA8C-C949-0699EA4F30F7" value="+ PanelEnvios( mn : MenuPrincipal ) : void" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.CE63ACFA-72EE-E09F-4C9E-5819FC313D6F" value="+ update(  ) : void" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.9508B670-12FB-FACE-9B51-D8788CBBE8A8" value="+ seleccionarTienda(  ) : void" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.B0F2D693-0CCC-E0FC-B547-6F02BEE1CDCA" value="+ cargarSolicitud(  ) : void" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.432EB83E-64BF-38A9-2385-37D559FB8416" value="+ fillTables( sol : Solicitud ) : void" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
+        <compartment name="6" MEID="DCE.F36CB565-4223-B1BD-CCA4-8CBF2DC6D08E" value="+ enviar(  ) : void" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="16" fontID="12"/>
+            <resource type="color" resourceStringID="16" colorID="15"/>
+          </resources>
+        </compartment>
       </compartment>
     </engine>
   </DCE.DFFE7331-67B2-EB1C-1943-AADC7537D7A8>
@@ -1997,11 +2790,13 @@
       <resources>
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.A7347371-96B9-00D7-5D67-C43AA8816822" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -2017,7 +2812,9 @@
         <compartment name="4" MEID="DCE.89951088-A9A7-927F-879E-01E90C72345C" value="- tienda : Tienda" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -2031,11 +2828,13 @@
       <resources>
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.6711F50B-826D-59E1-C96A-A1F63D6D3249" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -2051,13 +2850,17 @@
         <compartment name="4" MEID="DCE.CCDB4A61-FD47-08EF-C354-BFBBCF1F2373" value="- nombrteTienda : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.F25B5F3F-63DA-5381-FCED-D2F5466CA74A" value="- codigoTienda : int" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -2071,11 +2874,13 @@
       <resources>
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.B2054F01-55ED-F448-B384-20ABE609F07B" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -2091,13 +2896,17 @@
         <compartment name="4" MEID="DCE.621F47F4-999F-911A-BFED-1A715D702DB7" value="- talle : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.7E6555FC-F442-924D-38F7-1D63D29B368A" value="- origen : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -2111,11 +2920,13 @@
       <resources>
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.38708F20-D30F-C804-625D-7E01A39B0823" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -2131,49 +2942,73 @@
         <compartment name="4" MEID="DCE.65F47AB9-E4F2-2B74-2749-7EF62C6E6E41" value="- referencia : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.2E307E0C-2694-40AE-5ED8-E1AC17DB085E" value="- descripcion : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.21618986-B4B5-5955-536B-35F4D9800B30" value="- precio : float" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.1081BFED-F58B-0875-2ECE-5BBCCA6A6DD7" value="- codigo : int" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.4EEB08FF-E838-945C-8FBD-F0BB607E14D7" value="- seccion : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.4545115D-FA6B-0E6D-0DE1-B3B9762E3FFC" value="- color : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.A7E4B7B1-7531-225E-1034-5A9EF0594BC7" value="- cantidad : int" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.B2C2AE11-72D8-00E8-400B-CAF2AAC5FA7A" value="- linea : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
+          </resources>
+        </compartment>
+        <compartment name="4" MEID="DCE.CA927871-DA76-BF3D-6CA3-D6AE1C54D2AB" value="- estado : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
+            <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -2187,11 +3022,13 @@
       <resources>
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.9587ABC0-2C94-4C99-3BCE-2AE0609E56C3" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -2207,25 +3044,33 @@
         <compartment name="4" MEID="DCE.3BDECA6A-D3D7-F847-5AF8-A817A5FF4E69" value="- detalles : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.439BC118-EC93-656A-700B-06880A59AAAF" value="- composicion : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.D30C4649-2A40-DE6F-966A-812EC28E2B1B" value="- categoria : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.CFE93481-08BB-981A-7AC8-9C09B6B7AD0E" value="- medidas : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -2239,11 +3084,13 @@
       <resources>
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.EF29C0DE-4721-9270-BCA1-59DD4634749A" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -2259,7 +3106,9 @@
         <compartment name="4" MEID="DCE.192FBD3B-831C-2831-910C-368A3AC5F7C4" value="- tienda : Tienda" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -2273,11 +3122,13 @@
       <resources>
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.B51D4B6C-109E-CD0C-5623-A8911908FCDE" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -2290,6 +3141,22 @@
       </compartment>
       <compartment name="3" value="Attributes" textStyles="VCENTER|HCENTER|SINGLELINE">
         <resources/>
+        <compartment name="4" MEID="DCE.5BDAFB69-B2CC-9033-7379-2695709D154B" value="- fabrica : Fabrica" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
+            <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
+          </resources>
+        </compartment>
+        <compartment name="4" MEID="DCE.4E840386-4B7F-9775-0E7C-485AB155C2B7" value="- centroDistribucion : CentroDistribucion" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
+            <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
+          </resources>
+        </compartment>
       </compartment>
       <compartment name="5" value="Operations" textStyles="VCENTER|HCENTER|SINGLELINE">
         <resources/>
@@ -2302,12 +3169,14 @@
         <resource type="font" resourceStringID="6" fontID="2"/>
         <resource type="font" resourceStringID="16" fontID="12"/>
         <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
         <resource type="color" resourceStringID="6" colorID="5"/>
         <resource type="color" resourceStringID="16" colorID="15"/>
         <resource type="color" resourceStringID="4" colorID="3"/>
         <resource type="color" resourceStringID="201" colorID="321"/>
         <resource type="color" resourceStringID="13" colorID="12"/>
         <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
       </resources>
       <compartment name="1" MEID="DCE.86E50FEE-4F39-00FB-53B1-2FB07B64B457" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
         <resources/>
@@ -2323,25 +3192,25 @@
         <compartment name="4" MEID="DCE.2F27FCA8-43A4-EB50-50FD-C71C2193F0CE" value="- numero : int" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
-        <compartment name="4" MEID="DCE.799D0E76-F6A2-1CA7-750E-44288AD6CA18" value="- articulosRopa : Vector&lt;ArticuloRopa&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+        <compartment name="4" MEID="DCE.799D0E76-F6A2-1CA7-750E-44288AD6CA18" value="- articulos : Vector&lt;Articulo&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
-          </resources>
-        </compartment>
-        <compartment name="4" MEID="DCE.C31257C1-44BE-CC44-3382-19709F508FF6" value="- articulosHogar : Vector&lt;ArticuloHogar&gt;" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
-          <resources>
-            <resource type="font" resourceStringID="13" fontID="9"/>
-            <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
         <compartment name="4" MEID="DCE.9DE60673-C024-424F-9135-25ED7BE14077" value="- fechaEmision : Date" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
           <resources>
             <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
             <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
           </resources>
         </compartment>
       </compartment>
@@ -2362,6 +3231,90 @@
       </compartment>
     </engine>
   </DCE.06E95304-183F-0DD8-5AAA-805170B5C10D>
+  <DCE.D3033AB0-6EDD-0FB3-A919-D49DB99BC2AE PEID="DCE.D3033AB0-6EDD-0FB3-A919-D49DB99BC2AE" MEID="DCE.81D24244-31DC-5B3C-94F4-64D56E25AD20" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
+    <engine name="ClassDrawEngine" editLocked="false">
+      <resources>
+        <resource type="font" resourceStringID="6" fontID="2"/>
+        <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
+        <resource type="color" resourceStringID="6" colorID="5"/>
+        <resource type="color" resourceStringID="4" colorID="3"/>
+        <resource type="color" resourceStringID="201" colorID="321"/>
+        <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="13" colorID="12"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
+      </resources>
+      <compartment name="1" MEID="DCE.81D24244-31DC-5B3C-94F4-64D56E25AD20" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
+        <resources/>
+        <compartment name="2" MEID="DCE.81D24244-31DC-5B3C-94F4-64D56E25AD20" value="Fabrica" textStyles="VCENTER|HCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="6" fontID="2"/>
+            <resource type="color" resourceStringID="6" colorID="5"/>
+          </resources>
+        </compartment>
+      </compartment>
+      <compartment name="3" value="Attributes" textStyles="VCENTER|HCENTER|SINGLELINE">
+        <resources/>
+        <compartment name="4" MEID="DCE.C57934C1-2A25-C09D-EC99-E9FA8A4EB7D7" value="- codigoFabrica : int" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
+            <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
+          </resources>
+        </compartment>
+        <compartment name="4" MEID="DCE.206CA384-39C7-6192-6CEF-D52E822BF56E" value="- nombreFabrica : String" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
+            <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
+          </resources>
+        </compartment>
+      </compartment>
+      <compartment name="5" value="Operations" textStyles="VCENTER|HCENTER|SINGLELINE">
+        <resources/>
+      </compartment>
+    </engine>
+  </DCE.D3033AB0-6EDD-0FB3-A919-D49DB99BC2AE>
+  <DCE.EEA8930C-DDB9-F3A0-6489-67E320C38B7C PEID="DCE.EEA8930C-DDB9-F3A0-6489-67E320C38B7C" MEID="DCE.2817D03C-4A69-7204-C0AD-7E890F3C8F36" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.ETGenericNodeUI Class">
+    <engine name="ClassDrawEngine" editLocked="false">
+      <resources>
+        <resource type="font" resourceStringID="6" fontID="2"/>
+        <resource type="font" resourceStringID="13" fontID="9"/>
+        <resource type="font" resourceStringID="12" fontID="8"/>
+        <resource type="color" resourceStringID="6" colorID="5"/>
+        <resource type="color" resourceStringID="4" colorID="3"/>
+        <resource type="color" resourceStringID="201" colorID="321"/>
+        <resource type="color" resourceStringID="2" colorID="1"/>
+        <resource type="color" resourceStringID="13" colorID="12"/>
+        <resource type="color" resourceStringID="12" colorID="11"/>
+      </resources>
+      <compartment name="1" MEID="DCE.2817D03C-4A69-7204-C0AD-7E890F3C8F36" value="" textStyles="VCENTER|HCENTER|SINGLELINE" DefaultCompartment="ADClassNameCompartment" staticText="">
+        <resources/>
+        <compartment name="2" MEID="DCE.2817D03C-4A69-7204-C0AD-7E890F3C8F36" value="SolcitidReposicion" textStyles="VCENTER|HCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="6" fontID="2"/>
+            <resource type="color" resourceStringID="6" colorID="5"/>
+          </resources>
+        </compartment>
+      </compartment>
+      <compartment name="3" value="Attributes" textStyles="VCENTER|HCENTER|SINGLELINE">
+        <resources/>
+        <compartment name="4" MEID="DCE.559047E5-F90D-CD8F-FC74-4488C507814C" value="- solFab : SolicitudDeFabricacion" textStyles="VCENTER|SINGLELINE" nameCompartmentBorderKind="0">
+          <resources>
+            <resource type="font" resourceStringID="13" fontID="9"/>
+            <resource type="font" resourceStringID="12" fontID="8"/>
+            <resource type="color" resourceStringID="13" colorID="12"/>
+            <resource type="color" resourceStringID="12" colorID="11"/>
+          </resources>
+        </compartment>
+      </compartment>
+      <compartment name="5" value="Operations" textStyles="VCENTER|HCENTER|SINGLELINE">
+        <resources/>
+      </compartment>
+    </engine>
+  </DCE.EEA8930C-DDB9-F3A0-6489-67E320C38B7C>
   <DCE.C8AD105C-BD2B-4A5C-1254-9EA054489C40 PEID="DCE.C8AD105C-BD2B-4A5C-1254-9EA054489C40" MEID="DCE.A14DEB8A-DD54-B8CD-A54D-AC1A67CA77DE" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Generalization">
     <engine name="GeneralizationEdgeDrawEngine">
       <resources>
@@ -2544,13 +3497,6 @@
       </resources>
     </engine>
   </DCE.3FE9B70A-1F3B-36FD-4D7F-E74AF6BCE4D7>
-  <DCE.9F8017D7-CE27-D3C3-DBA6-FB6E7F2DC44F PEID="DCE.9F8017D7-CE27-D3C3-DBA6-FB6E7F2DC44F" MEID="DCE.1A9080EE-654D-A2DD-1D99-A922DDE3E113" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
-    <engine name="AssociationEdgeDrawEngine">
-      <resources>
-        <resource type="color" resourceStringID="145" colorID="209"/>
-      </resources>
-    </engine>
-  </DCE.9F8017D7-CE27-D3C3-DBA6-FB6E7F2DC44F>
   <DCE.016DAD22-D11C-E320-CE23-CAD91A6D2841 PEID="DCE.016DAD22-D11C-E320-CE23-CAD91A6D2841" MEID="DCE.4A2D595A-7AC0-6274-B241-B885EDD93524" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
     <engine name="AssociationEdgeDrawEngine">
       <resources>
@@ -2558,13 +3504,6 @@
       </resources>
     </engine>
   </DCE.016DAD22-D11C-E320-CE23-CAD91A6D2841>
-  <DCE.47B28C6E-6BB4-C1A4-408B-FE35E2AEB76E PEID="DCE.47B28C6E-6BB4-C1A4-408B-FE35E2AEB76E" MEID="DCE.F4D95D3A-C2DE-F81B-15EC-7FDE1E9A3D4E" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
-    <engine name="AssociationEdgeDrawEngine">
-      <resources>
-        <resource type="color" resourceStringID="145" colorID="209"/>
-      </resources>
-    </engine>
-  </DCE.47B28C6E-6BB4-C1A4-408B-FE35E2AEB76E>
   <DCE.3029F126-D001-3E21-765B-F267FB65F51B PEID="DCE.3029F126-D001-3E21-765B-F267FB65F51B" MEID="DCE.3972F07B-9A35-038E-255B-7EEB0C963151" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
     <engine name="AssociationEdgeDrawEngine">
       <resources>
@@ -2572,34 +3511,6 @@
       </resources>
     </engine>
   </DCE.3029F126-D001-3E21-765B-F267FB65F51B>
-  <DCE.498DAA57-79F0-814C-6F8B-72714A07EAA2 PEID="DCE.498DAA57-79F0-814C-6F8B-72714A07EAA2" MEID="DCE.3AE21E87-6418-1EDF-6965-D95FEC73C95B" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
-    <engine name="AssociationEdgeDrawEngine">
-      <resources>
-        <resource type="color" resourceStringID="145" colorID="209"/>
-      </resources>
-    </engine>
-  </DCE.498DAA57-79F0-814C-6F8B-72714A07EAA2>
-  <DCE.6ABB703C-0967-8502-D9A1-7DE44031A255 PEID="DCE.6ABB703C-0967-8502-D9A1-7DE44031A255" MEID="DCE.1F91D8CE-E7E3-BCE0-4B1F-5925C2870792" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
-    <engine name="AssociationEdgeDrawEngine">
-      <resources>
-        <resource type="color" resourceStringID="145" colorID="209"/>
-      </resources>
-    </engine>
-  </DCE.6ABB703C-0967-8502-D9A1-7DE44031A255>
-  <DCE.CD02F4FC-D1DB-ED73-C0DD-593B70E37978 PEID="DCE.CD02F4FC-D1DB-ED73-C0DD-593B70E37978" MEID="DCE.20F5C937-B79A-1D72-2566-B798C6898249" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
-    <engine name="AssociationEdgeDrawEngine">
-      <resources>
-        <resource type="color" resourceStringID="145" colorID="209"/>
-      </resources>
-    </engine>
-  </DCE.CD02F4FC-D1DB-ED73-C0DD-593B70E37978>
-  <DCE.F27529AD-2849-F8C8-21A4-B60C4C51AEE3 PEID="DCE.F27529AD-2849-F8C8-21A4-B60C4C51AEE3" MEID="DCE.3CB0B4E0-F7EE-F054-9FE8-7C0C5194973B" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
-    <engine name="AssociationEdgeDrawEngine">
-      <resources>
-        <resource type="color" resourceStringID="145" colorID="209"/>
-      </resources>
-    </engine>
-  </DCE.F27529AD-2849-F8C8-21A4-B60C4C51AEE3>
   <DCE.7155CB7D-1DA2-4CC1-79FC-DB68C6407731 PEID="DCE.7155CB7D-1DA2-4CC1-79FC-DB68C6407731" MEID="DCE.4011D245-A222-C950-8D63-26524AABD5B8" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Generalization">
     <engine name="GeneralizationEdgeDrawEngine">
       <resources>
@@ -2621,4 +3532,60 @@
       </resources>
     </engine>
   </DCE.09C6521E-CBBF-5A5D-94F7-8A4ED30BF604>
+  <DCE.63651BB8-5B7F-60EB-1467-68AE5D0F575A PEID="DCE.63651BB8-5B7F-60EB-1467-68AE5D0F575A" MEID="DCE.DD06D22E-6AB9-FB55-B6EC-488D613F2602" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
+    <engine name="AssociationEdgeDrawEngine">
+      <resources>
+        <resource type="color" resourceStringID="145" colorID="209"/>
+      </resources>
+    </engine>
+  </DCE.63651BB8-5B7F-60EB-1467-68AE5D0F575A>
+  <DCE.78EBB3B4-7F5E-0539-BD04-332B671AEE61 PEID="DCE.78EBB3B4-7F5E-0539-BD04-332B671AEE61" MEID="DCE.770B8A98-1D53-0B68-6991-D07A499D3EFE" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
+    <engine name="AssociationEdgeDrawEngine">
+      <resources>
+        <resource type="color" resourceStringID="145" colorID="209"/>
+      </resources>
+    </engine>
+  </DCE.78EBB3B4-7F5E-0539-BD04-332B671AEE61>
+  <DCE.0DC6D264-4485-9CB5-2881-99E57810379A PEID="DCE.0DC6D264-4485-9CB5-2881-99E57810379A" MEID="DCE.91369794-54A8-0814-1832-65C39CF8C2A5" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
+    <engine name="AssociationEdgeDrawEngine">
+      <resources>
+        <resource type="color" resourceStringID="145" colorID="209"/>
+      </resources>
+    </engine>
+  </DCE.0DC6D264-4485-9CB5-2881-99E57810379A>
+  <DCE.69FB67B8-9EC7-C956-7854-4BD84C99F9E0 PEID="DCE.69FB67B8-9EC7-C956-7854-4BD84C99F9E0" MEID="DCE.8A7287E2-0025-737C-E470-97D3A4DE4F91" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
+    <engine name="AssociationEdgeDrawEngine">
+      <resources>
+        <resource type="color" resourceStringID="145" colorID="209"/>
+      </resources>
+    </engine>
+  </DCE.69FB67B8-9EC7-C956-7854-4BD84C99F9E0>
+  <DCE.9A8C3C4A-9139-92FA-FD7D-9136D96839C2 PEID="DCE.9A8C3C4A-9139-92FA-FD7D-9136D96839C2" MEID="DCE.C84F193C-6F9F-A64F-B955-16D2B91D4F29" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
+    <engine name="AssociationEdgeDrawEngine">
+      <resources>
+        <resource type="color" resourceStringID="145" colorID="209"/>
+      </resources>
+    </engine>
+  </DCE.9A8C3C4A-9139-92FA-FD7D-9136D96839C2>
+  <DCE.CAD19DCE-E5D8-2FA2-450A-F6C41B96AF53 PEID="DCE.CAD19DCE-E5D8-2FA2-450A-F6C41B96AF53" MEID="DCE.8387D9F3-47D5-953A-F5BC-185E9922741F" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
+    <engine name="AssociationEdgeDrawEngine">
+      <resources>
+        <resource type="color" resourceStringID="145" colorID="209"/>
+      </resources>
+    </engine>
+  </DCE.CAD19DCE-E5D8-2FA2-450A-F6C41B96AF53>
+  <DCE.462F9989-C652-56A0-42E8-3B27B5C89C55 PEID="DCE.462F9989-C652-56A0-42E8-3B27B5C89C55" MEID="DCE.B0B672BE-E67D-2B12-3DF7-9FF1B7D6C6EB" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Generalization">
+    <engine name="GeneralizationEdgeDrawEngine">
+      <resources>
+        <resource type="color" resourceStringID="185" colorID="289"/>
+      </resources>
+    </engine>
+  </DCE.462F9989-C652-56A0-42E8-3B27B5C89C55>
+  <DCE.7E1A9BBD-1F48-3BBB-78AE-2BC01327D864 PEID="DCE.7E1A9BBD-1F48-3BBB-78AE-2BC01327D864" MEID="DCE.56CF5FE2-1F14-135B-5A48-C975D246B259" toplevelMEID="DCE.0686C340-0044-51FF-7ED5-974990878E6B" initString="org.netbeans.modules.uml.ui.products.ad.viewfactory.RelationEdge Aggregation AG NN">
+    <engine name="AssociationEdgeDrawEngine">
+      <resources>
+        <resource type="color" resourceStringID="145" colorID="209"/>
+      </resources>
+    </engine>
+  </DCE.7E1A9BBD-1F48-3BBB-78AE-2BC01327D864>
 </EMBT:DiagramArchive>

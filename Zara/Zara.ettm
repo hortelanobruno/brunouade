@@ -27,11 +27,11 @@
 	<!ATTLIST Irresolvable 
 		   id CDATA #IMPLIED >
 ]--><TypeManagement projectID="DCE.0686C340-0044-51FF-7ED5-974990878E6B">
-	<Locations nextID="0">
-	</Locations>
+	<Locations nextID="1">
+	<Location locID="T.0" href=".\Zara.etup"/></Locations>
 
    <Types>
-   </Types>
+   <Type id="DCE.A9B7829D-27BD-6A57-8F20-FE4BBCF8A54E" location="T.0" name="Unnamed"/></Types>
 
 	<IrresolvableTypes>
 	</IrresolvableTypes>
