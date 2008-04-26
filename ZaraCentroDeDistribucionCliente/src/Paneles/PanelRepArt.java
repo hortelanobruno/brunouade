@@ -14,8 +14,8 @@ import GUI.MenuPrincipal;
  */
 public class PanelRepArt extends javax.swing.JPanel {
     
-    
-    /** Creates new form PanelRepArt */
+	private static final long serialVersionUID = -2078660928214048659L;
+	/** Creates new form PanelRepArt */
     public PanelRepArt(MenuPrincipal m) {
         initComponents();
     }

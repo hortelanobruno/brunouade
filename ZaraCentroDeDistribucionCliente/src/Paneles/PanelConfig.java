@@ -10,7 +10,8 @@ import Varios.Constantes;
 
 public class PanelConfig extends javax.swing.JPanel 
 {
-    private MenuPrincipal ref;
+	private static final long serialVersionUID = -1069354742206154096L;
+	private MenuPrincipal ref;
 
     public PanelConfig(MenuPrincipal menu) 
     {

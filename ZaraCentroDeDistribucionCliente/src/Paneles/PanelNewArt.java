@@ -19,7 +19,8 @@ import GUI.MenuPrincipal;
  */
 public class PanelNewArt extends javax.swing.JPanel {
     
-    /** Creates new form PanelNewArt */
+	private static final long serialVersionUID = 1140223995982030935L;
+	/** Creates new form PanelNewArt */
     MenuPrincipal ref;
     
     public PanelNewArt(MenuPrincipal m) 
