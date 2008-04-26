@@ -14,9 +14,10 @@ import Varios.Constantes;
 
 public class PanelEnvios extends javax.swing.JPanel
 {
-    private MenuPrincipal ref;
+	private static final long serialVersionUID = 3058259776916783727L;
+	private MenuPrincipal ref;
     
-    public PanelEnvios(MenuPrincipal m) 
+    public PanelEnvios(MenuPrincipal mn) 
     {
         initComponents();
         DefaultMutableTreeNode abuelo = new DefaultMutableTreeNode("Articulos");
@@ -27,7 +28,7 @@ public class PanelEnvios extends javax.swing.JPanel
         modelo.insertNodeInto(padre,abuelo,0);
         modelo.insertNodeInto(tio, abuelo, 1);
         jScrollPane2.setViewportView(jTree1);
-        this.ref = m;
+        this.ref = mn;
     }
     
     public void update()
@@ -183,12 +184,15 @@ public class PanelEnvios extends javax.swing.JPanel
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultMutableTreeNode node = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+        
+    	int ret = ((ControladorMain)this.ref.getVistaPadre().getControlador()).doGetTestNumber();
+    	JOptionPane.showMessageDialog(null, String.valueOf(ret));
+    	/*DefaultMutableTreeNode node = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
 
         if (node == null) JOptionPane.showMessageDialog(this, "Debe elegir un tipo de articulo.",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 
         String nodeInfo = (String)node.getUserObject();
-        Vector<Articulo> ret = ((ControladorMain)ref.getVistaPadre().getControlador()).doGetArticulosEnvio((String)jComboBox1.getSelectedItem(),nodeInfo);
+        Vector<Articulo> ret = null;//((ControladorMain)ref.getVistaPadre().getControlador()).doGetArticulosEnvio((String)jComboBox1.getSelectedItem(),nodeInfo);
         
         if(ret != null)
         {
@@ -201,7 +205,7 @@ public class PanelEnvios extends javax.swing.JPanel
                 //cargar en tabla pendientes
             }
         }
-        else JOptionPane.showMessageDialog(this, "No se encontraron articulos",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+        else JOptionPane.showMessageDialog(this, "No se encontraron articulos",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);*/
     }//GEN-LAST:event_jButton1ActionPerformed
     
 

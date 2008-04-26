@@ -19,6 +19,11 @@ public class ControladorMain extends Controlador
     {
         super(mod, vis);
     }
+    
+    public int doGetTestNumber()
+    {
+    	return ((BusinessDelegate)this.getModelo()).getTestNumber();
+    }
 
     private SolicitudDistribucion parseXMLSD(String url)
     {
@@ -118,7 +123,7 @@ public class ControladorMain extends Controlador
         }
     }
 
-    public Vector<SolicitudDistribucion> doGetSolicitudes(String tienda)
+    public Vector<Solicitud> doGetSolicitudes(String tienda)
     {
     	return null;
     }
@@ -132,10 +137,5 @@ public class ControladorMain extends Controlador
     public void doGuardarSolicitud(SolicitudDistribucion soldis)
     {
         ((BusinessDelegate)(this.getModelo())).guardarSolicitud(soldis);
-    }
-    
-    public Vector<Articulo> doGetArticulosEnvio(String tienda, String tipo)
-    {
-        return null;
     }
 }
