@@ -16,7 +16,8 @@ import GUI.MenuPrincipal;
  */
 public class PanelDB extends javax.swing.JPanel {
 
-    public MenuPrincipal ref;
+	private static final long serialVersionUID = -3018483813756433719L;
+	public MenuPrincipal ref;
     /** Creates new form PanelDB */
     public PanelDB(JFrame frame) {
         initComponents();

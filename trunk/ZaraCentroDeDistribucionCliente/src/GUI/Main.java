@@ -10,11 +10,13 @@ public class Main
 	{
 	    BusinessDelegate modelo = new BusinessDelegate();
 	    VistaMain vMain = new VistaMain(modelo);
-	    ControladorMain cMain = new ControladorMain(modelo,vMain);
+	    @SuppressWarnings("unused")
+		ControladorMain cMain = new ControladorMain(modelo,vMain);
 	}
     
     public static void main(String[] args) 
     {
-    	Main m = new Main();
+    	@SuppressWarnings("unused")
+		Main m = new Main();
     }
 }

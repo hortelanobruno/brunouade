@@ -14,7 +14,8 @@ import GUI.MenuPrincipal;
  */
 public class PanelGenSolFab extends javax.swing.JPanel {
 
-    /** Creates new form PanelGenSolFab */
+	private static final long serialVersionUID = 4022189607233893727L;
+	/** Creates new form PanelGenSolFab */
     public PanelGenSolFab(MenuPrincipal r) {
         initComponents();
     }
