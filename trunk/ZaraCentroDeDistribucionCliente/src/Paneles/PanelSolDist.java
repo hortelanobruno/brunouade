@@ -54,7 +54,7 @@ public class PanelSolDist extends javax.swing.JPanel
             for (int i = 0; i < articulosropa.size(); i++)
             {
                 codigo = articulosropa.elementAt(i).getCodigo();
-                cantidad = articulosropa.elementAt(i).getCantidad();
+                cantidad = articulosropa.elementAt(i).getStock();
                 int stock = Integer.valueOf(((BusinessDelegate) (ref.getVistaPadre().getModelo())).getStock(codigo));
                 String descripcion = String.valueOf(((BusinessDelegate) (ref.getVistaPadre().getModelo())).getDescripcion(codigo));
                 int numero = soldis.getNumero();
@@ -69,7 +69,7 @@ public class PanelSolDist extends javax.swing.JPanel
             for (int i = 0; i < articuloshogar.size(); i++)
             {
                 codigo = articuloshogar.elementAt(i).getCodigo();
-                cantidad = articuloshogar.elementAt(i).getCantidad();
+                cantidad = articuloshogar.elementAt(i).getStock();
                 int stock = Integer.valueOf(((BusinessDelegate) (ref.getVistaPadre().getModelo())).getStock(codigo));
                 String descripcion = String.valueOf(((BusinessDelegate) (ref.getVistaPadre().getModelo())).getDescripcion(codigo));
                 int numero = soldis.getNumero();

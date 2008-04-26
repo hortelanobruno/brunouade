@@ -9,16 +9,19 @@ public abstract class Articulo
 	private String seccion;
 	private String color;
 	private String linea;
-        private int cantidad;
+	private String estado;
+    private int stock;
+    
+    public Articulo(int codigo, int cantidad)
+    {
+        this.stock=cantidad;
+        this.codigo=codigo;
+    }
+    
+    public Articulo()
+    {
         
-        public Articulo(int codigo, int cantidad){
-            this.cantidad=cantidad;
-            this.codigo=codigo;
-        }
-        
-        public Articulo(){
-            
-        }
+    }
 	
 	public String getColor() 
 	{
@@ -80,19 +83,33 @@ public abstract class Articulo
 		this.seccion = seccion;
 	}
 
-    public int getCantidad() {
-        return cantidad;
+    public int getStock() 
+    {
+        return stock;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setCantidad(int cantidad) 
+    {
+        this.stock = cantidad;
     }
 
-	public String getLinea() {
+	public String getLinea() 
+	{
 		return linea;
 	}
 
-	public void setLinea(String linea) {
+	public void setLinea(String linea) 
+	{
 		this.linea = linea;
+	}
+
+	public String getEstado()
+	{
+		return estado;
+	}
+
+	public void setEstado(String estado) 
+	{
+		this.estado = estado;
 	}
 }

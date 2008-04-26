@@ -1,6 +1,8 @@
 package BusinessLogic;
 
 import RemoteMVCFramework.ProxyModelo;
+import Varios.Constantes;
+
 import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,15 +13,20 @@ public class BusinessDelegate extends ProxyModelo
 {
 	private ServerFacade modCD = null;
 	private InitialContext initialContect = null;
-	private String naming = "ServerFacadeApp/ServerFacadeBean/remote";
+	private String naming = Constantes.BEAN_STRING;
    // private Conexion con; //Conexion SQL Temporal
 
     public BusinessDelegate()
     {
         super();
-        //this.inicializarContexto();
-        //this.getServerFacade();
+        this.inicializarContexto();
+        this.getServerFacade();
         //this.getConnection();
+    }
+    
+    public int getTestNumber()
+    {
+    	return this.getModCD().getTest();
     }
     
     @SuppressWarnings({ "unchecked", "unchecked", "unused" })
@@ -31,7 +38,7 @@ public class BusinessDelegate extends ProxyModelo
 			props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
 			//Url completa de ubicacion del servidor de aplicaciones
 
-			props.put(InitialContext.PROVIDER_URL,"jnp://" + ((VistaMain)this.getVista()).getPrinc().getServerIP()+":1099");
+			props.put(InitialContext.PROVIDER_URL,"jnp://localhost:1099"/*"jnp://" + ((VistaMain)this.getVista()).getPrinc().getServerIP()+":1099"*/);
 //			Objeto del tipo InitialContext
 			initialContect = new InitialContext(props);
 		}
