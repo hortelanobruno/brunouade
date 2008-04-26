@@ -10,7 +10,6 @@ import Paneles.PanelNewArt;
 import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
 import Varios.Constantes;
-
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
