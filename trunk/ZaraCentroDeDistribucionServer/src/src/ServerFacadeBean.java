@@ -13,4 +13,9 @@ public class ServerFacadeBean implements ServerFacade
 		
 	}
 
+	public int getTest() {
+		// TODO Auto-generated method stub
+		return 5000000;
+	}
+
 }
