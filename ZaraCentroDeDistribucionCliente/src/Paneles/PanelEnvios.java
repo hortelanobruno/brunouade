@@ -10,12 +10,14 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
+import RemoteMVCFramework.Controlador;
 import Varios.Constantes;
 
 public class PanelEnvios extends javax.swing.JPanel
 {
 	private static final long serialVersionUID = 3058259776916783727L;
 	private MenuPrincipal ref;
+    private ControladorMain cm;
     
     public PanelEnvios(MenuPrincipal mn) 
     {
@@ -29,6 +31,8 @@ public class PanelEnvios extends javax.swing.JPanel
         modelo.insertNodeInto(tio, abuelo, 1);
         jScrollPane2.setViewportView(jTree1);
         this.ref = mn;
+        this.cm = new ControladorMain(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
+        
     }
     
     public void update()
@@ -180,7 +184,10 @@ public class PanelEnvios extends javax.swing.JPanel
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        //Combo de seleccion de tienda
+    	
+    	
+    	
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -188,7 +195,7 @@ public class PanelEnvios extends javax.swing.JPanel
     	int ret = ((ControladorMain)this.ref.getVistaPadre().getControlador()).doGetTestNumber();
     	JOptionPane.showMessageDialog(null, String.valueOf(ret));
     	/*DefaultMutableTreeNode node = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-
+//this.cm.doGetSolicitudes(tienda);
         if (node == null) JOptionPane.showMessageDialog(this, "Debe elegir un tipo de articulo.",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 
         String nodeInfo = (String)node.getUserObject();
