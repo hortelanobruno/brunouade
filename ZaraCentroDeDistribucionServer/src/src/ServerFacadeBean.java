@@ -2,13 +2,13 @@ package src;
 
 import javax.ejb.Stateless;
 import BusinessLogic.ServerFacade;
-import BusinessLogic.SolicitudDistribucion;
+import BusinessLogic.SolicitudDistribucionVO;
 
 @Stateless
 public class ServerFacadeBean implements ServerFacade 
 {
 
-	public void guardarSolicitud(SolicitudDistribucion soldist) {
+	public void guardarSolicitud(SolicitudDistribucionVO soldist) {
 		// TODO Auto-generated method stub
 		
 	}
