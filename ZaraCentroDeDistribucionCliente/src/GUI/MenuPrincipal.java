@@ -1,6 +1,6 @@
 package GUI;
 
-import BusinessLogic.SolicitudDistribucion;
+import BusinessLogic.SolicitudDistribucionVO;
 import BusinessLogic.VistaMain;
 import Paneles.PanelConfig;
 import Paneles.PanelDB;
@@ -65,7 +65,7 @@ public class MenuPrincipal extends javax.swing.JFrame
         }
     }
     
-    public void fillSDTable(SolicitudDistribucion soldis)
+    public void fillSDTable(SolicitudDistribucionVO soldis)
     {
     	if(activePanel instanceof PanelSolDist) ((PanelSolDist)activePanel).fillSDTable(soldis);
     }

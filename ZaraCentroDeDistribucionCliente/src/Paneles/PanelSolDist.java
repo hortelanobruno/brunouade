@@ -2,9 +2,9 @@ package Paneles;
 
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloRopa;
-import BusinessLogic.ControladorMain;
 import BusinessLogic.BusinessDelegate;
 import BusinessLogic.SolicitudDistribucion;
+import BusinessLogic.SolicitudDistribucionVO;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
+
+import controladores.ControladorPanelSolDis;
 
 import Varios.Constantes;
 
@@ -39,7 +41,7 @@ public class PanelSolDist extends javax.swing.JPanel
         }); 
     }
 
-    public void fillSDTable(SolicitudDistribucion soldis)
+    public void fillSDTable(SolicitudDistribucionVO soldis)
     {
         dtm = (DefaultTableModel) jTable1.getModel();
         
@@ -229,7 +231,7 @@ public class PanelSolDist extends javax.swing.JPanel
      ///Guardar pedido 
         dtm = (DefaultTableModel) jTable1.getModel();
         SolicitudDistribucion soldis = new SolicitudDistribucion();
-        ((ControladorMain)ref.getVistaPadre().getControlador()).doGuardarSolicitud(soldis);
+        ((ControladorPanelSolDis)ref.getVistaPadre().getControlador()).doGuardarSolicitud(soldis);
         //JOptionPane.showMessageDialog(this, "Operacion concretada.");
         new Dialogo3Opciones("Operacion concretada",this.ref).setVisible(true);
         //ref.ponerPanelPrincipal();
@@ -247,7 +249,7 @@ public class PanelSolDist extends javax.swing.JPanel
             //Cargar los table
             ref.getJTextArea1().append("Archivo Cargado\n");
             String url = chooser.getPath();
-            ((ControladorMain)ref.getVistaPadre().getControlador()).doMostrarSolicitud(url);
+            ((ControladorPanelSolDis)ref.getVistaPadre().getControlador()).doMostrarSolicitud(url);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     

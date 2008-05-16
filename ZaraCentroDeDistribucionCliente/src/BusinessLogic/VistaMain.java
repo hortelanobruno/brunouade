@@ -21,7 +21,7 @@ public class VistaMain extends Vista
         getPrinc().updatePanel();
     }
 
-    public void fillSDTable(SolicitudDistribucion soldist)
+    public void fillSDTable(SolicitudDistribucionVO soldist)
     {
         this.getPrinc().fillSDTable(soldist);
     }

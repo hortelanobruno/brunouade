@@ -1,11 +1,9 @@
 package Paneles;
 
-import BusinessLogic.ControladorMain;
 import GUI.DirectoryChooser;
 import GUI.MenuPrincipal;
-
 import javax.swing.JOptionPane;
-
+import controladores.ControladorPanelConfig;
 import Varios.Constantes;
 
 public class PanelConfig extends javax.swing.JPanel 
@@ -104,7 +102,7 @@ public class PanelConfig extends javax.swing.JPanel
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         
-        String ret = ((ControladorMain)this.ref.getVistaPadre().getControlador()).doSaveConfigFile(jTextField1.getText(), jTextField2.getText());
+        String ret = ((ControladorPanelConfig)this.ref.getVistaPadre().getControlador()).doSaveConfigFile(jTextField1.getText(), jTextField2.getText());
         
         if(ret.equalsIgnoreCase("Archivo grabado"))
         {

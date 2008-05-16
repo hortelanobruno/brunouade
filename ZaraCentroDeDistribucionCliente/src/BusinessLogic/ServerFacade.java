@@ -5,6 +5,6 @@ import javax.ejb.Remote;
 @Remote
 public interface ServerFacade 
 {
-	public void guardarSolicitud(SolicitudDistribucion soldist);
+	public void guardarSolicitud(SolicitudDistribucionVO soldist);
 	public int getTest();
 }

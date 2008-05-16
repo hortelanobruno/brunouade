@@ -1,7 +1,6 @@
 package Paneles;
 
 import BusinessLogic.Articulo;
-import BusinessLogic.ControladorMain;
 import GUI.MenuPrincipal;
 
 import java.util.Vector;
@@ -10,6 +9,8 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
+import controladores.ControladorPanelSolDis;
+
 import RemoteMVCFramework.Controlador;
 import Varios.Constantes;
 
@@ -17,7 +18,7 @@ public class PanelEnvios extends javax.swing.JPanel
 {
 	private static final long serialVersionUID = 3058259776916783727L;
 	private MenuPrincipal ref;
-    private ControladorMain cm;
+    private ControladorPanelSolDis cm;
     
     public PanelEnvios(MenuPrincipal mn) 
     {
@@ -31,7 +32,7 @@ public class PanelEnvios extends javax.swing.JPanel
         modelo.insertNodeInto(tio, abuelo, 1);
         jScrollPane2.setViewportView(jTree1);
         this.ref = mn;
-        this.cm = new ControladorMain(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
+        this.cm = new ControladorPanelSolDis(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
         
     }
     
@@ -192,7 +193,7 @@ public class PanelEnvios extends javax.swing.JPanel
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-    	int ret = ((ControladorMain)this.ref.getVistaPadre().getControlador()).doGetTestNumber();
+    	int ret = ((ControladorPanelSolDis)this.ref.getVistaPadre().getControlador()).doGetTestNumber();
     	JOptionPane.showMessageDialog(null, String.valueOf(ret));
     	/*DefaultMutableTreeNode node = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
 //this.cm.doGetSolicitudes(tienda);

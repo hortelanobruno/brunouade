@@ -1,11 +1,5 @@
-package BusinessLogic;
+package controladores;
 
-import RemoteMVCFramework.Controlador;
-import RemoteMVCFramework.ProxyModelo;
-import RemoteMVCFramework.Vista;
-import Varios.FileReaderWrapper;
-
-import com.thoughtworks.xstream.XStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,36 +7,17 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class ControladorMain extends Controlador
-{
-    public ControladorMain(ProxyModelo mod, Vista vis) 
-    {
-        super(mod, vis);
-    }
-    
-    public int doGetTestNumber()
-    {
-    	return ((BusinessDelegate)this.getModelo()).getTestNumber();
-    }
+import RemoteMVCFramework.Controlador;
+import RemoteMVCFramework.ProxyModelo;
+import RemoteMVCFramework.Vista;
 
-    private SolicitudDistribucion parseXMLSD(String url)
-    {
-        FileReaderWrapper fileReader = new FileReaderWrapper(url);
-        String XML = fileReader.obtenerContenido();
-        XStream xstream = new XStream();
+public class ControladorPanelConfig extends Controlador{
 
-
-        xstream.alias("solicituddistribucion", SolicitudDistribucion.class);
-        xstream.alias("articuloropa", ArticuloRopa.class);
-        xstream.alias("articulohogar", ArticuloHogar.class);
-        xstream.alias("tienda", Tienda.class);
-
-        SolicitudDistribucion sol = (SolicitudDistribucion) xstream.fromXML(XML);
-
-        return sol;
-    }
-
-    @SuppressWarnings("finally")
+	public ControladorPanelConfig(ProxyModelo mod, Vista vis) {
+		super(mod, vis);
+	}
+	
+	 @SuppressWarnings("finally")
 	public String doSaveConfigFile(String url, String ip)
     {
         PrintWriter output = null;
@@ -121,21 +96,5 @@ public class ControladorMain extends Controlador
             output.close();
             return "Archivo grabado";
         }
-    }
-
-    public Vector<Solicitud> doGetSolicitudes(String tienda)
-    {
-    	return null;
-    }
-
-    public void doMostrarSolicitud(String url)
-    {
-        ((VistaMain)this.getVista()).fillSDTable(this.parseXMLSD(url));
-        ((VistaMain)this.getVista()).actualizar();
-    }
-
-    public void doGuardarSolicitud(SolicitudDistribucion soldis)
-    {
-        ((BusinessDelegate)(this.getModelo())).guardarSolicitud(soldis);
     }
 }
