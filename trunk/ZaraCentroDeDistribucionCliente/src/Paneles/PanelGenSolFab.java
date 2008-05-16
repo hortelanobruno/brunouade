@@ -6,6 +6,7 @@
 
 package Paneles;
 
+import controladores.ControladorPanelEnvios;
 import GUI.MenuPrincipal;
 
 /**
@@ -15,9 +16,13 @@ import GUI.MenuPrincipal;
 public class PanelGenSolFab extends javax.swing.JPanel {
 
 	private static final long serialVersionUID = 4022189607233893727L;
+	private ControladorPanelEnvios controlador;
+	private MenuPrincipal ref;
 	/** Creates new form PanelGenSolFab */
     public PanelGenSolFab(MenuPrincipal r) {
         initComponents();
+        this.ref = r;
+        this.controlador = new ControladorPanelEnvios(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
     }
 
     public void update()

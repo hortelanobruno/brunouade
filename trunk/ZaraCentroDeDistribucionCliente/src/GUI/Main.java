@@ -1,7 +1,7 @@
 package GUI;
 
-import BusinessLogic.BusinessDelegate;
 import BusinessLogic.VistaMain;
+import BusinessLogic.BusinessDelegate;
 
 public class Main 
 {
