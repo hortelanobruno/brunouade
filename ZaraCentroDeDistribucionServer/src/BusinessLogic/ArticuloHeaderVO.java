@@ -6,13 +6,13 @@ public class ArticuloHeaderVO implements Serializable{
 	
 	private String descripcion;
 	private String referencia;
-	private int stock;
+	private int cantidad;
 	
 	public ArticuloHeaderVO(String d, String r, int s) {
 		
 		this.descripcion = d;
 		this.referencia = r;
-		this.stock = s;
+		this.cantidad = s;
 	}
 	
 	public ArticuloHeaderVO() {
@@ -32,11 +32,11 @@ public class ArticuloHeaderVO implements Serializable{
 	public void setReferencia(String referencia) {
 		this.referencia = referencia;
 	}
-	public int getStock() {
-		return stock;
+	public int getCantidad() {
+		return cantidad;
 	}
-	public void setStock(int stock) {
-		this.stock = stock;
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
 
 }
