@@ -79,7 +79,7 @@ public class BusinessDelegate extends ProxyModelo
     	}
     }*/
      
-     public void guardarSolicitud(SolicitudDistribucion soldis)
+     public void guardarSolicitud(SolicitudDistribucionVO soldis)
      {
         try
         {
