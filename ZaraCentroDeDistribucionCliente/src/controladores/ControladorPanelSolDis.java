@@ -4,18 +4,13 @@ import BusinessLogic.BusinessDelegate;
 import BusinessLogic.SolicitudDistribucionVO;
 import BusinessLogic.SolicitudVO;
 import BusinessLogic.TiendaVO;
-import BusinessLogic.VistaMain;
 import RemoteMVCFramework.Controlador;
 import RemoteMVCFramework.ProxyModelo;
 import RemoteMVCFramework.Vista;
 import Varios.FileReaderWrapper;
+import BusinessLogic.VistaMain;
 
 import com.thoughtworks.xstream.XStream;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
 import java.util.Vector;
 
 public class ControladorPanelSolDis extends Controlador

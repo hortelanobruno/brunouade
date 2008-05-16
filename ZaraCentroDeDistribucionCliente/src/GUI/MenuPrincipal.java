@@ -1,7 +1,6 @@
 package GUI;
 
 import BusinessLogic.SolicitudDistribucionVO;
-import BusinessLogic.VistaMain;
 import Paneles.PanelConfig;
 import Paneles.PanelDB;
 import Paneles.PanelEnvios;
@@ -10,6 +9,8 @@ import Paneles.PanelNewArt;
 import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
 import Varios.Constantes;
+import BusinessLogic.VistaMain;
+
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
@@ -23,6 +24,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
+import controladores.ControladorPanelConfig;
 
 public class MenuPrincipal extends javax.swing.JFrame 
 {
@@ -896,7 +899,7 @@ public class MenuPrincipal extends javax.swing.JFrame
         // panel configuracion
         if(!isPanelConfigSelected)
         {
-            panelConfig = new PanelConfig(this);
+        	panelConfig = new PanelConfig(this);
             ponerPanel(panelConfig);
         }
         
