@@ -1,35 +1,27 @@
 package BusinessLogic;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Vector;
 
-public abstract class Solicitud 
+import javax.persistence.Transient;
+
+public abstract class Solicitud implements Serializable
 {
-	private int numero;
-	private Vector<ArticuloHogar> articuloshogar = new Vector<ArticuloHogar>();
-    private Vector<ArticuloRopa> articulosropa = new Vector<ArticuloRopa>();
-    private Date fechaEmision;
+	protected int numero;
+	protected Collection<Articulo> articulo = new Vector<Articulo>();
+    protected Date fechaEmision;
     
-	public Vector<ArticuloHogar> getArticuloshogar() 
-	{
-		return articuloshogar;
+	public Solicitud() {
+		// TODO Auto-generated constructor stub
 	}
 	
-	public void setArticuloshogar(Vector<ArticuloHogar> articuloshogar) 
-	{
-		this.articuloshogar = articuloshogar;
+	public Solicitud(int n, Collection<Articulo> a, Date f){
+		this.numero = n;
+		this.articulo = a;
+		this.fechaEmision = f;
 	}
-	
-	public Vector<ArticuloRopa> getArticulosropa()
-	{
-		return articulosropa;
-	}
-	
-	public void setArticulosropa(Vector<ArticuloRopa> articulosropa) 
-	{
-		this.articulosropa = articulosropa;
-	}
-	
 	public int getNumero() 
 	{
 		return numero;
@@ -39,16 +31,14 @@ public abstract class Solicitud
 	{
 		this.numero = numero;
 	}
-	
-	public void agregarArticuloRopa(ArticuloRopa ar)
-    {
-		this.getArticulosropa().add(ar);
-    }
 
-    public void agregarArticuloHogar(ArticuloHogar ar)
-    {
-        this.getArticuloshogar().add(ar);
-    }
+	public Collection<Articulo> getArticulo() {
+		return articulo;
+	}
+
+	public void setArticulo(Collection<Articulo> articulo) {
+		this.articulo = articulo;
+	}
 
 	public Date getFecha()
 	{
@@ -59,5 +49,25 @@ public abstract class Solicitud
 	{
 		this.fechaEmision = fecha;
 	}
+	
+	@Transient
+	public SolicitudVO getVO(){
+		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
+		/*	for(int i = 0; i< this.getArticulo().size();i++)
+			articulos.add(new ArticuloHeaderVO(this.getArticulo())*/
+		SolicitudVO vo = new SolicitudVO(numero,articulos,fechaEmision);
+		return vo;
+	}
+
+	public void setVO(SolicitudVO vo){
+		Collection<Articulo> articulos = new Vector<Articulo>();
+		/*	for(int i = 0; i< this.getArticulo().size();i++)
+			articulos.add(new ArticuloHeaderVO(this.getArticulo())*/
+		
+		
+		this.setNumero(vo.getNumero());
+		this.setArticulo(articulos);
+		this.setFecha(vo.getFechaEmision());
+	}	
     
 }

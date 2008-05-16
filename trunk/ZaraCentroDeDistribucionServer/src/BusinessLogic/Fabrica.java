@@ -1,0 +1,52 @@
+package BusinessLogic;
+
+import java.io.Serializable;
+
+import javax.persistence.Transient;
+
+public class Fabrica implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4851504514650207347L;
+	private String nombreFabrica;
+	private int codigoFabrica;
+	
+	public Fabrica() {
+	
+	}
+	
+	public Fabrica(int c, String n){
+		this.nombreFabrica = n;
+		this.codigoFabrica = c;
+	}
+
+	public int getCodigoFabrica() {
+		return codigoFabrica;
+	}
+
+	public void setCodigoFabrica(int codigoFabrica) {
+		this.codigoFabrica = codigoFabrica;
+	}
+
+	public String getNombreFabrica() {
+		return nombreFabrica;
+	}
+
+	public void setNombreFabrica(String nombreFabrica) {
+		this.nombreFabrica = nombreFabrica;
+	}
+	
+	@Transient
+	public FabricaVO getVO(){
+		FabricaVO vo = new FabricaVO(codigoFabrica,nombreFabrica);
+		return vo;
+	}
+
+	public void setVO(FabricaVO vo){
+		this.setCodigoFabrica(vo.getCodigoFabrica());
+		this.setNombreFabrica(vo.getNombreFabrica());
+	}
+	
+}
