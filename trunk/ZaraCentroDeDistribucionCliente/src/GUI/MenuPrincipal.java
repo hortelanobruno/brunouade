@@ -1,6 +1,7 @@
 package GUI;
 
 import BusinessLogic.SolicitudDistribucionVO;
+import BusinessLogic.VistaConfig;
 import Paneles.PanelConfig;
 import Paneles.PanelDB;
 import Paneles.PanelEnvios;
@@ -10,7 +11,6 @@ import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
 import Varios.Constantes;
 import BusinessLogic.VistaMain;
-
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
@@ -24,13 +24,14 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
 import controladores.ControladorPanelConfig;
+import controladores.ControladorPanelEnvios;
 
 public class MenuPrincipal extends javax.swing.JFrame 
 {
     private static final long serialVersionUID = 7605330696253689864L;
     private VistaMain vistaPadre;
+    private VistaConfig vistaConfig;
     private JPanel activePanel; //este atributo es para saber cual es el panel que se esta mostrando para 
                                 //hacer el update de la vista.
     private String defaltXmlPath;
@@ -899,6 +900,8 @@ public class MenuPrincipal extends javax.swing.JFrame
         // panel configuracion
         if(!isPanelConfigSelected)
         {
+        	this.vistaConfig = new VistaConfig(this.getVistaPadre().getModelo());
+        	ControladorPanelConfig cConf = new ControladorPanelConfig(this.getVistaPadre().getModelo(),this.getVistaConfig());
         	panelConfig = new PanelConfig(this);
             ponerPanel(panelConfig);
         }
@@ -1177,4 +1180,12 @@ public class MenuPrincipal extends javax.swing.JFrame
     {
         this.serverIP = IPServer;
     }
+
+	public VistaConfig getVistaConfig() {
+		return vistaConfig;
+	}
+
+	public void setVistaConfig(VistaConfig vistaConfig) {
+		this.vistaConfig = vistaConfig;
+	}
 }
