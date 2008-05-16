@@ -38,8 +38,8 @@ public class ControladorPanelSolDis extends Controlador
 
 
         xstream.alias("solicituddistribucion", SolicitudDistribucionVO.class);
-        xstream.alias("articuloropa", ArticuloRopa.class);
-        xstream.alias("articulohogar", ArticuloHogar.class);
+        //xstream.alias("articuloropa", ArticuloRopa.class);
+        //xstream.alias("articulohogar", ArticuloHogar.class);
         xstream.alias("tienda", TiendaVO.class);
 
         SolicitudDistribucionVO sol = (SolicitudDistribucionVO) xstream.fromXML(XML);

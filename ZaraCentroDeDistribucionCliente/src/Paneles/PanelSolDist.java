@@ -43,7 +43,7 @@ public class PanelSolDist extends javax.swing.JPanel
 
     public void fillSDTable(SolicitudDistribucionVO soldis)
     {
-        dtm = (DefaultTableModel) jTable1.getModel();
+      /*  dtm = (DefaultTableModel) jTable1.getModel();
         
         Vector<ArticuloRopa> articulosropa = soldis.getArticulosropa();
         Vector<ArticuloHogar> articuloshogar = soldis.getArticuloshogar();
@@ -80,7 +80,7 @@ public class PanelSolDist extends javax.swing.JPanel
             }
         }
 
-        this.validateTable();
+        this.validateTable();*/
     }
     
     private void validateTable()
@@ -230,7 +230,7 @@ public class PanelSolDist extends javax.swing.JPanel
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      ///Guardar pedido 
         dtm = (DefaultTableModel) jTable1.getModel();
-        SolicitudDistribucion soldis = new SolicitudDistribucion();
+        SolicitudDistribucionVO soldis = new SolicitudDistribucionVO();
         ((ControladorPanelSolDis)ref.getVistaPadre().getControlador()).doGuardarSolicitud(soldis);
         //JOptionPane.showMessageDialog(this, "Operacion concretada.");
         new Dialogo3Opciones("Operacion concretada",this.ref).setVisible(true);
