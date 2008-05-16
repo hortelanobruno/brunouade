@@ -10,7 +10,7 @@ public class PanelConfig extends javax.swing.JPanel
 {
 	private static final long serialVersionUID = -1069354742206154096L;
 	private MenuPrincipal ref;
-	ControladorPanelConfig controlador;
+	//ControladorPanelConfig controlador;
 
     public PanelConfig(MenuPrincipal menu) 
     {
@@ -18,7 +18,7 @@ public class PanelConfig extends javax.swing.JPanel
         initComponents();
         this.jTextField1.setText(ref.getDefaltXmlPath());
         this.jTextField2.setText(ref.getServerIP());
-        this.controlador = new ControladorPanelConfig(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
+       // this.controlador = new ControladorPanelConfig(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
     }
     
     public void update()
@@ -104,8 +104,8 @@ public class PanelConfig extends javax.swing.JPanel
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         
-        //String ret = ((ControladorPanelConfig)this.ref.getVistaPadre().getControlador()).doSaveConfigFile(jTextField1.getText(), jTextField2.getText());
-    	String ret = this.controlador.doSaveConfigFile(jTextField1.getText(), jTextField2.getText());
+        String ret = ((ControladorPanelConfig)this.ref.getVistaConfig().getControlador()).doSaveConfigFile(jTextField1.getText(), jTextField2.getText());
+    	//String ret = this.controlador.doSaveConfigFile(jTextField1.getText(), jTextField2.getText());
         
         if(ret.equalsIgnoreCase("Archivo grabado"))
         {
