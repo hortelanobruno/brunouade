@@ -1,16 +1,11 @@
 package Paneles;
 
-import BusinessLogic.ArticuloHogar;
-import BusinessLogic.ArticuloRopa;
-import BusinessLogic.BusinessDelegate;
-import BusinessLogic.SolicitudDistribucion;
+
 import BusinessLogic.SolicitudDistribucionVO;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
-
 import java.awt.Color;
-import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
