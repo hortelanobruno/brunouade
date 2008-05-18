@@ -10,7 +10,7 @@ import javax.persistence.Transient;
 public abstract class Solicitud implements Serializable
 {
 	protected int numero;
-	protected Collection<Articulo> articulo = new Vector<Articulo>();
+	protected Collection<Articulo> articulos = new Vector<Articulo>();
     protected Date fechaEmision;
     
 	public Solicitud() {
@@ -19,7 +19,7 @@ public abstract class Solicitud implements Serializable
 	
 	public Solicitud(int n, Collection<Articulo> a, Date f){
 		this.numero = n;
-		this.articulo = a;
+		this.articulos = a;
 		this.fechaEmision = f;
 	}
 	public int getNumero() 
@@ -33,11 +33,11 @@ public abstract class Solicitud implements Serializable
 	}
 
 	public Collection<Articulo> getArticulo() {
-		return articulo;
+		return articulos;
 	}
 
 	public void setArticulo(Collection<Articulo> articulo) {
-		this.articulo = articulo;
+		this.articulos = articulo;
 	}
 
 	public Date getFecha()
