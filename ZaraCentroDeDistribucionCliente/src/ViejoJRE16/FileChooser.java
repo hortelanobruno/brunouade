@@ -4,7 +4,7 @@
  * Created on March 31, 2008, 3:03 PM
  */
 
-package GUI;
+package ViejoJRE16;
 
 import java.io.File;
 import javax.swing.UnsupportedLookAndFeelException;

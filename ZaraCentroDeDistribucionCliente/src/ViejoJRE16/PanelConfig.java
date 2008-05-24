@@ -1,4 +1,4 @@
-package Paneles;
+package ViejoJRE16;
 
 import GUI.DirectoryChooser;
 import GUI.MenuPrincipal;
