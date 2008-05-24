@@ -1,4 +1,4 @@
-package GUI;
+package ViejoJRE16;
 
 import BusinessLogic.SolicitudDistribucionVO;
 import BusinessLogic.VistaConfig;

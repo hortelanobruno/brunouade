@@ -4,7 +4,7 @@
  * Created on 20 de marzo de 2008, 10:03
  */
 
-package Paneles;
+package ViejoJRE16;
 
 import controladores.ControladorPanelEnvios;
 import GUI.MenuPrincipal;

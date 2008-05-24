@@ -4,7 +4,7 @@
  * Created on March 31, 2008, 5:24 PM
  */
 
-package Paneles;
+package ViejoJRE16;
 
 import javax.swing.JFrame;
 
