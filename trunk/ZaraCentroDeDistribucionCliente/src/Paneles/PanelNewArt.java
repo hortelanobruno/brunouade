@@ -118,12 +118,9 @@ public class PanelNewArt extends javax.swing.JPanel {
                     .add(layout.createSequentialGroup()
                         .add(26, 26, 26)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 286, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(57, 57, 57))
-                            .add(layout.createSequentialGroup()
-                                .add(jLabel1)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)))
+                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 286, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel1))
+                        .add(57, 57, 57)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel2)
                             .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 306, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
@@ -132,7 +129,7 @@ public class PanelNewArt extends javax.swing.JPanel {
                         .add(buttonCargarXML)
                         .add(136, 136, 136)
                         .add(buttonGuardar)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(364, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -149,7 +146,7 @@ public class PanelNewArt extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(buttonCargarXML)
                     .add(buttonGuardar))
-                .add(93, 93, 93))
+                .add(67, 67, 67))
         );
     }// </editor-fold>                        
 

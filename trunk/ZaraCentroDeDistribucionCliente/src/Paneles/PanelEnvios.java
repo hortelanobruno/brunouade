@@ -31,16 +31,19 @@ public class PanelEnvios extends javax.swing.JPanel {
     /** Creates new form PanelEnvios */
     public PanelEnvios(MenuPrincipal menu) {
         initComponents();
-        DefaultMutableTreeNode abuelo = new DefaultMutableTreeNode("Articulos");
-        DefaultTreeModel modelo = new DefaultTreeModel(abuelo);
-        treeArticulos = new JTree(modelo);
-        DefaultMutableTreeNode padre = new DefaultMutableTreeNode("Solicitados");
-        DefaultMutableTreeNode tio = new DefaultMutableTreeNode("Pendientes");
-        modelo.insertNodeInto(padre,abuelo,0);
-        modelo.insertNodeInto(tio, abuelo, 1);
-        jScrollPane2.setViewportView(treeArticulos);
         this.ref = menu;
         this.cm = new ControladorPanelSolDis(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
+        
+        //Esto se reemplasa segun lo que elige en el combo
+        DefaultMutableTreeNode abuelo = new DefaultMutableTreeNode("Solicitudes");
+        DefaultTreeModel modelo = new DefaultTreeModel(abuelo);
+        treeArticulos = new JTree(modelo);
+        DefaultMutableTreeNode padre = new DefaultMutableTreeNode("Solicitud 1");
+        DefaultMutableTreeNode padre2 = new DefaultMutableTreeNode("Solicitud 2");
+        modelo.insertNodeInto(padre,abuelo,0);
+        modelo.insertNodeInto(padre2,abuelo,1);
+        jScrollPane1.setViewportView(treeArticulos);
+        
     }
     
     public void update()
@@ -62,14 +65,10 @@ public class PanelEnvios extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         treeArticulos = new javax.swing.JTree();
         buttonCargar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tableEnviar = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablePendientes = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         buttonEnviarTienda = new javax.swing.JButton();
-        buttonEnviarFabrica = new javax.swing.JButton();
 
         jLabel1.setText("Tienda");
 
@@ -88,24 +87,6 @@ public class PanelEnvios extends javax.swing.JPanel {
                 buttonCargarActionPerformed(evt);
             }
         });
-
-        tableEnviar.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Codigo Art.", "Descripcion", "Cantidad"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tableEnviar);
 
         tablePendientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -127,19 +108,10 @@ public class PanelEnvios extends javax.swing.JPanel {
 
         jLabel2.setText("Articulos Pendientes");
 
-        jLabel3.setText("Articulos a Enviar");
-
         buttonEnviarTienda.setText("Enviar Tienda");
         buttonEnviarTienda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEnviarTiendaActionPerformed(evt);
-            }
-        });
-
-        buttonEnviarFabrica.setText("Enviar Fabrica");
-        buttonEnviarFabrica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonEnviarFabricaActionPerformed(evt);
             }
         });
 
@@ -148,59 +120,50 @@ public class PanelEnvios extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
+                        .addContainerGap()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 149, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(layout.createSequentialGroup()
                                 .add(jLabel1)
                                 .add(30, 30, 30)
-                                .add(comboBoxTiendas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(73, 73, 73)
-                                .add(jLabel2))
-                            .add(layout.createSequentialGroup()
-                                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(93, 93, 93)
-                                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 212, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(46, 46, 46)
+                                .add(comboBoxTiendas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 253, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel3))
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .add(layout.createSequentialGroup()
+                                .add(170, 170, 170)
+                                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 335, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(layout.createSequentialGroup()
+                                .add(280, 280, 280)
+                                .add(jLabel2))))
                     .add(layout.createSequentialGroup()
+                        .add(49, 49, 49)
                         .add(buttonCargar)
-                        .add(111, 111, 111)
-                        .add(buttonEnviarFabrica)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 178, Short.MAX_VALUE)
-                        .add(buttonEnviarTienda)
-                        .add(168, 168, 168))))
+                        .add(323, 323, 323)
+                        .add(buttonEnviarTienda)))
+                .addContainerGap(376, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                .add(67, 67, 67)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(layout.createSequentialGroup()
-                        .add(72, 72, 72)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jLabel1)
-                            .add(comboBoxTiendas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(comboBoxTiendas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel2))
                         .add(44, 44, 44)
-                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(51, 51, 51))
                     .add(layout.createSequentialGroup()
-                        .add(67, 67, 67)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel2)
-                            .add(jLabel3))
-                        .add(38, 38, 38)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 176, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(29, 29, 29)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(buttonCargar)
-                            .add(buttonEnviarTienda)
-                            .add(buttonEnviarFabrica))))
-                .addContainerGap(151, Short.MAX_VALUE))
+                        .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)))
+                .add(15, 15, 15)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(buttonCargar)
+                    .add(buttonEnviarTienda))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
     }// </editor-fold>                        
 

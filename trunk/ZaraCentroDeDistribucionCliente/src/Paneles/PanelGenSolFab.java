@@ -65,11 +65,19 @@ public class PanelGenSolFab extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
         buttonEnviar.setText("Enviar");
@@ -93,19 +101,19 @@ public class PanelGenSolFab extends javax.swing.JPanel {
             .add(layout.createSequentialGroup()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
+                        .add(47, 47, 47)
+                        .add(buttonEnviar)
+                        .add(88, 88, 88)
+                        .add(buttonVistaPrevia))
+                    .add(layout.createSequentialGroup()
                         .add(31, 31, 31)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 498, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 657, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(layout.createSequentialGroup()
                                 .add(jLabel1)
                                 .add(108, 108, 108)
-                                .add(buttonCargarPendientes))))
-                    .add(layout.createSequentialGroup()
-                        .add(47, 47, 47)
-                        .add(buttonEnviar)
-                        .add(112, 112, 112)
-                        .add(buttonVistaPrevia)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                                .add(buttonCargarPendientes)))))
+                .addContainerGap(351, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -114,13 +122,13 @@ public class PanelGenSolFab extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel1)
                     .add(buttonCargarPendientes))
-                .add(35, 35, 35)
+                .add(36, 36, 36)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 225, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(27, 27, 27)
+                .add(26, 26, 26)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(buttonEnviar)
                     .add(buttonVistaPrevia))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
     }// </editor-fold>                        
 
