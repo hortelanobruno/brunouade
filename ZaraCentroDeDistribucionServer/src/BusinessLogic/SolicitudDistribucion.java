@@ -5,26 +5,32 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Vector;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
+@Entity
+@DiscriminatorValue("fabricacion")
 public class SolicitudDistribucion extends Solicitud implements Serializable
 {
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1694955054674640622L;
 	private Tienda tienda;
+	protected Collection<Articulo> articulos;
     
 	public SolicitudDistribucion() {
 		super();
+		this.articulos=new Vector<Articulo>();
 	}
 	
 	public SolicitudDistribucion(int n, Collection<Articulo> a, Date f, Tienda t){
-		super(n,a,f);
+		super(n,f);
 		this.tienda = t;
+		this.articulos = a;
 	}
 	
 	
+	@ManyToOne
 	public Tienda getTienda() 
 	{
 		return tienda;
@@ -51,9 +57,16 @@ public class SolicitudDistribucion extends Solicitud implements Serializable
 		
 		
 		this.setNumero(vo.getNumero());
-		this.setArticulo(articulos);
+		this.setArticulos(articulos);
 		this.setFecha(vo.getFechaEmision());
 		this.setTienda(new Tienda(vo.getTienda().getCodigoTienda(),vo.getTienda().getNombreTienda()));
 	}
-	
+
+	public Collection<Articulo> getArticulos() {
+		return articulos;
+	}
+
+	public void setArticulos(Collection<Articulo> articulos) {
+		this.articulos = articulos;
+	}
 }

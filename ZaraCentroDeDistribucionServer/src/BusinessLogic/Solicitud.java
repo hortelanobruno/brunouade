@@ -5,23 +5,41 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Vector;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
-public abstract class Solicitud implements Serializable
+@Entity
+@Table(name="Solicitudes")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="discriminador",discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("solicitud")
+public class Solicitud implements Serializable
 {
+	private static final long serialVersionUID = -6174778687164025228L;
 	protected int numero;
-	protected Collection<Articulo> articulos = new Vector<Articulo>();
     protected Date fechaEmision;
+    protected CentroDistribucion centro;
     
 	public Solicitud() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Solicitud(int n, Collection<Articulo> a, Date f){
-		this.numero = n;
-		this.articulos = a;
+	public Solicitud(int n, Date f){
+		this.numero = n;		
 		this.fechaEmision = f;
 	}
+	
+	@Id
+	@Column
 	public int getNumero() 
 	{
 		return numero;
@@ -32,14 +50,7 @@ public abstract class Solicitud implements Serializable
 		this.numero = numero;
 	}
 
-	public Collection<Articulo> getArticulo() {
-		return articulos;
-	}
-
-	public void setArticulo(Collection<Articulo> articulo) {
-		this.articulos = articulo;
-	}
-
+	@Column
 	public Date getFecha()
 	{
 		return fechaEmision;
@@ -60,14 +71,17 @@ public abstract class Solicitud implements Serializable
 	}
 
 	public void setVO(SolicitudVO vo){
-		Collection<Articulo> articulos = new Vector<Articulo>();
-		/*	for(int i = 0; i< this.getArticulo().size();i++)
-			articulos.add(new ArticuloHeaderVO(this.getArticulo())*/
-		
-		
 		this.setNumero(vo.getNumero());
-		this.setArticulo(articulos);
 		this.setFecha(vo.getFechaEmision());
+	}
+
+	@ManyToOne
+	public CentroDistribucion getCentro() {
+		return centro;
+	}
+
+	public void setCentro(CentroDistribucion centro) {
+		this.centro = centro;
 	}	
     
 }

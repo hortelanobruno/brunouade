@@ -4,26 +4,41 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Vector;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
+@Entity
+@DiscriminatorValue("fabricacion")
 public class SolicitudDeFabricacion extends Solicitud
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4970004249380972083L;
 	private Fabrica fabrica;
+	protected Collection<Articulo> articulos;
 	
 	public SolicitudDeFabricacion() {
 		super();
+		this.articulos = new Vector<Articulo>();
 	}
 	
 	public SolicitudDeFabricacion(int n, Collection<Articulo> a, Date f, Fabrica fa){
-		super(n,a,f);
+		super(n,f);
 		this.fabrica = fa;
+		this.articulos = a;
 	}
 	
+	@OneToMany
+	public Collection<Articulo> getArticulo() {
+		return articulos;
+	}
 
+	public void setArticulo(Collection<Articulo> articulo) {
+		this.articulos = articulo;
+	}
+	
+	@ManyToOne
 	public Fabrica getFabrica() {
 		return fabrica;
 	}

@@ -2,6 +2,8 @@ package BusinessLogic;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.Transient;
 
 public class Fabrica implements Serializable {
@@ -22,6 +24,8 @@ public class Fabrica implements Serializable {
 		this.codigoFabrica = c;
 	}
 
+	@Id
+	@Column(name="CodFabrica")
 	public int getCodigoFabrica() {
 		return codigoFabrica;
 	}
@@ -30,6 +34,7 @@ public class Fabrica implements Serializable {
 		this.codigoFabrica = codigoFabrica;
 	}
 
+	@Column
 	public String getNombreFabrica() {
 		return nombreFabrica;
 	}

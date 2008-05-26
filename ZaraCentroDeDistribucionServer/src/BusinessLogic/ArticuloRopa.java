@@ -1,7 +1,14 @@
 package BusinessLogic;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("hogar")
 public class ArticuloRopa extends Articulo 
 {
+	private static final long serialVersionUID = -1550636008034632214L;
 	//descripcion: Camiseta Algodon M/C 
 	private String talle;
 	private String origen;
@@ -11,6 +18,7 @@ public class ArticuloRopa extends Articulo
 		super();
 	}
 	
+	@Column
 	public String getOrigen() 
 	{
 		return origen;
@@ -21,7 +29,7 @@ public class ArticuloRopa extends Articulo
 		this.origen = origen;
 	}
 
-	
+	@Column
 	public String getTalle() 
 	{
 		return talle;
