@@ -5,25 +5,29 @@
 
 package BusinessLogic;
 
-import java.util.Vector;
-/**
- *
- * @author Administrador
- */
-public class CentroDistribucion {
+import javax.persistence.Column;
+import javax.persistence.Id;
 
-    private Vector<SolicitudDistribucion> solicitudes = new Vector<SolicitudDistribucion>();
-
-    public Vector<SolicitudDistribucion> getSolicituddistribucion() {
-        return solicitudes;
-    }
-
-    public void setSolicituddistribucion(Vector<SolicitudDistribucion> solicituddistribucion) {
-        this.solicitudes = solicituddistribucion;
-    }
+public class CentroDistribucion 
+{
+	private int codCentro;
+	private String nombreCentro;
+	
+	@Id
+	@Column
+	public int getCodCentro() {
+		return codCentro;
+	}
+	public void setCodCentro(int codCentro) {
+		this.codCentro = codCentro;
+	}
+	@Column
+	public String getNombreCentro() {
+		return nombreCentro;
+	}
+	public void setNombreCentro(String nombreCentro) {
+		this.nombreCentro = nombreCentro;
+	}
     
-    public void agregarSolicitud(SolicitudDistribucion sol){
-        solicitudes.add(sol);
-    }
     
 }
