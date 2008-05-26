@@ -161,17 +161,28 @@ public class PanelSolDist extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre Solicitud", "Tienda", "Codigo Art.", "Descripcion", "Cantidad Pedida", "Stock Actual", "Stock Seleccionado", "Cantidad a Enviar"
+                "Nombre Solicitud", "Tienda", "Codigo Art.", "Descripcion", "Cantidad Pedida", "Stock Actual", "Cantidad a Enviar"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
+        tableArticulos.setEnabled(false);
+        tableArticulos.setRowSelectionAllowed(false);
+        tableArticulos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tableArticulos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tableArticulos);
 
         buttonGuardarPedido.setText("Guardar Pedido");
@@ -188,19 +199,18 @@ public class PanelSolDist extends javax.swing.JPanel {
             .add(layout.createSequentialGroup()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(32, 32, 32)
-                        .add(jLabel1)
-                        .add(96, 96, 96)
-                        .add(buttonCargarXML))
+                        .add(766, 766, 766)
+                        .add(labelValidacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(layout.createSequentialGroup()
-                        .add(43, 43, 43)
+                        .add(32, 32, 32)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(buttonGuardarPedido)
+                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 705, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(layout.createSequentialGroup()
-                                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 581, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(labelValidacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                                .add(jLabel1)
+                                .add(96, 96, 96)
+                                .add(buttonCargarXML))
+                            .add(buttonGuardarPedido))))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -211,14 +221,14 @@ public class PanelSolDist extends javax.swing.JPanel {
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jLabel1)
                             .add(buttonCargarXML))
-                        .add(18, 18, 18)
-                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 204, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(55, 55, 55)
-                        .add(buttonGuardarPedido))
+                        .add(29, 29, 29)
+                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 204, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(layout.createSequentialGroup()
                         .add(155, 155, 155)
                         .add(labelValidacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 21, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 72, Short.MAX_VALUE)
+                .add(buttonGuardarPedido)
+                .add(70, 70, 70))
         );
     }// </editor-fold>                        
 

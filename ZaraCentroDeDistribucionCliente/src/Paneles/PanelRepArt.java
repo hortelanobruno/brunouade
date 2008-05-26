@@ -90,7 +90,7 @@ public class PanelRepArt extends javax.swing.JPanel {
                         .add(buttonGuardar))
                     .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel1))
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(562, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -103,7 +103,7 @@ public class PanelRepArt extends javax.swing.JPanel {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(buttonCargarXML)
                     .add(buttonGuardar))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
     }// </editor-fold>                        
 

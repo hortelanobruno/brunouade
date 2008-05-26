@@ -78,7 +78,7 @@ public class PanelConfig extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(52, 52, 52)
+                .add(401, 401, 401)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
                         .add(buttonGuardar)
@@ -115,7 +115,7 @@ public class PanelConfig extends javax.swing.JPanel {
                     .add(textFieldServidorIP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(75, 75, 75)
                 .add(buttonGuardar)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
     }// </editor-fold>                        
 
