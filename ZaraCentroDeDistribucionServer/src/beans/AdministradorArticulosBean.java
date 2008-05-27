@@ -1,8 +1,12 @@
 package beans;
 
+import java.util.List;
+import java.util.Vector;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloHogarVO;
@@ -46,5 +50,18 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ar.setSeccion(art.getSeccion());
 		em.persist(ar);
 		
+	}
+
+	public Vector<String> getDescripciones(Vector<Integer> cods) 
+	{
+		Vector<String> descs = new Vector<String>();
+		for(int i = 0; i < cods.size();i++)
+		{
+			Query q = em.createQuery("select a.descripcion from articulos a where a.codigo = :codigo");
+			q.setParameter("codigo", cods.elementAt(i));
+			List l = q.getResultList();
+			descs.add((String)l.get(0));
+		}
+		return descs;
 	}
 }
