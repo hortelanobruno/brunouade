@@ -9,6 +9,6 @@ import beans.AdministradorEnvios;
 @Stateless
 public class AdministradorEnviosBean implements AdministradorEnvios 
 {
-	@PersistenceContext(unitName="AdminArts")
+	@PersistenceContext(unitName="CentroDeDistribucion")
 	EntityManager em;
 }
