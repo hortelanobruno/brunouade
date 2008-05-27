@@ -1,8 +1,15 @@
 package beans;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import beans.AdministradorDistribucion;
 
-public @Stateless class AdministradorDistribucionBean implements AdministradorDistribucion {
+@Stateless
+public class AdministradorDistribucionBean implements AdministradorDistribucion 
+{
+	@PersistenceContext(unitName="AdminArts")
+	EntityManager em;
 
 }

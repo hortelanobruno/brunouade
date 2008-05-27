@@ -10,7 +10,8 @@ import BusinessLogic.ArticuloRopa;
 import BusinessLogic.ArticuloRopaVO;
 import beans.AdministradorArticulos;
 
-public @Stateless class AdministradorArticulosBean implements AdministradorArticulos 
+@Stateless
+public class AdministradorArticulosBean implements AdministradorArticulos 
 {
 	@PersistenceContext(unitName="AdminArts")
 	EntityManager em;
