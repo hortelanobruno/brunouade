@@ -13,7 +13,7 @@ import beans.AdministradorArticulos;
 @Stateless
 public class AdministradorArticulosBean implements AdministradorArticulos 
 {
-	@PersistenceContext(unitName="AdminArts")
+	@PersistenceContext(unitName="CentroDeDistribucion")
 	EntityManager em;
 	
 	public void agregarArticuloHogar(ArticuloHogarVO art) 

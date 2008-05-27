@@ -9,6 +9,6 @@ import beans.AdministradorFabricacion;
 @Stateless
 public class AdministradorFabricacionBean implements AdministradorFabricacion 
 {
-	@PersistenceContext(unitName="AdminArts")
+	@PersistenceContext(unitName="CentroDeDistribucion")
 	EntityManager em;
 }

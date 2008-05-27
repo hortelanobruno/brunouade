@@ -9,7 +9,7 @@ import beans.AdministradorDistribucion;
 @Stateless
 public class AdministradorDistribucionBean implements AdministradorDistribucion 
 {
-	@PersistenceContext(unitName="AdminArts")
+	@PersistenceContext(unitName="CentroDeDistribucion")
 	EntityManager em;
 
 }

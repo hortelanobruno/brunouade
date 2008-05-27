@@ -9,6 +9,6 @@ import beans.AdministradorReposicion;
 @Stateless
 public class AdministradorReposicionBean implements AdministradorReposicion 
 {
-	@PersistenceContext(unitName="AdminArts")
+	@PersistenceContext(unitName="CentroDeDistribucion")
 	EntityManager em;
 }
