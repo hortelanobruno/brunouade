@@ -2,8 +2,9 @@ package BusinessLogic;
 
 import java.io.Serializable;
 
-public class TiendaVO implements Serializable {
-	
+public class TiendaVO implements Serializable 
+{
+	private static final long serialVersionUID = 1607295637062830217L;
 	private int codigoTienda;
 	private String nombreTienda;
 	
