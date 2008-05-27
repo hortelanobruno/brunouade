@@ -37,11 +37,15 @@ public class ArticuloHeaderVO implements Serializable
 		this.linea = linea;
 	}
 
-	public ArticuloHeaderVO(String desc, long codigo, int cantidad) {
-		
-		this.descripcion = desc;
-		this.codigo = codigo;
-		this.cantidad = cantidad;
+	public ArticuloHeaderVO(String desc, long codigo, int cantidad,String color,float precio, String linea, String seccion) 
+	{
+		this.setDescripcion(desc);
+		this.setCodigo(codigo);
+		this.setCantidad(cantidad);
+		this.setColor(color);
+		this.setLinea(linea);
+		this.setSeccion(seccion);
+		this.setPrecio(precio);
 	}
 	
 	public ArticuloHeaderVO() {
