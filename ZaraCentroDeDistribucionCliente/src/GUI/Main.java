@@ -1,6 +1,6 @@
 package GUI;
 
-import BusinessLogic.VistaMain;
+import Vistas.VistaMain;
 import BusinessLogic.BusinessDelegate;
 
 public class Main 

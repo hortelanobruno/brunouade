@@ -22,8 +22,6 @@ import javax.swing.UnsupportedLookAndFeelException;
 import controladores.ControladorPanelConfig;
 
 import BusinessLogic.SolicitudDistribucionVO;
-import BusinessLogic.VistaConfig;
-import BusinessLogic.VistaMain;
 import Paneles.PanelConfig;
 import Paneles.PanelDB;
 import Paneles.PanelEnvios;
@@ -32,6 +30,9 @@ import Paneles.PanelNewArt;
 import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
 import Varios.Constantes;
+import Vistas.VistaConfig;
+import Vistas.VistaMain;
+import Vistas.VistaSolDis;
 
 /**
  *
@@ -42,6 +43,7 @@ public class MenuPrincipal extends javax.swing.JFrame
 	private static final long serialVersionUID = 7725034541164342296L;
 	private VistaMain vistaPadre;
     private VistaConfig vistaConfig;
+    private VistaSolDis vistaSolDis;
     private JPanel activePanel; //este atributo es para saber cual es el panel que se esta mostrando para 
     //hacer el update de la vista.
 
@@ -933,5 +935,13 @@ private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {
 
 	public void setVistaConfig(VistaConfig vistaConfig) {
 		this.vistaConfig = vistaConfig;
+	}
+
+	public VistaSolDis getVistaSolDis() {
+		return vistaSolDis;
+	}
+
+	public void setVistaSolDis(VistaSolDis vistaSolDis) {
+		this.vistaSolDis = vistaSolDis;
 	}
 }

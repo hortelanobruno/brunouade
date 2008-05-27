@@ -1,5 +1,6 @@
-package BusinessLogic;
+package Vistas;
 
+import BusinessLogic.SolicitudDistribucionVO;
 import GUI.MenuPrincipal;
 import RemoteMVCFramework.ProxyModelo;
 import RemoteMVCFramework.Vista;
