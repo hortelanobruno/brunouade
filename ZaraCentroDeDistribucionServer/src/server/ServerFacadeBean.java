@@ -1,9 +1,7 @@
 package server;
 
 import java.util.Vector;
-
 import javax.ejb.Stateless;
-
 import BusinessLogic.ArticuloHeaderVO;
 import BusinessLogic.ArticuloHogarVO;
 import BusinessLogic.ArticuloRopaVO;
@@ -11,10 +9,26 @@ import BusinessLogic.ServerFacade;
 import BusinessLogic.SolicitudDistribucionVO;
 import BusinessLogic.SolicitudEnvioVO;
 import BusinessLogic.SolicitudFabricaVO;
+import beans.*;
 
 @Stateless
 public class ServerFacadeBean implements ServerFacade 
 {
+	private AdministradorArticulos admArt;
+	private AdministradorDistribucion admDist;
+	private AdministradorEnvios admEnv;
+	private AdministradorFabricacion admFab;
+	private AdministradorReposicion admRep;
+	
+	public ServerFacadeBean()
+	{
+		admArt = new AdministradorArticulosBean();
+		admDist = new AdministradorDistribucionBean();
+		admEnv = new AdministradorEnviosBean();
+		admFab = new AdministradorFabricacionBean();
+		admRep = new AdministradorReposicionBean();
+	}
+	
 	public int getTest() {
 		// TODO Auto-generated method stub
 		return 5000000;
@@ -70,8 +84,9 @@ public class ServerFacadeBean implements ServerFacade
 		
 	}
 
-	public void guardarArticuloHogar(ArticuloHogarVO art) {
-		// TODO Auto-generated method stub
+	public void guardarArticuloHogar(ArticuloHogarVO art) 
+	{
+		this.admArt.agregarArticuloHogar(art);
 		
 	}
 
@@ -79,6 +94,4 @@ public class ServerFacadeBean implements ServerFacade
 		// TODO Auto-generated method stub
 		
 	}
-
-
 }
