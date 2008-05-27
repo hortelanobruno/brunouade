@@ -1,7 +1,6 @@
 package ViejoJRE16;
 
 import BusinessLogic.SolicitudDistribucionVO;
-import BusinessLogic.VistaConfig;
 import Paneles.PanelConfig;
 import Paneles.PanelDB;
 import Paneles.PanelEnvios;
@@ -10,7 +9,9 @@ import Paneles.PanelNewArt;
 import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
 import Varios.Constantes;
-import BusinessLogic.VistaMain;
+import Vistas.VistaConfig;
+import Vistas.VistaMain;
+
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.io.BufferedReader;

@@ -4,6 +4,7 @@ import RemoteMVCFramework.ProxyModelo;
 import Varios.Constantes;
 
 import java.util.Hashtable;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.InitialContext;
@@ -79,6 +80,12 @@ public class BusinessDelegate extends ProxyModelo
     	}
     }*/
      
+    public Vector<String> getDescripciones(Vector<Integer> codigos){
+    	
+    	return
+    }
+    
+    
      public void guardarSolicitud(SolicitudDistribucionVO soldis)
      {
         try

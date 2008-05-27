@@ -1,4 +1,4 @@
-package BusinessLogic;
+package Vistas;
 
 import RemoteMVCFramework.ProxyModelo;
 import RemoteMVCFramework.Vista;
@@ -10,7 +10,7 @@ public class VistaConfig extends Vista {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
+
 	public void actualizar() {
 		// TODO Auto-generated method stub
 		
