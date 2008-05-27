@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import BusinessLogic.Articulo;
+import BusinessLogic.ArticuloHeaderVO;
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloHogarVO;
 import BusinessLogic.ArticuloRopa;
@@ -50,7 +51,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ar.setPrecio(art.getPrecio());
 		ar.setSeccion(art.getSeccion());
 		em.persist(ar);
-		
 	}
 
 	public Vector<String> getDescripciones(Vector<Integer> cods) 
@@ -64,5 +64,28 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			descs.add(((Articulo)l.get(0)).getDescripcion());
 		}
 		return descs;
+	}
+
+	public Vector<Integer> getStocks(Vector<Integer> cods) 
+	{
+		Vector<Integer> descs = new Vector<Integer>();
+		for(int i = 0; i < cods.size();i++)
+		{
+			Query q = em.createQuery("select a from articulos a where a.codigo = :codigo");
+			q.setParameter("codigo", cods.elementAt(i));
+			List l = q.getResultList();
+			descs.add(((Articulo)l.get(0)).getCantidad());
+		}
+		return descs;
+	}
+
+	public void actualizarStock(Vector<ArticuloHeaderVO> arts) 
+	{
+		for(int i = 0; i < arts.size();i++)
+		{
+			Articulo a = em.find(Articulo.class, arts.elementAt(i).getCodigo());
+			a.setVO(arts.elementAt(i));
+			em.merge(a);
+		}
 	}
 }
