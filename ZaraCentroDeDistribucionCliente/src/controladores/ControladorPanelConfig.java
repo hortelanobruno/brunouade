@@ -6,9 +6,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.Vector;
-
-import javax.swing.JPanel;
-
 import RemoteMVCFramework.Controlador;
 import RemoteMVCFramework.ProxyModelo;
 import RemoteMVCFramework.Vista;
