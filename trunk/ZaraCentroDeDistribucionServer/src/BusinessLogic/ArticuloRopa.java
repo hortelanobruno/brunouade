@@ -3,6 +3,7 @@ package BusinessLogic;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 @Entity
 @DiscriminatorValue("hogar")
@@ -38,5 +39,16 @@ public class ArticuloRopa extends Articulo
 	public void setTalle(String talle) 
 	{
 		this.talle = talle;
-	}	
+	}
+	
+	@Transient
+	public ArticuloRopaVO getArticuloRopaVO()
+	{
+		return null;
+	}
+	
+	public void setArticuloRopaVO(ArticuloRopaVO art)
+	{
+		
+	}
 }
