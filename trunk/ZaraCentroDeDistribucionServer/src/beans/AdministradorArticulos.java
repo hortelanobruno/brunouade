@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.Vector;
+
 import javax.ejb.Remote;
 
 import BusinessLogic.*;
@@ -9,4 +11,5 @@ public interface AdministradorArticulos
 {
 	public void agregarArticuloHogar(ArticuloHogarVO art);
 	public void agregarArticuloRopa(ArticuloRopaVO art);
+	public Vector<String> getDescripciones(Vector<Integer> cods);
 }
