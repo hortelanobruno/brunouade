@@ -12,7 +12,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import src.Constantes;
+
+import server.Constantes;
 
 @Entity
 @Table(name="Articulos")
