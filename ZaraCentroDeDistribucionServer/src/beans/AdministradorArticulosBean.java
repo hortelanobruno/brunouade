@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import BusinessLogic.Articulo;
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloHogarVO;
 import BusinessLogic.ArticuloRopa;
@@ -57,10 +58,10 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		Vector<String> descs = new Vector<String>();
 		for(int i = 0; i < cods.size();i++)
 		{
-			Query q = em.createQuery("select a.descripcion from articulos a where a.codigo = :codigo");
+			Query q = em.createQuery("select a from articulos a where a.codigo = :codigo");
 			q.setParameter("codigo", cods.elementAt(i));
 			List l = q.getResultList();
-			descs.add((String)l.get(0));
+			descs.add(((Articulo)l.get(0)).getDescripcion());
 		}
 		return descs;
 	}
