@@ -103,8 +103,9 @@ public class Articulo implements Serializable
 	}
 	
 	@Transient
-	public ArticuloHeaderVO getVO(){
-		ArticuloHeaderVO vo = new ArticuloHeaderVO(descripcion,codigo,cantidad);
+	public ArticuloHeaderVO getVO()
+	{
+		ArticuloHeaderVO vo = new ArticuloHeaderVO(descripcion,codigo,cantidad,color,precio,linea,seccion);
 		return vo;
 	}
 
@@ -112,6 +113,10 @@ public class Articulo implements Serializable
 		this.setCodigo(vo.getCodigo());
 		this.setDescripcion(vo.getDescripcion());
 		this.setCantidad(vo.getCantidad());
+		this.setColor(vo.getColor());
+		this.setLinea(vo.getLinea());
+		this.setPrecio(vo.getPrecio());
+		this.setSeccion(vo.getSeccion());
 	}
 
 	@Id
