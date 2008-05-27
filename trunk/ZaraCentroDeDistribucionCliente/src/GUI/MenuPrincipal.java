@@ -37,9 +37,10 @@ import Varios.Constantes;
  *
  * @author  Administrador
  */
-public class MenuPrincipal extends javax.swing.JFrame {
-
-    private VistaMain vistaPadre;
+public class MenuPrincipal extends javax.swing.JFrame 
+{
+	private static final long serialVersionUID = 7725034541164342296L;
+	private VistaMain vistaPadre;
     private VistaConfig vistaConfig;
     private JPanel activePanel; //este atributo es para saber cual es el panel que se esta mostrando para 
     //hacer el update de la vista.
@@ -178,7 +179,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuItemAyuda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+        
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 

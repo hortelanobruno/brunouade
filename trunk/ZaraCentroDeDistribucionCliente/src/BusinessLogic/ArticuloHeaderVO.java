@@ -2,17 +2,46 @@ package BusinessLogic;
 
 import java.io.Serializable;
 
-public class ArticuloHeaderVO implements Serializable{
-	
+public class ArticuloHeaderVO implements Serializable
+{	
+	private static final long serialVersionUID = -4113593238894788284L;
 	private String descripcion;
-	private String referencia;
+	private long codigo;
 	private int cantidad;
+	private String linea;
+	private float precio;
+	private String seccion;
+	private String color;
 	
-	public ArticuloHeaderVO(String d, String r, int s) {
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public float getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(float precio) {
+		this.precio = precio;
+	}
+
+	public String getLinea() {
+		return linea;
+	}
+
+	public void setLinea(String linea) {
+		this.linea = linea;
+	}
+
+	public ArticuloHeaderVO(String desc, long codigo, int cantidad) {
 		
-		this.descripcion = d;
-		this.referencia = r;
-		this.cantidad = s;
+		this.descripcion = desc;
+		this.codigo = codigo;
+		this.cantidad = cantidad;
 	}
 	
 	public ArticuloHeaderVO() {
@@ -26,12 +55,6 @@ public class ArticuloHeaderVO implements Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public String getReferencia() {
-		return referencia;
-	}
-	public void setReferencia(String referencia) {
-		this.referencia = referencia;
-	}
 	public int getCantidad() {
 		return cantidad;
 	}
@@ -39,4 +62,19 @@ public class ArticuloHeaderVO implements Serializable{
 		this.cantidad = cantidad;
 	}
 
+	public long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getSeccion() {
+		return seccion;
+	}
+
+	public void setSeccion(String seccion) {
+		this.seccion = seccion;
+	}
 }
