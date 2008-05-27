@@ -179,6 +179,7 @@ public class MenuPrincipal extends javax.swing.JFrame
         menuItemAyuda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle(Constantes.APPLICATION_NAME);
         
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
