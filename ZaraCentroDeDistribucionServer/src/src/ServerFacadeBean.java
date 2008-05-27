@@ -5,6 +5,8 @@ import java.util.Vector;
 import javax.ejb.Stateless;
 
 import BusinessLogic.ArticuloHeaderVO;
+import BusinessLogic.ArticuloHogarVO;
+import BusinessLogic.ArticuloRopaVO;
 import BusinessLogic.ServerFacade;
 import BusinessLogic.SolicitudDistribucionVO;
 import BusinessLogic.SolicitudEnvioVO;
@@ -64,6 +66,16 @@ public class ServerFacadeBean implements ServerFacade
 	}
 
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void guardarArticuloHogar(ArticuloHogarVO art) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void guardarArticuloRopa(ArticuloRopaVO art) {
 		// TODO Auto-generated method stub
 		
 	}
