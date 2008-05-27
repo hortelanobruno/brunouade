@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.jboss.ide.eclipse.jdt.ejb3.wizards.core.classpath.EJB3_CONTAINER/ServerJBoss"/>
+	<classpathentry kind="con" path="org.jboss.ide.eclipse.jdt.ejb3.wizards.core.classpath.EJB3_CONTAINER/JBoss"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ZaraCentroDeDistribucionServer"/>
 	<classpathentry kind="lib" path="lib/jbossall-client.jar"/>
 	<classpathentry kind="lib" path="lib/jboss-aop-jdk50-client.jar"/>
