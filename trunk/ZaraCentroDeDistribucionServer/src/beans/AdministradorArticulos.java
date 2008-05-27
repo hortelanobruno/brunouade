@@ -2,7 +2,10 @@ package beans;
 
 import javax.ejb.Remote;
 
-@Remote
-public interface AdministradorArticulos {
+import BusinessLogic.ArticuloHogarVO;
 
+@Remote
+public interface AdministradorArticulos 
+{
+	public void agregarArticuloHogar(ArticuloHogarVO art);
 }
