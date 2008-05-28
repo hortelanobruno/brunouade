@@ -40,7 +40,7 @@ public class ServerFacadeBean implements ServerFacade
 		return null;
 	}
 
-	public SolicitudFabricaVO getSolFab(int codigo) {
+	public SolicitudFabricaVO getSolFab(long codigo) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -11,7 +11,7 @@ public interface AdministradorArticulos
 {
 	public void agregarArticuloHogar(ArticuloHogarVO art);
 	public void agregarArticuloRopa(ArticuloRopaVO art);
-	public Vector<String> getDescripciones(Vector<Integer> cods);
-	public Vector<Integer> getStocks(Vector<Integer> codigos);
+	public Vector<String> getDescripciones(Vector<Long> cods);
+	public Vector<Integer> getStocks(Vector<Long> codigos);
 	public void actualizarStock(Vector<ArticuloHeaderVO> arts);
 }

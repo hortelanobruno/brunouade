@@ -21,7 +21,7 @@ public interface ServerFacade
 	
 	
 	//panel gen sol fab
-	public SolicitudFabricaVO getSolFab(int codigo);
+	public SolicitudFabricaVO getSolFab(long codigo);
 	public Vector<SolicitudFabricaVO> getAllSolFab();
 	
 	//panel reposicion
