@@ -52,7 +52,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
 		/*	for(int i = 0; i< this.getArticulo().size();i++)
 			articulos.add(new ArticuloHeaderVO(this.getArticulo())*/
-		SolicitudFabricaVO vo = new SolicitudFabricaVO(numero,articulos,fechaEmision,new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()));
+		SolicitudFabricaVO vo = new SolicitudFabricaVO(this.getNumero(),articulos,this.getFechaEmision(),new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()));
 		return vo;
 	}
 
@@ -64,7 +64,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		
 		this.setNumero(vo.getNumero());
 		this.setArticulo(articulos);
-		this.setFecha(vo.getFechaEmision());
+		this.setFechaEmision(vo.getFechaEmision());
 		this.setFabrica(new Fabrica(vo.getFabrica().getCodigoFabrica(),vo.getFabrica().getNombreFabrica()));
 	}
 }

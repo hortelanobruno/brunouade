@@ -8,6 +8,7 @@ import java.util.Vector;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
@@ -46,7 +47,7 @@ public class SolicitudDistribucion extends Solicitud implements Serializable
 		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
 		/*	for(int i = 0; i< this.getArticulo().size();i++)
 			articulos.add(new ArticuloHeaderVO(this.getArticulo())*/
-		SolicitudDistribucionVO vo = new SolicitudDistribucionVO(numero,articulos,fechaEmision,new TiendaVO(tienda.getCodTienda(),tienda.getNombreTienda()));
+		SolicitudDistribucionVO vo = new SolicitudDistribucionVO(this.getNumero(),articulos,this.getFechaEmision(),new TiendaVO(tienda.getCodTienda(),tienda.getNombreTienda()));
 		return vo;
 	}
 
@@ -58,10 +59,11 @@ public class SolicitudDistribucion extends Solicitud implements Serializable
 		
 		this.setNumero(vo.getNumero());
 		this.setArticulos(articulos);
-		this.setFecha(vo.getFechaEmision());
+		this.setFechaEmision(vo.getFechaEmision());
 		this.setTienda(new Tienda(vo.getTienda().getCodigoTienda(),vo.getTienda().getNombreTienda()));
 	}
 
+	@OneToMany
 	public Collection<Articulo> getArticulos() {
 		return articulos;
 	}
