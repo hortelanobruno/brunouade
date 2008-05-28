@@ -17,6 +17,7 @@ import javax.persistence.Transient;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="discriminador",discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue("articulo")
+
 public class Articulo implements Serializable
 {
 	private static final long serialVersionUID = 2235551485752041708L;
