@@ -1,6 +1,5 @@
 package ViejoJRE16;
 
-import BusinessLogic.SolicitudDistribucionVO;
 import Paneles.PanelConfig;
 import Paneles.PanelDB;
 import Paneles.PanelEnvios;
@@ -8,6 +7,7 @@ import Paneles.PanelGenSolFab;
 import Paneles.PanelNewArt;
 import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
+import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 import Vistas.VistaConfig;
 import Vistas.VistaMain;

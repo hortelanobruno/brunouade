@@ -21,7 +21,6 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import controladores.ControladorPanelConfig;
 
-import BusinessLogic.SolicitudDistribucionVO;
 import Paneles.PanelConfig;
 import Paneles.PanelDB;
 import Paneles.PanelEnvios;
@@ -29,6 +28,7 @@ import Paneles.PanelGenSolFab;
 import Paneles.PanelNewArt;
 import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
+import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 import Vistas.VistaConfig;
 import Vistas.VistaMain;
@@ -81,11 +81,6 @@ public class MenuPrincipal extends javax.swing.JFrame
         }
     }
 
-    public void fillSDTable(SolicitudDistribucionVO soldis) {
-        if (activePanel instanceof PanelSolDist) {
-            ((PanelSolDist) activePanel).fillSDTable(soldis);
-        }
-    }
     
     private void setLookAndFeel() throws HeadlessException
     {

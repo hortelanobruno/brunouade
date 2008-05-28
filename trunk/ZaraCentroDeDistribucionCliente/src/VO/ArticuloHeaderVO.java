@@ -1,4 +1,4 @@
-package BusinessLogic;
+package VO;
 
 import java.io.Serializable;
 

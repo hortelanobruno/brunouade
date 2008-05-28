@@ -1,9 +1,9 @@
 package Vistas;
 
-import BusinessLogic.SolicitudDistribucionVO;
 import GUI.MenuPrincipal;
 import RemoteMVCFramework.ProxyModelo;
 import RemoteMVCFramework.Vista;
+import VO.SolicitudDistribucionVO;
 
 public class VistaMain extends Vista 
 {
@@ -20,11 +20,6 @@ public class VistaMain extends Vista
     public void actualizar() 
     {
         getPrinc().updatePanel();
-    }
-
-    public void fillSDTable(SolicitudDistribucionVO soldist)
-    {
-        this.getPrinc().fillSDTable(soldist);
     }
     
     public MenuPrincipal getPrinc() 
