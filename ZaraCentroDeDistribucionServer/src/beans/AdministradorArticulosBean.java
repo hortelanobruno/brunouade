@@ -53,7 +53,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		em.persist(ar);
 	}
 
-	public Vector<String> getDescripciones(Vector<Integer> cods) 
+	public Vector<String> getDescripciones(Vector<Long> cods) 
 	{
 		Vector<String> descs = new Vector<String>();
 		for(int i = 0; i < cods.size();i++)
@@ -66,17 +66,17 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		return descs;
 	}
 
-	public Vector<Integer> getStocks(Vector<Integer> cods) 
+	public Vector<Integer> getStocks(Vector<Long> cods) 
 	{
-		Vector<Integer> descs = new Vector<Integer>();
+		Vector<Integer> stocks = new Vector<Integer>();
 		for(int i = 0; i < cods.size();i++)
 		{
 			Query q = em.createQuery("select a from articulos a where a.codigo = :codigo");
 			q.setParameter("codigo", cods.elementAt(i));
 			List l = q.getResultList();
-			descs.add(((Articulo)l.get(0)).getCantidad());
+			stocks.add(((Articulo)l.get(0)).getCantidad());
 		}
-		return descs;
+		return stocks;
 	}
 
 	public void actualizarStock(Vector<ArticuloHeaderVO> arts) 
