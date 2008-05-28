@@ -44,11 +44,6 @@ public class ServerFacadeBean implements ServerFacade
 		
 	}
 
-	public Vector<Integer> getStocks(Vector<Integer> codigos) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public void guardarSolicitud(SolicitudDistribucionVO soldist) {
 		// TODO Auto-generated method stub
 		
@@ -91,6 +86,11 @@ public class ServerFacadeBean implements ServerFacade
 	}
 
 	public Vector<String> getDescripciones(Vector<Long> codigos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Vector<Integer> getStocks(Vector<Long> codigos) {
 		// TODO Auto-generated method stub
 		return null;
 	}
