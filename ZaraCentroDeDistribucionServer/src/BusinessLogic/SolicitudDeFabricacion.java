@@ -16,11 +16,11 @@ public class SolicitudDeFabricacion extends Solicitud
 {
 	private static final long serialVersionUID = 4970004249380972083L;
 	private Fabrica fabrica;
-	private Collection<Articulo> articulos= new Vector<Articulo>();
+	private Collection<Articulo> articulos;
 	
 	public SolicitudDeFabricacion() {
 		super();
-		//this.articulos = new Vector<Articulo>();
+		this.articulos = new Vector<Articulo>();
 	}
 	
 	public SolicitudDeFabricacion(int n, Collection<Articulo> a, Date f, Fabrica fa){

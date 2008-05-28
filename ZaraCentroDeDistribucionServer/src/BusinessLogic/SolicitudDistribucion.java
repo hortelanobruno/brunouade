@@ -16,11 +16,11 @@ public class SolicitudDistribucion extends Solicitud implements Serializable
 {
 	private static final long serialVersionUID = 1694955054674640622L;
 	private Tienda tienda;
-	private Collection<Articulo> articulos =new Vector<Articulo>();
+	private Collection<Articulo> articulos;
     
 	public SolicitudDistribucion() {
 		super();
-		//this.articulos
+		this.articulos =new Vector<Articulo>();
 	}
 	
 	public SolicitudDistribucion(int n, Collection<Articulo> a, Date f, Tienda t){

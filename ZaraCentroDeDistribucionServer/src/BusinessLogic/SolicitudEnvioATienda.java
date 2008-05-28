@@ -16,11 +16,11 @@ public class SolicitudEnvioATienda extends Solicitud implements Serializable
 {
 	private static final long serialVersionUID = 5001930866418434765L;
 	private Tienda tienda;
-	private Collection<Articulo> articulos= new Vector<Articulo>();
+	private Collection<Articulo> articulos;
 
 	public SolicitudEnvioATienda() {
 		super();
-		//articulos = new Vector<Articulo>();
+		articulos = new Vector<Articulo>();
 	}
 	
 	public SolicitudEnvioATienda(int n, Collection<Articulo> a, Date f, Tienda t){
