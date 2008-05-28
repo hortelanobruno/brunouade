@@ -10,7 +10,7 @@ public interface ServerFacade
 	
 	//panel sol dist
 	public Vector<String> getDescripciones(Vector<Long> codigos);
-	public Vector<Integer> getStocks(Vector<Integer> codigos);
+	public Vector<Integer> getStocks(Vector<Long> codigos);
 	
 	public void guardarSolicitud(SolicitudDistribucionVO soldist);
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
