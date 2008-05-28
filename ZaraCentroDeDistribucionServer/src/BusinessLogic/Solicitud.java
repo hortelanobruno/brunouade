@@ -25,9 +25,9 @@ import javax.persistence.Transient;
 public class Solicitud implements Serializable
 {
 	private static final long serialVersionUID = -6174778687164025228L;
-	protected int numero;
-    protected Date fechaEmision;
-    protected CentroDistribucion centro;
+	private int numero;
+	private Date fechaEmision;
+	private CentroDistribucion centro;
     
 	public Solicitud() {
 		// TODO Auto-generated constructor stub
@@ -49,17 +49,6 @@ public class Solicitud implements Serializable
 	{
 		this.numero = numero;
 	}
-
-	@Column
-	public Date getFecha()
-	{
-		return fechaEmision;
-	}
-
-	public void setFecha(Date fecha)
-	{
-		this.fechaEmision = fecha;
-	}
 	
 	@Transient
 	public SolicitudVO getVO(){
@@ -72,7 +61,7 @@ public class Solicitud implements Serializable
 
 	public void setVO(SolicitudVO vo){
 		this.setNumero(vo.getNumero());
-		this.setFecha(vo.getFechaEmision());
+		this.setFechaEmision(vo.getFechaEmision());
 	}
 
 	@ManyToOne
@@ -82,6 +71,15 @@ public class Solicitud implements Serializable
 
 	public void setCentro(CentroDistribucion centro) {
 		this.centro = centro;
-	}	
-    
+	}
+
+	@Column
+	public Date getFechaEmision() {
+		return fechaEmision;
+	}
+
+	public void setFechaEmision(Date fechaEmision) {
+		this.fechaEmision = fechaEmision;
+	}
+
 }
