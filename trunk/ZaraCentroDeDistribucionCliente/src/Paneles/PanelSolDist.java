@@ -232,8 +232,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 												70, 70)));
 	}// </editor-fold>
 
-	private void buttonGuardarPedidoActionPerformed(
-			java.awt.event.ActionEvent evt) {
+	private void buttonGuardarPedidoActionPerformed(java.awt.event.ActionEvent evt) {
 		// /Guardar pedido
 		dtm = (DefaultTableModel) tableArticulos.getModel();
 		SolicitudDistribucionVO soldis = new SolicitudDistribucionVO();
