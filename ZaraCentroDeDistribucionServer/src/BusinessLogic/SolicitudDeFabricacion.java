@@ -16,7 +16,7 @@ public class SolicitudDeFabricacion extends Solicitud
 {
 	private static final long serialVersionUID = 4970004249380972083L;
 	private Fabrica fabrica;
-	protected Collection<Articulo> articulos;
+	private Collection<Articulo> articulos;
 	
 	public SolicitudDeFabricacion() {
 		super();

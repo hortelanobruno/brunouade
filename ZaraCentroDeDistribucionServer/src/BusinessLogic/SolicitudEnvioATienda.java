@@ -16,7 +16,7 @@ public class SolicitudEnvioATienda extends Solicitud implements Serializable
 {
 	private static final long serialVersionUID = 5001930866418434765L;
 	private Tienda tienda;
-	protected Collection<Articulo> articulos;
+	private Collection<Articulo> articulos;
 
 	public SolicitudEnvioATienda() {
 		super();
