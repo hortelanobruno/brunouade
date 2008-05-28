@@ -1,7 +1,6 @@
 package BusinessLogic;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -12,8 +11,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import server.Constantes;
 
 @Entity
 @Table(name="Articulos")
