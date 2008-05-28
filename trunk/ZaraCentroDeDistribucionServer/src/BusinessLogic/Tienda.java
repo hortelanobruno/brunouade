@@ -3,14 +3,15 @@ package BusinessLogic;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
+@Entity
+@Table(name="tiendas")
 public class Tienda implements Serializable
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1277997535507848892L;
 	private int codigoTienda;
 	private String nombreTienda;

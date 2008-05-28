@@ -6,8 +6,12 @@
 package BusinessLogic;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="CentroDeDistribucion")
 public class CentroDistribucion 
 {
 	private int codCentro;
