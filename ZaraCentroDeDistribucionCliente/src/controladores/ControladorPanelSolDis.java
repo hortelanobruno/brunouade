@@ -1,12 +1,12 @@
 package controladores;
 
 import BusinessLogic.BusinessDelegate;
-import BusinessLogic.SolicitudDistribucionVO;
-import BusinessLogic.SolicitudVO;
-import BusinessLogic.TiendaVO;
 import RemoteMVCFramework.Controlador;
 import RemoteMVCFramework.ProxyModelo;
 import RemoteMVCFramework.Vista;
+import VO.SolicitudDistribucionVO;
+import VO.SolicitudVO;
+import VO.TiendaVO;
 import Varios.FileReaderWrapper;
 import Vistas.VistaMain;
 
@@ -25,12 +25,6 @@ public class ControladorPanelSolDis extends Controlador
     	return ((BusinessDelegate)this.getModelo()).getTestNumber();
     }
 
-    public void doMostrarSolicitud(String url)
-    {
-        ((VistaMain)this.getVista()).fillSDTable(this.parseXMLSD(url));
-        ((VistaMain)this.getVista()).actualizar();
-    }
-
     public void doGuardarSolicitud(SolicitudDistribucionVO soldis)
     {
         ((BusinessDelegate)(this.getModelo())).guardarSolicitud(soldis);
@@ -43,8 +37,14 @@ public class ControladorPanelSolDis extends Controlador
 	}
 	
 	
-	public Vector<String> doGetDescripcion(Vector<Integer> codigos){
-		((BusinessDelegate)(this.getModelo())).getDescripciones(codigos);
+	public Vector<String> doGetDescripciones(Vector<Long> codigos){
+		Vector<String> desc = ((BusinessDelegate)(this.getModelo())).getDescripciones(codigos);
+		return desc;
+	}
+	
+	public Vector<Integer> doGetStocks(Vector<Long> codigos){
+		Vector<Integer> stocks = ((BusinessDelegate)(this.getModelo())).getStocks(codigos);
+		return stocks;
 	}
 	
 	

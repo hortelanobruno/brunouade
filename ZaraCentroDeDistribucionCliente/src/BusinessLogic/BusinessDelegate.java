@@ -1,6 +1,7 @@
 package BusinessLogic;
 
 import RemoteMVCFramework.ProxyModelo;
+import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 
 import java.util.Hashtable;
@@ -25,12 +26,18 @@ public class BusinessDelegate extends ProxyModelo
         //this.getConnection();
     }
     
+    
+    //Test de nacho
     public int getTestNumber()
     {
     	return this.getModCD().getTest();
     }
     
-    @SuppressWarnings({ "unchecked", "unchecked", "unused" })
+    
+    /**
+	 * Se indica url del servidor de aplicaciones
+	 *
+	 */
 	private void inicializarContexto() 
     {
 		try
@@ -38,9 +45,8 @@ public class BusinessDelegate extends ProxyModelo
 			Hashtable props = new Hashtable();
 			props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
 			//Url completa de ubicacion del servidor de aplicaciones
-
 			props.put(InitialContext.PROVIDER_URL,"jnp://localhost:1099"/*"jnp://" + ((VistaMain)this.getVista()).getPrinc().getServerIP()+":1099"*/);
-//			Objeto del tipo InitialContext
+			//Objeto del tipo InitialContext
 			initialContect = new InitialContext(props);
 		}
 		catch(Exception ex)
@@ -48,21 +54,49 @@ public class BusinessDelegate extends ProxyModelo
 			ex.printStackTrace();
 		}
 	}
+	
     
-    @SuppressWarnings("unused")
+	/**
+	 * Obtiene una "referencia" al session bean administrador de productos
+	 * @return el AdministradorProductos
+	 */
 	private ServerFacade getServerFacade()
     {
     	try
     	{
-    		if(this.modCD == null) this.modCD = (ServerFacade) this.initialContect.lookup(naming);
+    		if(this.modCD == null){
+				//Obtencion de referencia del session bean dentro del servidor de aplicaciones
+    			this.modCD = (ServerFacade) this.initialContect.lookup(naming);
+    		}
     	}
     	catch(NamingException ex)
     	{
-    		
+    		ex.printStackTrace();
     	}
     	return this.modCD;
     }
  
+
+   public Vector<String> getDescripciones(Vector<Long> codigos){
+	   Vector<String> descripciones = new Vector<String>();
+		try{
+			descripciones = getServerFacade().getDescripciones(codigos);
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		return descripciones;
+    }
+	
+   public Vector<Integer> getStocks(Vector<Long> codigos){
+	   Vector<Integer> stocks = new Vector<Integer>();
+		try{
+			stocks = getServerFacade().getStocks(codigos);
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		return stocks;
+   }
+	
     /* protected void getConnection() 
      {
     	if (modCD == null) 
@@ -80,10 +114,7 @@ public class BusinessDelegate extends ProxyModelo
     	}
     }*/
      
-    public Vector<String> getDescripciones(Vector<Integer> codigos){
-    	
-    	return
-    }
+ 
     
     
      public void guardarSolicitud(SolicitudDistribucionVO soldis)
@@ -184,37 +215,7 @@ public class BusinessDelegate extends ProxyModelo
         }  
      }
      
-     public int getStock(int codigo)
-     {
-    	 return 0;
-          /*  Conexion.driverOdbc();
-            con = new Conexion("sa", "123456");
-            //System.out.println("estoy x conectar");
-            int a = 0;
-            if (con.abrirConexion()) 
-            {
-               // System.out.println("pase1");
-                try 
-                {
-                    ResultSet rs = null;
-                    CallableStatement cs = con.getCon().prepareCall("{call dbo.getStock(?)}");//select [stock disponible] from articulos where referencia = " + codigo);
-                    cs.setString(1, String.valueOf(codigo));
-                    
-                    rs = cs.executeQuery();
-                    while (rs.next()) a = rs.getInt(1);
-                        
-                       // System.out.println(""+a);
-                   rs.close();
-                   cs.close();
-                   con.cerrarConexion();
-                } 
-                catch (SQLException ex) 
-                {
-                    Logger.getLogger(BusinessDelegate.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            return a;*/
-     }
+  
      
      public String getDescripcion(int codigo)
      {

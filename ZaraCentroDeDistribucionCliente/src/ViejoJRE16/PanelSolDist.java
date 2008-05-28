@@ -1,7 +1,6 @@
 package ViejoJRE16;
 
 
-import BusinessLogic.SolicitudDistribucionVO;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -13,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 import controladores.ControladorPanelSolDis;
 
+import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 
 public class PanelSolDist extends javax.swing.JPanel  

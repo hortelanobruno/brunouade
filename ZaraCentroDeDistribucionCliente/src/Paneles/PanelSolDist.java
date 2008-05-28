@@ -7,8 +7,9 @@
 package Paneles;
 
 import java.awt.Color;
+import java.util.Iterator;
+import java.util.Vector;
 
-import BusinessLogic.SolicitudDistribucionVO;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -21,6 +22,8 @@ import javax.swing.table.DefaultTableModel;
 import controladores.ControladorPanelConfig;
 import controladores.ControladorPanelSolDis;
 
+import VO.ArticuloHeaderVO;
+import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 
 /**
@@ -89,7 +92,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 						"Descripcion", "Cantidad Pedida", "Stock Actual",
 						"Cantidad a Enviar" }) {
 			Class[] types = new Class[] { java.lang.String.class,
-					java.lang.String.class, java.lang.Integer.class,
+					java.lang.String.class, java.lang.Long.class,
 					java.lang.String.class, java.lang.Integer.class,
 					java.lang.Integer.class, java.lang.Integer.class };
 
@@ -258,68 +261,27 @@ public class PanelSolDist extends javax.swing.JPanel {
 			
 			SolicitudDistribucionVO solDisVO = (SolicitudDistribucionVO)((ControladorPanelSolDis) this.ref.getVistaSolDis()
 					.getControlador()).doCargarXML(url);
-			((ControladorPanelSolDis) ref.getVistaPadre().getControlador())
-					.doMostrarSolicitud(url);
+			
+			Vector<Long> codigos = new Vector<Long>();
+			Iterator arts = (Iterator) solDisVO.getArticulo().iterator();
+			while(arts.hasNext()){
+				codigos.add(((ArticuloHeaderVO)arts.next()).getCodigo());
+			}
+			Vector<String> descripciones = ((ControladorPanelSolDis) this.ref.getVistaSolDis().getControlador()).doGetDescripciones(codigos);
+			
+			Vector<Integer> stocks = ((ControladorPanelSolDis) this.ref.getVistaSolDis().getControlador()).doGetStocks(codigos);
+			
+			cargarTable(solDisVO,codigos,descripciones,stocks);
 		}
 	}
 
-	/*
-	 * public void fillSDTable(String url) { dtm = (DefaultTableModel)
-	 * jTable1.getModel(); FileReaderWrapper fileReader = new
-	 * FileReaderWrapper(url); String XML = fileReader.obtenerContenido();
-	 * XStream xstream = new XStream();
-	 * 
-	 * xstream.alias("CentroDistribucion", CentroDistribucion.class);
-	 * xstream.alias("soldis", SolicitudDistribucion.class);
-	 * xstream.alias("articuloropa", ArticuloRopa.class);
-	 * xstream.alias("articulohogar", ArticuloHogar.class);
-	 * 
-	 * CentroDistribucion cd = (CentroDistribucion) xstream.fromXML(XML);
-	 * 
-	 * ref.getJTextArea1().append(""+cd.getSolicituddistribucion().elementAt(0).getArticulosropa().elementAt(0).getCantidad());
-	 * 
-	 * Vector<SolicitudDistribucion> soldis = cd.getSolicituddistribucion();
-	 * 
-	 * fillSDTable(soldis); }
-	 */
-
-	public void fillSDTable(SolicitudDistribucionVO soldis) {
-		/*
-		 * dtm = (DefaultTableModel) jTable1.getModel();
-		 * 
-		 * Vector<ArticuloRopa> articulosropa = soldis.getArticulosropa();
-		 * Vector<ArticuloHogar> articuloshogar = soldis.getArticuloshogar();
-		 * 
-		 * int codigo; int cantidad;
-		 * 
-		 * if (articulosropa != null) { for (int i = 0; i <
-		 * articulosropa.size(); i++) { codigo =
-		 * articulosropa.elementAt(i).getCodigo(); cantidad =
-		 * articulosropa.elementAt(i).getStock(); int stock =
-		 * Integer.valueOf(((BusinessDelegate)
-		 * (ref.getVistaPadre().getModelo())).getStock(codigo)); String
-		 * descripcion = String.valueOf(((BusinessDelegate)
-		 * (ref.getVistaPadre().getModelo())).getDescripcion(codigo)); int
-		 * numero = soldis.getNumero();
-		 * 
-		 * dtm.addRow(new Object[]{numero, codigo, descripcion, cantidad, stock,
-		 * 0}); //System.out.println("cargo" + i); } }
-		 * 
-		 * if (articuloshogar != null) { for (int i = 0; i <
-		 * articuloshogar.size(); i++) { codigo =
-		 * articuloshogar.elementAt(i).getCodigo(); cantidad =
-		 * articuloshogar.elementAt(i).getStock(); int stock =
-		 * Integer.valueOf(((BusinessDelegate)
-		 * (ref.getVistaPadre().getModelo())).getStock(codigo)); String
-		 * descripcion = String.valueOf(((BusinessDelegate)
-		 * (ref.getVistaPadre().getModelo())).getDescripcion(codigo)); int
-		 * numero = soldis.getNumero();
-		 * 
-		 * dtm.addRow(new Object[]{numero, codigo, descripcion, cantidad, stock,
-		 * 0}); } }
-		 * 
-		 * this.validateTable();
-		 */
+	
+	private void cargarTable(SolicitudDistribucionVO solDisVO, Vector<Long> codigos, Vector<String> descripciones, Vector<Integer> stocks){
+		Iterator iterador = (Iterator) solDisVO.getArticulo().iterator();
+		for(int i = 0 ; i < solDisVO.getArticulo().size() ; i++){
+			((DefaultTableModel)tableArticulos.getModel()).addRow(new Object[]{"Solicitud Numero "+solDisVO.getNumero(),solDisVO.getTienda().getNombreTienda(), codigos.elementAt(i).toString(), descripciones.elementAt(i).toString(),
+					((ArticuloHeaderVO)iterador.next()).getCantidad(),stocks.elementAt(i).toString(),0});
+		}
 	}
 
 	private void validateTable() {
