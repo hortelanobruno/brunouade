@@ -9,7 +9,7 @@ public interface ServerFacade
 	public int getTest(); //Prueba
 	
 	//panel sol dist
-	public Vector<String> getDescripciones(Vector<Integer> codigos);
+	public Vector<String> getDescripciones(Vector<Long> codigos);
 	public Vector<Integer> getStocks(Vector<Integer> codigos);
 	
 	public void guardarSolicitud(SolicitudDistribucionVO soldist);
