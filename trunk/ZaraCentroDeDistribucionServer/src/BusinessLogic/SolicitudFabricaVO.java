@@ -4,11 +4,9 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
-public class SolicitudFabricaVO extends SolicitudVO implements Serializable{
+public class SolicitudFabricaVO extends SolicitudVO implements Serializable
+{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -339743656499411780L;
 	private FabricaVO fabrica;
 	

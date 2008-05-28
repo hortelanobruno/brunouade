@@ -30,7 +30,7 @@ public class SolicitudDeFabricacion extends Solicitud
 	}
 	
 	@OneToMany
-	public Collection<Articulo> getArticulo() {
+	public Collection<Articulo> getArticulos() {
 		return articulos;
 	}
 
