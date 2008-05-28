@@ -34,7 +34,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		return articulos;
 	}
 
-	public void setArticulo(Collection<Articulo> articulo) {
+	public void setArticulos(Collection<Articulo> articulo) {
 		this.articulos = articulo;
 	}
 	
@@ -63,7 +63,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		
 		
 		this.setNumero(vo.getNumero());
-		this.setArticulo(articulos);
+		this.setArticulos(articulos);
 		this.setFechaEmision(vo.getFechaEmision());
 		this.setFabrica(new Fabrica(vo.getFabrica().getCodigoFabrica(),vo.getFabrica().getNombreFabrica()));
 	}
