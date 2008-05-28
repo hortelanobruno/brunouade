@@ -8,6 +8,7 @@ import VO.SolicitudDistribucionVO;
 import VO.SolicitudVO;
 import VO.TiendaVO;
 import Varios.FileReaderWrapper;
+import Varios.XMLWrapper;
 import Vistas.VistaMain;
 
 import com.thoughtworks.xstream.XStream;
@@ -31,7 +32,8 @@ public class ControladorPanelSolDis extends Controlador
     }
 
 	public SolicitudDistribucionVO doCargarXML(String url) {
-		SolicitudDistribucionVO solDisVO = (SolicitudDistribucionVO) parseXMLSD(url);
+		XMLWrapper xml = new XMLWrapper();
+		SolicitudDistribucionVO solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(url);
 		return solDisVO;
 		
 	}
@@ -49,24 +51,5 @@ public class ControladorPanelSolDis extends Controlador
 	
 	
 	
-	
-	
-	
-    private SolicitudDistribucionVO parseXMLSD(String url)
-    {
-        FileReaderWrapper fileReader = new FileReaderWrapper(url);
-        String XML = fileReader.obtenerContenido();
-        XStream xstream = new XStream();
-
-
-        xstream.alias("solicituddistribucion", SolicitudDistribucionVO.class);
-        //xstream.alias("articuloropa", ArticuloRopa.class);
-        //xstream.alias("articulohogar", ArticuloHogar.class);
-        xstream.alias("tienda", TiendaVO.class);
-
-        SolicitudDistribucionVO sol = (SolicitudDistribucionVO) xstream.fromXML(XML);
-
-        return sol;
-    }
     
 }
