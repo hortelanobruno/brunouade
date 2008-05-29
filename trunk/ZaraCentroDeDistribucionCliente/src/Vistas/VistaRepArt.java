@@ -14,8 +14,7 @@ public class VistaRepArt extends Vista {
 
 
 	public void actualizar() {
-
-		
+		ref.getPanelRepArt().update();
 	}
 
 
@@ -26,6 +25,11 @@ public class VistaRepArt extends Vista {
 
 	public void setRef(MenuPrincipal ref) {
 		this.ref = ref;
+	}
+
+
+	public void cargarTabla(boolean b) {
+		ref.getPanelRepArt().setCargarTable(b);
 	}
 
 }

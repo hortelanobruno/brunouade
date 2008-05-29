@@ -233,8 +233,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 	private void buttonCargarXMLActionPerformed(java.awt.event.ActionEvent evt) {
 		// Carga archivo XML
 		chooser = new FileChooser(ref, true, ref.getDefaltXmlPath());
-		String url = chooser.getPath();
-		if (url.equals(""))
+		urlXML = chooser.getPath();
+		if (urlXML.equals(""))
 			JOptionPane.showMessageDialog(this,
 					"Debe ingresar la ubicacion del archivo XML.\n",
 					Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
@@ -245,7 +245,6 @@ public class PanelSolDist extends javax.swing.JPanel {
 	}
 	
 	
-
 	private void cargarTable(SolicitudDistribucionVO solDisVO,
 			Vector<Long> codigos, Vector<String> descripciones,
 			Vector<Integer> stocks) {

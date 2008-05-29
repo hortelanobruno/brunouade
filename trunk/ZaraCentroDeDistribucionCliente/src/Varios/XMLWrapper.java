@@ -1,6 +1,7 @@
 package Varios;
 
 import VO.SolicitudDistribucionVO;
+import VO.SolicitudFabricaVO;
 import VO.TiendaVO;
 
 import com.thoughtworks.xstream.XStream;
@@ -28,5 +29,10 @@ public class XMLWrapper {
         SolicitudDistribucionVO sol = (SolicitudDistribucionVO) xstream.fromXML(XML);
 
         return sol;
+    }
+    
+    public SolicitudFabricaVO parseXMLSF(String url)
+    {
+    	
     }
 }
