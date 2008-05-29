@@ -26,13 +26,11 @@ public class PanelEnvios extends javax.swing.JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private MenuPrincipal ref;
-    private ControladorPanelSolDis cm;
     
     /** Creates new form PanelEnvios */
     public PanelEnvios(MenuPrincipal menu) {
         initComponents();
         this.ref = menu;
-        this.cm = new ControladorPanelSolDis(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
         
         //Esto se reemplasa segun lo que elige en el combo
         DefaultMutableTreeNode abuelo = new DefaultMutableTreeNode("Solicitudes");
@@ -170,28 +168,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 private void buttonCargarActionPerformed(java.awt.event.ActionEvent evt) {                                             
 // Cargar solicitud en tablas
     
-    	int ret = ((ControladorPanelSolDis)this.ref.getVistaPadre().getControlador()).doGetTestNumber();
-    	JOptionPane.showMessageDialog(null, String.valueOf(ret));
-    	/*DefaultMutableTreeNode node = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-//this.cm.doGetSolicitudes(tienda);
-        if (node == null) JOptionPane.showMessageDialog(this, "Debe elegir un tipo de articulo.",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
-
-        String nodeInfo = (String)node.getUserObject();
-        Vector<Articulo> ret = null;//((ControladorMain)ref.getVistaPadre().getControlador()).doGetArticulosEnvio((String)jComboBox1.getSelectedItem(),nodeInfo);
-        
-        if(ret != null)
-        {
-            if(nodeInfo.equalsIgnoreCase("Solicitados"))
-            {
-                //cargar en tabla solicitados
-            }
-            else
-            {
-                //cargar en tabla pendientes
-            }
-        }
-        else JOptionPane.showMessageDialog(this, "No se encontraron articulos",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);*/
-
+ 
 }                                            
 
 private void comboBoxTiendasActionPerformed(java.awt.event.ActionEvent evt) {                                                

@@ -6,7 +6,6 @@
                  <xsd:element name="numero" type="xsd:integer"/>
                  <xsd:element name="tienda" type="Tienda"/>
                  <xsd:element name="articulosropa" type="aRopa"/>
-				 <xsd:element name="articuloshogar" type="aHogar"/>
             </xsd:sequence>
         </xsd:complexType>
    </xsd:element>
@@ -31,10 +30,5 @@
     	</xsd:sequence>
  	 </xsd:complexType>
  	 
- 	 <xsd:complexType name="aHogar">
-     	<xsd:sequence>
-     		 <xsd:element maxOccurs="60" minOccurs="1" name="articulohogar" type="articulo"/>
-    	</xsd:sequence>
- 	 </xsd:complexType>
  	     
 </xsd:schema>

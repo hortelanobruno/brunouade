@@ -21,7 +21,6 @@ public class PanelGenSolFab extends javax.swing.JPanel {
     public PanelGenSolFab(MenuPrincipal r) {
         initComponents();
         this.ref = r;
-        this.controlador = new ControladorPanelEnvios(ref.getVistaPadre().getModelo(),ref.getVistaPadre());
     }
     
     public void update()

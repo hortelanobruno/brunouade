@@ -31,7 +31,11 @@ import Paneles.PanelSolDist;
 import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 import Vistas.VistaConfig;
+import Vistas.VistaEnvios;
+import Vistas.VistaGenSolFab;
 import Vistas.VistaMain;
+import Vistas.VistaNewArt;
+import Vistas.VistaRepArt;
 import Vistas.VistaSolDis;
 
 /**
@@ -41,9 +45,14 @@ import Vistas.VistaSolDis;
 public class MenuPrincipal extends javax.swing.JFrame 
 {
 	private static final long serialVersionUID = 7725034541164342296L;
-	private VistaMain vistaPadre;
+	private VistaEnvios vistaEnvios;
+	private VistaGenSolFab vistaGenSolFab;
+	private VistaNewArt vistaNewArt;
+	private VistaRepArt vistaRepArt;
     private VistaConfig vistaConfig;
     private VistaSolDis vistaSolDis;
+    private VistaMain vistaMain;
+    
     private JPanel activePanel; //este atributo es para saber cual es el panel que se esta mostrando para 
     //hacer el update de la vista.
 
@@ -52,24 +61,25 @@ public class MenuPrincipal extends javax.swing.JFrame
     private static MenuPrincipal instance;
     private File confFile;
 
-    /** Creates new form MenuPrincipal */
-    public MenuPrincipal(VistaMain m) {
-        this.vistaPadre = m;
+    /** Creates new form MenuPrincipal 
+     * @param main */
+
+    public MenuPrincipal(VistaMain main, VistaSolDis solDis, VistaEnvios envios, VistaGenSolFab genSolFab, VistaRepArt repArt, VistaNewArt newArt, VistaConfig config) {
         initComponents();
-        
         setLookAndFeel();
         isPanel1Selected = true;
         this.setUpRootFile();
         this.setDefaltXmlPath(this.getParam("Xmlroot ", 8).replace("\\\\", "\\"));
         this.setServerIP(this.getParam("SRV ", 4));
-    }
-
-    public static MenuPrincipal getInstance(VistaMain m) {
-        if (instance == null) {
-            instance = new MenuPrincipal(m);
-        }
-        return instance;
-    }
+        
+        this.vistaMain = main;
+        this.vistaSolDis = solDis;
+        this.vistaEnvios = envios;
+        this.vistaGenSolFab = genSolFab;
+        this.vistaRepArt = repArt;
+        this.vistaNewArt = newArt;
+        this.vistaConfig = config;
+	}
 
 
     private void setUpRootFile() {
@@ -435,7 +445,7 @@ public class MenuPrincipal extends javax.swing.JFrame
 private void buttonSolDistActionPerformed(java.awt.event.ActionEvent evt) {                                              
     // solicitud de distribucion
     if (!isPanelSDSelected) {
-        panelSD = new PanelSolDist(this);
+        panelSD = new PanelSolDist(this,vistaSolDis);
         ponerPanel(panelSD);
     }
 }                                             
@@ -455,7 +465,7 @@ private void menuItemConfiguracionActionPerformed(java.awt.event.ActionEvent evt
 private void menuItemSolDistrActionPerformed(java.awt.event.ActionEvent evt) {                                                 
     // solicitud de distribucion
     if (!isPanelSDSelected) {
-        panelSD = new PanelSolDist(this);
+        panelSD = new PanelSolDist(this,vistaSolDis);
         ponerPanel(panelSD);
     }
 }                                                
@@ -889,11 +899,6 @@ private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {
         this.activePanel = activePanel;
     }
 
-    public VistaMain getVistaPadre()
-    {
-        return vistaPadre;
-    }
-
     public javax.swing.JTextArea getJTextArea1() {
         return jTextArea1;
     }
@@ -992,5 +997,55 @@ private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {
 
 	public void setPanelSD(PanelSolDist panelSD) {
 		this.panelSD = panelSD;
+	}
+
+
+	public VistaEnvios getVistaEnvios() {
+		return vistaEnvios;
+	}
+
+
+	public void setVistaEnvios(VistaEnvios vistaEnvios) {
+		this.vistaEnvios = vistaEnvios;
+	}
+
+
+	public VistaGenSolFab getVistaGenSolFab() {
+		return vistaGenSolFab;
+	}
+
+
+	public void setVistaGenSolFab(VistaGenSolFab vistaGenSolFab) {
+		this.vistaGenSolFab = vistaGenSolFab;
+	}
+
+
+	public VistaMain getVistaMain() {
+		return vistaMain;
+	}
+
+
+	public void setVistaMain(VistaMain vistaMain) {
+		this.vistaMain = vistaMain;
+	}
+
+
+	public VistaNewArt getVistaNewArt() {
+		return vistaNewArt;
+	}
+
+
+	public void setVistaNewArt(VistaNewArt vistaNewArt) {
+		this.vistaNewArt = vistaNewArt;
+	}
+
+
+	public VistaRepArt getVistaRepArt() {
+		return vistaRepArt;
+	}
+
+
+	public void setVistaRepArt(VistaRepArt vistaRepArt) {
+		this.vistaRepArt = vistaRepArt;
 	}
 }
