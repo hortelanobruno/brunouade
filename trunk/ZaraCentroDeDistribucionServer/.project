@@ -15,8 +15,14 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.jboss.ide.eclipse.jdt.aop.core.AopProjectBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.jboss.ide.eclipse.jdt.aop.core.AopProjectNature</nature>
 		<nature>org.jboss.ide.eclipse.ejb3.wizards.core.EJB3ProjectNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
