@@ -21,37 +21,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 {
 	@PersistenceContext(unitName="CentroDeDistribucion")
 	EntityManager em;
-	
-	public void agregarArticuloHogar(ArticuloHogarVO art) 
-	{
-		ArticuloHogar ah = new ArticuloHogar();
-		ah.setCodigo(art.getCodigo());
-		ah.setCantidad(art.getCantidad());
-		ah.setCategoria(art.getCategoria());
-		ah.setColor(art.getColor());
-		ah.setComposicion(art.getComposicion());
-		ah.setDescripcion(art.getDescripcion());
-		ah.setDetalles(art.getDetalles());
-		ah.setLinea(art.getLinea());
-		ah.setPrecio(art.getPrecio());
-		ah.setSeccion(art.getSeccion());
-		em.persist(ah);
-	}
-
-	public void agregarArticuloRopa(ArticuloRopaVO art) 
-	{
-		ArticuloRopa ar = new ArticuloRopa();
-		ar.setTalle(art.getTalle());
-		ar.setOrigen(ar.getOrigen());
-		ar.setCodigo(art.getCodigo());
-		ar.setCantidad(art.getCantidad());
-		ar.setColor(art.getColor());
-		ar.setDescripcion(art.getDescripcion());
-		ar.setLinea(art.getLinea());
-		ar.setPrecio(art.getPrecio());
-		ar.setSeccion(art.getSeccion());
-		em.persist(ar);
-	}
 
 	public Vector<String> getDescripciones(Vector<Long> cods) 
 	{
@@ -86,6 +55,41 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			Articulo a = em.find(Articulo.class, arts.elementAt(i).getCodigo());
 			a.setVO(arts.elementAt(i));
 			em.merge(a);
+		}
+	}
+
+	public void guardarArticulo(ArticuloHeaderVO a) 
+	{
+		if(a instanceof ArticuloRopaVO)
+		{
+			ArticuloRopaVO art = (ArticuloRopaVO) a;
+			ArticuloRopa ar = new ArticuloRopa();
+			ar.setTalle(art.getTalle());
+			ar.setOrigen(ar.getOrigen());
+			ar.setCodigo(art.getCodigo());
+			ar.setCantidad(art.getCantidad());
+			ar.setColor(art.getColor());
+			ar.setDescripcion(art.getDescripcion());
+			ar.setLinea(art.getLinea());
+			ar.setPrecio(art.getPrecio());
+			ar.setSeccion(art.getSeccion());
+			em.persist(ar);
+		}
+		else
+		{
+			ArticuloHogarVO art = (ArticuloHogarVO)a;
+			ArticuloHogar ah = new ArticuloHogar();
+			ah.setCodigo(art.getCodigo());
+			ah.setCantidad(art.getCantidad());
+			ah.setCategoria(art.getCategoria());
+			ah.setColor(art.getColor());
+			ah.setComposicion(art.getComposicion());
+			ah.setDescripcion(art.getDescripcion());
+			ah.setDetalles(art.getDetalles());
+			ah.setLinea(art.getLinea());
+			ah.setPrecio(art.getPrecio());
+			ah.setSeccion(art.getSeccion());
+			em.persist(ah);
 		}
 	}
 }
