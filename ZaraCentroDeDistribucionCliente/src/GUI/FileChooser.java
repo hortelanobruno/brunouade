@@ -18,7 +18,8 @@ import Varios.XMLFilter;
  */
 public class FileChooser extends javax.swing.JDialog {
 
-    /** Creates new form FileChooser */
+	private static final long serialVersionUID = 1L;
+	/** Creates new form FileChooser */
     public String path;
     public String file;
     

@@ -23,7 +23,8 @@ import GUI.MenuPrincipal;
 public class PanelConfig extends javax.swing.JPanel {
 
     
-    private MenuPrincipal ref;
+	private static final long serialVersionUID = 1L;
+	private MenuPrincipal ref;
     private VistaConfig vistaConfig;
     /** Creates new form PanelConfig */
     public PanelConfig(MenuPrincipal menu, VistaConfig vista) {

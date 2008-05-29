@@ -14,7 +14,9 @@ import javax.swing.JFileChooser;
  */
 public class DirectoryChooser extends javax.swing.JDialog {
 
-    /** Creates new form DirectoryChooser */
+
+	private static final long serialVersionUID = 1L;
+	/** Creates new form DirectoryChooser */
     private String path;
     
     

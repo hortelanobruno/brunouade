@@ -33,6 +33,7 @@ public class BusinessDelegate extends ProxyModelo {
 	 * Se indica url del servidor de aplicaciones
 	 * 
 	 */
+	@SuppressWarnings("unchecked")
 	private void inicializarContexto() {
 		try {
 			Hashtable props = new Hashtable();

@@ -7,15 +7,7 @@ import RemoteMVCFramework.Vista;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
-import VO.SolicitudVO;
-import VO.TiendaVO;
-import Varios.FileReaderWrapper;
-import Varios.XMLWrapper;
-import Vistas.VistaMain;
 import Vistas.VistaSolDis;
-
-import com.thoughtworks.xstream.XStream;
-import java.util.Vector;
 
 public class ControladorPanelSolDis extends Controlador
 {
