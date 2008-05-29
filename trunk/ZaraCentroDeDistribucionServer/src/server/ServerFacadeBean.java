@@ -77,16 +77,6 @@ public class ServerFacadeBean implements ServerFacade
 		// TODO Auto-generated method stub
 	}
 
-	public void guardarArticuloHogar(ArticuloHogarVO art) 
-	{
-		this.admArt.agregarArticuloHogar(art);
-	}
-
-	public void guardarArticuloRopa(ArticuloRopaVO art) 
-	{
-		this.admArt.agregarArticuloRopa(art);		
-	}
-
 	public Vector<String> getDescripciones(Vector<Long> codigos) 
 	{
 		return admArt.getDescripciones(codigos);
@@ -101,5 +91,11 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void guardarArticulo(ArticuloHeaderVO a) 
+	{
+		this.admArt.guardarArticulo(a);
+		
 	}
 }
