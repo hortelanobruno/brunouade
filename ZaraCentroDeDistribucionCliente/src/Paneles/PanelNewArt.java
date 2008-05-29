@@ -9,6 +9,7 @@ package Paneles;
 import javax.swing.JOptionPane;
 
 import Varios.Constantes;
+import Vistas.VistaNewArt;
 
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -19,13 +20,15 @@ import GUI.MenuPrincipal;
  */
 public class PanelNewArt extends javax.swing.JPanel {
 
-    /** Creates new form PanelNewArt */
-    MenuPrincipal ref;
+	/** Creates new form PanelNewArt */
+	private static final long serialVersionUID = 1L;
+    private MenuPrincipal ref;
+    private VistaNewArt vistaNewArt;
     
-    
-    public PanelNewArt(MenuPrincipal m) {
+    public PanelNewArt(MenuPrincipal m, VistaNewArt vista) {
         initComponents();
         this.ref = m;
+        this.vistaNewArt = vista;
     }
     
     public void update()
@@ -182,5 +185,13 @@ private void buttonGuardarActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JTable tableRopa;
     private FileChooser chooser;
     // End of variables declaration                   
+
+	public VistaNewArt getVistaNewArt() {
+		return vistaNewArt;
+	}
+
+	public void setVistaNewArt(VistaNewArt vistaNewArt) {
+		this.vistaNewArt = vistaNewArt;
+	}
 
 }

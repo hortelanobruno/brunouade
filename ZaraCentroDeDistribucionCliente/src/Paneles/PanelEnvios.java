@@ -11,6 +11,8 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
+import Vistas.VistaEnvios;
+
 import controladores.ControladorPanelSolDis;
 import GUI.MenuPrincipal;
 
@@ -26,12 +28,13 @@ public class PanelEnvios extends javax.swing.JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private MenuPrincipal ref;
+    private VistaEnvios vistaEnvios;
     
     /** Creates new form PanelEnvios */
-    public PanelEnvios(MenuPrincipal menu) {
+    public PanelEnvios(MenuPrincipal menu, VistaEnvios vista) {
         initComponents();
         this.ref = menu;
-        
+        this.vistaEnvios = vista;
         //Esto se reemplasa segun lo que elige en el combo
         DefaultMutableTreeNode abuelo = new DefaultMutableTreeNode("Solicitudes");
         DefaultTreeModel modelo = new DefaultTreeModel(abuelo);
@@ -199,5 +202,21 @@ private void buttonEnviarTiendaActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JTable tablePendientes;
     private javax.swing.JTree treeArticulos;
     // End of variables declaration                   
+
+	public VistaEnvios getVistaEnvios() {
+		return vistaEnvios;
+	}
+
+	public void setVistaEnvios(VistaEnvios vistaEnvios) {
+		this.vistaEnvios = vistaEnvios;
+	}
+
+	public MenuPrincipal getRef() {
+		return ref;
+	}
+
+	public void setRef(MenuPrincipal ref) {
+		this.ref = ref;
+	}
 
 }

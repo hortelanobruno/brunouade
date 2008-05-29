@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import controladores.ControladorPanelConfig;
 
 import Varios.Constantes;
+import Vistas.VistaConfig;
 
 import GUI.DirectoryChooser;
 import GUI.MenuPrincipal;
@@ -23,9 +24,11 @@ public class PanelConfig extends javax.swing.JPanel {
 
     
     private MenuPrincipal ref;
+    private VistaConfig vistaConfig;
     /** Creates new form PanelConfig */
-    public PanelConfig(MenuPrincipal menu) {
-        ref = menu;
+    public PanelConfig(MenuPrincipal menu, VistaConfig vista) {
+        this.ref = menu;
+        this.vistaConfig = vista;
         initComponents();
         this.textFieldDirectorioXML.setText(ref.getDefaltXmlPath());
         this.textFieldServidorIP.setText(ref.getServerIP());
@@ -151,5 +154,12 @@ private void buttonGuardarActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JTextField textFieldDirectorioXML;
     private javax.swing.JTextField textFieldServidorIP;
     // End of variables declaration                   
+	public VistaConfig getVistaConfig() {
+		return vistaConfig;
+	}
+
+	public void setVistaConfig(VistaConfig vistaConfig) {
+		this.vistaConfig = vistaConfig;
+	}
 
 }
