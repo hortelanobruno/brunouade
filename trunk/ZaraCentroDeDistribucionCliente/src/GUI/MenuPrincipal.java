@@ -18,9 +18,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
-import controladores.ControladorPanelConfig;
-
 import Paneles.PanelConfig;
 import Paneles.PanelDB;
 import Paneles.PanelEnvios;
@@ -28,7 +25,6 @@ import Paneles.PanelGenSolFab;
 import Paneles.PanelNewArt;
 import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
-import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 import Vistas.VistaConfig;
 import Vistas.VistaEnvios;
@@ -58,7 +54,6 @@ public class MenuPrincipal extends javax.swing.JFrame
 
     private String defaltXmlPath;
     private String serverIP;
-    private static MenuPrincipal instance;
     private File confFile;
 
     /** Creates new form MenuPrincipal 
@@ -552,11 +547,7 @@ private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {
             this.dispose();
         }
     }
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
-
-        this.CloseApplication();
-    }                                  
+                                 
 
     public void ponerPanelPrincipal() {
         this.setTitle(Constantes.APPLICATION_NAME + "Menu principal - ");

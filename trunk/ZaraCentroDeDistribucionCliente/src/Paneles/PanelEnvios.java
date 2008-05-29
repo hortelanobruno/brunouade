@@ -6,14 +6,10 @@
 
 package Paneles;
 
-import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-
 import Vistas.VistaEnvios;
-
-import controladores.ControladorPanelSolDis;
 import GUI.MenuPrincipal;
 
 /**
