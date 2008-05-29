@@ -457,7 +457,7 @@ private void menuItemAyudaActionPerformed(java.awt.event.ActionEvent evt) {
 private void menuItemConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {                                                      
     // panel configuracion
     if (!isPanelConfigSelected) {
-        panelConfig = new PanelConfig(this);
+        panelConfig = new PanelConfig(this,vistaConfig);
         ponerPanel(panelConfig);
     }
 }                                                     
@@ -473,7 +473,7 @@ private void menuItemSolDistrActionPerformed(java.awt.event.ActionEvent evt) {
 private void menuItemEnvTiendaActionPerformed(java.awt.event.ActionEvent evt) {                                                  
     // generar envio a tienda
     if (!isPanelEnviosSelected) {
-        panelEnvios = new PanelEnvios(this);
+        panelEnvios = new PanelEnvios(this,vistaEnvios);
         ponerPanel(panelEnvios);
     }
 }                                                 
@@ -481,7 +481,7 @@ private void menuItemEnvTiendaActionPerformed(java.awt.event.ActionEvent evt) {
 private void menuItemSolFabActionPerformed(java.awt.event.ActionEvent evt) {                                               
     // solicitud a fabricacion
     if (!isPanelGSFSelected) {
-        panelGSF = new PanelGenSolFab(this);
+        panelGSF = new PanelGenSolFab(this,vistaGenSolFab);
         ponerPanel(panelGSF);
     }
 }                                              
@@ -489,7 +489,7 @@ private void menuItemSolFabActionPerformed(java.awt.event.ActionEvent evt) {
 private void menuItemRepArtActionPerformed(java.awt.event.ActionEvent evt) {                                               
     // reponer articulos de fabrica
     if (!isPanelRepArtSelected) {
-        panelRepArt = new PanelRepArt(this);
+        panelRepArt = new PanelRepArt(this,vistaRepArt);
         ponerPanel(panelRepArt);
     }
 }                                              
@@ -497,7 +497,7 @@ private void menuItemRepArtActionPerformed(java.awt.event.ActionEvent evt) {
 private void menuItemNewArtActionPerformed(java.awt.event.ActionEvent evt) {                                               
     // informacion nuevo articulo
     if (!isPanelNewArtSelected) {
-        panelNewArt = new PanelNewArt(this);
+        panelNewArt = new PanelNewArt(this,vistaNewArt);
         ponerPanel(panelNewArt);
     }
 }                                              
@@ -518,7 +518,7 @@ private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {
 private void buttonEnvTiendaActionPerformed(java.awt.event.ActionEvent evt) {                                                
     // generar envio a tienda
     if (!isPanelEnviosSelected) {
-        panelEnvios = new PanelEnvios(this);
+        panelEnvios = new PanelEnvios(this,vistaEnvios);
         ponerPanel(panelEnvios);
     }
 }                                               
@@ -526,7 +526,7 @@ private void buttonEnvTiendaActionPerformed(java.awt.event.ActionEvent evt) {
 private void buttonSolFabrActionPerformed(java.awt.event.ActionEvent evt) {                                              
     // solicitud a fabricacion
     if (!isPanelGSFSelected) {
-        panelGSF = new PanelGenSolFab(this);
+        panelGSF = new PanelGenSolFab(this,vistaGenSolFab);
         ponerPanel(panelGSF);
     }
 }                                             
@@ -534,7 +534,7 @@ private void buttonSolFabrActionPerformed(java.awt.event.ActionEvent evt) {
 private void buttonRepArtActionPerformed(java.awt.event.ActionEvent evt) {                                             
     // reponer articulos de fabrica
     if (!isPanelRepArtSelected) {
-        panelRepArt = new PanelRepArt(this);
+        panelRepArt = new PanelRepArt(this,vistaRepArt);
         ponerPanel(panelRepArt);
     }
 }                                            
@@ -542,7 +542,7 @@ private void buttonRepArtActionPerformed(java.awt.event.ActionEvent evt) {
 private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {                                             
     // informacion nuevo articulo
     if (!isPanelNewArtSelected) {
-        panelNewArt = new PanelNewArt(this);
+        panelNewArt = new PanelNewArt(this,vistaNewArt);
         ponerPanel(panelNewArt);
     }
 }                                            

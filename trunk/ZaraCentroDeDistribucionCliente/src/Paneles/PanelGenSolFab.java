@@ -6,6 +6,7 @@
 
 package Paneles;
 
+import Vistas.VistaGenSolFab;
 import controladores.ControladorPanelEnvios;
 import GUI.MenuPrincipal;
 
@@ -15,12 +16,14 @@ import GUI.MenuPrincipal;
  */
 public class PanelGenSolFab extends javax.swing.JPanel {
 
-    private ControladorPanelEnvios controlador;
     private MenuPrincipal ref;
+    private VistaGenSolFab vistaGenSolFab;
+    
     /** Creates new form PanelGenSolFab */
-    public PanelGenSolFab(MenuPrincipal r) {
+    public PanelGenSolFab(MenuPrincipal r, VistaGenSolFab vista) {
         initComponents();
         this.ref = r;
+        this.vistaGenSolFab = vista;
     }
     
     public void update()
@@ -152,5 +155,21 @@ private void buttonVistaPreviaActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration                   
+
+	public MenuPrincipal getRef() {
+		return ref;
+	}
+
+	public void setRef(MenuPrincipal ref) {
+		this.ref = ref;
+	}
+
+	public VistaGenSolFab getVistaGenSolFab() {
+		return vistaGenSolFab;
+	}
+
+	public void setVistaGenSolFab(VistaGenSolFab vistaGenSolFab) {
+		this.vistaGenSolFab = vistaGenSolFab;
+	}
 
 }

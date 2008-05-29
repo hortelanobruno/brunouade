@@ -32,7 +32,6 @@ import Vistas.VistaSolDis;
 public class PanelSolDist extends javax.swing.JPanel {
 
 	private static final long serialVersionUID = 1L;
-
 	private String urlXML;
 	private boolean cargarTable;
 	private MenuPrincipal ref;

@@ -6,6 +6,7 @@
 
 package Paneles;
 
+import Vistas.VistaRepArt;
 import GUI.MenuPrincipal;
 
 
@@ -15,12 +16,17 @@ import GUI.MenuPrincipal;
  */
 public class PanelRepArt extends javax.swing.JPanel {
 
-    /** Creates new form PanelRepArt */
-	private MenuPrincipal ref;
+
 	
-    public PanelRepArt(MenuPrincipal m) {
+	/** Creates new form PanelRepArt */
+	private static final long serialVersionUID = 1L;
+	private MenuPrincipal ref;
+	private VistaRepArt vistaRepArt;
+	
+    public PanelRepArt(MenuPrincipal m, VistaRepArt vista) {
         initComponents();
         this.ref = m;
+        this.vistaRepArt = vista;
     }
     
     public void update()
@@ -123,5 +129,21 @@ private void buttonGuardarActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableArticulosFabrica;
     // End of variables declaration                   
+
+	public MenuPrincipal getRef() {
+		return ref;
+	}
+
+	public void setRef(MenuPrincipal ref) {
+		this.ref = ref;
+	}
+
+	public VistaRepArt getVistaRepArt() {
+		return vistaRepArt;
+	}
+
+	public void setVistaRepArt(VistaRepArt vistaRepArt) {
+		this.vistaRepArt = vistaRepArt;
+	}
 
 }
