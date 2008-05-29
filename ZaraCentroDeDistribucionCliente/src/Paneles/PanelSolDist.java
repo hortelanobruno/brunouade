@@ -9,22 +9,20 @@ package Paneles;
 import java.awt.Color;
 import java.util.Iterator;
 import java.util.Vector;
-
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
-
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
-
-import controladores.ControladorPanelConfig;
 import controladores.ControladorPanelSolDis;
-
 import VO.ArticuloHeaderVO;
 import VO.SolicitudDistribucionVO;
+import VO.SolicitudEnvioVO;
+import VO.SolicitudFabricaVO;
 import Varios.Constantes;
+import Varios.XMLWrapper;
 
 /**
  * 
@@ -32,15 +30,17 @@ import Varios.Constantes;
  */
 public class PanelSolDist extends javax.swing.JPanel {
 
-	DefaultTableModel dtm;
+	private static final long serialVersionUID = 1L;
 
+	private String urlXML;
+	private boolean cargarTable;
 	private MenuPrincipal ref;
+	private SolicitudDistribucionVO solDisVO;
 
 	/** Creates new form PanelSolDist */
 	public PanelSolDist(MenuPrincipal mn) {
 		initComponents();
 		this.ref = mn;
-		dtm = new DefaultTableModel();
 
 		tableArticulos.getModel().addTableModelListener(
 				new TableModelListener() {
@@ -49,15 +49,6 @@ public class PanelSolDist extends javax.swing.JPanel {
 							validateTable();
 					}
 				});
-	}
-
-	public void update() {
-		tableArticulos.setModel(dtm);
-		// System.out.println("llego");
-		// algo asi que lea de la base
-		// String.valueOf(((ProxyModeloAdmProductos)(this.getVistaPadre().getModelo())).getStock((String)(comboProductos.getSelectedItem())
-		// ))
-		ref.invalidate();
 	}
 
 	/**
@@ -91,6 +82,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 				}, new String[] { "Nombre Solicitud", "Tienda", "Codigo Art.",
 						"Descripcion", "Cantidad Pedida", "Stock Actual",
 						"Cantidad a Enviar" }) {
+			private static final long serialVersionUID = 1L;
+
 			Class[] types = new Class[] { java.lang.String.class,
 					java.lang.String.class, java.lang.Long.class,
 					java.lang.String.class, java.lang.Integer.class,
@@ -233,53 +226,38 @@ public class PanelSolDist extends javax.swing.JPanel {
 	}// </editor-fold>
 
 	private void buttonGuardarPedidoActionPerformed(java.awt.event.ActionEvent evt) {
-		// /Guardar pedido
-		dtm = (DefaultTableModel) tableArticulos.getModel();
-		SolicitudDistribucionVO soldis = new SolicitudDistribucionVO();
-		((ControladorPanelSolDis) ref.getVistaPadre().getControlador())
-				.doGuardarSolicitud(soldis);
-		// JOptionPane.showMessageDialog(this, "Operacion concretada.");
-		new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
-		// ref.ponerPanelPrincipal();
+		((ControladorPanelSolDis) this.ref.getVistaSolDis().getControlador()).doCargarXML(false);
 	}
 
 	private void buttonCargarXMLActionPerformed(java.awt.event.ActionEvent evt) {
 		// Carga archivo XML
 		chooser = new FileChooser(ref, true, ref.getDefaltXmlPath());
 		String url = chooser.getPath();
-		//String b = chooser.getFile();
-
 		if (url.equals(""))
 			JOptionPane.showMessageDialog(this,
 					"Debe ingresar la ubicacion del archivo XML.\n",
 					Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
 		else {
-			//Cargar los table
-			ref.getJTextArea1().append("Archivo Cargado\n");
-			
-			
-			SolicitudDistribucionVO solDisVO = (SolicitudDistribucionVO)((ControladorPanelSolDis) this.ref.getVistaSolDis()
-					.getControlador()).doCargarXML(url);
-			
-			Vector<Long> codigos = new Vector<Long>();
-			Iterator arts = (Iterator) solDisVO.getArticulo().iterator();
-			while(arts.hasNext()){
-				codigos.add(((ArticuloHeaderVO)arts.next()).getCodigo());
-			}
-			Vector<String> descripciones = ((ControladorPanelSolDis) this.ref.getVistaSolDis().getControlador()).doGetDescripciones(codigos);
-			
-			Vector<Integer> stocks = ((ControladorPanelSolDis) this.ref.getVistaSolDis().getControlador()).doGetStocks(codigos);
-			
-			cargarTable(solDisVO,codigos,descripciones,stocks);
+			// Cargar los table
+			((ControladorPanelSolDis) this.ref.getVistaSolDis().getControlador()).doCargarXML(true);
 		}
 	}
-
 	
-	private void cargarTable(SolicitudDistribucionVO solDisVO, Vector<Long> codigos, Vector<String> descripciones, Vector<Integer> stocks){
+	
+
+	private void cargarTable(SolicitudDistribucionVO solDisVO,
+			Vector<Long> codigos, Vector<String> descripciones,
+			Vector<Integer> stocks) {
 		Iterator iterador = (Iterator) solDisVO.getArticulo().iterator();
-		for(int i = 0 ; i < solDisVO.getArticulo().size() ; i++){
-			((DefaultTableModel)tableArticulos.getModel()).addRow(new Object[]{"Solicitud Numero "+solDisVO.getNumero(),solDisVO.getTienda().getNombreTienda(), codigos.elementAt(i).toString(), descripciones.elementAt(i).toString(),
-					((ArticuloHeaderVO)iterador.next()).getCantidad(),stocks.elementAt(i).toString(),0});
+		for (int i = 0; i < solDisVO.getArticulo().size(); i++) {
+			((DefaultTableModel) tableArticulos.getModel())
+					.addRow(new Object[] {
+							"Solicitud Numero " + solDisVO.getNumero(),
+							solDisVO.getTienda().getNombreTienda(),
+							codigos.elementAt(i).toString(),
+							descripciones.elementAt(i).toString(),
+							((ArticuloHeaderVO) iterador.next()).getCantidad(),
+							stocks.elementAt(i).toString(), 0 });
 		}
 	}
 
@@ -321,6 +299,52 @@ public class PanelSolDist extends javax.swing.JPanel {
 		}
 	}
 
+	public void update() {
+		//aca hay que poner las llamadas a la business delegate
+		if(cargarTable){
+			XMLWrapper xml = new XMLWrapper();
+			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
+			Vector<Long> codigos = new Vector<Long>();
+			Iterator arts = (Iterator) solDisVO.getArticulo().iterator();
+			while (arts.hasNext()) {
+				codigos.add(((ArticuloHeaderVO) arts.next()).getCodigo());
+			}
+			Vector<String> descripciones = this.ref.getVistaPadre().getModelo().getDescripciones(codigos);
+			Vector<Integer> stocks = this.ref.getVistaPadre().getModelo().getStocks(codigos);
+			cargarTable(solDisVO, codigos, descripciones, stocks);
+			ref.getJTextArea1().append("Archivo Cargado\n");
+		}else{
+			//Falta generar las solicitudes
+			SolicitudEnvioVO solEnvio = (SolicitudEnvioVO) generarSolEnvios();
+			SolicitudFabricaVO solFab = (SolicitudFabricaVO) generarSolFab();
+			
+			((ControladorPanelSolDis)this.ref.getVistaSolDis().getControlador()).doGuardarSolicitud(solDisVO);
+			((ControladorPanelSolDis)this.ref.getVistaSolDis().getControlador()).doGuardarSolicitudEnvios(solEnvio);
+			((ControladorPanelSolDis)this.ref.getVistaSolDis().getControlador()).doGuardarSolicitudFabricacion(solFab);
+			vaciarTabla();
+			ref.getJTextArea1().append("Solicitudes Guardadas\n");
+			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
+		}
+	}
+
+	public SolicitudEnvioVO generarSolEnvios(){
+		SolicitudEnvioVO sol = new SolicitudEnvioVO();
+		//aca falta generar la solicitud
+		return sol;
+	}
+	
+	public SolicitudFabricaVO generarSolFab(){
+		SolicitudFabricaVO sol = new SolicitudFabricaVO();
+		//aca falta generar la solicitud
+		return sol;
+	}
+	
+	public void vaciarTabla(){
+		for(int i=0 ; i<tableArticulos.getRowCount() ; i++){
+			((DefaultTableModel)tableArticulos.getModel()).removeRow(i);
+		}
+	}
+	
 	// Variables declaration - do not modify
 	private javax.swing.JButton buttonCargarXML;
 
@@ -336,5 +360,13 @@ public class PanelSolDist extends javax.swing.JPanel {
 
 	private FileChooser chooser;
 	// End of variables declaration
+
+	public boolean getCargarTable() {
+		return cargarTable;
+	}
+
+	public void setCargarTable(boolean cargarTable) {
+		this.cargarTable = cargarTable;
+	}
 
 }

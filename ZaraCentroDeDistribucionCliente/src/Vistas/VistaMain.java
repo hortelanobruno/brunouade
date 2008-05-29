@@ -1,22 +1,21 @@
 package Vistas;
 
+import BusinessLogic.BusinessDelegate;
 import GUI.MenuPrincipal;
-import RemoteMVCFramework.ProxyModelo;
 import RemoteMVCFramework.Vista;
-import VO.SolicitudDistribucionVO;
 
 public class VistaMain extends Vista 
 {
     private MenuPrincipal princ;
 
-    public VistaMain(ProxyModelo mod) 
+    public VistaMain(BusinessDelegate mod) 
     {
         super(mod);
-        this.princ = MenuPrincipal.getInstance(this);//new MenuPrincipal(this);
+        princ = new MenuPrincipal(this);
         princ.setVisible(true);
     }
 
-    @Override
+    
     public void actualizar() 
     {
         getPrinc().updatePanel();

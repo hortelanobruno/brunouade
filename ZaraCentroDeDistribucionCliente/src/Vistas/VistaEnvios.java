@@ -1,12 +1,16 @@
 package Vistas;
 
-import RemoteMVCFramework.ProxyModelo;
+import BusinessLogic.BusinessDelegate;
+import GUI.MenuPrincipal;
 import RemoteMVCFramework.Vista;
 
 public class VistaEnvios extends Vista {
 
-	public VistaEnvios(ProxyModelo mod) {
+	private MenuPrincipal ref;
+	
+	public VistaEnvios(BusinessDelegate mod, MenuPrincipal mn) {
 		super(mod);
+		this.ref = mn;
 		
 	}
 

@@ -1,13 +1,16 @@
 package Vistas;
 
-import RemoteMVCFramework.ProxyModelo;
+import BusinessLogic.BusinessDelegate;
+import GUI.MenuPrincipal;
 import RemoteMVCFramework.Vista;
 
 public class VistaConfig extends Vista {
 
-	public VistaConfig(ProxyModelo mod) {
+	private MenuPrincipal ref;
+	
+	public VistaConfig(BusinessDelegate mod, MenuPrincipal mn) {
 		super(mod);
-		// TODO Auto-generated constructor stub
+		this.ref = mn;
 	}
 
 
