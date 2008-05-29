@@ -21,14 +21,25 @@ public class Main
 	{
 	    BusinessDelegate modelo = new BusinessDelegate();
 	    //Inicializo todas las vistas
+	    VistaConfig vConfig = new VistaConfig(modelo);
+	    VistaEnvios vEnvios = new VistaEnvios(modelo);
+	    VistaGenSolFab vGenSolFab = new VistaGenSolFab(modelo);
+	    VistaNewArt vNewArt = new VistaNewArt(modelo);
+	    VistaRepArt vRepArt = new VistaRepArt(modelo);
+	    VistaSolDis vSolDis = new VistaSolDis(modelo);
 	    VistaMain vMain = new VistaMain(modelo);
-	    MenuPrincipal menu = vMain.getPrinc();
-	    VistaConfig vConfig = new VistaConfig(modelo,menu);
-	    VistaEnvios vEnvios = new VistaEnvios(modelo,menu);
-	    VistaGenSolFab vGenSolFab = new VistaGenSolFab(modelo,menu);
-	    VistaNewArt vNewArt = new VistaNewArt(modelo,menu);
-	    VistaRepArt vRepArt = new VistaRepArt(modelo,menu);
-	    VistaSolDis vSolDis = new VistaSolDis(modelo,menu);
+	    
+	    MenuPrincipal princ = new MenuPrincipal(vMain,vSolDis,vEnvios,vGenSolFab,vRepArt,vNewArt,vConfig);
+        princ.setVisible(true);
+        
+        vMain.setRef(princ);
+        vSolDis.setRef(princ);
+        vEnvios.setRef(princ);
+        vGenSolFab.setRef(princ);
+        vNewArt.setRef(princ);
+        vRepArt.setRef(princ);
+        vConfig.setRef(princ);
+        
 		//Inicializo todos los controladores
 	    ControladorPanelConfig cConfig = new ControladorPanelConfig(modelo,vConfig);
 	    ControladorPanelEnvios cEnvios = new ControladorPanelEnvios(modelo,vEnvios);

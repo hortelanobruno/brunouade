@@ -6,28 +6,27 @@ import RemoteMVCFramework.Vista;
 
 public class VistaMain extends Vista 
 {
-    private MenuPrincipal princ;
+    private MenuPrincipal ref;
 
     public VistaMain(BusinessDelegate mod) 
     {
         super(mod);
-        princ = new MenuPrincipal(this);
-        princ.setVisible(true);
+        
     }
 
     
     public void actualizar() 
     {
-        getPrinc().updatePanel();
+        getRef().updatePanel();
     }
     
-    public MenuPrincipal getPrinc() 
+    public MenuPrincipal getRef() 
     {
-        return princ;
+        return ref;
     }
 
-    public void setPrinc(MenuPrincipal princ)
+    public void setRef(MenuPrincipal princ)
     {
-        this.princ = princ;
+        this.ref = princ;
     }          
 }

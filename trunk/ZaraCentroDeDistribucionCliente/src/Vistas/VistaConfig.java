@@ -8,15 +8,24 @@ public class VistaConfig extends Vista {
 
 	private MenuPrincipal ref;
 	
-	public VistaConfig(BusinessDelegate mod, MenuPrincipal mn) {
+	public VistaConfig(BusinessDelegate mod) {
 		super(mod);
-		this.ref = mn;
 	}
 
 
 	public void actualizar() {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	public MenuPrincipal getRef() {
+		return ref;
+	}
+
+
+	public void setRef(MenuPrincipal ref) {
+		this.ref = ref;
 	}
 
 }

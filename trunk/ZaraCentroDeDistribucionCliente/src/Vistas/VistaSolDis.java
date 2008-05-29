@@ -8,10 +8,8 @@ public class VistaSolDis extends Vista{
 
 	private MenuPrincipal ref;
 	
-	public VistaSolDis(BusinessDelegate businessDelegate, MenuPrincipal mn) {
+	public VistaSolDis(BusinessDelegate businessDelegate) {
 		super(businessDelegate);
-		this.ref = mn;
-		
 	}
 
 	public void cargarTabla(boolean flag){
@@ -19,7 +17,14 @@ public class VistaSolDis extends Vista{
 	}
 
 	public void actualizar() {
-		// TODO Auto-generated method stub
-		
+		ref.getPanelSD().update();
+	}
+
+	public MenuPrincipal getRef() {
+		return ref;
+	}
+
+	public void setRef(MenuPrincipal ref) {
+		this.ref = ref;
 	}
 }
