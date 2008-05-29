@@ -1,15 +1,22 @@
 package Vistas;
 
-import RemoteMVCFramework.ProxyModelo;
+import BusinessLogic.BusinessDelegate;
+import GUI.MenuPrincipal;
 import RemoteMVCFramework.Vista;
 
 public class VistaSolDis extends Vista{
 
-	public VistaSolDis(ProxyModelo mod) {
-		super(mod);
-		// TODO Auto-generated constructor stub
+	private MenuPrincipal ref;
+	
+	public VistaSolDis(BusinessDelegate businessDelegate, MenuPrincipal mn) {
+		super(businessDelegate);
+		this.ref = mn;
+		
 	}
 
+	public void cargarTabla(boolean flag){
+		ref.getPanelSD().setCargarTable(flag);
+	}
 
 	public void actualizar() {
 		// TODO Auto-generated method stub

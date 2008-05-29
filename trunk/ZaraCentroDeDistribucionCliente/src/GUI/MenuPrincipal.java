@@ -447,8 +447,6 @@ private void menuItemAyudaActionPerformed(java.awt.event.ActionEvent evt) {
 private void menuItemConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {                                                      
     // panel configuracion
     if (!isPanelConfigSelected) {
-        this.vistaConfig = new VistaConfig(this.getVistaPadre().getModelo());
-        ControladorPanelConfig cConf = new ControladorPanelConfig(this.getVistaPadre().getModelo(), this.getVistaConfig());
         panelConfig = new PanelConfig(this);
         ponerPanel(panelConfig);
     }
@@ -938,5 +936,61 @@ private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {
 
 	public void setVistaSolDis(VistaSolDis vistaSolDis) {
 		this.vistaSolDis = vistaSolDis;
+	}
+
+	public PanelConfig getPanelConfig() {
+		return panelConfig;
+	}
+
+	public void setPanelConfig(PanelConfig panelConfig) {
+		this.panelConfig = panelConfig;
+	}
+
+	public PanelDB getPanelDB() {
+		return panelDB;
+	}
+
+	public void setPanelDB(PanelDB panelDB) {
+		this.panelDB = panelDB;
+	}
+
+	public PanelEnvios getPanelEnvios() {
+		return panelEnvios;
+	}
+
+	public void setPanelEnvios(PanelEnvios panelEnvios) {
+		this.panelEnvios = panelEnvios;
+	}
+
+	public PanelGenSolFab getPanelGSF() {
+		return panelGSF;
+	}
+
+	public void setPanelGSF(PanelGenSolFab panelGSF) {
+		this.panelGSF = panelGSF;
+	}
+
+	public PanelNewArt getPanelNewArt() {
+		return panelNewArt;
+	}
+
+	public void setPanelNewArt(PanelNewArt panelNewArt) {
+		this.panelNewArt = panelNewArt;
+	}
+
+	public PanelRepArt getPanelRepArt() {
+		return panelRepArt;
+	}
+
+	public void setPanelRepArt(PanelRepArt panelRepArt) {
+		this.panelRepArt = panelRepArt;
+	}
+
+	public PanelSolDist getPanelSD() {
+		return panelSD;
+	}
+
+	public void setPanelSD(PanelSolDist panelSD) {
+		this.panelSD = panelSD;
 	}
 }

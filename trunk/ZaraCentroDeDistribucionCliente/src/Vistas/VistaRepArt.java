@@ -1,12 +1,16 @@
 package Vistas;
 
-import RemoteMVCFramework.ProxyModelo;
+import BusinessLogic.BusinessDelegate;
+import GUI.MenuPrincipal;
 import RemoteMVCFramework.Vista;
 
 public class VistaRepArt extends Vista {
 
-	public VistaRepArt(ProxyModelo mod) {
+	private MenuPrincipal ref;
+	
+	public VistaRepArt(BusinessDelegate mod, MenuPrincipal mn) {
 		super(mod);
+		this.ref = mn;
 	}
 
 

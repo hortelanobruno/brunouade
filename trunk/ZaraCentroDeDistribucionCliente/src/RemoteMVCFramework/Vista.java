@@ -8,15 +8,17 @@
 
 package RemoteMVCFramework;
 
+import BusinessLogic.BusinessDelegate;
+
 public abstract class Vista
 {
-    protected ProxyModelo modelo;
+    protected BusinessDelegate modelo;
     protected Controlador controlador;
 
-    public Vista(ProxyModelo mod) 
+    public Vista(BusinessDelegate bd) 
     {
-        modelo = mod;
-        mod.setVista(this);
+        modelo = bd;
+        bd.setVista(this);
     }
 
     public void addControlador(Controlador cp)
@@ -24,7 +26,7 @@ public abstract class Vista
         controlador = cp;
     }
 
-    public ProxyModelo getModelo() 
+    public BusinessDelegate getModelo() 
     {
         return modelo;
     }
