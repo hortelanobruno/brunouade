@@ -13,10 +13,13 @@ public class VistaNewArt extends Vista {
 	}
 
 
-	public void actualizar() {
-		
+	public void cargarTabla(boolean flag){
+		ref.getPanelNewArt().setCargarTable(flag);
 	}
 
+	public void actualizar() {
+		ref.getPanelSD().update();
+	}
 
 	public MenuPrincipal getRef() {
 		return ref;
