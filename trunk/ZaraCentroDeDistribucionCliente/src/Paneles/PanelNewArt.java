@@ -45,60 +45,42 @@ public class PanelNewArt extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableRopa = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableHogar = new javax.swing.JTable();
+        tableArticulo = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         buttonCargarXML = new javax.swing.JButton();
         buttonGuardar = new javax.swing.JButton();
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-
-        tableRopa.setModel(new javax.swing.table.DefaultTableModel(
+        tableArticulo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Referencia", "Descripcion", "Precio", "Cantidad", "Seccion", "Linea", "Color", "Talle", "Origen"
+                "Atributo", "Valor"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-        });
-        tableRopa.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        jScrollPane1.setViewportView(tableRopa);
 
-        tableHogar.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Referencia", "Descripcion", "Precio", "Cantidad", "Seccion", "Linea", "Color", "Detalles", "Composicion", "Categoria", "Medidas"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        tableHogar.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        jScrollPane2.setViewportView(tableHogar);
+        tableArticulo.getTableHeader().setResizingAllowed(false);
+        tableArticulo.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tableArticulo);
 
-        jLabel1.setText("Articulos Ropa");
+        jLabel1.setText("Nuevo Articulo");
 
-        jLabel2.setText("Articulos Hogar");
-
-        buttonCargarXML.setText("Cargar XML");
+        buttonCargarXML.setText("Cargar Articulo");
         buttonCargarXML.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCargarXMLActionPerformed(evt);
@@ -117,39 +99,31 @@ public class PanelNewArt extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
+                .add(35, 35, 35)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(26, 26, 26)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 286, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel1))
-                        .add(57, 57, 57)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel2)
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 306, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(layout.createSequentialGroup()
-                        .add(167, 167, 167)
                         .add(buttonCargarXML)
-                        .add(136, 136, 136)
-                        .add(buttonGuardar)))
-                .addContainerGap(364, Short.MAX_VALUE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 156, Short.MAX_VALUE)
+                        .add(buttonGuardar))
+                    .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 332, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(672, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+            .add(layout.createSequentialGroup()
+                .add(125, 125, 125)
+                .add(jLabel1)
+                .addContainerGap(844, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(56, 56, 56)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel2)
-                    .add(jLabel1))
+                .add(37, 37, 37)
+                .add(jLabel1)
+                .add(39, 39, 39)
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
                 .add(50, 50, 50)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jScrollPane2, 0, 0, Short.MAX_VALUE)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
-                .add(49, 49, 49)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(buttonCargarXML)
                     .add(buttonGuardar))
-                .add(67, 67, 67))
+                .add(104, 104, 104))
         );
     }// </editor-fold>                        
 
@@ -178,11 +152,8 @@ private void buttonGuardarActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JButton buttonCargarXML;
     private javax.swing.JButton buttonGuardar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tableHogar;
-    private javax.swing.JTable tableRopa;
+    private javax.swing.JTable tableArticulo;
     private FileChooser chooser;
     // End of variables declaration                   
 

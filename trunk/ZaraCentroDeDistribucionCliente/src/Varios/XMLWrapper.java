@@ -34,5 +34,20 @@ public class XMLWrapper {
     public SolicitudFabricaVO parseXMLSF(String url)
     {
     	
+		return null;
+    	
+    }
+    
+    public XMLArticulo parseXMLArticulo(String url)
+    {
+    	FileReaderWrapper fileReader = new FileReaderWrapper(url);
+        String XML = fileReader.obtenerContenido();
+        XStream xstream = new XStream();
+
+        xstream.alias("XMLArticulo", XMLArticulo.class);
+
+        XMLArticulo art = (XMLArticulo) xstream.fromXML(XML);
+
+        return art;
     }
 }
