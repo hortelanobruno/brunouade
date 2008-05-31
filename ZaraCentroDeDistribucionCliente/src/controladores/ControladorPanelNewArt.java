@@ -1,9 +1,9 @@
 package controladores;
 
 import BusinessLogic.BusinessDelegate;
-import RemoteMVCFramework.Controlador;
-import RemoteMVCFramework.ProxyModelo;
-import RemoteMVCFramework.Vista;
+import MVCFramework.Controlador;
+import MVCFramework.ProxyModelo;
+import MVCFramework.Vista;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
 import Vistas.VistaNewArt;

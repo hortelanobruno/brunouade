@@ -1,8 +1,8 @@
 package controladores;
 
-import RemoteMVCFramework.Controlador;
-import RemoteMVCFramework.ProxyModelo;
-import RemoteMVCFramework.Vista;
+import MVCFramework.Controlador;
+import MVCFramework.ProxyModelo;
+import MVCFramework.Vista;
 
 public class ControladorPanelGenSolFab extends Controlador {
 

@@ -1,8 +1,8 @@
 package controladores;
 
-import RemoteMVCFramework.Controlador;
-import RemoteMVCFramework.ProxyModelo;
-import RemoteMVCFramework.Vista;
+import MVCFramework.Controlador;
+import MVCFramework.ProxyModelo;
+import MVCFramework.Vista;
 import Vistas.VistaRepArt;
 
 public class ControladorPanelRepArt extends Controlador{
