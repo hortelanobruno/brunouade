@@ -60,6 +60,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	public void guardarArticuloHogar(ArticuloHogarVO art)
 	{
+		System.out.println("voy a guardar el articulo hogar");
 		ArticuloHogar ah = new ArticuloHogar();
 		ah.setCodigo(art.getCodigo());
 		ah.setCantidad(art.getCantidad());
@@ -76,6 +77,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	public void guardarArticuloRopa(ArticuloRopaVO art) 
 	{
+		System.out.println("voy a guardar el articulo ropa");
 		ArticuloRopa ar = new ArticuloRopa();
 		ar.setTalle(art.getTalle());
 		ar.setOrigen(ar.getOrigen());
