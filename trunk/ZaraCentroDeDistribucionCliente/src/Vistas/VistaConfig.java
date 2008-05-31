@@ -2,7 +2,7 @@ package Vistas;
 
 import BusinessLogic.BusinessDelegate;
 import GUI.MenuPrincipal;
-import RemoteMVCFramework.Vista;
+import MVCFramework.Vista;
 
 public class VistaConfig extends Vista {
 

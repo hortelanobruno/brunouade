@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.Vector;
-import RemoteMVCFramework.Controlador;
-import RemoteMVCFramework.ProxyModelo;
-import RemoteMVCFramework.Vista;
+
+import MVCFramework.Controlador;
+import MVCFramework.ProxyModelo;
+import MVCFramework.Vista;
 
 public class ControladorPanelConfig extends Controlador{
 

@@ -1,6 +1,6 @@
 package BusinessLogic;
 
-import RemoteMVCFramework.ProxyModelo;
+import MVCFramework.ProxyModelo;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudFabricaVO;
 import VO.SolicitudEnvioVO;
