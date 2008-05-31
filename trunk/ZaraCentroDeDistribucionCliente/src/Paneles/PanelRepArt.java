@@ -21,6 +21,7 @@ import VO.SolicitudFabricaVO;
 import Varios.Constantes;
 import Varios.XMLWrapper;
 import Vistas.VistaRepArt;
+import Vistas.VistaSolDis;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
