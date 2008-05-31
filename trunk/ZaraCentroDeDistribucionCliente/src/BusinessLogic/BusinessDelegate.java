@@ -7,30 +7,30 @@ import VO.SolicitudEnvioVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
 import Varios.Constantes;
-import java.util.Hashtable;
+//import java.util.Hashtable;
 import java.util.Vector;
 
+//import javax.ejb.Remote;
 import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
+//import javax.naming.InitialContext;
+//import javax.naming.NamingException;
 
-public class BusinessDelegate extends ProxyModelo {
+public class BusinessDelegate extends ProxyModelo 
+{
 	private ServerFacade modCD = null;
-
-	private InitialContext initialContect = null;
-
+	//private InitialContext initialContect = null;
 	private String naming = Constantes.BEAN_STRING;
 
-	// private Conexion con; //Conexion SQL Temporal
-
-	public BusinessDelegate() {
+	public BusinessDelegate()
+	{
 		super();
 		//this.inicializarContexto();
 		this.getConnection();
 	}
 
 	// Test de nacho
-	public int getTestNumber() {
+	public int getTestNumber()
+	{
 		return this.getModCD().getTest();
 	}
 
@@ -41,9 +41,8 @@ public class BusinessDelegate extends ProxyModelo {
     protected void getConnection() {
         try {
         	Context jndiContext = getInitialContext();
-        	modCD = (ServerFacade)jndiContext.lookup(Constantes.BEAN_STRING/*"ServerApp/ServerFacadeBean/remote"*/);
-			
-			System.out.println("ya conecto");
+			this.modCD = (ServerFacade)jndiContext.lookup(naming);
+
         } catch (Exception e) {
         	e.printStackTrace(); 
         }
@@ -53,43 +52,28 @@ public class BusinessDelegate extends ProxyModelo {
         return new javax.naming.InitialContext();
     }
 	
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	private void inicializarContexto() {
 		try {
 			Hashtable props = new Hashtable();
 			props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
 			// Url completa de ubicacion del servidor de aplicaciones
-			props.put(InitialContext.PROVIDER_URL, "jnp://localhost:1099");
+			props.put(InitialContext.PROVIDER_URL, "jnp://127.0.0.1:1099");
 			// Objeto del tipo InitialContext
 			initialContect = new InitialContext(props);
+			System.out.println("paso ic");
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-	}
+	}*/
 
-	/**
-	 * Obtiene una "referencia" al session bean administrador de productos
-	 * 
-	 * @return el AdministradorProductos
-	 */
-	private ServerFacade getServerFacade() {
-		try {
-			if (this.modCD == null) {
-				// Obtencion de referencia del session bean dentro del servidor
-				// de aplicaciones
-				this.modCD = (ServerFacade) this.initialContect.lookup(naming);
-			}
-		} catch (NamingException ex) {
-			ex.printStackTrace();
-		}
-		return this.modCD;
-	}
+
 
 	public Vector<String> getDescripciones(Vector<Long> codigos) {
 		Vector<String> descripciones = new Vector<String>();
 		try {
-			descripciones = getServerFacade().getDescripciones(codigos);
+			descripciones = getModCD().getDescripciones(codigos);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -99,7 +83,7 @@ public class BusinessDelegate extends ProxyModelo {
 	public Vector<Integer> getStocks(Vector<Long> codigos) {
 		Vector<Integer> stocks = new Vector<Integer>();
 		try {
-			stocks = getServerFacade().getStocks(codigos);
+			stocks = getModCD().getStocks(codigos);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
