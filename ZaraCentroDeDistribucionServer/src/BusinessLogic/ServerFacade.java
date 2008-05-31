@@ -30,5 +30,6 @@ public interface ServerFacade
 	public void actualizarSolFab(Vector<ArticuloHeaderVO> arts);
 	
 	//panel new art
-	public void guardarArticulo(ArticuloHeaderVO a);
+	public void guardarArticuloHogar(ArticuloHogarVO a);
+	public void guardarArticuloRopa(ArticuloRopaVO a);
 }
