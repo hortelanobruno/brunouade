@@ -6,14 +6,27 @@
 
 package Paneles;
 
+import java.util.Iterator;
+import java.util.Vector;
+
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 import controladores.ControladorPanelNewArt;
 import controladores.ControladorPanelSolDis;
 
+import VO.ArticuloHeaderVO;
+import VO.ArticuloHogarVO;
+import VO.ArticuloRopaVO;
+import VO.SolicitudDistribucionVO;
+import VO.SolicitudEnvioVO;
+import VO.SolicitudFabricaVO;
 import Varios.Constantes;
+import Varios.XMLArticulo;
+import Varios.XMLWrapper;
 import Vistas.VistaNewArt;
 
+import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
 
@@ -27,7 +40,7 @@ public class PanelNewArt extends javax.swing.JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private MenuPrincipal ref;
-
+	private XMLArticulo articuloXML;
 	private VistaNewArt vistaNewArt;
 	private boolean cargarTable;
 	private String urlXML = null;
@@ -38,9 +51,6 @@ public class PanelNewArt extends javax.swing.JPanel {
 		this.vistaNewArt = vista;
 	}
 
-	public void update() {
-
-	}
 
 	/**
 	 * This method is called from within the constructor to initialize the form.
@@ -58,9 +68,7 @@ public class PanelNewArt extends javax.swing.JPanel {
 		buttonGuardar = new javax.swing.JButton();
 
 		tableArticulo.setModel(new javax.swing.table.DefaultTableModel(
-				new Object[][] {
-
-				}, new String[] { "Atributo", "Valor" }) {
+				new Object[][] {}, new String[] { "Atributo", "Valor" }) {
 			private static final long serialVersionUID = 1L;
 
 			Class[] types = new Class[] { java.lang.String.class,
@@ -174,15 +182,101 @@ public class PanelNewArt extends javax.swing.JPanel {
 	}
 
 	private void buttonGuardarActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		// Guardar Articulo
+		((ControladorPanelNewArt) vistaNewArt.getControlador()).doCargarXML(false);
 	}
 
-	public void cargarTable() {
+	public void update() {
+		if(cargarTable){
+			//cargar articulo
+			XMLWrapper xml = new XMLWrapper();
+			articuloXML = (XMLArticulo) xml.parseXMLArticulo(urlXML);
+			vaciarTabla();
+			cargarTable(articuloXML);
+			ref.getJTextArea1().append("Articulo Cargado\n");
+		}else{
+			//persiste articulo
+			
+			if(((DefaultTableModel)tableArticulo.getModel()).getValueAt(0, 1).equals("Ropa")){
+				//es un articulo ropa
+				ArticuloRopaVO articulo = crearArticuloRopaVO();
+				((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloRopa(articulo);
+			}else{
+				//es un articulo hogar
+				ArticuloHogarVO articulo = crearArticuloHogarVO();
+				((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloHogar(articulo);
+			}
+			vaciarTabla();
+			ref.getJTextArea1().append("Articulo Guardado\n");
+			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
+		}
 		
-		
-		
-		ref.getJTextArea1().append("Archivo Cargado\n");
 	}
+	
+	public void vaciarTabla(){
+		((DefaultTableModel)tableArticulo.getModel()).getDataVector().removeAllElements();
+	}
+
+	public ArticuloRopaVO crearArticuloRopaVO(){
+		ArticuloRopaVO art = new ArticuloRopaVO();
+		art.setCodigo(Long.parseLong(((DefaultTableModel)tableArticulo.getModel()).getValueAt(1, 1).toString()));
+		art.setDescripcion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(2, 1).toString());
+		art.setPrecio(Float.parseFloat(((DefaultTableModel)tableArticulo.getModel()).getValueAt(3, 1).toString()));
+		art.setSeccion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(4, 1).toString());
+		art.setColor(((DefaultTableModel)tableArticulo.getModel()).getValueAt(5, 1).toString());
+		art.setLinea(((DefaultTableModel)tableArticulo.getModel()).getValueAt(6, 1).toString());
+		art.setCantidad(Integer.parseInt(((DefaultTableModel)tableArticulo.getModel()).getValueAt(7, 1).toString()));
+		art.setTalle(((DefaultTableModel)tableArticulo.getModel()).getValueAt(8, 1).toString());
+		art.setOrigen(((DefaultTableModel)tableArticulo.getModel()).getValueAt(9, 1).toString());
+		return art;
+	}
+	
+	public ArticuloHogarVO crearArticuloHogarVO(){
+		ArticuloHogarVO art = new ArticuloHogarVO();
+		art.setCodigo(Long.parseLong(((DefaultTableModel)tableArticulo.getModel()).getValueAt(1, 1).toString()));
+		art.setDescripcion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(2, 1).toString());
+		art.setPrecio(Float.parseFloat(((DefaultTableModel)tableArticulo.getModel()).getValueAt(3, 1).toString()));
+		art.setSeccion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(4, 1).toString());
+		art.setColor(((DefaultTableModel)tableArticulo.getModel()).getValueAt(5, 1).toString());
+		art.setLinea(((DefaultTableModel)tableArticulo.getModel()).getValueAt(6, 1).toString());
+		art.setCantidad(Integer.parseInt(((DefaultTableModel)tableArticulo.getModel()).getValueAt(7, 1).toString()));
+		art.setDetalles(((DefaultTableModel)tableArticulo.getModel()).getValueAt(8, 1).toString());
+		art.setComposicion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(9, 1).toString());
+		art.setCategoria(((DefaultTableModel)tableArticulo.getModel()).getValueAt(10, 1).toString());
+		art.setMedidas(((DefaultTableModel)tableArticulo.getModel()).getValueAt(11, 1).toString());
+		return art;
+	}
+	
+	public void cargarTable(XMLArticulo art) {
+		if(art.getCategoria().equals("")){
+			//Es una articulo ropa
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Articlo","Ropa"});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Codigo",art.getCodigo()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Descripcion",art.getDescripcion()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Precio",art.getPrecio()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Seccion",art.getSeccion()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Color",art.getColor()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Linea",art.getLinea()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Cantidad",art.getCantidad()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Talle",art.getTalle()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Origen",art.getOrigen()});
+		}else {
+			//Es un articulo hogar
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Articulo","Hogar"});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Codigo",art.getCodigo()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Descripcion",art.getDescripcion()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Precio",art.getPrecio()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Seccion",art.getSeccion()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Color",art.getColor()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Linea",art.getLinea()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Cantidad",art.getCantidad()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Detalles",art.getDetalles()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Composicion",art.getComposicion()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Categoria",art.getCategoria()});
+			((DefaultTableModel)tableArticulo.getModel()).addRow(new Object[]{"Medidas",art.getMedidas()});
+		}
+	}
+
 
 	// Variables declaration - do not modify
 	private javax.swing.JButton buttonCargarXML;
