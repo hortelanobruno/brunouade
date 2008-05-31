@@ -104,7 +104,7 @@ public class BusinessDelegate extends ProxyModelo {
 	}
 
 	public void guardarAritucloHogar(ArticuloHogarVO a){
-		Hashtable props = new Hashtable();
+		/*Hashtable props = new Hashtable();
 		props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
 		props.put(InitialContext.PROVIDER_URL,"jnp://127.0.0.1:1099");
 		InitialContext context = null;
@@ -120,12 +120,12 @@ public class BusinessDelegate extends ProxyModelo {
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		administradorProductos.guardarArticulo(a);
+		}*/
+		this.getModCD().guardarArticuloHogar(a);
 	}
 	
 	public void guardarAritucloRopa(ArticuloRopaVO a){
-		this.getModCD().guardarArticulo(a);
+		this.getModCD().guardarArticuloRopa(a);
 	}
 	
 	public void guardarSolicitud(SolicitudDistribucionVO soldis) {
