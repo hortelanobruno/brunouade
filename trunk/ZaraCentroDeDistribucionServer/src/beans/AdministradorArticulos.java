@@ -2,11 +2,9 @@ package beans;
 
 import java.util.Vector;
 import javax.ejb.Remote;
-
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
-import BusinessLogic.*;
 
 @Remote
 public interface AdministradorArticulos 
