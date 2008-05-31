@@ -1,7 +1,7 @@
 package BusinessLogic;
 
 import java.util.Vector;
-import javax.ejb.*;
+import javax.ejb.Remote;
 
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
