@@ -18,11 +18,10 @@ public interface ServerFacade
 	
 	//	panel envios
 	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda);
-	public SolicitudFabricaVO getSolFab(int codigo);
 	
 	
 	//panel gen sol fab
-	public SolicitudFabricaVO getSolFab(long codigo);
+	public SolicitudFabricaVO getSolFab(int codigo);
 	public Vector<SolicitudFabricaVO> getAllSolFab();
 	
 	//panel reposicion
