@@ -108,6 +108,7 @@ public class BusinessDelegate extends ProxyModelo
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
+		System.out.println("voy a guardar el articulo hogar en el Business Delegate");
 		this.getModCD().guardarArticuloHogar(a);
 	}
 	
