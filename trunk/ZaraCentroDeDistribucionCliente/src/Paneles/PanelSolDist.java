@@ -245,9 +245,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 	}
 	
 	
-	private void cargarTable(SolicitudDistribucionVO solDisVO,
-			Vector<Long> codigos, Vector<String> descripciones,
-			Vector<Integer> stocks) {
+	private void cargarTable(SolicitudDistribucionVO solDisVO,Vector<Long> codigos, Vector<String> descripciones,Vector<Integer> stocks) {
 		Iterator iterador = (Iterator) solDisVO.getArticulo().iterator();
 		for (int i = 0; i < solDisVO.getArticulo().size(); i++) {
 			((DefaultTableModel) tableArticulos.getModel())

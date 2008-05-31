@@ -4,9 +4,13 @@ import RemoteMVCFramework.ProxyModelo;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudFabricaVO;
 import VO.SolicitudEnvioVO;
+import VO.ArticuloHogarVO;
+import VO.ArticuloRopaVO;
 import Varios.Constantes;
 import java.util.Hashtable;
 import java.util.Vector;
+
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -21,7 +25,8 @@ public class BusinessDelegate extends ProxyModelo {
 
 	public BusinessDelegate() {
 		super();
-		this.inicializarContexto();
+		//this.inicializarContexto();
+		getConnection();
 	}
 
 	// Test de nacho
@@ -33,6 +38,19 @@ public class BusinessDelegate extends ProxyModelo {
 	 * Se indica url del servidor de aplicaciones
 	 * 
 	 */
+    protected void getConnection() {
+        try {
+        	Context jndiContext = getInitialContext();
+        	modCD = (ServerFacade)jndiContext.lookup("ServerApp/ServerFacadeBean/remote");
+        } catch (Exception e) {
+        	e.printStackTrace(); 
+        }
+    }    
+	 
+    private static Context getInitialContext() throws javax.naming.NamingException {
+        return new javax.naming.InitialContext();
+    }
+	
 	@SuppressWarnings("unchecked")
 	private void inicializarContexto() {
 		try {
@@ -85,6 +103,31 @@ public class BusinessDelegate extends ProxyModelo {
 		return stocks;
 	}
 
+	public void guardarAritucloHogar(ArticuloHogarVO a){
+		Hashtable props = new Hashtable();
+		props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
+		props.put(InitialContext.PROVIDER_URL,"jnp://127.0.0.1:1099");
+		InitialContext context = null;
+		try {
+			context = new InitialContext(props);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ServerFacade administradorProductos = null;
+		try {
+			administradorProductos = (ServerFacade) context.lookup("ServerApp/ServerFacadeBean/remote");
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		administradorProductos.guardarArticulo(a);
+	}
+	
+	public void guardarAritucloRopa(ArticuloRopaVO a){
+		this.getModCD().guardarArticulo(a);
+	}
+	
 	public void guardarSolicitud(SolicitudDistribucionVO soldis) {
 		this.getModCD().guardarSolicitud(soldis);
 	}
