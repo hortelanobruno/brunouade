@@ -26,7 +26,7 @@ public class BusinessDelegate extends ProxyModelo {
 	public BusinessDelegate() {
 		super();
 		//this.inicializarContexto();
-		getConnection();
+		this.getConnection();
 	}
 
 	// Test de nacho
@@ -41,7 +41,9 @@ public class BusinessDelegate extends ProxyModelo {
     protected void getConnection() {
         try {
         	Context jndiContext = getInitialContext();
-        	modCD = (ServerFacade)jndiContext.lookup("ServerApp/ServerFacadeBean/remote");
+        	modCD = (ServerFacade)jndiContext.lookup(Constantes.BEAN_STRING/*"ServerApp/ServerFacadeBean/remote"*/);
+			
+			System.out.println("ya conecto");
         } catch (Exception e) {
         	e.printStackTrace(); 
         }
@@ -60,6 +62,7 @@ public class BusinessDelegate extends ProxyModelo {
 			props.put(InitialContext.PROVIDER_URL, "jnp://localhost:1099");
 			// Objeto del tipo InitialContext
 			initialContect = new InitialContext(props);
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
