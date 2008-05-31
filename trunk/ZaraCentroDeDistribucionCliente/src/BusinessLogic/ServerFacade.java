@@ -1,7 +1,7 @@
 package BusinessLogic;
 
 import java.util.Vector;
-import javax.ejb.Remote;
+import javax.ejb.*;
 
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
@@ -36,5 +36,6 @@ public interface ServerFacade
 	public void actualizarSolFab(Vector<ArticuloHeaderVO> arts);
 	
 	//panel new art
-	public void guardarArticulo(ArticuloHeaderVO a);
+	public void guardarArticuloHogar(ArticuloHogarVO a);
+	public void guardarArticuloRopa(ArticuloRopaVO a);
 }
