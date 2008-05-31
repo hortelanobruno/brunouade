@@ -93,9 +93,13 @@ public class ServerFacadeBean implements ServerFacade
 		return null;
 	}
 
-	public void guardarArticulo(ArticuloHeaderVO a) 
+	public void guardarArticuloHogar(ArticuloHogarVO a) 
 	{
-		this.admArt.guardarArticulo(a);
-		
+		this.admArt.guardarArticuloHogar(a);
+	}
+
+	public void guardarArticuloRopa(ArticuloRopaVO a)
+	{
+		this.admArt.guardarArticuloRopa(a);
 	}
 }
