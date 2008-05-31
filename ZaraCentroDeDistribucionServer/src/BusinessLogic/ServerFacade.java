@@ -1,7 +1,14 @@
- package BusinessLogic;
+package BusinessLogic;
 
 import java.util.Vector;
 import javax.ejb.Remote;
+
+import VO.ArticuloHeaderVO;
+import VO.ArticuloHogarVO;
+import VO.ArticuloRopaVO;
+import VO.SolicitudDistribucionVO;
+import VO.SolicitudEnvioVO;
+import VO.SolicitudFabricaVO;
 
 @Remote
 public interface ServerFacade 

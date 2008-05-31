@@ -1,22 +1,23 @@
-package BusinessLogic;
+package VO;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
-public class SolicitudEnvioVO extends SolicitudVO implements Serializable{
+public class SolicitudDistribucionVO extends SolicitudVO implements Serializable {
 
-    /**
+	
+	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8304187393253826615L;
+	private static final long serialVersionUID = -5633098382339627713L;
 	private TiendaVO tienda;
 	
-    public SolicitudEnvioVO() {
+    public SolicitudDistribucionVO() {
 
 	}
 	
-	public SolicitudEnvioVO(int n, Collection<ArticuloHeaderVO> a, Date f, TiendaVO t){
+	public SolicitudDistribucionVO(int n, Collection<ArticuloHeaderVO> a, Date f, TiendaVO t){
 		super(n,a,f);
 		this.tienda = t;
 	}
@@ -28,7 +29,5 @@ public class SolicitudEnvioVO extends SolicitudVO implements Serializable{
 	public void setTienda(TiendaVO tienda) {
 		this.tienda = tienda;
 	}
-
-	
 	
 }

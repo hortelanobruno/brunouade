@@ -1,4 +1,4 @@
-package BusinessLogic;
+package VO;
 
 public class ArticuloHogarVO extends ArticuloHeaderVO
 {

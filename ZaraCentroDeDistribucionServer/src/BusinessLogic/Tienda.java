@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import VO.TiendaVO;
+
 @Entity
 @Table(name="tiendas")
 public class Tienda implements Serializable
