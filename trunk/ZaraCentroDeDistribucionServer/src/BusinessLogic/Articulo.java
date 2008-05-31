@@ -12,6 +12,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import VO.ArticuloHeaderVO;
+
 @Entity
 @Table(name="Articulos")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

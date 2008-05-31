@@ -2,13 +2,13 @@ package server;
 
 import java.util.Vector;
 import javax.ejb.Stateless;
-import BusinessLogic.ArticuloHeaderVO;
-import BusinessLogic.ArticuloHogarVO;
-import BusinessLogic.ArticuloRopaVO;
 import BusinessLogic.ServerFacade;
-import BusinessLogic.SolicitudDistribucionVO;
-import BusinessLogic.SolicitudEnvioVO;
-import BusinessLogic.SolicitudFabricaVO;
+import VO.ArticuloHeaderVO;
+import VO.ArticuloHogarVO;
+import VO.ArticuloRopaVO;
+import VO.SolicitudDistribucionVO;
+import VO.SolicitudEnvioVO;
+import VO.SolicitudFabricaVO;
 import beans.*;
 
 @Stateless

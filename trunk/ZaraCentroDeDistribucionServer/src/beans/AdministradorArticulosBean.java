@@ -9,11 +9,11 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import BusinessLogic.Articulo;
-import BusinessLogic.ArticuloHeaderVO;
 import BusinessLogic.ArticuloHogar;
-import BusinessLogic.ArticuloHogarVO;
 import BusinessLogic.ArticuloRopa;
-import BusinessLogic.ArticuloRopaVO;
+import VO.ArticuloHeaderVO;
+import VO.ArticuloHogarVO;
+import VO.ArticuloRopaVO;
 import beans.AdministradorArticulos;
 
 @Stateless

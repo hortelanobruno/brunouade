@@ -17,6 +17,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import VO.ArticuloHeaderVO;
+import VO.SolicitudVO;
+
 @Entity
 @Table(name="Solicitudes")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

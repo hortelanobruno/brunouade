@@ -10,6 +10,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
+import VO.ArticuloHeaderVO;
+import VO.FabricaVO;
+import VO.SolicitudFabricaVO;
+
 @Entity
 @DiscriminatorValue("fabricacion")
 public class SolicitudDeFabricacion extends Solicitud

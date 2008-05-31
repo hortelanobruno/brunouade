@@ -11,6 +11,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
+import VO.ArticuloHeaderVO;
+import VO.SolicitudDistribucionVO;
+import VO.TiendaVO;
+
 @Entity
 @DiscriminatorValue("fabricacion")
 public class SolicitudDistribucion extends Solicitud implements Serializable

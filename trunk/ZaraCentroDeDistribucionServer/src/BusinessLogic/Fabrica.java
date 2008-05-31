@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import VO.FabricaVO;
+
 @Entity
 @Table(name="fabricas")
 public class Fabrica implements Serializable 

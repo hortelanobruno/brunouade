@@ -5,6 +5,8 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
+import VO.ArticuloRopaVO;
+
 @Entity
 @DiscriminatorValue("hogar")
 public class ArticuloRopa extends Articulo 
