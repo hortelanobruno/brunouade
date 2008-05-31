@@ -7,27 +7,20 @@ import VO.SolicitudEnvioVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
 import Varios.Constantes;
-//import java.util.Hashtable;
 import java.util.Vector;
-
-//import javax.ejb.Remote;
 import javax.naming.Context;
-//import javax.naming.InitialContext;
-//import javax.naming.NamingException;
 
 public class BusinessDelegate extends ProxyModelo 
 {
 	private ServerFacade modCD = null;
-	//private InitialContext initialContect = null;
 	private String naming = Constantes.BEAN_STRING;
 
 	public BusinessDelegate()
 	{
 		super();
-		//this.inicializarContexto();
 		this.getConnection();
 	}
-
+	
 	// Test de nacho
 	public int getTestNumber()
 	{
@@ -52,24 +45,6 @@ public class BusinessDelegate extends ProxyModelo
         return new javax.naming.InitialContext();
     }
 	
-	/*@SuppressWarnings("unchecked")
-	private void inicializarContexto() {
-		try {
-			Hashtable props = new Hashtable();
-			props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
-			// Url completa de ubicacion del servidor de aplicaciones
-			props.put(InitialContext.PROVIDER_URL, "jnp://127.0.0.1:1099");
-			// Objeto del tipo InitialContext
-			initialContect = new InitialContext(props);
-			System.out.println("paso ic");
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}*/
-
-
-
 	public Vector<String> getDescripciones(Vector<Long> codigos) {
 		Vector<String> descripciones = new Vector<String>();
 		try {
@@ -90,24 +65,8 @@ public class BusinessDelegate extends ProxyModelo
 		return stocks;
 	}
 
-	public void guardarAritucloHogar(ArticuloHogarVO a){
-		/*Hashtable props = new Hashtable();
-		props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
-		props.put(InitialContext.PROVIDER_URL,"jnp://127.0.0.1:1099");
-		InitialContext context = null;
-		try {
-			context = new InitialContext(props);
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		ServerFacade administradorProductos = null;
-		try {
-			administradorProductos = (ServerFacade) context.lookup("ServerApp/ServerFacadeBean/remote");
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+	public void guardarAritucloHogar(ArticuloHogarVO a)
+	{
 		System.out.println("voy a guardar el articulo hogar en el Business Delegate");
 		this.getModCD().guardarArticuloHogar(a);
 	}
