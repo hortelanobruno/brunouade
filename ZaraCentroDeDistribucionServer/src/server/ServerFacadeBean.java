@@ -1,11 +1,14 @@
 package server;
 
 import java.util.Vector;
+
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import BusinessLogic.ServerFacade;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
+import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
@@ -14,19 +17,15 @@ import beans.*;
 @Stateless
 public class ServerFacadeBean implements ServerFacade 
 {
-	private AdministradorArticulos admArt;
-	private AdministradorDistribucion admDist;
-	private AdministradorEnvios admEnv;
-	private AdministradorFabricacion admFab;
-	private AdministradorReposicion admRep;
+	@EJB private AdministradorArticulos admArt; 
+	@EJB private AdministradorDistribucion admDist;
+	@EJB private AdministradorEnvios admEnv;
+	@EJB private AdministradorFabricacion admFab;
+	@EJB private AdministradorReposicion admRep;
 	
 	public ServerFacadeBean()
 	{
-		admArt = new AdministradorArticulosBean();
-		admDist = new AdministradorDistribucionBean();
-		admEnv = new AdministradorEnviosBean();
-		admFab = new AdministradorFabricacionBean();
-		admRep = new AdministradorReposicionBean();
+
 	}
 	
 	public int getTest() 
@@ -101,5 +100,20 @@ public class ServerFacadeBean implements ServerFacade
 	public void guardarArticuloRopa(ArticuloRopaVO a)
 	{
 		this.admArt.guardarArticuloRopa(a);
+	}
+
+	public void actualizarSolFab(SolicitudFabricaVO solFab) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO) {
+		// TODO Auto-generated method stub
+		
 	}
 }
