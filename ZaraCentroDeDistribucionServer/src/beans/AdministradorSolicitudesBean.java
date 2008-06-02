@@ -13,8 +13,8 @@ import beans.AdministradorSolicitudes;
 @Stateless
 public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 {
-	public void actualizarSolFab(SolicitudFabricaVO solFab) {
-		// TODO Auto-generated method stub
+	public void actualizarSolFab(SolicitudFabricaVO solFab) 
+	{
 		
 	}
 
