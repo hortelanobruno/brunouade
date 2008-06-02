@@ -1,5 +1,7 @@
 package Varios;
 
+import VO.FabricaVO;
+import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudFabricaVO;
 import VO.TiendaVO;
@@ -50,4 +52,21 @@ public class XMLWrapper {
 
         return art;
     }
+
+
+	public SolicitudDeReposicionVO parseXMLSR(String urlXML) {
+		FileReaderWrapper fileReader = new FileReaderWrapper(urlXML);
+        String XML = fileReader.obtenerContenido();
+        XStream xstream = new XStream();
+
+
+        xstream.alias("solicitudreposicion", SolicitudDeReposicionVO.class);
+        //xstream.alias("articuloropa", ArticuloRopa.class);
+        //xstream.alias("articulohogar", ArticuloHogar.class);
+        xstream.alias("fabrica", FabricaVO.class);
+
+        SolicitudDeReposicionVO sol = (SolicitudDeReposicionVO) xstream.fromXML(XML);
+
+        return sol;
+	}
 }

@@ -90,4 +90,8 @@ public class BusinessDelegate extends ProxyModelo
 	public ServerFacade getModCD() {
 		return modCD;
 	}
+
+	public SolicitudFabricaVO getSolicitudFabricacion(long codigoSolFab) {
+		return this.getModCD().cargarSolicitudFabricacion(codigoSolFab);
+	}
 }

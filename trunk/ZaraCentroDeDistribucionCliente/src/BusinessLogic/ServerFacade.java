@@ -38,4 +38,6 @@ public interface ServerFacade
 	//panel new art
 	public void guardarArticuloHogar(ArticuloHogarVO a);
 	public void guardarArticuloRopa(ArticuloRopaVO a);
+
+	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab);
 }
