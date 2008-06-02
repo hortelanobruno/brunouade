@@ -18,10 +18,7 @@ import beans.*;
 public class ServerFacadeBean implements ServerFacade 
 {
 	@EJB private AdministradorArticulos admArt; 
-	@EJB private AdministradorDistribucion admDist;
-	@EJB private AdministradorEnvios admEnv;
-	@EJB private AdministradorFabricacion admFab;
-	@EJB private AdministradorReposicion admRep;
+	@EJB private AdministradorSolicitudes admSol;
 	
 	public ServerFacadeBean()
 	{
