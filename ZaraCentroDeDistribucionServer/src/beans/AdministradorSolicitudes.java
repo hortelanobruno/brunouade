@@ -15,7 +15,7 @@ public interface AdministradorSolicitudes
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
     public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
     public Vector<SolicitudFabricaVO> getSolsFab(int codTienda);
-    public SolicitudFabricaVO getSolFab(int codigo);
+    public SolicitudFabricaVO getSolFab(long codigo);
     public Vector<SolicitudFabricaVO> getAllSolFab();
     public void actualizarSolFab(SolicitudFabricaVO solFab);
     public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);

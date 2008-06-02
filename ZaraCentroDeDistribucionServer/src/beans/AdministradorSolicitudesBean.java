@@ -57,5 +57,10 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		// TODO Auto-generated method stub
 		
 	}
+
+	public SolicitudFabricaVO getSolFab(long codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

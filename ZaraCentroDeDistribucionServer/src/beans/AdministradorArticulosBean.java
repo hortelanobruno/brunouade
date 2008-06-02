@@ -11,6 +11,7 @@ import javax.persistence.Query;
 import BusinessLogic.Articulo;
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloRopa;
+import BusinessLogic.CentroDistribucion;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
@@ -90,5 +91,11 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ar.setPrecio(art.getPrecio());
 		ar.setSeccion(art.getSeccion());
 		em.merge(ar);
+	}
+	
+	public void guardarDatosCD(int codigo, String nombre, double longitud, double latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
+	{
+		CentroDistribucion cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lineasRopa,categoriasHogar);
+		em.merge(cd);
 	}
 }
