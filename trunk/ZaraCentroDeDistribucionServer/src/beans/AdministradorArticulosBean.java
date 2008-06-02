@@ -20,8 +20,11 @@ import beans.AdministradorArticulos;
 public class AdministradorArticulosBean implements AdministradorArticulos 
 {
 	@PersistenceContext(unitName="CentroDeDistribucion")
-	EntityManager em;
+	private EntityManager em;
 
+	public AdministradorArticulosBean() {
+		// TODO Auto-generated constructor stub
+	}
 	public Vector<String> getDescripciones(Vector<Long> cods) 
 	{
 		Vector<String> descs = new Vector<String>();
@@ -60,7 +63,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	public void guardarArticuloHogar(ArticuloHogarVO art)
 	{
-		System.out.println("voy a guardar el articulo hogar");
 		ArticuloHogar ah = new ArticuloHogar();
 		ah.setCodigo(art.getCodigo());
 		ah.setCantidad(art.getCantidad());
@@ -72,12 +74,11 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ah.setLinea(art.getLinea());
 		ah.setPrecio(art.getPrecio());
 		ah.setSeccion(art.getSeccion());
-		em.persist(ah);
+		em.merge(ah);
 	}
 
 	public void guardarArticuloRopa(ArticuloRopaVO art) 
 	{
-		System.out.println("voy a guardar el articulo ropa");
 		ArticuloRopa ar = new ArticuloRopa();
 		ar.setTalle(art.getTalle());
 		ar.setOrigen(ar.getOrigen());
@@ -88,6 +89,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ar.setLinea(art.getLinea());
 		ar.setPrecio(art.getPrecio());
 		ar.setSeccion(art.getSeccion());
-		em.persist(ar);
+		em.merge(ar);
 	}
 }

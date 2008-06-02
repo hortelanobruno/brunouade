@@ -3,6 +3,7 @@ package BusinessLogic;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.Vector;
 
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -31,7 +33,17 @@ public class Solicitud implements Serializable
 	private int numero;
 	private Date fechaEmision;
 	private CentroDistribucion centro;
+	private Collection<Articulo> articulos;
     
+	@OneToMany
+	public Collection<Articulo> getArticulos() {
+		return articulos;
+	}
+
+	public void setArticulos(Collection<Articulo> articulos) {
+		this.articulos = articulos;
+	}
+
 	public Solicitud() {
 		// TODO Auto-generated constructor stub
 	}
@@ -54,17 +66,27 @@ public class Solicitud implements Serializable
 	}
 	
 	@Transient
-	public SolicitudVO getVO(){
+	public SolicitudVO getVO()
+	{
 		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
-		/*	for(int i = 0; i< this.getArticulo().size();i++)
-			articulos.add(new ArticuloHeaderVO(this.getArticulo())*/
+		Iterator a = (Iterator) this.getArticulos().iterator();
+	
+		while(a.hasNext())
+			articulos.add((ArticuloHeaderVO)a.next());		
+		
 		SolicitudVO vo = new SolicitudVO(numero,articulos,fechaEmision);
 		return vo;
 	}
 
-	public void setVO(SolicitudVO vo){
+	public void setVO(SolicitudVO vo)
+	{
+		Collection<Articulo> articulos = new Vector<Articulo>();
 		this.setNumero(vo.getNumero());
 		this.setFechaEmision(vo.getFechaEmision());
+		Iterator a = (Iterator)vo.getArticulo().iterator();
+		while(a.hasNext())
+			articulos.add((Articulo)a.next());
+		this.setArticulos(articulos);
 	}
 
 	@ManyToOne

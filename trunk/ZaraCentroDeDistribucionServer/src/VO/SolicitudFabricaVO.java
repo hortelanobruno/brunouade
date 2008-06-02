@@ -9,15 +9,16 @@ public class SolicitudFabricaVO extends SolicitudVO implements Serializable
 
 	private static final long serialVersionUID = -339743656499411780L;
 	private FabricaVO fabrica;
-	
+	private Collection<ArticuloHeaderVO> articulosRecibidos;
 	
 	public SolicitudFabricaVO() {
 		super();
 	}
 	
-	public SolicitudFabricaVO(int n, Collection<ArticuloHeaderVO> a, Date f, FabricaVO fa ){
+	public SolicitudFabricaVO(int n, Collection<ArticuloHeaderVO> a, Date f, FabricaVO fa,Collection<ArticuloHeaderVO> recibidos ){
 		super(n,a,f);
 		this.fabrica = fa;
+		this.setArticulosRecibidos(recibidos);
 	}
 
 
@@ -29,6 +30,13 @@ public class SolicitudFabricaVO extends SolicitudVO implements Serializable
 	public void setFabrica(FabricaVO fabrica) {
 		this.fabrica = fabrica;
 	}
-	
+
+	public Collection<ArticuloHeaderVO> getArticulosRecibidos() {
+		return articulosRecibidos;
+	}
+
+	public void setArticulosRecibidos(Collection<ArticuloHeaderVO> articulosRecibidos) {
+		this.articulosRecibidos = articulosRecibidos;
+	}
 	
 }
