@@ -148,13 +148,14 @@ public class PanelRepArt extends javax.swing.JPanel {
 		}
 	}
 
-	private void buttonGuardarActionPerformed(java.awt.event.ActionEvent evt) {
+	private void buttonGuardarActionPerformed(java.awt.event.ActionEvent evt) 
+	{
 		// Guardar articulos reciibidos
 		((ControladorPanelRepArt) vistaRepArt.getControlador()).doCargarXML(false);
 	}
 	
-	
-	private void cargarArticuloEnSolFab(ArticuloHeaderVO arti){
+	private void cargarArticuloEnSolFab(ArticuloHeaderVO arti)
+	{
 		Collection<ArticuloHeaderVO> articulos = solFab.getArticulosRecibidos();
 		Iterator itArt = articulos.iterator();
 		int count = 0;
@@ -177,7 +178,8 @@ public class PanelRepArt extends javax.swing.JPanel {
 	}
 	
 	
-	private void cargarTable(long solicitud,SolicitudDeReposicionVO solRepVO,Vector<Long> codigos, Vector<String> descripciones,SolicitudFabricaVO solFab, String fabrica) {
+	private void cargarTable(long solicitud,SolicitudDeReposicionVO solRepVO,Vector<Long> codigos, Vector<String> descripciones,SolicitudFabricaVO solFab, String fabrica) 
+	{
 		Iterator iteradorRep = (Iterator) solRepVO.getArticulo().iterator();
 		Iterator iteradorFab = (Iterator) solFab.getArticulo().iterator();
 		Integer cantidpedida = 0;
