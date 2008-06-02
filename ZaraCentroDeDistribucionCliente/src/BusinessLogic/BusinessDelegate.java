@@ -23,6 +23,23 @@ public class BusinessDelegate extends ProxyModelo
 	{
 		super();
 		this.getConnection();
+		this.guardarDatosCD();
+	}
+	
+	private void guardarDatosCD()
+	{
+		Vector<String> lineasRopa = new Vector<String>();
+		lineasRopa.add("woman");
+		lineasRopa.add("basic");
+		lineasRopa.add("sport");
+		lineasRopa.add("vestir");
+		
+		Vector<String> categoriasHogar = new Vector<String>();
+		categoriasHogar.add("baño");
+		categoriasHogar.add("mesa");
+		categoriasHogar.add("decoracion");
+		categoriasHogar.add("baño");
+		this.getModCD().guardarDatosCD(1, "Shopping Centro", 56.887521, 34.90417, lineasRopa, categoriasHogar);
 	}
 	
 	// Test de nacho
@@ -71,7 +88,6 @@ public class BusinessDelegate extends ProxyModelo
 
 	public void guardarAritucloHogar(ArticuloHogarVO a)
 	{
-		System.out.println("voy a guardar el articulo hogar en el Business Delegate");
 		this.getModCD().guardarArticuloHogar(a);
 	}
 	

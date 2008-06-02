@@ -15,7 +15,7 @@ import VO.SolicitudFabricaVO;
 public interface ServerFacade 
 {
 	public int getTest(); //Prueba
-	
+	public void guardarDatosCD(int codigo,String nombre,double longitud, double latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar);
 	//panel sol dist
 	public Vector<String> getDescripciones(Vector<Long> codigos);
 	public Vector<Integer> getStocks(Vector<Long> codigos);
@@ -29,7 +29,7 @@ public interface ServerFacade
 	
 	
 	//panel gen sol fab
-	public SolicitudFabricaVO getSolFab(int codigo);
+	public SolicitudFabricaVO getSolFab(long codigo);
 	public Vector<SolicitudFabricaVO> getAllSolFab();
 	
 	//panel reposicion
