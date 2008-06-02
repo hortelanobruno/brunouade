@@ -47,140 +47,78 @@ public class PanelConfig extends javax.swing.JPanel {
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents() {
 
-		jLabel1 = new javax.swing.JLabel();
-		jLabel2 = new javax.swing.JLabel();
-		jLabel3 = new javax.swing.JLabel();
-		textFieldDirectorioXML = new javax.swing.JTextField();
-		textFieldServidorIP = new javax.swing.JTextField();
-		buttonSeleccionarDirectorio = new javax.swing.JButton();
-		buttonGuardar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        textFieldDirectorioXML = new javax.swing.JTextField();
+        textFieldServidorIP = new javax.swing.JTextField();
+        buttonSeleccionarDirectorio = new javax.swing.JButton();
+        buttonGuardar = new javax.swing.JButton();
 
-		jLabel1.setText("Configuracion");
+        jLabel1.setText("Configuracion");
 
-		jLabel2.setText("Directorio de archivos XML");
+        jLabel2.setText("Directorio de archivos XML");
 
-		jLabel3.setText("IP del servidor");
+        jLabel3.setText("IP del servidor");
 
-		buttonSeleccionarDirectorio.setText("Seleccionar Directorio");
-		buttonSeleccionarDirectorio
-				.addActionListener(new java.awt.event.ActionListener() {
-					public void actionPerformed(java.awt.event.ActionEvent evt) {
-						buttonSeleccionarDirectorioActionPerformed(evt);
-					}
-				});
+        buttonSeleccionarDirectorio.setText("Seleccionar Directorio");
+        buttonSeleccionarDirectorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSeleccionarDirectorioActionPerformed(evt);
+            }
+        });
 
-		buttonGuardar.setText("Guardar");
-		buttonGuardar.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				buttonGuardarActionPerformed(evt);
-			}
-		});
+        buttonGuardar.setText("Guardar");
+        buttonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonGuardarActionPerformed(evt);
+            }
+        });
 
-		org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(
-				this);
-		this.setLayout(layout);
-		layout
-				.setHorizontalGroup(layout
-						.createParallelGroup(
-								org.jdesktop.layout.GroupLayout.LEADING)
-						.add(
-								layout
-										.createSequentialGroup()
-										.add(401, 401, 401)
-										.add(
-												layout
-														.createParallelGroup(
-																org.jdesktop.layout.GroupLayout.LEADING)
-														.add(
-																layout
-																		.createSequentialGroup()
-																		.add(
-																				buttonGuardar)
-																		.addContainerGap())
-														.add(
-																layout
-																		.createParallelGroup(
-																				org.jdesktop.layout.GroupLayout.LEADING)
-																		.add(
-																				layout
-																						.createSequentialGroup()
-																						.add(
-																								layout
-																										.createParallelGroup(
-																												org.jdesktop.layout.GroupLayout.LEADING)
-																										.add(
-																												jLabel2)
-																										.add(
-																												jLabel3))
-																						.add(
-																								121,
-																								121,
-																								121)
-																						.add(
-																								layout
-																										.createParallelGroup(
-																												org.jdesktop.layout.GroupLayout.LEADING,
-																												false)
-																										.add(
-																												textFieldServidorIP)
-																										.add(
-																												textFieldDirectorioXML,
-																												org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-																												167,
-																												Short.MAX_VALUE))
-																						.addPreferredGap(
-																								org.jdesktop.layout.LayoutStyle.RELATED,
-																								47,
-																								Short.MAX_VALUE)
-																						.add(
-																								buttonSeleccionarDirectorio)
-																						.add(
-																								42,
-																								42,
-																								42))
-																		.add(
-																				layout
-																						.createSequentialGroup()
-																						.add(
-																								jLabel1)
-																						.addContainerGap(
-																								572,
-																								Short.MAX_VALUE))))));
-		layout
-				.setVerticalGroup(layout
-						.createParallelGroup(
-								org.jdesktop.layout.GroupLayout.LEADING)
-						.add(
-								layout
-										.createSequentialGroup()
-										.add(28, 28, 28)
-										.add(jLabel1)
-										.add(59, 59, 59)
-										.add(
-												layout
-														.createParallelGroup(
-																org.jdesktop.layout.GroupLayout.BASELINE)
-														.add(jLabel2)
-														.add(
-																textFieldDirectorioXML,
-																org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
-																org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-																org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-														.add(
-																buttonSeleccionarDirectorio))
-										.add(18, 18, 18)
-										.add(
-												layout
-														.createParallelGroup(
-																org.jdesktop.layout.GroupLayout.BASELINE)
-														.add(jLabel3)
-														.add(
-																textFieldServidorIP,
-																org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
-																org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-																org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-										.add(75, 75, 75).add(buttonGuardar)
-										.addContainerGap(190, Short.MAX_VALUE)));
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .add(27, 27, 27)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createSequentialGroup()
+                        .add(buttonGuardar)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 525, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(layout.createSequentialGroup()
+                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(jLabel2)
+                                .add(jLabel3))
+                            .add(121, 121, 121)
+                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                .add(textFieldServidorIP)
+                                .add(textFieldDirectorioXML, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 167, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 47, Short.MAX_VALUE)
+                            .add(buttonSeleccionarDirectorio))
+                        .add(layout.createSequentialGroup()
+                            .add(jLabel1)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 530, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                .add(416, 416, 416))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .add(39, 39, 39)
+                .add(jLabel1)
+                .add(59, 59, 59)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel2)
+                    .add(textFieldDirectorioXML, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(buttonSeleccionarDirectorio))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel3)
+                    .add(textFieldServidorIP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(75, 75, 75)
+                .add(buttonGuardar)
+                .addContainerGap(191, Short.MAX_VALUE))
+        );
 	}// </editor-fold>
 
 	private void buttonSeleccionarDirectorioActionPerformed(
