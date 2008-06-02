@@ -30,11 +30,6 @@ public class ServerFacadeBean implements ServerFacade
 		return 5000000;
 	}
 
-	public void actualizarSolFab(Vector<ArticuloHeaderVO> arts) 
-	{
-		// TODO Auto-generated method stub
-	}
-
 	public void actualizarStock(Vector<ArticuloHeaderVO> arts) 
 	{
 		admArt.actualizarStock(arts);
@@ -42,35 +37,32 @@ public class ServerFacadeBean implements ServerFacade
 
 	public void guardarSolicitud(SolicitudDistribucionVO soldist) 
 	{
-		// TODO Auto-generated method stub
+		this.admSol.guardarSolicitud(soldist);
 	}
 
 	public Vector<SolicitudFabricaVO> getAllSolFab() 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return this.admSol.getAllSolFab();
 	}
 
 	public SolicitudFabricaVO getSolFab(int codigo) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return this.admSol.getSolFab(codigo);
 	}
 
 	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return this.admSol.getSolsFab(codTienda);
 	}
 
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv) 
 	{
-		// TODO Auto-generated method stub
+		this.admSol.guardarSolicitudDeEnvio(solEnv);
 	}
 
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) 
 	{
-		// TODO Auto-generated method stub
+		this.admSol.guardarSolicitudFabricacion(solFab);
 	}
 
 	public Vector<String> getDescripciones(Vector<Long> codigos) 
@@ -85,8 +77,7 @@ public class ServerFacadeBean implements ServerFacade
 
 	public SolicitudFabricaVO getSolFab(long codigo) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return this.admSol.getSolFab(codigo);
 	}
 
 	public void guardarArticuloHogar(ArticuloHogarVO a) 
@@ -99,18 +90,23 @@ public class ServerFacadeBean implements ServerFacade
 		this.admArt.guardarArticuloRopa(a);
 	}
 
-	public void actualizarSolFab(SolicitudFabricaVO solFab) {
-		// TODO Auto-generated method stub
-		
+	public void actualizarSolFab(SolicitudFabricaVO solFab)
+	{
+		this.admSol.actualizarSolFab(solFab);
 	}
 
-	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab) {
-		// TODO Auto-generated method stub
-		return null;
+	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab) 
+	{
+		return this.admSol.cargarSolicitudFabricacion(codigoSolFab);
 	}
 
-	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO) {
-		// TODO Auto-generated method stub
-		
+	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO)
+	{
+		this.admSol.guardarSolicitudReposicion(solRepVO);
+	}
+
+	public void guardarDatosCD(int codigo, String nombre, double longitud, double latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
+	{
+		this.admArt.guardarDatosCD(codigo, nombre, longitud, latitud, lineasRopa, categoriasHogar);
 	}
 }
