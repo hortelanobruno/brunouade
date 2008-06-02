@@ -1,12 +1,16 @@
 package BusinessLogic;
 
 import MVCFramework.ProxyModelo;
+import VO.ArticuloHeaderVO;
+import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudFabricaVO;
 import VO.SolicitudEnvioVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
 import Varios.Constantes;
+
+import java.util.Collection;
 import java.util.Vector;
 import javax.naming.Context;
 
@@ -93,5 +97,17 @@ public class BusinessDelegate extends ProxyModelo
 
 	public SolicitudFabricaVO getSolicitudFabricacion(long codigoSolFab) {
 		return this.getModCD().cargarSolicitudFabricacion(codigoSolFab);
+	}
+
+	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) {
+		this.getModCD().actualizarSolFab(solFab);
+	}
+
+	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO) {
+		this.getModCD().guardarSolicitudReposicion(solRepVO);
+	}
+
+	public void actualizarStock(Vector<ArticuloHeaderVO> articulo) {
+		this.getModCD().actualizarStock((Vector<ArticuloHeaderVO>) articulo);
 	}
 }

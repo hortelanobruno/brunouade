@@ -6,6 +6,7 @@ import javax.ejb.Remote;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
+import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
@@ -33,11 +34,14 @@ public interface ServerFacade
 	
 	//panel reposicion
 	public void actualizarStock(Vector<ArticuloHeaderVO> arts);
-	public void actualizarSolFab(Vector<ArticuloHeaderVO> arts);
+	public void actualizarSolFab(SolicitudFabricaVO solFab);
+	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
+	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab);
+	
 	
 	//panel new art
 	public void guardarArticuloHogar(ArticuloHogarVO a);
 	public void guardarArticuloRopa(ArticuloRopaVO a);
 
-	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab);
+	
 }

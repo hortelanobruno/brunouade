@@ -6,6 +6,7 @@
 
 package Paneles;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -13,16 +14,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import controladores.ControladorPanelRepArt;
-import controladores.ControladorPanelSolDis;
 import VO.ArticuloHeaderVO;
 import VO.SolicitudDeReposicionVO;
-import VO.SolicitudDistribucionVO;
-import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
 import Varios.Constantes;
 import Varios.XMLWrapper;
 import Vistas.VistaRepArt;
-import Vistas.VistaSolDis;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -158,13 +155,17 @@ public class PanelRepArt extends javax.swing.JPanel {
 	
 	
 	private void cargarArticuloEnSolFab(ArticuloHeaderVO arti){
-		Vector<ArticuloHeaderVO> articulos = ((Vector<ArticuloHeaderVO>)solFab.getArticulosRecibidos());
+		Collection<ArticuloHeaderVO> articulos = solFab.getArticulosRecibidos();
+		Iterator itArt = articulos.iterator();
 		int count = 0;
-		for(int i=0 ; i < articulos.size() ; i++){
-			if(arti.getCodigo() == articulos.elementAt(i).getCodigo()){
+		while(itArt.hasNext()){
+			ArticuloHeaderVO art = (ArticuloHeaderVO)itArt.next();
+			if(arti.getCodigo() == (art.getCodigo())){
 				//existe el articulo entonces lo actualizo
-				int cantidad = articulos.elementAt(i).getCantidad();
-				articulos.elementAt(i).setCantidad(cantidad + arti.getCantidad());
+				int cantidad = art.getCantidad();
+				articulos.remove(art);
+				art.setCantidad(cantidad + arti.getCantidad());
+				articulos.add(art);
 				count = 1;
 			}
 		}
@@ -220,16 +221,25 @@ public class PanelRepArt extends javax.swing.JPanel {
 			ref.getJTextArea1().append("Archivo Cargado\n");
 		}else{
 			//Falta generar las solicitudes
+			Vector<ArticuloHeaderVO> vecArt = collectionToVector(solRepVO.getArticulo());
+			((ControladorPanelRepArt)vistaRepArt.getControlador()).doCargarStocks(vecArt);
+			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudFabricacion(solFab);
+			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudReposicion(solRepVO);
 			
-			
-			
-			
-			
-			
+			vaciarTabla();
+			ref.getJTextArea1().append("Solicitudes Guardadas\n");
 			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
 		}
 	}
 
+	public Vector<ArticuloHeaderVO> collectionToVector(Collection<ArticuloHeaderVO> col){
+		Vector<ArticuloHeaderVO> vec = new Vector<ArticuloHeaderVO>();
+		Iterator it = (Iterator)col.iterator();
+		while(it.hasNext()){
+			vec.add((ArticuloHeaderVO) it.next());
+		}
+		return vec;
+	}
 	public void vaciarTabla(){
 		((DefaultTableModel)tableArticulosFabrica.getModel()).getDataVector().removeAllElements();
 	}
