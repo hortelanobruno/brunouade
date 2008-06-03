@@ -93,9 +93,10 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		em.merge(ar);
 	}
 	
-	public void guardarDatosCD(int codigo, String nombre, double longitud, double latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
+	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
 	{
 		CentroDistribucion cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lineasRopa,categoriasHogar);
+		System.out.println("voy a persistir el centro.");
 		em.merge(cd);
 	}
 }

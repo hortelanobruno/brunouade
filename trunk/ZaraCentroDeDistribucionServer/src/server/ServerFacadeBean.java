@@ -105,7 +105,7 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.guardarSolicitudReposicion(solRepVO);
 	}
 
-	public void guardarDatosCD(int codigo, String nombre, double longitud, double latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
+	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
 	{
 		this.admArt.guardarDatosCD(codigo, nombre, longitud, latitud, lineasRopa, categoriasHogar);
 	}
