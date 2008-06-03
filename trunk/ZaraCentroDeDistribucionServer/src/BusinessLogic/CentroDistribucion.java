@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="CentrosDeDistribucion")
+@Table(name="CentroDeDistribucion")
 public class CentroDistribucion implements Serializable
 {
 	private static final long serialVersionUID = 1459311864724348026L;
