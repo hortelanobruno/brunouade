@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Vector;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 import VO.ArticuloHeaderVO;
@@ -26,7 +26,7 @@ public class SolicitudReposicion extends Solicitud
 		super();
 	}
 
-	@Id
+	@Column
 	public long getCodigoSolicitudFabricacion()
 	{
 		return codigoSolicitudFabricacion;
