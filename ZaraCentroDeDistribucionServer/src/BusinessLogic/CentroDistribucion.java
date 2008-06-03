@@ -1,5 +1,6 @@
 package BusinessLogic;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Vector;
 
@@ -11,17 +12,23 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="CentroDeDistribucion")
-public class CentroDistribucion 
+@Table(name="CentrosDeDistribucion")
+public class CentroDistribucion implements Serializable
 {
+	private static final long serialVersionUID = 1459311864724348026L;
 	private int codCentro;
 	private String nombreCentro;
-	private double latitud;
-	private double longitud;
+	private float latitud;
+	private float longitud;
 	private Collection<String> lineasRopa;
 	private Collection<String> categoriasHogar;
 	
-	public CentroDistribucion(int codigo, String nombre, double longitud, double latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar)
+	public CentroDistribucion()
+	{
+		
+	}
+	
+	public CentroDistribucion(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar)
 	{
 		this.setCodCentro(codigo);
 		this.setNombreCentro(nombre);
@@ -32,11 +39,12 @@ public class CentroDistribucion
 	}
 	
 	@Id
-	@Column
+	@Column(name="CodCentro")
 	public int getCodCentro()
 	{
 		return codCentro;
 	}
+	
 	public void setCodCentro(int codCentro) 
 	{
 		this.codCentro = codCentro;
@@ -59,7 +67,7 @@ public class CentroDistribucion
 		return latitud;
 	}
 	
-	public void setLatitud(double latitud) 
+	public void setLatitud(float latitud) 
 	{
 		this.latitud = latitud;
 	}
@@ -92,7 +100,7 @@ public class CentroDistribucion
 		return longitud;
 	}
 	
-	public void setLongitud(double longitud)
+	public void setLongitud(float longitud)
 	{
 		this.longitud = longitud;
 	}
