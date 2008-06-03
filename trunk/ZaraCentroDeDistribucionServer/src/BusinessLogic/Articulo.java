@@ -69,7 +69,7 @@ public class Articulo implements Serializable
 	}
 	
 	public void setPrecio(float precio)
-{
+	{
 		this.precio = precio;
 	}
 	

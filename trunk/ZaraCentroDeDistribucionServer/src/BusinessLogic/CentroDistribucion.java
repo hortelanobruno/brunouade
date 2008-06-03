@@ -62,7 +62,7 @@ public class CentroDistribucion implements Serializable
 	}
 	
 	@Column
-	public double getLatitud() 
+	public float getLatitud() 
 	{
 		return latitud;
 	}
@@ -70,6 +70,17 @@ public class CentroDistribucion implements Serializable
 	public void setLatitud(float latitud) 
 	{
 		this.latitud = latitud;
+	}
+	
+	@Column
+	public float getLongitud()
+	{
+		return longitud;
+	}
+	
+	public void setLongitud(float longitud)
+	{
+		this.longitud = longitud;
 	}
 	
 	@Transient
@@ -92,16 +103,5 @@ public class CentroDistribucion implements Serializable
 	public void setLineasRopa(Vector<String> lineasRopa) 
 	{
 		this.lineasRopa = lineasRopa;
-	}
-	
-	@Column
-	public double getLongitud()
-	{
-		return longitud;
-	}
-	
-	public void setLongitud(float longitud)
-	{
-		this.longitud = longitud;
 	}
 }
