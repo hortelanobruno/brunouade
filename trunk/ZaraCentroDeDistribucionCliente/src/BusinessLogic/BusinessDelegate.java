@@ -9,8 +9,6 @@ import VO.SolicitudEnvioVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
 import Varios.Constantes;
-
-import java.util.Collection;
 import java.util.Vector;
 import javax.naming.Context;
 
@@ -39,7 +37,9 @@ public class BusinessDelegate extends ProxyModelo
 		categoriasHogar.add("mesa");
 		categoriasHogar.add("decoracion");
 		categoriasHogar.add("baño");
-		this.getModCD().guardarDatosCD(1, "Shopping Centro", 56.887521, 34.90417, lineasRopa, categoriasHogar);
+		
+		System.out.println("\nCENTRO CREADO!\n\nAhora voy a guardar\n");
+		this.getModCD().guardarDatosCD(1, "Shopping Centro", 56.887521f, 34.90417f, lineasRopa, categoriasHogar);
 	}
 	
 	// Test de nacho

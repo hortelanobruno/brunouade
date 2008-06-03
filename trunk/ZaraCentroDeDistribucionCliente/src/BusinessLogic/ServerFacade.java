@@ -15,7 +15,7 @@ import VO.SolicitudFabricaVO;
 public interface ServerFacade 
 {
 	public int getTest(); //Prueba
-	public void guardarDatosCD(int codigo,String nombre,double longitud, double latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar);
+	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar);
 	//panel sol dist
 	public Vector<String> getDescripciones(Vector<Long> codigos);
 	public Vector<Integer> getStocks(Vector<Long> codigos);
