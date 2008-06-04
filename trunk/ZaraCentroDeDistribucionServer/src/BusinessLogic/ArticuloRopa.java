@@ -8,7 +8,7 @@ import javax.persistence.Transient;
 import VO.ArticuloRopaVO;
 
 @Entity
-@DiscriminatorValue("hogar")
+@DiscriminatorValue("ropa")
 public class ArticuloRopa extends Articulo 
 {
 	private static final long serialVersionUID = -1550636008034632214L;

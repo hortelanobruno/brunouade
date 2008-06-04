@@ -99,7 +99,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		if(cd == null)
 		{
 			cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lineasRopa,categoriasHogar);
-			System.out.println("voy a persistir el centro.");
 			em.merge(cd);
 		}
 	}
