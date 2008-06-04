@@ -16,5 +16,4 @@ public interface AdministradorArticulos
 	public Vector<String> getDescripciones(Vector<Long> cods);
 	public Vector<Integer> getStocks(Vector<Long> codigos);
 	public void actualizarStock(Vector<ArticuloHeaderVO> arts);
-	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar);
 }
