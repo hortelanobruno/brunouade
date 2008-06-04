@@ -2,6 +2,8 @@ package BusinessLogic;
 
 import java.util.Vector;
 import javax.ejb.Remote;
+
+import Exceptions.ExistingProductException;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
@@ -40,6 +42,6 @@ public interface ServerFacade
        
        
        //panel new art
-       public void guardarArticuloHogar(ArticuloHogarVO a);
-       public void guardarArticuloRopa(ArticuloRopaVO a); 
+       public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
+       public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException; 
 }

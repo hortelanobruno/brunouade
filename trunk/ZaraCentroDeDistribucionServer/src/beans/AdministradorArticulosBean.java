@@ -12,6 +12,7 @@ import BusinessLogic.Articulo;
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloRopa;
 import BusinessLogic.CentroDistribucion;
+import Exceptions.ExistingProductException;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
@@ -62,7 +63,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 	}
 
-	public void guardarArticuloHogar(ArticuloHogarVO art)
+	public void guardarArticuloHogar(ArticuloHogarVO art) throws ExistingProductException
 	{
 		ArticuloHogar ah = em.find(ArticuloHogar.class, art.getCodigo());
 		
@@ -82,9 +83,10 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			ah.setMedidas(art.getMedidas());
 			em.persist(ah);
 		}
+		else throw new ExistingProductException("El producto ya existe.");
 	}
 
-	public void guardarArticuloRopa(ArticuloRopaVO art) 
+	public void guardarArticuloRopa(ArticuloRopaVO art) throws ExistingProductException 
 	{
 		ArticuloRopa ar = em.find(ArticuloRopa.class, art.getCodigo());
 		
@@ -103,6 +105,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			ar.setOrigen(art.getOrigen());
 			em.persist(ar);
 		}
+		else throw new ExistingProductException("El producto ya existe.");
 	}
 	
 	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
