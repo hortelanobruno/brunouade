@@ -12,6 +12,12 @@ public class LineaRopa
 	private int idLinea;
 	private String linea;
 	
+	public LineaRopa(int codigo, String linea)
+	{
+		this.setIdLinea(codigo);
+		this.setLinea(linea);
+	}
+	
 	@Id
 	public int getIdLinea()
 	{

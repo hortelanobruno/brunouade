@@ -2,6 +2,7 @@ package BusinessLogic;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Vector;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,8 +33,8 @@ public class CentroDistribucion implements Serializable
 		this.setNombreCentro(nombre);
 		this.setLongitud(longitud);
 		this.setLatitud(latitud);
-		//this.setLineasRopa(lineasRopa);
-		//this.setCategoriasHogar(categoriasHogar);
+		this.setLineasRopa(lineasRopa);
+		this.setCategoriasHogar(categoriasHogar);
 	}
 	
 	@Id
@@ -84,22 +85,32 @@ public class CentroDistribucion implements Serializable
 	@OneToMany
 	public Collection<CategoriaHogar> getCategoriasHogar()
 	{
-		return categoriasHogar;
+		return this.categoriasHogar;
 	}
 
-	public void setCategoriasHogar(Collection<CategoriaHogar> categoriasHogar) 
+	public void setCategoriasHogar(Collection<String> catHogar) 
 	{
-		this.categoriasHogar = categoriasHogar;
+		int numerador = 1;
+		Iterator it = catHogar.iterator();
+		this.categoriasHogar = new Vector<CategoriaHogar>();
+		
+		while(it.hasNext())
+			this.categoriasHogar.add(new CategoriaHogar(numerador++,(String)it.next()));
 	}
 
 	@OneToMany
 	public Collection<LineaRopa> getLineasRopa()
 	{
-		return lineasRopa;
+		return this.lineasRopa;
 	}
 
-	public void setLineasRopa(Collection<LineaRopa> lineasRopa) 
+	public void setLineasRopa(Collection<String> liRopa) 
 	{
-		this.lineasRopa = lineasRopa;
+		int numerador = 1;
+		Iterator it = liRopa.iterator();
+		this.lineasRopa= new Vector<LineaRopa>();
+		
+		while(it.hasNext())
+			this.lineasRopa.add(new LineaRopa(numerador++,(String)it.next()));
 	}
 }

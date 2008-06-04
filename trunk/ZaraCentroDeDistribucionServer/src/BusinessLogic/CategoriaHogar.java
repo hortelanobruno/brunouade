@@ -12,6 +12,12 @@ public class CategoriaHogar
 	private int idCategoria;
 	private String categoria;
 	
+	public CategoriaHogar(int codigo, String categoria)
+	{
+		this.setIdCategoria(codigo);
+		this.setCategoria(categoria);
+	}
+	
 	@Column
 	public String getCategoria() 
 	{
