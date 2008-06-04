@@ -33,12 +33,14 @@ public class CentroDistribucion implements Serializable
 		this.setNombreCentro(nombre);
 		this.setLongitud(longitud);
 		this.setLatitud(latitud);
+		this.lineasRopa = new Vector<LineaRopa>();
+		this.categoriasHogar = new Vector<CategoriaHogar>();
 		this.setLineasRopa(lineasRopa);
 		this.setCategoriasHogar(categoriasHogar);
 	}
 	
 	@Id
-	@Column(name="CodCentro")
+	@Column
 	public int getCodCentro()
 	{
 		return codCentro;
@@ -81,6 +83,21 @@ public class CentroDistribucion implements Serializable
 	{
 		this.longitud = longitud;
 	}
+	
+	@OneToMany
+	public Collection<LineaRopa> getLineasRopa()
+	{
+		return this.lineasRopa;
+	}
+
+	public void setLineasRopa(Collection<String> liRopa) 
+	{
+		int numerador = 1;
+		Iterator it = liRopa.iterator();
+
+		while(it.hasNext())
+			this.lineasRopa.add(new LineaRopa(numerador++,(String)it.next()));
+	}
 
 	@OneToMany
 	public Collection<CategoriaHogar> getCategoriasHogar()
@@ -92,25 +109,8 @@ public class CentroDistribucion implements Serializable
 	{
 		int numerador = 1;
 		Iterator it = catHogar.iterator();
-		this.categoriasHogar = new Vector<CategoriaHogar>();
 		
 		while(it.hasNext())
 			this.categoriasHogar.add(new CategoriaHogar(numerador++,(String)it.next()));
-	}
-
-	@OneToMany
-	public Collection<LineaRopa> getLineasRopa()
-	{
-		return this.lineasRopa;
-	}
-
-	public void setLineasRopa(Collection<String> liRopa) 
-	{
-		int numerador = 1;
-		Iterator it = liRopa.iterator();
-		this.lineasRopa= new Vector<LineaRopa>();
-		
-		while(it.hasNext())
-			this.lineasRopa.add(new LineaRopa(numerador++,(String)it.next()));
 	}
 }
