@@ -1,9 +1,21 @@
 
-
-
 En esta pagina se van a colocar los features que faltan desarrollar.
 
 
 #############        Zara - Centro Distribucion - Cliente       ############################
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#############        Zara - Centro Distribucion - Servidor      ############################
