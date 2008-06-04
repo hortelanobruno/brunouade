@@ -5,6 +5,7 @@ import java.util.Vector;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import BusinessLogic.ServerFacade;
+import Exceptions.ExistingProductException;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
@@ -80,12 +81,12 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getSolFab(codigo);
 	}
 
-	public void guardarArticuloHogar(ArticuloHogarVO a) 
+	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException
 	{
 		this.admArt.guardarArticuloHogar(a);
 	}
 
-	public void guardarArticuloRopa(ArticuloRopaVO a)
+	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException
 	{
 		this.admArt.guardarArticuloRopa(a);
 	}
