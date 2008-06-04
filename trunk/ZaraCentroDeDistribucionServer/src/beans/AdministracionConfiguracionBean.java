@@ -1,7 +1,5 @@
 package beans;
 
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.Vector;
 
 import javax.ejb.Stateless;
@@ -24,33 +22,41 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 		CentroDistribucion cd = em.find(CentroDistribucion.class, codigo);
 		if(cd == null)
 		{
+			
 			cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lineasRopa,categoriasHogar);
+			System.out.println("ya arme el cd.\n");
 			
-			/*int numerador = 1;
-			Iterator it = lineasRopa.iterator();
-			while(it.hasNext())
-				cd.getLineasRopa().add(new LineaRopa(numerador++,(String)it.next()));
+		/*	for(int i = 0; i< lineasRopa.size();i++)
+				this.addLineaRopa((i+1), lineasRopa.elementAt(i));
+			System.out.println("ya guarde las lineas de ropa. \n");
 			
-			numerador = 1;
-			it = categoriasHogar.iterator();
+			for(int i = 0; i< categoriasHogar.size(); i++)
+				this.addCategoriaHogar((i+1), categoriasHogar.elementAt(i));
 			
-			while(it.hasNext())
-				cd.getCategoriasHogar().add(new CategoriaHogar(numerador++,(String)it.next()));*/
-			
-			System.out.println("ya arme el cd, ahora lo guardo.\n");
+			System.out.println("ya guarde las categorias de hogar. \n");*/
+
+			System.out.println("guardo el cd.\n");
 			em.persist(cd);
-			System.out.println("ya lo guarde.\n");
+			System.out.println("ya guarde el cd.\n");
 		}
 	}
 	
-	public void addCategoriaHogar(String categoria)
+	public void addCategoriaHogar(int cod, String categoria)
 	{
-		
+		if(em.find(CategoriaHogar.class, cod) == null)
+		{
+			CategoriaHogar c = new CategoriaHogar(cod, categoria);
+			em.persist(c);
+		}
 	}
 
-	public void addLineaRopa(String linea) 
+	public void addLineaRopa(int cod, String linea) 
 	{
-	
+		if(em.find(LineaRopa.class, cod) == null)
+		{
+			LineaRopa r = new LineaRopa(cod, linea);
+			em.persist(r);
+		}
 	}
 
 	public Vector<String> getCategoriasHogar() 

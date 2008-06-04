@@ -4,11 +4,15 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Vector;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.engine.CascadeStyle;
 
 @Entity
 @Table(name="CentroDeDistribucion")
@@ -24,7 +28,8 @@ public class CentroDistribucion implements Serializable
 	
 	public CentroDistribucion()
 	{
-		
+		this.lineasRopa = new Vector<LineaRopa>();
+		this.categoriasHogar = new Vector<CategoriaHogar>();
 	}
 	
 	public CentroDistribucion(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar)
@@ -84,7 +89,7 @@ public class CentroDistribucion implements Serializable
 		this.longitud = longitud;
 	}
 	
-	@OneToMany
+	@OneToMany(cascade={CascadeType.ALL})
 	public Collection<LineaRopa> getLineasRopa()
 	{
 		return this.lineasRopa;
@@ -97,9 +102,12 @@ public class CentroDistribucion implements Serializable
 
 		while(it.hasNext())
 			this.lineasRopa.add(new LineaRopa(numerador++,(String)it.next()));
+
+		/*for(int i = 0;i< liRopa.size();i++)
+			this.lineasRopa.add(new LineaRopa((i+1),liRopa.elementAt(i)));*/
 	}
 
-	@OneToMany
+	@OneToMany(cascade={CascadeType.ALL})
 	public Collection<CategoriaHogar> getCategoriasHogar()
 	{
 		return this.categoriasHogar;
@@ -112,5 +120,9 @@ public class CentroDistribucion implements Serializable
 		
 		while(it.hasNext())
 			this.categoriasHogar.add(new CategoriaHogar(numerador++,(String)it.next()));
+		
+		/*for(int i = 0; i< catHogar.size();i++)
+			this.categoriasHogar.add(new CategoriaHogar((i+1),catHogar.elementAt(i)));*/
+
 	}
 }
