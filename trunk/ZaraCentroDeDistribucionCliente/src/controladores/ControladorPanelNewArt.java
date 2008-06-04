@@ -1,6 +1,7 @@
 package controladores;
 
 import BusinessLogic.BusinessDelegate;
+import Exceptions.ExistingProductException;
 import MVCFramework.Controlador;
 import MVCFramework.ProxyModelo;
 import MVCFramework.Vista;
@@ -21,11 +22,11 @@ public class ControladorPanelNewArt extends Controlador {
 		vista.actualizar();
 	}
 	
-	public void doGuardarArticuloHogar(ArticuloHogarVO a){
+	public void doGuardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException{
 		((BusinessDelegate)(this.getModelo())).guardarAritucloHogar(a);
 	}
 	
-	public void doGuardarArticuloRopa(ArticuloRopaVO a){
+	public void doGuardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException{
 		((BusinessDelegate)(this.getModelo())).guardarAritucloRopa(a);
 	}
 
