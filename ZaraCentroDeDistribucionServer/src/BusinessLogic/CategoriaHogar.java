@@ -30,6 +30,7 @@ public class CategoriaHogar
 	}
 	
 	@Id
+	@Column
 	public int getIdCategoria() 
 	{
 		return idCategoria;

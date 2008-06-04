@@ -19,6 +19,7 @@ public class LineaRopa
 	}
 	
 	@Id
+	@Column
 	public int getIdLinea()
 	{
 		return idLinea;
