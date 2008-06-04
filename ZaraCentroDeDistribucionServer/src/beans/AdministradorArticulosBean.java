@@ -64,35 +64,45 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	public void guardarArticuloHogar(ArticuloHogarVO art)
 	{
-		ArticuloHogar ah = new ArticuloHogar();
-		ah.setCodigo(art.getCodigo());
-		ah.setCantidad(art.getCantidad());
-		ah.setCategoria(art.getCategoria());
-		ah.setColor(art.getColor());
-		ah.setComposicion(art.getComposicion());
-		ah.setDescripcion(art.getDescripcion());
-		ah.setDetalles(art.getDetalles());
-		ah.setLinea(art.getLinea());
-		ah.setPrecio(art.getPrecio());
-		ah.setSeccion(art.getSeccion());
-		ah.setMedidas(art.getMedidas());
-		em.merge(ah);
+		ArticuloHogar ah = em.find(ArticuloHogar.class, art.getCodigo());
+		
+		if(ah == null)
+		{
+			ah = new ArticuloHogar();
+			ah.setCodigo(art.getCodigo());
+			ah.setCantidad(art.getCantidad());
+			ah.setCategoria(art.getCategoria());
+			ah.setColor(art.getColor());
+			ah.setComposicion(art.getComposicion());
+			ah.setDescripcion(art.getDescripcion());
+			ah.setDetalles(art.getDetalles());
+			ah.setLinea(art.getLinea());
+			ah.setPrecio(art.getPrecio());
+			ah.setSeccion(art.getSeccion());
+			ah.setMedidas(art.getMedidas());
+			em.persist(ah);
+		}
 	}
 
 	public void guardarArticuloRopa(ArticuloRopaVO art) 
 	{
-		ArticuloRopa ar = new ArticuloRopa();
-		ar.setTalle(art.getTalle());
-		ar.setOrigen(ar.getOrigen());
-		ar.setCodigo(art.getCodigo());
-		ar.setCantidad(art.getCantidad());
-		ar.setColor(art.getColor());
-		ar.setDescripcion(art.getDescripcion());
-		ar.setLinea(art.getLinea());
-		ar.setPrecio(art.getPrecio());
-		ar.setSeccion(art.getSeccion());
-		ar.setOrigen(art.getOrigen());
-		em.merge(ar);
+		ArticuloRopa ar = em.find(ArticuloRopa.class, art.getCodigo());
+		
+		if(ar == null)
+		{
+			ar = new ArticuloRopa();
+			ar.setTalle(art.getTalle());
+			ar.setOrigen(ar.getOrigen());
+			ar.setCodigo(art.getCodigo());
+			ar.setCantidad(art.getCantidad());
+			ar.setColor(art.getColor());
+			ar.setDescripcion(art.getDescripcion());
+			ar.setLinea(art.getLinea());
+			ar.setPrecio(art.getPrecio());
+			ar.setSeccion(art.getSeccion());
+			ar.setOrigen(art.getOrigen());
+			em.persist(ar);
+		}
 	}
 	
 	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
