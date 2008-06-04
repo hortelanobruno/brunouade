@@ -38,7 +38,6 @@ public class BusinessDelegate extends ProxyModelo
 		categoriasHogar.add("decoracion");
 		categoriasHogar.add("baño");
 		
-		System.out.println("\nCENTRO CREADO!\n\nAhora voy a guardar\n");
 		this.getModCD().guardarDatosCD(1, "Shopping Centro", 56.887521f, 34.90417f, lineasRopa, categoriasHogar);
 	}
 	
