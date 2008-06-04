@@ -75,6 +75,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ah.setLinea(art.getLinea());
 		ah.setPrecio(art.getPrecio());
 		ah.setSeccion(art.getSeccion());
+		ah.setMedidas(art.getMedidas());
 		em.merge(ah);
 	}
 
@@ -90,6 +91,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ar.setLinea(art.getLinea());
 		ar.setPrecio(art.getPrecio());
 		ar.setSeccion(art.getSeccion());
+		ar.setOrigen(art.getOrigen());
 		em.merge(ar);
 	}
 	
