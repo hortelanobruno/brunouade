@@ -4,15 +4,12 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Vector;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.engine.CascadeStyle;
 
 @Entity
 @Table(name="CentroDeDistribucion")
@@ -32,7 +29,7 @@ public class CentroDistribucion implements Serializable
 		this.categoriasHogar = new Vector<CategoriaHogar>();
 	}
 	
-	public CentroDistribucion(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar)
+	public CentroDistribucion(int codigo, String nombre, float longitud, float latitud, Collection<LineaRopa> lineasRopa, Collection<CategoriaHogar> categoriasHogar)
 	{
 		this.setCodCentro(codigo);
 		this.setNombreCentro(nombre);
@@ -95,13 +92,13 @@ public class CentroDistribucion implements Serializable
 		return this.lineasRopa;
 	}
 
-	public void setLineasRopa(Collection<String> liRopa) 
+	public void setLineasRopa(Collection<LineaRopa> liRopa) 
 	{
-		int numerador = 1;
+		//int numerador = 1;
 		Iterator it = liRopa.iterator();
 
 		while(it.hasNext())
-			this.lineasRopa.add(new LineaRopa(numerador++,(String)it.next()));
+			this.lineasRopa.add((LineaRopa)it.next());
 
 		/*for(int i = 0;i< liRopa.size();i++)
 			this.lineasRopa.add(new LineaRopa((i+1),liRopa.elementAt(i)));*/
@@ -113,13 +110,13 @@ public class CentroDistribucion implements Serializable
 		return this.categoriasHogar;
 	}
 
-	public void setCategoriasHogar(Collection<String> catHogar) 
+	public void setCategoriasHogar(Collection<CategoriaHogar> catHogar) 
 	{
-		int numerador = 1;
+		//int numerador = 1;
 		Iterator it = catHogar.iterator();
 		
 		while(it.hasNext())
-			this.categoriasHogar.add(new CategoriaHogar(numerador++,(String)it.next()));
+			this.categoriasHogar.add((CategoriaHogar)it.next());
 		
 		/*for(int i = 0; i< catHogar.size();i++)
 			this.categoriasHogar.add(new CategoriaHogar((i+1),catHogar.elementAt(i)));*/

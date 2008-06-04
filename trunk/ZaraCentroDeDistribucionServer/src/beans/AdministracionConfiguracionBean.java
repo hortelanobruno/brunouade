@@ -22,8 +22,16 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 		CentroDistribucion cd = em.find(CentroDistribucion.class, codigo);
 		if(cd == null)
 		{
+			Vector<LineaRopa> lr = new Vector<LineaRopa>();
+			Vector<CategoriaHogar> ch = new Vector<CategoriaHogar>();
 			
-			cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lineasRopa,categoriasHogar);
+			for(int i = 0; i< lineasRopa.size();i++)
+				lr.add(new LineaRopa((i+1),lineasRopa.elementAt(i)));	
+			
+			for(int i = 0; i< categoriasHogar.size(); i++)
+				ch.add(new CategoriaHogar((i+1),categoriasHogar.elementAt(i)));
+
+			cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lr,ch);
 			System.out.println("ya arme el cd.\n");
 			
 		/*	for(int i = 0; i< lineasRopa.size();i++)
