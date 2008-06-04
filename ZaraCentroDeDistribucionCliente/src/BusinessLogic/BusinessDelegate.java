@@ -1,5 +1,6 @@
 package BusinessLogic;
 
+import Exceptions.ExistingProductException;
 import MVCFramework.ProxyModelo;
 import VO.ArticuloHeaderVO;
 import VO.SolicitudDeReposicionVO;
@@ -85,12 +86,13 @@ public class BusinessDelegate extends ProxyModelo
 		return stocks;
 	}
 
-	public void guardarAritucloHogar(ArticuloHogarVO a)
+	public void guardarAritucloHogar(ArticuloHogarVO a)  throws ExistingProductException
 	{
 		this.getModCD().guardarArticuloHogar(a);
 	}
 	
-	public void guardarAritucloRopa(ArticuloRopaVO a){
+	public void guardarAritucloRopa(ArticuloRopaVO a) throws ExistingProductException
+	{
 		this.getModCD().guardarArticuloRopa(a);
 	}
 	

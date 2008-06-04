@@ -26,6 +26,7 @@ import Varios.XMLArticulo;
 import Varios.XMLWrapper;
 import Vistas.VistaNewArt;
 
+import Exceptions.ExistingProductException;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -200,11 +201,25 @@ public class PanelNewArt extends javax.swing.JPanel {
 			if(((DefaultTableModel)tableArticulo.getModel()).getValueAt(0, 1).equals("Ropa")){
 				//es un articulo ropa
 				ArticuloRopaVO articulo = crearArticuloRopaVO();
-				((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloRopa(articulo);
+				try
+				{
+					((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloRopa(articulo);
+				}
+				catch(ExistingProductException e)
+				{
+					JOptionPane.showMessageDialog(this, e.getMessage(),Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+				}
 			}else{
 				//es un articulo hogar
 				ArticuloHogarVO articulo = crearArticuloHogarVO();
-				((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloHogar(articulo);
+				try
+				{
+					((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloHogar(articulo);
+				}
+				catch(ExistingProductException e)
+				{
+					JOptionPane.showMessageDialog(this, e.getMessage(),Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+				}
 			}
 			vaciarTabla();
 			ref.getJTextArea1().append("Articulo Guardado\n");
