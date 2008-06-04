@@ -7,11 +7,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
 import BusinessLogic.Articulo;
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloRopa;
-import BusinessLogic.CentroDistribucion;
 import Exceptions.ExistingProductException;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
@@ -106,15 +104,5 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			em.persist(ar);
 		}
 		else throw new ExistingProductException("El producto ya existe.");
-	}
-	
-	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
-	{
-		CentroDistribucion cd = em.find(CentroDistribucion.class, codigo);
-		if(cd == null)
-		{
-			cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lineasRopa,categoriasHogar);
-			em.merge(cd);
-		}
 	}
 }

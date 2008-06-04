@@ -20,6 +20,7 @@ public class ServerFacadeBean implements ServerFacade
 {
 	@EJB private AdministradorArticulos admArt; 
 	@EJB private AdministradorSolicitudes admSol;
+	@EJB private AdministracionConfiguracion admConf;
 	
 	public ServerFacadeBean()
 	{
@@ -108,6 +109,6 @@ public class ServerFacadeBean implements ServerFacade
 
 	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
 	{
-		this.admArt.guardarDatosCD(codigo, nombre, longitud, latitud, lineasRopa, categoriasHogar);
+		this.admConf.guardarDatosCD(codigo, nombre, longitud, latitud, lineasRopa, categoriasHogar);
 	}
 }

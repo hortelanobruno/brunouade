@@ -3,13 +3,11 @@ package BusinessLogic;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Vector;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name="CentroDeDistribucion")
@@ -20,8 +18,8 @@ public class CentroDistribucion implements Serializable
 	private String nombreCentro;
 	private float latitud;
 	private float longitud;
-	private Collection<String> lineasRopa;
-	private Collection<String> categoriasHogar;
+	private Collection<LineaRopa> lineasRopa;
+	private Collection<CategoriaHogar> categoriasHogar;
 	
 	public CentroDistribucion()
 	{
@@ -34,8 +32,8 @@ public class CentroDistribucion implements Serializable
 		this.setNombreCentro(nombre);
 		this.setLongitud(longitud);
 		this.setLatitud(latitud);
-		this.setLineasRopa(lineasRopa);
-		this.setCategoriasHogar(categoriasHogar);
+		//this.setLineasRopa(lineasRopa);
+		//this.setCategoriasHogar(categoriasHogar);
 	}
 	
 	@Id
@@ -82,25 +80,25 @@ public class CentroDistribucion implements Serializable
 	{
 		this.longitud = longitud;
 	}
-	
-	@Transient
-	public Collection<String> getCategoriasHogar() 
+
+	@OneToMany
+	public Collection<CategoriaHogar> getCategoriasHogar()
 	{
 		return categoriasHogar;
 	}
-	
-	public void setCategoriasHogar(Vector<String> categoriasHogar) 
+
+	public void setCategoriasHogar(Collection<CategoriaHogar> categoriasHogar) 
 	{
 		this.categoriasHogar = categoriasHogar;
 	}
-	
-	@Transient
-	public Collection<String> getLineasRopa() 
+
+	@OneToMany
+	public Collection<LineaRopa> getLineasRopa()
 	{
 		return lineasRopa;
 	}
-	
-	public void setLineasRopa(Vector<String> lineasRopa) 
+
+	public void setLineasRopa(Collection<LineaRopa> lineasRopa) 
 	{
 		this.lineasRopa = lineasRopa;
 	}
