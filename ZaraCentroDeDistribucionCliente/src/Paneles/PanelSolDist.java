@@ -7,8 +7,11 @@
 package Paneles;
 
 import java.awt.Color;
+import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Vector;
+
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -18,9 +21,11 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import controladores.ControladorPanelSolDis;
 import VO.ArticuloHeaderVO;
+import VO.FabricaVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
+import VO.TiendaVO;
 import Varios.Constantes;
 import Varios.XMLWrapper;
 import Vistas.VistaSolDis;
@@ -315,25 +320,71 @@ public class PanelSolDist extends javax.swing.JPanel {
 			//Falta generar las solicitudes
 			SolicitudEnvioVO solEnvio = (SolicitudEnvioVO) generarSolEnvios();
 			SolicitudFabricaVO solFab = (SolicitudFabricaVO) generarSolFab();
+			Collection<ArticuloHeaderVO> artic = (Collection<ArticuloHeaderVO>) articulosFabricarDeTabla();
 			
 			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarSolicitud(solDisVO);
 			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarSolicitudEnvios(solEnvio);
 			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarSolicitudFabricacion(solFab);
+			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarArticulosPendientes(artic);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
 			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
 		}
 	}
 
+	public Collection<ArticuloHeaderVO> articulosEnviarDeTabla(){
+		Collection<ArticuloHeaderVO> art = new Vector<ArticuloHeaderVO>();
+		ArticuloHeaderVO arti;
+		for(int i=0 ; i < tableArticulos.getRowCount() ; i++){
+			long cod = (Long.parseLong((String) ((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 2)));
+			arti = ((ControladorPanelSolDis) vistaSolDis.getControlador()).doGetArticulo(cod);
+			arti.setCantidad(Integer.parseInt((String) ((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 6)));
+			art.add(arti);
+		}
+		return art;
+	}
+	
+	public Collection<ArticuloHeaderVO> articulosFabricarDeTabla(){
+		Collection<ArticuloHeaderVO> art = new Vector<ArticuloHeaderVO>();
+		ArticuloHeaderVO arti = null;
+		for(int i=0 ; i < tableArticulos.getRowCount() ; i++){
+			int ped = Integer.parseInt((((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 4)).toString());
+			int sel = Integer.parseInt((((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 6)).toString());
+			if(ped>sel){
+				long cod = (Long.parseLong((String) ((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 2)));
+				arti = ((ControladorPanelSolDis) vistaSolDis.getControlador()).doGetArticulo(cod);
+				arti.setCantidad(ped-sel);
+				art.add(arti);
+			}else{
+				ref.getJTextArea1().append("Error al cargar los articulos a fabricar, xq lo seleccionado es mayor que lo pedido\n");
+			}
+		}
+		return art;
+	}
+	
+	@SuppressWarnings("deprecation")
 	public SolicitudEnvioVO generarSolEnvios(){
 		SolicitudEnvioVO sol = new SolicitudEnvioVO();
-		//aca falta generar la solicitud
+		Collection<ArticuloHeaderVO> art = articulosEnviarDeTabla();
+		int numero = ((ControladorPanelSolDis) vistaSolDis.getControlador()).doGetNumeroSolEnv();
+		TiendaVO tienda = solDisVO.getTienda();
+		sol.setArticulo(art);
+		sol.setFechaEmision(new Date(ref.getLabelHora().getText()));
+		sol.setNumero(numero);
+		sol.setTienda(tienda);
 		return sol;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public SolicitudFabricaVO generarSolFab(){
 		SolicitudFabricaVO sol = new SolicitudFabricaVO();
-		//aca falta generar la solicitud
+		Collection<ArticuloHeaderVO> art = articulosFabricarDeTabla();
+		int numero = ((ControladorPanelSolDis) vistaSolDis.getControlador()).doGetNumeroSolFab();
+		FabricaVO fab = ((ControladorPanelSolDis) vistaSolDis.getControlador()).doGetFabrica();
+		sol.setArticulo(art);
+		sol.setFechaEmision(new Date(ref.getLabelHora().getText()));
+		sol.setNumero(numero);
+		sol.setFabrica(fab);
 		return sol;
 	}
 	
