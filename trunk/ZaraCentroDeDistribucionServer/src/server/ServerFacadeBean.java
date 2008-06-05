@@ -121,4 +121,9 @@ public class ServerFacadeBean implements ServerFacade
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	public int getNumeroSolFab() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
