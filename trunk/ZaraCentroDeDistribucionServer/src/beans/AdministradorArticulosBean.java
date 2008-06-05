@@ -22,9 +22,11 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	@PersistenceContext(unitName="CentroDeDistribucion")
 	private EntityManager em;
 
-	public AdministradorArticulosBean() {
-		// TODO Auto-generated constructor stub
+	public AdministradorArticulosBean() 
+	{
+
 	}
+	
 	public Vector<String> getDescripciones(Vector<Long> cods) 
 	{
 		Vector<String> descs = new Vector<String>();
@@ -104,5 +106,15 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			em.persist(ar);
 		}
 		else throw new ExistingProductException("El producto ya existe.");
+	}
+	
+	public ArticuloHeaderVO getArticulo(long codigo)
+	{
+		return em.find(Articulo.class, codigo).getVO();
+	}
+	
+	public void guardarArticulosPendientes()
+	{
+		
 	}
 }
