@@ -28,7 +28,12 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	
 	public void actualizarSolFab(SolicitudFabricaVO solFab) 
 	{
-		
+		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFab.getNumero());
+		if(s != null)
+		{
+			s.setVO(solFab);
+			em.merge(s);
+		}
 	}
 
 	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab)
@@ -71,28 +76,28 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		SolicitudDistribucion sd = new SolicitudDistribucion();
 		sd.setVO(soldist);
-		em.merge(sd);
+		em.persist(sd);
 	}
 
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv)
 	{
 		SolicitudEnvioATienda set = new SolicitudEnvioATienda();
 		set.setVO(solEnv);
-		em.merge(set);
+		em.persist(set);
 	}
 
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) 
 	{
 		SolicitudDeFabricacion sf = new SolicitudDeFabricacion();
 		sf.setVO(solFab);
-		em.merge(sf);
+		em.persist(sf);
 	}
 
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO) 
 	{
 		SolicitudReposicion sr = new SolicitudReposicion();
 		sr.setVO(solRepVO);
-		em.merge(sr);
+		em.persist(sr);
 	}
 
 	public FabricaVO getFabrica()
@@ -104,13 +109,13 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		Query q = em.createQuery("select max(s.numero) from SolicitudEnvioATienda");
 		List l = q.getResultList();
-		return (Integer) l.get(0);
+		return (((Integer)l.get(0)) + 1);
 	}
 
 	public int getNumeroSolFab() 
 	{
 		Query q = em.createQuery("select max(s.numero) from SolicitudDeFabricacion");
 		List l = q.getResultList();
-		return (Integer) l.get(0);
+		return (((Integer)l.get(0)) + 1);
 	}
 }
