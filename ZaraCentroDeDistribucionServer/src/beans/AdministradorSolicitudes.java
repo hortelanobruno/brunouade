@@ -3,6 +3,7 @@ package beans;
 import java.util.Vector;
 import javax.ejb.Remote;
 
+import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
@@ -20,4 +21,7 @@ public interface AdministradorSolicitudes
     public void actualizarSolFab(SolicitudFabricaVO solFab);
     public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
     public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab);
+    public int getNumeroSolEnv();
+	public int getNumeroSolFab();
+	public FabricaVO getFabrica();
 }

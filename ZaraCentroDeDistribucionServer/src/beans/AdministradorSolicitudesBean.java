@@ -13,6 +13,7 @@ import BusinessLogic.SolicitudDeFabricacion;
 import BusinessLogic.SolicitudDistribucion;
 import BusinessLogic.SolicitudEnvioATienda;
 import BusinessLogic.SolicitudReposicion;
+import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
@@ -30,7 +31,8 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		
 	}
 
-	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab) {
+	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab)
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -59,7 +61,8 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return aux.getVO();
 	}
 
-	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda) {
+	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda) 
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -90,5 +93,24 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		SolicitudReposicion sr = new SolicitudReposicion();
 		sr.setVO(solRepVO);
 		em.merge(sr);
+	}
+
+	public FabricaVO getFabrica()
+	{
+		return null;
+	}
+
+	public int getNumeroSolEnv() 
+	{
+		Query q = em.createQuery("select max(s.numero) from SolicitudEnvioATienda");
+		List l = q.getResultList();
+		return (Integer) l.get(0);
+	}
+
+	public int getNumeroSolFab() 
+	{
+		Query q = em.createQuery("select max(s.numero) from SolicitudDeFabricacion");
+		List l = q.getResultList();
+		return (Integer) l.get(0);
 	}
 }

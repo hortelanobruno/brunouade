@@ -113,28 +113,28 @@ public class ServerFacadeBean implements ServerFacade
 		this.admConf.guardarDatosCD(codigo, nombre, longitud, latitud, lineasRopa, categoriasHogar);
 	}
 
-	public ArticuloHeaderVO getArticulo(long codigo) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArticuloHeaderVO getArticulo(long codigo) 
+	{
+		return this.admArt.getArticulo(codigo);
 	}
 
-	public int getNumeroSolEnv() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getNumeroSolEnv() 
+	{
+		return this.admSol.getNumeroSolEnv();
 	}
 
-	public int getNumeroSolFab() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getNumeroSolFab() 
+	{
+		return this.admSol.getNumeroSolFab();
 	}
 
-	public FabricaVO getFabrica() {
-		// TODO Auto-generated method stub
-		return null;
+	public FabricaVO getFabrica() 
+	{
+		return this.admSol.getFabrica();
 	}
 
-	public void guardarArticulosPendientes() {
-		// TODO Auto-generated method stub
-		
+	public void guardarArticulosPendientes() 
+	{
+		this.admArt.guardarArticulosPendientes();
 	}
 }
