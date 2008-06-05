@@ -58,8 +58,12 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		for(int i = 0; i < arts.size();i++)
 		{
 			Articulo a = em.find(Articulo.class, arts.elementAt(i).getCodigo());
-			a.setVO(arts.elementAt(i));
-			em.merge(a);
+			
+			if(a != null)
+			{
+				a.setVO(arts.elementAt(i));
+				em.merge(a);
+			}
 		}
 	}
 
