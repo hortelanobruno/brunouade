@@ -1,11 +1,14 @@
 package BusinessLogic;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class PKArtPendiente 
+public class PKArtPendiente  implements Serializable
 {
+	private static final long serialVersionUID = -6713662307233599891L;
 	private long codArt;
 	private int codSol;
 	

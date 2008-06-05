@@ -9,6 +9,7 @@ import Exceptions.ExistingProductException;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
+import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
@@ -125,5 +126,15 @@ public class ServerFacadeBean implements ServerFacade
 	public int getNumeroSolFab() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	public FabricaVO getFabrica() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void guardarArticulosPendientes() {
+		// TODO Auto-generated method stub
+		
 	}
 }
