@@ -46,11 +46,19 @@ public class ArticuloRopa extends Articulo
 	@Transient
 	public ArticuloRopaVO getArticuloRopaVO()
 	{
-		return null;
+		return new ArticuloRopaVO(this.getDescripcion(), this.getCodigo(),this.getCantidad(),this.getColor(),this.getPrecio(), this.getLinea(), this.getSeccion(),this.getTalle(),this.getOrigen());
 	}
 	
 	public void setArticuloRopaVO(ArticuloRopaVO art)
 	{
-		
+		this.setDescripcion(art.getDescripcion());
+		this.setCodigo(art.getCodigo());
+		this.setCantidad(art.getCantidad());
+		this.setColor(art.getColor());
+		this.setPrecio(art.getPrecio());
+		this.setLinea(art.getLinea());
+		this.setSeccion(art.getSeccion());
+		this.setTalle(art.getTalle());
+		this.setOrigen(art.getOrigen());
 	}
 }
