@@ -88,16 +88,16 @@ public class MenuPrincipal extends javax.swing.JFrame
         timer.schedule(new Runtimer(), 1000, 1000);
     }
     
+    
     class Runtimer extends TimerTask {
 
         Calendar cal;
-        Date date;
+        
         DateFormat format;
         @Override
         public void run() {
             cal = Calendar.getInstance(TimeZone.getTimeZone("GMT-3:00"));
             date = cal.getTime();
-            
             format = DateFormat.getTimeInstance();
             labelHora.setText(format.format(date));
         }
@@ -841,6 +841,7 @@ private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JLabel labelHora;
     // End of variables declaration                   
 
+    private Date date;
     private PanelSolDist panelSD;
     private PanelGenSolFab panelGSF;
     private PanelEnvios panelEnvios;
@@ -1077,5 +1078,21 @@ private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {
 
 	public void setVistaRepArt(VistaRepArt vistaRepArt) {
 		this.vistaRepArt = vistaRepArt;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public javax.swing.JLabel getLabelHora() {
+		return labelHora;
+	}
+
+	public void setLabelHora(javax.swing.JLabel labelHora) {
+		this.labelHora = labelHora;
 	}
 }

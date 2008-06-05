@@ -1,8 +1,10 @@
 package BusinessLogic;
 
+import Exceptions.ErrorConeccionException;
 import Exceptions.ExistingProductException;
 import MVCFramework.ProxyModelo;
 import VO.ArticuloHeaderVO;
+import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudFabricaVO;
@@ -18,7 +20,7 @@ public class BusinessDelegate extends ProxyModelo
 	private ServerFacade modCD = null;
 	private String naming = Constantes.BEAN_STRING;
 
-	public BusinessDelegate()
+	public BusinessDelegate() throws ErrorConeccionException
 	{
 		super();
 		this.getConnection();
@@ -50,15 +52,17 @@ public class BusinessDelegate extends ProxyModelo
 
 	/**
 	 * Se indica url del servidor de aplicaciones
+	 * @throws ErrorConeccionException 
 	 * 
 	 */
-    protected void getConnection() {
+    protected void getConnection() throws ErrorConeccionException {
         try {
         	Context jndiContext = getInitialContext();
 			this.modCD = (ServerFacade)jndiContext.lookup(naming);
 
         } catch (Exception e) {
-        	e.printStackTrace(); 
+        	e.printStackTrace();
+        	throw new ErrorConeccionException("No se pudo conectar");
         }
     }    
 	 
@@ -127,4 +131,26 @@ public class BusinessDelegate extends ProxyModelo
 	public void actualizarStock(Vector<ArticuloHeaderVO> articulo) {
 		this.getModCD().actualizarStock((Vector<ArticuloHeaderVO>) articulo);
 	}
+
+	public Integer getNumeroSolEnv() {	
+		return this.getModCD().getNumeroSolEnv();
+	}
+
+	public ArticuloHeaderVO getArticulo(long cod) {
+		return this.getModCD().getArticulo(cod);
+	}
+
+	public int getNumeroSolFab() {
+		return this.getModCD().getNumeroSolFab();
+	}
+
+	public FabricaVO getFabrica() {
+		return this.getModCD().getFabrica();
+	}
+
+	public void guardarArticulosPendientes() {
+		this.getModCD().guardarArticulosPendientes();
+	}
+
+
 }
