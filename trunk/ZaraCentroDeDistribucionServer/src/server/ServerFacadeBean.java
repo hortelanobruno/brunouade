@@ -111,4 +111,14 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		this.admConf.guardarDatosCD(codigo, nombre, longitud, latitud, lineasRopa, categoriasHogar);
 	}
+
+	public ArticuloHeaderVO getArticulo(long codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getNumeroSolEnv() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
