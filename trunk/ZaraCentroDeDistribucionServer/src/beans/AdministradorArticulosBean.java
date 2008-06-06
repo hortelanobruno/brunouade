@@ -1,5 +1,6 @@
 package beans;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
@@ -10,10 +11,12 @@ import javax.persistence.Query;
 import BusinessLogic.Articulo;
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloRopa;
+import BusinessLogic.Tienda;
 import Exceptions.ExistingProductException;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
+import VO.TiendaVO;
 import beans.AdministradorArticulos;
 
 @Stateless
@@ -32,7 +35,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		Vector<String> descs = new Vector<String>();
 		for(int i = 0; i < cods.size();i++)
 		{
-			Query q = em.createQuery("select a from articulos a where a.codigo = :codigo");
+			Query q = em.createQuery("select a from articulo a where a.codigo = :codigo");
 			q.setParameter("codigo", cods.elementAt(i));
 			List l = q.getResultList();
 			descs.add(((Articulo)l.get(0)).getDescripcion());
@@ -45,7 +48,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		Vector<Integer> stocks = new Vector<Integer>();
 		for(int i = 0; i < cods.size();i++)
 		{
-			Query q = em.createQuery("select a from articulos a where a.codigo = :codigo");
+			Query q = em.createQuery("select a from articulo a where a.codigo = :codigo");
 			q.setParameter("codigo", cods.elementAt(i));
 			List l = q.getResultList();
 			stocks.add(((Articulo)l.get(0)).getCantidad());
@@ -74,17 +77,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		if(ah == null)
 		{
 			ah = new ArticuloHogar();
-			ah.setCodigo(art.getCodigo());
-			ah.setCantidad(art.getCantidad());
-			ah.setCategoria(art.getCategoria());
-			ah.setColor(art.getColor());
-			ah.setComposicion(art.getComposicion());
-			ah.setDescripcion(art.getDescripcion());
-			ah.setDetalles(art.getDetalles());
-			ah.setLinea(art.getLinea());
-			ah.setPrecio(art.getPrecio());
-			ah.setSeccion(art.getSeccion());
-			ah.setMedidas(art.getMedidas());
+			ah.setArticuloHogarVO(art);
 			em.persist(ah);
 		}
 		else throw new ExistingProductException("El producto ya existe.");
@@ -97,16 +90,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		if(ar == null)
 		{
 			ar = new ArticuloRopa();
-			ar.setTalle(art.getTalle());
-			ar.setOrigen(ar.getOrigen());
-			ar.setCodigo(art.getCodigo());
-			ar.setCantidad(art.getCantidad());
-			ar.setColor(art.getColor());
-			ar.setDescripcion(art.getDescripcion());
-			ar.setLinea(art.getLinea());
-			ar.setPrecio(art.getPrecio());
-			ar.setSeccion(art.getSeccion());
-			ar.setOrigen(art.getOrigen());
+			ar.setArticuloRopaVO(art);
 			em.persist(ar);
 		}
 		else throw new ExistingProductException("El producto ya existe.");
@@ -120,5 +104,18 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	public void guardarArticulosPendientes()
 	{
 		
+	}
+
+	public Vector<TiendaVO> getTiendas() 
+	{
+		Query q = em.createQuery("select a from tienda t");
+		List l = q.getResultList();
+		
+		Vector<TiendaVO> ret = new Vector<TiendaVO>();
+		
+		for(Iterator i = l.iterator();i.hasNext();)
+			ret.add(((Tienda)i).getVO());
+		
+		return ret;
 	}
 }

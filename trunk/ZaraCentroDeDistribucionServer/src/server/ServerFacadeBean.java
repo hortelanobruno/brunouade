@@ -14,6 +14,7 @@ import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
+import VO.TiendaVO;
 import beans.*;
 
 @Stateless
@@ -136,5 +137,11 @@ public class ServerFacadeBean implements ServerFacade
 	public void guardarArticulosPendientes() 
 	{
 		this.admArt.guardarArticulosPendientes();
+	}
+
+	public Vector<TiendaVO> getTiendas() 
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

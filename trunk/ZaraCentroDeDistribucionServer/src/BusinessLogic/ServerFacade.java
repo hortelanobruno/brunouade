@@ -12,6 +12,7 @@ import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
+import VO.TiendaVO;
 
 @Remote
 public interface ServerFacade 
@@ -35,6 +36,7 @@ public interface ServerFacade
 	
 	//	panel envios
 	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda);
+	public Vector<TiendaVO> getTiendas();
 	
 	
 	//panel gen sol fab
