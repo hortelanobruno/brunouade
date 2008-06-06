@@ -7,6 +7,7 @@ import Exceptions.ExistingProductException;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
+import VO.TiendaVO;
 
 @Remote
 public interface AdministradorArticulos 
@@ -18,4 +19,5 @@ public interface AdministradorArticulos
 	public void actualizarStock(Vector<ArticuloHeaderVO> arts);
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public void guardarArticulosPendientes();
+	public Vector<TiendaVO> getTiendas();
 }

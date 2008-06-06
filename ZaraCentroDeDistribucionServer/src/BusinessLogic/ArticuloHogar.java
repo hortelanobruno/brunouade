@@ -72,7 +72,7 @@ public class ArticuloHogar extends Articulo
 		return new ArticuloHogarVO(this.getDescripcion(), this.getCodigo(),this.getCantidad(),this.getColor(),this.getPrecio(), this.getLinea(), this.getSeccion(),this.getDetalles(),this.getComposicion(),this.getCategoria(),this.getMedidas());
 	}
 	
-	public void serArticuloHogarVO(ArticuloHogarVO art)
+	public void setArticuloHogarVO(ArticuloHogarVO art)
 	{
 		this.setDescripcion(art.getDescripcion());
 		this.setCodigo(art.getCodigo());

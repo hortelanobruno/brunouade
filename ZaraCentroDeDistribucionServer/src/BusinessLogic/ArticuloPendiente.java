@@ -12,7 +12,7 @@ import javax.persistence.Transient;
 public class ArticuloPendiente implements Serializable
 {
 	private static final long serialVersionUID = 2677497498084042849L;
-	//private PKArtPendiente id;
+	private PKArtPendiente id;
 	private Articulo art;
 	private Solicitud sol;
 
@@ -25,7 +25,7 @@ public class ArticuloPendiente implements Serializable
 	{
 		this.setArt(art);
 		this.setSol(sol);
-	//	this.setId(new PKArtPendiente(art.getCodigo(),sol.getNumero()));
+		this.setId(new PKArtPendiente(art.getCodigo(),sol.getNumero()));
 	}
 	
 	@Transient
@@ -39,7 +39,7 @@ public class ArticuloPendiente implements Serializable
 		this.sol = sol;
 	}
 
-/*	@EmbeddedId
+	@EmbeddedId
 	public PKArtPendiente getId() 
 	{
 		return id;
@@ -48,7 +48,7 @@ public class ArticuloPendiente implements Serializable
 	public void setId(PKArtPendiente id) 
 	{
 		this.id = id;
-	}*/
+	}
 
 	@Transient
 	public Articulo getArt() {
