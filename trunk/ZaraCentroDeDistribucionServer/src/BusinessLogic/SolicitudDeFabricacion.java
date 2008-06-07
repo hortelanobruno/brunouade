@@ -22,11 +22,11 @@ public class SolicitudDeFabricacion extends Solicitud
 {
 	private static final long serialVersionUID = 4970004249380972083L;
 	private Fabrica fabrica;
-	private Collection<ArticuloAFabricar> articulosRecibidos;
+	private Collection<ArticuloAFabricar> articulosAFabricar;
 	
 	public SolicitudDeFabricacion() {
 		super();
-		this.articulosRecibidos = new Vector<ArticuloAFabricar>();
+		this.articulosAFabricar = new Vector<ArticuloAFabricar>();
 	}
 	
 	public SolicitudDeFabricacion(int n, Collection<Articulo> a, Date f, Fabrica fa){
@@ -68,7 +68,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		Collection<ArticuloAFabricar> recibidos = new Vector<ArticuloAFabricar>();
 		
 		Iterator a = (Iterator)vo.getArticulo().iterator();
-		Iterator rec = (Iterator) vo.getArticulosRecibidos().iterator();
+		Iterator rec = (Iterator) vo.getarticulosAFabricar().iterator();
 		
 		while(a.hasNext())
 			articulos.add((Articulo)a.next());
@@ -80,15 +80,15 @@ public class SolicitudDeFabricacion extends Solicitud
 		this.setArticulos(articulos);
 		this.setFechaEmision(vo.getFechaEmision());
 		this.setFabrica(new Fabrica(vo.getFabrica().getCodigoFabrica(),vo.getFabrica().getNombreFabrica()));
-		this.setArticulosRecibidos(recibidos);
+		this.setarticulosAFabricar(recibidos);
 	}
 
 	@OneToMany
-	public Collection<ArticuloAFabricar> getArticulosRecibidos() {
-		return articulosRecibidos;
+	public Collection<ArticuloAFabricar> getarticulosAFabricar() {
+		return articulosAFabricar;
 	}
 
-	public void setArticulosRecibidos(Collection<ArticuloAFabricar> articulosRecibidos) {
-		this.articulosRecibidos = articulosRecibidos;
+	public void setarticulosAFabricar(Collection<ArticuloAFabricar> articulosAFabricar) {
+		this.articulosAFabricar = articulosAFabricar;
 	}
 }
