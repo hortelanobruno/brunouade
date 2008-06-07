@@ -29,9 +29,8 @@ public interface ServerFacade
 	public int getNumeroSolFab();
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public FabricaVO getFabrica();
-	public void guardarArticulosPendientes();
-	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
-	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
+	public void guardarArticulosAFabricar();
+	public void guardarArticulosAEnviar();
 	
 	//	panel envios
 	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda);

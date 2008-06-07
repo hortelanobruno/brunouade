@@ -6,11 +6,11 @@ import BusinessLogic.BusinessDelegate;
 import MVCFramework.Controlador;
 import MVCFramework.ProxyModelo;
 import MVCFramework.Vista;
+import VO.ArticuloAEnviarVO;
+import VO.ArticuloAFabricarVO;
 import VO.ArticuloHeaderVO;
 import VO.FabricaVO;
 import VO.SolicitudDistribucionVO;
-import VO.SolicitudEnvioVO;
-import VO.SolicitudFabricaVO;
 import Vistas.VistaSolDis;
 
 public class ControladorPanelSolDis extends Controlador
@@ -28,15 +28,6 @@ public class ControladorPanelSolDis extends Controlador
     public void doGuardarSolicitud(SolicitudDistribucionVO soldis)
     {
         ((BusinessDelegate)(this.getModelo())).guardarSolicitud(soldis);
-    }
-    
-    public void doGuardarSolicitudEnvios(SolicitudEnvioVO solenv)
-    {
-        ((BusinessDelegate)(this.getModelo())).guardarSolicitudEnvios(solenv);
-    }
-    
-    public void doGuardarSolicitudFabricacion(SolicitudFabricaVO solFab){
-    	((BusinessDelegate)(this.getModelo())).guardarSolicitudFabrica(solFab);
     }
 
 	public void doCargarXML(boolean b) {
@@ -60,8 +51,13 @@ public class ControladorPanelSolDis extends Controlador
 		return ((BusinessDelegate)(this.getModelo())).getFabrica();
 	}
 
-	public void doGuardarArticulosPendientes(Collection<ArticuloHeaderVO> artic) {
+	public void doGuardarArticulosPendientes(Collection<ArticuloAFabricarVO> artic) {
 		((BusinessDelegate)(this.getModelo())).guardarArticulosPendientes();
+	}
+
+	public void doGuardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
