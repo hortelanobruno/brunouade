@@ -101,7 +101,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		return em.find(Articulo.class, codigo).getVO();
 	}
 	
-	public void guardarArticulosPendientes()
+	public void guardarArticulosAFabricar()
 	{
 		
 	}
@@ -117,5 +117,10 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			ret.add(((Tienda)i).getVO());
 		
 		return ret;
+	}
+
+	public void guardarArticulosAEnviar() 
+	{
+
 	}
 }

@@ -30,7 +30,8 @@ public interface ServerFacade
 	public int getNumeroSolFab();
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public FabricaVO getFabrica();
-	public void guardarArticulosPendientes();
+	public void guardarArticulosAFabricar();
+	public void guardarArticulosAEnviar();
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
 	

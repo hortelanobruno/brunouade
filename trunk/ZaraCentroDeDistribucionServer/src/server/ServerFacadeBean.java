@@ -134,14 +134,18 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getFabrica();
 	}
 
-	public void guardarArticulosPendientes() 
+	public void guardarArticulosAFabricar() 
 	{
-		this.admArt.guardarArticulosPendientes();
+		this.admArt.guardarArticulosAFabricar();
 	}
 
 	public Vector<TiendaVO> getTiendas() 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return this.admArt.getTiendas();
+	}
+
+	public void guardarArticulosAEnviar() 
+	{
+		this.admArt.guardarArticulosAEnviar();	
 	}
 }

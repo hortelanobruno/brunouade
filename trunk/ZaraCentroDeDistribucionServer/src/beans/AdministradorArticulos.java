@@ -18,6 +18,7 @@ public interface AdministradorArticulos
 	public Vector<Integer> getStocks(Vector<Long> codigos);
 	public void actualizarStock(Vector<ArticuloHeaderVO> arts);
 	public ArticuloHeaderVO getArticulo(long codigo);
-	public void guardarArticulosPendientes();
+	public void guardarArticulosAFabricar();
+	public void guardarArticulosAEnviar();
 	public Vector<TiendaVO> getTiendas();
 }
