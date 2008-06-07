@@ -261,10 +261,10 @@ public class PanelSolDist extends javax.swing.JPanel {
 			ref.getJTextArea1().append("Archivo Cargado\n");
 		}else{
 			//Falta generar las solicitudes
-			Collection<ArticuloHeaderVO> artic = (Collection<ArticuloHeaderVO>) articulosFabricarDeTabla();
-			
+			Collection<ArticuloAFabricarVO> artic = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
+			Collection<ArticuloAEnviarVO> artic2 = (Collection<ArticuloAEnviarVO>) articulosEnviarDeTabla();
 			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarSolicitud(solDisVO);
-			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarArticulosAEnviar(artic);
+			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarArticulosAEnviar(artic2);
 			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarArticulosPendientes(artic);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
