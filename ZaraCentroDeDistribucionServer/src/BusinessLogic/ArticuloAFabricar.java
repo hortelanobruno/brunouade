@@ -9,19 +9,19 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name="ArticulosPendientes")
-public class ArticuloPendiente implements Serializable
+public class ArticuloAFabricar implements Serializable
 {
 	private static final long serialVersionUID = 2677497498084042849L;
 	private PKArtPendiente id;
 	private Articulo art;
 	private Solicitud sol;
 
-	public ArticuloPendiente()
+	public ArticuloAFabricar()
 	{
 		
 	}
 	
-	public ArticuloPendiente(Articulo art, Solicitud sol)
+	public ArticuloAFabricar(Articulo art, Solicitud sol)
 	{
 		this.setArt(art);
 		this.setSol(sol);
