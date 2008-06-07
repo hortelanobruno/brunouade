@@ -279,7 +279,6 @@ public class MenuPrincipal extends javax.swing.JFrame
         jToolBar1.add(jLabel2);
 
         labelHora.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        labelHora.setText("fecha y hora");
         labelHora.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jToolBar1.add(labelHora);
 

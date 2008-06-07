@@ -6,26 +6,15 @@
 
 package Paneles;
 
-import java.util.Iterator;
-import java.util.Vector;
-
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 import controladores.ControladorPanelNewArt;
-import controladores.ControladorPanelSolDis;
-
-import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
-import VO.SolicitudDistribucionVO;
-import VO.SolicitudEnvioVO;
-import VO.SolicitudFabricaVO;
 import Varios.Constantes;
 import Varios.XMLArticulo;
 import Varios.XMLWrapper;
 import Vistas.VistaNewArt;
-
 import Exceptions.ExistingProductException;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
@@ -50,6 +39,7 @@ public class PanelNewArt extends javax.swing.JPanel {
 		initComponents();
 		this.ref = m;
 		this.vistaNewArt = vista;
+		this.buttonGuardar.setEnabled(false);
 	}
 
 
@@ -195,6 +185,8 @@ public class PanelNewArt extends javax.swing.JPanel {
 			vaciarTabla();
 			cargarTable(articuloXML);
 			ref.getJTextArea1().append("Articulo Cargado\n");
+			this.buttonCargarXML.setEnabled(false);
+			this.buttonGuardar.setEnabled(true);
 		}else{
 			//persiste articulo
 			
@@ -223,6 +215,8 @@ public class PanelNewArt extends javax.swing.JPanel {
 			}
 			vaciarTabla();
 			ref.getJTextArea1().append("Articulo Guardado\n");
+			this.buttonCargarXML.setEnabled(true);
+			this.buttonGuardar.setEnabled(false);
 			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
 		}
 		
