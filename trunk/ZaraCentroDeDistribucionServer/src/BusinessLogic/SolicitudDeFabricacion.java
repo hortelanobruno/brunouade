@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import VO.ArticuloHeaderVO;
-import VO.ArticuloPendienteVO;
+import VO.ArticuloAFabricarVO;
 import VO.FabricaVO;
 import VO.SolicitudFabricaVO;
 
@@ -22,11 +22,11 @@ public class SolicitudDeFabricacion extends Solicitud
 {
 	private static final long serialVersionUID = 4970004249380972083L;
 	private Fabrica fabrica;
-	private Collection<ArticuloPendiente> articulosRecibidos;
+	private Collection<ArticuloAFabricar> articulosRecibidos;
 	
 	public SolicitudDeFabricacion() {
 		super();
-		this.articulosRecibidos = new Vector<ArticuloPendiente>();
+		this.articulosRecibidos = new Vector<ArticuloAFabricar>();
 	}
 	
 	public SolicitudDeFabricacion(int n, Collection<Articulo> a, Date f, Fabrica fa){
@@ -48,7 +48,7 @@ public class SolicitudDeFabricacion extends Solicitud
 	public SolicitudFabricaVO getVO()
 	{
 		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
-		Collection<ArticuloPendienteVO> recibidos = new Vector<ArticuloPendienteVO>();
+		Collection<ArticuloAFabricarVO> recibidos = new Vector<ArticuloAFabricarVO>();
 		
 		Iterator a = (Iterator) this.getArticulos().iterator();
 		while(a.hasNext())
@@ -56,7 +56,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		
 		Iterator rec = (Iterator)this.getArticulos().iterator();
 		while(rec.hasNext())
-			recibidos.add((ArticuloPendienteVO)rec.next());
+			recibidos.add((ArticuloAFabricarVO)rec.next());
 		
 		SolicitudFabricaVO vo = new SolicitudFabricaVO(this.getNumero(),articulos,this.getFechaEmision(),new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()),recibidos);
 		return vo;
@@ -65,7 +65,7 @@ public class SolicitudDeFabricacion extends Solicitud
 	public void setVO(SolicitudFabricaVO vo)
 	{
 		Collection<Articulo> articulos = new Vector<Articulo>();
-		Collection<ArticuloPendiente> recibidos = new Vector<ArticuloPendiente>();
+		Collection<ArticuloAFabricar> recibidos = new Vector<ArticuloAFabricar>();
 		
 		Iterator a = (Iterator)vo.getArticulo().iterator();
 		Iterator rec = (Iterator) vo.getArticulosRecibidos().iterator();
@@ -74,7 +74,7 @@ public class SolicitudDeFabricacion extends Solicitud
 			articulos.add((Articulo)a.next());
 		
 		while(rec.hasNext())
-			recibidos.add((ArticuloPendiente)rec.next());	
+			recibidos.add((ArticuloAFabricar)rec.next());	
 		
 		this.setNumero(vo.getNumero());
 		this.setArticulos(articulos);
@@ -84,11 +84,11 @@ public class SolicitudDeFabricacion extends Solicitud
 	}
 
 	@OneToMany
-	public Collection<ArticuloPendiente> getArticulosRecibidos() {
+	public Collection<ArticuloAFabricar> getArticulosRecibidos() {
 		return articulosRecibidos;
 	}
 
-	public void setArticulosRecibidos(Collection<ArticuloPendiente> articulosRecibidos) {
+	public void setArticulosRecibidos(Collection<ArticuloAFabricar> articulosRecibidos) {
 		this.articulosRecibidos = articulosRecibidos;
 	}
 }
