@@ -7,6 +7,7 @@
 package Paneles;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
@@ -250,13 +251,13 @@ public class PanelSolDist extends javax.swing.JPanel {
 		if(cargarTable){
 			XMLWrapper xml = new XMLWrapper();
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
-			Vector<Long> codigos = new Vector<Long>();
+			ArrayList<Long> codigos = new ArrayList<Long>();
 			Iterator arts = (Iterator) solDisVO.getArticulo().iterator();
 			while (arts.hasNext()) {
 				codigos.add(((ArticuloHeaderVO) arts.next()).getCodigo());
 			}
-			Vector<String> descripciones = this.ref.getVistaSolDis().getModelo().getDescripciones(codigos);
-			Vector<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos);
+			ArrayList<String> descripciones = this.ref.getVistaSolDis().getModelo().getDescripciones(codigos);
+			ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos);
 			cargarTable(solDisVO, codigos, descripciones, stocks);
 			ref.getJTextArea1().append("Archivo Cargado\n");
 		}else{
