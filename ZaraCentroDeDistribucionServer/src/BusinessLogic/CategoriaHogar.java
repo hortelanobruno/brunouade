@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import VO.CategoriaHogarVO;
+
 @Entity
 @Table(name="categoriasHogar")
 public class CategoriaHogar
@@ -44,5 +46,17 @@ public class CategoriaHogar
 	public void setIdCategoria(int idCategoria)
 	{
 		this.idCategoria = idCategoria;
+	}
+	
+	public CategoriaHogarVO getVO(){
+		CategoriaHogarVO cat = new CategoriaHogarVO();
+		cat.setIdCategoria(this.getIdCategoria());
+		cat.setCategoria(this.getCategoria());
+		return cat;
+	}
+	
+	public void setVO(CategoriaHogarVO cat){
+		this.setCategoria(cat.getCategoria());
+		this.setIdCategoria(cat.getIdCategoria());
 	}
 }
