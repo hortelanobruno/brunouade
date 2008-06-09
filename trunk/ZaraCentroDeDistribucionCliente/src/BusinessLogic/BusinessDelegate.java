@@ -26,18 +26,18 @@ public class BusinessDelegate extends ProxyModelo
 	{
 		super();
 		this.getConnection();
-		//this.guardarDatosCD();
+		this.guardarDatosCD();
 	}
 	
 	private void guardarDatosCD()
 	{
-		Vector<String> lineasRopa = new Vector<String>();
+		ArrayList<String> lineasRopa = new ArrayList<String>();
 		lineasRopa.add("woman");
 		lineasRopa.add("basic");
 		lineasRopa.add("sport");
 		lineasRopa.add("vestir");
 		
-		Vector<String> categoriasHogar = new Vector<String>();
+		ArrayList<String> categoriasHogar = new ArrayList<String>();
 		categoriasHogar.add("baño");
 		categoriasHogar.add("mesa");
 		categoriasHogar.add("decoracion");
@@ -107,11 +107,11 @@ public class BusinessDelegate extends ProxyModelo
 	}
 
 	public void guardarSolicitudEnvios(SolicitudEnvioVO solEnv) {
-		this.getModCD().guardarSolicitudDeEnvio(solEnv);
+		//this.getModCD().guardarSolicitudDeEnvio(solEnv);
 	}
 
 	public void guardarSolicitudFabrica(SolicitudFabricaVO solFab) {
-		this.getModCD().guardarSolicitudFabricacion(solFab);
+		//this.getModCD().guardarSolicitudFabricacion(solFab);
 	}
 
 	public ServerFacade getModCD() {
@@ -151,7 +151,7 @@ public class BusinessDelegate extends ProxyModelo
 	}
 
 	public void guardarArticulosPendientes() {
-		this.getModCD().guardarArticulosPendientes();
+		//this.getModCD().guardarArticulosPendientes();
 	}
 
 
