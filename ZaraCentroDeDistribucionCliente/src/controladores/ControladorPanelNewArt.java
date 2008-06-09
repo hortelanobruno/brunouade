@@ -8,7 +8,6 @@ import MVCFramework.Vista;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
 import Vistas.VistaNewArt;
-import Vistas.VistaSolDis;
 
 public class ControladorPanelNewArt extends Controlador {
 

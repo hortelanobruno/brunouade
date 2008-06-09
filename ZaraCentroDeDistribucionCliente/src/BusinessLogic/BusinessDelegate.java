@@ -1,21 +1,22 @@
 package BusinessLogic;
 
+import java.util.ArrayList;
+
+import javax.naming.Context;
+
 import Exceptions.ErrorConectionException;
 import Exceptions.ExistingProductException;
 import MVCFramework.ProxyModelo;
+import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
+import VO.ArticuloHogarVO;
+import VO.ArticuloRopaVO;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
-import VO.SolicitudFabricaVO;
 import VO.SolicitudEnvioVO;
-import VO.ArticuloHogarVO;
-import VO.ArticuloRopaVO;
+import VO.SolicitudFabricaVO;
 import Varios.Constantes;
-
-import java.util.ArrayList;
-import java.util.Vector;
-import javax.naming.Context;
 
 public class BusinessDelegate extends ProxyModelo 
 {
@@ -26,7 +27,7 @@ public class BusinessDelegate extends ProxyModelo
 	{
 		super();
 		this.getConnection();
-		this.guardarDatosCD();
+		//this.guardarDatosCD();
 	}
 	
 	private void guardarDatosCD()
@@ -130,8 +131,8 @@ public class BusinessDelegate extends ProxyModelo
 		this.getModCD().guardarSolicitudReposicion(solRepVO);
 	}
 
-	public void actualizarStock(ArrayList<ArticuloHeaderVO> articulo) {
-		this.getModCD().actualizarStock((ArrayList<ArticuloHeaderVO>) articulo);
+	public void actualizarStock(ArrayList<ArticuloAReponerVO> articulo) {
+		this.getModCD().actualizarStock((ArrayList<ArticuloAReponerVO>) articulo);
 	}
 
 	public Integer getNumeroSolEnv() {	

@@ -1,14 +1,12 @@
 package controladores;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Vector;
 
 import BusinessLogic.BusinessDelegate;
 import MVCFramework.Controlador;
 import MVCFramework.ProxyModelo;
 import MVCFramework.Vista;
-import VO.ArticuloHeaderVO;
+import VO.ArticuloAReponerVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudFabricaVO;
 import Vistas.VistaRepArt;
@@ -36,7 +34,7 @@ public class ControladorPanelRepArt extends Controlador{
 		
 	}
 
-	public void doCargarStocks(ArrayList<ArticuloHeaderVO> articulo) {
+	public void doCargarStocks(ArrayList<ArticuloAReponerVO> articulo) {
 		((BusinessDelegate)(this.getModelo())).actualizarStock(articulo);
 		
 	}

@@ -8,14 +8,11 @@ package Paneles;
 
 import javax.swing.JOptionPane;
 
-import controladores.ControladorPanelConfig;
-import controladores.ControladorPanelNewArt;
-
-import Varios.Constantes;
-import Vistas.VistaConfig;
-
 import GUI.DirectoryChooser;
 import GUI.MenuPrincipal;
+import Varios.Constantes;
+import Vistas.VistaConfig;
+import controladores.ControladorPanelConfig;
 
 /**
  * 
