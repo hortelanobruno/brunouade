@@ -185,8 +185,8 @@ public class PanelNewArt extends javax.swing.JPanel {
 			vaciarTabla();
 			cargarTable(articuloXML);
 			ref.getJTextArea1().append("Articulo Cargado\n");
-			this.buttonCargarXML.setEnabled(false);
 			this.buttonGuardar.setEnabled(true);
+			this.buttonCargarXML.setEnabled(false);
 		}else{
 			//persiste articulo
 			
@@ -218,6 +218,7 @@ public class PanelNewArt extends javax.swing.JPanel {
 			this.buttonCargarXML.setEnabled(true);
 			this.buttonGuardar.setEnabled(false);
 			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
+			
 		}
 		
 	}
