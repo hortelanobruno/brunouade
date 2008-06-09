@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import VO.ArticuloAEnviarVO;
 
@@ -75,6 +76,7 @@ public class ArticuloAEnviar implements Serializable
 		this.cantidadAEnviar = cantidadAEnviar;
 	}
 	
+	@Transient
 	public ArticuloAEnviarVO getVO(){
 		ArticuloAEnviarVO art = new ArticuloAEnviarVO();
 		art.setIdAAE(this.getIdAAE());

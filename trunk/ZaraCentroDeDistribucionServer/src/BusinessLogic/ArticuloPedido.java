@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import VO.ArticuloPedidoVO;
 
@@ -54,6 +55,7 @@ public class ArticuloPedido
 		this.sd = sd;
 	}	
 	
+	@Transient
 	public ArticuloPedidoVO getVO(){
 		ArticuloPedidoVO art = new ArticuloPedidoVO();
 		art.setIdAP(this.getIdAP());

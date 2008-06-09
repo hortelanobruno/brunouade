@@ -6,6 +6,7 @@ import java.util.Iterator;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import VO.ArticuloAReponerVO;
 import VO.SolicitudDeReposicionVO;
@@ -34,7 +35,8 @@ public class SolicitudReposicion extends Solicitud
 	{
 		this.fabrica = fabrica;
 	}
-
+	
+	@OneToMany(mappedBy="sr")
 	public Collection<ArticuloAReponer> getArticulosAReponer() {
 		return articulosAReponer;
 	}

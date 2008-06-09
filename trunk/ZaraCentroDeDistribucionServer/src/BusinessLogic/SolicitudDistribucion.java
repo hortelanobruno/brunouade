@@ -8,6 +8,7 @@ import java.util.Iterator;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import VO.ArticuloPedidoVO;
 import VO.SolicitudDistribucionVO;
@@ -40,6 +41,7 @@ public class SolicitudDistribucion extends Solicitud implements Serializable
 		this.tienda = tienda;
 	}
 
+	@OneToMany(mappedBy="sd")
 	public Collection<ArticuloPedido> getArticulosPedidos() {
 		return articulosPedidos;
 	}

@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import VO.LineaRopaVO;
 
@@ -48,6 +49,7 @@ public class LineaRopa
 		this.linea = linea;
 	}
 	
+	@Transient
 	public LineaRopaVO getVO(){
 		LineaRopaVO lin = new LineaRopaVO();
 		lin.setIdLinea(this.getIdLinea());

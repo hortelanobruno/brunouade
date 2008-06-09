@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import VO.ArticuloAFabricarVO;
 
@@ -94,6 +95,7 @@ public class ArticuloAFabricar implements Serializable
 		this.cantidadRecibida = cantidadRecibida;
 	}
 	
+	@Transient
 	public ArticuloAFabricarVO getVO(){
 		ArticuloAFabricarVO art = new ArticuloAFabricarVO();
 		art.setIdAAF(this.getIdAAF());
