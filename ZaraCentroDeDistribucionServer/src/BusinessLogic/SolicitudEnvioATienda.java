@@ -1,15 +1,15 @@
 package BusinessLogic;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.Vector;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
-import VO.ArticuloHeaderVO;
+import VO.ArticuloAEnviarVO;
 import VO.SolicitudEnvioVO;
 import VO.TiendaVO;
 
@@ -19,15 +19,16 @@ public class SolicitudEnvioATienda extends Solicitud implements Serializable
 {
 	private static final long serialVersionUID = 5001930866418434765L;
 	private Tienda tienda;
+	private Collection<ArticuloAEnviar> articulosAEnviar;
 
 	public SolicitudEnvioATienda() {
 		super();
 	}
 	
-	public SolicitudEnvioATienda(int n, Collection<Articulo> a, Date f, Tienda t){
+	public SolicitudEnvioATienda(int n, Collection<ArticuloAEnviar> a, Date f, Tienda t){
 		super(n,f);
 		this.tienda = t;
-		this.setArticulos(a);
+		this.setArticulosAEnviar(a);
 	}
 	
 	@ManyToOne
@@ -43,24 +44,32 @@ public class SolicitudEnvioATienda extends Solicitud implements Serializable
 	
 	@Transient
 	public SolicitudEnvioVO getVO(){
-		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
-		Iterator a = (Iterator) this.getArticulos().iterator();
+		Collection<ArticuloAEnviarVO> articulos = new ArrayList<ArticuloAEnviarVO>();
+		Iterator a = (Iterator) this.getArticulosAEnviar().iterator();
 		
 		while(a.hasNext())
-			articulos.add((ArticuloHeaderVO)a.next());	
-		SolicitudEnvioVO vo = new SolicitudEnvioVO(this.getNumero(),articulos,this.getFechaEmision(),new TiendaVO(tienda.getCodTienda(),tienda.getNombreTienda()));
+			articulos.add((ArticuloAEnviarVO)a.next());	
+		SolicitudEnvioVO vo = new SolicitudEnvioVO(this.getNumero(),articulos,this.getFechaEmision(),new TiendaVO(tienda.getCodTienda(),tienda.getNombreTienda()),this.getCentro().getVO());
 		return vo;
 	}
 
 	public void setVO(SolicitudEnvioVO vo){
-		Collection<Articulo> articulos = new Vector<Articulo>();
-		Iterator a = (Iterator)vo.getArticulo().iterator();
+		Collection<ArticuloAEnviar> articulos = new ArrayList<ArticuloAEnviar>();
+		Iterator a = (Iterator)vo.getArticulosAEnviar().iterator();
 		while(a.hasNext())
-			articulos.add((Articulo)a.next());
+			articulos.add((ArticuloAEnviar)a.next());
 	
 		this.setNumero(vo.getNumero());
-		this.setArticulos(articulos);
+		this.setArticulosAEnviar(articulos);
 		this.setFechaEmision(vo.getFechaEmision());
 		this.setTienda(new Tienda(vo.getTienda().getCodigoTienda(),vo.getTienda().getNombreTienda()));
+	}
+
+	public Collection<ArticuloAEnviar> getArticulosAEnviar() {
+		return articulosAEnviar;
+	}
+
+	public void setArticulosAEnviar(Collection<ArticuloAEnviar> articulosAEnviar) {
+		this.articulosAEnviar = articulosAEnviar;
 	}
 }

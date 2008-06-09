@@ -1,9 +1,7 @@
 package VO;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
-import java.util.Vector;
 
 public class SolicitudVO implements Serializable{
 	
@@ -12,27 +10,28 @@ public class SolicitudVO implements Serializable{
 	 */
 	private static final long serialVersionUID = 5288912159022449663L;
 	protected int numero;
-	protected Collection<ArticuloHeaderVO> articulo = new Vector<ArticuloHeaderVO>();
     protected Date fechaEmision;
+    protected CentroDistribucionVO cdVO;
 
-    public SolicitudVO() {
+	public SolicitudVO() {
 		
 	}
     
-    public SolicitudVO(int n, Collection<ArticuloHeaderVO> a, Date f){
+    public SolicitudVO(int n, Date f, CentroDistribucionVO centro){
     	this.numero = n;
-    	this.articulo =a;
     	this.fechaEmision =f;
+    	this.cdVO = centro;
     }
 
-	public Collection<ArticuloHeaderVO> getArticulo() {
-		return articulo;
+    public CentroDistribucionVO getCdVO() {
+		return cdVO;
 	}
 
-	public void setArticulo(Collection<ArticuloHeaderVO> articulo) {
-		this.articulo = articulo;
+	public void setCdVO(CentroDistribucionVO cdVO) {
+		this.cdVO = cdVO;
 	}
 
+	
 	public Date getFechaEmision() {
 		return fechaEmision;
 	}
