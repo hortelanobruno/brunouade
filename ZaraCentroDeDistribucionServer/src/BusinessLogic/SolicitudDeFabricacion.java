@@ -4,14 +4,11 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Vector;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
-
-import VO.ArticuloHeaderVO;
 import VO.ArticuloAFabricarVO;
 import VO.FabricaVO;
 import VO.SolicitudFabricaVO;
@@ -54,7 +51,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		while(rec.hasNext())
 			articulos.add((ArticuloAFabricarVO)rec.next());
 		
-		SolicitudFabricaVO vo = new SolicitudFabricaVO(this.getNumero(),this.getFechaEmision(),new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()),articulos);
+		SolicitudFabricaVO vo = new SolicitudFabricaVO(this.getNumero(),this.getFechaEmision(),new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()),articulos,this.getCentro().getVO());
 		return vo;
 	}
 

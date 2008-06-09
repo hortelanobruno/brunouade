@@ -16,19 +16,17 @@ public class ArticuloAEnviar implements Serializable
 	private Articulo art;
 	private int cantidadAEnviar;
 	private SolicitudDistribucion solDis;
-	private SolicitudDeFabricacion solFab;
 	
 	public ArticuloAEnviar()
 	{
 		
 	}
 	
-	public ArticuloAEnviar(int id, Articulo art, SolicitudDistribucion sd, SolicitudDeFabricacion sf, int cant)
+	public ArticuloAEnviar(int id, Articulo art, SolicitudDistribucion sd, int cant)
 	{
 		this.setIdAAE(id);
 		this.setArt(art);
 		this.setSolDis(sd);
-		this.setSolFab(sf);
 		this.setCantidadAEnviar(cant);
 	}
 	
@@ -64,17 +62,6 @@ public class ArticuloAEnviar implements Serializable
 	public void setSolDis(SolicitudDistribucion solDis) 
 	{
 		this.solDis = solDis;
-	}
-
-	@ManyToOne
-	public SolicitudDeFabricacion getSolFab() 
-	{
-		return solFab;
-	}
-
-	public void setSolFab(SolicitudDeFabricacion solFab) 
-	{
-		this.solFab = solFab;
 	}
 
 	@Column

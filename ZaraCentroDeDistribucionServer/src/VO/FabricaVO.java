@@ -2,11 +2,8 @@ package VO;
 
 import java.io.Serializable;
 
-public class FabricaVO implements Serializable{
-
-	/**
-	 * 
-	 */
+public class FabricaVO implements Serializable
+{
 	private static final long serialVersionUID = -7156368985814924419L;
 	private String nombreFabrica;
 	private int codigoFabrica;

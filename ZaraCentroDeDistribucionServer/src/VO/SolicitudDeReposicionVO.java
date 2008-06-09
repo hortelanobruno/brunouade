@@ -4,19 +4,21 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
-public class SolicitudDeReposicionVO extends SolicitudVO implements Serializable{
-
+public class SolicitudDeReposicionVO extends SolicitudVO implements Serializable
+{
 	private static final long serialVersionUID = 1L;
 	private FabricaVO fabrica;
-	private long codigoSolicitudFabricacion;
+	private SolicitudFabricaVO solFab;
+	private Collection<ArticuloAReponerVO> articulosAReponer;
 	
 	public SolicitudDeReposicionVO(){
 		
 	}
 	
-	public SolicitudDeReposicionVO(int n, Collection<ArticuloHeaderVO> a, Date f, FabricaVO fa ){
-		super(n,a,f);
+	public SolicitudDeReposicionVO(int n, Collection<ArticuloAReponerVO> a, Date f, FabricaVO fa, CentroDistribucionVO centro ){
+		super(n,f, centro);
 		this.fabrica = fa;
+		this.setArticulosAReponer(a);
 	}
 	
 	public FabricaVO getFabrica() {
@@ -26,12 +28,19 @@ public class SolicitudDeReposicionVO extends SolicitudVO implements Serializable
 		this.fabrica = fabrica;
 	}
 
-	public long getCodigoSolicitudFabricacion() {
-		return codigoSolicitudFabricacion;
+	public Collection<ArticuloAReponerVO> getArticulosAReponer() {
+		return articulosAReponer;
 	}
 
-	public void setCodigoSolicitudFabricacion(long codigoSolicitudFabricacion) {
-		this.codigoSolicitudFabricacion = codigoSolicitudFabricacion;
+	public void setArticulosAReponer(Collection<ArticuloAReponerVO> articulosAReponer) {
+		this.articulosAReponer = articulosAReponer;
 	}
 
+	public SolicitudFabricaVO getSolFab() {
+		return solFab;
+	}
+
+	public void setSolFab(SolicitudFabricaVO solFab) {
+		this.solFab = solFab;
+	}
 }
