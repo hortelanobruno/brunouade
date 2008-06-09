@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import VO.ArticuloAFabricarVO;
-import VO.FabricaVO;
 import VO.SolicitudFabricaVO;
 
 @Entity
@@ -42,24 +41,31 @@ public class SolicitudDeFabricacion extends Solicitud
 	public void setFabrica(Fabrica fabrica) {
 		this.fabrica = fabrica;
 	}
+
+	@OneToMany
+	public Collection<ArticuloAFabricar> getArticulosAFabricar() {
+		return articulosAFabricar;
+	}
+
+	public void setArticulosAFabricar(Collection<ArticuloAFabricar> articulosAFabricar) {
+		this.articulosAFabricar = articulosAFabricar;
+	}
 	
 	@Transient
 	public SolicitudFabricaVO getVO()
 	{
-		Collection<ArticuloAFabricarVO> articulos = new Vector<ArticuloAFabricarVO>();
-		Iterator rec = (Iterator) this.getArticulosAFabricar().iterator();
-		while(rec.hasNext()){
-			ArticuloAFabricar arti = (ArticuloAFabricar)rec.next();
-			ArticuloAFabricarVO art = new ArticuloAFabricarVO();
-			art.setIdAAF(arti.getIdAAF());
-			art.setCantidadPedida(arti.getCantidadPedida());
-			art.setCantidadRecibida(arti.getCantidadRecibida());
-			art.setArt(arti.getArt().getVO());
-			art.setFabrica(arti.getFabrica().getVO());
-			art.setSol(arti.getSol().getVO());
-			articulos.add(art);
+		SolicitudFabricaVO vo = new SolicitudFabricaVO();
+		vo.setNumero(this.getNumero());
+		vo.setFabrica(this.getFabrica().getVO());
+		vo.setFechaEmision(this.getFechaEmision());
+		vo.setCdVO(this.getCentro().getVO());
+		Iterator it = (Iterator) this.getArticulosAFabricar().iterator();
+		Collection<ArticuloAFabricarVO> arts = new ArrayList<ArticuloAFabricarVO>();
+		while(it.hasNext()){
+			ArticuloAFabricar art = ((ArticuloAFabricar)it.next());
+			arts.add(art.getVO());
 		}
-		SolicitudFabricaVO vo = new SolicitudFabricaVO(this.getNumero(),this.getFechaEmision(),new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()),articulos,this.getCentro().getVO());
+		vo.setArticulosAFabricar(arts);
 		return vo;
 	}
 
@@ -74,7 +80,7 @@ public class SolicitudDeFabricacion extends Solicitud
 			recibidos.add(arti);
 		}
 				
-
+		
 		CentroDistribucion cent = new CentroDistribucion();
 		cent.setVO(vo.getCdVO());
 		this.setCentro(cent);
@@ -84,14 +90,6 @@ public class SolicitudDeFabricacion extends Solicitud
 		fab.setVO(vo.getFabrica());
 		this.setFabrica(fab);
 		this.setArticulosAFabricar(recibidos);
-	}
-
-	@OneToMany
-	public Collection<ArticuloAFabricar> getArticulosAFabricar() {
-		return articulosAFabricar;
-	}
-
-	public void setArticulosAFabricar(Collection<ArticuloAFabricar> articulosAFabricar) {
-		this.articulosAFabricar = articulosAFabricar;
+		
 	}
 }

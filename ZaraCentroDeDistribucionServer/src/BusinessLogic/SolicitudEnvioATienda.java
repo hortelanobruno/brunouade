@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 import VO.ArticuloAEnviarVO;
 import VO.SolicitudEnvioVO;
-import VO.TiendaVO;
 
 @Entity
 @DiscriminatorValue("envio")
@@ -42,28 +41,6 @@ public class SolicitudEnvioATienda extends Solicitud implements Serializable
 		this.tienda = tienda;
 	}
 	
-	@Transient
-	public SolicitudEnvioVO getVO(){
-		Collection<ArticuloAEnviarVO> articulos = new ArrayList<ArticuloAEnviarVO>();
-		Iterator a = (Iterator) this.getArticulosAEnviar().iterator();
-		
-		while(a.hasNext())
-			articulos.add((ArticuloAEnviarVO)a.next());	
-		SolicitudEnvioVO vo = new SolicitudEnvioVO(this.getNumero(),articulos,this.getFechaEmision(),new TiendaVO(tienda.getCodTienda(),tienda.getNombreTienda()),this.getCentro().getVO());
-		return vo;
-	}
-
-	public void setVO(SolicitudEnvioVO vo){
-		Collection<ArticuloAEnviar> articulos = new ArrayList<ArticuloAEnviar>();
-		Iterator a = (Iterator)vo.getArticulosAEnviar().iterator();
-		while(a.hasNext())
-			articulos.add((ArticuloAEnviar)a.next());
-	
-		this.setNumero(vo.getNumero());
-		this.setArticulosAEnviar(articulos);
-		this.setFechaEmision(vo.getFechaEmision());
-		this.setTienda(new Tienda(vo.getTienda().getCodigoTienda(),vo.getTienda().getNombreTienda()));
-	}
 
 	public Collection<ArticuloAEnviar> getArticulosAEnviar() {
 		return articulosAEnviar;
@@ -71,5 +48,41 @@ public class SolicitudEnvioATienda extends Solicitud implements Serializable
 
 	public void setArticulosAEnviar(Collection<ArticuloAEnviar> articulosAEnviar) {
 		this.articulosAEnviar = articulosAEnviar;
+	}
+	
+	@Transient
+	public SolicitudEnvioVO getVO(){
+		SolicitudEnvioVO sol = new SolicitudEnvioVO();
+		sol.setNumero(this.getNumero());
+		sol.setFechaEmision(this.getFechaEmision());
+		sol.setTienda(this.getTienda().getVO());
+		sol.setCdVO(this.getCentro().getVO());
+		Collection<ArticuloAEnviarVO> arts = new ArrayList<ArticuloAEnviarVO>();
+		Iterator it = (Iterator) this.getArticulosAEnviar().iterator();
+		while(it.hasNext()){
+			ArticuloAEnviarVO art = ((ArticuloAEnviar)it.next()).getVO();
+			arts.add(art);
+		}
+		sol.setArticulosAEnviar(arts);
+		return sol;
+	}
+
+	public void setVO(SolicitudEnvioVO vo){
+		this.setFechaEmision(vo.getFechaEmision());
+		this.setNumero(vo.getNumero());
+		Tienda tienda = new Tienda();
+		tienda.setVO(vo.getTienda());
+		this.setTienda(tienda);
+		CentroDistribucion centro = new CentroDistribucion();
+		centro.setVO(vo.getCdVO());
+		this.setCentro(centro);
+		Collection<ArticuloAEnviar> arts = new ArrayList<ArticuloAEnviar>();
+		Iterator it = (Iterator) vo.getArticulosAEnviar().iterator();
+		while(it.hasNext()){
+			ArticuloAEnviar art = new ArticuloAEnviar();
+			art.setVO(((ArticuloAEnviarVO)it.next()));
+			arts.add(art);
+		}
+		this.setArticulosAEnviar(arts);
 	}
 }
