@@ -15,8 +15,9 @@ public class SolicitudFabricaVO extends SolicitudVO implements Serializable
 		super();
 	}
 	
-	public SolicitudFabricaVO(int n, Date f, FabricaVO fa,Collection<ArticuloAFabricarVO> recibidos ){
-		super(n,f);
+	public SolicitudFabricaVO(int n, Date f, FabricaVO fa,Collection<ArticuloAFabricarVO> recibidos,CentroDistribucionVO centro )
+	{
+		super(n,f,centro);
 		this.fabrica = fa;
 		this.setarticulosAFabricar(recibidos);
 	}

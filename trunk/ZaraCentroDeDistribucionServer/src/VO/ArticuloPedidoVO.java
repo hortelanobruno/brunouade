@@ -9,8 +9,17 @@ public class ArticuloPedidoVO {
 	private SolicitudDistribucionVO sd;
 	
 	public ArticuloPedidoVO() {
-		// TODO Auto-generated constructor stub
+
 	}
+
+	public ArticuloPedidoVO(int id, ArticuloHeaderVO art, int cant, SolicitudDistribucionVO sd)
+	{
+		this.setIdAP(id);
+		this.setArt(art);
+		this.setCantidad(cant);
+		this.setSd(sd);
+	}
+	
 
 	public ArticuloHeaderVO getArt() {
 		return art;
@@ -43,6 +52,4 @@ public class ArticuloPedidoVO {
 	public void setSd(SolicitudDistribucionVO sd) {
 		this.sd = sd;
 	}
-	
-	
 }

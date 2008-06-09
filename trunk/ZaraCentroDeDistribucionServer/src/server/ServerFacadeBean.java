@@ -5,6 +5,8 @@ import java.util.Vector;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+
+import BusinessLogic.CentroDistribucion;
 import BusinessLogic.ServerFacade;
 import Exceptions.ExistingProductException;
 import VO.ArticuloHeaderVO;
@@ -148,5 +150,10 @@ public class ServerFacadeBean implements ServerFacade
 	public void guardarArticulosAEnviar() 
 	{
 		this.admArt.guardarArticulosAEnviar();	
+	}
+
+	public CentroDistribucion getCentro() 
+	{
+		return this.admConf.getCentro();
 	}
 }

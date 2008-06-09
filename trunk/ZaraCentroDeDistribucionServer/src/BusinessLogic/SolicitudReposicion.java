@@ -19,22 +19,12 @@ public class SolicitudReposicion extends Solicitud
 {
 	private static final long serialVersionUID = -3577225904639518643L;
 	private Fabrica fabrica;
-	private long codigoSolicitudFabricacion;
+	private SolicitudDeFabricacion solFab;
+	private Collection<ArticuloAReponer> articulosAReponer;
 
 	public SolicitudReposicion() 
 	{
 		super();
-	}
-
-	@Column
-	public long getCodigoSolicitudFabricacion()
-	{
-		return codigoSolicitudFabricacion;
-	}
-	
-	public void setCodigoSolicitudFabricacion(long codigoSolicitudFabricacion)
-	{
-		this.codigoSolicitudFabricacion = codigoSolicitudFabricacion;
 	}
 	
 	@ManyToOne
@@ -71,5 +61,21 @@ public class SolicitudReposicion extends Solicitud
 		this.setArticulos(articulos);
 		this.setFechaEmision(vo.getFechaEmision());
 		this.setFabrica(new Fabrica(vo.getFabrica().getCodigoFabrica(),vo.getFabrica().getNombreFabrica()));
+	}
+
+	public Collection<ArticuloAReponer> getArticulosAReponer() {
+		return articulosAReponer;
+	}
+
+	public void setArticulosAReponer(Collection<ArticuloAReponer> articulosAReponer) {
+		this.articulosAReponer = articulosAReponer;
+	}
+
+	public SolicitudDeFabricacion getSolFab() {
+		return solFab;
+	}
+
+	public void setSolFab(SolicitudDeFabricacion solFab) {
+		this.solFab = solFab;
 	}
 }
