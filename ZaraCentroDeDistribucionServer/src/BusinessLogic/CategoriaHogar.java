@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import VO.CategoriaHogarVO;
 
@@ -48,6 +49,7 @@ public class CategoriaHogar
 		this.idCategoria = idCategoria;
 	}
 	
+	@Transient
 	public CategoriaHogarVO getVO(){
 		CategoriaHogarVO cat = new CategoriaHogarVO();
 		cat.setIdCategoria(this.getIdCategoria());

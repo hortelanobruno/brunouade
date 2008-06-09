@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import VO.ArticuloAReponerVO;
 
@@ -68,7 +69,7 @@ public class ArticuloAReponer implements Serializable
 		this.sr = sr;
 	}
 	
-	
+	@Transient
 	public ArticuloAReponerVO getVO(){
 		ArticuloAReponerVO art = new ArticuloAReponerVO();
 		art.setIdAAR(this.getIdAAR());

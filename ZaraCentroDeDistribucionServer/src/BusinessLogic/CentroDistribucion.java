@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import VO.CategoriaHogarVO;
 import VO.CentroDistribucionVO;
@@ -129,6 +130,7 @@ public class CentroDistribucion implements Serializable {
 
 	}
 
+	@Transient
 	public CentroDistribucionVO getVO() {
 		CentroDistribucionVO cen = new CentroDistribucionVO();
 		cen.setCodCentro(this.getCodCentro());

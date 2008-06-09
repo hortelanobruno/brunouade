@@ -8,6 +8,7 @@ import java.util.Iterator;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 import VO.ArticuloAEnviarVO;
 import VO.SolicitudEnvioVO;
@@ -41,7 +42,7 @@ public class SolicitudEnvioATienda extends Solicitud implements Serializable
 		this.tienda = tienda;
 	}
 	
-
+	@OneToMany
 	public Collection<ArticuloAEnviar> getArticulosAEnviar() {
 		return articulosAEnviar;
 	}
