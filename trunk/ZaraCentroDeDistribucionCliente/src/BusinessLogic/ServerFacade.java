@@ -1,10 +1,11 @@
 package BusinessLogic;
 
 import java.util.ArrayList;
-import java.util.Vector;
+
 import javax.ejb.Remote;
 
 import Exceptions.ExistingProductException;
+import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
@@ -42,7 +43,7 @@ public interface ServerFacade
 	public ArrayList<SolicitudFabricaVO> getAllSolFab();
 	
 	//panel reposicion
-	public void actualizarStock(ArrayList<ArticuloHeaderVO> arts);
+	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
 	public void actualizarSolFab(SolicitudFabricaVO solFab);
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
 	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab);

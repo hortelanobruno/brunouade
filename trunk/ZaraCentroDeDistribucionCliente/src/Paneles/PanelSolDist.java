@@ -9,29 +9,25 @@ package Paneles;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.Iterator;
-import java.util.Vector;
 
-import GUI.Dialogo3Opciones;
-import GUI.FileChooser;
-import GUI.MenuPrincipal;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
-import controladores.ControladorPanelSolDis;
+
+import GUI.Dialogo3Opciones;
+import GUI.FileChooser;
+import GUI.MenuPrincipal;
 import VO.ArticuloAEnviarVO;
-import VO.ArticuloHeaderVO;
 import VO.ArticuloAFabricarVO;
-import VO.FabricaVO;
+import VO.ArticuloHeaderVO;
+import VO.ArticuloPedidoVO;
 import VO.SolicitudDistribucionVO;
-import VO.SolicitudEnvioVO;
-import VO.SolicitudFabricaVO;
-import VO.TiendaVO;
 import Varios.Constantes;
 import Varios.XMLWrapper;
 import Vistas.VistaSolDis;
+import controladores.ControladorPanelSolDis;
 
 /**
  * 
@@ -40,12 +36,17 @@ import Vistas.VistaSolDis;
 public class PanelSolDist extends javax.swing.JPanel {
 
 	private static final long serialVersionUID = 1L;
+
 	private String urlXML;
+
 	private boolean cargarTable;
+
 	private MenuPrincipal ref;
+
 	private SolicitudDistribucionVO solDisVO;
+
 	private VistaSolDis vistaSolDis;
-	
+
 	/** Creates new form PanelSolDist */
 	public PanelSolDist(MenuPrincipal mn, VistaSolDis vista) {
 		initComponents();
@@ -69,114 +70,207 @@ public class PanelSolDist extends javax.swing.JPanel {
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        buttonCargarXML = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableArticulos = new javax.swing.JTable();
-        buttonGuardarPedido = new javax.swing.JButton();
-        labelValidacion = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        comboFabrica = new javax.swing.JComboBox();
+		jLabel1 = new javax.swing.JLabel();
+		buttonCargarXML = new javax.swing.JButton();
+		jScrollPane1 = new javax.swing.JScrollPane();
+		tableArticulos = new javax.swing.JTable();
+		buttonGuardarPedido = new javax.swing.JButton();
+		labelValidacion = new javax.swing.JLabel();
+		jLabel2 = new javax.swing.JLabel();
+		comboFabrica = new javax.swing.JComboBox();
 
-        jLabel1.setText("Solicitud de distribucion");
+		jLabel1.setText("Solicitud de distribucion");
 
-        buttonCargarXML.setText("Cargar XML");
-        buttonCargarXML.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCargarXMLActionPerformed(evt);
-            }
-        });
+		buttonCargarXML.setText("Cargar XML");
+		buttonCargarXML.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				buttonCargarXMLActionPerformed(evt);
+			}
+		});
 
-        tableArticulos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+		tableArticulos.setModel(new javax.swing.table.DefaultTableModel(
+				new Object[][] {
 
-            },
-            new String [] {
-                "Nombre Solicitud", "Tienda", "Codigo Art.", "Descripcion", "Cantidad Pedida", "Stock Actual", "Cantidad a Enviar"
-            }
-        ) {
+				}, new String[] { "Nombre Solicitud", "Tienda", "Codigo Art.",
+						"Descripcion", "Cantidad Pedida", "Stock Actual",
+						"Cantidad a Enviar" }) {
 			private static final long serialVersionUID = 1L;
-			Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
+			Class[] types = new Class[] { java.lang.String.class,
+					java.lang.String.class, java.lang.Integer.class,
+					java.lang.String.class, java.lang.Integer.class,
+					java.lang.Integer.class, java.lang.Integer.class };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tableArticulos.setEnabled(false);
-        tableArticulos.setRowSelectionAllowed(false);
-        tableArticulos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tableArticulos.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tableArticulos);
+			boolean[] canEdit = new boolean[] { false, false, false, false,
+					false, false, true };
 
-        buttonGuardarPedido.setText("Guardar Pedido");
-        buttonGuardarPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonGuardarPedidoActionPerformed(evt);
-            }
-        });
+			public Class getColumnClass(int columnIndex) {
+				return types[columnIndex];
+			}
 
-        jLabel2.setText("Fabrica");
+			public boolean isCellEditable(int rowIndex, int columnIndex) {
+				return canEdit[columnIndex];
+			}
+		});
+		tableArticulos.setEnabled(false);
+		tableArticulos.setRowSelectionAllowed(false);
+		tableArticulos
+				.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+		tableArticulos.getTableHeader().setReorderingAllowed(false);
+		jScrollPane1.setViewportView(tableArticulos);
 
-        comboFabrica.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "" }));
+		buttonGuardarPedido.setText("Guardar Pedido");
+		buttonGuardarPedido
+				.addActionListener(new java.awt.event.ActionListener() {
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						buttonGuardarPedidoActionPerformed(evt);
+					}
+				});
 
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(766, 766, 766)
-                        .add(labelValidacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(layout.createSequentialGroup()
-                        .add(32, 32, 32)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 705, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(layout.createSequentialGroup()
-                                .add(jLabel1)
-                                .add(96, 96, 96)
-                                .add(buttonCargarXML))
-                            .add(buttonGuardarPedido)
-                            .add(layout.createSequentialGroup()
-                                .add(jLabel2)
-                                .add(71, 71, 71)
-                                .add(comboFabrica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 134, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(251, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(28, 28, 28)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel1)
-                            .add(buttonCargarXML))
-                        .add(29, 29, 29)
-                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 204, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(layout.createSequentialGroup()
-                        .add(155, 155, 155)
-                        .add(labelValidacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 21, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(18, 18, 18)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel2)
-                    .add(comboFabrica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 34, Short.MAX_VALUE)
-                .add(buttonGuardarPedido)
-                .add(70, 70, 70))
-        );	}// </editor-fold>
+		jLabel2.setText("Fabrica");
 
-	private void buttonGuardarPedidoActionPerformed(java.awt.event.ActionEvent evt) {
-		((ControladorPanelSolDis) vistaSolDis.getControlador()).doCargarXML(false);
+		comboFabrica.setModel(new javax.swing.DefaultComboBoxModel(
+				new String[] { "" }));
+
+		org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(
+				this);
+		this.setLayout(layout);
+		layout
+				.setHorizontalGroup(layout
+						.createParallelGroup(
+								org.jdesktop.layout.GroupLayout.LEADING)
+						.add(
+								layout
+										.createSequentialGroup()
+										.add(
+												layout
+														.createParallelGroup(
+																org.jdesktop.layout.GroupLayout.LEADING)
+														.add(
+																layout
+																		.createSequentialGroup()
+																		.add(
+																				766,
+																				766,
+																				766)
+																		.add(
+																				labelValidacion,
+																				org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+																				23,
+																				org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+														.add(
+																layout
+																		.createSequentialGroup()
+																		.add(
+																				32,
+																				32,
+																				32)
+																		.add(
+																				layout
+																						.createParallelGroup(
+																								org.jdesktop.layout.GroupLayout.LEADING)
+																						.add(
+																								jScrollPane1,
+																								org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+																								705,
+																								org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+																						.add(
+																								layout
+																										.createSequentialGroup()
+																										.add(
+																												jLabel1)
+																										.add(
+																												96,
+																												96,
+																												96)
+																										.add(
+																												buttonCargarXML))
+																						.add(
+																								buttonGuardarPedido)
+																						.add(
+																								layout
+																										.createSequentialGroup()
+																										.add(
+																												jLabel2)
+																										.add(
+																												71,
+																												71,
+																												71)
+																										.add(
+																												comboFabrica,
+																												org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+																												134,
+																												org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
+										.addContainerGap(251, Short.MAX_VALUE)));
+		layout
+				.setVerticalGroup(layout
+						.createParallelGroup(
+								org.jdesktop.layout.GroupLayout.LEADING)
+						.add(
+								layout
+										.createSequentialGroup()
+										.add(
+												layout
+														.createParallelGroup(
+																org.jdesktop.layout.GroupLayout.LEADING)
+														.add(
+																layout
+																		.createSequentialGroup()
+																		.add(
+																				28,
+																				28,
+																				28)
+																		.add(
+																				layout
+																						.createParallelGroup(
+																								org.jdesktop.layout.GroupLayout.BASELINE)
+																						.add(
+																								jLabel1)
+																						.add(
+																								buttonCargarXML))
+																		.add(
+																				29,
+																				29,
+																				29)
+																		.add(
+																				jScrollPane1,
+																				org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+																				204,
+																				org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+														.add(
+																layout
+																		.createSequentialGroup()
+																		.add(
+																				155,
+																				155,
+																				155)
+																		.add(
+																				labelValidacion,
+																				org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+																				21,
+																				org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+										.add(18, 18, 18)
+										.add(
+												layout
+														.createParallelGroup(
+																org.jdesktop.layout.GroupLayout.BASELINE)
+														.add(jLabel2)
+														.add(
+																comboFabrica,
+																org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
+																org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
+																org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+										.addPreferredGap(
+												org.jdesktop.layout.LayoutStyle.RELATED,
+												34, Short.MAX_VALUE).add(
+												buttonGuardarPedido).add(70,
+												70, 70)));
+	}// </editor-fold>
+
+	private void buttonGuardarPedidoActionPerformed(
+			java.awt.event.ActionEvent evt) {
+		((ControladorPanelSolDis) vistaSolDis.getControlador())
+				.doCargarXML(false);
 	}
 
 	private void buttonCargarXMLActionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,22 +283,25 @@ public class PanelSolDist extends javax.swing.JPanel {
 					Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
 		else {
 			// Cargar los table
-			((ControladorPanelSolDis) vistaSolDis.getControlador()).doCargarXML(true);
+			((ControladorPanelSolDis) vistaSolDis.getControlador())
+					.doCargarXML(true);
 		}
 	}
-	
-	
-	private void cargarTable(SolicitudDistribucionVO solDisVO,Vector<Long> codigos, Vector<String> descripciones,Vector<Integer> stocks) {
-		Iterator iterador = (Iterator) solDisVO.getArticulo().iterator();
-		for (int i = 0; i < solDisVO.getArticulo().size(); i++) {
+
+	private void cargarTable(SolicitudDistribucionVO solDisVO,
+			ArrayList<Long> codigos, ArrayList<String> descripciones,
+			ArrayList<Integer> stocks) {
+		Iterator iterador = (Iterator) solDisVO.getArticulosPedidos()
+				.iterator();
+		for (int i = 0; i < solDisVO.getArticulosPedidos().size(); i++) {
 			((DefaultTableModel) tableArticulos.getModel())
 					.addRow(new Object[] {
 							"Solicitud Numero " + solDisVO.getNumero(),
 							solDisVO.getTienda().getNombreTienda(),
-							codigos.elementAt(i).toString(),
-							descripciones.elementAt(i).toString(),
+							codigos.get(i).toString(),
+							descripciones.get(i).toString(),
 							((ArticuloHeaderVO) iterador.next()).getCantidad(),
-							stocks.elementAt(i).toString(), 0 });
+							stocks.get(i).toString(), 0 });
 		}
 	}
 
@@ -247,82 +344,128 @@ public class PanelSolDist extends javax.swing.JPanel {
 	}
 
 	public void update() {
-		//aca hay que poner las llamadas a la business delegate
-		if(cargarTable){
+		// aca hay que poner las llamadas a la business delegate
+		if (cargarTable) {
 			XMLWrapper xml = new XMLWrapper();
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
 			ArrayList<Long> codigos = new ArrayList<Long>();
-			Iterator arts = (Iterator) solDisVO.getArticulo().iterator();
+			Iterator arts = (Iterator) solDisVO.getArticulosPedidos()
+					.iterator();
 			while (arts.hasNext()) {
-				codigos.add(((ArticuloHeaderVO) arts.next()).getCodigo());
+				codigos.add(((ArticuloPedidoVO) arts.next()).getArt()
+						.getCodigo());
 			}
-			ArrayList<String> descripciones = this.ref.getVistaSolDis().getModelo().getDescripciones(codigos);
-			ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos);
+			ArrayList<String> descripciones = this.ref.getVistaSolDis()
+					.getModelo().getDescripciones(codigos);
+			ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo()
+					.getStocks(codigos);
 			cargarTable(solDisVO, codigos, descripciones, stocks);
 			ref.getJTextArea1().append("Archivo Cargado\n");
-		}else{
-			//Falta generar las solicitudes
-			Collection<ArticuloAFabricarVO> artic = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
-			Collection<ArticuloAEnviarVO> artic2 = (Collection<ArticuloAEnviarVO>) articulosEnviarDeTabla();
-			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarSolicitud(solDisVO);
-			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarArticulosAEnviar(artic2);
-			((ControladorPanelSolDis)vistaSolDis.getControlador()).doGuardarArticulosPendientes(artic);
+		} else {
+			// Falta generar las solicitudes
+			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
+			Collection<ArticuloAEnviarVO> artiAEnv = (Collection<ArticuloAEnviarVO>) articulosEnviarDeTabla();
+			((ControladorPanelSolDis) vistaSolDis.getControlador())
+					.doGuardarSolicitud(solDisVO);
+			((ControladorPanelSolDis) vistaSolDis.getControlador())
+					.doGuardarArticulosAEnviar(artiAEnv);
+			((ControladorPanelSolDis) vistaSolDis.getControlador())
+					.doGuardarArticulosPendientes(artiAFab);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
-			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
+			new Dialogo3Opciones("Operacion concretada", this.ref)
+					.setVisible(true);
 		}
 	}
 
-	public Collection<ArticuloAEnviarVO> articulosEnviarDeTabla(){
-		Collection<ArticuloAEnviarVO> art = new Vector<ArticuloAEnviarVO>();
+	/*
+	 * Falta completar la linea comentada
+	 * 
+	 * 
+	 */
+	public Collection<ArticuloAEnviarVO> articulosEnviarDeTabla() {
+		Collection<ArticuloAEnviarVO> art = new ArrayList<ArticuloAEnviarVO>();
 		ArticuloHeaderVO arti;
-		for(int i=0 ; i < tableArticulos.getRowCount() ; i++){
-			long cod = (Long.parseLong((String) ((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 2)));
-			arti = ((ControladorPanelSolDis) vistaSolDis.getControlador()).doGetArticulo(cod);
-			arti.setCantidad(Integer.parseInt((String) ((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 6)));
-			art.add(arti);
+		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
+			long cod = (Long
+					.parseLong((String) ((DefaultTableModel) tableArticulos
+							.getModel()).getValueAt(i, 2)));
+			arti = ((ControladorPanelSolDis) vistaSolDis.getControlador())
+					.doGetArticulo(cod);
+			ArticuloAEnviarVO aEnv = new ArticuloAEnviarVO();
+			aEnv.setArt(arti);
+			aEnv.setCantidadAEnviar(Integer
+					.parseInt((String) ((DefaultTableModel) tableArticulos
+							.getModel()).getValueAt(i, 6)));
+			aEnv.setSolDis(solDisVO);
+			// aEnv.setIdAAE();
+			art.add(aEnv);
 		}
 		return art;
 	}
-	
-	public Collection<ArticuloAFabricarVO> articulosFabricarDeTabla(){
-		Collection<ArticuloAFabricarVO> art = new Vector<ArticuloAFabricarVO>();
-		ArticuloHeaderVO arti = null;
-		for(int i=0 ; i < tableArticulos.getRowCount() ; i++){
-			int ped = Integer.parseInt((((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 4)).toString());
-			int sel = Integer.parseInt((((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 6)).toString());
-			if(ped>sel){
-				long cod = (Long.parseLong((String) ((DefaultTableModel)tableArticulos.getModel()).getValueAt(i, 2)));
-				arti = ((ControladorPanelSolDis) vistaSolDis.getControlador()).doGetArticulo(cod);
-				arti.setCantidad(ped-sel);
-				art.add(arti);
-			}else{
-				ref.getJTextArea1().append("Error al cargar los articulos a fabricar, xq lo seleccionado es mayor que lo pedido\n");
+
+	/*
+	 * Falta completar la linea comentada
+	 * 
+	 * la fabrica se va obtener de un combo
+	 */
+	public Collection<ArticuloAFabricarVO> articulosFabricarDeTabla() {
+		Collection<ArticuloAFabricarVO> art = new ArrayList<ArticuloAFabricarVO>();
+		ArticuloHeaderVO arti;
+		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
+			int ped = Integer.parseInt((((DefaultTableModel) tableArticulos
+					.getModel()).getValueAt(i, 4)).toString());
+			int sel = Integer.parseInt((((DefaultTableModel) tableArticulos
+					.getModel()).getValueAt(i, 6)).toString());
+			if (ped > sel) {
+				long cod = (Long
+						.parseLong((String) ((DefaultTableModel) tableArticulos
+								.getModel()).getValueAt(i, 2)));
+				arti = ((ControladorPanelSolDis) vistaSolDis.getControlador())
+						.doGetArticulo(cod);
+				ArticuloAFabricarVO aFab = new ArticuloAFabricarVO();
+				aFab.setArt(arti);
+				aFab.setCantidadPedida(ped - sel);
+				aFab.setCantidadRecibida(0);
+				// aFab.setFabrica()
+				// aFab.setIdAAF();
+				aFab.setSol(solDisVO);
+				art.add(aFab);
+			} else {
+				ref
+						.getJTextArea1()
+						.append(
+								"Error al cargar los articulos a fabricar, xq lo seleccionado es mayor que lo pedido\n");
 			}
 		}
 		return art;
 	}
-	
-	public void vaciarTabla(){
-		for(int i=0 ; i<tableArticulos.getRowCount() ; i++){
-			((DefaultTableModel)tableArticulos.getModel()).removeRow(i);
+
+	public void vaciarTabla() {
+		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
+			((DefaultTableModel) tableArticulos.getModel()).removeRow(i);
 		}
 	}
-	
+
 	// Variables declaration - do not modify
 	private javax.swing.JButton buttonCargarXML;
 
 	private javax.swing.JButton buttonGuardarPedido;
 
 	private javax.swing.JLabel jLabel1;
+
 	private javax.swing.JLabel jLabel2;
+
 	private javax.swing.JScrollPane jScrollPane1;
 
 	private javax.swing.JLabel labelValidacion;
+
 	private javax.swing.JComboBox comboFabrica;
+
 	private javax.swing.JTable tableArticulos;
 
 	private FileChooser chooser;
+
 	// End of variables declaration
 
 	public boolean getCargarTable() {

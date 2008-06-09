@@ -6,9 +6,8 @@
 
 package Paneles;
 
-import Vistas.VistaGenSolFab;
-import controladores.ControladorPanelEnvios;
 import GUI.MenuPrincipal;
+import Vistas.VistaGenSolFab;
 
 /**
  *
