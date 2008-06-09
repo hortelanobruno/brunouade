@@ -1,6 +1,6 @@
 package BusinessLogic;
 
-import Exceptions.ErrorConeccionException;
+import Exceptions.ErrorConectionException;
 import Exceptions.ExistingProductException;
 import MVCFramework.ProxyModelo;
 import VO.ArticuloHeaderVO;
@@ -12,6 +12,8 @@ import VO.SolicitudEnvioVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
 import Varios.Constantes;
+
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.naming.Context;
 
@@ -20,7 +22,7 @@ public class BusinessDelegate extends ProxyModelo
 	private ServerFacade modCD = null;
 	private String naming = Constantes.BEAN_STRING;
 
-	public BusinessDelegate() throws ErrorConeccionException
+	public BusinessDelegate() throws ErrorConectionException
 	{
 		super();
 		this.getConnection();
@@ -52,17 +54,17 @@ public class BusinessDelegate extends ProxyModelo
 
 	/**
 	 * Se indica url del servidor de aplicaciones
-	 * @throws ErrorConeccionException 
+	 * @throws ErrorConectionException 
 	 * 
 	 */
-    protected void getConnection() throws ErrorConeccionException {
+    protected void getConnection() throws ErrorConectionException {
         try {
         	Context jndiContext = getInitialContext();
 			this.modCD = (ServerFacade)jndiContext.lookup(naming);
 
         } catch (Exception e) {
         	e.printStackTrace();
-        	throw new ErrorConeccionException("No se pudo conectar");
+        	throw new ErrorConectionException("No se pudo conectar");
         }
     }    
 	 
@@ -70,8 +72,8 @@ public class BusinessDelegate extends ProxyModelo
         return new javax.naming.InitialContext();
     }
 	
-	public Vector<String> getDescripciones(Vector<Long> codigos) {
-		Vector<String> descripciones = new Vector<String>();
+	public ArrayList<String> getDescripciones(ArrayList<Long> codigos) {
+		ArrayList<String> descripciones = new ArrayList<String>();
 		try {
 			descripciones = getModCD().getDescripciones(codigos);
 		} catch (Exception ex) {
@@ -80,8 +82,8 @@ public class BusinessDelegate extends ProxyModelo
 		return descripciones;
 	}
 
-	public Vector<Integer> getStocks(Vector<Long> codigos) {
-		Vector<Integer> stocks = new Vector<Integer>();
+	public ArrayList<Integer> getStocks(ArrayList<Long> codigos) {
+		ArrayList<Integer> stocks = new ArrayList<Integer>();
 		try {
 			stocks = getModCD().getStocks(codigos);
 		} catch (Exception ex) {
@@ -128,8 +130,8 @@ public class BusinessDelegate extends ProxyModelo
 		this.getModCD().guardarSolicitudReposicion(solRepVO);
 	}
 
-	public void actualizarStock(Vector<ArticuloHeaderVO> articulo) {
-		this.getModCD().actualizarStock((Vector<ArticuloHeaderVO>) articulo);
+	public void actualizarStock(ArrayList<ArticuloHeaderVO> articulo) {
+		this.getModCD().actualizarStock((ArrayList<ArticuloHeaderVO>) articulo);
 	}
 
 	public Integer getNumeroSolEnv() {	

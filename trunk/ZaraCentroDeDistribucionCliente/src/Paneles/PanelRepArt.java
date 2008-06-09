@@ -6,6 +6,7 @@
 
 package Paneles;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Vector;
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import controladores.ControladorPanelRepArt;
+import VO.ArticuloAFabricarVO;
 import VO.ArticuloHeaderVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudFabricaVO;
@@ -44,6 +46,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 		initComponents();
 		this.ref = m;
 		this.vistaRepArt = vista;
+		this.buttonGuardar.setEnabled(false);
 	}
 
 	/**
@@ -79,7 +82,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 		});
 		jScrollPane1.setViewportView(tableArticulosFabrica);
 
-		buttonCargarXML.setText("Cargar XMl");
+		buttonCargarXML.setText("Cargar XML");
 		buttonCargarXML.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				buttonCargarXMLActionPerformed(evt);
@@ -156,11 +159,11 @@ public class PanelRepArt extends javax.swing.JPanel {
 	
 	private void cargarArticuloEnSolFab(ArticuloHeaderVO arti)
 	{
-		Collection<ArticuloHeaderVO> articulos = solFab.getArticulosRecibidos();
+		Collection<ArticuloAFabricarVO> articulos = solFab.getarticulosAFabricar();
 		Iterator itArt = articulos.iterator();
 		int count = 0;
 		while(itArt.hasNext()){
-			ArticuloHeaderVO art = (ArticuloHeaderVO)itArt.next();
+			ArticuloAFabricarVO art = (ArticuloAFabricarVO)itArt.next();
 			if(arti.getCodigo() == (art.getCodigo())){
 				//existe el articulo entonces lo actualizo
 				int cantidad = art.getCantidad();
@@ -178,7 +181,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 	}
 	
 	
-	private void cargarTable(long solicitud,SolicitudDeReposicionVO solRepVO,Vector<Long> codigos, Vector<String> descripciones,SolicitudFabricaVO solFab, String fabrica) 
+	private void cargarTable(long solicitud,SolicitudDeReposicionVO solRepVO,ArrayList<Long> codigos, ArrayList<String> descripciones,SolicitudFabricaVO solFab, String fabrica) 
 	{
 		Iterator iteradorRep = (Iterator) solRepVO.getArticulo().iterator();
 		Iterator iteradorFab = (Iterator) solFab.getArticulo().iterator();
@@ -186,19 +189,19 @@ public class PanelRepArt extends javax.swing.JPanel {
 		Integer cantidadrecibida = 0;
 		for (int i = 0; i < codigos.size(); i++) {
 			while (iteradorRep.hasNext()) {
-				if((((ArticuloHeaderVO) iteradorRep.next()).getCodigo()) == codigos.elementAt(i)){
+				if((((ArticuloHeaderVO) iteradorRep.next()).getCodigo()) == codigos.get(i)){
 					ArticuloHeaderVO arti = (((ArticuloHeaderVO) iteradorRep.next()));
 					cargarArticuloEnSolFab(arti);
 					cantidadrecibida = arti.getCantidad();
 				}
 			}
 			while (iteradorFab.hasNext()) {
-				if((((ArticuloHeaderVO) iteradorFab.next()).getCodigo()) == codigos.elementAt(i)){
+				if((((ArticuloHeaderVO) iteradorFab.next()).getCodigo()) == codigos.get(i)){
 					cantidpedida = (((ArticuloHeaderVO) iteradorRep.next()).getCantidad());
 				}
 			}
 			((DefaultTableModel) tableArticulosFabrica.getModel())
-			.addRow(new Object[] {solicitud,fabrica,codigos.elementAt(i),descripciones.elementAt(i),cantidpedida,cantidadrecibida});
+			.addRow(new Object[] {solicitud,fabrica,codigos.get(i),descripciones.get(i),cantidpedida,cantidadrecibida});
 			iteradorRep = (Iterator) solRepVO.getArticulo().iterator();
 			iteradorFab = (Iterator) solFab.getArticulo().iterator();
 		}
@@ -212,30 +215,34 @@ public class PanelRepArt extends javax.swing.JPanel {
 			long codigoSolFab = solRepVO.getCodigoSolicitudFabricacion();
 			solFab = (SolicitudFabricaVO) this.ref.getVistaRepArt().getModelo().getSolicitudFabricacion(codigoSolFab);
 			String fabrica = solRepVO.getFabrica().getNombreFabrica();
-			Vector<Long> codigos = new Vector<Long>();
+			ArrayList<Long> codigos = new ArrayList<Long>();
 			Iterator arts = (Iterator) solRepVO.getArticulo().iterator();
 			while (arts.hasNext()) {
 				codigos.add(((ArticuloHeaderVO) arts.next()).getCodigo());
 			}
-			Vector<String> descripciones = this.ref.getVistaSolDis().getModelo().getDescripciones(codigos);
+			ArrayList<String> descripciones = this.ref.getVistaSolDis().getModelo().getDescripciones(codigos);
 			vaciarTabla();
 			cargarTable(codigoSolFab,solRepVO, codigos, descripciones, solFab,fabrica);
 			ref.getJTextArea1().append("Archivo Cargado\n");
+			this.buttonGuardar.setEnabled(true);
+			this.buttonCargarXML.setEnabled(false);
 		}else{
 			//Falta generar las solicitudes
-			Vector<ArticuloHeaderVO> vecArt = collectionToVector(solRepVO.getArticulo());
+			ArrayList<ArticuloHeaderVO> vecArt = collectionToVector(solRepVO.getArticulo());
 			((ControladorPanelRepArt)vistaRepArt.getControlador()).doCargarStocks(vecArt);
 			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudFabricacion(solFab);
 			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudReposicion(solRepVO);
 			
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
+			this.buttonGuardar.setEnabled(false);
+			this.buttonCargarXML.setEnabled(true);
 			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
 		}
 	}
 
-	public Vector<ArticuloHeaderVO> collectionToVector(Collection<ArticuloHeaderVO> col){
-		Vector<ArticuloHeaderVO> vec = new Vector<ArticuloHeaderVO>();
+	public ArrayList<ArticuloHeaderVO> collectionToVector(Collection<ArticuloHeaderVO> col){
+		ArrayList<ArticuloHeaderVO> vec = new ArrayList<ArticuloHeaderVO>();
 		Iterator it = (Iterator)col.iterator();
 		while(it.hasNext()){
 			vec.add((ArticuloHeaderVO) it.next());

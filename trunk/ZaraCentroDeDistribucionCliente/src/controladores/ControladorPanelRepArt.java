@@ -1,5 +1,6 @@
 package controladores;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Vector;
 
@@ -35,7 +36,7 @@ public class ControladorPanelRepArt extends Controlador{
 		
 	}
 
-	public void doCargarStocks(Vector<ArticuloHeaderVO> articulo) {
+	public void doCargarStocks(ArrayList<ArticuloHeaderVO> articulo) {
 		((BusinessDelegate)(this.getModelo())).actualizarStock(articulo);
 		
 	}
