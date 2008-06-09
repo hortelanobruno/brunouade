@@ -1,16 +1,13 @@
 package BusinessLogic;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Vector;
-
-import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
-import VO.ArticuloHeaderVO;
-import VO.FabricaVO;
+import VO.ArticuloAReponerVO;
 import VO.SolicitudDeReposicionVO;
 
 @Entity
@@ -37,31 +34,6 @@ public class SolicitudReposicion extends Solicitud
 	{
 		this.fabrica = fabrica;
 	}
-	
-	@Transient
-	public SolicitudDeReposicionVO getVO()
-	{
-		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
-		Iterator a = (Iterator) this.getArticulos().iterator();
-		
-		while(a.hasNext())
-			articulos.add((ArticuloHeaderVO)a.next());	
-		SolicitudDeReposicionVO vo = new SolicitudDeReposicionVO(this.getNumero(), articulos, this.getFechaEmision(), new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()));
-		return vo;
-	}
-
-	public void setVO(SolicitudDeReposicionVO vo)
-	{
-		Collection<Articulo> articulos = new Vector<Articulo>();
-		Iterator a = (Iterator)vo.getArticulo().iterator();
-		while(a.hasNext())
-			articulos.add((Articulo)a.next());
-		
-		this.setNumero(vo.getNumero());
-		this.setArticulos(articulos);
-		this.setFechaEmision(vo.getFechaEmision());
-		this.setFabrica(new Fabrica(vo.getFabrica().getCodigoFabrica(),vo.getFabrica().getNombreFabrica()));
-	}
 
 	public Collection<ArticuloAReponer> getArticulosAReponer() {
 		return articulosAReponer;
@@ -77,5 +49,47 @@ public class SolicitudReposicion extends Solicitud
 
 	public void setSolFab(SolicitudDeFabricacion solFab) {
 		this.solFab = solFab;
+	}
+	
+	@Transient
+	public SolicitudDeReposicionVO getVO()
+	{
+		SolicitudDeReposicionVO sol = new SolicitudDeReposicionVO();
+		sol.setNumero(this.getNumero());
+		sol.setFechaEmision(this.getFechaEmision());
+		sol.setFabrica(this.getFabrica().getVO());
+		sol.setSolFab(this.getSolFab().getVO());
+		sol.setCdVO(this.getCentro().getVO());
+		Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
+		Iterator it = (Iterator) this.getArticulosAReponer().iterator();
+		while(it.hasNext()){
+			ArticuloAReponerVO art = ((ArticuloAReponer)it.next()).getVO();
+			arts.add(art);
+		}
+		sol.setArticulosAReponer(arts);
+		return sol;
+	}
+
+	public void setVO(SolicitudDeReposicionVO vo)
+	{
+		this.setNumero(vo.getNumero());
+		this.setFechaEmision(vo.getFechaEmision());
+		Fabrica fab = new Fabrica();
+		fab.setVO(vo.getFabrica());
+		this.setFabrica(fab);
+		CentroDistribucion centro = new CentroDistribucion();
+		centro.setVO(vo.getCdVO());
+		this.setCentro(centro);
+		SolicitudDeFabricacion solFab = new SolicitudDeFabricacion();
+		solFab.setVO(vo.getSolFab());
+		this.setSolFab(solFab);
+		Collection<ArticuloAReponer> arts = new ArrayList<ArticuloAReponer>();
+		Iterator it = (Iterator) vo.getArticulosAReponer().iterator();
+		while(it.hasNext()){
+			ArticuloAReponer art = new ArticuloAReponer();
+			art.setVO(((ArticuloAReponerVO)it.next()));
+			arts.add(art);
+		}
+		this.setArticulosAReponer(arts);
 	}
 }

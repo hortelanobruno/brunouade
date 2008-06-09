@@ -5,14 +5,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.Vector;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 import VO.ArticuloPedidoVO;
 import VO.SolicitudDistribucionVO;
-import VO.TiendaVO;
 
 @Entity
 @DiscriminatorValue("fabricacion")
@@ -52,26 +50,37 @@ public class SolicitudDistribucion extends Solicitud implements Serializable
 
 	@Transient
 	public SolicitudDistribucionVO getVO() {
-		Collection<ArticuloPedidoVO> articulos = new Vector<ArticuloPedidoVO>();
-		Iterator a = (Iterator) this.getArticulosPedidos().iterator();
-
-		while (a.hasNext())
-			articulos.add((ArticuloPedidoVO) a.next());
-		SolicitudDistribucionVO vo = new SolicitudDistribucionVO(this.getNumero(), articulos, this.getFechaEmision(), new TiendaVO(tienda.getCodTienda(), tienda.getNombreTienda()),this.getCentro().getVO());
-		return vo;
+		SolicitudDistribucionVO sol = new SolicitudDistribucionVO();
+		sol.setNumero(this.getNumero());
+		sol.setFechaEmision(this.getFechaEmision());
+		sol.setTienda(this.getTienda().getVO());
+		sol.setCdVO(this.getCentro().getVO());
+		Collection<ArticuloPedidoVO> arts = new ArrayList<ArticuloPedidoVO>();
+		Iterator it = (Iterator) this.getArticulosPedidos().iterator();
+		while(it.hasNext()){
+			ArticuloPedidoVO art = ((ArticuloPedido)it.next()).getVO();
+			arts.add(art);
+		}
+		sol.setArticulosPedidos(arts);
+		return sol;
 	}
 
 	public void setVO(SolicitudDistribucionVO vo) {
-		Collection<ArticuloPedido> articulos = new ArrayList<ArticuloPedido>();
-
-		Iterator a = (Iterator) vo.getArticulosPedidos().iterator();
-		while (a.hasNext())
-			articulos.add((ArticuloPedido) a.next());
-
-		this.setNumero(vo.getNumero());
-		this.setArticulosPedidos(articulos);
 		this.setFechaEmision(vo.getFechaEmision());
-		this.setTienda(new Tienda(vo.getTienda().getCodigoTienda(), vo
-				.getTienda().getNombreTienda()));
+		this.setNumero(vo.getNumero());
+		Tienda tienda = new Tienda();
+		tienda.setVO(vo.getTienda());
+		this.setTienda(tienda);
+		CentroDistribucion centro = new CentroDistribucion();
+		centro.setVO(vo.getCdVO());
+		this.setCentro(centro);
+		Collection<ArticuloPedido> arts = new ArrayList<ArticuloPedido>();
+		Iterator it = (Iterator) vo.getArticulosPedidos().iterator();
+		while(it.hasNext()){
+			ArticuloPedido art = new ArticuloPedido();
+			art.setVO(((ArticuloPedidoVO)it.next()));
+			arts.add(art);
+		}
+		this.setArticulosPedidos(arts);
 	}
 }
