@@ -29,10 +29,11 @@ public class SolicitudDeFabricacion extends Solicitud
 		this.articulosAFabricar = new Vector<ArticuloAFabricar>();
 	}
 	
-	public SolicitudDeFabricacion(int n, Collection<Articulo> a, Date f, Fabrica fa){
+	public SolicitudDeFabricacion(int n, Collection<ArticuloAFabricar> a, Date f, Fabrica fa)
+	{
 		super(n,f);
 		this.fabrica = fa;
-		this.setArticulos(a);
+		this.setarticulosAFabricar(a);
 	}
 	
 	@ManyToOne
@@ -47,44 +48,33 @@ public class SolicitudDeFabricacion extends Solicitud
 	@Transient
 	public SolicitudFabricaVO getVO()
 	{
-		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
-		Collection<ArticuloAFabricarVO> recibidos = new Vector<ArticuloAFabricarVO>();
-		
-		Iterator a = (Iterator) this.getArticulos().iterator();
-		while(a.hasNext())
-			articulos.add((ArticuloHeaderVO)a.next());
-		
-		Iterator rec = (Iterator)this.getArticulos().iterator();
+		Collection<ArticuloAFabricarVO> articulos = new Vector<ArticuloAFabricarVO>();
+			
+		Iterator rec = (Iterator) this.getArticulosAFabricar().iterator();
 		while(rec.hasNext())
-			recibidos.add((ArticuloAFabricarVO)rec.next());
+			articulos.add((ArticuloAFabricarVO)rec.next());
 		
-		SolicitudFabricaVO vo = new SolicitudFabricaVO(this.getNumero(),articulos,this.getFechaEmision(),new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()),recibidos);
+		SolicitudFabricaVO vo = new SolicitudFabricaVO(this.getNumero(),this.getFechaEmision(),new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()),articulos);
 		return vo;
 	}
 
 	public void setVO(SolicitudFabricaVO vo)
 	{
-		Collection<Articulo> articulos = new Vector<Articulo>();
 		Collection<ArticuloAFabricar> recibidos = new Vector<ArticuloAFabricar>();
 		
-		Iterator a = (Iterator)vo.getArticulo().iterator();
 		Iterator rec = (Iterator) vo.getarticulosAFabricar().iterator();
-		
-		while(a.hasNext())
-			articulos.add((Articulo)a.next());
-		
+
 		while(rec.hasNext())
 			recibidos.add((ArticuloAFabricar)rec.next());	
 		
 		this.setNumero(vo.getNumero());
-		this.setArticulos(articulos);
 		this.setFechaEmision(vo.getFechaEmision());
 		this.setFabrica(new Fabrica(vo.getFabrica().getCodigoFabrica(),vo.getFabrica().getNombreFabrica()));
 		this.setarticulosAFabricar(recibidos);
 	}
 
 	@OneToMany
-	public Collection<ArticuloAFabricar> getarticulosAFabricar() {
+	public Collection<ArticuloAFabricar> getArticulosAFabricar() {
 		return articulosAFabricar;
 	}
 

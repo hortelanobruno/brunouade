@@ -1,11 +1,10 @@
 package BusinessLogic;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.Vector;
-
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -15,11 +14,10 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import VO.ArticuloHeaderVO;
+import VO.CategoriaHogarVO;
+import VO.LineaRopaVO;
 import VO.SolicitudVO;
 
 @Entity
@@ -33,17 +31,7 @@ public class Solicitud implements Serializable
 	private int numero;
 	private Date fechaEmision;
 	private CentroDistribucion centro;
-	private Collection<Articulo> articulos;
     
-	@OneToMany
-	public Collection<Articulo> getArticulos() {
-		return articulos;
-	}
-
-	public void setArticulos(Collection<Articulo> articulos) {
-		this.articulos = articulos;
-	}
-
 	public Solicitud() {
 		// TODO Auto-generated constructor stub
 	}
@@ -67,26 +55,35 @@ public class Solicitud implements Serializable
 	
 	@Transient
 	public SolicitudVO getVO()
-	{
-		Collection<ArticuloHeaderVO> articulos = new Vector<ArticuloHeaderVO>();
-		Iterator a = (Iterator) this.getArticulos().iterator();
-	
-		while(a.hasNext())
-			articulos.add((ArticuloHeaderVO)a.next());		
-		
-		SolicitudVO vo = new SolicitudVO(numero,articulos,fechaEmision);
+	{	
+		SolicitudVO vo = new SolicitudVO(numero,fechaEmision,this.centro.getVO());
 		return vo;
 	}
 
 	public void setVO(SolicitudVO vo)
 	{
-		Collection<Articulo> articulos = new Vector<Articulo>();
 		this.setNumero(vo.getNumero());
 		this.setFechaEmision(vo.getFechaEmision());
-		Iterator a = (Iterator)vo.getArticulo().iterator();
-		while(a.hasNext())
-			articulos.add((Articulo)a.next());
-		this.setArticulos(articulos);
+		
+		Iterator it = this.centro.getLineasRopa().iterator();
+		Collection<LineaRopa> lineas = new ArrayList<LineaRopa>();
+		while(it.hasNext()){
+			LineaRopaVO lineaVO = (LineaRopaVO) it.next();
+			LineaRopa linea = new LineaRopa(lineaVO.getIdLinea(),lineaVO.getLinea());
+			lineas.add(linea);
+		}
+		
+		Iterator it2 = this.centro.getCategoriasHogar().iterator();
+		Collection<CategoriaHogar> categorias = new ArrayList<CategoriaHogar>();
+		while(it2.hasNext()){
+			CategoriaHogarVO catVO = (CategoriaHogarVO) it.next();
+			CategoriaHogar cat = new CategoriaHogar(catVO.getIdCategoria(),catVO.getCategoria());
+			categorias.add(cat);
+		}
+		
+		CentroDistribucion centro = new CentroDistribucion(vo.getCdVO().getCodCentro(),vo.getCdVO().getNombreCentro(),vo.getCdVO().getLongitud(),vo.getCdVO().getLatitud(),lineas,categorias);
+		this.setCentro(centro);
+		
 	}
 
 	@ManyToOne

@@ -1,5 +1,6 @@
 package BusinessLogic;
 
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.ejb.Remote;
 
@@ -18,7 +19,8 @@ import VO.TiendaVO;
 public interface ServerFacade 
 {
 	public int getTest(); //Prueba
-	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar);
+	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, ArrayList<String> lineasRopa, ArrayList<String> categoriasHogar);
+	public CentroDistribucion getCentro();
 	
 	
 	//panel sol dist

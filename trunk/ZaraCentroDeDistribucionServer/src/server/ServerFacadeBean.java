@@ -1,5 +1,6 @@
 package server;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.ejb.EJB;
@@ -109,7 +110,7 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.guardarSolicitudReposicion(solRepVO);
 	}
 
-	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
+	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, ArrayList<String> lineasRopa, ArrayList<String> categoriasHogar) 
 	{
 		this.admConf.guardarDatosCD(codigo, nombre, longitud, latitud, lineasRopa, categoriasHogar);
 	}

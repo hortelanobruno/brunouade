@@ -2,60 +2,93 @@ package BusinessLogic;
 
 import java.io.Serializable;
 
-import javax.persistence.EmbeddedId;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
-@Table(name="ArticulosPendientes")
+@Table(name="ArticulosAFabricar")
 public class ArticuloAFabricar implements Serializable
 {
 	private static final long serialVersionUID = 2677497498084042849L;
-	private PKArtPendiente id;
+	private int idAAF;
 	private Articulo art;
-	private Solicitud sol;
+	private SolicitudDistribucion sol;
+	private Fabrica fabrica;
+	private int cantidadPedida;
+	private int cantidadRecibida;
 
 	public ArticuloAFabricar()
 	{
 		
 	}
 	
-	public ArticuloAFabricar(Articulo art, Solicitud sol)
+	public ArticuloAFabricar(int id, Articulo art, SolicitudDistribucion sol, Fabrica f, int cant)
 	{
+		this.setIdAAF(id);
 		this.setArt(art);
 		this.setSol(sol);
-		this.setId(new PKArtPendiente(art.getCodigo(),sol.getNumero()));
+		this.setFabrica(f);
+		this.setCantidadPedida(cant);
+		this.setCantidadRecibida(0);
 	}
 	
-	@Transient
-	public Solicitud getSol() 
+	@ManyToOne
+	public SolicitudDistribucion getSol() 
 	{
 		return sol;
 	}
 	
-	public void setSol(Solicitud sol) 
+	public void setSol(SolicitudDistribucion sol) 
 	{
 		this.sol = sol;
 	}
 
-	@EmbeddedId
-	public PKArtPendiente getId() 
-	{
-		return id;
-	}
-
-	public void setId(PKArtPendiente id) 
-	{
-		this.id = id;
-	}
-
-	@Transient
+	@ManyToOne
 	public Articulo getArt() {
 		return art;
 	}
 
 	public void setArt(Articulo art) {
 		this.art = art;
+	}
+
+	@Id
+	@Column(name="id")
+	public int getIdAAF() {
+		return idAAF;
+	}
+
+	public void setIdAAF(int idAAF) {
+		this.idAAF = idAAF;
+	}
+
+	@ManyToOne
+	public Fabrica getFabrica() {
+		return fabrica;
+	}
+
+	public void setFabrica(Fabrica fabrica) {
+		this.fabrica = fabrica;
+	}
+
+	@Column
+	public int getCantidadPedida() {
+		return cantidadPedida;
+	}
+
+	public void setCantidadPedida(int cantidadPedida) {
+		this.cantidadPedida = cantidadPedida;
+	}
+
+	@Column
+	public int getCantidadRecibida() {
+		return cantidadRecibida;
+	}
+
+	public void setCantidadRecibida(int cantidadRecibida) {
+		this.cantidadRecibida = cantidadRecibida;
 	}
 }

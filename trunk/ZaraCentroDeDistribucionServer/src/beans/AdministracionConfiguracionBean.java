@@ -1,5 +1,6 @@
 package beans;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.ejb.Stateless;
@@ -17,19 +18,19 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 	@PersistenceContext(unitName="CentroDeDistribucion")
 	private EntityManager em;
 	
-	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, Vector<String> lineasRopa, Vector<String> categoriasHogar) 
+	public void guardarDatosCD(int codigo, String nombre, float longitud, float latitud, ArrayList<String> lineasRopa, ArrayList<String> categoriasHogar) 
 	{
 		CentroDistribucion cd = em.find(CentroDistribucion.class, codigo);
 		if(cd == null)
 		{
-			Vector<LineaRopa> lr = new Vector<LineaRopa>();
-			Vector<CategoriaHogar> ch = new Vector<CategoriaHogar>();
+			ArrayList<LineaRopa> lr = new ArrayList<LineaRopa>();
+			ArrayList<CategoriaHogar> ch = new ArrayList<CategoriaHogar>();
 			
 			for(int i = 0; i< lineasRopa.size();i++)
-				lr.add(new LineaRopa((i+1),lineasRopa.elementAt(i)));	
+				lr.add(new LineaRopa((i+1),lineasRopa.get(i)));	
 			
 			for(int i = 0; i< categoriasHogar.size(); i++)
-				ch.add(new CategoriaHogar((i+1),categoriasHogar.elementAt(i)));
+				ch.add(new CategoriaHogar((i+1),categoriasHogar.get(i)));
 
 			cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lr,ch);
 			System.out.println("ya arme el cd.\n");
@@ -75,6 +76,11 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 	public Vector<String> getLineasRopa()
 	{
 		return null;
+	}
+
+	public CentroDistribucion getCentro() 
+	{
+		return em.find(CentroDistribucion.class, 1);
 	}
 	
 }
