@@ -17,7 +17,7 @@ import Vistas.VistaNewArt;
 import Vistas.VistaRepArt;
 import Vistas.VistaSolDis;
 import BusinessLogic.BusinessDelegate;
-import Exceptions.ErrorConeccionException;
+import Exceptions.ErrorConectionException;
 
 public class Main 
 {
@@ -51,7 +51,7 @@ public class Main
 		    ControladorPanelNewArt cNewArt = new ControladorPanelNewArt(modelo,vNewArt);
 		    ControladorPanelRepArt cRepArt = new ControladorPanelRepArt(modelo,vRepArt);
 		    ControladorPanelSolDis cSolDis = new ControladorPanelSolDis(modelo,vSolDis);
-		} catch (ErrorConeccionException e) {
+		} catch (ErrorConectionException e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, e.getMessage(),Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 		}

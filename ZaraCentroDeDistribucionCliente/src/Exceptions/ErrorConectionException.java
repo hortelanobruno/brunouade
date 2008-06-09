@@ -1,13 +1,13 @@
 package Exceptions;
 
-public class ErrorConeccionException extends Exception{
+public class ErrorConectionException extends Exception{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public ErrorConeccionException(String mensaje) {
+	public ErrorConectionException(String mensaje) {
 		super(mensaje);
 	}
 	

@@ -1,5 +1,6 @@
 package BusinessLogic;
 
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.ejb.Remote;
 
@@ -21,8 +22,8 @@ public interface ServerFacade
 	
 	
 	//panel sol dist
-	public Vector<String> getDescripciones(Vector<Long> codigos);
-	public Vector<Integer> getStocks(Vector<Long> codigos);
+	public ArrayList<String> getDescripciones(ArrayList<Long> codigos);
+	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
 	
 	public void guardarSolicitud(SolicitudDistribucionVO soldist);
 	public int getNumeroSolEnv();
@@ -33,15 +34,15 @@ public interface ServerFacade
 	public void guardarArticulosAEnviar();
 	
 	//	panel envios
-	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda);
+	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
 	
 	
 	//panel gen sol fab
 	public SolicitudFabricaVO getSolFab(long codigo);
-	public Vector<SolicitudFabricaVO> getAllSolFab();
+	public ArrayList<SolicitudFabricaVO> getAllSolFab();
 	
 	//panel reposicion
-	public void actualizarStock(Vector<ArticuloHeaderVO> arts);
+	public void actualizarStock(ArrayList<ArticuloHeaderVO> arts);
 	public void actualizarSolFab(SolicitudFabricaVO solFab);
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
 	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab);
@@ -50,6 +51,9 @@ public interface ServerFacade
 	//panel new art
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
+	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
+	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
+	public void guardarArticulosPendientes();
 	
 	
 	
