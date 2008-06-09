@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import VO.LineaRopaVO;
+
 @Entity
 @Table(name="lineasRopa")
 public class LineaRopa 
@@ -44,5 +46,17 @@ public class LineaRopa
 	public void setLinea(String linea) 
 	{
 		this.linea = linea;
+	}
+	
+	public LineaRopaVO getVO(){
+		LineaRopaVO lin = new LineaRopaVO();
+		lin.setIdLinea(this.getIdLinea());
+		lin.setLinea(this.getLinea());
+		return lin;
+	}
+	
+	public void setVO(LineaRopaVO lin){
+		this.setIdLinea(lin.getIdLinea());
+		this.setLinea(lin.getLinea());
 	}
 }

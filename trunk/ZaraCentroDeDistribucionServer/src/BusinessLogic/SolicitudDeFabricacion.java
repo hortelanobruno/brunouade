@@ -1,5 +1,6 @@
 package BusinessLogic;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
@@ -30,7 +31,7 @@ public class SolicitudDeFabricacion extends Solicitud
 	{
 		super(n,f);
 		this.fabrica = fa;
-		this.setarticulosAFabricar(a);
+		this.setArticulosAFabricar(a);
 	}
 	
 	@ManyToOne
@@ -46,28 +47,43 @@ public class SolicitudDeFabricacion extends Solicitud
 	public SolicitudFabricaVO getVO()
 	{
 		Collection<ArticuloAFabricarVO> articulos = new Vector<ArticuloAFabricarVO>();
-			
 		Iterator rec = (Iterator) this.getArticulosAFabricar().iterator();
-		while(rec.hasNext())
-			articulos.add((ArticuloAFabricarVO)rec.next());
-		
+		while(rec.hasNext()){
+			ArticuloAFabricar arti = (ArticuloAFabricar)rec.next();
+			ArticuloAFabricarVO art = new ArticuloAFabricarVO();
+			art.setIdAAF(arti.getIdAAF());
+			art.setCantidadPedida(arti.getCantidadPedida());
+			art.setCantidadRecibida(arti.getCantidadRecibida());
+			art.setArt(arti.getArt().getVO());
+			art.setFabrica(arti.getFabrica().getVO());
+			art.setSol(arti.getSol().getVO());
+			articulos.add(art);
+		}
 		SolicitudFabricaVO vo = new SolicitudFabricaVO(this.getNumero(),this.getFechaEmision(),new FabricaVO(fabrica.getCodigoFabrica(),fabrica.getNombreFabrica()),articulos,this.getCentro().getVO());
 		return vo;
 	}
 
 	public void setVO(SolicitudFabricaVO vo)
 	{
-		Collection<ArticuloAFabricar> recibidos = new Vector<ArticuloAFabricar>();
-		
-		Iterator rec = (Iterator) vo.getarticulosAFabricar().iterator();
+		Collection<ArticuloAFabricar> recibidos = new ArrayList<ArticuloAFabricar>();
+		Iterator rec = (Iterator) vo.getArticulosAFabricar().iterator();
+		while(rec.hasNext()){
+			ArticuloAFabricarVO art = (ArticuloAFabricarVO)rec.next();
+			ArticuloAFabricar arti = new ArticuloAFabricar();
+			arti.setVO(art);
+			recibidos.add(arti);
+		}
+				
 
-		while(rec.hasNext())
-			recibidos.add((ArticuloAFabricar)rec.next());	
-		
+		CentroDistribucion cent = new CentroDistribucion();
+		cent.setVO(vo.getCdVO());
+		this.setCentro(cent);
 		this.setNumero(vo.getNumero());
 		this.setFechaEmision(vo.getFechaEmision());
-		this.setFabrica(new Fabrica(vo.getFabrica().getCodigoFabrica(),vo.getFabrica().getNombreFabrica()));
-		this.setarticulosAFabricar(recibidos);
+		Fabrica fab = new Fabrica();
+		fab.setVO(vo.getFabrica());
+		this.setFabrica(fab);
+		this.setArticulosAFabricar(recibidos);
 	}
 
 	@OneToMany
@@ -75,7 +91,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		return articulosAFabricar;
 	}
 
-	public void setarticulosAFabricar(Collection<ArticuloAFabricar> articulosAFabricar) {
+	public void setArticulosAFabricar(Collection<ArticuloAFabricar> articulosAFabricar) {
 		this.articulosAFabricar = articulosAFabricar;
 	}
 }

@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import VO.ArticuloAEnviarVO;
+
 @Entity
 @Table(name="ArticulosAEnviar")
 public class ArticuloAEnviar implements Serializable
@@ -72,4 +74,25 @@ public class ArticuloAEnviar implements Serializable
 	public void setCantidadAEnviar(int cantidadAEnviar) {
 		this.cantidadAEnviar = cantidadAEnviar;
 	}
+	
+	public ArticuloAEnviarVO getVO(){
+		ArticuloAEnviarVO art = new ArticuloAEnviarVO();
+		art.setIdAAE(this.getIdAAE());
+		art.setCantidadAEnviar(this.getCantidadAEnviar());
+		art.setArt(this.getArt().getVO());
+		art.setSolDis(this.getSolDis().getVO());
+		return art;
+	}
+	
+	public void setVO(ArticuloAEnviarVO art){
+		this.setIdAAE(art.getIdAAE());
+		this.setCantidadAEnviar(art.getCantidadAEnviar());
+		Articulo art2 = new Articulo();
+		art2.setVO(art.getArt());
+		this.setArt(art2);
+		SolicitudDistribucion solDis = new SolicitudDistribucion();
+		solDis.setVO(art.getSolDis());
+		this.setSolDis(solDis);
+	}
+	
 }

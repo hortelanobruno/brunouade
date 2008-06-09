@@ -19,7 +19,7 @@ public class SolicitudFabricaVO extends SolicitudVO implements Serializable
 	{
 		super(n,f,centro);
 		this.fabrica = fa;
-		this.setarticulosAFabricar(recibidos);
+		this.setArticulosAFabricar(recibidos);
 	}
 
 	public FabricaVO getFabrica() {
@@ -31,11 +31,11 @@ public class SolicitudFabricaVO extends SolicitudVO implements Serializable
 		this.fabrica = fabrica;
 	}
 
-	public Collection<ArticuloAFabricarVO> getarticulosAFabricar() {
+	public Collection<ArticuloAFabricarVO> getArticulosAFabricar() {
 		return articulosAFabricar;
 	}
 
-	public void setarticulosAFabricar(Collection<ArticuloAFabricarVO> articulosAFabricar) {
+	public void setArticulosAFabricar(Collection<ArticuloAFabricarVO> articulosAFabricar) {
 		this.articulosAFabricar = articulosAFabricar;
 	}
 	

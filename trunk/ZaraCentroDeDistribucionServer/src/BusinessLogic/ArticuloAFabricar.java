@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import VO.ArticuloAFabricarVO;
+
 @Entity
 @Table(name="ArticulosAFabricar")
 public class ArticuloAFabricar implements Serializable
@@ -90,5 +92,31 @@ public class ArticuloAFabricar implements Serializable
 
 	public void setCantidadRecibida(int cantidadRecibida) {
 		this.cantidadRecibida = cantidadRecibida;
+	}
+	
+	public ArticuloAFabricarVO getVO(){
+		ArticuloAFabricarVO art = new ArticuloAFabricarVO();
+		art.setIdAAF(this.getIdAAF());
+		art.setCantidadPedida(this.getCantidadPedida());
+		art.setCantidadRecibida(this.getCantidadRecibida());
+		art.setFabrica(this.getFabrica().getVO());
+		art.setSol(this.getSol().getVO());
+		art.setArt(this.getArt().getVO());
+		return art;
+	}
+	
+	public void setVO(ArticuloAFabricarVO art){
+		this.setIdAAF(art.getIdAAF());
+		this.setCantidadPedida(art.getCantidadPedida());
+		this.setCantidadRecibida(art.getCantidadRecibida());
+		Fabrica fab = new Fabrica();
+		fab.setVO(art.getFabrica());
+		this.setFabrica(fab);
+		Articulo art2 = new Articulo();
+		art2.setVO(art.getArt());
+		this.setArt(art2);
+		SolicitudDistribucion sol = new SolicitudDistribucion();
+		sol.setVO(art.getSol());
+		this.setSol(sol);
 	}
 }

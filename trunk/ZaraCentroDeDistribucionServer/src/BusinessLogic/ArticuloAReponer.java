@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import VO.ArticuloAReponerVO;
+
 @Entity
 @Table(name="ArticulosAReponer")
 public class ArticuloAReponer implements Serializable 
@@ -66,4 +68,24 @@ public class ArticuloAReponer implements Serializable
 		this.sr = sr;
 	}
 	
+	
+	public ArticuloAReponerVO getVO(){
+		ArticuloAReponerVO art = new ArticuloAReponerVO();
+		art.setIdAAR(this.getIdAAR());
+		art.setCantidad(this.getCantidad());
+		art.setArt(this.getArt().getVO());
+		art.setSr(this.getSr().getVO());
+		return art;
+	}
+	
+	public void setVO(ArticuloAReponerVO art){
+		this.setIdAAR(art.getIdAAR());
+		this.setCantidad(art.getCantidad());
+		Articulo art2 = new Articulo();
+		art2.setVO(art.getArt());
+		this.setArt(art2);
+		SolicitudReposicion sr = new SolicitudReposicion();
+		sr.setVO(art.getSr());
+		this.setSr(sr);
+	}
 }
