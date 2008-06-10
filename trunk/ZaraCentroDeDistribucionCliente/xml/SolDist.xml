@@ -16,6 +16,11 @@
 			<codigo>1001</codigo>
 			<cantidad>20</cantidad>
 		</articuloropa>
+		
+		<articulohogar>
+			<codigo>1001</codigo>
+			<cantidad>54</cantidad>
+		</articulohogar>
 
 	</articulosropa>
 </solicituddistribucion>
