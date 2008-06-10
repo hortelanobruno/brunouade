@@ -44,7 +44,7 @@ public class BusinessDelegate extends ProxyModelo
 		categoriasHogar.add("decoracion");
 		categoriasHogar.add("baño");
 		
-		this.getModCD().guardarDatosCD(1, "Shopping Centro", 56.887521f, 34.90417f, lineasRopa, categoriasHogar);
+		//this.getModCD().guardarDatosCD(1, "Shopping Centro", 56.887521f, 34.90417f, lineasRopa, categoriasHogar);
 	}
 	
 	// Test de nacho
