@@ -1,1 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<solrep>
+	<articulorecibido>
+		<codigo>1001</codigo>
+		<cantidad>10</cantidad>
+	<articulorecibido>
+	
+	<articulorecibido>
+		<codigo>1002</codigo>
+		<cantidad>15</cantidad>
+	<articulorecibido>
+	
+	<articulorecibido>
+		<codigo>1000</codigo>
+		<cantidad>18</cantidad>
+	<articulorecibido>
+</solrep>
