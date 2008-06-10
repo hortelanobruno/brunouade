@@ -2,10 +2,8 @@ package server;
 
 import java.util.ArrayList;
 import java.util.Vector;
-
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-
 import BusinessLogic.CentroDistribucion;
 import BusinessLogic.ServerFacade;
 import Exceptions.ExistingProductException;
