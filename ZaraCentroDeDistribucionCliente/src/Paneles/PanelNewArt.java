@@ -24,13 +24,11 @@ import GUI.MenuPrincipal;
  * 
  * @author Administrador
  */
-public class PanelNewArt extends javax.swing.JPanel {
-
+public class PanelNewArt extends javax.swing.JPanel 
+{
 	/** Creates new form PanelNewArt */
 	private static final long serialVersionUID = 1L;
-
 	private MenuPrincipal ref;
-	private XMLArticulo articuloXML;
 	private VistaNewArt vistaNewArt;
 	private boolean cargarTable;
 	private String urlXML = null;
@@ -178,6 +176,7 @@ public class PanelNewArt extends javax.swing.JPanel {
 	}
 
 	public void update() {
+		XMLArticulo articuloXML;
 		if(cargarTable){
 			//cargar articulo
 			XMLWrapper xml = new XMLWrapper();
