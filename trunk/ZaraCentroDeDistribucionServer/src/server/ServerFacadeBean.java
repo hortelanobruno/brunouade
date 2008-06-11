@@ -2,21 +2,26 @@ package server;
 
 import java.util.ArrayList;
 import java.util.Vector;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import BusinessLogic.CentroDistribucion;
+
 import BusinessLogic.ServerFacade;
 import Exceptions.ExistingProductException;
+import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
+import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
 import VO.TiendaVO;
-import beans.*;
+import beans.AdministracionConfiguracion;
+import beans.AdministradorArticulos;
+import beans.AdministradorSolicitudes;
 
 @Stateless
 public class ServerFacadeBean implements ServerFacade 
@@ -45,7 +50,7 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.guardarSolicitud(soldist);
 	}
 
-	public Vector<SolicitudFabricaVO> getAllSolFab() 
+	public ArrayList<SolicitudFabricaVO> getAllSolFab() 
 	{
 		return this.admSol.getAllSolFab();
 	}
@@ -55,7 +60,7 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getSolFab(codigo);
 	}
 
-	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda) 
+	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda) 
 	{
 		return this.admSol.getSolsFab(codTienda);
 	}
@@ -150,8 +155,18 @@ public class ServerFacadeBean implements ServerFacade
 		this.admArt.guardarArticulosAEnviar();	
 	}
 
-	public CentroDistribucion getCentro() 
+	public CentroDistribucionVO getCentro() 
 	{
 		return this.admConf.getCentro();
+	}
+	
+	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void guardarArticulosPendientes() {
+		// TODO Auto-generated method stub
+		
 	}
 }

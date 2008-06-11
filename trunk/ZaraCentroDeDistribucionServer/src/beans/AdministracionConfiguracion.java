@@ -5,13 +5,13 @@ import java.util.Vector;
 
 import javax.ejb.Remote;
 
-import BusinessLogic.CentroDistribucion;
+import VO.CentroDistribucionVO;
 
 @Remote
 public interface AdministracionConfiguracion 
 {
 	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, ArrayList<String> lineasRopa, ArrayList<String> categoriasHogar);
-	public CentroDistribucion getCentro();
+	public CentroDistribucionVO getCentro();
 	public void addLineaRopa(int cod, String linea);
 	public void addCategoriaHogar(int cod, String categoria);
 	public Vector<String> getCategoriasHogar();
