@@ -75,12 +75,12 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.guardarSolicitudFabricacion(solFab);
 	}
 
-	public ArrayList<String> getDescripciones(ArrayList<Long> codigos) 
+	public ArrayList<String> getDescripciones(ArrayList<Integer> codigos) 
 	{
 		return admArt.getDescripciones(codigos);
 	}
 
-	public ArrayList<Integer> getStocks(ArrayList<Long> codigos) 
+	public ArrayList<Integer> getStocks(ArrayList<Integer> codigos) 
 	{
 		return admArt.getStocks(codigos);
 	}

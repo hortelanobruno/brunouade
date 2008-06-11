@@ -23,7 +23,7 @@ import VO.ArticuloHeaderVO;
 public class Articulo implements Serializable
 {
 	private static final long serialVersionUID = 2235551485752041708L;
-	private long codigo;
+	private int codigo;
 	private String descripcion;
 	private float precio;
 	private String seccion;
@@ -31,7 +31,7 @@ public class Articulo implements Serializable
 	private String linea;
     private int cantidad;
     
-    public Articulo(long codigo, int cantidad){
+    public Articulo(int codigo, int cantidad){
         this.cantidad=cantidad;
         this.codigo=codigo;
     }
@@ -121,11 +121,11 @@ public class Articulo implements Serializable
 
 	@Id
 	@Column
-	public long getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 }

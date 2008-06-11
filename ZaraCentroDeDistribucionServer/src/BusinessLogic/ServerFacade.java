@@ -24,8 +24,8 @@ public interface ServerFacade
 	public CentroDistribucionVO getCentro();
 	
 	//panel sol dist
-	public ArrayList<String> getDescripciones(ArrayList<Long> codigos);
-	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
+	public ArrayList<String> getDescripciones(ArrayList<Integer> codigos);
+	public ArrayList<Integer> getStocks(ArrayList<Integer> codigos);
 	
 	public void guardarSolicitud(SolicitudDistribucionVO soldist);
 	public int getNumeroSolEnv();
