@@ -49,7 +49,9 @@ public class XMLWrapper
         xstream.alias("solrep", XMLSolRep.class);
         xstream.alias("fabrica", FabricaVO.class);
         xstream.alias("articulorecibido", XMLArticuloRecibido.class);
-
-        return xmlAdapter.getSolRepVOFromXML((XMLSolRep) xstream.fromXML(XML));
+        XMLSolRep srep = (XMLSolRep) xstream.fromXML(XML);
+        
+        System.out.println("hola");
+        return xmlAdapter.getSolRepVOFromXML(srep);
 	}
 }

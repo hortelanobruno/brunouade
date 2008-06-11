@@ -4,27 +4,27 @@
 
 	<codigo>1077</codigo>
 	
-	<solfab>1</solfab>
+	<codSolFab>1</codSolFab>
 	
 	<fabrica>
 		<codigoFabrica>1</codigoFabrica>
 		<nombreFabrica>Florida</nombreFabrica>
 	</fabrica>
 	
-	<articulosrecibidos>
+	<articulosRecibidos>
 		<articulorecibido>
-			<codigo>1001</codigo>
-			<cantidad>10</cantidad>
+			<codArt>1001</codArt>
+			<cant>10</cant>
 		</articulorecibido>
 	
 		<articulorecibido>
-			<codigo>1002</codigo>
-			<cantidad>15</cantidad>
+			<codArt>1002</codArt>
+			<cant>15</cant>
 		</articulorecibido>
 	
 		<articulorecibido>
-			<codigo>1000</codigo>
-			<cantidad>18</cantidad>
+			<codArt>1000</codArt>
+			<cant>18</cant>
 		</articulorecibido>
-	</articulosrecibidos>
+	</articulosRecibidos>
 </solrep>

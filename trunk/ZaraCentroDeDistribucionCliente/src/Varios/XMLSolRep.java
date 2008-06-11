@@ -8,8 +8,7 @@ public class XMLSolRep
 {
 	private int codigo;
 	private int codSolFab;
-	private FabricaVO fabrica;
-	
+	private FabricaVO fabrica;	
 	private Vector<XMLArticuloRecibido> articulosRecibidos;
 	
 	public Vector<XMLArticuloRecibido> getArticulosRecibidos() {
