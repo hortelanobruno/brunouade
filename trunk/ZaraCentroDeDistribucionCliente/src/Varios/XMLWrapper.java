@@ -32,11 +32,8 @@ public class XMLWrapper
     	FileReaderWrapper fileReader = new FileReaderWrapper(url);
         String XML = fileReader.obtenerContenido();
         XStream xstream = new XStream();
-
         xstream.alias("XMLArticulo", XMLArticulo.class);
-
         XMLArticulo art = (XMLArticulo) xstream.fromXML(XML);
-
         return art;
     }
 

@@ -14,6 +14,7 @@ public class XMLSolRep
 	public Vector<XMLArticuloRecibido> getArticulosRecibidos() {
 		return articulosRecibidos;
 	}
+	
 	public void setArticulosRecibidos(Vector<XMLArticuloRecibido> articulosRecibidos) {
 		this.articulosRecibidos = articulosRecibidos;
 	}
