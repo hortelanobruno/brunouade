@@ -6,6 +6,6 @@
 </archive>
 <archive destination="dist" exploded="false" name="ServerApp.ear" used="true">
 <file location="application.xml" name="application.xml" prefix="META-INF" project="" projectLocation="application.xml" used="true"/>
-<file location="ServerEJB.jar" name="ServerEJB.jar" prefix="" project="" projectLocation="ServerEJB.jar" used="true"/>
+<file location="dist/ServerEJB.jar" name="ServerEJB.jar" prefix="" project="" projectLocation="dist/ServerEJB.jar" used="true"/>
 </archive>
 </configurations>
