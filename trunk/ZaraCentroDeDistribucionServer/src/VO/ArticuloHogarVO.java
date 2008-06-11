@@ -8,7 +8,7 @@ public class ArticuloHogarVO extends ArticuloHeaderVO
 	private String categoria;
 	private String medidas;
 	
-	public ArticuloHogarVO(String desc, long codigo, int cantidad,String color,float precio, String linea, String seccion,String detalles,String composicion, String categoria, String medidas)
+	public ArticuloHogarVO(String desc, int codigo, int cantidad,String color,float precio, String linea, String seccion,String detalles,String composicion, String categoria, String medidas)
 	{
 		super( desc,  codigo,  cantidad, color, precio,  linea,  seccion);
 		this.setDetalles(detalles);

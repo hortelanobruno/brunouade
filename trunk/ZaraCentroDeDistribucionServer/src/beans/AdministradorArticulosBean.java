@@ -31,7 +31,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	}
 	
-	public ArrayList<String> getDescripciones(ArrayList<Long> cods) 
+	public ArrayList<String> getDescripciones(ArrayList<Integer> cods) 
 	{
 		ArrayList<String> descs = new ArrayList<String>();
 		for(int i = 0; i < cods.size();i++)
@@ -43,7 +43,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 		return descs;
 	}
-	public ArrayList<Integer> getStocks(ArrayList<Long> cods) 
+	public ArrayList<Integer> getStocks(ArrayList<Integer> cods) 
 	{
 		ArrayList<Integer> stocks = new ArrayList<Integer>();
 		for(int i = 0; i < cods.size();i++)

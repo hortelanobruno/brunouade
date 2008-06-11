@@ -16,8 +16,8 @@ public interface AdministradorArticulos
 	
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
-	public ArrayList<String> getDescripciones(ArrayList<Long> cods);
-	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
+	public ArrayList<String> getDescripciones(ArrayList<Integer> cods);
+	public ArrayList<Integer> getStocks(ArrayList<Integer> codigos);
 	public void actualizarStock(Vector<ArticuloHeaderVO> arts);
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public void guardarArticulosAFabricar();
