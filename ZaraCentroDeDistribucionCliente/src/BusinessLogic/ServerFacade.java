@@ -9,6 +9,7 @@ import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
+import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
@@ -20,7 +21,7 @@ public interface ServerFacade
 {
 	public int getTest(); //Prueba
 	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, ArrayList<String> lineasRopa, ArrayList<String> categoriasHogar);
-	public CentroDistribucion getCentro();
+	public CentroDistribucionVO getCentro();
 	
 	//panel sol dist
 	public ArrayList<String> getDescripciones(ArrayList<Long> codigos);
