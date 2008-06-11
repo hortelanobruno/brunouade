@@ -1,8 +1,11 @@
 package BusinessLogic;
 
+import java.lang.reflect.UndeclaredThrowableException;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 import javax.naming.Context;
+import javax.naming.InitialContext;
 
 import Exceptions.ErrorConectionException;
 import Exceptions.ExistingProductException;
@@ -60,8 +63,14 @@ public class BusinessDelegate extends ProxyModelo
 	 */
     protected void getConnection() throws ErrorConectionException {
         try {
-        	Context jndiContext = getInitialContext();
-			this.modCD = (ServerFacade)jndiContext.lookup(naming);
+        	//Context jndiContext = getInitialContext();
+        	//this.modCD = (ServerFacade)jndiContext.lookup(naming);
+        	Hashtable props = new Hashtable();
+			props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
+			props.put(InitialContext.PROVIDER_URL,"jnp://127.0.0.1:1099");
+			InitialContext context = new InitialContext(props);
+			this.modCD = (ServerFacade) context.lookup(naming);
+			
 
         } catch (Exception e) {
         	e.printStackTrace();
@@ -77,8 +86,10 @@ public class BusinessDelegate extends ProxyModelo
 		ArrayList<String> descripciones = new ArrayList<String>();
 		try {
 			descripciones = getModCD().getDescripciones(codigos);
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (UndeclaredThrowableException ex) {
+			ex.getUndeclaredThrowable();
+			ex.getMessage();
+			ex.getCause();
 		}
 		return descripciones;
 	}
