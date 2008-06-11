@@ -45,12 +45,12 @@ public class Main
 	        vConfig.setRef(princ);
 	        
 			//Inicializo todos los controladores
-		    ControladorPanelConfig cConfig = new ControladorPanelConfig(modelo,vConfig);
-		    ControladorPanelEnvios cEnvios = new ControladorPanelEnvios(modelo,vEnvios);
-		    ControladorPanelGenSolFab cGenSolFab = new ControladorPanelGenSolFab(modelo,vGenSolFab);
-		    ControladorPanelNewArt cNewArt = new ControladorPanelNewArt(modelo,vNewArt);
-		    ControladorPanelRepArt cRepArt = new ControladorPanelRepArt(modelo,vRepArt);
-		    ControladorPanelSolDis cSolDis = new ControladorPanelSolDis(modelo,vSolDis);
+		    new ControladorPanelConfig(modelo,vConfig);
+		    new ControladorPanelEnvios(modelo,vEnvios);
+		    new ControladorPanelGenSolFab(modelo,vGenSolFab);
+		    new ControladorPanelNewArt(modelo,vNewArt);
+		    new ControladorPanelRepArt(modelo,vRepArt);
+		    new ControladorPanelSolDis(modelo,vSolDis);
 		} catch (ErrorConectionException e) {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, e.getMessage(),Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
