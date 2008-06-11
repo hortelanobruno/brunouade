@@ -1,8 +1,8 @@
 package beans;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -18,7 +18,6 @@ import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
-import beans.AdministradorSolicitudes;
 
 @Stateless
 public class AdministradorSolicitudesBean implements AdministradorSolicitudes
@@ -38,15 +37,15 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab)
 	{
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
-	public Vector<SolicitudFabricaVO> getAllSolFab() 
+	public ArrayList<SolicitudFabricaVO> getAllSolFab() 
 	{
 		Query q = em.createQuery("select s from SolicitudDeFabricacion");
 		List l = q.getResultList();
-		Vector<SolicitudFabricaVO> ret = new Vector<SolicitudFabricaVO>();
+		ArrayList<SolicitudFabricaVO> ret = new ArrayList<SolicitudFabricaVO>();
 		Iterator it = l.iterator();
 		while(it.hasNext())
 		{
@@ -66,9 +65,9 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return aux.getVO();
 	}
 
-	public Vector<SolicitudFabricaVO> getSolsFab(int codTienda) 
+	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda) 
 	{
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

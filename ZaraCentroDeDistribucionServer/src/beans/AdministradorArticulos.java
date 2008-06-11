@@ -13,6 +13,7 @@ import VO.TiendaVO;
 @Remote
 public interface AdministradorArticulos 
 {
+	
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public ArrayList<String> getDescripciones(ArrayList<Long> cods);

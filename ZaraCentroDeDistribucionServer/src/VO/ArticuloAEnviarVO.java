@@ -11,6 +11,7 @@ public class ArticuloAEnviarVO
 
 	}
 	
+	
 	public ArticuloAEnviarVO(int id, ArticuloHeaderVO art, int cantE, SolicitudDistribucionVO sol)
 	{
 		this.setIdAAE(id);
