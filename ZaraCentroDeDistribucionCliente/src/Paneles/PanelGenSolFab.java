@@ -13,9 +13,10 @@ import Vistas.VistaGenSolFab;
  *
  * @author  Administrador
  */
-public class PanelGenSolFab extends javax.swing.JPanel {
-
-    private MenuPrincipal ref;
+public class PanelGenSolFab extends javax.swing.JPanel 
+{
+	private static final long serialVersionUID = -8198521566525463103L;
+	private MenuPrincipal ref;
     private VistaGenSolFab vistaGenSolFab;
     
     /** Creates new form PanelGenSolFab */
@@ -63,7 +64,8 @@ public class PanelGenSolFab extends javax.swing.JPanel {
                 "Codigo", "Descripcion", "Stock Actual", "Stock Solicitado", "Stock Minimo a Pedir", "Cantidad a Fabricar"
             }
         ) {
-            Class[] types = new Class [] {
+			private static final long serialVersionUID = -1526134383010765513L;
+			Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {

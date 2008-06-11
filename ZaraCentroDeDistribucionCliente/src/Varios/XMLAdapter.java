@@ -2,12 +2,13 @@ package Varios;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
+import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloPedidoVO;
 import VO.ArticuloRopaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
+import VO.SolicitudFabricaVO;
 
 public class XMLAdapter 
 {
@@ -18,7 +19,8 @@ public class XMLAdapter
 		disVO.setTienda(sd.getTienda());
 		Collection<ArticuloPedidoVO> arts = new ArrayList<ArticuloPedidoVO>();
 		
-		for (int i =0 ; i < sd.getArticulosPedidos().size() ; i++){
+		for (int i =0 ; i < sd.getArticulosPedidos().size() ; i++)
+		{
 			XMLArticuloPedido arped = sd.getArticulosPedidos().elementAt(i);
 			ArticuloPedidoVO ar = new ArticuloPedidoVO();
 			ArticuloHeaderVO arhead = new ArticuloHeaderVO();
@@ -33,7 +35,27 @@ public class XMLAdapter
 	
 	public SolicitudDeReposicionVO getSolRepVOFromXML(XMLSolRep sr)
 	{
-		return null;
+		SolicitudDeReposicionVO ret = new SolicitudDeReposicionVO();
+		SolicitudFabricaVO sf = new SolicitudFabricaVO();
+		sf.setFabrica(sr.getFabrica());
+		sf.setNumero(sr.getCodSolFab());
+		ret.setNumero(sr.getCodigo());
+		ret.setFabrica(sr.getFabrica());
+		Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
+		
+		for(int i = 0; i< sr.getArticulosRecibidos().size();i++)
+		{
+			XMLArticuloRecibido ar= sr.getArticulosRecibidos().elementAt(i);
+			ArticuloAReponerVO aar = new ArticuloAReponerVO();
+			ArticuloHeaderVO arhead = new ArticuloHeaderVO();
+			aar.setCantidad(ar.getCant());
+			arhead.setCodigo(ar.getCodArt());
+			aar.setArt(arhead);
+			arts.add(aar);
+		}
+		ret.setArticulosAReponer(arts);
+		ret.setSolFab(sf);
+		return ret;
 	}
 	
 	public ArticuloRopaVO getArticuloRopaVOFromXML(XMLArticulo art)
