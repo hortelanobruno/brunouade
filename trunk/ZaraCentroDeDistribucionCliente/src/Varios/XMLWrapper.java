@@ -1,5 +1,6 @@
 package Varios;
 
+import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.TiendaVO;
@@ -46,6 +47,7 @@ public class XMLWrapper
         XStream xstream = new XStream();
         XMLAdapter xmlAdapter = new XMLAdapter();
         xstream.alias("solrep", XMLSolRep.class);
+        xstream.alias("fabrica", FabricaVO.class);
         xstream.alias("articulorecibido", XMLArticuloRecibido.class);
 
         return xmlAdapter.getSolRepVOFromXML((XMLSolRep) xstream.fromXML(XML));
