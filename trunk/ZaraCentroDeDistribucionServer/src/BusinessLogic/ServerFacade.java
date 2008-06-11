@@ -22,10 +22,9 @@ public interface ServerFacade
 	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, ArrayList<String> lineasRopa, ArrayList<String> categoriasHogar);
 	public CentroDistribucion getCentro();
 	
-	
 	//panel sol dist
-	public Vector<String> getDescripciones(Vector<Long> codigos);
-	public Vector<Integer> getStocks(Vector<Long> codigos);
+	public ArrayList<String> getDescripciones(ArrayList<Long> codigos);
+	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
 	
 	public void guardarSolicitud(SolicitudDistribucionVO soldist);
 	public int getNumeroSolEnv();

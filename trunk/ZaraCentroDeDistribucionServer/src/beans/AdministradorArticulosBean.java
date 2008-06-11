@@ -1,5 +1,6 @@
 package beans;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
@@ -30,26 +31,25 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	}
 	
-	public Vector<String> getDescripciones(Vector<Long> cods) 
+	public ArrayList<String> getDescripciones(ArrayList<Long> cods) 
 	{
-		Vector<String> descs = new Vector<String>();
+		ArrayList<String> descs = new ArrayList<String>();
 		for(int i = 0; i < cods.size();i++)
 		{
 			Query q = em.createQuery("select a from articulo a where a.codigo = :codigo");
-			q.setParameter("codigo", cods.elementAt(i));
+			q.setParameter("codigo", cods.get(i));
 			List l = q.getResultList();
 			descs.add(((Articulo)l.get(0)).getDescripcion());
 		}
 		return descs;
 	}
-
-	public Vector<Integer> getStocks(Vector<Long> cods) 
+	public ArrayList<Integer> getStocks(ArrayList<Long> cods) 
 	{
-		Vector<Integer> stocks = new Vector<Integer>();
+		ArrayList<Integer> stocks = new ArrayList<Integer>();
 		for(int i = 0; i < cods.size();i++)
 		{
 			Query q = em.createQuery("select a from articulo a where a.codigo = :codigo");
-			q.setParameter("codigo", cods.elementAt(i));
+			q.setParameter("codigo", cods.get(i));
 			List l = q.getResultList();
 			stocks.add(((Articulo)l.get(0)).getCantidad());
 		}
