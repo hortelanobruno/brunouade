@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import BusinessLogic.CategoriaHogar;
 import BusinessLogic.CentroDistribucion;
 import BusinessLogic.LineaRopa;
+import VO.CentroDistribucionVO;
 import beans.AdministracionConfiguracion;
 
 @Stateless
@@ -78,9 +79,9 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 		return null;
 	}
 
-	public CentroDistribucion getCentro() 
+	public CentroDistribucionVO getCentro() 
 	{
-		return em.find(CentroDistribucion.class, 1);
+		return em.find(CentroDistribucion.class, 1).getVO();
 	}
 	
 }
