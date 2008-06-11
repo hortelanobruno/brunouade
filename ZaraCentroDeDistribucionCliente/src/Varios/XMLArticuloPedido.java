@@ -2,7 +2,7 @@ package Varios;
 
 public class XMLArticuloPedido 
 {
-	private long codArt;
+	private long cod;
 	private int cant;
 	
 	public int getCant() {
@@ -11,10 +11,10 @@ public class XMLArticuloPedido
 	public void setCant(int cant) {
 		this.cant = cant;
 	}
-	public long getCodArt() {
-		return codArt;
+	public long getCod() {
+		return cod;
 	}
-	public void setCodArt(long codArt) {
-		this.codArt = codArt;
+	public void setCod(long codArt) {
+		this.cod = codArt;
 	}
 }
