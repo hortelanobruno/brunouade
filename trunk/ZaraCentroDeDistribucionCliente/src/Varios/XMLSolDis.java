@@ -8,13 +8,13 @@ public class XMLSolDis
 {
 	private int numero;
 	private TiendaVO tienda;
-	private Vector<XMLArticuloPedido> articulosPedidos;
+	private Vector<XMLArticuloPedido> articulospedidos;
 	
 	public Vector<XMLArticuloPedido> getArticulosPedidos() {
-		return articulosPedidos;
+		return articulospedidos;
 	}
 	public void setArticulosPedidos(Vector<XMLArticuloPedido> articulosPedidos) {
-		this.articulosPedidos = articulosPedidos;
+		this.articulospedidos = articulosPedidos;
 	}
 	public int getNumero() {
 		return numero;

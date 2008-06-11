@@ -27,7 +27,7 @@ public class BusinessDelegate extends ProxyModelo
 	{
 		super();
 		this.getConnection();
-		//this.guardarDatosCD();
+		this.guardarDatosCD();
 	}
 	
 	private void guardarDatosCD()
