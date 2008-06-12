@@ -6,7 +6,7 @@ public class ArticuloHeaderVO implements Serializable
 {	
 	private static final long serialVersionUID = -4113593238894788284L;
 	private String descripcion;
-	private int codigo;
+	private long codigo;
 	private int cantidad;
 	private String linea;
 	private float precio;
@@ -37,7 +37,7 @@ public class ArticuloHeaderVO implements Serializable
 		this.linea = linea;
 	}
 
-	public ArticuloHeaderVO(String desc, int codigo, int cantidad,String color,float precio, String linea, String seccion) 
+	public ArticuloHeaderVO(String desc, long codigo, int cantidad,String color,float precio, String linea, String seccion) 
 	{
 		this.setDescripcion(desc);
 		this.setCodigo(codigo);
@@ -66,11 +66,11 @@ public class ArticuloHeaderVO implements Serializable
 		this.cantidad = cantidad;
 	}
 
-	public int getCodigo() {
+	public long getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
 

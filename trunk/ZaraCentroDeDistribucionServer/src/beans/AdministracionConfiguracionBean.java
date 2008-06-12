@@ -35,16 +35,6 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 
 			cd = new CentroDistribucion(codigo, nombre,longitud,latitud,lr,ch);
 			System.out.println("ya arme el cd.\n");
-			
-		/*	for(int i = 0; i< lineasRopa.size();i++)
-				this.addLineaRopa((i+1), lineasRopa.elementAt(i));
-			System.out.println("ya guarde las lineas de ropa. \n");
-			
-			for(int i = 0; i< categoriasHogar.size(); i++)
-				this.addCategoriaHogar((i+1), categoriasHogar.elementAt(i));
-			
-			System.out.println("ya guarde las categorias de hogar. \n");*/
-
 			System.out.println("guardo el cd.\n");
 			em.persist(cd);
 			System.out.println("ya guarde el cd.\n");
@@ -83,5 +73,4 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 	{
 		return em.find(CentroDistribucion.class, 1).getVO();
 	}
-	
 }
