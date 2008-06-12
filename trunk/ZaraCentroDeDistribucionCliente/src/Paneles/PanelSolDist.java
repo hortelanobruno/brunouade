@@ -260,16 +260,20 @@ public class PanelSolDist extends javax.swing.JPanel {
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
 			solDisVO.setFechaEmision(ref.getDate());
 			ArrayList<Long> codigos = new ArrayList<Long>();
-			Iterator arts = (Iterator) solDisVO.getArticulosPedidos()
-					.iterator();
+			int idMax = this.ref.getVistaSolDis().getModelo().getNextId();
+			Iterator arts = (Iterator) solDisVO.getArticulosPedidos().iterator();
+			ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
 			while (arts.hasNext()) {
-				codigos.add(((ArticuloPedidoVO) arts.next()).getArt()
-						.getCodigo());
+				ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
+				idMax++;
+				artVO.setIdAP(idMax);
+				codigos.add(artVO.getArt().getCodigo());
+				artsVO.add(artVO);
 			}
+			solDisVO.setArticulosPedidos(artsVO);
 			ArrayList<String> descripciones = this.ref.getVistaSolDis()
 					.getModelo().getDescripciones(codigos);
-			ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo()
-					.getStocks(codigos);
+			ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
 			CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
 			solDisVO.setCdVO(centroVO);
 			cargarTable(solDisVO, codigos, descripciones, stocks);
@@ -278,12 +282,9 @@ public class PanelSolDist extends javax.swing.JPanel {
 			// Falta generar las solicitudes
 			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
 			Collection<ArticuloAEnviarVO> artiAEnv = (Collection<ArticuloAEnviarVO>) articulosEnviarDeTabla();
-			((ControladorPanelSolDis) vistaSolDis.getControlador())
-					.doGuardarSolicitud(solDisVO);
-			((ControladorPanelSolDis) vistaSolDis.getControlador())
-					.doGuardarArticulosAEnviar(artiAEnv);
-			((ControladorPanelSolDis) vistaSolDis.getControlador())
-					.doGuardarArticulosPendientes(artiAFab);
+			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarSolicitud(solDisVO);
+			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAEnviar(artiAEnv);
+			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAFabricar(artiAFab);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
 			new Dialogo3Opciones("Operacion concretada", this)
@@ -299,6 +300,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 	public Collection<ArticuloAEnviarVO> articulosEnviarDeTabla() {
 		Collection<ArticuloAEnviarVO> art = new ArrayList<ArticuloAEnviarVO>();
 		ArticuloHeaderVO arti;
+		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdAEnv();
 		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
 			long cod = (Long
 					.parseLong((String) ((DefaultTableModel) tableArticulos
@@ -306,6 +308,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 			arti = ((ControladorPanelSolDis) vistaSolDis.getControlador())
 					.doGetArticulo(cod);
 			ArticuloAEnviarVO aEnv = new ArticuloAEnviarVO();
+			idMax++;
+			aEnv.setIdAAE(idMax);
 			aEnv.setArt(arti);
 			aEnv.setCantidadAEnviar(Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString()));
 			aEnv.setSolDis(solDisVO);
@@ -323,6 +327,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 	public Collection<ArticuloAFabricarVO> articulosFabricarDeTabla() {
 		Collection<ArticuloAFabricarVO> art = new ArrayList<ArticuloAFabricarVO>();
 		ArticuloHeaderVO arti;
+		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdAFab();
 		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
 			int ped = Integer.parseInt((((DefaultTableModel) tableArticulos
 					.getModel()).getValueAt(i, 4)).toString());
@@ -340,13 +345,12 @@ public class PanelSolDist extends javax.swing.JPanel {
 				aFab.setCantidadRecibida(0);
 				// aFab.setFabrica()
 				// aFab.setIdAAF();
+				idMax++;
+				aFab.setIdAAF(idMax);
 				aFab.setSol(solDisVO);
 				art.add(aFab);
 			} else {
-				ref
-						.getJTextArea1()
-						.append(
-								"Error al cargar los articulos a fabricar, xq lo seleccionado es mayor que lo pedido\n");
+				ref.getJTextArea1().append("Error al cargar los articulos a fabricar, xq lo seleccionado es mayor que lo pedido\n");
 			}
 		}
 		return art;

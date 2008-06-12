@@ -2,6 +2,7 @@ package BusinessLogic;
 
 import java.lang.reflect.UndeclaredThrowableException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Hashtable;
 
 import javax.naming.Context;
@@ -10,6 +11,8 @@ import javax.naming.InitialContext;
 import Exceptions.ErrorConectionException;
 import Exceptions.ExistingProductException;
 import MVCFramework.ProxyModelo;
+import VO.ArticuloAEnviarVO;
+import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
@@ -119,13 +122,6 @@ public class BusinessDelegate extends ProxyModelo
 		this.getModCD().guardarSolicitud(soldis);
 	}
 
-	public void guardarSolicitudEnvios(SolicitudEnvioVO solEnv) {
-		//this.getModCD().guardarSolicitudDeEnvio(solEnv);
-	}
-
-	public void guardarSolicitudFabrica(SolicitudFabricaVO solFab) {
-		//this.getModCD().guardarSolicitudFabricacion(solFab);
-	}
 
 	public ServerFacade getModCD() {
 		return modCD;
@@ -163,13 +159,31 @@ public class BusinessDelegate extends ProxyModelo
 		return this.getModCD().getFabrica();
 	}
 
-	public void guardarArticulosPendientes() {
-		this.getModCD().guardarArticulosPendientes();
+	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic) {
+		this.getModCD().guardarArticulosAFabricar(artic);
 	}
 
+	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
+		this.getModCD().guardarArticulosAEnviar(artic2);
+	}
+	
 	public CentroDistribucionVO getCentro() {
 		return this.getModCD().getCentro();
 	}
+
+	public int getNextId() {
+		return this.getModCD().getNextIdArticuloPedido();
+	}
+
+	public int getNextIdAEnv() {
+		return this.getModCD().getNextIdArticuloAEnviar();
+	}
+
+	public int getNextIdAFab() {
+		return this.getModCD().getNextIdArticuloAFabricar();
+	}
+
+
 
 
 }
