@@ -19,7 +19,6 @@ public class ArticuloPedido  implements Serializable
 	private int idAP;
 	private Articulo art;
 	private int cantidad;
-	private SolicitudDistribucion sd;
 	
 	
 	public Articulo getArt() {
@@ -48,15 +47,7 @@ public class ArticuloPedido  implements Serializable
 	public void setIdAP(int idAP) {
 		this.idAP = idAP;
 	}
-	
-	@ManyToOne
-	public SolicitudDistribucion getSd() {
-		return sd;
-	}
-	
-	public void setSd(SolicitudDistribucion sd) {
-		this.sd = sd;
-	}	
+		
 	
 	@Transient
 	public ArticuloPedidoVO getVO(){
@@ -64,7 +55,6 @@ public class ArticuloPedido  implements Serializable
 		art.setIdAP(this.getIdAP());
 		art.setCantidad(this.getCantidad());
 		art.setArt(this.getArt().getVO());
-		art.setSd(this.getSd().getVO());
 		return art;
 	}
 	
@@ -74,9 +64,6 @@ public class ArticuloPedido  implements Serializable
 		Articulo art2 = new Articulo();
 		art2.setVO(art.getArt());
 		this.setArt(art2);
-		SolicitudDistribucion sd = new SolicitudDistribucion();
-		sd.setVO(art.getSd());
-		this.setSd(sd);
 	}
 	
 }
