@@ -36,7 +36,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ArrayList<String> descs = new ArrayList<String>();
 		for(int i = 0; i < cods.size();i++)
 		{
-			Query q = em.createQuery("select a from articulo a where a.codigo = :codigo");
+			Query q = em.createQuery("SELECT a FROM Articulo a WHERE a.codigo = :codigo");
 			q.setParameter("codigo", cods.get(i));
 			List l = q.getResultList();
 			descs.add(((Articulo)l.get(0)).getDescripcion());
@@ -48,7 +48,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		ArrayList<Integer> stocks = new ArrayList<Integer>();
 		for(int i = 0; i < cods.size();i++)
 		{
-			Query q = em.createQuery("select a from articulo a where a.codigo = :codigo");
+			Query q = em.createQuery("SELECT a FROM Articulo a WHERE a.codigo = :codigo");
 			q.setParameter("codigo", cods.get(i));
 			List l = q.getResultList();
 			stocks.add(((Articulo)l.get(0)).getCantidad());
