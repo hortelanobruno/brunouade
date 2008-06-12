@@ -189,5 +189,10 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		return this.admConf.getFabricas();
 	}
+
+	public void guardarFabrica(FabricaVO fab) 
+	{
+		this.admConf.guardarFabrica(fab);
+	}
 	
 }

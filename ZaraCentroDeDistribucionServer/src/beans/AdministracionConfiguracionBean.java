@@ -90,4 +90,13 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 		
 		return ret;
 	}
+
+	public void guardarFabrica(FabricaVO fab) 
+	{
+		if(em.find(Fabrica.class, fab.getCodigoFabrica()) == null)
+		{
+			Fabrica f = new Fabrica(fab.getCodigoFabrica(), fab.getNombreFabrica());
+			em.persist(f);
+		}
+	}
 }
