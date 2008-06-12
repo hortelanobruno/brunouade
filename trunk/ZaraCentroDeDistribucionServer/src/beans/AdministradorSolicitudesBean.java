@@ -13,6 +13,7 @@ import BusinessLogic.SolicitudDeFabricacion;
 import BusinessLogic.SolicitudDistribucion;
 import BusinessLogic.SolicitudEnvioATienda;
 import BusinessLogic.SolicitudReposicion;
+import BusinessLogic.Tienda;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
@@ -75,6 +76,9 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		SolicitudDistribucion sd = new SolicitudDistribucion();
 		sd.setVO(soldist);
+		Tienda tien = new Tienda();
+		tien.setVO(soldist.getTienda());
+		em.persist(tien);
 		em.persist(sd);
 	}
 
