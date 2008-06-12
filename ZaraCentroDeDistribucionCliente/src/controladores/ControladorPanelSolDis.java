@@ -51,13 +51,12 @@ public class ControladorPanelSolDis extends Controlador
 		return ((BusinessDelegate)(this.getModelo())).getFabrica();
 	}
 
-	public void doGuardarArticulosPendientes(Collection<ArticuloAFabricarVO> artic) {
-		((BusinessDelegate)(this.getModelo())).guardarArticulosPendientes();
+	public void doGuardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic) {
+		((BusinessDelegate)(this.getModelo())).guardarArticulosAFabricar(artic);
 	}
 
 	public void doGuardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
-		// TODO Auto-generated method stub
-		
+		((BusinessDelegate)(this.getModelo())).guardarArticulosAEnviar(artic2);
 	}
 
 
