@@ -32,7 +32,7 @@ public class SolicitudDistribucion extends Solicitud
 		this.setArticulosPedidos(a);
 	}
 
-	@ManyToOne(cascade={CascadeType.ALL})
+	@ManyToOne(cascade={CascadeType.MERGE})
 	public Tienda getTienda() {
 		return tienda;
 	}
@@ -41,7 +41,7 @@ public class SolicitudDistribucion extends Solicitud
 		this.tienda = tienda;
 	}
 
-	@OneToMany(cascade={CascadeType.ALL})
+	@OneToMany(cascade={CascadeType.MERGE})
 	public Collection<ArticuloPedido> getArticulosPedidos() {
 		return articulosPedidos;
 	}
