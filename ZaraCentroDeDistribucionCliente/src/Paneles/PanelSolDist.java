@@ -23,6 +23,7 @@ import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloPedidoVO;
+import VO.CentroDistribucionVO;
 import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 import Varios.XMLWrapper;
@@ -267,6 +268,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 					.getModelo().getDescripciones(codigos);
 			ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo()
 					.getStocks(codigos);
+			CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
+			solDisVO.setCdVO(centroVO);
 			cargarTable(solDisVO, codigos, descripciones, stocks);
 			ref.getJTextArea1().append("Archivo Cargado\n");
 		} else {
