@@ -6,6 +6,7 @@ import java.util.Vector;
 import javax.ejb.Remote;
 
 import VO.CentroDistribucionVO;
+import VO.FabricaVO;
 
 @Remote
 public interface AdministracionConfiguracion 
@@ -16,4 +17,5 @@ public interface AdministracionConfiguracion
 	public void addCategoriaHogar(int cod, String categoria);
 	public Vector<String> getCategoriasHogar();
 	public Vector<String> getLineasRopa();
+	public ArrayList<FabricaVO> getFabricas();
 }

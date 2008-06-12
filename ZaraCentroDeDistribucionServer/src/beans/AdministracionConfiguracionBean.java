@@ -1,16 +1,19 @@
 package beans;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Vector;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
+import javax.persistence.Query;
 import BusinessLogic.CategoriaHogar;
 import BusinessLogic.CentroDistribucion;
+import BusinessLogic.Fabrica;
 import BusinessLogic.LineaRopa;
 import VO.CentroDistribucionVO;
+import VO.FabricaVO;
 import beans.AdministracionConfiguracion;
 
 @Stateless
@@ -73,5 +76,18 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 	{
 		CentroDistribucion centro = em.find(CentroDistribucion.class, 1);
 		return centro.getVO();
+	}
+
+	public ArrayList<FabricaVO> getFabricas() 
+	{
+		Query q = em.createQuery("SELECT f From Fabrica f");
+		List l = q.getResultList();
+		
+		ArrayList<FabricaVO> ret = new ArrayList<FabricaVO>();
+		
+		for(Iterator i = l.iterator();i.hasNext();)
+			ret.add(((Fabrica)i).getVO());
+		
+		return ret;
 	}
 }
