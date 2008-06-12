@@ -1,6 +1,7 @@
 package beans;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
@@ -10,10 +11,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import BusinessLogic.Articulo;
+import BusinessLogic.ArticuloAEnviar;
+import BusinessLogic.ArticuloAFabricar;
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloRopa;
 import BusinessLogic.Tienda;
 import Exceptions.ExistingProductException;
+import VO.ArticuloAEnviarVO;
+import VO.ArticuloAFabricarVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
@@ -31,7 +36,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	}
 	
-	public ArrayList<String> getDescripciones(ArrayList<Integer> cods) 
+	public ArrayList<String> getDescripciones(ArrayList<Long> cods) 
 	{
 		ArrayList<String> descs = new ArrayList<String>();
 		for(int i = 0; i < cods.size();i++)
@@ -43,7 +48,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 		return descs;
 	}
-	public ArrayList<Integer> getStocks(ArrayList<Integer> cods) 
+	public ArrayList<Integer> getStocks(ArrayList<Long> cods) 
 	{
 		ArrayList<Integer> stocks = new ArrayList<Integer>();
 		for(int i = 0; i < cods.size();i++)
@@ -101,10 +106,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		return em.find(Articulo.class, codigo).getVO();
 	}
 	
-	public void guardarArticulosAFabricar()
-	{
-		
-	}
 
 	public Vector<TiendaVO> getTiendas() 
 	{
@@ -119,8 +120,24 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		return ret;
 	}
 
-	public void guardarArticulosAEnviar() 
-	{
 
+	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
+		Iterator it = artic2.iterator();
+		while(it.hasNext()){
+			ArticuloAEnviarVO artVO = (ArticuloAEnviarVO) it.next();
+			ArticuloAEnviar art = new ArticuloAEnviar();
+			art.setVO(artVO);
+			em.persist(art);
+		}
+	}
+
+	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic2) {
+		Iterator it = artic2.iterator();
+		while(it.hasNext()){
+			ArticuloAFabricarVO artVO = (ArticuloAFabricarVO) it.next();
+			ArticuloAFabricar art = new ArticuloAFabricar();
+			art.setVO(artVO);
+			em.persist(art);
+		}
 	}
 }

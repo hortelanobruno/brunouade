@@ -15,7 +15,7 @@ import VO.ArticuloPedidoVO;
 import VO.SolicitudDistribucionVO;
 
 @Entity
-@DiscriminatorValue("fabricacion")
+@DiscriminatorValue("distribucion")
 public class SolicitudDistribucion extends Solicitud
 {
 	private static final long serialVersionUID = 1694955054674640622L;

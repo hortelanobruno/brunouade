@@ -1,6 +1,7 @@
 package server;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Vector;
 
 import javax.ejb.EJB;
@@ -8,6 +9,8 @@ import javax.ejb.Stateless;
 
 import BusinessLogic.ServerFacade;
 import Exceptions.ExistingProductException;
+import VO.ArticuloAEnviarVO;
+import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
@@ -75,12 +78,12 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.guardarSolicitudFabricacion(solFab);
 	}
 
-	public ArrayList<String> getDescripciones(ArrayList<Integer> codigos) 
+	public ArrayList<String> getDescripciones(ArrayList<Long> codigos) 
 	{
 		return admArt.getDescripciones(codigos);
 	}
 
-	public ArrayList<Integer> getStocks(ArrayList<Integer> codigos) 
+	public ArrayList<Integer> getStocks(ArrayList<Long> codigos) 
 	{
 		return admArt.getStocks(codigos);
 	}
@@ -140,20 +143,13 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getFabrica();
 	}
 
-	public void guardarArticulosAFabricar() 
-	{
-		this.admArt.guardarArticulosAFabricar();
-	}
 
 	public Vector<TiendaVO> getTiendas() 
 	{
 		return this.admArt.getTiendas();
 	}
 
-	public void guardarArticulosAEnviar() 
-	{
-		this.admArt.guardarArticulosAEnviar();	
-	}
+
 
 	public CentroDistribucionVO getCentro() 
 	{
@@ -166,14 +162,28 @@ public class ServerFacadeBean implements ServerFacade
 		
 	}
 
-	public void guardarArticulosPendientes() 
+	public int getNextIdArticuloPedido() 
 	{
+		return this.admSol.getNextIdArticuloPedido();
+	}
+	
+	public int getNextIdArticuloAEnviar() 
+	{
+		return this.admSol.getNextIdArticuloAEnviar();
+	}
+	
+	public int getNextIdArticuloAFabricar() 
+	{
+		return this.admSol.getNextIdArticuloAFabricar();
+	}
+
+	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
+		this.admArt.guardarArticulosAEnviar(artic2);
+	}
+
+	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	public int getNextIdArticuloPedido() 
-	{
-		return 0;
-	}
+	
 }

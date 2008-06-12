@@ -27,4 +27,6 @@ public interface AdministradorSolicitudes
 	public int getNumeroSolFab();
 	public FabricaVO getFabrica();
 	public int getNextIdArticuloPedido();
+	public int getNextIdArticuloAEnviar();
+	public int getNextIdArticuloAFabricar();
 }
