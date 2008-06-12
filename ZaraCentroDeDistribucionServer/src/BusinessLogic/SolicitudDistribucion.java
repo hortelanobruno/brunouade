@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
+
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -30,7 +32,7 @@ public class SolicitudDistribucion extends Solicitud
 		this.setArticulosPedidos(a);
 	}
 
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.ALL})
 	public Tienda getTienda() {
 		return tienda;
 	}
@@ -39,7 +41,7 @@ public class SolicitudDistribucion extends Solicitud
 		this.tienda = tienda;
 	}
 
-	@OneToMany
+	@OneToMany(cascade={CascadeType.ALL})
 	public Collection<ArticuloPedido> getArticulosPedidos() {
 		return articulosPedidos;
 	}
