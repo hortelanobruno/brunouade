@@ -34,6 +34,7 @@ public interface ServerFacade
 	public FabricaVO getFabrica();
 	public void guardarArticulosAFabricar();
 	public void guardarArticulosAEnviar();
+	public int getNextIdArticuloPedido();
 	
 	//	panel envios
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);

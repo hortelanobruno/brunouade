@@ -26,4 +26,5 @@ public interface AdministradorSolicitudes
     public int getNumeroSolEnv();
 	public int getNumeroSolFab();
 	public FabricaVO getFabrica();
+	public int getNextIdArticuloPedido();
 }

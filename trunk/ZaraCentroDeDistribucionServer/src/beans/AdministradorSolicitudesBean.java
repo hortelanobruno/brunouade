@@ -121,4 +121,11 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		List l = q.getResultList();
 		return (((Integer)l.get(0)) + 1);
 	}
+
+	public int getNextIdArticuloPedido()
+	{
+		Query q = em.createQuery("SELECT MAX(s.idAP) FROM ArticuloPedido s");
+		List l = q.getResultList();
+		return (((Integer)l.get(0)) + 1);
+	}
 }
