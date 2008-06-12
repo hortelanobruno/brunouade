@@ -43,7 +43,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public ArrayList<SolicitudFabricaVO> getAllSolFab() 
 	{
-		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion");
+		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
 		List l = q.getResultList();
 		ArrayList<SolicitudFabricaVO> ret = new ArrayList<SolicitudFabricaVO>();
 		Iterator it = l.iterator();
@@ -57,7 +57,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public SolicitudFabricaVO getSolFab(long codigo)
 	{
-		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion WHERE a.numero =: codigo");
+		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s WHERE s.numero =: codigo");
 		q.setParameter("codigo", codigo);
 		List l = q.getResultList();
 		Iterator it = l.iterator();
@@ -106,14 +106,14 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public int getNumeroSolEnv() 
 	{
-		Query q = em.createQuery("SELECT max(s.numero) FROM SolicitudEnvioATienda");
+		Query q = em.createQuery("SELECT MAX(s.numero) FROM SolicitudEnvioATienda s");
 		List l = q.getResultList();
 		return (((Integer)l.get(0)) + 1);
 	}
 
 	public int getNumeroSolFab() 
 	{
-		Query q = em.createQuery("SELECT max(s.numero) FROM SolicitudDeFabricacion");
+		Query q = em.createQuery("SELECT MAX(s.numero) FROM SolicitudDeFabricacion s");
 		List l = q.getResultList();
 		return (((Integer)l.get(0)) + 1);
 	}
