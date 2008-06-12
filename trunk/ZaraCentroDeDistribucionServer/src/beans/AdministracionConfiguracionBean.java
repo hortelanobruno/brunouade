@@ -71,6 +71,7 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 
 	public CentroDistribucionVO getCentro() 
 	{
-		return em.find(CentroDistribucion.class, 1).getVO();
+		CentroDistribucion centro = em.find(CentroDistribucion.class, 1);
+		return centro.getVO();
 	}
 }

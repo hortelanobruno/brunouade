@@ -143,7 +143,7 @@ public class CentroDistribucion implements Serializable
 		Collection<LineaRopaVO> lins = new ArrayList<LineaRopaVO>();
 		Iterator it2 = (Iterator) this.getLineasRopa().iterator();
 		while(it2.hasNext()){
-			LineaRopaVO lin = ((LineaRopa)it.next()).getVO();
+			LineaRopaVO lin = ((LineaRopa)it2.next()).getVO();
 			lins.add(lin);
 		}
 		cen.setLineasRopa(lins);

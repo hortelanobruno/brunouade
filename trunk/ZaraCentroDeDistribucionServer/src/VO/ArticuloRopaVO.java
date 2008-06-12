@@ -6,15 +6,16 @@ public class ArticuloRopaVO extends ArticuloHeaderVO
 	private String talle;
 	private String origen;
 	
-	public ArticuloRopaVO() {
-		// TODO Auto-generated constructor stub
-	}
+
 	
 	public ArticuloRopaVO(String desc, long codigo, int cantidad,String color,float precio, String linea, String seccion,String talle,String origen)
 	{
 		super( desc,  codigo,  cantidad, color, precio,  linea,  seccion);
 		this.setTalle(talle);
 		this.setOrigen(origen);
+	}
+	public ArticuloRopaVO() {
+		// TODO Auto-generated constructor stub
 	}
 	
 	public String getOrigen() {

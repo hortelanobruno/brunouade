@@ -39,7 +39,7 @@ public class SolicitudDistribucion extends Solicitud
 		this.tienda = tienda;
 	}
 
-	@OneToMany(mappedBy="sd")
+	@OneToMany
 	public Collection<ArticuloPedido> getArticulosPedidos() {
 		return articulosPedidos;
 	}
@@ -78,7 +78,8 @@ public class SolicitudDistribucion extends Solicitud
 		Iterator it = (Iterator) vo.getArticulosPedidos().iterator();
 		while(it.hasNext()){
 			ArticuloPedido art = new ArticuloPedido();
-			art.setVO(((ArticuloPedidoVO)it.next()));
+			ArticuloPedidoVO artVO = ((ArticuloPedidoVO)it.next());
+			art.setVO(artVO);
 			arts.add(art);
 		}
 		this.setArticulosPedidos(arts);
