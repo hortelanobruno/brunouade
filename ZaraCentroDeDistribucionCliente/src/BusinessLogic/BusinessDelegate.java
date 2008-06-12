@@ -14,6 +14,7 @@ import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
+import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
@@ -163,7 +164,11 @@ public class BusinessDelegate extends ProxyModelo
 	}
 
 	public void guardarArticulosPendientes() {
-		//this.getModCD().guardarArticulosPendientes();
+		this.getModCD().guardarArticulosPendientes();
+	}
+
+	public CentroDistribucionVO getCentro() {
+		return this.getModCD().getCentro();
 	}
 
 
