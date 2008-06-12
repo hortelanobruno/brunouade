@@ -13,7 +13,6 @@ import BusinessLogic.SolicitudDeFabricacion;
 import BusinessLogic.SolicitudDistribucion;
 import BusinessLogic.SolicitudEnvioATienda;
 import BusinessLogic.SolicitudReposicion;
-import BusinessLogic.Tienda;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
@@ -25,6 +24,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 {
 	@PersistenceContext(unitName="CentroDeDistribucion")
 	private EntityManager em;
+	
 	
 	public void actualizarSolFab(SolicitudFabricaVO solFab) 
 	{
@@ -76,10 +76,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		SolicitudDistribucion sd = new SolicitudDistribucion();
 		sd.setVO(soldist);
-		/*Tienda tien = new Tienda();
-		tien.setVO(soldist.getTienda());
-		em.persist(tien);*/
-		em.persist(sd);
+		em.merge(sd);
 	}
 
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv)
@@ -112,20 +109,59 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		Query q = em.createQuery("SELECT MAX(s.numero) FROM SolicitudEnvioATienda s");
 		List l = q.getResultList();
-		return (((Integer)l.get(0)) + 1);
+		if(l.get(0) == null){
+			return 0;
+		}else{
+			int a = (Integer) l.get(0);
+			return a;
+		}
 	}
 
 	public int getNumeroSolFab() 
 	{
 		Query q = em.createQuery("SELECT MAX(s.numero) FROM SolicitudDeFabricacion s");
 		List l = q.getResultList();
-		return (((Integer)l.get(0)) + 1);
+		if(l.get(0) == null){
+			return 0;
+		}else{
+			int a = (Integer) l.get(0);
+			return a;
+		}
 	}
 
 	public int getNextIdArticuloPedido()
 	{
 		Query q = em.createQuery("SELECT MAX(s.idAP) FROM ArticuloPedido s");
 		List l = q.getResultList();
-		return (((Integer)l.get(0)) + 1);
+		if(l.get(0) == null){
+			return 0;
+		}else{
+			int a = (Integer) l.get(0);
+			return a;
+		}
+	}
+	
+	public int getNextIdArticuloAEnviar()
+	{
+		Query q = em.createQuery("SELECT MAX(s.idAAE) FROM ArticuloAEnviar s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 0;
+		}else{
+			int a = (Integer) l.get(0);
+			return a;
+		}
+	}
+	
+	public int getNextIdArticuloAFabricar()
+	{
+		Query q = em.createQuery("SELECT MAX(s.id) FROM ArticuloAFabricar s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 0;
+		}else{
+			int a = (Integer) l.get(0);
+			return a;
+		}
 	}
 }
