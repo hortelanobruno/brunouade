@@ -76,9 +76,9 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		SolicitudDistribucion sd = new SolicitudDistribucion();
 		sd.setVO(soldist);
-		Tienda tien = new Tienda();
+		/*Tienda tien = new Tienda();
 		tien.setVO(soldist.getTienda());
-		em.persist(tien);
+		em.persist(tien);*/
 		em.persist(sd);
 	}
 
