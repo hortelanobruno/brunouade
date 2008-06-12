@@ -254,9 +254,11 @@ public class PanelSolDist extends javax.swing.JPanel {
 
 	public void update() {
 		// aca hay que poner las llamadas a la business delegate
+		// hay que arreglar LA FECHA DE SOLDIS
 		if (cargarTable) {
 			XMLWrapper xml = new XMLWrapper();
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
+			solDisVO.setFechaEmision(ref.getDate());
 			ArrayList<Long> codigos = new ArrayList<Long>();
 			Iterator arts = (Iterator) solDisVO.getArticulosPedidos()
 					.iterator();
