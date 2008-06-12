@@ -161,12 +161,19 @@ public class ServerFacadeBean implements ServerFacade
 	}
 	
 	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts) {
+		
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void guardarArticulosPendientes() {
+	public void guardarArticulosPendientes() 
+	{
 		// TODO Auto-generated method stub
 		
+	}
+
+	public int getNextIdArticuloPedido() 
+	{
+		return 0;
 	}
 }
