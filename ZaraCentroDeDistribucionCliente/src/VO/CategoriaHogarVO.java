@@ -1,7 +1,11 @@
 package VO;
 
-public class CategoriaHogarVO {
+import java.io.Serializable;
 
+public class CategoriaHogarVO implements Serializable{
+
+
+	private static final long serialVersionUID = 1L;
 	private int idCategoria;
 	private String categoria;
 	

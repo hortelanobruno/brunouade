@@ -647,7 +647,7 @@ private void buttonNewArtActionPerformed(java.awt.event.ActionEvent evt) {
         this.isPanel1Selected = true;
     }
 
-    private void ponerPanel(JPanel panel) {
+    public void ponerPanel(JPanel panel) {
         if (isPanel1Selected) {
             this.remove(jPanel1);
             this.repaint();

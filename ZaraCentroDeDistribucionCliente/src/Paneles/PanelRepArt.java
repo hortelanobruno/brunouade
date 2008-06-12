@@ -224,7 +224,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
 			this.buttonGuardar.setEnabled(false);
 			this.buttonCargarXML.setEnabled(true);
-			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
+			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
 		}
 	}
 

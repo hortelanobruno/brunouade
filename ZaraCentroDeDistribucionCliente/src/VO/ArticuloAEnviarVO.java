@@ -1,7 +1,11 @@
 package VO;
 
-public class ArticuloAEnviarVO 
+import java.io.Serializable;
+
+public class ArticuloAEnviarVO implements Serializable
 {
+
+	private static final long serialVersionUID = 1L;
 	private int idAAE;
 	private ArticuloHeaderVO art;
 	private int cantidadAEnviar;
