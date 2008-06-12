@@ -18,4 +18,5 @@ public interface AdministracionConfiguracion
 	public Vector<String> getCategoriasHogar();
 	public Vector<String> getLineasRopa();
 	public ArrayList<FabricaVO> getFabricas();
+	public void guardarFabrica(FabricaVO fab);
 }
