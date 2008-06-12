@@ -1,8 +1,11 @@
 package VO;
 
+import java.io.Serializable;
 
-public class ArticuloPedidoVO {
 
+public class ArticuloPedidoVO implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private int idAP;
 	private ArticuloHeaderVO art;
 	private int cantidad;

@@ -2,7 +2,7 @@ package Varios;
 
 public class XMLArticuloRecibido 
 {
-	private long codArt;
+	private int codArt;
 	private int cant;
 	
 	public int getCant() {
@@ -11,10 +11,10 @@ public class XMLArticuloRecibido
 	public void setCant(int cant) {
 		this.cant = cant;
 	}
-	public long getCodArt() {
+	public int getCodArt() {
 		return codArt;
 	}
-	public void setCodArt(long codArt) {
+	public void setCodArt(int codArt) {
 		this.codArt = codArt;
 	}
 }

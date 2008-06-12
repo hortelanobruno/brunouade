@@ -216,7 +216,7 @@ public class PanelNewArt extends javax.swing.JPanel
 			ref.getJTextArea1().append("Articulo Guardado\n");
 			this.buttonCargarXML.setEnabled(true);
 			this.buttonGuardar.setEnabled(false);
-			new Dialogo3Opciones("Operacion concretada", this.ref).setVisible(true);
+			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
 			
 		}
 		
@@ -228,7 +228,7 @@ public class PanelNewArt extends javax.swing.JPanel
 
 	public ArticuloRopaVO crearArticuloRopaVO(){
 		ArticuloRopaVO art = new ArticuloRopaVO();
-		art.setCodigo(Long.parseLong(((DefaultTableModel)tableArticulo.getModel()).getValueAt(1, 1).toString()));
+		art.setCodigo(Integer.parseInt(((DefaultTableModel)tableArticulo.getModel()).getValueAt(1, 1).toString()));
 		art.setDescripcion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(2, 1).toString());
 		art.setPrecio(Float.parseFloat(((DefaultTableModel)tableArticulo.getModel()).getValueAt(3, 1).toString()));
 		art.setSeccion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(4, 1).toString());
@@ -242,7 +242,7 @@ public class PanelNewArt extends javax.swing.JPanel
 	
 	public ArticuloHogarVO crearArticuloHogarVO(){
 		ArticuloHogarVO art = new ArticuloHogarVO();
-		art.setCodigo(Long.parseLong(((DefaultTableModel)tableArticulo.getModel()).getValueAt(1, 1).toString()));
+		art.setCodigo(Integer.parseInt(((DefaultTableModel)tableArticulo.getModel()).getValueAt(1, 1).toString()));
 		art.setDescripcion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(2, 1).toString());
 		art.setPrecio(Float.parseFloat(((DefaultTableModel)tableArticulo.getModel()).getValueAt(3, 1).toString()));
 		art.setSeccion(((DefaultTableModel)tableArticulo.getModel()).getValueAt(4, 1).toString());
@@ -316,6 +316,16 @@ public class PanelNewArt extends javax.swing.JPanel
 
 	public void setCargarTable(boolean cargarTable) {
 		this.cargarTable = cargarTable;
+	}
+
+
+	public MenuPrincipal getRef() {
+		return ref;
+	}
+
+
+	public void setRef(MenuPrincipal ref) {
+		this.ref = ref;
 	}
 
 }

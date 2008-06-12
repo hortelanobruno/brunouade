@@ -1,6 +1,8 @@
 package VO;
 
-public class ArticuloHogarVO extends ArticuloHeaderVO
+import java.io.Serializable;
+
+public class ArticuloHogarVO extends ArticuloHeaderVO implements Serializable
 {
 	private static final long serialVersionUID = 2629378325506484202L;
 	private String detalles; //Alfombra de piel de vaca con patchwork
@@ -12,7 +14,7 @@ public class ArticuloHogarVO extends ArticuloHeaderVO
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ArticuloHogarVO(String desc, long codigo, int cantidad,String color,float precio, String linea, String seccion,String detalles,String composicion, String categoria, String medidas)
+	public ArticuloHogarVO(String desc, int codigo, int cantidad,String color,float precio, String linea, String seccion,String detalles,String composicion, String categoria, String medidas)
 	{
 		super( desc,  codigo,  cantidad, color, precio,  linea,  seccion);
 		this.setDetalles(detalles);
