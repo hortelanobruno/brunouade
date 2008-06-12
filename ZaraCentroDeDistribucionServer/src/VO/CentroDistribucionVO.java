@@ -1,10 +1,11 @@
 package VO;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class CentroDistribucionVO {
-
+public class CentroDistribucionVO  implements Serializable
+{
 	private static final long serialVersionUID = 1459311864724348026L;
 	private int codCentro;
 	private String nombreCentro;

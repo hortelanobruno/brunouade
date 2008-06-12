@@ -3,11 +3,8 @@ package VO;
 import java.io.Serializable;
 import java.util.Date;
 
-public class SolicitudVO implements Serializable{
-	
-	/**
-	 * 
-	 */
+public class SolicitudVO implements Serializable
+{
 	private static final long serialVersionUID = 5288912159022449663L;
 	protected int numero;
     protected Date fechaEmision;

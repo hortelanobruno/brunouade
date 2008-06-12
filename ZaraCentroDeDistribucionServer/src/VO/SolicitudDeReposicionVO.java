@@ -1,12 +1,11 @@
 package VO;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
-public class SolicitudDeReposicionVO extends SolicitudVO implements Serializable
+public class SolicitudDeReposicionVO extends SolicitudVO
 {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -4383653090680302766L;
 	private FabricaVO fabrica;
 	private SolicitudFabricaVO solFab;
 	private Collection<ArticuloAReponerVO> articulosAReponer;

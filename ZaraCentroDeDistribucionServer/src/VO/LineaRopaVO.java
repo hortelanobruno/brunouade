@@ -1,7 +1,10 @@
 package VO;
 
-public class LineaRopaVO {
+import java.io.Serializable;
 
+public class LineaRopaVO implements Serializable
+{
+	private static final long serialVersionUID = 3372249390252003974L;
 	private int idLinea;
 	private String linea;
 	

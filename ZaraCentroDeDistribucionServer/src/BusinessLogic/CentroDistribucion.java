@@ -19,21 +19,16 @@ import VO.LineaRopaVO;
 
 @Entity
 @Table(name = "CentroDeDistribucion")
-public class CentroDistribucion implements Serializable {
+public class CentroDistribucion implements Serializable 
+{
 	private static final long serialVersionUID = 1459311864724348026L;
-
 	private int codCentro;
-
 	private String nombreCentro;
-
 	private float latitud;
-
 	private float longitud;
-
 	private Collection<LineaRopa> lineasRopa;
-
 	private Collection<CategoriaHogar> categoriasHogar;
-
+	
 	public CentroDistribucion() {
 		this.lineasRopa = new ArrayList<LineaRopa>();
 		this.categoriasHogar = new ArrayList<CategoriaHogar>();

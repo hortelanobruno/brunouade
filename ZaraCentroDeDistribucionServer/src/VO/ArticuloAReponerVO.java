@@ -1,8 +1,11 @@
 package VO;
 
+import java.io.Serializable;
 
-public class ArticuloAReponerVO 
+
+public class ArticuloAReponerVO implements Serializable 
 {
+	private static final long serialVersionUID = -6231271589298853218L;
 	private int idAAR;
 	private ArticuloHeaderVO art;
 	private int cantidad;
