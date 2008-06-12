@@ -185,9 +185,9 @@ public class ServerFacadeBean implements ServerFacade
 		this.admArt.guardarArticulosAFabricar(artic);
 	}
 
-	public ArrayList<FabricaVO> getFabricas() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<FabricaVO> getFabricas() 
+	{
+		return this.admConf.getFabricas();
 	}
 	
 }
