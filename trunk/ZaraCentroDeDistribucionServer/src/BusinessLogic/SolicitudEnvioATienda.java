@@ -1,6 +1,5 @@
 package BusinessLogic;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -15,7 +14,7 @@ import VO.SolicitudEnvioVO;
 
 @Entity
 @DiscriminatorValue("envio")
-public class SolicitudEnvioATienda extends Solicitud implements Serializable
+public class SolicitudEnvioATienda extends Solicitud
 {
 	private static final long serialVersionUID = 5001930866418434765L;
 	private Tienda tienda;

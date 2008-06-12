@@ -1,5 +1,7 @@
 package BusinessLogic;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,8 +12,9 @@ import VO.LineaRopaVO;
 
 @Entity
 @Table(name="lineasRopa")
-public class LineaRopa 
+public class LineaRopa  implements Serializable
 {
+	private static final long serialVersionUID = -5341000794952655618L;
 	private int idLinea;
 	private String linea;
 	

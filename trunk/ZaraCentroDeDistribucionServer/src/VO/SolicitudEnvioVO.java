@@ -1,10 +1,9 @@
 package VO;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
-public class SolicitudEnvioVO extends SolicitudVO implements Serializable
+public class SolicitudEnvioVO extends SolicitudVO
 {
 	private static final long serialVersionUID = -8304187393253826615L;
 	private TiendaVO tienda;
