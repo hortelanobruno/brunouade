@@ -6,7 +6,7 @@ public class ArticuloRopaVO extends ArticuloHeaderVO
 	private String talle;
 	private String origen;
 	
-	public ArticuloRopaVO(String desc, int codigo, int cantidad,String color,float precio, String linea, String seccion,String talle,String origen)
+	public ArticuloRopaVO(String desc, long codigo, int cantidad,String color,float precio, String linea, String seccion,String talle,String origen)
 	{
 		super( desc,  codigo,  cantidad, color, precio,  linea,  seccion);
 		this.setTalle(talle);

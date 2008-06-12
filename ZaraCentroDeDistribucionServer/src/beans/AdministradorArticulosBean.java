@@ -108,7 +108,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	public Vector<TiendaVO> getTiendas() 
 	{
-		Query q = em.createQuery("select a from tienda t");
+		Query q = em.createQuery("SELECT a From Tienda t");
 		List l = q.getResultList();
 		
 		Vector<TiendaVO> ret = new Vector<TiendaVO>();
