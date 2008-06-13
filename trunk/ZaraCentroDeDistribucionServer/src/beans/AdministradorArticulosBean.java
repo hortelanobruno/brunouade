@@ -151,7 +151,8 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			Articulo a = em.find(Articulo.class,avo.getArt().getCodigo());
 			if(a != null)
 			{
-				a.setVO(avo.getArt());
+				int newCant = a.getCantidad() - avo.getCantidadAEnviar();
+				a.setCantidad(newCant);
 				em.merge(a);
 			}
 		}
