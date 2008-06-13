@@ -188,4 +188,8 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		admArt.actualizarStock(arts);
 	}
+
+	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar() {
+		return this.admArt.getArticulosAFabricar();
+	}
 }

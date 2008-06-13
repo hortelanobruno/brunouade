@@ -84,7 +84,7 @@ public class CentroDistribucion implements Serializable
 		this.longitud = longitud;
 	}
 
-	@OneToMany(cascade = { CascadeType.ALL })
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	public Collection<LineaRopa> getLineasRopa() {
 		return this.lineasRopa;
 	}
@@ -103,7 +103,7 @@ public class CentroDistribucion implements Serializable
 		this.lineasRopa = liRopa;
 	}
 
-	@OneToMany(cascade = { CascadeType.ALL })
+	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	public Collection<CategoriaHogar> getCategoriasHogar() {
 		return this.categoriasHogar;
 	}

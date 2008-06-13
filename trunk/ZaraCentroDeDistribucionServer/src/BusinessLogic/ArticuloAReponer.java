@@ -15,6 +15,7 @@ import VO.ArticuloAReponerVO;
 @Table(name="ArticulosAReponer")
 public class ArticuloAReponer implements Serializable 
 {
+	
 	private static final long serialVersionUID = 1409325381648482564L;
 	private int idAAR;
 	private Articulo art;
