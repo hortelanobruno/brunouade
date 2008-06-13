@@ -157,4 +157,17 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			}
 		}
 	}
+
+	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar() {
+		Query q = em.createQuery("SELECT a FROM ArticuloAFabricar a");
+		List l = q.getResultList();
+		
+		ArrayList<ArticuloAFabricarVO> ret = new ArrayList<ArticuloAFabricarVO>();
+		Iterator it = l.iterator();
+		while(it.hasNext()){
+			ArticuloAFabricarVO artVO = ((ArticuloAFabricar)it.next()).getVO();
+			ret.add(artVO);
+		}
+		return ret;
+	}
 }

@@ -28,4 +28,5 @@ public interface AdministradorArticulos
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2);
 	public Vector<TiendaVO> getTiendas();
 	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv);
+	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
 }

@@ -15,6 +15,7 @@ import VO.SolicitudDeReposicionVO;
 @DiscriminatorValue("reposicion")
 public class SolicitudReposicion extends Solicitud
 {
+	
 	private static final long serialVersionUID = -3577225904639518643L;
 	private Fabrica fabrica;
 	private SolicitudDeFabricacion solFab;
@@ -36,7 +37,8 @@ public class SolicitudReposicion extends Solicitud
 		this.fabrica = fabrica;
 	}
 	
-	@OneToMany(mappedBy="sr")
+	//@OneToMany(mappedBy="sr")
+	@OneToMany
 	public Collection<ArticuloAReponer> getArticulosAReponer() {
 		return articulosAReponer;
 	}
