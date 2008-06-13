@@ -30,7 +30,6 @@ public interface ServerFacade
 	//panel sol dist
 	public ArrayList<String> getDescripciones(ArrayList<Long> codigos);
 	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
-	
 	public void guardarSolicitud(SolicitudDistribucionVO soldist);
 	public int getNumeroSolEnv();
 	public int getNumeroSolFab();
@@ -42,6 +41,7 @@ public interface ServerFacade
 	public int getNextIdArticuloAEnviar();
 	public int getNextIdArticuloAFabricar();
 	public ArrayList<FabricaVO> getFabricas();
+	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv);
 	
 	//	panel envios
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);

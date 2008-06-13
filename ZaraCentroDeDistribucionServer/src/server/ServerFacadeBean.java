@@ -43,11 +43,6 @@ public class ServerFacadeBean implements ServerFacade
 		return 5000000;
 	}
 
-	public void actualizarStock(Vector<ArticuloHeaderVO> arts) 
-	{
-		admArt.actualizarStock(arts);
-	}
-
 	public void guardarSolicitud(SolicitudDistribucionVO soldist) 
 	{
 		this.admSol.guardarSolicitud(soldist);
@@ -155,12 +150,6 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		return this.admConf.getCentro();
 	}
-	
-	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts) {
-		
-		// TODO Auto-generated method stub
-		
-	}
 
 	public int getNextIdArticuloPedido() 
 	{
@@ -193,6 +182,16 @@ public class ServerFacadeBean implements ServerFacade
 	public void guardarFabrica(FabricaVO fab) 
 	{
 		this.admConf.guardarFabrica(fab);
+	}
+
+	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv) 
+	{
+		this.admArt.modificarStock(artiAEnv);	
+	}
+
+	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts)
+	{
+		admArt.actualizarStock(arts);
 	}
 	
 }
