@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import BusinessLogic.Fabrica;
 import BusinessLogic.SolicitudDeFabricacion;
 import BusinessLogic.SolicitudDistribucion;
 import BusinessLogic.SolicitudEnvioATienda;
@@ -29,8 +30,9 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	public void actualizarSolFab(SolicitudFabricaVO solFab) 
 	{
 		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFab.getNumero());
-		if(s != null)
+		if(s == null)
 		{
+			s = new SolicitudDeFabricacion();
 			s.setVO(solFab);
 			em.merge(s);
 		}
@@ -97,7 +99,14 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public FabricaVO getFabrica()
 	{
-		return null;
+		Query q = em.createQuery("SELECT f FROM Fabrica f");
+		List l = q.getResultList();
+		FabricaVO fabVO = new FabricaVO();
+		Iterator it = l.iterator();
+		while(it.hasNext()){
+			fabVO = ((Fabrica) it.next()).getVO();
+		}
+		return fabVO;
 	}
 
 	public int getNumeroSolEnv() 
