@@ -80,14 +80,15 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 
 	public ArrayList<FabricaVO> getFabricas() 
 	{
-		Query q = em.createQuery("SELECT f From Fabrica f");
+		Query q = em.createQuery("SELECT f FROM Fabrica f");
 		List l = q.getResultList();
 		
 		ArrayList<FabricaVO> ret = new ArrayList<FabricaVO>();
-		
-		for(Iterator i = l.iterator();i.hasNext();)
-			ret.add(((Fabrica)i).getVO());
-		
+		Iterator it = l.iterator();
+		while(it.hasNext()){
+			FabricaVO fabVO = ((Fabrica) it.next()).getVO();
+			ret.add(fabVO);
+		}
 		return ret;
 	}
 

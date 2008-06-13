@@ -19,18 +19,16 @@ public class ArticuloAReponer implements Serializable
 	private int idAAR;
 	private Articulo art;
 	private int cantidad;
-	private SolicitudReposicion sr;
 	
 	public ArticuloAReponer() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ArticuloAReponer(int id, Articulo art, int cant, SolicitudReposicion sr)
+	public ArticuloAReponer(int id, Articulo art, int cant)
 	{
 		this.setIdAAR(id);
 		this.setArt(art);
 		this.setCantidad(cant);
-		this.setSr(sr);
 	}
 	
 	@ManyToOne
@@ -60,14 +58,6 @@ public class ArticuloAReponer implements Serializable
 		this.idAAR = idAAR;
 	}
 	
-	@ManyToOne
-	public SolicitudReposicion getSr() {
-		return sr;
-	}
-	
-	public void setSr(SolicitudReposicion sr) {
-		this.sr = sr;
-	}
 	
 	@Transient
 	public ArticuloAReponerVO getVO(){
@@ -75,7 +65,6 @@ public class ArticuloAReponer implements Serializable
 		art.setIdAAR(this.getIdAAR());
 		art.setCantidad(this.getCantidad());
 		art.setArt(this.getArt().getVO());
-		art.setSr(this.getSr().getVO());
 		return art;
 	}
 	
@@ -85,8 +74,5 @@ public class ArticuloAReponer implements Serializable
 		Articulo art2 = new Articulo();
 		art2.setVO(art.getArt());
 		this.setArt(art2);
-		SolicitudReposicion sr = new SolicitudReposicion();
-		sr.setVO(art.getSr());
-		this.setSr(sr);
 	}
 }
