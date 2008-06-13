@@ -200,7 +200,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 		else {
 			// Cargar los table
 			((ControladorPanelSolDis) vistaSolDis.getControlador())
-					.doCargarXML(true);
+			.doCargarXML(true);
 		}
 	}
 
