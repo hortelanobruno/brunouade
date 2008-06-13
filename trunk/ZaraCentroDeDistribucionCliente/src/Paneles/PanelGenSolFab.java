@@ -10,8 +10,11 @@ import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
 
+import GUI.Dialogo3Opciones;
 import GUI.MenuPrincipal;
 import VO.ArticuloAFabricarVO;
+import VO.CentroDistribucionVO;
+import VO.FabricaVO;
 import VO.SolicitudFabricaVO;
 import Vistas.VistaGenSolFab;
 import controladores.ControladorPanelGenSolFab;
@@ -51,7 +54,6 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		jScrollPane1 = new javax.swing.JScrollPane();
 		tablaArticulos = new javax.swing.JTable();
 		buttonEnviar = new javax.swing.JButton();
-		buttonVistaPrevia = new javax.swing.JButton();
 
 		jLabel1.setText("Solicitud de articulos a fabricar");
 
@@ -124,8 +126,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 																				88,
 																				88,
 																				88)
-																		.add(
-																				buttonVistaPrevia))
+																		)
 														.add(
 																layout
 																		.createSequentialGroup()
@@ -166,7 +167,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 						26, 26).add(
 						layout.createParallelGroup(
 								org.jdesktop.layout.GroupLayout.BASELINE).add(
-								buttonEnviar).add(buttonVistaPrevia))
+								buttonEnviar))
 						.addContainerGap(82, Short.MAX_VALUE)));
 	}// </editor-fold>
 
@@ -184,7 +185,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 	
 	
 	public void update() {
-
+		
 		if(cargarTabla){
 			ArrayList<ArticuloAFabricarVO> arts = this.ref.getVistaGenSolFab().getModelo().getArticulosAFabricarVO();
 			this.setArticulosAFabricar(arts);
@@ -193,14 +194,33 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		}else{
 			ArrayList<ArticuloAFabricarVO> arts = leerArticulosDeTabla();
 			SolicitudFabricaVO solFab = new SolicitudFabricaVO();
-			solFab.set
+			solFab.setArticulosAFabricar(arts);
+			CentroDistribucionVO centroVO = this.ref.getVistaGenSolFab().getModelo().getCentro();
+			solFab.setCdVO(centroVO);
+			//aca hay que arreglar que la fabrica se setee de una combo o algo asi
+			FabricaVO fabVO = this.ref.getVistaGenSolFab().getModelo().getFabrica();
+			solFab.setFabrica(fabVO);
+			//aca hay que arreglar la fecha...
+			solFab.setFechaEmision(ref.getDate());
+			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();
+			idSolFab++;
+			solFab.setNumero(idSolFab);
+			this.ref.getVistaGenSolFab().getModelo().guardarSolicitudFabricacion(solFab);
+			vaciarTabla();
+			ref.getJTextArea1().append("Solicitud de Fabricacion Guardada\n");
+			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
 		}
 	}
 	
 	public ArrayList<ArticuloAFabricarVO> leerArticulosDeTabla(){
-		
-		
-		return null;
+		ArrayList<ArticuloAFabricarVO> arts = new ArrayList<ArticuloAFabricarVO>();
+		for (int i = 0 ; i < articulosAFabricar.size() ; i++){
+			ArticuloAFabricarVO artVO = articulosAFabricar.get(i);
+			int cantAPedir = Integer.parseInt(((DefaultTableModel)tablaArticulos.getModel()).getValueAt(i, 6).toString());
+			artVO.setCantidadPedida(cantAPedir);
+			arts.add(artVO);
+		}
+		return arts;
 	}
 	 /*"Codigo", "Descripcion", "Stock Actual",
 		"Stock Pedido","Stock Recibido", "Stock Minimo a Pedir",
@@ -228,8 +248,6 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 	private javax.swing.JButton buttonCargarPendientes;
 
 	private javax.swing.JButton buttonEnviar;
-
-	private javax.swing.JButton buttonVistaPrevia;
 
 	private javax.swing.JLabel jLabel1;
 

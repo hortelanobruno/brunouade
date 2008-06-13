@@ -13,8 +13,7 @@ public class VistaGenSolFab extends Vista {
 	}
 
 	public void actualizar() {
-
-		
+		ref.getPanelGSF().update();
 	}
 
 	public MenuPrincipal getRef() {
