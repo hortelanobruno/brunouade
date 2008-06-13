@@ -9,19 +9,17 @@ public class ArticuloAReponerVO implements Serializable
 	private int idAAR;
 	private ArticuloHeaderVO art;
 	private int cantidad;
-	private SolicitudDeReposicionVO sr;
 	
 	public ArticuloAReponerVO() 
 	{
 	
 	}
 	
-	public ArticuloAReponerVO(int id, ArticuloHeaderVO art, int cant, SolicitudDeReposicionVO sol) 
+	public ArticuloAReponerVO(int id, ArticuloHeaderVO art, int cant) 
 	{
 		this.setIdAAR(id);
 		this.setArt(art);
 		this.setCantidad(cant);
-		this.setSr(sol);
 	}
 	
 	public ArticuloHeaderVO getArt() {
@@ -41,11 +39,5 @@ public class ArticuloAReponerVO implements Serializable
 	}
 	public void setIdAAR(int idAAR) {
 		this.idAAR = idAAR;
-	}
-	public SolicitudDeReposicionVO getSr() {
-		return sr;
-	}
-	public void setSr(SolicitudDeReposicionVO sr) {
-		this.sr = sr;
 	}
 }

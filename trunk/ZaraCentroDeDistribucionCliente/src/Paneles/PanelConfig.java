@@ -173,4 +173,9 @@ public class PanelConfig extends javax.swing.JPanel {
 		this.vistaConfig = vistaConfig;
 	}
 
+	public MenuPrincipal getRef() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 import controladores.ControladorPanelRepArt;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
+import VO.CentroDistribucionVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudFabricaVO;
 import Varios.Constantes;
@@ -37,7 +38,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 	private VistaRepArt vistaRepArt;
 	private boolean cargarTable;
 	private FileChooser chooser;
-	private SolicitudFabricaVO solFab;
+	private SolicitudFabricaVO solFabVO;
 
 	public PanelRepArt(MenuPrincipal m, VistaRepArt vista) {
 		initComponents();
@@ -156,7 +157,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 	
 	private void cargarArticuloEnSolFab(ArticuloAReponerVO arti)
 	{
-		Collection<ArticuloAFabricarVO> articulos = solFab.getArticulosAFabricar();
+		Collection<ArticuloAFabricarVO> articulos = solFabVO.getArticulosAFabricar();
 		Iterator itArt = articulos.iterator();
 		while(itArt.hasNext()){
 			ArticuloAFabricarVO art = (ArticuloAFabricarVO)itArt.next();
@@ -196,21 +197,26 @@ public class PanelRepArt extends javax.swing.JPanel {
 
 	public void update() {
 		//aca hay que poner las llamadas a la business delegate
+		//ARREGLAR LA FECHA QUE SE SETEA
 		if(cargarTable){
 			XMLWrapper xml = new XMLWrapper();
 			solRepVO = (SolicitudDeReposicionVO) xml.parseXMLSR(urlXML);
-			
-			long codigoSolFab = solRepVO.getNumero();
-			solFab = (SolicitudFabricaVO) solRepVO.getSolFab();
+			int idSolFab = solRepVO.getSolFab().getNumero();
+			solFabVO = this.ref.getVistaRepArt().getModelo().getSolicitudFabricacion(idSolFab);
+			solRepVO.setSolFab(solFabVO);
+			solRepVO.setFechaEmision(ref.getDate());
+			CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
+			solRepVO.setCdVO(centroVO);
+			long codigoSolRep = solRepVO.getNumero();
 			String fabrica = solRepVO.getFabrica().getNombreFabrica();
 			ArrayList<Long> codigos = new ArrayList<Long>();
 			Iterator arts = (Iterator) solRepVO.getArticulosAReponer().iterator();
 			while (arts.hasNext()) {
 				codigos.add(((ArticuloAReponerVO) arts.next()).getArt().getCodigo());
 			}
-			ArrayList<String> descripciones = this.ref.getVistaSolDis().getModelo().getDescripciones(codigos);
+			ArrayList<String> descripciones = this.ref.getVistaRepArt().getModelo().getDescripciones(codigos);
 			vaciarTabla();
-			cargarTable(codigoSolFab,solRepVO, codigos, descripciones, solFab,fabrica);
+			cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
 			ref.getJTextArea1().append("Archivo Cargado\n");
 			this.buttonGuardar.setEnabled(true);
 			this.buttonCargarXML.setEnabled(false);
@@ -218,7 +224,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 			//Falta generar las solicitudes
 			ArrayList<ArticuloAReponerVO> vecArt = collectionToArrayList(solRepVO.getArticulosAReponer());
 			((ControladorPanelRepArt)vistaRepArt.getControlador()).doCargarStocks(vecArt);
-			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudFabricacion(solFab);
+			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudFabricacion(solFabVO);
 			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudReposicion(solRepVO);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");

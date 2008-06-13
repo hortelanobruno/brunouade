@@ -59,6 +59,10 @@ public class ControladorPanelSolDis extends Controlador
 		((BusinessDelegate)(this.getModelo())).guardarArticulosAEnviar(artic2);
 	}
 
+	public void doActualizarStocks(Collection<ArticuloAEnviarVO> artiAEnv) {
+		((BusinessDelegate)(this.getModelo())).modificarStock(artiAEnv);
+	}
+
 
 	
 	
