@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
@@ -24,6 +25,7 @@ import VO.ArticuloAFabricarVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloPedidoVO;
 import VO.CentroDistribucionVO;
+import VO.FabricaVO;
 import VO.SolicitudDistribucionVO;
 import Varios.Constantes;
 import Varios.XMLWrapper;
@@ -43,7 +45,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 	private boolean cargarTable;
 
 	private MenuPrincipal ref;
-
+	private ArrayList<FabricaVO> fabricas;
 	private SolicitudDistribucionVO solDisVO;
 
 	private VistaSolDis vistaSolDis;
@@ -60,6 +62,12 @@ public class PanelSolDist extends javax.swing.JPanel {
 							validateTable();
 					}
 				});
+		ArrayList<FabricaVO> fabricas = this.ref.getVistaSolDis().getModelo().getFabricas();
+		this.fabricas = fabricas;
+		for (int i = 0 ; i < fabricas.size() ; i++ ){
+			FabricaVO fab = fabricas.get(i);
+			((DefaultComboBoxModel)comboFabrica.getModel()).addElement(fab.getNombreFabrica());
+		}
 	}
 
 	/**
@@ -285,10 +293,11 @@ public class PanelSolDist extends javax.swing.JPanel {
 			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarSolicitud(solDisVO);
 			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAEnviar(artiAEnv);
 			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAFabricar(artiAFab);
+			((ControladorPanelSolDis) vistaSolDis.getControlador()).doActualizarStocks(artiAEnv);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
-			new Dialogo3Opciones("Operacion concretada", this)
-					.setVisible(true);
+			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
+			
 		}
 	}
 
@@ -328,6 +337,12 @@ public class PanelSolDist extends javax.swing.JPanel {
 		Collection<ArticuloAFabricarVO> art = new ArrayList<ArticuloAFabricarVO>();
 		ArticuloHeaderVO arti;
 		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdAFab();
+		FabricaVO fabr = null;
+		for(int i=0 ; i< fabricas.size() ; i++){
+			if(((FabricaVO)fabricas.get(i)).getNombreFabrica().equals(comboFabrica.getSelectedItem().toString())){
+				fabr = fabricas.get(i);
+			}
+		}
 		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
 			int ped = Integer.parseInt((((DefaultTableModel) tableArticulos
 					.getModel()).getValueAt(i, 4)).toString());
@@ -348,6 +363,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 				idMax++;
 				aFab.setIdAAF(idMax);
 				aFab.setSol(solDisVO);
+				aFab.setFabrica(fabr);
 				art.add(aFab);
 			} else {
 				ref.getJTextArea1().append("Error al cargar los articulos a fabricar, xq lo seleccionado es mayor que lo pedido\n");
@@ -357,9 +373,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 	}
 
 	public void vaciarTabla() {
-		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
-			((DefaultTableModel) tableArticulos.getModel()).removeRow(i);
-		}
+		((DefaultTableModel)tableArticulos.getModel()).getDataVector().removeAllElements();
 	}
 
 	// Variables declaration - do not modify
@@ -389,6 +403,22 @@ public class PanelSolDist extends javax.swing.JPanel {
 
 	public void setCargarTable(boolean cargarTable) {
 		this.cargarTable = cargarTable;
+	}
+
+	public ArrayList<FabricaVO> getFabricas() {
+		return fabricas;
+	}
+
+	public void setFabricas(ArrayList<FabricaVO> fabricas) {
+		this.fabricas = fabricas;
+	}
+
+	public void setRef(MenuPrincipal ref) {
+		this.ref = ref;
+	}
+
+	public MenuPrincipal getRef() {
+		return ref;
 	}
 
 }

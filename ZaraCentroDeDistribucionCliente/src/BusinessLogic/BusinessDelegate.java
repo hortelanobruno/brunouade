@@ -21,7 +21,6 @@ import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
-import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
 import Varios.Constantes;
 
@@ -35,6 +34,7 @@ public class BusinessDelegate extends ProxyModelo
 		super();
 		this.getConnection();
 		this.guardarDatosCD();
+		this.guardarFabrica();
 	}
 	
 	private void guardarDatosCD()
@@ -52,6 +52,13 @@ public class BusinessDelegate extends ProxyModelo
 		categoriasHogar.add("baño");
 		
 		this.getModCD().guardarDatosCD(1, "Shopping Centro", 56.887521f, 34.90417f, lineasRopa, categoriasHogar);
+	}
+	
+	private void guardarFabrica(){
+		FabricaVO fabrica = new FabricaVO();
+		fabrica.setCodigoFabrica(1);
+		fabrica.setNombreFabrica("Lanus Este");
+		this.getModCD().guardarFabrica(fabrica);
 	}
 	
 	// Test de nacho
@@ -127,7 +134,7 @@ public class BusinessDelegate extends ProxyModelo
 		return modCD;
 	}
 
-	public SolicitudFabricaVO getSolicitudFabricacion(long codigoSolFab) {
+	public SolicitudFabricaVO getSolicitudFabricacion(int codigoSolFab) {
 		return this.getModCD().cargarSolicitudFabricacion(codigoSolFab);
 	}
 
@@ -181,6 +188,14 @@ public class BusinessDelegate extends ProxyModelo
 
 	public int getNextIdAFab() {
 		return this.getModCD().getNextIdArticuloAFabricar();
+	}
+
+	public ArrayList<FabricaVO> getFabricas() {
+		return this.getModCD().getFabricas();
+	}
+
+	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv) {
+		this.getModCD().modificarStock(artiAEnv);		
 	}
 
 

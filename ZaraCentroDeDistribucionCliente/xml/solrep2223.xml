@@ -1,0 +1,28 @@
+<solrep>
+
+	<codigo>2223</codigo>
+	
+	<codSolFab>1000</codSolFab>
+	
+	<fabrica>
+		<codigoFabrica>1</codigoFabrica>
+		<nombreFabrica>Lanus Este</nombreFabrica>
+	</fabrica>
+	
+	<articulosRecibidos>
+		<articulorecibido>
+			<codArt>1000</codArt>
+			<cant>8</cant>
+		</articulorecibido>
+	
+		<articulorecibido>
+			<codArt>1002</codArt>
+			<cant>10</cant>
+		</articulorecibido>
+	
+		<articulorecibido>
+			<codArt>1101</codArt>
+			<cant>20</cant>
+		</articulorecibido>
+	</articulosRecibidos>
+</solrep>

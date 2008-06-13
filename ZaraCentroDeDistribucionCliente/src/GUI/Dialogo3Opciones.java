@@ -5,12 +5,12 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Paneles.PanelConfig;
 import Paneles.PanelDB;
 import Paneles.PanelEnvios;
 import Paneles.PanelGenSolFab;
@@ -69,22 +69,19 @@ public class Dialogo3Opciones extends JDialog
             public void actionPerformed(ActionEvent e)
             {
             	if (ref instanceof PanelEnvios) {
-                    ((PanelEnvios) ref).update();
-                }
-                if (ref instanceof PanelConfig) {
-                    ((PanelConfig) ref).update();
+                    ((PanelEnvios) ref).getRef().ponerPanel(ref);
                 }
                 if (ref instanceof PanelGenSolFab) {
-                    ((PanelGenSolFab) ref).update();
+                    ((PanelGenSolFab) ref).getRef().ponerPanel(ref);
                 }
                 if (ref instanceof PanelNewArt) {
                     ((PanelNewArt) ref).getRef().ponerPanel(ref);
                 }
                 if (ref instanceof PanelRepArt) {
-                    ((PanelRepArt) ref).update();
+                    ((PanelRepArt) ref).getRef().ponerPanel(ref);
                 }
                 if (ref instanceof PanelSolDist) {
-                    ((PanelSolDist) ref).update();
+                    ((PanelSolDist) ref).getRef().ponerPanel(ref);
                 }
                 if (ref instanceof PanelDB) {
                     ((PanelDB) ref).getRef().ponerPanel(ref);
@@ -99,22 +96,19 @@ public class Dialogo3Opciones extends JDialog
             {
             	
             	if (ref instanceof PanelEnvios) {
-                    ((PanelEnvios) ref).update();
-                }
-                if (ref instanceof PanelConfig) {
-                    ((PanelConfig) ref).update();
+                    ((PanelEnvios) ref).getRef().ponerPanelPrincipal();
                 }
                 if (ref instanceof PanelGenSolFab) {
-                    ((PanelGenSolFab) ref).update();
+                    ((PanelGenSolFab) ref).getRef().ponerPanelPrincipal();
                 }
                 if (ref instanceof PanelNewArt) {
                     ((PanelNewArt) ref).getRef().ponerPanelPrincipal();
                 }
                 if (ref instanceof PanelRepArt) {
-                    ((PanelRepArt) ref).update();
+                    ((PanelRepArt) ref).getRef().ponerPanelPrincipal();
                 }
                 if (ref instanceof PanelSolDist) {
-                    ((PanelSolDist) ref).update();
+                    ((PanelSolDist) ref).getRef().ponerPanelPrincipal();
                 }
                 if (ref instanceof PanelDB) {
                     ((PanelDB) ref).getRef().ponerPanelPrincipal();
