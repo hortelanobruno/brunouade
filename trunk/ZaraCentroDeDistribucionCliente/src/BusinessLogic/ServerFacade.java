@@ -50,6 +50,8 @@ public interface ServerFacade
 	//panel gen sol fab
 	public SolicitudFabricaVO getSolFab(int codigo);
 	public ArrayList<SolicitudFabricaVO> getAllSolFab();
+	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
+	
 	
 	//panel reposicion
 	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
@@ -63,6 +65,7 @@ public interface ServerFacade
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
+	
 
 	
 	

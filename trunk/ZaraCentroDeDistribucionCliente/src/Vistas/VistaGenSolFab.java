@@ -25,4 +25,8 @@ public class VistaGenSolFab extends Vista {
 		this.ref = ref;
 	}
 
+	public void cargarTabla(boolean b) {
+		ref.getPanelGSF().setCargarTabla(b);
+	}
+
 }

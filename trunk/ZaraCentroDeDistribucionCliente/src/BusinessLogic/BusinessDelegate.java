@@ -198,6 +198,10 @@ public class BusinessDelegate extends ProxyModelo
 		this.getModCD().modificarStock(artiAEnv);		
 	}
 
+	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricarVO() {
+		return this.getModCD().getArticulosAFabricar();
+	}
+
 
 
 
