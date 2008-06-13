@@ -13,16 +13,15 @@ import VO.SolicitudFabricaVO;
 @Remote
 public interface AdministradorSolicitudes 
 {
-	
 	public void guardarSolicitud(SolicitudDistribucionVO soldist);
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
     public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
     public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
-    public SolicitudFabricaVO getSolFab(long codigo);
+    public SolicitudFabricaVO getSolFab(int codigo);
     public ArrayList<SolicitudFabricaVO> getAllSolFab();
     public void actualizarSolFab(SolicitudFabricaVO solFab);
     public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
-    public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab);
+    public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab);
     public int getNumeroSolEnv();
 	public int getNumeroSolFab();
 	public FabricaVO getFabrica();

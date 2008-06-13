@@ -48,14 +48,14 @@ public interface ServerFacade
 	
 	
 	//panel gen sol fab
-	public SolicitudFabricaVO getSolFab(long codigo);
+	public SolicitudFabricaVO getSolFab(int codigo);
 	public ArrayList<SolicitudFabricaVO> getAllSolFab();
 	
 	//panel reposicion
 	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
 	public void actualizarSolFab(SolicitudFabricaVO solFab);
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
-	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab);
+	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab);
 	
 	
 	//panel new art
