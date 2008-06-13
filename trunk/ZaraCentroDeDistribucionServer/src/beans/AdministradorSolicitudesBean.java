@@ -36,9 +36,8 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 	}
 
-	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab)
+	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab)
 	{
-	
 		return null;
 	}
 
@@ -56,14 +55,10 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return ret;
 	}
 
-	public SolicitudFabricaVO getSolFab(long codigo)
+	public SolicitudFabricaVO getSolFab(int codigo)
 	{
-		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s WHERE s.numero =: codigo");
-		q.setParameter("codigo", codigo);
-		List l = q.getResultList();
-		Iterator it = l.iterator();
-		SolicitudDeFabricacion aux = (SolicitudDeFabricacion)it.next();
-		return aux.getVO();
+		SolicitudDeFabricacion sf = em.find(SolicitudDeFabricacion.class, codigo);
+		return sf.getVO();
 	}
 
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda) 

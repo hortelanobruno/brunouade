@@ -83,11 +83,6 @@ public class ServerFacadeBean implements ServerFacade
 		return admArt.getStocks(codigos);
 	}
 
-	public SolicitudFabricaVO getSolFab(long codigo) 
-	{
-		return this.admSol.getSolFab(codigo);
-	}
-
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException
 	{
 		this.admArt.guardarArticuloHogar(a);
@@ -103,7 +98,7 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.actualizarSolFab(solFab);
 	}
 
-	public SolicitudFabricaVO cargarSolicitudFabricacion(long codigoSolFab) 
+	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab) 
 	{
 		return this.admSol.cargarSolicitudFabricacion(codigoSolFab);
 	}
@@ -193,5 +188,4 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		admArt.actualizarStock(arts);
 	}
-	
 }
