@@ -19,6 +19,7 @@ import BusinessLogic.Tienda;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
+import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
@@ -61,15 +62,15 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		return stocks;
 	}
 
-	public void actualizarStock(Vector<ArticuloHeaderVO> arts) 
+	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts) 
 	{
 		for(int i = 0; i < arts.size();i++)
 		{
-			Articulo a = em.find(Articulo.class, arts.elementAt(i).getCodigo());
+			Articulo a = em.find(Articulo.class, arts.get(i).getArt().getCodigo());
 			
 			if(a != null)
 			{
-				a.setVO(arts.elementAt(i));
+				a.setVO(arts.get(i).getArt());
 				em.merge(a);
 			}
 		}
@@ -138,6 +139,21 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			ArticuloAFabricar art = new ArticuloAFabricar();
 			art.setVO(artVO);
 			em.persist(art);
+		}
+	}
+
+	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv) 
+	{
+		Iterator i = (Iterator)artiAEnv.iterator();
+		while(i.hasNext())
+		{
+			ArticuloAEnviarVO avo = (ArticuloAEnviarVO) i.next();
+			Articulo a = em.find(Articulo.class,avo.getArt().getCodigo());
+			if(a != null)
+			{
+				a.setVO(avo.getArt());
+				em.merge(a);
+			}
 		}
 	}
 }

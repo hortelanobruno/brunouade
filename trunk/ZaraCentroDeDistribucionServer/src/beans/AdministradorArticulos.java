@@ -8,6 +8,7 @@ import javax.ejb.Remote;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
+import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
@@ -21,9 +22,10 @@ public interface AdministradorArticulos
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public ArrayList<String> getDescripciones(ArrayList<Long> cods);
 	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
-	public void actualizarStock(Vector<ArticuloHeaderVO> arts);
+	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic2);
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2);
 	public Vector<TiendaVO> getTiendas();
+	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv);
 }
