@@ -290,14 +290,19 @@ public class PanelSolDist extends javax.swing.JPanel {
 			// Falta generar las solicitudes
 			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
 			Collection<ArticuloAEnviarVO> artiAEnv = (Collection<ArticuloAEnviarVO>) articulosEnviarDeTabla();
-			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarSolicitud(solDisVO);
-			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAEnviar(artiAEnv);
-			((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAFabricar(artiAFab);
-			((ControladorPanelSolDis) vistaSolDis.getControlador()).doActualizarStocks(artiAEnv);
-			vaciarTabla();
-			ref.getJTextArea1().append("Solicitudes Guardadas\n");
-			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
-			
+			if((!artiAFab.isEmpty()) && ( comboFabrica.getSelectedItem().toString().equals(""))){
+				JOptionPane.showMessageDialog(this,
+						"Debe seleccionar una fabrica.\n",
+						Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
+			}else{
+				((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarSolicitud(solDisVO);
+				((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAEnviar(artiAEnv);
+				((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAFabricar(artiAFab);
+				((ControladorPanelSolDis) vistaSolDis.getControlador()).doActualizarStocks(artiAEnv);
+				vaciarTabla();
+				ref.getJTextArea1().append("Solicitudes Guardadas\n");
+				new Dialogo3Opciones("Operacion concretada", this).setVisible(true);	
+			}
 		}
 	}
 
