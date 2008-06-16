@@ -25,7 +25,7 @@ public class SolicitudEnvioATienda extends Solicitud
 	}
 	
 	public SolicitudEnvioATienda(int n, Collection<ArticuloAEnviar> a, Date f, Tienda t){
-		super(n,f);
+		super(n,new java.sql.Date(f.getTime()));
 		this.tienda = t;
 		this.setArticulosAEnviar(a);
 	}
@@ -68,7 +68,7 @@ public class SolicitudEnvioATienda extends Solicitud
 	}
 
 	public void setVO(SolicitudEnvioVO vo){
-		this.setFechaEmision(vo.getFechaEmision());
+		this.setFechaEmision(new java.sql.Date(vo.getFechaEmision().getTime()));
 		this.setNumero(vo.getNumero());
 		Tienda tienda = new Tienda();
 		tienda.setVO(vo.getTienda());

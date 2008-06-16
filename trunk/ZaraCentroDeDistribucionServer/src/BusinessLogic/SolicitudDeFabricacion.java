@@ -28,7 +28,7 @@ public class SolicitudDeFabricacion extends Solicitud
 	
 	public SolicitudDeFabricacion(int n, Collection<ArticuloAFabricar> a, Date f, Fabrica fa)
 	{
-		super(n,f);
+		super(n,new java.sql.Date(f.getTime()));
 		this.fabrica = fa;
 		this.setArticulosAFabricar(a);
 	}
@@ -85,7 +85,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		cent.setVO(vo.getCdVO());
 		this.setCentro(cent);
 		this.setNumero(vo.getNumero());
-		this.setFechaEmision(vo.getFechaEmision());
+		this.setFechaEmision(new java.sql.Date(vo.getFechaEmision().getTime()));
 		Fabrica fab = new Fabrica();
 		fab.setVO(vo.getFabrica());
 		this.setFabrica(fab);
