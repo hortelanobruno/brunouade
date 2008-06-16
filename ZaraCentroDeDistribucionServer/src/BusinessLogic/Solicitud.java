@@ -1,7 +1,7 @@
 package BusinessLogic;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -58,7 +58,6 @@ public class Solicitud implements Serializable
 		this.centro = centro;
 	}
 
-	@Column
 	public Date getFechaEmision() {
 		return fechaEmision;
 	}
@@ -77,7 +76,7 @@ public class Solicitud implements Serializable
 	public void setVO(SolicitudVO vo)
 	{
 		this.setNumero(vo.getNumero());
-		this.setFechaEmision(vo.getFechaEmision());
+		this.setFechaEmision(new Date(vo.getFechaEmision().getTime()));
 		CentroDistribucion centro = new CentroDistribucion();
 		centro.setVO(vo.getCdVO());
 		this.setCentro(centro);

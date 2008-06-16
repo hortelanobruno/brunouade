@@ -1,5 +1,6 @@
 package BusinessLogic;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -77,7 +78,7 @@ public class SolicitudReposicion extends Solicitud
 	public void setVO(SolicitudDeReposicionVO vo)
 	{
 		this.setNumero(vo.getNumero());
-		this.setFechaEmision(vo.getFechaEmision());
+		this.setFechaEmision(new Date( vo.getFechaEmision().getTime()));
 		Fabrica fab = new Fabrica();
 		fab.setVO(vo.getFabrica());
 		this.setFabrica(fab);
