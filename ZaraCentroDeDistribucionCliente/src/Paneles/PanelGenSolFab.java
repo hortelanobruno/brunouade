@@ -216,8 +216,8 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		ArrayList<ArticuloAFabricarVO> arts = new ArrayList<ArticuloAFabricarVO>();
 		for (int i = 0 ; i < articulosAFabricar.size() ; i++){
 			ArticuloAFabricarVO artVO = articulosAFabricar.get(i);
-			int cantAPedir = Integer.parseInt(((DefaultTableModel)tablaArticulos.getModel()).getValueAt(i, 6).toString());
-			artVO.setCantidadPedida(cantAPedir);
+			int cantAFabricar = Integer.parseInt(((DefaultTableModel)tablaArticulos.getModel()).getValueAt(i, 6).toString());
+			artVO.setCantidadAFabricar(cantAFabricar);
 			arts.add(artVO);
 		}
 		return arts;
