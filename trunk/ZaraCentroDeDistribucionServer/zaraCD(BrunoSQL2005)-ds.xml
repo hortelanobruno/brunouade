@@ -17,7 +17,7 @@
 <datasources>
   <local-tx-datasource>
     <jndi-name>CDDS</jndi-name>
-    <connection-url>jdbc:sqlserver://127.0.0.1\SQLEXPRESS:1433;DatabaseName=zaradb</connection-url>
+    <connection-url>jdbc:sqlserver://127.0.0.1:1433;DatabaseName=zaradb</connection-url>
     <driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
     <user-name>sa</user-name>
     <password>123456</password>
