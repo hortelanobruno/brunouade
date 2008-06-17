@@ -370,6 +370,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 				aFab.setArt(arti);
 				aFab.setCantidadPedida(ped - sel);
 				aFab.setCantidadRecibida(0);
+				aFab.setCantidadAFabricar(0);
 				// aFab.setFabrica()
 				// aFab.setIdAAF();
 				idMax++;
