@@ -236,11 +236,18 @@ public class PanelSolDist extends javax.swing.JPanel {
 				cantCeros++;
 			if ((valor < 0) || (valor > pedido)) {
 				grabar = false;
-				if (valor > pedido)
+				if (valor > pedido){
 					JOptionPane.showMessageDialog(this,
 							"El valor ingresado es mayor al pedido.",
 							Constantes.APPLICATION_NAME,
 							JOptionPane.ERROR_MESSAGE);
+					break;
+				}
+				tableArticulos.getModel().setValueAt(0,i, 6);
+				JOptionPane.showMessageDialog(this,
+						"El valor ingresado tiene que ser un numero positivo.",
+						Constantes.APPLICATION_NAME,
+						JOptionPane.ERROR_MESSAGE);
 				break;
 			}
 		}
