@@ -22,6 +22,9 @@ public class ArticuloAFabricar implements Serializable
 	private Fabrica fabrica;
 	private int cantidadPedida;
 	private int cantidadRecibida;
+	private int cantidadAFabricar;
+
+
 
 	public ArticuloAFabricar()
 	{
@@ -94,6 +97,15 @@ public class ArticuloAFabricar implements Serializable
 	public void setCantidadRecibida(int cantidadRecibida) {
 		this.cantidadRecibida = cantidadRecibida;
 	}
+
+	@Column
+	public int getCantidadAFabricar() {
+		return cantidadAFabricar;
+	}
+
+	public void setCantidadAFabricar(int cantidadAFabricar) {
+		this.cantidadAFabricar = cantidadAFabricar;
+	}
 	
 	@Transient
 	public ArticuloAFabricarVO getVO(){
@@ -104,6 +116,7 @@ public class ArticuloAFabricar implements Serializable
 		art.setFabrica(this.getFabrica().getVO());
 		art.setSol(this.getSol().getVO());
 		art.setArt(this.getArt().getVO());
+		art.setCantidadAFabricar(this.getCantidadAFabricar());
 		return art;
 	}
 	
@@ -111,6 +124,7 @@ public class ArticuloAFabricar implements Serializable
 		this.setIdAAF(art.getIdAAF());
 		this.setCantidadPedida(art.getCantidadPedida());
 		this.setCantidadRecibida(art.getCantidadRecibida());
+		this.setCantidadAFabricar(art.getCantidadAFabricar());
 		Fabrica fab = new Fabrica();
 		fab.setVO(art.getFabrica());
 		this.setFabrica(fab);
