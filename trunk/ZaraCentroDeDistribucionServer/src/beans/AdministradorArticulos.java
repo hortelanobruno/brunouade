@@ -29,4 +29,5 @@ public interface AdministradorArticulos
 	public Vector<TiendaVO> getTiendas();
 	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv);
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
+	public boolean existeArticulo(long codigo);
 }

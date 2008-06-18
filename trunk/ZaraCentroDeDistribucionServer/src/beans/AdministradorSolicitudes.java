@@ -28,4 +28,6 @@ public interface AdministradorSolicitudes
 	public int getNextIdArticuloPedido();
 	public int getNextIdArticuloAEnviar();
 	public int getNextIdArticuloAFabricar();
+	public boolean existeSolDis(int codigo);
+	public boolean existeSolRep(int codigo);
 }
