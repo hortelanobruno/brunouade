@@ -273,26 +273,34 @@ public class PanelSolDist extends javax.swing.JPanel {
 		if (cargarTable) {
 			XMLWrapper xml = new XMLWrapper();
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
-			solDisVO.setFechaEmision(ref.getDate());
-			ArrayList<Long> codigos = new ArrayList<Long>();
-			int idMax = this.ref.getVistaSolDis().getModelo().getNextId();
-			Iterator arts = (Iterator) solDisVO.getArticulosPedidos().iterator();
-			ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
-			while (arts.hasNext()) {
-				ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
-				idMax++;
-				artVO.setIdAP(idMax);
-				codigos.add(artVO.getArt().getCodigo());
-				artsVO.add(artVO);
+			if(!((ControladorPanelSolDis)vistaSolDis.getControlador()).doExisteSolicitudDeDistribucion(solDisVO.getNumero())){
+				vaciarTabla();
+				ref.getJTextArea1().append("Solicitud de Distribucion 'existente' en el Centro de Distribucion \n");
+				this.buttonCargarXML.setEnabled(true);
+				this.buttonGuardarPedido.setEnabled(false);
+				JOptionPane.showMessageDialog(this,"La Solicitud de Distribucion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+			}else{
+				solDisVO.setFechaEmision(ref.getDate());
+				ArrayList<Long> codigos = new ArrayList<Long>();
+				int idMax = this.ref.getVistaSolDis().getModelo().getNextId();
+				Iterator arts = (Iterator) solDisVO.getArticulosPedidos().iterator();
+				ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
+				while (arts.hasNext()) {
+					ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
+					idMax++;
+					artVO.setIdAP(idMax);
+					codigos.add(artVO.getArt().getCodigo());
+					artsVO.add(artVO);
+				}
+				solDisVO.setArticulosPedidos(artsVO);
+				ArrayList<String> descripciones = this.ref.getVistaSolDis()
+						.getModelo().getDescripciones(codigos);
+				ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
+				CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
+				solDisVO.setCdVO(centroVO);
+				cargarTable(solDisVO, codigos, descripciones, stocks);
+				ref.getJTextArea1().append("Archivo Cargado\n");
 			}
-			solDisVO.setArticulosPedidos(artsVO);
-			ArrayList<String> descripciones = this.ref.getVistaSolDis()
-					.getModelo().getDescripciones(codigos);
-			ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
-			CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
-			solDisVO.setCdVO(centroVO);
-			cargarTable(solDisVO, codigos, descripciones, stocks);
-			ref.getJTextArea1().append("Archivo Cargado\n");
 		} else {
 			// Falta generar las solicitudes
 			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();

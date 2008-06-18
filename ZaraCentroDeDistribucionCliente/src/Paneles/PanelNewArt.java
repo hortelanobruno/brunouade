@@ -181,20 +181,27 @@ public class PanelNewArt extends javax.swing.JPanel
 			//cargar articulo
 			XMLWrapper xml = new XMLWrapper();
 			articuloXML = (XMLArticulo) xml.parseXMLArticulo(urlXML);
-			vaciarTabla();
-			cargarTable(articuloXML);
-			ref.getJTextArea1().append("Articulo Cargado\n");
-			this.buttonGuardar.setEnabled(true);
-			this.buttonCargarXML.setEnabled(false);
+			if(!((ControladorPanelNewArt)vistaNewArt.getControlador()).doExisteArticulo(articuloXML.getCodigo())){
+				vaciarTabla();
+				ref.getJTextArea1().append("Articulo 'existente' en el Centro de Distribucion \n");
+				this.buttonCargarXML.setEnabled(true);
+				this.buttonGuardar.setEnabled(false);
+				JOptionPane.showMessageDialog(this,"El articulo ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+			}else{
+				vaciarTabla();
+				cargarTable(articuloXML);
+				ref.getJTextArea1().append("Articulo Cargado\n");
+				this.buttonGuardar.setEnabled(true);
+				this.buttonCargarXML.setEnabled(false);
+			}
 		}else{
 			//persiste articulo
-			
 			if(((DefaultTableModel)tableArticulo.getModel()).getValueAt(0, 1).equals("Ropa")){
 				//es un articulo ropa
 				ArticuloRopaVO articulo = crearArticuloRopaVO();
 				try
 				{
-					((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloRopa(articulo);
+					((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloRopa(articulo);	
 				}
 				catch(ExistingProductException e)
 				{
