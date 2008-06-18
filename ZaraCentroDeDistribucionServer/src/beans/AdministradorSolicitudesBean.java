@@ -26,7 +26,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	@PersistenceContext(unitName="CentroDeDistribucion")
 	private EntityManager em;
 	
-	
 	public void actualizarSolFab(SolicitudFabricaVO solFab) 
 	{
 		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFab.getNumero());
@@ -167,5 +166,15 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			int a = (Integer) l.get(0);
 			return a;
 		}
+	}
+
+	public boolean existeSolDis(int codigo) 
+	{
+		return (em.find(SolicitudDistribucion.class, codigo) == null)?false:true;
+	}
+
+	public boolean existeSolRep(int codigo)
+	{
+		return (em.find(SolicitudReposicion.class, codigo) == null)?false:true;
 	}
 }

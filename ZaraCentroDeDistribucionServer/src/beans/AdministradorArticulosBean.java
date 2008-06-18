@@ -170,4 +170,9 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 		return ret;
 	}
+
+	public boolean existeArticulo(long codigo) 
+	{
+		return (em.find(Articulo.class, codigo) == null)?false:true;
+	}
 }

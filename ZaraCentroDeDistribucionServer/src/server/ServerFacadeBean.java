@@ -192,4 +192,19 @@ public class ServerFacadeBean implements ServerFacade
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar() {
 		return this.admArt.getArticulosAFabricar();
 	}
+
+	public boolean existeArticulo(long codigo) 
+	{
+		return this.admArt.existeArticulo(codigo);
+	}
+
+	public boolean existeSolDis(int codigo) 
+	{
+		return this.admSol.existeSolDis(codigo);
+	}
+
+	public boolean existeSolRep(int codigo) 
+	{
+		return this.admSol.existeSolRep(codigo);
+	}
 }
