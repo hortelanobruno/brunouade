@@ -1,9 +1,12 @@
 package BusinessLogic;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.Locale;
 
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
@@ -54,7 +57,7 @@ public class SolicitudDistribucion extends Solicitud
 	public SolicitudDistribucionVO getVO() {
 		SolicitudDistribucionVO sol = new SolicitudDistribucionVO();
 		sol.setNumero(this.getNumero());
-		sol.setFechaEmision(this.getFechaEmision());
+		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		sol.setTienda(this.getTienda().getVO());
 		sol.setCdVO(this.getCentro().getVO());
 		Collection<ArticuloPedidoVO> arts = new ArrayList<ArticuloPedidoVO>();
@@ -68,7 +71,7 @@ public class SolicitudDistribucion extends Solicitud
 	}
 
 	public void setVO(SolicitudDistribucionVO vo) {
-		this.setFechaEmision(vo.getFechaEmision());
+		this.setFechaEmision(this.getFechaHoraFromDate(vo.getFechaEmision()));
 		this.setNumero(vo.getNumero());
 		Tienda tienda = new Tienda();
 		tienda.setVO(vo.getTienda());
@@ -85,5 +88,60 @@ public class SolicitudDistribucion extends Solicitud
 			arts.add(art);
 		}
 		this.setArticulosPedidos(arts);
+	}
+	
+	@Transient
+	private String getFecha(String f)
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i<f.indexOf(" ");i++)
+			sb.append(f.charAt(i));
+		
+		return sb.toString();
+	}
+	
+	@Transient
+	private String getHora(String f)
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = f.indexOf(" "); i<f.length();i++)
+			sb.append(f.charAt(i));
+		
+		return sb.toString();
+	}
+	
+	@Transient
+	private String getFechaHoraFromDate(Date d)
+	{
+		String fecha;
+		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
+		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+		fecha = df.format(d ) + " " +df1.format(d );
+		return fecha;
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Transient
+	private Date getFechaHoraFromString(String f)
+	{
+		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
+		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+		
+		Date fn;
+		Date fn2;
+		try 
+		{
+			fn = df.parse(this.getFecha(f));
+			fn2 = df1.parse(this.getHora(f));	
+			fn.setHours(fn2.getHours());
+			fn.setMinutes(fn2.getMinutes());
+			fn.setSeconds(fn2.getSeconds());
+		} 
+		catch (ParseException e)
+		{
+			// TODO Auto-generated catch block
+			return null;
+		}
+		return fn;
 	}
 }
