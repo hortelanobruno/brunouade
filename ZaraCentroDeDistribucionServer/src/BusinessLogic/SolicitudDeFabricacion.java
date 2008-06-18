@@ -1,9 +1,12 @@
 package BusinessLogic;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Vector;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -57,7 +60,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		SolicitudFabricaVO vo = new SolicitudFabricaVO();
 		vo.setNumero(this.getNumero());
 		vo.setFabrica(this.getFabrica().getVO());
-		vo.setFechaEmision(this.getFechaEmision());
+		vo.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		vo.setCdVO(this.getCentro().getVO());
 		Iterator it = (Iterator) this.getArticulosAFabricar().iterator();
 		Collection<ArticuloAFabricarVO> arts = new ArrayList<ArticuloAFabricarVO>();
@@ -85,11 +88,66 @@ public class SolicitudDeFabricacion extends Solicitud
 		cent.setVO(vo.getCdVO());
 		this.setCentro(cent);
 		this.setNumero(vo.getNumero());
-		this.setFechaEmision(vo.getFechaEmision());
+		this.setFechaEmision(this.getFechaHoraFromDate(vo.getFechaEmision()));
 		Fabrica fab = new Fabrica();
 		fab.setVO(vo.getFabrica());
 		this.setFabrica(fab);
 		this.setArticulosAFabricar(recibidos);
 		
+	}
+	
+	@Transient
+	private String getFecha(String f)
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i<f.indexOf(" ");i++)
+			sb.append(f.charAt(i));
+		
+		return sb.toString();
+	}
+	
+	@Transient
+	private String getHora(String f)
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = f.indexOf(" "); i<f.length();i++)
+			sb.append(f.charAt(i));
+		
+		return sb.toString();
+	}
+	
+	@Transient
+	private String getFechaHoraFromDate(Date d)
+	{
+		String fecha;
+		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
+		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+		fecha = df.format(d ) + " " +df1.format(d );
+		return fecha;
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Transient
+	private Date getFechaHoraFromString(String f)
+	{
+		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
+		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+		
+		Date fn;
+		Date fn2;
+		try 
+		{
+			fn = df.parse(this.getFecha(f));
+			fn2 = df1.parse(this.getHora(f));	
+			fn.setHours(fn2.getHours());
+			fn.setMinutes(fn2.getMinutes());
+			fn.setSeconds(fn2.getSeconds());
+		} 
+		catch (ParseException e)
+		{
+			// TODO Auto-generated catch block
+			return null;
+		}
+		return fn;
 	}
 }
