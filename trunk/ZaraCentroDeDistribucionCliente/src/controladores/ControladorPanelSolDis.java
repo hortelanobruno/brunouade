@@ -63,6 +63,10 @@ public class ControladorPanelSolDis extends Controlador
 		((BusinessDelegate)(this.getModelo())).modificarStock(artiAEnv);
 	}
 
+	public boolean doExisteSolicitudDeDistribucion(int numero) {
+		return ((BusinessDelegate)(this.getModelo())).existeSolDis(numero);
+	}
+
 
 	
 	

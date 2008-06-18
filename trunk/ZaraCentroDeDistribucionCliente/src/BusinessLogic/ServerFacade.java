@@ -42,6 +42,7 @@ public interface ServerFacade
 	public int getNextIdArticuloAFabricar();
 	public ArrayList<FabricaVO> getFabricas();
 	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv);
+	public boolean existeSolDis(int numero);//Nuevo hay que hacer
 	
 	//	panel envios
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
@@ -58,6 +59,7 @@ public interface ServerFacade
 	public void actualizarSolFab(SolicitudFabricaVO solFab);
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
 	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab);
+	public boolean existeSolRep(int numero);//Nuevo hay que hacer
 	
 	
 	//panel new art
@@ -65,11 +67,6 @@ public interface ServerFacade
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
-	
-
-	
-	
-	
-
+	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	
 }

@@ -72,7 +72,8 @@ public class BusinessDelegate extends ProxyModelo
 	 * @throws ErrorConectionException 
 	 * 
 	 */
-    protected void getConnection() throws ErrorConectionException {
+    @SuppressWarnings("unchecked")
+	protected void getConnection() throws ErrorConectionException {
         try {
         	//Context jndiContext = getInitialContext();
         	//this.modCD = (ServerFacade)jndiContext.lookup(naming);
@@ -89,7 +90,8 @@ public class BusinessDelegate extends ProxyModelo
         }
     }    
 	 
-    private static Context getInitialContext() throws javax.naming.NamingException {
+    @SuppressWarnings("unused")
+	private static Context getInitialContext() throws javax.naming.NamingException {
         return new javax.naming.InitialContext();
     }
 	
@@ -200,6 +202,18 @@ public class BusinessDelegate extends ProxyModelo
 
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricarVO() {
 		return this.getModCD().getArticulosAFabricar();
+	}
+
+	public boolean existeArticulo(long codigo) {
+		return this.getModCD().existeArticulo(codigo);
+	}
+
+	public boolean existeSolDis(int numero) {
+		return this.getModCD().existeSolDis(numero);
+	}
+
+	public boolean existeSolRep(int numero) {
+		return this.getModCD().existeSolRep(numero);
 	}
 
 

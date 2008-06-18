@@ -21,22 +21,22 @@ public class ControladorPanelRepArt extends Controlador{
 	public void doCargarXML(boolean b) {
 		((VistaRepArt)vista).cargarTabla(b);
 		vista.actualizar();
-		
 	}
 
 	public void doGuardarSolicitudFabricacion(SolicitudFabricaVO solFab) {
 		((BusinessDelegate)(this.getModelo())).guardarSolicitudFabricacion(solFab);
-		
 	}
 
 	public void doGuardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO) {
 		((BusinessDelegate)(this.getModelo())).guardarSolicitudReposicion(solRepVO);
-		
 	}
 
 	public void doCargarStocks(ArrayList<ArticuloAReponerVO> articulo) {
 		((BusinessDelegate)(this.getModelo())).actualizarStock(articulo);
-		
+	}
+
+	public boolean doExisteSolicitudDeReposicion(int numero) {
+		return ((BusinessDelegate)(this.getModelo())).existeSolRep(numero);
 	}
 
 }

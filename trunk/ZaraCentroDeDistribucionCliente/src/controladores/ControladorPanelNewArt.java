@@ -29,4 +29,8 @@ public class ControladorPanelNewArt extends Controlador {
 		((BusinessDelegate)(this.getModelo())).guardarAritucloRopa(a);
 	}
 
+	public boolean doExisteArticulo(long codigo) {
+		return ((BusinessDelegate)(this.getModelo())).existeArticulo(codigo);
+	}
+
 }
