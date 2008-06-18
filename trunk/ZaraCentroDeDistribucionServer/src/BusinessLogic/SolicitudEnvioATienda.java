@@ -25,7 +25,7 @@ public class SolicitudEnvioATienda extends Solicitud
 	}
 	
 	public SolicitudEnvioATienda(int n, Collection<ArticuloAEnviar> a, Date f, Tienda t){
-		super(n,new java.sql.Date(f.getTime()));
+		super(n,f);
 		this.tienda = t;
 		this.setArticulosAEnviar(a);
 	}

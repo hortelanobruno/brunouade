@@ -78,7 +78,7 @@ public class SolicitudReposicion extends Solicitud
 	public void setVO(SolicitudDeReposicionVO vo)
 	{
 		this.setNumero(vo.getNumero());
-		this.setFechaEmision(new Date( vo.getFechaEmision().getTime()));
+		this.setFechaEmision( vo.getFechaEmision());
 		Fabrica fab = new Fabrica();
 		fab.setVO(vo.getFabrica());
 		this.setFabrica(fab);

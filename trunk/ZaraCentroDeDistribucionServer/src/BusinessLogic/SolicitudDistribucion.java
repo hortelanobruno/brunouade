@@ -27,7 +27,7 @@ public class SolicitudDistribucion extends Solicitud
 	}
 
 	public SolicitudDistribucion(int n, Date f, Tienda t, Collection<ArticuloPedido> a) {
-		super(n,new java.sql.Date(f.getTime()));
+		super(n,f);
 		this.tienda = t;
 		this.setArticulosPedidos(a);
 	}
@@ -68,7 +68,7 @@ public class SolicitudDistribucion extends Solicitud
 	}
 
 	public void setVO(SolicitudDistribucionVO vo) {
-		this.setFechaEmision(new java.sql.Date(vo.getFechaEmision().getTime()));
+		this.setFechaEmision(vo.getFechaEmision());
 		this.setNumero(vo.getNumero());
 		Tienda tienda = new Tienda();
 		tienda.setVO(vo.getTienda());
