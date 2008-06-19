@@ -273,7 +273,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 		if (cargarTable) {
 			XMLWrapper xml = new XMLWrapper();
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
-			if(!((ControladorPanelSolDis)vistaSolDis.getControlador()).doExisteSolicitudDeDistribucion(solDisVO.getNumero())){
+			if(((ControladorPanelSolDis)vistaSolDis.getControlador()).doExisteSolicitudDeDistribucion(solDisVO.getNumero())){
 				vaciarTabla();
 				ref.getJTextArea1().append("Solicitud de Distribucion 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);

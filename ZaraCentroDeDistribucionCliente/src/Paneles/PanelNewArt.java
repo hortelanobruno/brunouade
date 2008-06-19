@@ -181,7 +181,7 @@ public class PanelNewArt extends javax.swing.JPanel
 			//cargar articulo
 			XMLWrapper xml = new XMLWrapper();
 			articuloXML = (XMLArticulo) xml.parseXMLArticulo(urlXML);
-			if(!((ControladorPanelNewArt)vistaNewArt.getControlador()).doExisteArticulo(articuloXML.getCodigo())){
+			if(((ControladorPanelNewArt)vistaNewArt.getControlador()).doExisteArticulo(articuloXML.getCodigo())){
 				vaciarTabla();
 				ref.getJTextArea1().append("Articulo 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);
