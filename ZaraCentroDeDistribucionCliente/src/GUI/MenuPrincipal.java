@@ -7,6 +7,7 @@ package GUI;
 
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -245,7 +246,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
 		jMenu3 = new javax.swing.JMenu();
 		menuItemAyuda = new javax.swing.JMenuItem();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+		    public void windowClosing(WindowEvent winEvt) {
+		    	if (JOptionPane.showConfirmDialog(MenuPrincipal.getFrames()[0],
+						"Esta seguro que desea cerrar la aplicacion?",
+						Constantes.APPLICATION_NAME, JOptionPane.YES_NO_OPTION,
+						JOptionPane.QUESTION_MESSAGE) == 0) {
+					System.exit(0);
+				}	
+		    }
+		});
 		setTitle(Constantes.APPLICATION_NAME);
 		setResizable(false);
 
