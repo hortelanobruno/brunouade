@@ -203,7 +203,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 		if(cargarTable){
 			XMLWrapper xml = new XMLWrapper();
 			solRepVO = (SolicitudDeReposicionVO) xml.parseXMLSR(urlXML);
-			if(!((ControladorPanelRepArt)vistaRepArt.getControlador()).doExisteSolicitudDeReposicion(solRepVO.getNumero())){
+			if(((ControladorPanelRepArt)vistaRepArt.getControlador()).doExisteSolicitudDeReposicion(solRepVO.getNumero())){
 				vaciarTabla();
 				ref.getJTextArea1().append("Solicitud de Reposicion 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);
