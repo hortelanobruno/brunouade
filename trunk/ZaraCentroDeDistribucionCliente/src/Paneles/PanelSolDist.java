@@ -224,7 +224,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 	}
 
 	private void validateTable() {
-		//ARREGLAR MAS TARDE
+		//EL CODIGO DE VALIDACION ESTA MEDIO INENTENDIBLE, CAMBIARLO MAS ADELANTE
 		boolean grabar = true;
 		int fabricar = 0;
 		int cantCeros = 0;
@@ -266,6 +266,9 @@ public class PanelSolDist extends javax.swing.JPanel {
 			}
 			if(pedido>valor){
 				fabricar++;
+				if((stock != 0) && (valor == 0)){
+					fabricar--;
+				}
 			}
 			if(fabricar>0){
 				this.comboFabrica.setEnabled(true);
@@ -321,6 +324,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 				CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
 				solDisVO.setCdVO(centroVO);
 				cargarTable(solDisVO, codigos, descripciones, stocks);
+				this.buttonCargarXML.setEnabled(false);
 				ref.getJTextArea1().append("Archivo Cargado\n");
 			}
 		} else {
