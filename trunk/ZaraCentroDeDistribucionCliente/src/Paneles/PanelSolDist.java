@@ -53,6 +53,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 	/** Creates new form PanelSolDist */
 	public PanelSolDist(MenuPrincipal mn, VistaSolDis vista) {
 		initComponents();
+		this.buttonGuardarPedido.setEnabled(false);
+		this.comboFabrica.setEnabled(false);
 		this.ref = mn;
 		this.vistaSolDis = vista;
 		tableArticulos.getModel().addTableModelListener(
@@ -224,6 +226,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 	private void validateTable() {
 		//ARREGLAR MAS TARDE
 		boolean grabar = true;
+		int fabricar = 0;
 		int cantCeros = 0;
 
 		for (int i = 0; i < tableArticulos.getModel().getRowCount(); i++) {
@@ -231,12 +234,15 @@ public class PanelSolDist extends javax.swing.JPanel {
 					i, 6).toString());
 			int pedido = Integer.parseInt(tableArticulos.getModel().getValueAt(
 					i, 4).toString());
+			int stock = Integer.parseInt(tableArticulos.getModel().getValueAt(
+					i, 5).toString());
 
 			if (valor == 0)
 				cantCeros++;
 			if ((valor < 0) || (valor > pedido)) {
 				grabar = false;
 				if (valor > pedido){
+					tableArticulos.getModel().setValueAt(0,i, 6);
 					JOptionPane.showMessageDialog(this,
 							"El valor ingresado es mayor al pedido.",
 							Constantes.APPLICATION_NAME,
@@ -250,8 +256,24 @@ public class PanelSolDist extends javax.swing.JPanel {
 						JOptionPane.ERROR_MESSAGE);
 				break;
 			}
+			if(stock<valor){
+				tableArticulos.getModel().setValueAt(0,i, 6);
+				JOptionPane.showMessageDialog(this,
+						"El valor ingresado es mayor al stock actual.",
+						Constantes.APPLICATION_NAME,
+						JOptionPane.ERROR_MESSAGE);
+				break;
+			}
+			if(pedido>valor){
+				fabricar++;
+			}
+			if(fabricar>0){
+				this.comboFabrica.setEnabled(true);
+			}else{
+				this.comboFabrica.setEnabled(false);
+			}
+				
 		}
-
 		if ((grabar) && (cantCeros < tableArticulos.getModel().getRowCount())) {
 			buttonGuardarPedido.setEnabled(true);
 			labelValidacion.setText("OK");
