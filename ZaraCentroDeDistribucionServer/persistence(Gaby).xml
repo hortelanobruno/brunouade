@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+	<persistence-unit name="tiendazara">
+		<jta-data-source>java:/tiendazara-mysql-ds</jta-data-source>
+      <properties>
+         <property name="hibernate.show-sql" value="true"/>
+         <property name="hibernate.hbm2ddl.auto" value="create-drop"></property>
+      </properties>
+	</persistence-unit>
+</persistence>
