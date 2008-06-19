@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Vector;
+
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -45,7 +47,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		this.fabrica = fabrica;
 	}
 
-	@OneToMany
+	@OneToMany(cascade={CascadeType.MERGE})
 	public Collection<ArticuloAFabricar> getArticulosAFabricar() {
 		return articulosAFabricar;
 	}
