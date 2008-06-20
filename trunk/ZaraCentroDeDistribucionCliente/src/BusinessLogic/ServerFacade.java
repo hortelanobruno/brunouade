@@ -30,7 +30,7 @@ public interface ServerFacade
 	//panel sol dist
 	public ArrayList<String> getDescripciones(ArrayList<Long> codigos);
 	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
-	public void guardarSolicitud(SolicitudDistribucionVO soldist);
+	public void guardarSolicitudDistribucion(SolicitudDistribucionVO soldist);
 	public int getNumeroSolEnv();
 	public int getNumeroSolFab();
 	public ArticuloHeaderVO getArticulo(long codigo);
