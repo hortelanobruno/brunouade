@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +13,6 @@ import BusinessLogic.ArticuloAEnviar;
 import BusinessLogic.ArticuloAFabricar;
 import BusinessLogic.ArticuloHogar;
 import BusinessLogic.ArticuloRopa;
-import BusinessLogic.Tienda;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
@@ -23,7 +20,6 @@ import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
-import VO.TiendaVO;
 import beans.AdministradorArticulos;
 
 @Stateless
@@ -106,21 +102,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	{
 		return em.find(Articulo.class, codigo).getVO();
 	}
-	
-
-	public Vector<TiendaVO> getTiendas() 
-	{
-		Query q = em.createQuery("SELECT t From Tienda t");
-		List l = q.getResultList();
-		
-		Vector<TiendaVO> ret = new Vector<TiendaVO>();
-		
-		for(Iterator i = l.iterator();i.hasNext();)
-			ret.add(((Tienda)i).getVO());
-		
-		return ret;
-	}
-
 
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
 		Iterator it = artic2.iterator();

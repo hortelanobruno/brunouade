@@ -2,11 +2,8 @@ package server;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Vector;
-
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-
 import BusinessLogic.ServerFacade;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
@@ -43,9 +40,9 @@ public class ServerFacadeBean implements ServerFacade
 		return 5000000;
 	}
 
-	public void guardarSolicitud(SolicitudDistribucionVO soldist) 
+	public void guardarSolicitudDistribucion(SolicitudDistribucionVO soldist) 
 	{
-		this.admSol.guardarSolicitud(soldist);
+		this.admSol.guardarSolicitudDistribucion(soldist);
 	}
 
 	public ArrayList<SolicitudFabricaVO> getAllSolFab() 
@@ -130,13 +127,13 @@ public class ServerFacadeBean implements ServerFacade
 
 	public FabricaVO getFabrica() 
 	{
-		return this.admSol.getFabrica();
+		return this.admConf.getFabrica();
 	}
 
 
-	public Vector<TiendaVO> getTiendas() 
+	public ArrayList<TiendaVO> getTiendas() 
 	{
-		return this.admArt.getTiendas();
+		return this.admConf.getTiendas();
 	}
 
 

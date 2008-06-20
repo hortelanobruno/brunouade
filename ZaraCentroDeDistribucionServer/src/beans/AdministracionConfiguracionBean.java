@@ -3,7 +3,6 @@ package beans;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,8 +11,10 @@ import BusinessLogic.CategoriaHogar;
 import BusinessLogic.CentroDistribucion;
 import BusinessLogic.Fabrica;
 import BusinessLogic.LineaRopa;
+import BusinessLogic.Tienda;
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
+import VO.TiendaVO;
 import beans.AdministracionConfiguracion;
 
 @Stateless
@@ -44,7 +45,7 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 		}
 	}
 	
-	public void addCategoriaHogar(int cod, String categoria)
+/*	public void addCategoriaHogar(int cod, String categoria)
 	{
 		if(em.find(CategoriaHogar.class, cod) == null)
 		{
@@ -70,7 +71,7 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 	public Vector<String> getLineasRopa()
 	{
 		return null;
-	}
+	}*/
 
 	public CentroDistribucionVO getCentro() 
 	{
@@ -99,5 +100,30 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 			Fabrica f = new Fabrica(fab.getCodigoFabrica(), fab.getNombreFabrica());
 			em.persist(f);
 		}
+	}
+
+	public ArrayList<TiendaVO> getTiendas() 
+	{
+		Query q = em.createQuery("SELECT t From Tienda t");
+		List l = q.getResultList();
+		
+		ArrayList<TiendaVO> ret = new ArrayList<TiendaVO>();
+		
+		for(Iterator i = l.iterator();i.hasNext();)
+			ret.add(((Tienda)i).getVO());
+		
+		return ret;
+	}
+	
+	public FabricaVO getFabrica()
+	{
+		Query q = em.createQuery("SELECT f FROM Fabrica f");
+		List l = q.getResultList();
+		FabricaVO fabVO = new FabricaVO();
+		Iterator it = l.iterator();
+		while(it.hasNext()){
+			fabVO = ((Fabrica) it.next()).getVO();
+		}
+		return fabVO;
 	}
 }
