@@ -31,7 +31,7 @@ public class ArticuloAFabricar implements Serializable
 		
 	}
 	
-	public ArticuloAFabricar(int id, Articulo art, SolicitudDistribucion sol, Fabrica f, int cant)
+	public ArticuloAFabricar(int id, Articulo art, SolicitudDistribucion sol, Fabrica f, int cant, int cantF)
 	{
 		this.setIdAAF(id);
 		this.setArt(art);
@@ -39,6 +39,7 @@ public class ArticuloAFabricar implements Serializable
 		this.setFabrica(f);
 		this.setCantidadPedida(cant);
 		this.setCantidadRecibida(0);
+		this.setCantidadAFabricar(cantF);
 	}
 	
 	@ManyToOne
