@@ -128,7 +128,7 @@ public class BusinessDelegate extends ProxyModelo
 	}
 	
 	public void guardarSolicitud(SolicitudDistribucionVO soldis) {
-		this.getModCD().guardarSolicitud(soldis);
+		this.getModCD().guardarSolicitudDistribucion(soldis);
 	}
 
 
