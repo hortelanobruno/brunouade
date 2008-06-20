@@ -2,35 +2,30 @@ package VO;
 
 import java.io.Serializable;
 
-public class ArticuloAFabricarVO implements Serializable {
+public class ArticuloAFabricarVO implements Serializable 
+{
 	private static final long serialVersionUID = 1L;
-
 	private int idAAF;
-
 	private ArticuloHeaderVO art;
-
 	private SolicitudDistribucionVO sol;
-
 	private FabricaVO fabrica;
-
 	private int cantidadPedida;
-
 	private int cantidadRecibida;
-
 	private int cantidadAFabricar;
 
 	public ArticuloAFabricarVO() {
 
 	}
 
-	public ArticuloAFabricarVO(int id, ArticuloHeaderVO art,
-			SolicitudDistribucionVO sd, FabricaVO f, int cantP, int cantR) {
+	public ArticuloAFabricarVO(int id, ArticuloHeaderVO art,SolicitudDistribucionVO sd, FabricaVO f, int cantP, int cantR, int cantF)
+	{
 		this.setIdAAF(id);
 		this.setArt(art);
 		this.setSol(sd);
 		this.setFabrica(f);
 		this.setCantidadPedida(cantP);
 		this.setCantidadRecibida(cantR);
+		this.setCantidadAFabricar(cantF);
 	}
 
 	public ArticuloHeaderVO getArt() {
