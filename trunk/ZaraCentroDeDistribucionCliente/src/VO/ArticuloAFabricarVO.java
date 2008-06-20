@@ -23,14 +23,15 @@ public class ArticuloAFabricarVO implements Serializable {
 
 	}
 
-	public ArticuloAFabricarVO(int id, ArticuloHeaderVO art,
-			SolicitudDistribucionVO sd, FabricaVO f, int cantP, int cantR) {
+	public ArticuloAFabricarVO(int id, ArticuloHeaderVO art,SolicitudDistribucionVO sd, FabricaVO f, int cantP, int cantR, int cantF)
+	{
 		this.setIdAAF(id);
 		this.setArt(art);
 		this.setSol(sd);
 		this.setFabrica(f);
 		this.setCantidadPedida(cantP);
 		this.setCantidadRecibida(cantR);
+		this.setCantidadAFabricar(cantF);
 	}
 
 	public ArticuloHeaderVO getArt() {
