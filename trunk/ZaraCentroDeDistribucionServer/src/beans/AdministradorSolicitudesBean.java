@@ -3,18 +3,14 @@ package beans;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-import BusinessLogic.Fabrica;
 import BusinessLogic.SolicitudDeFabricacion;
 import BusinessLogic.SolicitudDistribucion;
 import BusinessLogic.SolicitudEnvioATienda;
 import BusinessLogic.SolicitudReposicion;
-import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
@@ -68,7 +64,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return null;
 	}
 
-	public void guardarSolicitud(SolicitudDistribucionVO soldist) 
+	public void guardarSolicitudDistribucion(SolicitudDistribucionVO soldist) 
 	{
 		SolicitudDistribucion sd = new SolicitudDistribucion();
 		sd.setVO(soldist);
@@ -94,18 +90,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		SolicitudReposicion sr = new SolicitudReposicion();
 		sr.setVO(solRepVO);
 		em.persist(sr);
-	}
-
-	public FabricaVO getFabrica()
-	{
-		Query q = em.createQuery("SELECT f FROM Fabrica f");
-		List l = q.getResultList();
-		FabricaVO fabVO = new FabricaVO();
-		Iterator it = l.iterator();
-		while(it.hasNext()){
-			fabVO = ((Fabrica) it.next()).getVO();
-		}
-		return fabVO;
 	}
 
 	public int getNumeroSolEnv() 

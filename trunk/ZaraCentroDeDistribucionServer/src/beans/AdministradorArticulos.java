@@ -2,9 +2,7 @@ package beans;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Vector;
 import javax.ejb.Remote;
-
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
@@ -12,7 +10,7 @@ import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
 import VO.ArticuloRopaVO;
-import VO.TiendaVO;
+
 
 @Remote
 public interface AdministradorArticulos 
@@ -26,7 +24,6 @@ public interface AdministradorArticulos
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic2);
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2);
-	public Vector<TiendaVO> getTiendas();
 	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv);
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
 	public boolean existeArticulo(long codigo);
