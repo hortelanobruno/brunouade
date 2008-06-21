@@ -8,11 +8,14 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Locale;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+
+
 import VO.ArticuloAReponerVO;
 import VO.SolicitudDeReposicionVO;
 
@@ -31,7 +34,7 @@ public class SolicitudReposicion extends Solicitud
 		super();
 	}
 	
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.MERGE})
 	public Fabrica getFabrica() 
 	{
 		return fabrica;
@@ -43,7 +46,7 @@ public class SolicitudReposicion extends Solicitud
 	}
 	
 	//@OneToMany(mappedBy="sr")
-	@OneToMany
+	@OneToMany(cascade={CascadeType.MERGE})
 	public Collection<ArticuloAReponer> getArticulosAReponer() {
 		return articulosAReponer;
 	}
@@ -52,6 +55,7 @@ public class SolicitudReposicion extends Solicitud
 		this.articulosAReponer = articulosAReponer;
 	}
 
+	@ManyToOne(cascade={CascadeType.MERGE})
 	public SolicitudDeFabricacion getSolFab() {
 		return solFab;
 	}

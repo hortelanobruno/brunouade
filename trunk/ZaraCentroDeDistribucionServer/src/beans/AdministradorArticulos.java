@@ -29,4 +29,5 @@ public interface AdministradorArticulos
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
 	public boolean existeArticulo(long codigo);
 	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser);
+	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
 }
