@@ -1,8 +1,14 @@
 package Varios;
 
+import VO.ArticuloAFabricarVO;
+import VO.ArticuloHeaderVO;
+import VO.CategoriaHogarVO;
+import VO.CentroDistribucionVO;
 import VO.FabricaVO;
+import VO.LineaRopaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
+import VO.SolicitudFabricaVO;
 import VO.TiendaVO;
 
 import com.thoughtworks.xstream.XStream;
@@ -50,5 +56,25 @@ public class XMLWrapper
         
         System.out.println("hola");
         return xmlAdapter.getSolRepVOFromXML(srep);
+	}
+
+	public void parseXMLSolFab(SolicitudFabricaVO solFab) {
+		XStream xstream = new XStream();
+		xstream.alias("centrodistribucion", CentroDistribucionVO.class);
+		xstream.alias("fabrica", FabricaVO.class);
+		xstream.alias("categoriahogar", CategoriaHogarVO.class);
+		xstream.alias("linearopa", LineaRopaVO.class);
+		xstream.alias("articuloafabricar", ArticuloAFabricarVO.class);
+		xstream.alias("solicituddistribucion", SolicitudDistribucionVO.class);
+		xstream.alias("articuloheader", ArticuloHeaderVO.class);
+		//Parsear el objeto saco a XML
+		String solFabXML = xstream.toXML(solFab);
+		int id = solFab.getNumero();
+		//Escribo la salida en un archivo
+		String file = "xml/solfab"+id+".xml";
+		FileWriterWrapper fileWriter = new FileWriterWrapper(file);
+		fileWriter.write(solFabXML);
+		
+		
 	}
 }

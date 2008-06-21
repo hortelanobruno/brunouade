@@ -16,6 +16,7 @@ import VO.ArticuloAFabricarVO;
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.SolicitudFabricaVO;
+import Varios.XMLWrapper;
 import Vistas.VistaGenSolFab;
 import controladores.ControladorPanelGenSolFab;
 
@@ -207,6 +208,8 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			solFab.setNumero(idSolFab);
 			this.ref.getVistaGenSolFab().getModelo().actualizarSolicitudFabricacion(solFab);
 			vaciarTabla();
+			XMLWrapper xml = new XMLWrapper();
+			xml.parseXMLSolFab(solFab);
 			ref.getJTextArea1().append("Solicitud de Fabricacion Guardada\n");
 			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
 		}
