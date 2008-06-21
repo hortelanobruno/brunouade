@@ -140,7 +140,7 @@ public class BusinessDelegate extends ProxyModelo
 		return this.getModCD().cargarSolicitudFabricacion(codigoSolFab);
 	}
 
-	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) {
+	public void actualizarSolicitudFabricacion(SolicitudFabricaVO solFab) {
 		this.getModCD().actualizarSolFab(solFab);
 	}
 

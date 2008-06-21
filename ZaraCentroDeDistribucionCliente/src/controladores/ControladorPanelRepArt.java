@@ -23,8 +23,8 @@ public class ControladorPanelRepArt extends Controlador{
 		vista.actualizar();
 	}
 
-	public void doGuardarSolicitudFabricacion(SolicitudFabricaVO solFab) {
-		((BusinessDelegate)(this.getModelo())).guardarSolicitudFabricacion(solFab);
+	public void doActualizarSolicitudFabricacion(SolicitudFabricaVO solFab) {
+		((BusinessDelegate)(this.getModelo())).actualizarSolicitudFabricacion(solFab);
 	}
 
 	public void doGuardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO) {
