@@ -17,6 +17,7 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 
+import BusinessLogic.BusinessDelegate;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
@@ -298,7 +299,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 		if (cargarTable) {
 			XMLWrapper xml = new XMLWrapper();
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
-			if(((ControladorPanelSolDis)vistaSolDis.getControlador()).doExisteSolicitudDeDistribucion(solDisVO.getNumero())){
+			if(((BusinessDelegate)vistaSolDis.getModelo()).existeSolDis(solDisVO.getNumero())){
 				vaciarTabla();
 				ref.getJTextArea1().append("Solicitud de Distribucion 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);
@@ -336,10 +337,10 @@ public class PanelSolDist extends javax.swing.JPanel {
 						"Debe seleccionar una fabrica.\n",
 						Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
 			}else{
-				((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarSolicitud(solDisVO);
-				((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAEnviar(artiAEnv);
-				((ControladorPanelSolDis) vistaSolDis.getControlador()).doGuardarArticulosAFabricar(artiAFab);
-				((ControladorPanelSolDis) vistaSolDis.getControlador()).doActualizarStocks(artiAEnv);
+				((BusinessDelegate) vistaSolDis.getModelo()).guardarSolicitud(solDisVO);
+				((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosAEnviar(artiAEnv);
+				((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosAFabricar(artiAFab);
+				((BusinessDelegate) vistaSolDis.getModelo()).modificarStock(artiAEnv);
 				vaciarTabla();
 				ref.getJTextArea1().append("Solicitudes Guardadas\n");
 				new Dialogo3Opciones("Operacion concretada", this).setVisible(true);	
@@ -360,8 +361,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 			long cod = (Long
 					.parseLong((String) ((DefaultTableModel) tableArticulos
 							.getModel()).getValueAt(i, 2)));
-			arti = ((ControladorPanelSolDis) vistaSolDis.getControlador())
-					.doGetArticulo(cod);
+			arti = ((BusinessDelegate) vistaSolDis.getModelo())
+					.getArticulo(cod);
 			ArticuloAEnviarVO aEnv = new ArticuloAEnviarVO();
 			idMax++;
 			aEnv.setIdAAE(idMax);
@@ -398,8 +399,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 				long cod = (Long
 						.parseLong((String) ((DefaultTableModel) tableArticulos
 								.getModel()).getValueAt(i, 2)));
-				arti = ((ControladorPanelSolDis) vistaSolDis.getControlador())
-						.doGetArticulo(cod);
+				arti = ((BusinessDelegate) vistaSolDis.getModelo())
+						.getArticulo(cod);
 				ArticuloAFabricarVO aFab = new ArticuloAFabricarVO();
 				aFab.setArt(arti);
 				aFab.setCantidadPedida(ped - sel);

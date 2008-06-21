@@ -117,12 +117,12 @@ public class BusinessDelegate extends ProxyModelo
 		return stocks;
 	}
 
-	public void guardarAritucloHogar(ArticuloHogarVO a)  throws ExistingProductException
+	public void guardarArticuloHogar(ArticuloHogarVO a)  throws ExistingProductException
 	{
 		this.getModCD().guardarArticuloHogar(a);
 	}
 	
-	public void guardarAritucloRopa(ArticuloRopaVO a) throws ExistingProductException
+	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException
 	{
 		this.getModCD().guardarArticuloRopa(a);
 	}

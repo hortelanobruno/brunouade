@@ -21,16 +21,16 @@ public class ControladorPanelNewArt extends Controlador {
 		vista.actualizar();
 	}
 	
-	public void doGuardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException{
-		((BusinessDelegate)(this.getModelo())).guardarAritucloHogar(a);
+	/*public void doGuardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException{
+		((BusinessDelegate)(this.getModelo())).guardarArticuloHogar(a);
 	}
 	
 	public void doGuardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException{
-		((BusinessDelegate)(this.getModelo())).guardarAritucloRopa(a);
+		((BusinessDelegate)(this.getModelo())).guardarArticuloRopa(a);
 	}
 
 	public boolean doExisteArticulo(long codigo) {
 		return ((BusinessDelegate)(this.getModelo())).existeArticulo(codigo);
 	}
-
+*/
 }

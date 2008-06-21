@@ -25,25 +25,25 @@ public class ControladorPanelSolDis extends Controlador
     	return ((BusinessDelegate)this.getModelo()).getTestNumber();
     }
 
-    public void doGuardarSolicitud(SolicitudDistribucionVO soldis)
+  /*  public void doGuardarSolicitud(SolicitudDistribucionVO soldis)
     {
         ((BusinessDelegate)(this.getModelo())).guardarSolicitud(soldis);
-    }
+    }*/
 
 	public void doCargarXML(boolean b) {
 		((VistaSolDis)vista).cargarTabla(b);
 		vista.actualizar();
 	}
 
-	public Integer doGetNumeroSolEnv() {
+	/*public Integer doGetNumeroSolEnv() {
 		return ((BusinessDelegate)(this.getModelo())).getNumeroSolEnv();
 	}
 
-	public ArticuloHeaderVO doGetArticulo(long cod) {
+	/*public ArticuloHeaderVO doGetArticulo(long cod) {
 		return ((BusinessDelegate)(this.getModelo())).getArticulo(cod);
-	}
+	}*/
 
-	public int doGetNumeroSolFab() {
+	/*public int doGetNumeroSolFab() {
 		return ((BusinessDelegate)(this.getModelo())).getNumeroSolFab();
 	}
 
@@ -51,7 +51,7 @@ public class ControladorPanelSolDis extends Controlador
 		return ((BusinessDelegate)(this.getModelo())).getFabrica();
 	}
 
-	public void doGuardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic) {
+	/*public void doGuardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic) {
 		((BusinessDelegate)(this.getModelo())).guardarArticulosAFabricar(artic);
 	}
 
@@ -65,11 +65,5 @@ public class ControladorPanelSolDis extends Controlador
 
 	public boolean doExisteSolicitudDeDistribucion(int numero) {
 		return ((BusinessDelegate)(this.getModelo())).existeSolDis(numero);
-	}
-
-
-	
-	
-	
-    
+	}*/
 }
