@@ -12,6 +12,7 @@ import BusinessLogic.Articulo;
 import BusinessLogic.ArticuloAEnviar;
 import BusinessLogic.ArticuloAFabricar;
 import BusinessLogic.ArticuloHogar;
+import BusinessLogic.ArticuloReservado;
 import BusinessLogic.ArticuloRopa;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
@@ -19,6 +20,7 @@ import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
+import VO.ArticuloReservadoVO;
 import VO.ArticuloRopaVO;
 import beans.AdministradorArticulos;
 
@@ -123,16 +125,16 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 	}
 
-	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv) 
+	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv) 
 	{
 		Iterator i = (Iterator)artiAEnv.iterator();
 		while(i.hasNext())
 		{
-			ArticuloAEnviarVO avo = (ArticuloAEnviarVO) i.next();
+			ArticuloReservadoVO avo = (ArticuloReservadoVO) i.next();
 			Articulo a = em.find(Articulo.class,avo.getArt().getCodigo());
 			if(a != null)
 			{
-				int newCant = a.getCantidad() - avo.getCantidadAEnviar();
+				int newCant = a.getCantidad() - avo.getCantidadReservada();
 				a.setCantidad(newCant);
 				em.merge(a);
 			}
@@ -140,7 +142,8 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	}
 
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar() {
-		Query q = em.createQuery("SELECT a FROM ArticuloAFabricar a");
+		Query q = em.createQuery("SELECT a FROM ArticuloAFabricar a WHERE cantidadAFabricar =:cant");
+		q.setParameter("cant", 0);
 		List l = q.getResultList();
 		
 		ArrayList<ArticuloAFabricarVO> ret = new ArrayList<ArticuloAFabricarVO>();
@@ -155,5 +158,15 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	public boolean existeArticulo(long codigo) 
 	{
 		return (em.find(Articulo.class, codigo) == null)?false:true;
+	}
+
+	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser) {
+		Iterator it = artiReser.iterator();
+		while(it.hasNext()){
+			ArticuloReservadoVO artVO = (ArticuloReservadoVO) it.next();
+			ArticuloReservado art = new ArticuloReservado();
+			art.setVO(artVO);
+			em.persist(art);
+		}
 	}
 }

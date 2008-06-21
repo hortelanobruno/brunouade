@@ -33,10 +33,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 	}
 
-	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab)
-	{
-		return null;
-	}
 
 	public ArrayList<SolicitudFabricaVO> getAllSolFab() 
 	{
@@ -116,6 +112,17 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 	}
 
+	public int getNextIdArticuloReservado() {
+		Query q = em.createQuery("SELECT MAX(s.idAR) FROM ArticuloReservado s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 0;
+		}else{
+			int a = (Integer) l.get(0);
+			return a;
+		}
+	}
+	
 	public int getNextIdArticuloPedido()
 	{
 		Query q = em.createQuery("SELECT MAX(s.idAP) FROM ArticuloPedido s");
@@ -161,4 +168,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		return (em.find(SolicitudReposicion.class, codigo) == null)?false:true;
 	}
+
+	
 }
