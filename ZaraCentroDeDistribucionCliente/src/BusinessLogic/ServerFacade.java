@@ -45,6 +45,7 @@ public interface ServerFacade
 	public boolean existeSolDis(int numero);//Nuevo hay que hacer
 	public int getNextIdArticuloReservado();
 	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv);
+	public void guardarArticulosReservado(Collection<ArticuloReservadoVO> artiReser);
 	
 	//	panel envios
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
@@ -70,7 +71,6 @@ public interface ServerFacade
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
-	public void guardarArticulosReservado(Collection<ArticuloReservadoVO> artiReser);
 	
 	
 	
