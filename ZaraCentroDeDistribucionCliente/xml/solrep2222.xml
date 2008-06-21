@@ -11,13 +11,13 @@
 	
 	<articulosRecibidos>
 		<articulorecibido>
-			<codArt>1100</codArt>
-			<cant>80</cant>
+			<codArt>1002</codArt>
+			<cant>1000</cant>
 		</articulorecibido>
 	
 		<articulorecibido>
 			<codArt>1000</codArt>
-			<cant>110</cant>
+			<cant>1000</cant>
 		</articulorecibido>
 
 	</articulosRecibidos>

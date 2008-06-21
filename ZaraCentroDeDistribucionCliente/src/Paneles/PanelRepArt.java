@@ -19,6 +19,7 @@ import GUI.FileChooser;
 import GUI.MenuPrincipal;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
+import VO.ArticuloHeaderVO;
 import VO.CentroDistribucionVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudFabricaVO;
@@ -172,7 +173,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 	}
 	
 	
-	private void cargarTable(long solicitud,SolicitudDeReposicionVO solRepVO,ArrayList<Long> codigos, ArrayList<String> descripciones,SolicitudFabricaVO solFab, String fabrica) 
+	private void cargarTable(long codsol,SolicitudDeReposicionVO solRepVO,ArrayList<Long> codigos, ArrayList<String> descripciones,SolicitudFabricaVO solFab, String fabrica) 
 	{
 		Iterator iteradorRep = (Iterator) solRepVO.getArticulosAReponer().iterator();
 		Iterator iteradorFab = (Iterator) solFab.getArticulosAFabricar().iterator();
@@ -180,19 +181,20 @@ public class PanelRepArt extends javax.swing.JPanel {
 		Integer cantidadrecibida = 0;
 		for (int i = 0; i < codigos.size(); i++) {
 			while (iteradorRep.hasNext()) {
-				if((((ArticuloAReponerVO) iteradorRep.next()).getArt().getCodigo()) == codigos.get(i)){
-					ArticuloAReponerVO arti = (((ArticuloAReponerVO) iteradorRep.next()));
+				ArticuloAReponerVO arti = (((ArticuloAReponerVO) iteradorRep.next()));
+				if((arti.getArt().getCodigo()) == codigos.get(i)){
 					cargarArticuloEnSolFab(arti);
 					cantidadrecibida = arti.getCantidad();
 				}
 			}
 			while (iteradorFab.hasNext()) {
-				if((((ArticuloAFabricarVO) iteradorFab.next()).getArt().getCodigo()) == codigos.get(i)){
-					cantidpedida = (((ArticuloAFabricarVO) iteradorRep.next()).getCantidadPedida());
+				ArticuloAFabricarVO arti2 = (((ArticuloAFabricarVO) iteradorFab.next()));
+				if((arti2.getArt().getCodigo()) == codigos.get(i)){
+					cantidpedida = (arti2.getCantidadPedida());
 				}
 			}
 			((DefaultTableModel) tableArticulosFabrica.getModel())
-			.addRow(new Object[] {solicitud,fabrica,codigos.get(i),descripciones.get(i),cantidpedida,cantidadrecibida});
+			.addRow(new Object[] {codsol,fabrica,codigos.get(i),descripciones.get(i),cantidpedida,cantidadrecibida});
 			iteradorRep = (Iterator) solRepVO.getArticulosAReponer().iterator();
 			iteradorFab = (Iterator) solFab.getArticulosAFabricar().iterator();
 		}
@@ -211,6 +213,39 @@ public class PanelRepArt extends javax.swing.JPanel {
 				this.buttonGuardar.setEnabled(false);
 				JOptionPane.showMessageDialog(this,"La solicitud de reposicion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 			}else{
+				int idAR = this.ref.getVistaSolDis().getModelo().getNextIdARep();
+				Iterator itit = solRepVO.getArticulosAReponer().iterator();
+				ArrayList<ArticuloAReponerVO> artsRep = new ArrayList<ArticuloAReponerVO>();
+				while(itit.hasNext()){
+					ArticuloAReponerVO aRep = (ArticuloAReponerVO) itit.next();
+					idAR++;
+					aRep.setIdAAR(idAR);
+					artsRep.add(aRep);
+				}
+				solRepVO.setArticulosAReponer(artsRep);
+				ArrayList<Long> codigos = new ArrayList<Long>();
+				Iterator arts = (Iterator) solRepVO.getArticulosAReponer().iterator();
+				while (arts.hasNext()) {
+					codigos.add(((ArticuloAReponerVO) arts.next()).getArt().getCodigo());
+				}
+				ArrayList<ArticuloHeaderVO> articulos = this.ref.getVistaRepArt().getModelo().getArticulos(codigos);				
+				Iterator itit2 = solRepVO.getArticulosAReponer().iterator();
+				Collection<ArticuloAReponerVO> artsReVO = new ArrayList<ArticuloAReponerVO>();
+				while(itit2.hasNext()){
+					ArticuloAReponerVO artRe = (ArticuloAReponerVO) itit2.next();
+					long co = artRe.getArt().getCodigo();
+					for(int j=0 ; j < articulos.size() ; j++){
+						if(co == articulos.get(j).getCodigo()){
+							artRe.setArt(articulos.get(j));
+						}
+					}
+					artsReVO.add(artRe);
+				}
+				solRepVO.setArticulosAReponer(artsReVO);
+				ArrayList<String> descripciones = new ArrayList<String>();
+				for(int k=0 ; k < articulos.size() ; k++){
+					descripciones.add(articulos.get(k).getDescripcion());
+				}
 				int idSolFab = solRepVO.getSolFab().getNumero();
 				solFabVO = this.ref.getVistaRepArt().getModelo().getSolicitudFabricacion(idSolFab);
 				solRepVO.setSolFab(solFabVO);
@@ -219,12 +254,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 				solRepVO.setCdVO(centroVO);
 				long codigoSolRep = solRepVO.getNumero();
 				String fabrica = solRepVO.getFabrica().getNombreFabrica();
-				ArrayList<Long> codigos = new ArrayList<Long>();
-				Iterator arts = (Iterator) solRepVO.getArticulosAReponer().iterator();
-				while (arts.hasNext()) {
-					codigos.add(((ArticuloAReponerVO) arts.next()).getArt().getCodigo());
-				}
-				ArrayList<String> descripciones = this.ref.getVistaRepArt().getModelo().getDescripciones(codigos);
+
 				vaciarTabla();
 				cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
 				ref.getJTextArea1().append("Archivo Cargado\n");
@@ -234,9 +264,9 @@ public class PanelRepArt extends javax.swing.JPanel {
 		}else{
 			//Falta generar las solicitudes
 			ArrayList<ArticuloAReponerVO> artsRep = collectionToArrayList(solRepVO.getArticulosAReponer());
-			this.ref.getVistaRepArt().getModelo().actualizarStock(artsRep);
-			this.ref.getVistaRepArt().getModelo().actualizarSolicitudFabricacion(solFabVO);
 			this.ref.getVistaRepArt().getModelo().guardarSolicitudReposicion(solRepVO);
+			this.ref.getVistaRepArt().getModelo().actualizarSolicitudFabricacion(solFabVO);
+			this.ref.getVistaRepArt().getModelo().actualizarStock(artsRep);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
 			this.buttonGuardar.setEnabled(false);
