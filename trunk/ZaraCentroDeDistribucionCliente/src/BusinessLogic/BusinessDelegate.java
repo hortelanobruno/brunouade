@@ -16,6 +16,7 @@ import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
+import VO.ArticuloReservadoVO;
 import VO.ArticuloRopaVO;
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
@@ -196,7 +197,7 @@ public class BusinessDelegate extends ProxyModelo
 		return this.getModCD().getFabricas();
 	}
 
-	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv) {
+	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv) {
 		this.getModCD().modificarStock(artiAEnv);		
 	}
 
@@ -214,6 +215,14 @@ public class BusinessDelegate extends ProxyModelo
 
 	public boolean existeSolRep(int numero) {
 		return this.getModCD().existeSolRep(numero);
+	}
+
+	public int getNextIdARes() {
+		return this.getModCD().getNextIdArticuloReservado();
+	}
+
+	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser) {
+		this.getModCD().guardarArticulosReservado(artiReser);
 	}
 
 

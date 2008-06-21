@@ -21,10 +21,10 @@ import BusinessLogic.BusinessDelegate;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
 import GUI.MenuPrincipal;
-import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloPedidoVO;
+import VO.ArticuloReservadoVO;
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.SolicitudDistribucionVO;
@@ -331,16 +331,16 @@ public class PanelSolDist extends javax.swing.JPanel {
 		} else {
 			// Falta generar las solicitudes
 			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
-			Collection<ArticuloAEnviarVO> artiAEnv = (Collection<ArticuloAEnviarVO>) articulosEnviarDeTabla();
+			Collection<ArticuloReservadoVO> artiReser = (Collection<ArticuloReservadoVO>) articulosEnviarDeTabla();
 			if((!artiAFab.isEmpty()) && ( comboFabrica.getSelectedItem().toString().equals(""))){
 				JOptionPane.showMessageDialog(this,
 						"Debe seleccionar una fabrica.\n",
 						Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
 			}else{
 				((BusinessDelegate) vistaSolDis.getModelo()).guardarSolicitud(solDisVO);
-				((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosAEnviar(artiAEnv);
+				((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosReservados(artiReser);
 				((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosAFabricar(artiAFab);
-				((BusinessDelegate) vistaSolDis.getModelo()).modificarStock(artiAEnv);
+				((BusinessDelegate) vistaSolDis.getModelo()).modificarStock(artiReser);
 				vaciarTabla();
 				ref.getJTextArea1().append("Solicitudes Guardadas\n");
 				new Dialogo3Opciones("Operacion concretada", this).setVisible(true);	
@@ -353,21 +353,21 @@ public class PanelSolDist extends javax.swing.JPanel {
 	 * 
 	 * 
 	 */
-	public Collection<ArticuloAEnviarVO> articulosEnviarDeTabla() {
-		Collection<ArticuloAEnviarVO> art = new ArrayList<ArticuloAEnviarVO>();
+	public Collection<ArticuloReservadoVO> articulosEnviarDeTabla() {
+		Collection<ArticuloReservadoVO> art = new ArrayList<ArticuloReservadoVO>();
 		ArticuloHeaderVO arti;
-		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdAEnv();
+		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdARes();
 		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
 			long cod = (Long
 					.parseLong((String) ((DefaultTableModel) tableArticulos
 							.getModel()).getValueAt(i, 2)));
 			arti = ((BusinessDelegate) vistaSolDis.getModelo())
 					.getArticulo(cod);
-			ArticuloAEnviarVO aEnv = new ArticuloAEnviarVO();
+			ArticuloReservadoVO aEnv = new ArticuloReservadoVO();
 			idMax++;
-			aEnv.setIdAAE(idMax);
+			aEnv.setIdAR(idMax);
 			aEnv.setArt(arti);
-			aEnv.setCantidadAEnviar(Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString()));
+			aEnv.setCantidadReservada(Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString()));
 			aEnv.setSolDis(solDisVO);
 			// aEnv.setIdAAE();
 			art.add(aEnv);

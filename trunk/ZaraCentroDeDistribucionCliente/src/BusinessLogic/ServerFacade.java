@@ -11,6 +11,7 @@ import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
+import VO.ArticuloReservadoVO;
 import VO.ArticuloRopaVO;
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
@@ -41,8 +42,9 @@ public interface ServerFacade
 	public int getNextIdArticuloAEnviar();
 	public int getNextIdArticuloAFabricar();
 	public ArrayList<FabricaVO> getFabricas();
-	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv);
 	public boolean existeSolDis(int numero);//Nuevo hay que hacer
+	public int getNextIdArticuloReservado();
+	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv);
 	
 	//	panel envios
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
@@ -68,5 +70,8 @@ public interface ServerFacade
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
+	public void guardarArticulosReservado(Collection<ArticuloReservadoVO> artiReser);
+	
+	
 	
 }
