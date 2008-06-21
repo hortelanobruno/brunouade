@@ -2,8 +2,6 @@ package VO;
 
 import java.io.Serializable;
 
-import BusinessLogic.SolicitudDeFabricacion;
-
 public class ArticuloAFabricarVO implements Serializable 
 {
 	private static final long serialVersionUID = 1L;
