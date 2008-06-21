@@ -59,11 +59,12 @@ public interface ServerFacade
 	
 	//panel reposicion
 	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
-	public void actualizarSolFab(SolicitudFabricaVO solFab);
+	public void guardarSolFab(SolicitudFabricaVO solFab);
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
 	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab);
+	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
 	public boolean existeSolRep(int numero);//Nuevo hay que hacer
-	
+	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
 	
 	//panel new art
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
@@ -71,6 +72,9 @@ public interface ServerFacade
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
+	public int getNextIdArticuloAReponer();
+
+	
 	
 	
 	

@@ -206,7 +206,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();
 			idSolFab++;
 			solFab.setNumero(idSolFab);
-			this.ref.getVistaGenSolFab().getModelo().actualizarSolicitudFabricacion(solFab);
+			this.ref.getVistaGenSolFab().getModelo().guardarSolicitudFabricacion(solFab);
 			vaciarTabla();
 			XMLWrapper xml = new XMLWrapper();
 			xml.parseXMLSolFab(solFab);

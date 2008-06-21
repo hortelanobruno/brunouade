@@ -141,8 +141,8 @@ public class BusinessDelegate extends ProxyModelo
 		return this.getModCD().cargarSolicitudFabricacion(codigoSolFab);
 	}
 
-	public void actualizarSolicitudFabricacion(SolicitudFabricaVO solFab) {
-		this.getModCD().actualizarSolFab(solFab);
+	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) {
+		this.getModCD().guardarSolFab(solFab);
 	}
 
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO) {
@@ -223,6 +223,18 @@ public class BusinessDelegate extends ProxyModelo
 
 	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser) {
 		this.getModCD().guardarArticulosReservado(artiReser);
+	}
+
+	public void actualizarSolicitudFabricacion(SolicitudFabricaVO solFabVO) {
+		this.getModCD().actualizarSolFab(solFabVO);
+	}
+
+	public int getNextIdARep() {
+		return this.getModCD().getNextIdArticuloAReponer();
+	}
+
+	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos) {
+		return this.getModCD().getArticulos(codigos);
 	}
 
 
