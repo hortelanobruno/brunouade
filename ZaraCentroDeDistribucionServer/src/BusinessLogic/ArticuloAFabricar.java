@@ -41,6 +41,7 @@ public class ArticuloAFabricar implements Serializable
 		this.setCantidadRecibida(0);
 		this.setCantidadAFabricar(cantF);
 	}
+
 	
 	@ManyToOne
 	public SolicitudDistribucion getSol() 
@@ -136,4 +137,5 @@ public class ArticuloAFabricar implements Serializable
 		sol.setVO(art.getSol());
 		this.setSol(sol);
 	}
+
 }
