@@ -205,7 +205,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();
 			idSolFab++;
 			solFab.setNumero(idSolFab);
-			this.ref.getVistaGenSolFab().getModelo().guardarSolicitudFabricacion(solFab);
+			this.ref.getVistaGenSolFab().getModelo().actualizarSolicitudFabricacion(solFab);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitud de Fabricacion Guardada\n");
 			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);

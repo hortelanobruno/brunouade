@@ -232,10 +232,10 @@ public class PanelRepArt extends javax.swing.JPanel {
 			}
 		}else{
 			//Falta generar las solicitudes
-			ArrayList<ArticuloAReponerVO> vecArt = collectionToArrayList(solRepVO.getArticulosAReponer());
-			((ControladorPanelRepArt)vistaRepArt.getControlador()).doCargarStocks(vecArt);
-			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudFabricacion(solFabVO);
-			((ControladorPanelRepArt)vistaRepArt.getControlador()).doGuardarSolicitudReposicion(solRepVO);
+			ArrayList<ArticuloAReponerVO> artsRep = collectionToArrayList(solRepVO.getArticulosAReponer());
+			this.ref.getVistaRepArt().getModelo().actualizarStock(artsRep);
+			this.ref.getVistaRepArt().getModelo().actualizarSolicitudFabricacion(solFabVO);
+			this.ref.getVistaRepArt().getModelo().guardarSolicitudReposicion(solRepVO);
 			vaciarTabla();
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
 			this.buttonGuardar.setEnabled(false);
