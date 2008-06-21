@@ -22,13 +22,23 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	@PersistenceContext(unitName="CentroDeDistribucion")
 	private EntityManager em;
 	
-	public void actualizarSolFab(SolicitudFabricaVO solFab) 
+	public void guardarSolFab(SolicitudFabricaVO solFab) 
 	{
 		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFab.getNumero());
 		if(s == null)
 		{
 			s = new SolicitudDeFabricacion();
 			s.setVO(solFab);
+			em.merge(s);
+		}
+	}
+
+	public void actualizarSolFab(SolicitudFabricaVO solFabVO) {
+		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFabVO.getNumero());
+		if(s != null)
+		{
+			s = new SolicitudDeFabricacion();
+			s.setVO(solFabVO);
 			em.merge(s);
 		}
 	}
@@ -78,14 +88,14 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		SolicitudDeFabricacion sf = new SolicitudDeFabricacion();
 		sf.setVO(solFab);
-		em.persist(sf);
+		em.merge(sf);
 	}
 
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO) 
 	{
 		SolicitudReposicion sr = new SolicitudReposicion();
 		sr.setVO(solRepVO);
-		em.persist(sr);
+		em.merge(sr);
 	}
 
 	public int getNumeroSolEnv() 
@@ -135,6 +145,17 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 	}
 	
+	public int getNextIdArticuloAReponer() {
+		Query q = em.createQuery("SELECT MAX(s.idAAR) FROM ArticuloAReponer s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 0;
+		}else{
+			int a = (Integer) l.get(0);
+			return a;
+		}
+	}
+	
 	public int getNextIdArticuloAEnviar()
 	{
 		Query q = em.createQuery("SELECT MAX(s.idAAE) FROM ArticuloAEnviar s");
@@ -168,6 +189,5 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		return (em.find(SolicitudReposicion.class, codigo) == null)?false:true;
 	}
-
 	
 }

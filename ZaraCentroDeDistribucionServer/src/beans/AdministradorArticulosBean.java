@@ -65,7 +65,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		for(int i = 0; i < arts.size();i++)
 		{
 			Articulo a = em.find(Articulo.class, arts.get(i).getArt().getCodigo());
-			
 			if(a != null)
 			{
 				a.setVO(arts.get(i).getArt());
@@ -103,6 +102,15 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	public ArticuloHeaderVO getArticulo(long codigo)
 	{
 		return em.find(Articulo.class, codigo).getVO();
+	}
+	
+	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos) {
+		ArrayList<ArticuloHeaderVO> arts = new ArrayList<ArticuloHeaderVO>();
+		for(int i=0 ; i< codigos.size() ; i++){
+			ArticuloHeaderVO art = em.find(Articulo.class, codigos.get(i)).getVO();
+			arts.add(art);
+		}
+		return arts;
 	}
 
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {

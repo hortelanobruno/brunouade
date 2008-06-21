@@ -91,9 +91,9 @@ public class ServerFacadeBean implements ServerFacade
 		this.admArt.guardarArticuloRopa(a);
 	}
 
-	public void actualizarSolFab(SolicitudFabricaVO solFab)
+	public void guardarSolFab(SolicitudFabricaVO solFab)
 	{
-		this.admSol.actualizarSolFab(solFab);
+		this.admSol.guardarSolFab(solFab);
 	}
 
 	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab) 
@@ -210,9 +210,23 @@ public class ServerFacadeBean implements ServerFacade
 	public int getNextIdArticuloReservado() {
 		return this.admSol.getNextIdArticuloReservado();
 	}
+	
+	public int getNextIdArticuloAReponer() {
+		return this.admSol.getNextIdArticuloAReponer();
+	}
 
 	public void guardarArticulosReservado(Collection<ArticuloReservadoVO> artiReser) {
 		this.admArt.guardarArticulosReservados(artiReser);
 	}
+
+	public void actualizarSolFab(SolicitudFabricaVO solFabVO) {
+		this.admSol.actualizarSolFab(solFabVO);
+	}
+
+	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos) {
+		return this.admArt.getArticulos(codigos);
+	}
+
+
 
 }
