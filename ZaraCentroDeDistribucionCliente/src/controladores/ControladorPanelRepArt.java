@@ -23,7 +23,7 @@ public class ControladorPanelRepArt extends Controlador{
 		vista.actualizar();
 	}
 
-	public void doActualizarSolicitudFabricacion(SolicitudFabricaVO solFab) {
+	/*public void doActualizarSolicitudFabricacion(SolicitudFabricaVO solFab) {
 		((BusinessDelegate)(this.getModelo())).actualizarSolicitudFabricacion(solFab);
 	}
 
@@ -35,8 +35,8 @@ public class ControladorPanelRepArt extends Controlador{
 		((BusinessDelegate)(this.getModelo())).actualizarStock(articulo);
 	}
 
-	public boolean doExisteSolicitudDeReposicion(int numero) {
+	/*public boolean doExisteSolicitudDeReposicion(int numero) {
 		return ((BusinessDelegate)(this.getModelo())).existeSolRep(numero);
-	}
+	}*/
 
 }

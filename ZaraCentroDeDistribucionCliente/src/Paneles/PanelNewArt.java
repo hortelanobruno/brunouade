@@ -15,6 +15,7 @@ import Varios.Constantes;
 import Varios.XMLArticulo;
 import Varios.XMLWrapper;
 import Vistas.VistaNewArt;
+import BusinessLogic.BusinessDelegate;
 import Exceptions.ExistingProductException;
 import GUI.Dialogo3Opciones;
 import GUI.FileChooser;
@@ -181,7 +182,7 @@ public class PanelNewArt extends javax.swing.JPanel
 			//cargar articulo
 			XMLWrapper xml = new XMLWrapper();
 			articuloXML = (XMLArticulo) xml.parseXMLArticulo(urlXML);
-			if(((ControladorPanelNewArt)vistaNewArt.getControlador()).doExisteArticulo(articuloXML.getCodigo())){
+			if(((BusinessDelegate)vistaNewArt.getModelo()).existeArticulo(articuloXML.getCodigo())){
 				vaciarTabla();
 				ref.getJTextArea1().append("Articulo 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);
@@ -201,7 +202,7 @@ public class PanelNewArt extends javax.swing.JPanel
 				ArticuloRopaVO articulo = crearArticuloRopaVO();
 				try
 				{
-					((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloRopa(articulo);	
+					((BusinessDelegate)vistaNewArt.getModelo()).guardarArticuloRopa(articulo);
 				}
 				catch(ExistingProductException e)
 				{
@@ -212,7 +213,7 @@ public class PanelNewArt extends javax.swing.JPanel
 				ArticuloHogarVO articulo = crearArticuloHogarVO();
 				try
 				{
-					((ControladorPanelNewArt)vistaNewArt.getControlador()).doGuardarArticuloHogar(articulo);
+					((BusinessDelegate)vistaNewArt.getModelo()).guardarArticuloHogar(articulo);
 				}
 				catch(ExistingProductException e)
 				{
