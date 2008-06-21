@@ -19,7 +19,6 @@ public interface AdministradorSolicitudes
     public ArrayList<SolicitudFabricaVO> getAllSolFab();
     public void actualizarSolFab(SolicitudFabricaVO solFab);
     public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
-    public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab); //no se usa
     public int getNumeroSolEnv();
 	public int getNumeroSolFab();
 	public int getNextIdArticuloPedido();
@@ -27,4 +26,5 @@ public interface AdministradorSolicitudes
 	public int getNextIdArticuloAFabricar();
 	public boolean existeSolDis(int codigo);
 	public boolean existeSolRep(int codigo);
+	public int getNextIdArticuloReservado();
 }

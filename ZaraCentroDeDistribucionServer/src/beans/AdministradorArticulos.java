@@ -9,6 +9,7 @@ import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
+import VO.ArticuloReservadoVO;
 import VO.ArticuloRopaVO;
 
 
@@ -24,7 +25,8 @@ public interface AdministradorArticulos
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic2);
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2);
-	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv);
+	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv);
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
 	public boolean existeArticulo(long codigo);
+	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser);
 }

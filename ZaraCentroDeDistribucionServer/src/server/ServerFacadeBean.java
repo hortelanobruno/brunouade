@@ -11,6 +11,7 @@ import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloHogarVO;
+import VO.ArticuloReservadoVO;
 import VO.ArticuloRopaVO;
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
@@ -97,7 +98,7 @@ public class ServerFacadeBean implements ServerFacade
 
 	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab) 
 	{
-		return this.admSol.cargarSolicitudFabricacion(codigoSolFab);
+		return this.admSol.getSolFab(codigoSolFab);
 	}
 
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO)
@@ -176,9 +177,10 @@ public class ServerFacadeBean implements ServerFacade
 		this.admConf.guardarFabrica(fab);
 	}
 
-	public void modificarStock(Collection<ArticuloAEnviarVO> artiAEnv) 
+	
+	public void modificarStock(Collection<ArticuloReservadoVO> artiReservado) 
 	{
-		this.admArt.modificarStock(artiAEnv);	
+		this.admArt.modificarStock(artiReservado);	
 	}
 
 	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts)
@@ -204,4 +206,13 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		return this.admSol.existeSolRep(codigo);
 	}
+
+	public int getNextIdArticuloReservado() {
+		return this.admSol.getNextIdArticuloReservado();
+	}
+
+	public void guardarArticulosReservado(Collection<ArticuloReservadoVO> artiReser) {
+		this.admArt.guardarArticulosReservados(artiReser);
+	}
+
 }
