@@ -6,7 +6,6 @@ import java.util.Collection;
 import javax.ejb.Remote;
 
 import Exceptions.ExistingProductException;
-import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
@@ -29,56 +28,58 @@ public interface ServerFacade
 	public void guardarFabrica(FabricaVO fab);
 	
 	//panel sol dist
+	public ArrayList<FabricaVO> getFabricas();
+	public boolean existeSolDis(int numero);//Nuevo hay que hacer
+	public int getNextIdArticuloPedido();
 	public ArrayList<String> getDescripciones(ArrayList<Long> codigos);
 	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
 	public void guardarSolicitudDistribucion(SolicitudDistribucionVO soldist);
-	public int getNumeroSolEnv();
-	public int getNumeroSolFab();
-	public ArticuloHeaderVO getArticulo(long codigo);
-	public FabricaVO getFabrica();
-	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic);
-	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2);
-	public int getNextIdArticuloPedido();
-	public int getNextIdArticuloAEnviar();
-	public int getNextIdArticuloAFabricar();
-	public ArrayList<FabricaVO> getFabricas();
-	public boolean existeSolDis(int numero);//Nuevo hay que hacer
-	public int getNextIdArticuloReservado();
-	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv);
 	public void guardarArticulosReservado(Collection<ArticuloReservadoVO> artiReser);
+	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic);
+	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv);
+	public int getNextIdArticuloReservado();
+	public int getNextIdArticuloAFabricar();
+	public ArticuloHeaderVO getArticulo(long codigo);
+	
+	//estos no van - verificar
+	//public int getNumeroSolEnv();
+	//public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2);
+	//public SolicitudFabricaVO getSolFab(int codigo);
+	//public ArrayList<SolicitudFabricaVO> getAllSolFab();
+	//public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
+	/////////////////////////////////////
 	
 	//	panel envios
-	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
+	public int getNextIdArticuloAEnviar();
 	public ArrayList<SolicitudDistribucionVO> getSolicitudesDistribucion(String tienda);
 	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis);
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio);
-	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
 	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
+	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
 	
 	//panel gen sol fab
-	public SolicitudFabricaVO getSolFab(int codigo);
-	public ArrayList<SolicitudFabricaVO> getAllSolFab();
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
+	public int getNumeroSolFab();
+	public void guardarSolFab(SolicitudFabricaVO solFab);
 	
 	
 	//panel reposicion
-	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
-	public void guardarSolFab(SolicitudFabricaVO solFab);
-	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
-	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab);
-	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
 	public boolean existeSolRep(int numero);//Nuevo hay que hacer
-	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
 	public int getNextIdArticuloAReponer();
-
+	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
+	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab);
+	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
+	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
+	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
+	
 	//panel new art
+	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
-	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
-	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
-	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
-
+	//public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
+	//public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
+	
 	
 	
 	

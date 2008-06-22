@@ -11,7 +11,6 @@ import javax.naming.InitialContext;
 import Exceptions.ErrorConectionException;
 import Exceptions.ExistingProductException;
 import MVCFramework.ProxyModelo;
-import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
@@ -153,29 +152,16 @@ public class BusinessDelegate extends ProxyModelo
 	public void actualizarStock(ArrayList<ArticuloAReponerVO> articulo) {
 		this.getModCD().actualizarStock((ArrayList<ArticuloAReponerVO>) articulo);
 	}
-
-	public Integer getNumeroSolEnv() {	
-		return this.getModCD().getNumeroSolEnv();
-	}
-
+	
 	public ArticuloHeaderVO getArticulo(long cod) {
 		return this.getModCD().getArticulo(cod);
 	}
-
 	public int getNumeroSolFab() {
 		return this.getModCD().getNumeroSolFab();
 	}
 
-	public FabricaVO getFabrica() {
-		return this.getModCD().getFabrica();
-	}
-
 	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic) {
 		this.getModCD().guardarArticulosAFabricar(artic);
-	}
-
-	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
-		this.getModCD().guardarArticulosAEnviar(artic2);
 	}
 	
 	public CentroDistribucionVO getCentro() {

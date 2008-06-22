@@ -349,11 +349,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 		}
 	}
 
-	/*
-	 * Falta completar la linea comentada
-	 * 
-	 * 
-	 */
+
 	public Collection<ArticuloReservadoVO> articulosEnviarDeTabla() {
 		Collection<ArticuloReservadoVO> art = new ArrayList<ArticuloReservadoVO>();
 		ArticuloHeaderVO arti;
@@ -362,16 +358,14 @@ public class PanelSolDist extends javax.swing.JPanel {
 			long cod = (Long
 					.parseLong((String) ((DefaultTableModel) tableArticulos
 							.getModel()).getValueAt(i, 2)));
-			arti = ((BusinessDelegate) vistaSolDis.getModelo())
-					.getArticulo(cod);
-			ArticuloReservadoVO aEnv = new ArticuloReservadoVO();
+			arti = ((BusinessDelegate) vistaSolDis.getModelo()).getArticulo(cod);
+			ArticuloReservadoVO aRes = new ArticuloReservadoVO();
 			idMax++;
-			aEnv.setIdAR(idMax);
-			aEnv.setArt(arti);
-			aEnv.setCantidadReservada(Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString()));
-			aEnv.setSolDis(solDisVO);
-			// aEnv.setIdAAE();
-			art.add(aEnv);
+			aRes.setIdAR(idMax);
+			aRes.setArt(arti);
+			aRes.setCantidadReservada(Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString()));
+			aRes.setSolDis(solDisVO);
+			art.add(aRes);
 		}
 		return art;
 	}
