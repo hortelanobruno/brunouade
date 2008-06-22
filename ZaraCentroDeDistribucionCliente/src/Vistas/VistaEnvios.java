@@ -13,8 +13,7 @@ public class VistaEnvios extends Vista {
 	}
 
 	public void actualizar() {
-		
-		
+		ref.getPanelEnvios().update();
 	}
 
 	public MenuPrincipal getRef() {
@@ -23,6 +22,14 @@ public class VistaEnvios extends Vista {
 
 	public void setRef(MenuPrincipal ref) {
 		this.ref = ref;
+	}
+
+	public void cargarTabla(boolean b) {
+		ref.getPanelEnvios().setCargarTable(b);
+	}
+
+	public void cargarTree(boolean b) {
+		ref.getPanelEnvios().setCargarTree(b);
 	}
 
 }

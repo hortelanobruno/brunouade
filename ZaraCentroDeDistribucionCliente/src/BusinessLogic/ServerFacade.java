@@ -49,7 +49,12 @@ public interface ServerFacade
 	
 	//	panel envios
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
-	
+	public ArrayList<SolicitudDistribucionVO> getSolicitudesDistribucion(String tienda);
+	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis);
+	public void guardarSolEnv(SolicitudEnvioVO solEnvio);
+	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
+	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
+	public void actualizarSolDis(SolicitudDistribucionVO solDis);
 	
 	//panel gen sol fab
 	public SolicitudFabricaVO getSolFab(int codigo);
@@ -65,14 +70,14 @@ public interface ServerFacade
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
 	public boolean existeSolRep(int numero);//Nuevo hay que hacer
 	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
-	
+	public int getNextIdArticuloAReponer();
+
 	//panel new art
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
-	public int getNextIdArticuloAReponer();
 
 	
 	

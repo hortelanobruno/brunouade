@@ -71,11 +71,11 @@ public class PanelRepArt extends javax.swing.JPanel {
 		tableArticulosFabrica.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
 
-				}, new String[] {"Solicitud", "Fabrica","Codigo", "Descripcion", "Cantidad Pedida",
-						"Cantidad Recibida" }) {
+				}, new String[] {"Solicitud", "Fabrica","Codigo", "Descripcion", "Cantidad Pedida","Cantidad a Fabricar","Cantidad Recibida",
+						"Cantidad a Reponer" }) {
 							private static final long serialVersionUID = 1L;
 			Class[] types = new Class[] { java.lang.Integer.class,java.lang.String.class,java.lang.Integer.class,
-					java.lang.String.class, java.lang.Integer.class,
+					java.lang.String.class, java.lang.Integer.class,java.lang.Integer.class,java.lang.Integer.class,
 					java.lang.Integer.class };
 
 			public Class getColumnClass(int columnIndex) {
@@ -177,24 +177,28 @@ public class PanelRepArt extends javax.swing.JPanel {
 	{
 		Iterator iteradorRep = (Iterator) solRepVO.getArticulosAReponer().iterator();
 		Iterator iteradorFab = (Iterator) solFab.getArticulosAFabricar().iterator();
-		Integer cantidpedida = 0;
-		Integer cantidadrecibida = 0;
+		int cantidpedida = 0;
+		int cantidadareponer = 0;
+		int catidadafabricar = 0;
+		int cantidadrecibida = 0;
 		for (int i = 0; i < codigos.size(); i++) {
 			while (iteradorRep.hasNext()) {
 				ArticuloAReponerVO arti = (((ArticuloAReponerVO) iteradorRep.next()));
 				if((arti.getArt().getCodigo()) == codigos.get(i)){
 					cargarArticuloEnSolFab(arti);
-					cantidadrecibida = arti.getCantidad();
+					cantidadareponer = arti.getCantidad();
 				}
 			}
 			while (iteradorFab.hasNext()) {
 				ArticuloAFabricarVO arti2 = (((ArticuloAFabricarVO) iteradorFab.next()));
 				if((arti2.getArt().getCodigo()) == codigos.get(i)){
+					catidadafabricar = (arti2.getCantidadAFabricar());
 					cantidpedida = (arti2.getCantidadPedida());
+					cantidadrecibida = (arti2.getCantidadRecibida());
 				}
 			}
 			((DefaultTableModel) tableArticulosFabrica.getModel())
-			.addRow(new Object[] {codsol,fabrica,codigos.get(i),descripciones.get(i),cantidpedida,cantidadrecibida});
+			.addRow(new Object[] {codsol,fabrica,codigos.get(i),descripciones.get(i),cantidpedida,catidadafabricar,cantidadrecibida,cantidadareponer});
 			iteradorRep = (Iterator) solRepVO.getArticulosAReponer().iterator();
 			iteradorFab = (Iterator) solFab.getArticulosAFabricar().iterator();
 		}
