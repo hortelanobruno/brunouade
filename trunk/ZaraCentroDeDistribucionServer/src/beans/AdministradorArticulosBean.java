@@ -67,7 +67,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			Articulo a = em.find(Articulo.class, arts.get(i).getArt().getCodigo());
 			if(a != null)
 			{
-				a.setVO(arts.get(i).getArt());
+				a.setCantidad(a.getCantidad()+arts.get(i).getCantidad());
 				em.merge(a);
 			}
 		}
@@ -176,5 +176,20 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			art.setVO(artVO);
 			em.persist(art);
 		}
+	}
+
+	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
+		// TODO Auto-generated method stub
+		
 	}
 }

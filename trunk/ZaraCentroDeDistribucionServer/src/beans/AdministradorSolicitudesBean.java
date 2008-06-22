@@ -189,5 +189,20 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	{
 		return (em.find(SolicitudReposicion.class, codigo) == null)?false:true;
 	}
+
+	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tienda) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void guardarSolEnv(SolicitudEnvioVO solEnvio) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void actualizarSolDis(SolicitudDistribucionVO solDis) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

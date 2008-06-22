@@ -3,6 +3,8 @@ package beans;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.ejb.Remote;
+
+import BusinessLogic.ArticuloAEnviar;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
@@ -30,4 +32,7 @@ public interface AdministradorArticulos
 	public boolean existeArticulo(long codigo);
 	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser);
 	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
+	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis);
+	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
+	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
 }
