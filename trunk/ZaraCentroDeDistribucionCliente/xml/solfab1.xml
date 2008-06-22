@@ -1,6 +1,6 @@
 <VO.SolicitudFabricaVO>
   <numero>1</numero>
-  <fechaEmision>2008-06-21 22:58:44.453 GMT</fechaEmision>
+  <fechaEmision>2008-06-22 17:41:28.515 GMT</fechaEmision>
   <cdVO>
     <codCentro>1</codCentro>
     <nombreCentro>Shopping Centro</nombreCentro>
@@ -61,7 +61,7 @@
       </art>
       <sol>
         <numero>1002</numero>
-        <fechaEmision>2008-06-21 22:58:00.0 GMT</fechaEmision>
+        <fechaEmision>2008-06-22 17:41:00.0 GMT</fechaEmision>
         <cdVO>
           <codCentro>1</codCentro>
           <nombreCentro>Shopping Centro</nombreCentro>
@@ -150,7 +150,7 @@
       </art>
       <sol>
         <numero>1002</numero>
-        <fechaEmision>2008-06-21 22:58:00.0 GMT</fechaEmision>
+        <fechaEmision>2008-06-22 17:41:00.0 GMT</fechaEmision>
         <cdVO>
           <codCentro>1</codCentro>
           <nombreCentro>Shopping Centro</nombreCentro>

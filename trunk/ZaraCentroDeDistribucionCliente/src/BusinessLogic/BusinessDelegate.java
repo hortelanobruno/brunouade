@@ -22,6 +22,7 @@ import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
+import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
 import Varios.Constantes;
 
@@ -235,6 +236,30 @@ public class BusinessDelegate extends ProxyModelo
 
 	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos) {
 		return this.getModCD().getArticulos(codigos);
+	}
+
+	public ArrayList<SolicitudDistribucionVO> obtenerSolicitudesDeTienda(String tienda) {
+		return this.getModCD().getSolicitudesDistribucion(tienda);
+	}
+
+	public ArrayList<ArticuloReservadoVO> obtenerArticulosReservados(int codSolDis) {
+		return this.getModCD().getArtsReservados(codSolDis);
+	}
+
+	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnvio) {
+		this.getModCD().guardarSolEnv(solEnvio);
+	}
+
+	public void actualizarArticulosReservados(ArrayList<ArticuloReservadoVO> articulosReservados) {
+		this.getModCD().actArtsRes(articulosReservados);
+	}
+
+	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
+		this.getModCD().actualizarStock(articulosAEnviar,articulosReservados);
+	}
+
+	public void actualizarSolicitudDistribucion(SolicitudDistribucionVO solDis) {
+		this.getModCD().actualizarSolDis(solDis);
 	}
 
 

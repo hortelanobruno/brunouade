@@ -324,6 +324,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 				ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
 				CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
 				solDisVO.setCdVO(centroVO);
+				solDisVO.setCerrada(false);
 				cargarTable(solDisVO, codigos, descripciones, stocks);
 				this.buttonCargarXML.setEnabled(false);
 				ref.getJTextArea1().append("Archivo Cargado\n");

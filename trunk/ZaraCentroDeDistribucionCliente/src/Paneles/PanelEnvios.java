@@ -6,11 +6,20 @@
 
 package Paneles;
 
+import java.util.ArrayList;
+
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import Vistas.VistaEnvios;
+
+import BusinessLogic.ArticuloAEnviar;
+import BusinessLogic.BusinessDelegate;
 import GUI.MenuPrincipal;
+import VO.ArticuloReservadoVO;
+import VO.SolicitudDistribucionVO;
+import VO.SolicitudEnvioVO;
+import Vistas.VistaEnvios;
+import controladores.ControladorPanelEnvios;
 
 /**
  * 
@@ -24,8 +33,11 @@ public class PanelEnvios extends javax.swing.JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private MenuPrincipal ref;
-
+	public boolean cargarTable;
+	public boolean cargarTree;
 	private VistaEnvios vistaEnvios;
+	private SolicitudDistribucionVO solDis;
+	private ArrayList<ArticuloReservadoVO> articulosReservados;
 
 	/** Creates new form PanelEnvios */
 	public PanelEnvios(MenuPrincipal menu, VistaEnvios vista) {
@@ -257,22 +269,45 @@ public class PanelEnvios extends javax.swing.JPanel {
 
 	private void buttonCargarActionPerformed(java.awt.event.ActionEvent evt) {
 		// Cargar solicitud en tablas
-
+		((ControladorPanelEnvios) vistaEnvios.getControlador()).doCargarSolicitud(true,false);
 	}
 
 	private void comboBoxTiendasActionPerformed(java.awt.event.ActionEvent evt) {
-		// Se selecciono una tienda
-		String tienda = comboBoxTiendas.getSelectedItem().toString();
-		
+		// Se selecciono una tienda y cargo las solicitudes en el tree
+		((ControladorPanelEnvios) vistaEnvios.getControlador()).doTiendaSeleccionada(true);
 	}
 
 	private void buttonEnviarTiendaActionPerformed(
 			java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+			((ControladorPanelEnvios) vistaEnvios.getControlador()).doCargarSolicitud(false,false);
 	}
 
 	public void update() {
-
+		if(cargarTree){
+			String tienda = comboBoxTiendas.getSelectedItem().toString();
+			ArrayList<SolicitudDistribucionVO> solicitudes = ((BusinessDelegate) vistaEnvios.getModelo()).obtenerSolicitudesDeTienda(tienda);
+			//falta hacer el metodo en el servidor
+			//cargar en el arbol
+		}else{
+			if(cargarTable){
+				int codSolDis = sarasa;
+				articulosReservados = ((BusinessDelegate) vistaEnvios.getModelo()).obtenerArticulosReservados(codSolDis);
+				//falta codificar el metodo en el servidor
+				//armar arraylists de los codigos de los articulos que no estan enre los resevados
+				ArrayList<Integer> stocks = ((BusinessDelegate) vistaEnvios.getModelo()).getStocks(codigos);
+				//hay que hacer el cargar table
+			}else{
+				//se genera la solicitud de envio con los datos de la table
+				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
+				ArrayList<ArticuloAEnviar> articulosAEnviar = new ArrayList<ArticuloAEnviar>();
+				((BusinessDelegate) vistaEnvios.getModelo()).guardarSolicitudDeEnvio(solEnvio);
+				((BusinessDelegate) vistaEnvios.getModelo()).actualizarStock(articulosAEnviar,articulosReservados);
+				((BusinessDelegate) vistaEnvios.getModelo()).actualizarArticulosReservados(articulosReservados);
+				((BusinessDelegate) vistaEnvios.getModelo()).actualizarSolicitudDistribucion(solDis);
+				//hay que codificar los 4 metodos en el servidor
+				//generar xml
+			}
+		}
 	}
 
 	// Variables declaration - do not modify
@@ -310,6 +345,22 @@ public class PanelEnvios extends javax.swing.JPanel {
 
 	public void setRef(MenuPrincipal ref) {
 		this.ref = ref;
+	}
+
+	public void setCargarTable(boolean b) {
+		this.cargarTable = b;
+	}
+	
+	public boolean getCargarTable(){
+		return this.cargarTable;
+	}
+
+	public void setCargarTree(boolean b) {
+		this.cargarTree = b;
+	}
+	
+	public boolean getCargarTree(){
+		return this.cargarTree;
 	}
 
 }
