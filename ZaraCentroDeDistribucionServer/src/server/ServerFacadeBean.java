@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+
+import BusinessLogic.ArticuloAEnviar;
 import BusinessLogic.ServerFacade;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
@@ -225,6 +227,30 @@ public class ServerFacadeBean implements ServerFacade
 
 	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos) {
 		return this.admArt.getArticulos(codigos);
+	}
+
+	public ArrayList<SolicitudDistribucionVO> getSolicitudesDistribucion(String tienda) {
+		return this.admSol.getSolsDis(tienda);
+	}
+
+	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis) {
+		return this.admArt.getArtsReservados(codSolDis);
+	}
+
+	public void guardarSolEnv(SolicitudEnvioVO solEnvio) {
+		this.admSol.guardarSolEnv(solEnvio);
+	}
+
+	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados) {
+		this.admArt.actArtsRes(articulosReservados);
+	}
+
+	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
+		this.admArt.actualizarStock(articulosAEnviar,articulosReservados);
+	}
+
+	public void actualizarSolDis(SolicitudDistribucionVO solDis) {
+		this.admSol.actualizarSolDis(solDis);
 	}
 
 

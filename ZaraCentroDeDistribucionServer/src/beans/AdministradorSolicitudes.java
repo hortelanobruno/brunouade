@@ -29,4 +29,8 @@ public interface AdministradorSolicitudes
 	public int getNextIdArticuloReservado();
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
 	public int getNextIdArticuloAReponer();
+	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tienda);
+	public void guardarSolEnv(SolicitudEnvioVO solEnvio);
+	public void actualizarSolDis(SolicitudDistribucionVO solDis);
+	
 }

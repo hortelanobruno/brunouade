@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.Locale;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -24,15 +25,19 @@ public class SolicitudDistribucion extends Solicitud
 	private static final long serialVersionUID = 1694955054674640622L;
 	private Tienda tienda;
 	private Collection<ArticuloPedido> articulosPedidos;
+	private boolean cerrada;
+
 
 	public SolicitudDistribucion() {
 		super();
+		this.setCerrada(false);
 	}
 
 	public SolicitudDistribucion(int n, Date f, Tienda t, Collection<ArticuloPedido> a) {
 		super(n,f);
 		this.tienda = t;
 		this.setArticulosPedidos(a);
+		this.setCerrada(false);
 	}
 
 	@ManyToOne(cascade={CascadeType.MERGE})
@@ -51,6 +56,15 @@ public class SolicitudDistribucion extends Solicitud
 
 	public void setArticulosPedidos(Collection<ArticuloPedido> articulosPedidos) {
 		this.articulosPedidos = articulosPedidos;
+	}
+	
+	@Column
+	public boolean getCerrada() {
+		return cerrada;
+	}
+
+	public void setCerrada(boolean cerrada) {
+		this.cerrada = cerrada;
 	}
 
 	@Transient

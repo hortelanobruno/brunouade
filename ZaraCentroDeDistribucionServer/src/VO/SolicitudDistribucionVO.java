@@ -8,15 +8,18 @@ public class SolicitudDistribucionVO extends SolicitudVO
 	private static final long serialVersionUID = -5633098382339627713L;
 	private TiendaVO tienda;
 	private Collection<ArticuloPedidoVO> articulosPedidos;
+	private boolean cerrada;
 	
-    public SolicitudDistribucionVO() {
 
+	public SolicitudDistribucionVO() {
+		
 	}
 	
-	public SolicitudDistribucionVO(int n, Collection<ArticuloPedidoVO> a, Date f, TiendaVO t, CentroDistribucionVO centro){
+	public SolicitudDistribucionVO(int n, Collection<ArticuloPedidoVO> a, Date f, TiendaVO t, CentroDistribucionVO centro, boolean cerrada){
 		super(n,f,centro);
 		this.articulosPedidos = a;
 		this.tienda = t;
+		this.setCerrada(cerrada);
 	}
 	
 	public TiendaVO getTienda() {
@@ -35,4 +38,11 @@ public class SolicitudDistribucionVO extends SolicitudVO
 		this.articulosPedidos = articulosPedidos;
 	}
 	
+    public boolean getCerrada() {
+		return cerrada;
+	}
+
+	public void setCerrada(boolean cerrada) {
+		this.cerrada = cerrada;
+	}
 }
