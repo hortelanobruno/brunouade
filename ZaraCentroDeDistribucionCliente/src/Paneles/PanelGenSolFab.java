@@ -199,8 +199,8 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			CentroDistribucionVO centroVO = this.ref.getVistaGenSolFab().getModelo().getCentro();
 			solFab.setCdVO(centroVO);
 			//aca hay que arreglar que la fabrica se setee de una combo o algo asi
-			FabricaVO fabVO = this.ref.getVistaGenSolFab().getModelo().getFabrica();
-			solFab.setFabrica(fabVO);
+			ArrayList<FabricaVO> fabVO = this.ref.getVistaGenSolFab().getModelo().getFabricas();
+			solFab.setFabrica(fabVO.get(0));
 			//aca hay que arreglar la fecha...
 			solFab.setFechaEmision(ref.getDate());
 			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();
