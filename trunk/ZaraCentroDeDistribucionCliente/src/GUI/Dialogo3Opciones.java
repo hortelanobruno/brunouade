@@ -10,8 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import Paneles.PanelDB;
 import Paneles.PanelEnvios;
 import Paneles.PanelGenSolFab;
 import Paneles.PanelNewArt;
@@ -83,9 +81,6 @@ public class Dialogo3Opciones extends JDialog
                 if (ref instanceof PanelSolDist) {
                     ((PanelSolDist) ref).getRef().ponerPanel(ref);
                 }
-                if (ref instanceof PanelDB) {
-                    ((PanelDB) ref).getRef().ponerPanel(ref);
-                }
                 dispose();
             }
         });
@@ -109,9 +104,6 @@ public class Dialogo3Opciones extends JDialog
                 }
                 if (ref instanceof PanelSolDist) {
                     ((PanelSolDist) ref).getRef().ponerPanelPrincipal();
-                }
-                if (ref instanceof PanelDB) {
-                    ((PanelDB) ref).getRef().ponerPanelPrincipal();
                 }
                 dispose();
             }
