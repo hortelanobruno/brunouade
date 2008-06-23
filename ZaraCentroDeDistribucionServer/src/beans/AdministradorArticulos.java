@@ -35,4 +35,5 @@ public interface AdministradorArticulos
 	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis);
 	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
 	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
+	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis);
 }
