@@ -106,12 +106,13 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 	{
 		Query q = em.createQuery("SELECT t From Tienda t");
 		List l = q.getResultList();
-		
 		ArrayList<TiendaVO> ret = new ArrayList<TiendaVO>();
-		
-		for(Iterator i = l.iterator();i.hasNext();)
-			ret.add(((Tienda)i).getVO());
-		
+		Iterator it = l.iterator();
+		while(it.hasNext()){
+			Tienda tienda = (Tienda) it.next();
+			TiendaVO tiendaVO = tienda.getVO();
+			ret.add(tiendaVO);
+		}		
 		return ret;
 	}
 	

@@ -19,7 +19,6 @@ public class ArticuloAFabricar implements Serializable
 	private int idAAF;
 	private Articulo art;
 	private SolicitudDistribucion sol;
-	private Fabrica fabrica;
 	private int cantidadPedida;
 	private int cantidadRecibida;
 	private int cantidadAFabricar;
@@ -31,12 +30,11 @@ public class ArticuloAFabricar implements Serializable
 		
 	}
 	
-	public ArticuloAFabricar(int id, Articulo art, SolicitudDistribucion sol, Fabrica f, int cant, int cantF)
+	public ArticuloAFabricar(int id, Articulo art, SolicitudDistribucion sol, int cant, int cantF)
 	{
 		this.setIdAAF(id);
 		this.setArt(art);
 		this.setSol(sol);
-		this.setFabrica(f);
 		this.setCantidadPedida(cant);
 		this.setCantidadRecibida(0);
 		this.setCantidadAFabricar(cantF);
@@ -73,15 +71,6 @@ public class ArticuloAFabricar implements Serializable
 		this.idAAF = idAAF;
 	}
 
-	@ManyToOne
-	public Fabrica getFabrica() {
-		return fabrica;
-	}
-
-	public void setFabrica(Fabrica fabrica) {
-		this.fabrica = fabrica;
-	}
-
 	@Column
 	public int getCantidadPedida() {
 		return cantidadPedida;
@@ -115,7 +104,6 @@ public class ArticuloAFabricar implements Serializable
 		art.setIdAAF(this.getIdAAF());
 		art.setCantidadPedida(this.getCantidadPedida());
 		art.setCantidadRecibida(this.getCantidadRecibida());
-		art.setFabrica(this.getFabrica().getVO());
 		art.setSol(this.getSol().getVO());
 		art.setArt(this.getArt().getVO());
 		art.setCantidadAFabricar(this.getCantidadAFabricar());
@@ -127,9 +115,6 @@ public class ArticuloAFabricar implements Serializable
 		this.setCantidadPedida(art.getCantidadPedida());
 		this.setCantidadRecibida(art.getCantidadRecibida());
 		this.setCantidadAFabricar(art.getCantidadAFabricar());
-		Fabrica fab = new Fabrica();
-		fab.setVO(art.getFabrica());
-		this.setFabrica(fab);
 		Articulo art2 = new Articulo();
 		art2.setVO(art.getArt());
 		this.setArt(art2);

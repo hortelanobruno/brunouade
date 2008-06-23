@@ -188,7 +188,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		
 	}
 
-	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
 		// TODO Auto-generated method stub
 		
 	}

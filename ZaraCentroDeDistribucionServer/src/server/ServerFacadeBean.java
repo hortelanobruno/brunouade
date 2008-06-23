@@ -2,10 +2,10 @@ package server;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
-import BusinessLogic.ArticuloAEnviar;
 import BusinessLogic.ServerFacade;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
@@ -245,7 +245,7 @@ public class ServerFacadeBean implements ServerFacade
 		this.admArt.actArtsRes(articulosReservados);
 	}
 
-	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
 		this.admArt.actualizarStock(articulosAEnviar,articulosReservados);
 	}
 
