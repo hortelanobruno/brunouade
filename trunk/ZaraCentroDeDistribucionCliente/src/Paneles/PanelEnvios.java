@@ -314,7 +314,6 @@ public class PanelEnvios extends javax.swing.JPanel {
 			String tienda = comboBoxTiendas.getSelectedItem().toString();
 			solicitudes = ((BusinessDelegate) vistaEnvios.getModelo()).obtenerSolicitudesDeTienda(tienda);
 			cargarArbol(solicitudes);
-			//falta hacer el metodo en el servidor
 		}else{
 			if(cargarTable){
 				TreePath path = ((DefaultTreeSelectionModel)treeArticulos.getModel()).getSelectionPath();
@@ -339,7 +338,6 @@ public class PanelEnvios extends javax.swing.JPanel {
 					ArticuloPedidoVO artPed = (ArticuloPedidoVO) solArt.next();
 					codigos.add(artPed.getArt().getCodigo());
 				}
-				//falta codificar el metodo en el servidor
 				ArrayList<Integer> stocks = ((BusinessDelegate) vistaEnvios.getModelo()).getStocks(codigos);
 				ArrayList<ArticuloAEnviarVO> artsAEnviar = ((BusinessDelegate) vistaEnvios.getModelo()).getArtsAEnv(codSolDis);
 				cargarTable(solDis,articulosReservados,stocks,artsAEnviar);
@@ -348,11 +346,18 @@ public class PanelEnvios extends javax.swing.JPanel {
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
 				int idAE = ((BusinessDelegate) vistaEnvios.getModelo()).getNextIdAEnv();
 				ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE);
+				solEnvio.setArticulosAEnviar(articulosAEnviar);
+				solEnvio.setFechaEmision(ref.getDate());
+				solEnvio.setTienda(solDis.getTienda());
+				int numero = ((BusinessDelegate) vistaEnvios.getModelo()).getNumeroSolEnv();
+				numero++;
+				solEnvio.setNumero(numero);
+				solEnvio.setCdVO(solDis.getCdVO());
 				((BusinessDelegate) vistaEnvios.getModelo()).guardarSolicitudDeEnvio(solEnvio);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarStock(articulosAEnviar,articulosReservados);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarArticulosReservados(articulosReservados);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarSolicitudDistribucion(solDis);
-				//hay que codificar los 4 metodos en el servidor
+				//falta setear en la soldis cerrado si corresponde
 				//generar xml
 			}
 		}
