@@ -1,13 +1,16 @@
 package Varios;
 
+import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloHeaderVO;
+import VO.ArticuloPedidoVO;
 import VO.CategoriaHogarVO;
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.LineaRopaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
+import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
 import VO.TiendaVO;
 
@@ -76,5 +79,21 @@ public class XMLWrapper
 		fileWriter.write(solFabXML);
 		
 		
+	}
+
+	public void parseXMLSolEnvio(SolicitudEnvioVO solEnvio) {
+		XStream xstream = new XStream();
+		xstream.alias("tienda", TiendaVO.class);
+		xstream.alias("articuloaenviar", ArticuloAEnviarVO.class);
+		xstream.alias("articuloheader", ArticuloHeaderVO.class);
+		xstream.alias("solicituddistribucion", SolicitudDistribucionVO.class);
+		xstream.alias("articulopedido", ArticuloPedidoVO.class);
+		//Parsear el objeto saco a XML
+		String solEnvXML = xstream.toXML(solEnvio);
+		int id = solEnvio.getNumero();
+		//Escribo la salida en un archivo
+		String file = "xml/solenvio"+id+".xml";
+		FileWriterWrapper fileWriter = new FileWriterWrapper(file);
+		fileWriter.write(solEnvXML);
 	}
 }

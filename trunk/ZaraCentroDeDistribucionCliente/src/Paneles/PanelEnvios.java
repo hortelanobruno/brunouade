@@ -25,6 +25,7 @@ import VO.ArticuloReservadoVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.TiendaVO;
+import Varios.XMLWrapper;
 import Vistas.VistaEnvios;
 import controladores.ControladorPanelEnvios;
 
@@ -342,7 +343,6 @@ public class PanelEnvios extends javax.swing.JPanel {
 				ArrayList<ArticuloAEnviarVO> artsAEnviar = ((BusinessDelegate) vistaEnvios.getModelo()).getArtsAEnv(codSolDis);
 				cargarTable(solDis,articulosReservados,stocks,artsAEnviar);
 			}else{
-				//se genera la solicitud de envio con los datos de la table
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
 				int idAE = ((BusinessDelegate) vistaEnvios.getModelo()).getNextIdAEnv();
 				ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE);
@@ -353,17 +353,32 @@ public class PanelEnvios extends javax.swing.JPanel {
 				numero++;
 				solEnvio.setNumero(numero);
 				solEnvio.setCdVO(solDis.getCdVO());
+				boolean cerrado = comprobarCerrado();
+				if (cerrado){
+					solDis.setCerrada(cerrado);
+				}
 				((BusinessDelegate) vistaEnvios.getModelo()).guardarSolicitudDeEnvio(solEnvio);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarStock(articulosAEnviar,articulosReservados);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarArticulosReservados(articulosReservados);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarSolicitudDistribucion(solDis);
-				//falta setear en la soldis cerrado si corresponde
-				//generar xml
+				XMLWrapper xml = new XMLWrapper();
+				xml.parseXMLSolEnvio(solEnvio);
 			}
 		}
 	}
 
-	
+	public boolean comprobarCerrado(){
+		boolean cerrado = true;
+		for(int i = 0 ; i < tablePendientes.getRowCount() ; i++){
+			int cantPed = Integer.parseInt((((DefaultTableModel) tablePendientes.getModel()).getValueAt(i, 4)).toString());
+			int cantEnv = Integer.parseInt((((DefaultTableModel) tablePendientes.getModel()).getValueAt(i, 6)).toString()) +
+			Integer.parseInt((((DefaultTableModel) tablePendientes.getModel()).getValueAt(i, 5)).toString());
+			if(cantPed != cantEnv){
+				cerrado = false;
+			}
+		}
+		return cerrado;
+	}
 	
 	private ArrayList<ArticuloAEnviarVO> articulosAEnviarDeTabla(int idAE) {
 		ArrayList<ArticuloAEnviarVO> articulosAEnviar = new ArrayList<ArticuloAEnviarVO>();
