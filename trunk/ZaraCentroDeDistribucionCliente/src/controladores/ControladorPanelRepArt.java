@@ -1,14 +1,8 @@
 package controladores;
 
-import java.util.ArrayList;
-
-import BusinessLogic.BusinessDelegate;
 import MVCFramework.Controlador;
 import MVCFramework.ProxyModelo;
 import MVCFramework.Vista;
-import VO.ArticuloAReponerVO;
-import VO.SolicitudDeReposicionVO;
-import VO.SolicitudFabricaVO;
 import Vistas.VistaRepArt;
 
 public class ControladorPanelRepArt extends Controlador{

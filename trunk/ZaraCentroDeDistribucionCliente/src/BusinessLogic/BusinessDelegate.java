@@ -11,6 +11,7 @@ import javax.naming.InitialContext;
 import Exceptions.ErrorConectionException;
 import Exceptions.ExistingProductException;
 import MVCFramework.ProxyModelo;
+import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
@@ -23,6 +24,7 @@ import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
+import VO.TiendaVO;
 import Varios.Constantes;
 
 public class BusinessDelegate extends ProxyModelo 
@@ -240,12 +242,16 @@ public class BusinessDelegate extends ProxyModelo
 		this.getModCD().actArtsRes(articulosReservados);
 	}
 
-	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
 		this.getModCD().actualizarStock(articulosAEnviar,articulosReservados);
 	}
 
 	public void actualizarSolicitudDistribucion(SolicitudDistribucionVO solDis) {
 		this.getModCD().actualizarSolDis(solDis);
+	}
+
+	public ArrayList<TiendaVO> obtenerTiendas() {
+		return this.getModCD().getTiendas();
 	}
 
 

@@ -1,12 +1,8 @@
 package controladores;
 
-import BusinessLogic.BusinessDelegate;
-import Exceptions.ExistingProductException;
 import MVCFramework.Controlador;
 import MVCFramework.ProxyModelo;
 import MVCFramework.Vista;
-import VO.ArticuloHogarVO;
-import VO.ArticuloRopaVO;
 import Vistas.VistaNewArt;
 
 public class ControladorPanelNewArt extends Controlador {
