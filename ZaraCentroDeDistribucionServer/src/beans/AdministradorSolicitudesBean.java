@@ -11,6 +11,7 @@ import BusinessLogic.SolicitudDeFabricacion;
 import BusinessLogic.SolicitudDistribucion;
 import BusinessLogic.SolicitudEnvioATienda;
 import BusinessLogic.SolicitudReposicion;
+import BusinessLogic.Tienda;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
@@ -190,16 +191,22 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return (em.find(SolicitudReposicion.class, codigo) == null)?false:true;
 	}
 
-	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tienda) 
+	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tien) 
 	{
-		Query q = em.createQuery("SELECT t.codigoTienda FROM Tienda t WHERE t.nombreTienda =:nombre");
-		q.setParameter("nombre", tienda);
+		Query q = em.createQuery("SELECT t FROM Tienda t");
 		List l = q.getResultList();
 		ArrayList<SolicitudDistribucionVO> ret = new ArrayList<SolicitudDistribucionVO>();
 		if(l == null) return null;
 		else
 		{
-			int cod = (Integer)l.get(0);
+			Iterator tiendas = l.iterator();
+			int cod = 0;
+			while(tiendas.hasNext()){
+				Tienda tiendaa = (Tienda) tiendas.next();
+				if(tiendaa.getNombreTienda().equals(tien)){
+					cod = tiendaa.getCodigoTienda();
+				}
+			}
 			q = em.createQuery("SELECT s FROM SolicitudDistribucion s WHERE s.tienda.codigoTienda =:cod");
 			q.setParameter("cod", cod);
 			List lVO = q.getResultList();
@@ -220,7 +227,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		{
 			SolicitudEnvioATienda sol = new SolicitudEnvioATienda();
 			sol.setVO(solEnvio);
-			em.persist(sol);
+			em.merge(sol);
 		}
 	}
 

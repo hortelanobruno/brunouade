@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.Locale;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -34,7 +35,7 @@ public class SolicitudEnvioATienda extends Solicitud
 		this.setArticulosAEnviar(a);
 	}
 	
-	@ManyToOne
+	@ManyToOne(cascade={CascadeType.MERGE})
 	public Tienda getTienda() 
 	{
 		return tienda;
@@ -45,7 +46,7 @@ public class SolicitudEnvioATienda extends Solicitud
 		this.tienda = tienda;
 	}
 	
-	@OneToMany
+	@OneToMany(cascade={CascadeType.MERGE})
 	public Collection<ArticuloAEnviar> getArticulosAEnviar() {
 		return articulosAEnviar;
 	}

@@ -180,15 +180,16 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis) 
 	{
-		Query q = em.createQuery("Select a FROM ArticuloReservado a WHERE ArticuloReservado.solDis.numero =: cod");
-		q.setParameter("cod", codSolDis);
+		Query q = em.createQuery("Select a FROM ArticuloReservado a");
 		List l = q.getResultList();
 		Iterator i = l.iterator();
 		ArrayList<ArticuloReservadoVO> ret = new ArrayList<ArticuloReservadoVO>();
 		while(i.hasNext())
 		{
 			ArticuloReservado art = (ArticuloReservado)i.next();
-			ret.add(art.getVO());
+			if(art.getSolDis().getNumero() == codSolDis){
+				ret.add(art.getVO());
+			}
 		}
 		return ret;
 	}
@@ -208,7 +209,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	}
 
 	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
-		//TODO Auto-generated method stub
 		for(int i = 0 ; i < articulosAEnviar.size() ; i++){
 			ArticuloAEnviarVO artEnv = articulosAEnviar.get(i);
 			for(int j = 0 ; j < articulosReservados.size() ; j++){
@@ -218,16 +218,33 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 				}
 			}
 		}
-		//ahora, hay que bajar el stock
-		//para los articulos que estan aca "articulosAEnviar" y bajar el stock en la cantidad articulosAEnviar.get(i).getCantidadAEnviar
-		//sino entendes avisame !!!
-		
-		
+		Iterator i = (Iterator)articulosAEnviar.iterator();
+		while(i.hasNext())
+		{
+			ArticuloAEnviarVO avo = (ArticuloAEnviarVO) i.next();
+			Articulo a = em.find(Articulo.class,avo.getArt().getCodigo());
+			if(a != null)
+			{
+				int newCant = a.getCantidad() - avo.getCantidadAEnviar();
+				a.setCantidad(newCant);
+				em.merge(a);
+			}
+		}
 		
 	}
 
 	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis) {
-		// TODO Auto-generated method stub
-		return null;
+		Query q = em.createQuery("Select a FROM ArticuloAEnviar a");
+		List l = q.getResultList();
+		Iterator i = l.iterator();
+		ArrayList<ArticuloAEnviarVO> ret = new ArrayList<ArticuloAEnviarVO>();
+		while(i.hasNext())
+		{
+			ArticuloAEnviar art = (ArticuloAEnviar)i.next();
+			if(art.getSolDis().getNumero() == codSolDis){
+				ret.add(art.getVO());
+			}
+		}
+		return ret;
 	}
 }

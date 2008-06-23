@@ -45,7 +45,6 @@ public class SolicitudReposicion extends Solicitud
 		this.fabrica = fabrica;
 	}
 	
-	//@OneToMany(mappedBy="sr")
 	@OneToMany(cascade={CascadeType.MERGE})
 	public Collection<ArticuloAReponer> getArticulosAReponer() {
 		return articulosAReponer;
