@@ -270,13 +270,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 				if((stock != 0) && (valor == 0)){
 					fabricar--;
 				}
-			}
-			if(fabricar>0){
-				this.comboFabrica.setEnabled(true);
-			}else{
-				this.comboFabrica.setEnabled(false);
-			}
-				
+			}	
 		}
 		if ((grabar) && (cantCeros < tableArticulos.getModel().getRowCount())) {
 			buttonGuardarPedido.setEnabled(true);

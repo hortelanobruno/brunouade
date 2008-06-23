@@ -28,7 +28,6 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import Paneles.PanelConfig;
-import Paneles.PanelDB;
 import Paneles.PanelEnvios;
 import Paneles.PanelGenSolFab;
 import Paneles.PanelNewArt;
@@ -177,9 +176,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 		}
 		if (activePanel instanceof PanelSolDist) {
 			((PanelSolDist) activePanel).update();
-		}
-		if (activePanel instanceof PanelDB) {
-			((PanelDB) activePanel).update();
 		}
 	}
 
@@ -687,11 +683,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 	private void menuItemBaseDatosActionPerformed(java.awt.event.ActionEvent evt) {
 		// Panel Base de datos
-		if (!isPanelDB) {
-			panelDB = new PanelDB(this);
-			ponerPanel(panelDB);
-			this.jLabel3.setText("Base de Datos");
-		}
+
 	}
 
 	private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {
@@ -853,10 +845,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 			this.repaint();
 		}
 
-		if (isPanelDB) {
-			this.remove(panelDB);
-			this.repaint();
-		}
 
 		if (panel instanceof PanelEnvios) {
 			this.isPanel1Selected = false;
@@ -865,7 +853,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 			this.isPanelRepArtSelected = false;
 			this.isPanelNewArtSelected = false;
 			this.isPanelConfigSelected = false;
-			this.isPanelDB = false;
 			this.setTitle(Constantes.APPLICATION_NAME + "Generar envios - ");
 			this.setActivePanel(panelEnvios);
 			this.isPanelEnviosSelected = true;
@@ -878,7 +865,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 			this.isPanelRepArtSelected = false;
 			this.isPanelNewArtSelected = false;
 			this.isPanelConfigSelected = false;
-			this.isPanelDB = false;
 			this.setTitle(Constantes.APPLICATION_NAME
 					+ "Generar solicitud de fabricacion - ");
 			this.setActivePanel(panelGSF);
@@ -892,7 +878,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 			this.isPanelEnviosSelected = false;
 			this.isPanelRepArtSelected = false;
 			this.isPanelConfigSelected = false;
-			this.isPanelDB = false;
 			this.setTitle(Constantes.APPLICATION_NAME + "Nuevo articulo - ");
 			this.setActivePanel(panelNewArt);
 			this.isPanelNewArtSelected = true;
@@ -905,7 +890,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 			this.isPanelEnviosSelected = false;
 			this.isPanelNewArtSelected = false;
 			this.isPanelConfigSelected = false;
-			this.isPanelDB = false;
 			this.setTitle(Constantes.APPLICATION_NAME + "Reponer articulos - ");
 			this.setActivePanel(panelRepArt);
 			this.isPanelRepArtSelected = true;
@@ -918,7 +902,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 			this.isPanelRepArtSelected = false;
 			this.isPanelNewArtSelected = false;
 			this.isPanelConfigSelected = false;
-			this.isPanelDB = false;
 			this.setTitle(Constantes.APPLICATION_NAME
 					+ "Panel de solicitud de distribucion - ");
 			this.setActivePanel(panelSD);
@@ -932,24 +915,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 			this.isPanelEnviosSelected = false;
 			this.isPanelRepArtSelected = false;
 			this.isPanelNewArtSelected = false;
-			this.isPanelDB = false;
 			this.setTitle(Constantes.APPLICATION_NAME + "Configuracion - ");
 			this.setActivePanel(panelConfig);
 			this.isPanelConfigSelected = true;
 		}
 
-		if (panel instanceof PanelDB) {
-			this.isPanel1Selected = false;
-			this.isPanelGSFSelected = false;
-			this.isPanelSDSelected = false;
-			this.isPanelEnviosSelected = false;
-			this.isPanelRepArtSelected = false;
-			this.isPanelNewArtSelected = false;
-			this.isPanelConfigSelected = false;
-			this.setTitle(Constantes.APPLICATION_NAME + "Base de Datos - ");
-			this.setActivePanel(panelDB);
-			this.isPanelDB = true;
-		}
 		org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(
 				getContentPane());
 		getContentPane().setLayout(layout);
@@ -1076,8 +1046,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 	private PanelConfig panelConfig;
 
-	private PanelDB panelDB;
-
 	private boolean isPanelConfigSelected;
 
 	private boolean isPanelSDSelected;
@@ -1091,8 +1059,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 	private boolean isPanelNewArtSelected;
 
 	private boolean isPanelRepArtSelected;
-
-	private boolean isPanelDB;
 
 	private boolean isParam(String content, String param, int size) {
 		if (content.length() >= size) {
@@ -1197,14 +1163,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 	public void setPanelConfig(PanelConfig panelConfig) {
 		this.panelConfig = panelConfig;
-	}
-
-	public PanelDB getPanelDB() {
-		return panelDB;
-	}
-
-	public void setPanelDB(PanelDB panelDB) {
-		this.panelDB = panelDB;
 	}
 
 	public PanelEnvios getPanelEnvios() {
