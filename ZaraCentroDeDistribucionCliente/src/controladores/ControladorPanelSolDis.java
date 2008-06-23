@@ -1,16 +1,9 @@
 package controladores;
 
-import java.util.Collection;
-
 import BusinessLogic.BusinessDelegate;
 import MVCFramework.Controlador;
 import MVCFramework.ProxyModelo;
 import MVCFramework.Vista;
-import VO.ArticuloAEnviarVO;
-import VO.ArticuloAFabricarVO;
-import VO.ArticuloHeaderVO;
-import VO.FabricaVO;
-import VO.SolicitudDistribucionVO;
 import Vistas.VistaSolDis;
 
 public class ControladorPanelSolDis extends Controlador

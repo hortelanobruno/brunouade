@@ -379,12 +379,6 @@ public class PanelSolDist extends javax.swing.JPanel {
 		Collection<ArticuloAFabricarVO> art = new ArrayList<ArticuloAFabricarVO>();
 		ArticuloHeaderVO arti;
 		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdAFab();
-		FabricaVO fabr = null;
-		for(int i=0 ; i< fabricas.size() ; i++){
-			if(((FabricaVO)fabricas.get(i)).getNombreFabrica().equals(comboFabrica.getSelectedItem().toString())){
-				fabr = fabricas.get(i);
-			}
-		}
 		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
 			int ped = Integer.parseInt((((DefaultTableModel) tableArticulos
 					.getModel()).getValueAt(i, 4)).toString());
@@ -406,7 +400,6 @@ public class PanelSolDist extends javax.swing.JPanel {
 				idMax++;
 				aFab.setIdAAF(idMax);
 				aFab.setSol(solDisVO);
-				aFab.setFabrica(fabr);
 				art.add(aFab);
 			} else {
 				ref.getJTextArea1().append("Error al cargar los articulos a fabricar, xq lo seleccionado es mayor que lo pedido\n");

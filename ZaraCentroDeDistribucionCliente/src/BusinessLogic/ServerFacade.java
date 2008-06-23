@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.ejb.Remote;
 
 import Exceptions.ExistingProductException;
+import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
@@ -18,6 +19,7 @@ import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
+import VO.TiendaVO;
 
 @Remote
 public interface ServerFacade 
@@ -47,6 +49,8 @@ public interface ServerFacade
 	//public SolicitudFabricaVO getSolFab(int codigo);
 	//public ArrayList<SolicitudFabricaVO> getAllSolFab();
 	//public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
+	//ublic void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
+	//public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
 	/////////////////////////////////////
 	
 	//	panel envios
@@ -54,9 +58,10 @@ public interface ServerFacade
 	public ArrayList<SolicitudDistribucionVO> getSolicitudesDistribucion(String tienda);
 	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis);
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio);
-	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
 	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
+	public ArrayList<TiendaVO> getTiendas();
 	
 	//panel gen sol fab
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
@@ -77,8 +82,7 @@ public interface ServerFacade
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
-	//public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
-	//public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
+	
 	
 	
 	
