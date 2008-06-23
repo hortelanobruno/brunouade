@@ -254,6 +254,10 @@ public class BusinessDelegate extends ProxyModelo
 		return this.getModCD().getTiendas();
 	}
 
+	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis) {
+		return this.getModCD().getArtsAEnv(codSolDis);
+	}
+
 
 
 

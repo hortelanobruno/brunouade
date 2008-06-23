@@ -62,6 +62,7 @@ public interface ServerFacade
 	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
 	public ArrayList<TiendaVO> getTiendas();
+	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis);
 	
 	//panel gen sol fab
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
@@ -82,6 +83,7 @@ public interface ServerFacade
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
+	
 	
 	
 	

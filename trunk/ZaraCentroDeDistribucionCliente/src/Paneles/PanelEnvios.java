@@ -11,6 +11,7 @@ import java.util.Iterator;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTree;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.DefaultTreeSelectionModel;
@@ -19,6 +20,7 @@ import javax.swing.tree.TreePath;
 import BusinessLogic.BusinessDelegate;
 import GUI.MenuPrincipal;
 import VO.ArticuloAEnviarVO;
+import VO.ArticuloPedidoVO;
 import VO.ArticuloReservadoVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
@@ -106,12 +108,11 @@ public class PanelEnvios extends javax.swing.JPanel {
 		tablePendientes.setModel(new javax.swing.table.DefaultTableModel(
 				new Object[][] {
 
-				}, new String[] { "Codigo Art.", "Descripcion", "Cantidad",
-						"Stock" }) {
+				}, new String[] { "Codigo Art.", "Descripcion", "Cantidad Reservada","Stock","Cantidad Pedida","Cantidad enviada","Cantidad a Enviar" }) {
 							private static final long serialVersionUID = 1L;
 			Class[] types = new Class[] { java.lang.Integer.class,
 					java.lang.String.class, java.lang.Integer.class,
-					java.lang.Integer.class };
+					java.lang.Integer.class,java.lang.Integer.class,java.lang.Integer.class };
 
 			public Class getColumnClass(int columnIndex) {
 				return types[columnIndex];
@@ -333,17 +334,20 @@ public class PanelEnvios extends javax.swing.JPanel {
 				}
 				articulosReservados = ((BusinessDelegate) vistaEnvios.getModelo()).obtenerArticulosReservados(codSolDis);
 				ArrayList<Long> codigos = new ArrayList<Long>();
-				for(int j = 0 ; j < articulosReservados.size() ; j++){
-					ArticuloReservadoVO artRes = articulosReservados.get(j);
-					codigos.add(artRes.getArt().getCodigo());
+				Iterator solArt = solDis.getArticulosPedidos().iterator();
+				while(solArt.hasNext()){
+					ArticuloPedidoVO artPed = (ArticuloPedidoVO) solArt.next();
+					codigos.add(artPed.getArt().getCodigo());
 				}
 				//falta codificar el metodo en el servidor
 				ArrayList<Integer> stocks = ((BusinessDelegate) vistaEnvios.getModelo()).getStocks(codigos);
-				cargarTable(solDis,articulosReservados,stocks);
+				ArrayList<ArticuloAEnviarVO> artsAEnviar = ((BusinessDelegate) vistaEnvios.getModelo()).getArtsAEnv(codSolDis);
+				cargarTable(solDis,articulosReservados,stocks,artsAEnviar);
 			}else{
 				//se genera la solicitud de envio con los datos de la table
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
-				ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla();
+				int idAE = ((BusinessDelegate) vistaEnvios.getModelo()).getNextIdAEnv();
+				ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE);
 				((BusinessDelegate) vistaEnvios.getModelo()).guardarSolicitudDeEnvio(solEnvio);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarStock(articulosAEnviar,articulosReservados);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarArticulosReservados(articulosReservados);
@@ -356,14 +360,67 @@ public class PanelEnvios extends javax.swing.JPanel {
 
 	
 	
-	private ArrayList<ArticuloAEnviarVO> articulosAEnviarDeTabla() {
+	private ArrayList<ArticuloAEnviarVO> articulosAEnviarDeTabla(int idAE) {
 		ArrayList<ArticuloAEnviarVO> articulosAEnviar = new ArrayList<ArticuloAEnviarVO>();
-		
+		idAE++;
+		Iterator art = solDis.getArticulosPedidos().iterator();
+		for(int i = 0 ; i < tablePendientes.getRowCount() ; i++){
+			int cantEnv = Integer.parseInt((((DefaultTableModel) tablePendientes.getModel()).getValueAt(i, 6)).toString());
+			if(cantEnv > 0){
+				long codigo = Long.parseLong((((DefaultTableModel) tablePendientes.getModel()).getValueAt(i, 0)).toString());
+				ArticuloAEnviarVO artEnv = new ArticuloAEnviarVO();
+				artEnv.setSolDis(solDis);
+				artEnv.setCantidadAEnviar(cantEnv);
+				artEnv.setIdAAE(idAE);
+				while(art.hasNext()){
+					ArticuloPedidoVO artPed = (ArticuloPedidoVO) art.next();
+					if(artPed.getArt().getCodigo() == codigo){
+						artEnv.setArt(artPed.getArt());
+					}
+				}
+				articulosAEnviar.add(artEnv);
+				art = solDis.getArticulosPedidos().iterator();
+				idAE++;
+			}
+		}
 		return articulosAEnviar;
 	}
 
-	private void cargarTable(SolicitudDistribucionVO solDis2, ArrayList<ArticuloReservadoVO> articulosReservados2, ArrayList<Integer> stocks) {
-		
+	private void cargarTable(SolicitudDistribucionVO solDis2, ArrayList<ArticuloReservadoVO> articulosReservados2, ArrayList<Integer> stocks, ArrayList<ArticuloAEnviarVO> artsAEnviar) {
+		Iterator artsReserv = articulosReservados2.iterator();
+		Iterator artsPed = solDis2.getArticulosPedidos().iterator();
+		Iterator artsEnvs = artsAEnviar.iterator();
+		ArticuloAEnviarVO artEnv;
+		int count = 0;
+		ArticuloReservadoVO artRes;
+		int cantres = 0;
+		int cantenv = 0;
+		while(artsPed.hasNext()){
+			ArticuloPedidoVO artPed = (ArticuloPedidoVO) artsPed.next();
+			int stock = stocks.get(count);
+			long codigo = artPed.getArt().getCodigo();
+			while(artsReserv.hasNext()){
+				artRes = (ArticuloReservadoVO) artsReserv.next();
+				if(codigo == artRes.getArt().getCodigo()){
+					cantres = artRes.getCantidadReservada();
+					break;
+				}
+			}
+			while(artsEnvs.hasNext()){
+				artEnv = (ArticuloAEnviarVO) artsEnvs.next();
+				if(codigo == artEnv.getArt().getCodigo()){
+					cantenv = artEnv.getCantidadAEnviar();
+					break;
+				}
+			}
+			((DefaultTableModel) tablePendientes.getModel())
+			.addRow(new Object[] {codigo,artPed.getArt().getDescripcion(),cantres,stock,artPed.getCantidad(),cantenv,0});
+			artsReserv = articulosReservados2.iterator();
+			artsEnvs = artsAEnviar.iterator();
+			count++;
+			cantres = 0;
+			cantenv = 0;
+		}
 	}
 
 	// Variables declaration - do not modify
