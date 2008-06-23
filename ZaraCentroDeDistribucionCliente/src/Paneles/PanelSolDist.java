@@ -327,19 +327,15 @@ public class PanelSolDist extends javax.swing.JPanel {
 			// Falta generar las solicitudes
 			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
 			Collection<ArticuloReservadoVO> artiReser = (Collection<ArticuloReservadoVO>) articulosEnviarDeTabla();
-			if((!artiAFab.isEmpty()) && ( comboFabrica.getSelectedItem().toString().equals(""))){
-				JOptionPane.showMessageDialog(this,
-						"Debe seleccionar una fabrica.\n",
-						Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
-			}else{
-				((BusinessDelegate) vistaSolDis.getModelo()).guardarSolicitud(solDisVO);
-				((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosReservados(artiReser);
-				((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosAFabricar(artiAFab);
-				((BusinessDelegate) vistaSolDis.getModelo()).modificarStock(artiReser);
-				vaciarTabla();
-				ref.getJTextArea1().append("Solicitudes Guardadas\n");
-				new Dialogo3Opciones("Operacion concretada", this).setVisible(true);	
-			}
+			
+			((BusinessDelegate) vistaSolDis.getModelo()).guardarSolicitud(solDisVO);
+			((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosReservados(artiReser);
+			((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosAFabricar(artiAFab);
+			((BusinessDelegate) vistaSolDis.getModelo()).modificarStock(artiReser);
+			vaciarTabla();
+			ref.getJTextArea1().append("Solicitudes Guardadas\n");
+			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);	
+
 		}
 	}
 
