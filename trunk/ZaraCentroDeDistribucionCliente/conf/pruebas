@@ -1,0 +1,10 @@
+Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
+
+
+- Si apretas en el boton cargar xml del panel new art y no elegis nada y apretas en la cruz putea.
+
+- Hay que arreglar la consola.
+
+- Problema, las solicitudes todas extienden de Solicitud y herada el atributo "numero"
+	este atributo es unico y entonces si una solicitud (la que sea) tiene el numero 1,
+	las demas no pueden usar este numero (otra solicitud de otro tipo).

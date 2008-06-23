@@ -1,6 +1,6 @@
 <VO.SolicitudFabricaVO>
   <numero>1</numero>
-  <fechaEmision>2008-06-22 17:41:28.515 GMT</fechaEmision>
+  <fechaEmision>2008-06-23 17:06:18.46 ART</fechaEmision>
   <cdVO>
     <codCentro>1</codCentro>
     <nombreCentro>Shopping Centro</nombreCentro>
@@ -61,7 +61,7 @@
       </art>
       <sol>
         <numero>1002</numero>
-        <fechaEmision>2008-06-22 17:41:00.0 GMT</fechaEmision>
+        <fechaEmision>2008-06-23 17:06:00.0 ART</fechaEmision>
         <cdVO>
           <codCentro>1</codCentro>
           <nombreCentro>Shopping Centro</nombreCentro>
@@ -112,27 +112,32 @@
           <VO.ArticuloPedidoVO>
             <idAP>1</idAP>
             <art>
+              <descripcion>camisa</descripcion>
               <codigo>1000</codigo>
               <cantidad>0</cantidad>
-              <precio>0.0</precio>
+              <linea>basic</linea>
+              <precio>200.0</precio>
+              <seccion>hombre</seccion>
+              <color>blanco</color>
             </art>
             <cantidad>800</cantidad>
           </VO.ArticuloPedidoVO>
           <VO.ArticuloPedidoVO>
             <idAP>2</idAP>
             <art>
+              <descripcion>chomba</descripcion>
               <codigo>1002</codigo>
               <cantidad>0</cantidad>
-              <precio>0.0</precio>
+              <linea>verano</linea>
+              <precio>120.0</precio>
+              <seccion>hombre</seccion>
+              <color>celeste</color>
             </art>
             <cantidad>500</cantidad>
           </VO.ArticuloPedidoVO>
         </articulosPedidos>
+        <cerrada>false</cerrada>
       </sol>
-      <fabrica>
-        <nombreFabrica>Lanus Este</nombreFabrica>
-        <codigoFabrica>1</codigoFabrica>
-      </fabrica>
       <cantidadPedida>780</cantidadPedida>
       <cantidadRecibida>0</cantidadRecibida>
       <cantidadAFabricar>2000</cantidadAFabricar>
@@ -150,7 +155,7 @@
       </art>
       <sol>
         <numero>1002</numero>
-        <fechaEmision>2008-06-22 17:41:00.0 GMT</fechaEmision>
+        <fechaEmision>2008-06-23 17:06:00.0 ART</fechaEmision>
         <cdVO>
           <codCentro>1</codCentro>
           <nombreCentro>Shopping Centro</nombreCentro>
@@ -201,27 +206,32 @@
           <VO.ArticuloPedidoVO>
             <idAP>1</idAP>
             <art>
+              <descripcion>camisa</descripcion>
               <codigo>1000</codigo>
               <cantidad>0</cantidad>
-              <precio>0.0</precio>
+              <linea>basic</linea>
+              <precio>200.0</precio>
+              <seccion>hombre</seccion>
+              <color>blanco</color>
             </art>
             <cantidad>800</cantidad>
           </VO.ArticuloPedidoVO>
           <VO.ArticuloPedidoVO>
             <idAP>2</idAP>
             <art>
+              <descripcion>chomba</descripcion>
               <codigo>1002</codigo>
               <cantidad>0</cantidad>
-              <precio>0.0</precio>
+              <linea>verano</linea>
+              <precio>120.0</precio>
+              <seccion>hombre</seccion>
+              <color>celeste</color>
             </art>
             <cantidad>500</cantidad>
           </VO.ArticuloPedidoVO>
         </articulosPedidos>
+        <cerrada>false</cerrada>
       </sol>
-      <fabrica>
-        <nombreFabrica>Lanus Este</nombreFabrica>
-        <codigoFabrica>1</codigoFabrica>
-      </fabrica>
       <cantidadPedida>450</cantidadPedida>
       <cantidadRecibida>0</cantidadRecibida>
       <cantidadAFabricar>1000</cantidadAFabricar>
