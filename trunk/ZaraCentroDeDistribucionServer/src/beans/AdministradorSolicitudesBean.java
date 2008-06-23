@@ -190,19 +190,47 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return (em.find(SolicitudReposicion.class, codigo) == null)?false:true;
 	}
 
-	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tienda) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tienda) 
+	{
+		Query q = em.createQuery("SELECT t.codigoTienda FROM Tienda t WHERE t.nombreTienda =:nombre");
+		q.setParameter("nombre", tienda);
+		List l = q.getResultList();
+		ArrayList<SolicitudDistribucionVO> ret = new ArrayList<SolicitudDistribucionVO>();
+		if(l == null) return null;
+		else
+		{
+			int cod = (Integer)l.get(0);
+			q = em.createQuery("SELECT s FROM SolicitudDistribucion s WHERE s.tienda.codigoTienda =:cod");
+			q.setParameter("cod", cod);
+			List lVO = q.getResultList();
+			Iterator i = lVO.iterator();
+			
+			while(i.hasNext())
+			{
+				SolicitudDistribucion sol = (SolicitudDistribucion)i.next();
+				ret.add(sol.getVO());
+			}
+		}
+		return ret;
 	}
 
-	public void guardarSolEnv(SolicitudEnvioVO solEnvio) {
-		// TODO Auto-generated method stub
-		
+	public void guardarSolEnv(SolicitudEnvioVO solEnvio)
+	{
+		if(em.find(SolicitudEnvioATienda.class, solEnvio.getNumero()) == null)
+		{
+			SolicitudEnvioATienda sol = new SolicitudEnvioATienda();
+			sol.setVO(solEnvio);
+			em.persist(sol);
+		}
 	}
 
-	public void actualizarSolDis(SolicitudDistribucionVO solDis) {
-		// TODO Auto-generated method stub
-		
+	public void actualizarSolDis(SolicitudDistribucionVO solDis) 
+	{
+		if(em.find(SolicitudDistribucion.class, solDis.getNumero()) == null)
+		{
+			SolicitudDistribucion sol = new SolicitudDistribucion();
+			sol.setVO(solDis);
+			em.persist(sol);
+		}
 	}
-	
 }

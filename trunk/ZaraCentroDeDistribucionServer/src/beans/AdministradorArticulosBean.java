@@ -178,18 +178,37 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 	}
 
-	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis) 
+	{
+		Query q = em.createQuery("Select a FROM ArticuloReservado a WHERE ArticuloReservado.solDis.numero =: cod");
+		q.setParameter("cod", codSolDis);
+		List l = q.getResultList();
+		Iterator i = l.iterator();
+		ArrayList<ArticuloReservadoVO> ret = new ArrayList<ArticuloReservadoVO>();
+		while(i.hasNext())
+		{
+			ArticuloReservado art = (ArticuloReservado)i.next();
+			ret.add(art.getVO());
+		}
+		return ret;
 	}
 
-	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados) {
-		// TODO Auto-generated method stub
-		
+	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados) 
+	{
+		for(int i = 0; i<articulosReservados.size();i++)
+		{
+			ArticuloReservadoVO art = articulosReservados.get(i);
+			ArticuloReservado aR = em.find(ArticuloReservado.class, art.getIdAR());
+			if(aR != null)
+			{
+				aR.setVO(art);
+				em.merge(aR);
+			}
+		}
 	}
 
-	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
-		// TODO Auto-generated method stub
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) 
+	{
 		
 	}
 }
