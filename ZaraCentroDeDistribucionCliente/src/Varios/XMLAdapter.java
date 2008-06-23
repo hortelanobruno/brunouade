@@ -15,7 +15,7 @@ public class XMLAdapter
 	public SolicitudDistribucionVO getSolDisVOFromXML(XMLSolDis sd)
 	{
 		SolicitudDistribucionVO disVO = new SolicitudDistribucionVO();
-		disVO.setNumero(sd.getNumero());
+		disVO.setIdDis(sd.getNumero());
 		disVO.setTienda(sd.getTienda());
 		Collection<ArticuloPedidoVO> arts = new ArrayList<ArticuloPedidoVO>();
 		
@@ -38,8 +38,8 @@ public class XMLAdapter
 		SolicitudDeReposicionVO ret = new SolicitudDeReposicionVO();
 		SolicitudFabricaVO sf = new SolicitudFabricaVO();
 		sf.setFabrica(sr.getFabrica());
-		sf.setNumero(sr.getCodSolFab());
-		ret.setNumero(sr.getCodigo());
+		sf.setIdFab(sr.getCodSolFab());
+		ret.setIdRep(sr.getCodigo());
 		ret.setFabrica(sr.getFabrica());
 		Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
 		
