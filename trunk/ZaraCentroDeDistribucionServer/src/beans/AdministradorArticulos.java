@@ -2,9 +2,9 @@ package beans;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
 import javax.ejb.Remote;
 
-import BusinessLogic.ArticuloAEnviar;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
@@ -34,5 +34,5 @@ public interface AdministradorArticulos
 	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
 	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis);
 	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
-	public void actualizarStock(ArrayList<ArticuloAEnviar> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
 }
