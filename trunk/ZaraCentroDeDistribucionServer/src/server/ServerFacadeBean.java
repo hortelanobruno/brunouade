@@ -253,6 +253,10 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.actualizarSolDis(solDis);
 	}
 
+	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis) {
+		return this.admArt.getArtsAEnv(codSolDis);
+	}
+
 
 
 }

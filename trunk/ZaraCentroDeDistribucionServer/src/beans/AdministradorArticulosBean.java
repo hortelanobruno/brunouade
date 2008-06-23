@@ -211,4 +211,9 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	{
 		
 	}
+
+	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
