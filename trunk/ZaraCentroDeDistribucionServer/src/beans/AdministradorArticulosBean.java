@@ -202,13 +202,27 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			if(aR != null)
 			{
 				aR.setVO(art);
-				em.merge(aR);
+				em.remove(aR);
 			}
 		}
 	}
 
-	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) 
-	{
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
+		//TODO Auto-generated method stub
+		for(int i = 0 ; i < articulosAEnviar.size() ; i++){
+			ArticuloAEnviarVO artEnv = articulosAEnviar.get(i);
+			for(int j = 0 ; j < articulosReservados.size() ; j++){
+				ArticuloReservadoVO artRes = articulosReservados.get(j);
+				if(artEnv.getArt().getCodigo() == artRes.getArt().getCodigo()){
+					articulosAEnviar.get(i).setCantidadAEnviar(artEnv.getCantidadAEnviar() - artRes.getCantidadReservada());
+				}
+			}
+		}
+		//ahora, hay que bajar el stock
+		//para los articulos que estan aca "articulosAEnviar" y bajar el stock en la cantidad articulosAEnviar.get(i).getCantidadAEnviar
+		//sino entendes avisame !!!
+		
+		
 		
 	}
 
