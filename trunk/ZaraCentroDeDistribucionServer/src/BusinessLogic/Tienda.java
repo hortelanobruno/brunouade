@@ -25,18 +25,18 @@ public class Tienda implements Serializable
 	
 	public Tienda(int cod, String nombre)
 	{
-		this.setCodTienda(cod);
+		this.setCodigoTienda(cod);
 		this.setNombreTienda(nombre);
 	}
 	
 	@Id
-	@Column(name="CodTienda")
-	public int getCodTienda() 
+	@Column
+	public int getCodigoTienda() 
 	{
 		return codigoTienda;
 	}
 	
-	public void setCodTienda(int codTienda) 
+	public void setCodigoTienda(int codTienda) 
 	{
 		this.codigoTienda = codTienda;
 	}
@@ -59,7 +59,7 @@ public class Tienda implements Serializable
 	}
 
 	public void setVO(TiendaVO vo){
-		this.setCodTienda(vo.getCodigoTienda());
+		this.setCodigoTienda(vo.getCodigoTienda());
 		this.setNombreTienda(vo.getNombreTienda());
 	}
 }
