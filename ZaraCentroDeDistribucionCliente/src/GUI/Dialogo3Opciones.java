@@ -31,11 +31,13 @@ public class Dialogo3Opciones extends javax.swing.JDialog {
 
 	private JPanel ref;
 
+	
 	/** Creates new form Dialogo3Botones */
-	public Dialogo3Opciones(String mensaje, JPanel ref) {
+	public Dialogo3Opciones(String mensaje, JPanel ref, String msj) {
 		super();
 		this.ref = ref;
 		initComponents(mensaje);
+		this.jTextArea1.append(msj);
 	}
 
 	/**

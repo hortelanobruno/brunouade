@@ -7,6 +7,7 @@
 package Paneles;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
@@ -248,10 +249,27 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			XMLWrapper xml = new XMLWrapper();
 			xml.parseXMLSolFab(solFab);
 			ref.getJTextArea1().append("Solicitud de Fabricacion Guardada\n");
-			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
+			String msj = codificarDetalle(solFab);
+			new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
 		}
 	}
 	
+	private String codificarDetalle(SolicitudFabricaVO solFab) {
+		String msj = new String();
+		msj = "Solicitud de Fabricacion\n\n";
+		msj = msj + "Numero: "+solFab.getIdFab()+"\n";
+		msj = msj + "Fecha: "+solFab.getFechaEmision().toString()+"\n";
+		msj = msj + "Fabrica: "+solFab.getFabrica().getNombreFabrica()+"\n";
+		msj = msj + "Centro Distribucion: "+solFab.getCdVO().getNombreCentro()+"\n";
+		msj = msj + "Articulos:\n ";
+		Iterator arts = solFab.getArticulosAFabricar().iterator();
+		while(arts.hasNext()){
+			ArticuloAFabricarVO art = (ArticuloAFabricarVO) arts.next();
+			msj = msj +"Cod: "+art.getArt().getCodigo()+" Cant: "+art.getCantidadPedida()+"\n";
+		}
+		return msj;
+	}
+
 	public ArrayList<ArticuloAFabricarVO> leerArticulosDeTabla(){
 		ArrayList<ArticuloAFabricarVO> arts = new ArrayList<ArticuloAFabricarVO>();
 		for (int i = 0 ; i < articulosAFabricar.size() ; i++){

@@ -298,9 +298,28 @@ public class PanelSolDist extends javax.swing.JPanel {
 			this.buttonCargarXML.setEnabled(true);
 			this.buttonGuardarPedido.setEnabled(false);
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
-			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);	
+			String mensaje = codificarDetalle(artiReser,artiAFab);
+			new Dialogo3Opciones("Operacion concretada", this,mensaje).setVisible(true);	
 
 		}
+	}
+	
+	public String codificarDetalle(Collection<ArticuloReservadoVO> artiReser, Collection<ArticuloAFabricarVO> artiAFab){
+		String msj = new String();
+		msj = "Articulos reservados:\n";
+		Iterator arts = artiReser.iterator();
+		while(arts.hasNext()){
+			ArticuloReservadoVO art = (ArticuloReservadoVO) arts.next();
+				msj = msj + "Cod: "+art.getArt().getCodigo()+" Cantidad: "+art.getCantidadReservada()+"\n";
+		}
+		msj = msj + "\n";
+		arts = artiAFab.iterator();
+		msj = msj + "Articulos a fabricar:\n";
+		while(arts.hasNext()){
+			ArticuloAFabricarVO art = (ArticuloAFabricarVO) arts.next();
+			msj = msj + "Cod: "+art.getArt().getCodigo()+" Cantidad: "+art.getCantidadPedida()+"\n";
+		}	
+		return msj;
 	}
 
 
@@ -309,17 +328,20 @@ public class PanelSolDist extends javax.swing.JPanel {
 		ArticuloHeaderVO arti;
 		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdARes();
 		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
-			long cod = (Long
-					.parseLong((String) ((DefaultTableModel) tableArticulos
-							.getModel()).getValueAt(i, 2)));
-			arti = ((BusinessDelegate) vistaSolDis.getModelo()).getArticulo(cod);
-			ArticuloReservadoVO aRes = new ArticuloReservadoVO();
-			idMax++;
-			aRes.setIdAR(idMax);
-			aRes.setArt(arti);
-			aRes.setCantidadReservada(Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString()));
-			aRes.setSolDis(solDisVO);
-			art.add(aRes);
+			int cant = Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString());
+			if(cant > 0){
+				long cod = (Long
+						.parseLong((String) ((DefaultTableModel) tableArticulos
+								.getModel()).getValueAt(i, 2)));
+				arti = ((BusinessDelegate) vistaSolDis.getModelo()).getArticulo(cod);
+				ArticuloReservadoVO aRes = new ArticuloReservadoVO();
+				idMax++;
+				aRes.setIdAR(idMax);
+				aRes.setArt(arti);
+				aRes.setCantidadReservada(cant);
+				aRes.setSolDis(solDisVO);
+				art.add(aRes);
+			}
 		}
 		return art;
 	}
