@@ -224,6 +224,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 			String tienda = comboBoxTiendas.getSelectedItem().toString();
 			solicitudes = ((BusinessDelegate) vistaEnvios.getModelo()).obtenerSolicitudesDeTienda(tienda);
 			cargarArbol(solicitudes);
+			ref.getJTextArea1().append(ref.getDate()+": Solicitudes de Distribucion cargadas");
 		}else{
 			if(cargarTable){
 				int codSolDis = Integer.parseInt(eventoTree.getPath().getLastPathComponent().toString());
@@ -244,6 +245,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				ArrayList<ArticuloAEnviarVO> artsAEnviar = ((BusinessDelegate) vistaEnvios.getModelo()).getArtsAEnv(codSolDis);
 				vaciarTabla();
 				cargarTable(solDis,articulosReservados,stocks,artsAEnviar);
+				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion cargada");
 			}else{
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
 				int id = this.ref.getVistaSolDis().getModelo().getNextId();
@@ -268,10 +270,8 @@ public class PanelEnvios extends javax.swing.JPanel {
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarSolicitudDistribucion(solDis);
 				XMLWrapper xml = new XMLWrapper();
 				xml.parseXMLSolEnvio(solEnvio);
-				
-				
 				vaciarTabla();
-				ref.getJTextArea1().append("Solicitud de Envio Guardada\n");
+				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Envio generada\n");
 				String msj = codificarDetalle(solEnvio);
 				new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
 			}

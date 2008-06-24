@@ -241,7 +241,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
 			if(((BusinessDelegate)vistaSolDis.getModelo()).existeSolDis(solDisVO.getIdDis())){
 				vaciarTabla();
-				ref.getJTextArea1().append("Solicitud de Distribucion 'existente' en el Centro de Distribucion \n");
+				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);
 				this.buttonGuardarPedido.setEnabled(false);
 				JOptionPane.showMessageDialog(this,"La Solicitud de Distribucion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
@@ -264,7 +264,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 						codsfalse = codsfalse + " Cod. "+verCod.get(q);
 					}
 					vaciarTabla();
-					ref.getJTextArea1().append("La solicitud contiene articulos que no existen en el Centro de Distribucion\n");
+					ref.getJTextArea1().append(ref.getDate()+": La solicitud contiene articulos que no existen en el Centro de Distribucion\n");
 					this.buttonCargarXML.setEnabled(true);
 					this.buttonGuardarPedido.setEnabled(false);
 					JOptionPane.showMessageDialog(this,"La solicitud contiene articulos que no existen en el Centro de Distribucion\n" +
@@ -283,7 +283,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 					solDisVO.setCerrada(false);
 					cargarTable(solDisVO, codigos, descripciones, stocks);
 					this.buttonCargarXML.setEnabled(false);
-					ref.getJTextArea1().append("Archivo Cargado\n");
+					ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion Cargada\n");
 				}
 			}
 		} else {
@@ -297,7 +297,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 			vaciarTabla();
 			this.buttonCargarXML.setEnabled(true);
 			this.buttonGuardarPedido.setEnabled(false);
-			ref.getJTextArea1().append("Solicitudes Guardadas\n");
+			ref.getJTextArea1().append(ref.getDate()+": Solicitudes de Distribucion guardada en el Centro de Distribucion\n");
 			String mensaje = codificarDetalle(artiReser,artiAFab);
 			new Dialogo3Opciones("Operacion concretada", this,mensaje).setVisible(true);	
 
