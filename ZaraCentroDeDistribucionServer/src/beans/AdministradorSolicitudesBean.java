@@ -61,8 +61,18 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public SolicitudFabricaVO getSolFab(int codigo)
 	{
-		SolicitudDeFabricacion sf = em.find(SolicitudDeFabricacion.class, codigo);
-		return sf.getVO();
+		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
+		List l = q.getResultList();
+		SolicitudFabricaVO ret = new SolicitudFabricaVO();
+		Iterator it = l.iterator();
+		while(it.hasNext())
+		{
+			SolicitudDeFabricacion sol = (SolicitudDeFabricacion)it.next();
+			if(sol.getIdFab() == codigo){
+				return ret = sol.getVO();
+			}
+		}
+		return ret;
 	}
 
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda) 
@@ -101,7 +111,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public int getNumeroSolEnv() 
 	{
-		Query q = em.createQuery("SELECT MAX(s.numero) FROM SolicitudEnvioATienda s");
+		Query q = em.createQuery("SELECT MAX(s.idEnv) FROM SolicitudEnvioATienda s");
 		List l = q.getResultList();
 		if(l.get(0) == null){
 			return 0;
@@ -113,7 +123,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public int getNumeroSolFab() 
 	{
-		Query q = em.createQuery("SELECT MAX(s.numero) FROM SolicitudDeFabricacion s");
+		Query q = em.createQuery("SELECT MAX(s.idFab) FROM SolicitudDeFabricacion s");
 		List l = q.getResultList();
 		if(l.get(0) == null){
 			return 0;
@@ -183,12 +193,32 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public boolean existeSolDis(int codigo) 
 	{
-		return (em.find(SolicitudDistribucion.class, codigo) == null)?false:true;
+		Query q = em.createQuery("SELECT s FROM SolicitudDistribucion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		while(it.hasNext())
+		{
+			SolicitudDistribucion sol = (SolicitudDistribucion)it.next();
+			if(sol.getIdDis() == codigo){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean existeSolRep(int codigo)
 	{
-		return (em.find(SolicitudReposicion.class, codigo) == null)?false:true;
+		Query q = em.createQuery("SELECT s FROM SolicitudReposicion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		while(it.hasNext())
+		{
+			SolicitudReposicion sol = (SolicitudReposicion)it.next();
+			if(sol.getIdRep() == codigo){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tien) 
@@ -223,9 +253,19 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio)
 	{
-		if(em.find(SolicitudEnvioATienda.class, solEnvio.getIdEnv()) == null)
+		Query q = em.createQuery("SELECT s FROM SolicitudEnvioATienda s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		int aux = 0;
+		SolicitudEnvioATienda sol = new SolicitudEnvioATienda();
+		while(it.hasNext())
 		{
-			SolicitudEnvioATienda sol = new SolicitudEnvioATienda();
+			sol = (SolicitudEnvioATienda)it.next();
+			if(sol.getIdEnv() == solEnvio.getIdEnv()){
+				aux++;
+			}
+		}
+		if(aux == 0){
 			sol.setVO(solEnvio);
 			em.merge(sol);
 		}
@@ -233,11 +273,27 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public void actualizarSolDis(SolicitudDistribucionVO solDis) 
 	{
-		if(em.find(SolicitudDistribucion.class, solDis.getIdDis()) == null)
+		Query q = em.createQuery("SELECT s FROM SolicitudDistribucion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		while(it.hasNext())
 		{
-			SolicitudDistribucion sol = new SolicitudDistribucion();
-			sol.setVO(solDis);
-			em.persist(sol);
+			SolicitudDistribucion sol = (SolicitudDistribucion)it.next();
+			if(sol.getIdDis() == solDis.getIdDis()){
+				sol.setVO(solDis);
+				em.merge(sol);
+			}
+		}
+	}
+
+	public int getNextId() {
+		Query q = em.createQuery("SELECT MAX(s.id) FROM Solicitud s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 0;
+		}else{
+			int a = (Integer) l.get(0);
+			return a;
 		}
 	}
 }

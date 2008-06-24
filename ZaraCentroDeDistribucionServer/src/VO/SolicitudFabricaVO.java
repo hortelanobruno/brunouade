@@ -14,9 +14,9 @@ public class SolicitudFabricaVO extends SolicitudVO
 		super();
 	}
 	
-	public SolicitudFabricaVO(int n, Date f, FabricaVO fa,Collection<ArticuloAFabricarVO> recibidos,CentroDistribucionVO centro )
+	public SolicitudFabricaVO(int id,int n, Date f, FabricaVO fa,Collection<ArticuloAFabricarVO> recibidos,CentroDistribucionVO centro )
 	{
-		super(f,centro);
+		super(id,f,centro);
 		this.fabrica = fa;
 		this.idFab = n;
 		this.setArticulosAFabricar(recibidos);

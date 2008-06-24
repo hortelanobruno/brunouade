@@ -12,10 +12,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+
 import VO.ArticuloPedidoVO;
 import VO.SolicitudDistribucionVO;
 
@@ -35,15 +35,15 @@ public class SolicitudDistribucion extends Solicitud
 		this.setCerrada(false);
 	}
 
-	public SolicitudDistribucion(int n, Date f, Tienda t, Collection<ArticuloPedido> a) {
-		super(f);
+	public SolicitudDistribucion(int id,int n, Date f, Tienda t, Collection<ArticuloPedido> a) {
+		super(id,f);
 		this.idDis = n;
 		this.tienda = t;
 		this.setArticulosPedidos(a);
 		this.setCerrada(false);
 	}
 
-	@Id
+
 	@Column
 	public int getIdDis() {
 		return idDis;
@@ -87,6 +87,7 @@ public class SolicitudDistribucion extends Solicitud
 		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		sol.setTienda(this.getTienda().getVO());
 		sol.setCdVO(this.getCentro().getVO());
+		sol.setId(this.getId());
 		Collection<ArticuloPedidoVO> arts = new ArrayList<ArticuloPedidoVO>();
 		Iterator it = (Iterator) this.getArticulosPedidos().iterator();
 		while(it.hasNext()){
@@ -115,6 +116,7 @@ public class SolicitudDistribucion extends Solicitud
 			arts.add(art);
 		}
 		this.setArticulosPedidos(arts);
+		this.setId(vo.getId());
 	}
 	
 	@Transient

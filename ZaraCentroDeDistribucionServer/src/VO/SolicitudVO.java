@@ -8,12 +8,14 @@ public class SolicitudVO implements Serializable
 	private static final long serialVersionUID = 5288912159022449663L;
     protected Date fechaEmision;
     protected CentroDistribucionVO cdVO;
-
+    protected int id;
+    
 	public SolicitudVO() {
 		
 	}
     
-    public SolicitudVO(Date f, CentroDistribucionVO centro){
+    public SolicitudVO(int id,Date f, CentroDistribucionVO centro){
+    	this.id = id;
     	this.fechaEmision =f;
     	this.cdVO = centro;
     }
@@ -33,5 +35,13 @@ public class SolicitudVO implements Serializable
 
 	public void setFechaEmision(Date fechaEmision) {
 		this.fechaEmision = fechaEmision;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

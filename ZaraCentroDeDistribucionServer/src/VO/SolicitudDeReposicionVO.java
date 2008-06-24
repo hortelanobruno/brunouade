@@ -15,8 +15,8 @@ public class SolicitudDeReposicionVO extends SolicitudVO
 		
 	}
 	
-	public SolicitudDeReposicionVO(int n, Collection<ArticuloAReponerVO> a, Date f, FabricaVO fa, CentroDistribucionVO centro ){
-		super(f, centro);
+	public SolicitudDeReposicionVO(int id,int n, Collection<ArticuloAReponerVO> a, Date f, FabricaVO fa, CentroDistribucionVO centro ){
+		super(id,f, centro);
 		this.idRep = n;
 		this.fabrica = fa;
 		this.setArticulosAReponer(a);

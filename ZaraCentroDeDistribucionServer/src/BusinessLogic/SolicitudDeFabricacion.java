@@ -13,10 +13,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+
 import VO.ArticuloAFabricarVO;
 import VO.SolicitudFabricaVO;
 
@@ -34,15 +34,14 @@ public class SolicitudDeFabricacion extends Solicitud
 		this.articulosAFabricar = new Vector<ArticuloAFabricar>();
 	}
 	
-	public SolicitudDeFabricacion(int n, Collection<ArticuloAFabricar> a, Date f, Fabrica fa)
+	public SolicitudDeFabricacion(int id,int n, Collection<ArticuloAFabricar> a, Date f, Fabrica fa)
 	{
-		super(f);
+		super(id,f);
 		this.idFab = n;
 		this.fabrica = fa;
 		this.setArticulosAFabricar(a);
 	}
 	
-	@Id
 	@Column
 	public int getIdFab() {
 		return idFab;
@@ -78,6 +77,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		vo.setFabrica(this.getFabrica().getVO());
 		vo.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		vo.setCdVO(this.getCentro().getVO());
+		vo.setId(this.getId());
 		Iterator it = (Iterator) this.getArticulosAFabricar().iterator();
 		Collection<ArticuloAFabricarVO> arts = new ArrayList<ArticuloAFabricarVO>();
 		while(it.hasNext()){
@@ -108,6 +108,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		Fabrica fab = new Fabrica();
 		fab.setVO(vo.getFabrica());
 		this.setFabrica(fab);
+		this.setId(vo.getId());
 		this.setArticulosAFabricar(recibidos);
 		
 	}

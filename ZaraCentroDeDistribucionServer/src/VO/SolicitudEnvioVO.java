@@ -14,8 +14,8 @@ public class SolicitudEnvioVO extends SolicitudVO
 
 	}
 	
-	public SolicitudEnvioVO(int n, Collection<ArticuloAEnviarVO> a, Date f, TiendaVO t, CentroDistribucionVO centro){
-		super(f,centro);
+	public SolicitudEnvioVO(int id,int n, Collection<ArticuloAEnviarVO> a, Date f, TiendaVO t, CentroDistribucionVO centro){
+		super(id,f,centro);
 		this.idEnv = n;
 		this.tienda = t;
 		this.articulosAEnviar = a;

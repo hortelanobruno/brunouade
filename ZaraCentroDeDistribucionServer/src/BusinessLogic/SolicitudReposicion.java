@@ -1,10 +1,10 @@
 package BusinessLogic;
 
-import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Locale;
 
@@ -12,11 +12,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
-
 
 import VO.ArticuloAReponerVO;
 import VO.SolicitudDeReposicionVO;
@@ -39,15 +37,15 @@ public class SolicitudReposicion extends Solicitud
 		super();
 	}
 	
-	public SolicitudReposicion(int n, Collection<ArticuloAReponer> a, Date f, Fabrica fa,SolicitudDeFabricacion sol){
-		super(f);
+	public SolicitudReposicion(int id,int n, Collection<ArticuloAReponer> a, Date f, Fabrica fa,SolicitudDeFabricacion sol){
+		super(id,f);
 		this.solFab = sol;
 		this.idRep = n;
 		this.fabrica = fa;
 		this.setArticulosAReponer(a);
 	}
 	
-	@Id
+
 	@Column
 	public int getIdRep() {
 		return idRep;
@@ -95,6 +93,7 @@ public class SolicitudReposicion extends Solicitud
 		sol.setFabrica(this.getFabrica().getVO());
 		sol.setSolFab(this.getSolFab().getVO());
 		sol.setCdVO(this.getCentro().getVO());
+		sol.setId(this.getId());
 		Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
 		Iterator it = (Iterator) this.getArticulosAReponer().iterator();
 		while(it.hasNext()){
@@ -118,6 +117,7 @@ public class SolicitudReposicion extends Solicitud
 		SolicitudDeFabricacion solFab = new SolicitudDeFabricacion();
 		solFab.setVO(vo.getSolFab());
 		this.setSolFab(solFab);
+		this.setId(vo.getId());
 		Collection<ArticuloAReponer> arts = new ArrayList<ArticuloAReponer>();
 		Iterator it = (Iterator) vo.getArticulosAReponer().iterator();
 		while(it.hasNext()){

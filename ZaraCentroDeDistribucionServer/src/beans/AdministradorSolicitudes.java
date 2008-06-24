@@ -32,5 +32,6 @@ public interface AdministradorSolicitudes
 	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tienda);
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio);
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
+	public int getNextId();
 	
 }

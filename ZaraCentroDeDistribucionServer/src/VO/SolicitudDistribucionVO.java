@@ -15,8 +15,8 @@ public class SolicitudDistribucionVO extends SolicitudVO
 		
 	}
 	
-	public SolicitudDistribucionVO(int n, Collection<ArticuloPedidoVO> a, Date f, TiendaVO t, CentroDistribucionVO centro, boolean cerrada){
-		super(f,centro);
+	public SolicitudDistribucionVO(int id,int n, Collection<ArticuloPedidoVO> a, Date f, TiendaVO t, CentroDistribucionVO centro, boolean cerrada){
+		super(id,f,centro);
 		this.articulosPedidos = a;
 		this.tienda = t;
 		this.setCerrada(cerrada);
