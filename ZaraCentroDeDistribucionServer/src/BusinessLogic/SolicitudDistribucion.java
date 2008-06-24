@@ -107,6 +107,7 @@ public class SolicitudDistribucion extends Solicitud
 		CentroDistribucion centro = new CentroDistribucion();
 		centro.setVO(vo.getCdVO());
 		this.setCentro(centro);
+		this.setCerrada(vo.getCerrada());
 		Collection<ArticuloPedido> arts = new ArrayList<ArticuloPedido>();
 		Iterator it = (Iterator) vo.getArticulosPedidos().iterator();
 		while(it.hasNext()){

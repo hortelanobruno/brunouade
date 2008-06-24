@@ -160,9 +160,9 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getNextIdArticuloAFabricar();
 	}
 
-	/*public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
+	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
 		this.admArt.guardarArticulosAEnviar(artic2);
-	}*/
+	}
 
 	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic) {
 		this.admArt.guardarArticulosAFabricar(artic);
@@ -259,4 +259,11 @@ public class ServerFacadeBean implements ServerFacade
 	public int getNextId() {
 		return this.admSol.getNextId();
 	}
+
+	public ArrayList<Long> existenArts(ArrayList<Long> codigos) {
+		return this.admArt.existenArts(codigos);
+	}
+
+
+
 }
