@@ -21,4 +21,6 @@ pendientes que serán despachados.
 - En el panel new art hay que ordenar el detalle porque lo muestra pero esta desordenado
 
 - Hay que agarrar las excepciones cuando se quiere leer una soldis y lees otra (y para las otras tb)
-  y mostrar por pantalla un msj que diga: "Archivo incorrecto"
+  y mostrar por pantalla un msj que diga: "Archivo incorrecto" FIXED
+  
+- El dialogo de 3 botones no aparece centrado.

@@ -16,7 +16,7 @@ import VO.SolicitudFabricaVO;
 
 public class XMLAdapter 
 {
-	public SolicitudDistribucionVO getSolDisVOFromXML(XMLSolDis sd)
+	public SolicitudDistribucionVO getSolDisVOFromXML(XMLSolDis sd) throws Exception 
 	{
 		SolicitudDistribucionVO disVO = new SolicitudDistribucionVO();
 		disVO.setIdDis(sd.getNumero());
@@ -37,7 +37,7 @@ public class XMLAdapter
 		return disVO;
 	}
 	
-	public SolicitudDeReposicionVO getSolRepVOFromXML(XMLSolRep sr)
+	public SolicitudDeReposicionVO getSolRepVOFromXML(XMLSolRep sr) throws Exception
 	{
 		SolicitudDeReposicionVO ret = new SolicitudDeReposicionVO();
 		SolicitudFabricaVO sf = new SolicitudFabricaVO();
