@@ -13,6 +13,7 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 
+import BusinessLogic.BusinessDelegate;
 import GUI.Dialogo3Opciones;
 import GUI.MenuPrincipal;
 import VO.ArticuloAFabricarVO;
@@ -36,6 +37,9 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 	private VistaGenSolFab vistaGenSolFab;
 	private ArrayList<ArticuloAFabricarVO> articulosAFabricar;
 	private boolean cargarTabla;
+	private javax.swing.JComboBox comboFabricas;
+    private javax.swing.JLabel jLabel1;
+    private ArrayList<FabricaVO> fabricas;
 
 	/** Creates new form PanelGenSolFab */
 	public PanelGenSolFab(MenuPrincipal r, VistaGenSolFab vista) {
@@ -65,6 +69,8 @@ public class PanelGenSolFab extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaArticulos = new javax.swing.JTable();
         buttonEnviar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        comboFabricas = new javax.swing.JComboBox();
 
         buttonCargarPendientes.setText("Cargar Articulos Pendientes");
         buttonCargarPendientes.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +115,8 @@ public class PanelGenSolFab extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setText("Fabrica");
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,9 +127,13 @@ public class PanelGenSolFab extends javax.swing.JPanel {
                         .add(31, 31, 31)
                         .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 763, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(layout.createSequentialGroup()
-                        .add(62, 62, 62)
+                        .add(55, 55, 55)
+                        .add(jLabel1)
+                        .add(76, 76, 76)
+                        .add(comboFabricas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 106, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(34, 34, 34)
                         .add(buttonCargarPendientes)
-                        .add(75, 75, 75)
+                        .add(18, 18, 18)
                         .add(buttonEnviar)))
                 .addContainerGap(245, Short.MAX_VALUE))
         );
@@ -132,6 +144,8 @@ public class PanelGenSolFab extends javax.swing.JPanel {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 225, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(32, 32, 32)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel1)
+                    .add(comboFabricas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(buttonCargarPendientes)
                     .add(buttonEnviar))
                 .addContainerGap(76, Short.MAX_VALUE))
@@ -184,12 +198,29 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		}
 	}
 	
+	public void cargarCombo(){
+		fabricas = ((BusinessDelegate) vistaGenSolFab.getModelo()).getFabricas();
+    	if(!fabricas.isEmpty()){
+    		for (int i = 0 ; i< fabricas.size() ; i++){
+    			FabricaVO fabrica = fabricas.get(i);
+    			comboFabricas.addItem(fabrica.getNombreFabrica());
+    		}
+    	}else{
+    		JOptionPane.showMessageDialog(this,
+					"No se encontraron fabricas registradas en el Centro de Distribucion.",
+					Constantes.APPLICATION_NAME,
+					JOptionPane.ERROR_MESSAGE);
+    	}
+	}
+	
+	
 	public void update() {
 		
 		if(cargarTabla){
 			ArrayList<ArticuloAFabricarVO> arts = this.ref.getVistaGenSolFab().getModelo().getArticulosAFabricarVO();
 			this.setArticulosAFabricar(arts);
 			cargarTabla(arts);
+			cargarCombo();
 			ref.getJTextArea1().append("Articulos Cargados\n");
 		}else{
 			ArrayList<ArticuloAFabricarVO> arts = leerArticulosDeTabla();
@@ -201,8 +232,12 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			CentroDistribucionVO centroVO = this.ref.getVistaGenSolFab().getModelo().getCentro();
 			solFab.setCdVO(centroVO);
 			//aca hay que arreglar que la fabrica se setee de una combo o algo asi
-			ArrayList<FabricaVO> fabVO = this.ref.getVistaGenSolFab().getModelo().getFabricas();
-			solFab.setFabrica(fabVO.get(0));
+			String fab = comboFabricas.getSelectedItem().toString();
+			for(int j=0 ; j<fabricas.size() ; j++){
+				if(fabricas.get(j).getNombreFabrica().equals(fab)){
+					solFab.setFabrica(fabricas.get(j));
+				}
+			}
 			//aca hay que arreglar la fecha...
 			solFab.setFechaEmision(ref.getDate());
 			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();

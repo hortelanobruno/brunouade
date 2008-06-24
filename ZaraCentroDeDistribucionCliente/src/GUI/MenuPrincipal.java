@@ -122,6 +122,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 	}
 
+
+	
+	
 	private void setUpRootFile() {
 		try {
 			File rootFile = new File(".");
@@ -187,7 +190,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents() {
-
 		jToolBar1 = new javax.swing.JToolBar();
 		buttonSolDist = new javax.swing.JButton();
 		buttonEnvTienda = new javax.swing.JButton();
@@ -605,6 +607,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 												org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)));
 
 		pack();
+		
 	}// </editor-fold>
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -1260,4 +1263,5 @@ public class MenuPrincipal extends javax.swing.JFrame {
 	public void setLabelHora(javax.swing.JLabel labelHora) {
 		this.labelHora = labelHora;
 	}
+
 }
