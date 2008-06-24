@@ -218,6 +218,9 @@ public class PanelRepArt extends javax.swing.JPanel {
 				JOptionPane.showMessageDialog(this,"La solicitud de reposicion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 			}else{
 				int idAR = this.ref.getVistaSolDis().getModelo().getNextIdARep();
+				int id = this.ref.getVistaSolDis().getModelo().getNextId();
+				id++;
+				solRepVO.setId(id);
 				Iterator itit = solRepVO.getArticulosAReponer().iterator();
 				ArrayList<ArticuloAReponerVO> artsRep = new ArrayList<ArticuloAReponerVO>();
 				while(itit.hasNext()){

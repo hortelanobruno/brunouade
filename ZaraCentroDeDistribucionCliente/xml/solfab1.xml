@@ -1,0 +1,24 @@
+<solFab>
+  <numero>1</numero>
+  <fecha>2008-06-24 02:39:27.218 GMT</fecha>
+  <centro>
+    <codCentro>1</codCentro>
+    <nombreCentro>Shopping Centro</nombreCentro>
+    <latitud>34.90417</latitud>
+    <longitud>56.88752</longitud>
+  </centro>
+  <fabrica>
+    <nombreFabrica>Lanus Este</nombreFabrica>
+    <codigoFabrica>1</codigoFabrica>
+  </fabrica>
+  <articulosAFabricar>
+    <articuloFabrica>
+      <cod>1000</cod>
+      <cant>2000</cant>
+    </articuloFabrica>
+    <articuloFabrica>
+      <cod>1002</cod>
+      <cant>1000</cant>
+    </articuloFabrica>
+  </articulosAFabricar>
+</solFab>
