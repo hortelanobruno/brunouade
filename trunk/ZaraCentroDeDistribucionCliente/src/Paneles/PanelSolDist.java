@@ -300,9 +300,12 @@ public class PanelSolDist extends javax.swing.JPanel {
 				this.buttonGuardarPedido.setEnabled(false);
 				JOptionPane.showMessageDialog(this,"La Solicitud de Distribucion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 			}else{
+				int id = this.ref.getVistaSolDis().getModelo().getNextId();
+				id++;
+				solDisVO.setId(id);
 				solDisVO.setFechaEmision(ref.getDate());
 				ArrayList<Long> codigos = new ArrayList<Long>();
-				int idMax = this.ref.getVistaSolDis().getModelo().getNextId();
+				int idMax = this.ref.getVistaSolDis().getModelo().getNextIdArtPed();
 				Iterator arts = (Iterator) solDisVO.getArticulosPedidos().iterator();
 				ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
 				while (arts.hasNext()) {
@@ -328,6 +331,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
 			Collection<ArticuloReservadoVO> artiReser = (Collection<ArticuloReservadoVO>) articulosEnviarDeTabla();
 			
+
 			((BusinessDelegate) vistaSolDis.getModelo()).guardarSolicitud(solDisVO);
 			((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosReservados(artiReser);
 			((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosAFabricar(artiAFab);

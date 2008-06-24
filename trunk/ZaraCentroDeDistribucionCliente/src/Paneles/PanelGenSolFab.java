@@ -195,6 +195,9 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		}else{
 			ArrayList<ArticuloAFabricarVO> arts = leerArticulosDeTabla();
 			SolicitudFabricaVO solFab = new SolicitudFabricaVO();
+			int id = this.ref.getVistaSolDis().getModelo().getNextId();
+			id++;
+			solFab.setId(id);
 			solFab.setArticulosAFabricar(arts);
 			CentroDistribucionVO centroVO = this.ref.getVistaGenSolFab().getModelo().getCentro();
 			solFab.setCdVO(centroVO);

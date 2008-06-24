@@ -170,7 +170,7 @@ public class BusinessDelegate extends ProxyModelo
 		return this.getModCD().getCentro();
 	}
 
-	public int getNextId() {
+	public int getNextIdArtPed() {
 		return this.getModCD().getNextIdArticuloPedido();
 	}
 
@@ -260,6 +260,10 @@ public class BusinessDelegate extends ProxyModelo
 
 	public int getNumeroSolEnv() {
 		return this.getModCD().getNumeroSolEnv();
+	}
+
+	public int getNextId() {
+		return this.getModCD().getNextId();
 	}
 
 

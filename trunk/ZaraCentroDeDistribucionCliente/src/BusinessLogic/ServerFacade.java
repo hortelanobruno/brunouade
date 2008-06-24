@@ -42,6 +42,7 @@ public interface ServerFacade
 	public int getNextIdArticuloReservado();
 	public int getNextIdArticuloAFabricar();
 	public ArticuloHeaderVO getArticulo(long codigo);
+	public int getNextId();
 	
 	//estos no van - verificar
 	//public int getNumeroSolEnv();
@@ -85,6 +86,7 @@ public interface ServerFacade
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
+	
 	
 	
 	

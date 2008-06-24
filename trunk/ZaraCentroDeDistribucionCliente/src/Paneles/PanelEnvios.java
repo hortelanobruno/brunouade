@@ -18,6 +18,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
 import BusinessLogic.BusinessDelegate;
+import GUI.Dialogo3Opciones;
 import GUI.MenuPrincipal;
 import VO.ArticuloAEnviarVO;
 import VO.ArticuloPedidoVO;
@@ -339,6 +340,9 @@ public class PanelEnvios extends javax.swing.JPanel {
 				cargarTable(solDis,articulosReservados,stocks,artsAEnviar);
 			}else{
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
+				int id = this.ref.getVistaSolDis().getModelo().getNextId();
+				id++;
+				solEnvio.setId(id);
 				int idAE = ((BusinessDelegate) vistaEnvios.getModelo()).getNextIdAEnv();
 				ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE);
 				solEnvio.setArticulosAEnviar(articulosAEnviar);
@@ -358,8 +362,17 @@ public class PanelEnvios extends javax.swing.JPanel {
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarSolicitudDistribucion(solDis);
 				XMLWrapper xml = new XMLWrapper();
 				xml.parseXMLSolEnvio(solEnvio);
+				
+				
+				vaciarTabla();
+				ref.getJTextArea1().append("Solicitud de Envio Guardada\n");
+				new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
 			}
 		}
+	}
+	
+	public void vaciarTabla() {
+		((DefaultTableModel)tablePendientes.getModel()).getDataVector().removeAllElements();
 	}
 
 	public boolean comprobarCerrado(){
