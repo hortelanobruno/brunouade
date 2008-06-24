@@ -272,11 +272,28 @@ public class PanelEnvios extends javax.swing.JPanel {
 				
 				vaciarTabla();
 				ref.getJTextArea1().append("Solicitud de Envio Guardada\n");
-				new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
+				String msj = codificarDetalle(solEnvio);
+				new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
 			}
 		}
 	}
 	
+	private String codificarDetalle(SolicitudEnvioVO solEnvio) {
+		String msj = new String();
+		msj = "Solicitud de envio: \n\n";
+		msj = msj +"Numero: "+solEnvio.getIdEnv()+"\n";
+		msj = msj +"Fecha: "+solEnvio.getFechaEmision()+"\n";
+		msj = msj +"Tienda: "+solEnvio.getTienda().getNombreTienda()+"\n";
+		msj = msj +"Centro Distribucion: "+solEnvio.getCdVO().getNombreCentro()+"\n";
+		msj = msj +"Articulos: \n";
+		Iterator arts = solEnvio.getArticulosAEnviar().iterator();
+		while(arts.hasNext()){
+			ArticuloAEnviarVO art = (ArticuloAEnviarVO) arts.next();
+			msj = msj + "Cod: "+art.getArt().getCodigo()+" Cant: "+art.getCantidadAEnviar()+"\n";
+		}
+		return msj;
+	}
+
 	public void vaciarTabla() {
 		((DefaultTableModel)tablePendientes.getModel()).getDataVector().removeAllElements();
 	}

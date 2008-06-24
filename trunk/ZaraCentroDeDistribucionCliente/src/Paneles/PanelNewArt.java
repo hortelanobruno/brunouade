@@ -166,12 +166,14 @@ public class PanelNewArt extends javax.swing.JPanel
 			}
 		}else{
 			//persiste articulo
+			String msj = null;
 			if(((DefaultTableModel)tableArticulo.getModel()).getValueAt(0, 1).equals("Ropa")){
 				//es un articulo ropa
 				ArticuloRopaVO articulo = crearArticuloRopaVO();
 				try
 				{
 					((BusinessDelegate)vistaNewArt.getModelo()).guardarArticuloRopa(articulo);
+					msj = codificarDetalle(articulo);
 				}
 				catch(ExistingProductException e)
 				{
@@ -183,6 +185,7 @@ public class PanelNewArt extends javax.swing.JPanel
 				try
 				{
 					((BusinessDelegate)vistaNewArt.getModelo()).guardarArticuloHogar(articulo);
+					msj = codificarDetalle(articulo);
 				}
 				catch(ExistingProductException e)
 				{
@@ -193,11 +196,45 @@ public class PanelNewArt extends javax.swing.JPanel
 			ref.getJTextArea1().append("Articulo Guardado\n");
 			this.buttonCargarXML.setEnabled(true);
 			this.buttonGuardar.setEnabled(false);
-			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
+			new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
 			
 		}
 		
 	}
+	
+	private String codificarDetalle(ArticuloHogarVO articulo) {
+		String msj = new String();
+		msj = "Articulo Nuevo: \n\n";
+		msj = msj + "Cantidad: "+articulo.getCantidad()+"\n";
+		msj = msj + "Categoria: "+articulo.getCategoria()+"\n";
+		msj = msj + "Codigo: "+articulo.getCodigo()+"\n";
+		msj = msj + "Color: "+articulo.getColor()+"\n";
+		msj = msj + "Composicion: "+articulo.getComposicion()+"\n";
+		msj = msj + "Descipcion: "+articulo.getDescripcion()+"\n";
+		msj = msj + "Detalles: "+articulo.getDetalles()+"\n";
+		msj = msj + "Linea: "+articulo.getLinea()+"\n";
+		msj = msj + "Medidas: "+articulo.getMedidas()+"\n";
+		msj = msj + "Precio: "+articulo.getPrecio()+"\n";
+		msj = msj + "Seccion: "+articulo.getSeccion()+"\n";
+		return msj;
+	}
+
+
+	private String codificarDetalle(ArticuloRopaVO articulo) {
+		String msj = new String();
+		msj = "Articulo Nuevo: \n\n";
+		msj = msj + "Cantidad: "+articulo.getCantidad()+"\n";
+		msj = msj + "Codigo: "+articulo.getCodigo()+"\n";
+		msj = msj + "Color: "+articulo.getColor()+"\n";
+		msj = msj + "Descripcion: "+articulo.getDescripcion()+"\n";
+		msj = msj + "Linea: "+articulo.getLinea()+"\n";
+		msj = msj + "Origen: "+articulo.getOrigen()+"\n";
+		msj = msj + "Precio: "+articulo.getPrecio()+"\n";
+		msj = msj + "Seccion: "+articulo.getSeccion()+"\n";
+		msj = msj + "Talle: "+articulo.getTalle()+"\n";
+		return msj;
+	}
+	
 	
 	public void vaciarTabla(){
 		((DefaultTableModel)tableArticulo.getModel()).getDataVector().removeAllElements();

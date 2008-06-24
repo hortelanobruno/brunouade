@@ -275,8 +275,19 @@ public class PanelRepArt extends javax.swing.JPanel {
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
 			this.buttonGuardar.setEnabled(false);
 			this.buttonCargarXML.setEnabled(true);
-			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);
+			String mensaje = codificarDetalle(artsRep);
+			new Dialogo3Opciones("Operacion concretada", this, mensaje).setVisible(true);
 		}
+	}
+
+	private String codificarDetalle(ArrayList<ArticuloAReponerVO> artsRep) {
+		String msj = new String();
+		msj = "Articulos a Reponer:\n";
+		for(int i = 0 ; i < artsRep.size() ; i++){
+			ArticuloAReponerVO art = artsRep.get(i);
+			msj = msj + "Cod: "+art.getArt().getCodigo()+" Cant: "+art.getCantidad()+"\n";
+		}
+		return msj;
 	}
 
 	public ArrayList<ArticuloAReponerVO> collectionToArrayList(Collection<ArticuloAReponerVO> col){

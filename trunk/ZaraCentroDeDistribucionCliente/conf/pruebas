@@ -15,3 +15,7 @@ Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
 - hay que agregar lo de "ver detalle". El dialogo de 3 botones tiene que recibir una variable mas
   que va a ser el String que va a apendear al text area.
 
+- mirar la salida del panel solrep en el pdf, xq dice:Mostrar por pantalla un listado de todos los artículos recibidos, e indicando los envíos
+pendientes que serán despachados.
+
+- En el panel new art hay que ordenar el detalle porque lo muestra pero esta desordenado
