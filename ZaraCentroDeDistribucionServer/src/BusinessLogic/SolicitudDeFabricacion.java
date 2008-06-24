@@ -10,8 +10,10 @@ import java.util.Locale;
 import java.util.Vector;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
@@ -25,6 +27,7 @@ public class SolicitudDeFabricacion extends Solicitud
 	private static final long serialVersionUID = 4970004249380972083L;
 	private Fabrica fabrica;
 	private Collection<ArticuloAFabricar> articulosAFabricar;
+	private int idFab;
 	
 	public SolicitudDeFabricacion() {
 		super();
@@ -33,9 +36,20 @@ public class SolicitudDeFabricacion extends Solicitud
 	
 	public SolicitudDeFabricacion(int n, Collection<ArticuloAFabricar> a, Date f, Fabrica fa)
 	{
-		super(n,f);
+		super(f);
+		this.idFab = n;
 		this.fabrica = fa;
 		this.setArticulosAFabricar(a);
+	}
+	
+	@Id
+	@Column
+	public int getIdFab() {
+		return idFab;
+	}
+
+	public void setIdFab(int idFab) {
+		this.idFab = idFab;
 	}
 	
 	@ManyToOne
@@ -60,7 +74,7 @@ public class SolicitudDeFabricacion extends Solicitud
 	public SolicitudFabricaVO getVO()
 	{
 		SolicitudFabricaVO vo = new SolicitudFabricaVO();
-		vo.setNumero(this.getNumero());
+		vo.setIdFab(this.getIdFab());
 		vo.setFabrica(this.getFabrica().getVO());
 		vo.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		vo.setCdVO(this.getCentro().getVO());
@@ -89,7 +103,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		CentroDistribucion cent = new CentroDistribucion();
 		cent.setVO(vo.getCdVO());
 		this.setCentro(cent);
-		this.setNumero(vo.getNumero());
+		this.setIdFab(vo.getIdFab());
 		this.setFechaEmision(this.getFechaHoraFromDate(vo.getFechaEmision()));
 		Fabrica fab = new Fabrica();
 		fab.setVO(vo.getFabrica());

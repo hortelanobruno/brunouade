@@ -6,7 +6,6 @@ import java.util.Date;
 public class SolicitudVO implements Serializable
 {
 	private static final long serialVersionUID = 5288912159022449663L;
-	protected int numero;
     protected Date fechaEmision;
     protected CentroDistribucionVO cdVO;
 
@@ -14,8 +13,7 @@ public class SolicitudVO implements Serializable
 		
 	}
     
-    public SolicitudVO(int n, Date f, CentroDistribucionVO centro){
-    	this.numero = n;
+    public SolicitudVO(Date f, CentroDistribucionVO centro){
     	this.fechaEmision =f;
     	this.cdVO = centro;
     }
@@ -35,13 +33,5 @@ public class SolicitudVO implements Serializable
 
 	public void setFechaEmision(Date fechaEmision) {
 		this.fechaEmision = fechaEmision;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
 	}
 }

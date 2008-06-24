@@ -25,7 +25,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	
 	public void guardarSolFab(SolicitudFabricaVO solFab) 
 	{
-		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFab.getNumero());
+		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFab.getIdFab());
 		if(s == null)
 		{
 			s = new SolicitudDeFabricacion();
@@ -35,7 +35,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	}
 
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO) {
-		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFabVO.getNumero());
+		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFabVO.getIdFab());
 		if(s != null)
 		{
 			s = new SolicitudDeFabricacion();
@@ -223,7 +223,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio)
 	{
-		if(em.find(SolicitudEnvioATienda.class, solEnvio.getNumero()) == null)
+		if(em.find(SolicitudEnvioATienda.class, solEnvio.getIdEnv()) == null)
 		{
 			SolicitudEnvioATienda sol = new SolicitudEnvioATienda();
 			sol.setVO(solEnvio);
@@ -233,7 +233,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public void actualizarSolDis(SolicitudDistribucionVO solDis) 
 	{
-		if(em.find(SolicitudDistribucion.class, solDis.getNumero()) == null)
+		if(em.find(SolicitudDistribucion.class, solDis.getIdDis()) == null)
 		{
 			SolicitudDistribucion sol = new SolicitudDistribucion();
 			sol.setVO(solDis);

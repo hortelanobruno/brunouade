@@ -9,8 +9,10 @@ import java.util.Iterator;
 import java.util.Locale;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
@@ -24,15 +26,29 @@ public class SolicitudEnvioATienda extends Solicitud
 	private static final long serialVersionUID = 5001930866418434765L;
 	private Tienda tienda;
 	private Collection<ArticuloAEnviar> articulosAEnviar;
+	private int idEnv;
+	
+
 
 	public SolicitudEnvioATienda() {
 		super();
 	}
 	
 	public SolicitudEnvioATienda(int n, Collection<ArticuloAEnviar> a, Date f, Tienda t){
-		super(n,f);
+		super(f);
+		this.idEnv = n;
 		this.tienda = t;
 		this.setArticulosAEnviar(a);
+	}
+	
+	@Id
+	@Column
+	public int getIdEnv() {
+		return idEnv;
+	}
+
+	public void setIdEnv(int idEnv) {
+		this.idEnv = idEnv;
 	}
 	
 	@ManyToOne(cascade={CascadeType.MERGE})
@@ -58,7 +74,7 @@ public class SolicitudEnvioATienda extends Solicitud
 	@Transient
 	public SolicitudEnvioVO getVO(){
 		SolicitudEnvioVO sol = new SolicitudEnvioVO();
-		sol.setNumero(this.getNumero());
+		sol.setIdEnv(this.getIdEnv());
 		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		sol.setTienda(this.getTienda().getVO());
 		sol.setCdVO(this.getCentro().getVO());
@@ -74,7 +90,7 @@ public class SolicitudEnvioATienda extends Solicitud
 
 	public void setVO(SolicitudEnvioVO vo){
 		this.setFechaEmision(this.getFechaHoraFromDate(vo.getFechaEmision()));
-		this.setNumero(vo.getNumero());
+		this.setIdEnv(vo.getIdEnv());
 		Tienda tienda = new Tienda();
 		tienda.setVO(vo.getTienda());
 		this.setTienda(tienda);
