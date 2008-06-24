@@ -264,6 +264,10 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admArt.existenArts(codigos);
 	}
 
+	public boolean existeSolFab(int numSolFab) {
+		return this.admSol.existeSolFab(numSolFab);
+	}
+
 
 
 }

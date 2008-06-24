@@ -297,4 +297,18 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return a;
 		}
 	}
+
+	public boolean existeSolFab(int numSolFab) {
+		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		while(it.hasNext())
+		{
+			SolicitudDeFabricacion sol = (SolicitudDeFabricacion)it.next();
+			if(sol.getIdFab() == numSolFab){
+				return true;
+			}
+		}
+		return false;
+	}
 }
