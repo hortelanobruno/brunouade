@@ -61,7 +61,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 						if (e.getColumn() > -1)
 							validateTable();
 					}
-				});
+		});
 	}
 
 	/**
@@ -110,6 +110,7 @@ public class PanelSolDist extends javax.swing.JPanel {
         });
         tableArticulos.setRowSelectionAllowed(false);
         tableArticulos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tableArticulos.getTableHeader().setResizingAllowed(false);
         tableArticulos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tableArticulos);
 
@@ -188,9 +189,6 @@ public class PanelSolDist extends javax.swing.JPanel {
 	}
 
 	private void validateTable() {
-		//EL CODIGO DE VALIDACION ESTA MEDIO INENTENDIBLE, CAMBIARLO MAS ADELANTE
-		boolean grabar = true;
-		int fabricar = 0;
 		int cantCeros = 0;
 
 		for (int i = 0; i < tableArticulos.getModel().getRowCount(); i++) {
@@ -204,7 +202,6 @@ public class PanelSolDist extends javax.swing.JPanel {
 			if (valor == 0)
 				cantCeros++;
 			if ((valor < 0) || (valor > pedido)) {
-				grabar = false;
 				if (valor > pedido){
 					tableArticulos.getModel().setValueAt(0,i, 6);
 					JOptionPane.showMessageDialog(this,
@@ -228,14 +225,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 						JOptionPane.ERROR_MESSAGE);
 				break;
 			}
-			if(pedido>valor){
-				fabricar++;
-				if((stock != 0) && (valor == 0)){
-					fabricar--;
-				}
-			}	
 		}
-		if ((grabar) && (cantCeros < tableArticulos.getModel().getRowCount())) {
+		if (cantCeros < tableArticulos.getModel().getRowCount()) {
 			buttonGuardarPedido.setEnabled(true);
 		} else {
 			buttonGuardarPedido.setEnabled(false);
@@ -255,10 +246,6 @@ public class PanelSolDist extends javax.swing.JPanel {
 				this.buttonGuardarPedido.setEnabled(false);
 				JOptionPane.showMessageDialog(this,"La Solicitud de Distribucion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 			}else{
-				int id = this.ref.getVistaSolDis().getModelo().getNextId();
-				id++;
-				solDisVO.setId(id);
-				solDisVO.setFechaEmision(ref.getDate());
 				ArrayList<Long> codigos = new ArrayList<Long>();
 				int idMax = this.ref.getVistaSolDis().getModelo().getNextIdArtPed();
 				Iterator arts = (Iterator) solDisVO.getArticulosPedidos().iterator();
@@ -270,28 +257,46 @@ public class PanelSolDist extends javax.swing.JPanel {
 					codigos.add(artVO.getArt().getCodigo());
 					artsVO.add(artVO);
 				}
-				solDisVO.setArticulosPedidos(artsVO);
-				ArrayList<String> descripciones = this.ref.getVistaSolDis()
-						.getModelo().getDescripciones(codigos);
-				ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
-				CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
-				solDisVO.setCdVO(centroVO);
-				solDisVO.setCerrada(false);
-				cargarTable(solDisVO, codigos, descripciones, stocks);
-				this.buttonCargarXML.setEnabled(false);
-				ref.getJTextArea1().append("Archivo Cargado\n");
+				ArrayList<Long>  verCod = ((BusinessDelegate)vistaSolDis.getModelo()).existenArts(codigos);
+				if(!verCod.isEmpty()){
+					String codsfalse = "Cod. "+verCod.get(0);
+					for(int q = 1 ; q < verCod.size() ; q++){
+						codsfalse = codsfalse + " Cod. "+verCod.get(q);
+					}
+					vaciarTabla();
+					ref.getJTextArea1().append("La solicitud contiene articulos que no existen en el Centro de Distribucion\n");
+					this.buttonCargarXML.setEnabled(true);
+					this.buttonGuardarPedido.setEnabled(false);
+					JOptionPane.showMessageDialog(this,"La solicitud contiene articulos que no existen en el Centro de Distribucion\n" +
+							"("+codsfalse+")",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+				}else{
+					solDisVO.setArticulosPedidos(artsVO);
+					int id = this.ref.getVistaSolDis().getModelo().getNextId();
+					id++;
+					solDisVO.setId(id);
+					solDisVO.setFechaEmision(ref.getDate());
+					ArrayList<String> descripciones = this.ref.getVistaSolDis()
+							.getModelo().getDescripciones(codigos);
+					ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
+					CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
+					solDisVO.setCdVO(centroVO);
+					solDisVO.setCerrada(false);
+					cargarTable(solDisVO, codigos, descripciones, stocks);
+					this.buttonCargarXML.setEnabled(false);
+					ref.getJTextArea1().append("Archivo Cargado\n");
+				}
 			}
 		} else {
 			// Falta generar las solicitudes
 			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla();
 			Collection<ArticuloReservadoVO> artiReser = (Collection<ArticuloReservadoVO>) articulosEnviarDeTabla();
-			
-
 			((BusinessDelegate) vistaSolDis.getModelo()).guardarSolicitud(solDisVO);
 			((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosReservados(artiReser);
 			((BusinessDelegate) vistaSolDis.getModelo()).guardarArticulosAFabricar(artiAFab);
 			((BusinessDelegate) vistaSolDis.getModelo()).modificarStock(artiReser);
 			vaciarTabla();
+			this.buttonCargarXML.setEnabled(true);
+			this.buttonGuardarPedido.setEnabled(false);
 			ref.getJTextArea1().append("Solicitudes Guardadas\n");
 			new Dialogo3Opciones("Operacion concretada", this).setVisible(true);	
 
