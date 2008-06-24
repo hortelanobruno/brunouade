@@ -8,6 +8,9 @@ package Paneles;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 
 import GUI.Dialogo3Opciones;
@@ -16,6 +19,7 @@ import VO.ArticuloAFabricarVO;
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.SolicitudFabricaVO;
+import Varios.Constantes;
 import Varios.XMLWrapper;
 import Vistas.VistaGenSolFab;
 import controladores.ControladorPanelGenSolFab;
@@ -39,6 +43,13 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		this.ref = r;
 		this.vistaGenSolFab = vista;
 		cargarTabla = false;
+		tablaArticulos.getModel().addTableModelListener(
+				new TableModelListener() {
+					public void tableChanged(TableModelEvent e) {
+						if (e.getColumn() > -1)
+							validateTable();
+					}
+		});
 	}
 
 	/**
@@ -139,6 +150,39 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		.doCargarArticulosPendientes(false);
 	}
 	
+	private void validateTable() {
+		int cantCeros = 0;
+		for (int i = 0; i < tablaArticulos.getModel().getRowCount(); i++) {
+			int valor = Integer.parseInt(tablaArticulos.getModel().getValueAt(
+					i, 6).toString());
+			int minimo = Integer.parseInt(tablaArticulos.getModel().getValueAt(
+					i, 5).toString());
+
+			if (valor == 0)
+				cantCeros++;
+			if(valor<minimo){
+				//tablaArticulos.getModel().setValueAt(0,i, 6);
+				JOptionPane.showMessageDialog(this,
+						"El valor ingresado es menor a la cantidad minima a pedir.",
+						Constantes.APPLICATION_NAME,
+						JOptionPane.ERROR_MESSAGE);
+				break;
+			}
+			if(valor<0){
+				//tablaArticulos.getModel().setValueAt(0,i, 6);
+				JOptionPane.showMessageDialog(this,
+						"El valor ingresado tiene que ser un numero positivo.",
+						Constantes.APPLICATION_NAME,
+						JOptionPane.ERROR_MESSAGE);
+				break;
+			}
+		}
+		if (cantCeros < tablaArticulos.getModel().getRowCount()) {
+			buttonEnviar.setEnabled(true);
+		} else {
+			buttonEnviar.setEnabled(false);
+		}
+	}
 	
 	public void update() {
 		

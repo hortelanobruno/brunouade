@@ -266,6 +266,10 @@ public class BusinessDelegate extends ProxyModelo
 		return this.getModCD().getNextId();
 	}
 
+	public ArrayList<Long> existenArts(ArrayList<Long> codigos) {
+		return this.getModCD().existenArts(codigos);
+	}
+
 
 
 

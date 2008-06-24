@@ -130,7 +130,7 @@ public class PanelNewArt extends javax.swing.JPanel
 		chooser = new FileChooser(ref, true, ref.getDefaltXmlPath());
 		urlXML = chooser.getPath();
 
-		if (urlXML == null) {
+		if (urlXML.trim().equals("")) {
 			JOptionPane.showMessageDialog(this,
 					"Debe ingresar la ubicacion del archivo XML.\n",
 					Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
