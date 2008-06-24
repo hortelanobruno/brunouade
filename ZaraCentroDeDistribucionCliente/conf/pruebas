@@ -1,6 +1,8 @@
 Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
 
 
+- HAY QUE PROBAR BIEN BIEN HACIENDO MUCHAS CONSULTAS EN TODOS LOS PANELES
+
 - Si apretas en el boton cargar xml del panel new art y no elegis nada y apretas en la cruz putea.
 	(hay que arreglar para que ande el boton cancelar y aceptar) FIXED
 
@@ -24,3 +26,4 @@ pendientes que serán despachados.
   y mostrar por pantalla un msj que diga: "Archivo incorrecto" FIXED
   
 - El dialogo de 3 botones no aparece centrado.
+
