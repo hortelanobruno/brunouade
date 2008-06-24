@@ -49,24 +49,13 @@ public class XMLWrapper
         xstream.alias("fabrica", FabricaVO.class);
         xstream.alias("articulorecibido", XMLArticuloRecibido.class);
         XMLSolRep srep = (XMLSolRep) xstream.fromXML(XML);
-        
-        System.out.println("hola");
         return xmlAdapter.getSolRepVOFromXML(srep);
 	}
 
 	public void parseXMLSolFab(SolicitudFabricaVO solFab) {
 		XStream xstream = new XStream();
 		XMLAdapter adapter = new XMLAdapter();
-		/*xstream.alias("centrodistribucion", CentroDistribucionVO.class);
-		xstream.alias("fabrica", FabricaVO.class);
-		xstream.alias("categoriahogar", CategoriaHogarVO.class);
-		xstream.alias("linearopa", LineaRopaVO.class);
-		xstream.alias("articuloafabricar", ArticuloAFabricarVO.class);
-		xstream.alias("solicituddistribucion", SolicitudDistribucionVO.class);
-		xstream.alias("articuloheader", ArticuloHeaderVO.class);
-		//Parsear el objeto saco a XML
-		String solFabXML = xstream.toXML(solFab);
-		int id = solFab.getNumero();*/
+		
 		xstream.alias("articuloFabrica", XMLArticuloFabrica.class);
 		xstream.alias("centro", XMLCentro.class);
 		xstream.alias("fabrica", XMLFabrica.class);
@@ -83,11 +72,6 @@ public class XMLWrapper
 	public void parseXMLSolEnvio(SolicitudEnvioVO solEnvio) {
 		XStream xstream = new XStream();
 		XMLAdapter adapter = new XMLAdapter();
-		/*xstream.alias("tienda", TiendaVO.class);
-		xstream.alias("articuloaenviar", ArticuloAEnviarVO.class);
-		xstream.alias("articuloheader", ArticuloHeaderVO.class);
-		xstream.alias("solicituddistribucion", SolicitudDistribucionVO.class);
-		xstream.alias("articulopedido", ArticuloPedidoVO.class);*/
 		
 		xstream.alias("articuloaenviar",XMLArticuloAEnviar.class);
 		xstream.alias("centro", XMLCentro.class);
