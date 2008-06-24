@@ -9,8 +9,10 @@ import java.util.Iterator;
 import java.util.Locale;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
@@ -28,10 +30,31 @@ public class SolicitudReposicion extends Solicitud
 	private Fabrica fabrica;
 	private SolicitudDeFabricacion solFab;
 	private Collection<ArticuloAReponer> articulosAReponer;
+	private int idRep;
+
+
 
 	public SolicitudReposicion() 
 	{
 		super();
+	}
+	
+	public SolicitudReposicion(int n, Collection<ArticuloAReponer> a, Date f, Fabrica fa,SolicitudDeFabricacion sol){
+		super(f);
+		this.solFab = sol;
+		this.idRep = n;
+		this.fabrica = fa;
+		this.setArticulosAReponer(a);
+	}
+	
+	@Id
+	@Column
+	public int getIdRep() {
+		return idRep;
+	}
+
+	public void setIdRep(int idRep) {
+		this.idRep = idRep;
 	}
 	
 	@ManyToOne(cascade={CascadeType.MERGE})
@@ -67,7 +90,7 @@ public class SolicitudReposicion extends Solicitud
 	public SolicitudDeReposicionVO getVO()
 	{
 		SolicitudDeReposicionVO sol = new SolicitudDeReposicionVO();
-		sol.setNumero(this.getNumero());
+		sol.setIdRep(this.getIdRep());
 		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		sol.setFabrica(this.getFabrica().getVO());
 		sol.setSolFab(this.getSolFab().getVO());
@@ -84,7 +107,7 @@ public class SolicitudReposicion extends Solicitud
 
 	public void setVO(SolicitudDeReposicionVO vo)
 	{
-		this.setNumero(vo.getNumero());
+		this.setIdRep(vo.getIdRep());
 		this.setFechaEmision(this.getFechaHoraFromDate(vo.getFechaEmision()));
 		Fabrica fab = new Fabrica();
 		fab.setVO(vo.getFabrica());

@@ -8,13 +8,15 @@ public class SolicitudEnvioVO extends SolicitudVO
 	private static final long serialVersionUID = -8304187393253826615L;
 	private TiendaVO tienda;
 	private Collection<ArticuloAEnviarVO> articulosAEnviar;
+	private int idEnv;
 	
     public SolicitudEnvioVO() {
 
 	}
 	
 	public SolicitudEnvioVO(int n, Collection<ArticuloAEnviarVO> a, Date f, TiendaVO t, CentroDistribucionVO centro){
-		super(n,f,centro);
+		super(f,centro);
+		this.idEnv = n;
 		this.tienda = t;
 		this.articulosAEnviar = a;
 	}
@@ -33,6 +35,14 @@ public class SolicitudEnvioVO extends SolicitudVO
 
 	public void setArticulosAEnviar(Collection<ArticuloAEnviarVO> articulosAEnviar) {
 		this.articulosAEnviar = articulosAEnviar;
+	}
+
+	public int getIdEnv() {
+		return idEnv;
+	}
+
+	public void setIdEnv(int idEnv) {
+		this.idEnv = idEnv;
 	}
 
 	

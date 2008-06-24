@@ -187,7 +187,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		while(i.hasNext())
 		{
 			ArticuloReservado art = (ArticuloReservado)i.next();
-			if(art.getSolDis().getNumero() == codSolDis){
+			if(art.getSolDis().getIdDis() == codSolDis){
 				ret.add(art.getVO());
 			}
 		}
@@ -241,7 +241,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		while(i.hasNext())
 		{
 			ArticuloAEnviar art = (ArticuloAEnviar)i.next();
-			if(art.getSolDis().getNumero() == codSolDis){
+			if(art.getSolDis().getIdDis() == codSolDis){
 				ret.add(art.getVO());
 			}
 		}

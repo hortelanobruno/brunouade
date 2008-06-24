@@ -9,17 +9,18 @@ public class SolicitudDistribucionVO extends SolicitudVO
 	private TiendaVO tienda;
 	private Collection<ArticuloPedidoVO> articulosPedidos;
 	private boolean cerrada;
-	
+	private int idDis;
 
 	public SolicitudDistribucionVO() {
 		
 	}
 	
 	public SolicitudDistribucionVO(int n, Collection<ArticuloPedidoVO> a, Date f, TiendaVO t, CentroDistribucionVO centro, boolean cerrada){
-		super(n,f,centro);
+		super(f,centro);
 		this.articulosPedidos = a;
 		this.tienda = t;
 		this.setCerrada(cerrada);
+		this.idDis = n;
 	}
 	
 	public TiendaVO getTienda() {
@@ -44,5 +45,13 @@ public class SolicitudDistribucionVO extends SolicitudVO
 
 	public void setCerrada(boolean cerrada) {
 		this.cerrada = cerrada;
+	}
+
+	public int getIdDis() {
+		return idDis;
+	}
+
+	public void setIdDis(int idDis) {
+		this.idDis = idDis;
 	}
 }

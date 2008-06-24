@@ -8,6 +8,7 @@ public class SolicitudFabricaVO extends SolicitudVO
 	private static final long serialVersionUID = -339743656499411780L;
 	private FabricaVO fabrica;
 	private Collection<ArticuloAFabricarVO> articulosAFabricar;
+	private int idFab;
 	
 	public SolicitudFabricaVO() {
 		super();
@@ -15,8 +16,9 @@ public class SolicitudFabricaVO extends SolicitudVO
 	
 	public SolicitudFabricaVO(int n, Date f, FabricaVO fa,Collection<ArticuloAFabricarVO> recibidos,CentroDistribucionVO centro )
 	{
-		super(n,f,centro);
+		super(f,centro);
 		this.fabrica = fa;
+		this.idFab = n;
 		this.setArticulosAFabricar(recibidos);
 	}
 
@@ -35,6 +37,14 @@ public class SolicitudFabricaVO extends SolicitudVO
 
 	public void setArticulosAFabricar(Collection<ArticuloAFabricarVO> articulosAFabricar) {
 		this.articulosAFabricar = articulosAFabricar;
+	}
+
+	public int getIdFab() {
+		return idFab;
+	}
+
+	public void setIdFab(int idFab) {
+		this.idFab = idFab;
 	}
 	
 }
