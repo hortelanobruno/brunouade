@@ -237,8 +237,9 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 					cod = tiendaa.getCodigoTienda();
 				}
 			}
-			q = em.createQuery("SELECT s FROM SolicitudDistribucion s WHERE s.tienda.codigoTienda =:cod");
+			q = em.createQuery("SELECT s FROM SolicitudDistribucion s WHERE s.tienda.codigoTienda =:cod AND s.cerrada =:state");
 			q.setParameter("cod", cod);
+			q.setParameter("state", false);
 			List lVO = q.getResultList();
 			Iterator i = lVO.iterator();
 			
