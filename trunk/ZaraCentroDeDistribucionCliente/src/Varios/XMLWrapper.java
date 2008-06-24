@@ -25,17 +25,27 @@ public class XMLWrapper
         xstream.alias("solicituddistribucion", XMLSolDis.class);
         xstream.alias("articulopedido", XMLArticuloPedido.class);
         xstream.alias("tienda", TiendaVO.class);
+        
+        SolicitudDistribucionVO sol = null; 
+        try {
+        	sol = xmlAdapter.getSolDisVOFromXML((XMLSolDis) xstream.fromXML(XML));
+        } catch (Exception e) {
 
-        return xmlAdapter.getSolDisVOFromXML((XMLSolDis) xstream.fromXML(XML));
+        }
+        return sol;
     }
     
     public XMLArticulo parseXMLArticulo(String url)
     {
+    	XMLArticulo art = null;
     	FileReaderWrapper fileReader = new FileReaderWrapper(url);
         String XML = fileReader.obtenerContenido();
         XStream xstream = new XStream();
         xstream.alias("XMLArticulo", XMLArticulo.class);
-        XMLArticulo art = (XMLArticulo) xstream.fromXML(XML);
+        try {
+			art = (XMLArticulo) xstream.fromXML(XML);
+		} catch (RuntimeException e) {
+		}
         return art;
     }
 
@@ -48,8 +58,14 @@ public class XMLWrapper
         xstream.alias("solrep", XMLSolRep.class);
         xstream.alias("fabrica", FabricaVO.class);
         xstream.alias("articulorecibido", XMLArticuloRecibido.class);
-        XMLSolRep srep = (XMLSolRep) xstream.fromXML(XML);
-        return xmlAdapter.getSolRepVOFromXML(srep);
+        SolicitudDeReposicionVO sol = null;
+        try {
+        	XMLSolRep srep = (XMLSolRep) xstream.fromXML(XML);
+			sol = xmlAdapter.getSolRepVOFromXML(srep);
+		} catch (Exception e) {
+			
+		}
+        return sol;
 	}
 
 	public void parseXMLSolFab(SolicitudFabricaVO solFab) {

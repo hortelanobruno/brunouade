@@ -207,63 +207,67 @@ public class PanelRepArt extends javax.swing.JPanel {
 		if(cargarTable){
 			XMLWrapper xml = new XMLWrapper();
 			solRepVO = (SolicitudDeReposicionVO) xml.parseXMLSR(urlXML);
-			if(((BusinessDelegate)vistaRepArt.getModelo()).existeSolRep(solRepVO.getIdRep())){
-				vaciarTabla();
-				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion 'existente' en el Centro de Distribucion \n");
-				this.buttonCargarXML.setEnabled(true);
-				this.buttonGuardar.setEnabled(false);
-				JOptionPane.showMessageDialog(this,"La solicitud de reposicion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+			if(solRepVO == null){
+				JOptionPane.showMessageDialog(this,"Archivo incorrecto",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 			}else{
-				int idAR = this.ref.getVistaSolDis().getModelo().getNextIdARep();
-				int id = this.ref.getVistaSolDis().getModelo().getNextId();
-				id++;
-				solRepVO.setId(id);
-				Iterator itit = solRepVO.getArticulosAReponer().iterator();
-				ArrayList<ArticuloAReponerVO> artsRep = new ArrayList<ArticuloAReponerVO>();
-				while(itit.hasNext()){
-					ArticuloAReponerVO aRep = (ArticuloAReponerVO) itit.next();
-					idAR++;
-					aRep.setIdAAR(idAR);
-					artsRep.add(aRep);
-				}
-				solRepVO.setArticulosAReponer(artsRep);
-				ArrayList<Long> codigos = new ArrayList<Long>();
-				Iterator arts = (Iterator) solRepVO.getArticulosAReponer().iterator();
-				while (arts.hasNext()) {
-					codigos.add(((ArticuloAReponerVO) arts.next()).getArt().getCodigo());
-				}
-				ArrayList<ArticuloHeaderVO> articulos = this.ref.getVistaRepArt().getModelo().getArticulos(codigos);				
-				Iterator itit2 = solRepVO.getArticulosAReponer().iterator();
-				Collection<ArticuloAReponerVO> artsReVO = new ArrayList<ArticuloAReponerVO>();
-				while(itit2.hasNext()){
-					ArticuloAReponerVO artRe = (ArticuloAReponerVO) itit2.next();
-					long co = artRe.getArt().getCodigo();
-					for(int j=0 ; j < articulos.size() ; j++){
-						if(co == articulos.get(j).getCodigo()){
-							artRe.setArt(articulos.get(j));
-						}
+				if(((BusinessDelegate)vistaRepArt.getModelo()).existeSolRep(solRepVO.getIdRep())){
+					vaciarTabla();
+					ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion 'existente' en el Centro de Distribucion \n");
+					this.buttonCargarXML.setEnabled(true);
+					this.buttonGuardar.setEnabled(false);
+					JOptionPane.showMessageDialog(this,"La solicitud de reposicion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+				}else{
+					int idAR = this.ref.getVistaSolDis().getModelo().getNextIdARep();
+					int id = this.ref.getVistaSolDis().getModelo().getNextId();
+					id++;
+					solRepVO.setId(id);
+					Iterator itit = solRepVO.getArticulosAReponer().iterator();
+					ArrayList<ArticuloAReponerVO> artsRep = new ArrayList<ArticuloAReponerVO>();
+					while(itit.hasNext()){
+						ArticuloAReponerVO aRep = (ArticuloAReponerVO) itit.next();
+						idAR++;
+						aRep.setIdAAR(idAR);
+						artsRep.add(aRep);
 					}
-					artsReVO.add(artRe);
-				}
-				solRepVO.setArticulosAReponer(artsReVO);
-				ArrayList<String> descripciones = new ArrayList<String>();
-				for(int k=0 ; k < articulos.size() ; k++){
-					descripciones.add(articulos.get(k).getDescripcion());
-				}
-				int idSolFab = solRepVO.getSolFab().getIdFab();
-				solFabVO = this.ref.getVistaRepArt().getModelo().getSolicitudFabricacion(idSolFab);
-				solRepVO.setSolFab(solFabVO);
-				solRepVO.setFechaEmision(ref.getDate());
-				CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
-				solRepVO.setCdVO(centroVO);
-				long codigoSolRep = solRepVO.getIdRep();
-				String fabrica = solRepVO.getFabrica().getNombreFabrica();
+					solRepVO.setArticulosAReponer(artsRep);
+					ArrayList<Long> codigos = new ArrayList<Long>();
+					Iterator arts = (Iterator) solRepVO.getArticulosAReponer().iterator();
+					while (arts.hasNext()) {
+						codigos.add(((ArticuloAReponerVO) arts.next()).getArt().getCodigo());
+					}
+					ArrayList<ArticuloHeaderVO> articulos = this.ref.getVistaRepArt().getModelo().getArticulos(codigos);				
+					Iterator itit2 = solRepVO.getArticulosAReponer().iterator();
+					Collection<ArticuloAReponerVO> artsReVO = new ArrayList<ArticuloAReponerVO>();
+					while(itit2.hasNext()){
+						ArticuloAReponerVO artRe = (ArticuloAReponerVO) itit2.next();
+						long co = artRe.getArt().getCodigo();
+						for(int j=0 ; j < articulos.size() ; j++){
+							if(co == articulos.get(j).getCodigo()){
+								artRe.setArt(articulos.get(j));
+							}
+						}
+						artsReVO.add(artRe);
+					}
+					solRepVO.setArticulosAReponer(artsReVO);
+					ArrayList<String> descripciones = new ArrayList<String>();
+					for(int k=0 ; k < articulos.size() ; k++){
+						descripciones.add(articulos.get(k).getDescripcion());
+					}
+					int idSolFab = solRepVO.getSolFab().getIdFab();
+					solFabVO = this.ref.getVistaRepArt().getModelo().getSolicitudFabricacion(idSolFab);
+					solRepVO.setSolFab(solFabVO);
+					solRepVO.setFechaEmision(ref.getDate());
+					CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
+					solRepVO.setCdVO(centroVO);
+					long codigoSolRep = solRepVO.getIdRep();
+					String fabrica = solRepVO.getFabrica().getNombreFabrica();
 
-				vaciarTabla();
-				cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
-				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion Cargada\n");
-				this.buttonGuardar.setEnabled(true);
-				this.buttonCargarXML.setEnabled(false);
+					vaciarTabla();
+					cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
+					ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion Cargada\n");
+					this.buttonGuardar.setEnabled(true);
+					this.buttonCargarXML.setEnabled(false);
+				}
 			}
 		}else{
 			//Falta generar las solicitudes

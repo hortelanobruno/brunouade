@@ -214,8 +214,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 		menuItemSolFab = new javax.swing.JMenuItem();
 		menuItemRepArt = new javax.swing.JMenuItem();
 		menuItemNewArt = new javax.swing.JMenuItem();
-		jMenu5 = new javax.swing.JMenu();
-		menuItemBaseDatos = new javax.swing.JMenuItem();
 		jSeparator1 = new javax.swing.JSeparator();
 		menuItemSalir = new javax.swing.JMenuItem();
 		jMenu2 = new javax.swing.JMenu();
@@ -225,24 +223,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 		jToolBar2 = new javax.swing.JToolBar();
 		jPanel3 = new javax.swing.JPanel();
 		jLabel3 = new javax.swing.JLabel();
-		jMenuBar1 = new javax.swing.JMenuBar();
-		jMenu1 = new javax.swing.JMenu();
-		jMenuItem1 = new javax.swing.JMenuItem();
-		jSeparator2 = new javax.swing.JSeparator();
-		jMenu4 = new javax.swing.JMenu();
-		menuItemSolDistr = new javax.swing.JMenuItem();
-		menuItemEnvTienda = new javax.swing.JMenuItem();
-		menuItemSolFab = new javax.swing.JMenuItem();
-		menuItemRepArt = new javax.swing.JMenuItem();
-		menuItemNewArt = new javax.swing.JMenuItem();
-		jMenu5 = new javax.swing.JMenu();
-		menuItemBaseDatos = new javax.swing.JMenuItem();
-		jSeparator1 = new javax.swing.JSeparator();
-		menuItemSalir = new javax.swing.JMenuItem();
-		jMenu2 = new javax.swing.JMenu();
-		menuItemConfiguracion = new javax.swing.JMenuItem();
-		jMenu3 = new javax.swing.JMenu();
-		menuItemAyuda = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -469,21 +449,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 		jMenu1.add(jMenu4);
 
-		jMenu5.setText("Base de Datos");
-
-		menuItemBaseDatos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
-				java.awt.event.KeyEvent.VK_B,
-				java.awt.event.InputEvent.CTRL_MASK));
-		menuItemBaseDatos.setText("Base de Datos");
-		menuItemBaseDatos
-				.addActionListener(new java.awt.event.ActionListener() {
-					public void actionPerformed(java.awt.event.ActionEvent evt) {
-						menuItemBaseDatosActionPerformed(evt);
-					}
-				});
-		jMenu5.add(menuItemBaseDatos);
-
-		jMenu1.add(jMenu5);
 		jMenu1.add(jSeparator1);
 
 		menuItemSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
@@ -682,11 +647,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 			ponerPanel(panelNewArt);
 			this.jLabel3.setText("Nuevo Articulo");
 		}
-	}
-
-	private void menuItemBaseDatosActionPerformed(java.awt.event.ActionEvent evt) {
-		// Panel Base de datos
-
 	}
 
 	private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {
@@ -986,8 +946,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 	private javax.swing.JMenu jMenu4;
 
-	private javax.swing.JMenu jMenu5;
-
 	private javax.swing.JMenuBar jMenuBar1;
 
 	private javax.swing.JMenuItem jMenuItem1;
@@ -1016,8 +974,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 	private javax.swing.JToolBar jToolBar2;
 
 	private javax.swing.JMenuItem menuItemAyuda;
-
-	private javax.swing.JMenuItem menuItemBaseDatos;
 
 	private javax.swing.JMenuItem menuItemConfiguracion;
 

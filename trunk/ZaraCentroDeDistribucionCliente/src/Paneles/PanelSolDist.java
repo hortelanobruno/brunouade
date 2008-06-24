@@ -239,51 +239,55 @@ public class PanelSolDist extends javax.swing.JPanel {
 		if (cargarTable) {
 			XMLWrapper xml = new XMLWrapper();
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
-			if(((BusinessDelegate)vistaSolDis.getModelo()).existeSolDis(solDisVO.getIdDis())){
-				vaciarTabla();
-				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion 'existente' en el Centro de Distribucion \n");
-				this.buttonCargarXML.setEnabled(true);
-				this.buttonGuardarPedido.setEnabled(false);
-				JOptionPane.showMessageDialog(this,"La Solicitud de Distribucion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+			if(solDisVO == null){
+				JOptionPane.showMessageDialog(this,"Archivo incorrecto",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 			}else{
-				ArrayList<Long> codigos = new ArrayList<Long>();
-				int idMax = this.ref.getVistaSolDis().getModelo().getNextIdArtPed();
-				Iterator arts = (Iterator) solDisVO.getArticulosPedidos().iterator();
-				ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
-				while (arts.hasNext()) {
-					ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
-					idMax++;
-					artVO.setIdAP(idMax);
-					codigos.add(artVO.getArt().getCodigo());
-					artsVO.add(artVO);
-				}
-				ArrayList<Long>  verCod = ((BusinessDelegate)vistaSolDis.getModelo()).existenArts(codigos);
-				if(!verCod.isEmpty()){
-					String codsfalse = "Cod. "+verCod.get(0);
-					for(int q = 1 ; q < verCod.size() ; q++){
-						codsfalse = codsfalse + " Cod. "+verCod.get(q);
-					}
+				if(((BusinessDelegate)vistaSolDis.getModelo()).existeSolDis(solDisVO.getIdDis())){
 					vaciarTabla();
-					ref.getJTextArea1().append(ref.getDate()+": La solicitud contiene articulos que no existen en el Centro de Distribucion\n");
+					ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion 'existente' en el Centro de Distribucion \n");
 					this.buttonCargarXML.setEnabled(true);
 					this.buttonGuardarPedido.setEnabled(false);
-					JOptionPane.showMessageDialog(this,"La solicitud contiene articulos que no existen en el Centro de Distribucion\n" +
-							"("+codsfalse+")",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(this,"La Solicitud de Distribucion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 				}else{
-					solDisVO.setArticulosPedidos(artsVO);
-					int id = this.ref.getVistaSolDis().getModelo().getNextId();
-					id++;
-					solDisVO.setId(id);
-					solDisVO.setFechaEmision(ref.getDate());
-					ArrayList<String> descripciones = this.ref.getVistaSolDis()
-							.getModelo().getDescripciones(codigos);
-					ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
-					CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
-					solDisVO.setCdVO(centroVO);
-					solDisVO.setCerrada(false);
-					cargarTable(solDisVO, codigos, descripciones, stocks);
-					this.buttonCargarXML.setEnabled(false);
-					ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion Cargada\n");
+					ArrayList<Long> codigos = new ArrayList<Long>();
+					int idMax = this.ref.getVistaSolDis().getModelo().getNextIdArtPed();
+					Iterator arts = (Iterator) solDisVO.getArticulosPedidos().iterator();
+					ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
+					while (arts.hasNext()) {
+						ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
+						idMax++;
+						artVO.setIdAP(idMax);
+						codigos.add(artVO.getArt().getCodigo());
+						artsVO.add(artVO);
+					}
+					ArrayList<Long>  verCod = ((BusinessDelegate)vistaSolDis.getModelo()).existenArts(codigos);
+					if(!verCod.isEmpty()){
+						String codsfalse = "Cod. "+verCod.get(0);
+						for(int q = 1 ; q < verCod.size() ; q++){
+							codsfalse = codsfalse + " Cod. "+verCod.get(q);
+						}
+						vaciarTabla();
+						ref.getJTextArea1().append(ref.getDate()+": La solicitud contiene articulos que no existen en el Centro de Distribucion\n");
+						this.buttonCargarXML.setEnabled(true);
+						this.buttonGuardarPedido.setEnabled(false);
+						JOptionPane.showMessageDialog(this,"La solicitud contiene articulos que no existen en el Centro de Distribucion\n" +
+								"("+codsfalse+")",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+					}else{
+						solDisVO.setArticulosPedidos(artsVO);
+						int id = this.ref.getVistaSolDis().getModelo().getNextId();
+						id++;
+						solDisVO.setId(id);
+						solDisVO.setFechaEmision(ref.getDate());
+						ArrayList<String> descripciones = this.ref.getVistaSolDis()
+								.getModelo().getDescripciones(codigos);
+						ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
+						CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
+						solDisVO.setCdVO(centroVO);
+						solDisVO.setCerrada(false);
+						cargarTable(solDisVO, codigos, descripciones, stocks);
+						this.buttonCargarXML.setEnabled(false);
+						ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion Cargada\n");
+					}
 				}
 			}
 		} else {

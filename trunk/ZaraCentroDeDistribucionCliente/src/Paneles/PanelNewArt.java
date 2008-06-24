@@ -151,18 +151,22 @@ public class PanelNewArt extends javax.swing.JPanel
 			//cargar articulo
 			XMLWrapper xml = new XMLWrapper();
 			articuloXML = (XMLArticulo) xml.parseXMLArticulo(urlXML);
-			if(((BusinessDelegate)vistaNewArt.getModelo()).existeArticulo(articuloXML.getCodigo())){
-				vaciarTabla();
-				ref.getJTextArea1().append(ref.getDate()+": Articulo 'existente' en el Centro de Distribucion \n");
-				this.buttonCargarXML.setEnabled(true);
-				this.buttonGuardar.setEnabled(false);
-				JOptionPane.showMessageDialog(this,"El articulo ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+			if(articuloXML == null){
+				JOptionPane.showMessageDialog(this,"Archivo incorrecto",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 			}else{
-				vaciarTabla();
-				cargarTable(articuloXML);
-				ref.getJTextArea1().append(ref.getDate()+": Articulo cargado.");
-				this.buttonGuardar.setEnabled(true);
-				this.buttonCargarXML.setEnabled(false);
+				if(((BusinessDelegate)vistaNewArt.getModelo()).existeArticulo(articuloXML.getCodigo())){
+					vaciarTabla();
+					ref.getJTextArea1().append(ref.getDate()+": Articulo 'existente' en el Centro de Distribucion \n");
+					this.buttonCargarXML.setEnabled(true);
+					this.buttonGuardar.setEnabled(false);
+					JOptionPane.showMessageDialog(this,"El articulo ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
+				}else{
+					vaciarTabla();
+					cargarTable(articuloXML);
+					ref.getJTextArea1().append(ref.getDate()+": Articulo cargado.");
+					this.buttonGuardar.setEnabled(true);
+					this.buttonCargarXML.setEnabled(false);
+				}
 			}
 		}else{
 			//persiste articulo
