@@ -33,5 +33,6 @@ public interface AdministradorSolicitudes
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio);
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
 	public int getNextId();
+	public boolean existeSolFab(int numSolFab);
 	
 }
