@@ -270,7 +270,7 @@ public class BusinessDelegate extends ProxyModelo
 		return this.getModCD().existenArts(codigos);
 	}
 
-
-
-
+	public boolean existeSolFab(int numSolFab) {
+		return this.getModCD().existeSolFab(numSolFab);
+	}
 }
