@@ -12,10 +12,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+
 import VO.ArticuloAEnviarVO;
 import VO.SolicitudEnvioVO;
 
@@ -34,14 +34,14 @@ public class SolicitudEnvioATienda extends Solicitud
 		super();
 	}
 	
-	public SolicitudEnvioATienda(int n, Collection<ArticuloAEnviar> a, Date f, Tienda t){
-		super(f);
+	public SolicitudEnvioATienda(int id,int n, Collection<ArticuloAEnviar> a, Date f, Tienda t){
+		super(id,f);
 		this.idEnv = n;
 		this.tienda = t;
 		this.setArticulosAEnviar(a);
 	}
 	
-	@Id
+
 	@Column
 	public int getIdEnv() {
 		return idEnv;
@@ -78,6 +78,7 @@ public class SolicitudEnvioATienda extends Solicitud
 		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		sol.setTienda(this.getTienda().getVO());
 		sol.setCdVO(this.getCentro().getVO());
+		sol.setId(this.getId());
 		Collection<ArticuloAEnviarVO> arts = new ArrayList<ArticuloAEnviarVO>();
 		Iterator it = (Iterator) this.getArticulosAEnviar().iterator();
 		while(it.hasNext()){
@@ -105,6 +106,7 @@ public class SolicitudEnvioATienda extends Solicitud
 			arts.add(art);
 		}
 		this.setArticulosAEnviar(arts);
+		this.setId(vo.getId());
 	}
 	
 	@Transient

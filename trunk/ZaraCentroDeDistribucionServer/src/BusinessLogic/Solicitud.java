@@ -6,10 +6,12 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
@@ -28,15 +30,28 @@ public class Solicitud implements Serializable
 	private static final long serialVersionUID = -6174778687164025228L;
 	private String fechaEmision;
 	private CentroDistribucion centro;
+    private int id;
     
+
+
 	public Solicitud() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Solicitud(Date d){
+	public Solicitud(int id, Date d){
+		this.id = id;
 		this.fechaEmision = this.getFechaHoraFromDate(d);
 	}
 	
+	@Id
+	@Column
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	@ManyToOne
 	public CentroDistribucion getCentro() {
@@ -113,7 +128,7 @@ public class Solicitud implements Serializable
 	@Transient
 	public SolicitudVO getVO()
 	{
-		SolicitudVO vo = new SolicitudVO(this.getFechaHoraFromString(fechaEmision),this.centro.getVO());
+		SolicitudVO vo = new SolicitudVO(this.id,this.getFechaHoraFromString(fechaEmision),this.centro.getVO());
 		return vo;
 	}
 
@@ -123,6 +138,6 @@ public class Solicitud implements Serializable
 		CentroDistribucion centro = new CentroDistribucion();
 		centro.setVO(vo.getCdVO());
 		this.setCentro(centro);
-		
+		this.setId(vo.getId());
 	}
 }

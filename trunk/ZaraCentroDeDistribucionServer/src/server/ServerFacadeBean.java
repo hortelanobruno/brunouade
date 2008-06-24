@@ -257,6 +257,10 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admArt.getArtsAEnv(codSolDis);
 	}
 
+	public int getNextId() {
+		return this.admSol.getNextId();
+	}
+
 
 
 }
