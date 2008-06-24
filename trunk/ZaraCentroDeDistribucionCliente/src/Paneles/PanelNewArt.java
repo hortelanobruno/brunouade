@@ -33,6 +33,7 @@ public class PanelNewArt extends javax.swing.JPanel
 	private VistaNewArt vistaNewArt;
 	private boolean cargarTable;
 	private String urlXML = null;
+	private String chooserButton = null;
 
 	public PanelNewArt(MenuPrincipal m, VistaNewArt vista) {
 		initComponents();
@@ -129,11 +130,9 @@ public class PanelNewArt extends javax.swing.JPanel
 		// Cargar XML
 		chooser = new FileChooser(ref, true, ref.getDefaltXmlPath());
 		urlXML = chooser.getPath();
-
-		if (urlXML.trim().equals("")) {
-			JOptionPane.showMessageDialog(this,
-					"Debe ingresar la ubicacion del archivo XML.\n",
-					Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
+		chooserButton = chooser.getButton();
+		if (chooserButton.equals("Cancel")) {
+			
 		} else {
 			// Cargar los table
 			((ControladorPanelNewArt) vistaNewArt.getControlador()).doCargarXML(true);
