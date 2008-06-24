@@ -83,9 +83,9 @@ public class PanelEnvios extends javax.swing.JPanel {
     	ArrayList<TiendaVO> tiendas = ((BusinessDelegate) vistaEnvios.getModelo()).obtenerTiendas();
     	Vector<String> cars = null;
     	if(!tiendas.isEmpty()){
+    		cars = new Vector<String>();
     		for (int i = 0 ; i< tiendas.size() ; i++){
     			TiendaVO tienda = tiendas.get(i);
-    			cars = new Vector<String>();
     			cars.add(tienda.getNombreTienda());
     		}
     		comboBoxTiendas = new JComboBox(cars);
@@ -219,6 +219,8 @@ public class PanelEnvios extends javax.swing.JPanel {
 	
 	public void update() {
 		if(cargarTree){
+			vaciarTabla();
+			tablePendientes.updateUI();
 			String tienda = comboBoxTiendas.getSelectedItem().toString();
 			solicitudes = ((BusinessDelegate) vistaEnvios.getModelo()).obtenerSolicitudesDeTienda(tienda);
 			cargarArbol(solicitudes);
@@ -240,6 +242,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				}
 				ArrayList<Integer> stocks = ((BusinessDelegate) vistaEnvios.getModelo()).getStocks(codigos);
 				ArrayList<ArticuloAEnviarVO> artsAEnviar = ((BusinessDelegate) vistaEnvios.getModelo()).getArtsAEnv(codSolDis);
+				vaciarTabla();
 				cargarTable(solDis,articulosReservados,stocks,artsAEnviar);
 			}else{
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
