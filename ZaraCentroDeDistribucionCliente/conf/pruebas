@@ -4,7 +4,7 @@ Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
 - Si apretas en el boton cargar xml del panel new art y no elegis nada y apretas en la cruz putea.
 	(hay que arreglar para que ande el boton cancelar y aceptar) 
 
-- Hay que arreglar la consola.
+- Hay que arreglar la consola. FIXED
 
 - Problema, las solicitudes todas extienden de Solicitud y herada el atributo "numero"
 	este atributo es unico y entonces si una solicitud (la que sea) tiene el numero 1,
@@ -13,9 +13,12 @@ Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
 - hay que ponerle singleton al cliente
 
 - hay que agregar lo de "ver detalle". El dialogo de 3 botones tiene que recibir una variable mas
-  que va a ser el String que va a apendear al text area.
+  que va a ser el String que va a apendear al text area.  FIXED
 
 - mirar la salida del panel solrep en el pdf, xq dice:Mostrar por pantalla un listado de todos los artículos recibidos, e indicando los envíos
 pendientes que serán despachados.
 
 - En el panel new art hay que ordenar el detalle porque lo muestra pero esta desordenado
+
+- Hay que agarrar las excepciones cuando se quiere leer una soldis y lees otra (y para las otras tb)
+  y mostrar por pantalla un msj que diga: "Archivo incorrecto"

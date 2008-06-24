@@ -209,7 +209,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 			solRepVO = (SolicitudDeReposicionVO) xml.parseXMLSR(urlXML);
 			if(((BusinessDelegate)vistaRepArt.getModelo()).existeSolRep(solRepVO.getIdRep())){
 				vaciarTabla();
-				ref.getJTextArea1().append("Solicitud de Reposicion 'existente' en el Centro de Distribucion \n");
+				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);
 				this.buttonGuardar.setEnabled(false);
 				JOptionPane.showMessageDialog(this,"La solicitud de reposicion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
@@ -261,7 +261,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 
 				vaciarTabla();
 				cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
-				ref.getJTextArea1().append("Archivo Cargado\n");
+				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion Cargada\n");
 				this.buttonGuardar.setEnabled(true);
 				this.buttonCargarXML.setEnabled(false);
 			}
@@ -272,7 +272,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 			this.ref.getVistaRepArt().getModelo().actualizarSolicitudFabricacion(solFabVO);
 			this.ref.getVistaRepArt().getModelo().actualizarStock(artsRep);
 			vaciarTabla();
-			ref.getJTextArea1().append("Solicitudes Guardadas\n");
+			ref.getJTextArea1().append(ref.getDate()+": Solicitudes de Reposicion guardada en el Centro de Distribucion\n");
 			this.buttonGuardar.setEnabled(false);
 			this.buttonCargarXML.setEnabled(true);
 			String mensaje = codificarDetalle(artsRep);

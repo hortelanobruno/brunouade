@@ -222,7 +222,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			this.setArticulosAFabricar(arts);
 			cargarTabla(arts);
 			cargarCombo();
-			ref.getJTextArea1().append("Articulos Cargados\n");
+			ref.getJTextArea1().append(ref.getDate()+": Articulos a Fabricar Cargados\n");
 		}else{
 			ArrayList<ArticuloAFabricarVO> arts = leerArticulosDeTabla();
 			SolicitudFabricaVO solFab = new SolicitudFabricaVO();
@@ -248,7 +248,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			vaciarTabla();
 			XMLWrapper xml = new XMLWrapper();
 			xml.parseXMLSolFab(solFab);
-			ref.getJTextArea1().append("Solicitud de Fabricacion Guardada\n");
+			ref.getJTextArea1().append(ref.getDate()+": Solicitud de Fabricacion generada\n");
 			String msj = codificarDetalle(solFab);
 			new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
 		}
