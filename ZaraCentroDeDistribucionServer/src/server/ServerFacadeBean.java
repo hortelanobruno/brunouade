@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-
 import BusinessLogic.ServerFacade;
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
@@ -63,10 +62,10 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getSolsFab(codTienda);
 	}
 
-	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv) 
+	/*public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv) 
 	{
 		this.admSol.guardarSolicitudDeEnvio(solEnv);
-	}
+	}*/
 
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) 
 	{
@@ -161,9 +160,9 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getNextIdArticuloAFabricar();
 	}
 
-	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
+	/*public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
 		this.admArt.guardarArticulosAEnviar(artic2);
-	}
+	}*/
 
 	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic) {
 		this.admArt.guardarArticulosAFabricar(artic);
@@ -260,7 +259,4 @@ public class ServerFacadeBean implements ServerFacade
 	public int getNextId() {
 		return this.admSol.getNextId();
 	}
-
-
-
 }
