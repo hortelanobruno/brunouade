@@ -210,7 +210,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 		if(cargarTable){
 			XMLWrapper xml = new XMLWrapper();
 			solRepVO = (SolicitudDeReposicionVO) xml.parseXMLSR(urlXML);
-			if(((BusinessDelegate)vistaRepArt.getModelo()).existeSolRep(solRepVO.getNumero())){
+			if(((BusinessDelegate)vistaRepArt.getModelo()).existeSolRep(solRepVO.getIdRep())){
 				vaciarTabla();
 				ref.getJTextArea1().append("Solicitud de Reposicion 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);
@@ -250,13 +250,13 @@ public class PanelRepArt extends javax.swing.JPanel {
 				for(int k=0 ; k < articulos.size() ; k++){
 					descripciones.add(articulos.get(k).getDescripcion());
 				}
-				int idSolFab = solRepVO.getSolFab().getNumero();
+				int idSolFab = solRepVO.getSolFab().getIdFab();
 				solFabVO = this.ref.getVistaRepArt().getModelo().getSolicitudFabricacion(idSolFab);
 				solRepVO.setSolFab(solFabVO);
 				solRepVO.setFechaEmision(ref.getDate());
 				CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
 				solRepVO.setCdVO(centroVO);
-				long codigoSolRep = solRepVO.getNumero();
+				long codigoSolRep = solRepVO.getIdRep();
 				String fabrica = solRepVO.getFabrica().getNombreFabrica();
 
 				vaciarTabla();

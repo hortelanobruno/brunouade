@@ -215,7 +215,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 		for (int i = 0; i < solDisVO.getArticulosPedidos().size(); i++) {
 			((DefaultTableModel) tableArticulos.getModel())
 					.addRow(new Object[] {
-							solDisVO.getNumero(),
+							solDisVO.getIdDis(),
 							solDisVO.getTienda().getNombreTienda(),
 							codigos.get(i).toString(),
 							descripciones.get(i).toString(),
@@ -293,7 +293,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 		if (cargarTable) {
 			XMLWrapper xml = new XMLWrapper();
 			solDisVO = (SolicitudDistribucionVO) xml.parseXMLSD(urlXML);
-			if(((BusinessDelegate)vistaSolDis.getModelo()).existeSolDis(solDisVO.getNumero())){
+			if(((BusinessDelegate)vistaSolDis.getModelo()).existeSolDis(solDisVO.getIdDis())){
 				vaciarTabla();
 				ref.getJTextArea1().append("Solicitud de Distribucion 'existente' en el Centro de Distribucion \n");
 				this.buttonCargarXML.setEnabled(true);

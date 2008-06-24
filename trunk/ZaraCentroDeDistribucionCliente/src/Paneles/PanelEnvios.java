@@ -298,7 +298,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 		int i = 0;
 		while(it.hasNext()){
 			SolicitudDistribucionVO sol = (SolicitudDistribucionVO) it.next();
-			padre[i] = new DefaultMutableTreeNode(sol.getNumero());
+			padre[i] = new DefaultMutableTreeNode(sol.getIdDis());
 			i++;
 		}
 		for(int j = 0 ; j < padre.length ; j++){
@@ -323,7 +323,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				int codSolDis = Integer.parseInt(eventoTree.getPath().getLastPathComponent().toString());
 				for (int i = 0 ; i < solicitudes.size() ; i++){
 					solDis = solicitudes.get(i);
-					if(solDis.getNumero() == codSolDis){
+					if(solDis.getIdDis() == codSolDis){
 						break;
 					}
 				}
@@ -346,7 +346,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				solEnvio.setTienda(solDis.getTienda());
 				int numero = ((BusinessDelegate) vistaEnvios.getModelo()).getNumeroSolEnv();
 				numero++;
-				solEnvio.setNumero(numero);
+				solEnvio.setIdEnv(numero);
 				solEnvio.setCdVO(solDis.getCdVO());
 				boolean cerrado = comprobarCerrado();
 				if (cerrado){
