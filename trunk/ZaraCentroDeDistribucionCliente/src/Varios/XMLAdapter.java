@@ -2,12 +2,16 @@ package Varios;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.Vector;
+import VO.ArticuloAEnviarVO;
+import VO.ArticuloAFabricarVO;
 import VO.ArticuloAReponerVO;
 import VO.ArticuloHeaderVO;
 import VO.ArticuloPedidoVO;
-import VO.ArticuloRopaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
+import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
 
 public class XMLAdapter 
@@ -57,14 +61,75 @@ public class XMLAdapter
 		ret.setSolFab(sf);
 		return ret;
 	}
-	
-	public ArticuloRopaVO getArticuloRopaVOFromXML(XMLArticulo art)
+
+	public XMLSolEnv getXMLSolEnvFromSolEnvVO(SolicitudEnvioVO solEnvio)
 	{
-		return null;
+		XMLTienda xmlTienda = new XMLTienda();
+		xmlTienda.setCodigoTienda(solEnvio.getTienda().getCodigoTienda());
+		xmlTienda.setNombreTienda(solEnvio.getTienda().getNombreTienda());
+		
+		XMLCentro xmlCentro = new XMLCentro();
+		xmlCentro.setCodCentro(solEnvio.getCdVO().getCodCentro());
+		xmlCentro.setNombreCentro(solEnvio.getCdVO().getNombreCentro());
+		xmlCentro.setLatitud(solEnvio.getCdVO().getLatitud());
+		xmlCentro.setLongitud(solEnvio.getCdVO().getLongitud());
+		
+		Vector<XMLArticuloAEnviar> arts = new Vector<XMLArticuloAEnviar>();
+		Iterator i = solEnvio.getArticulosAEnviar().iterator();
+		ArticuloAEnviarVO artAEnv = (ArticuloAEnviarVO)i.next();
+		int idSolDis = artAEnv.getSolDis().getIdDis();
+		
+		for(Iterator it = solEnvio.getArticulosAEnviar().iterator(); it.hasNext();)
+		{
+			ArticuloAEnviarVO artVO = new ArticuloAEnviarVO();
+			artVO = (ArticuloAEnviarVO) it.next();
+			XMLArticuloAEnviar xmlArt = new XMLArticuloAEnviar();
+			xmlArt.setCod(artVO.getArt().getCodigo());
+			xmlArt.setCant(artVO.getCantidadAEnviar());
+			arts.add(xmlArt);
+		}
+		
+		XMLSolEnv xmlSolEnv = new XMLSolEnv();
+
+		xmlSolEnv.setNumero(solEnvio.getIdEnv());
+		xmlSolEnv.setSolDis(idSolDis);
+		xmlSolEnv.setCentro(xmlCentro);
+		xmlSolEnv.setTienda(xmlTienda);
+		xmlSolEnv.setArticulosAEnviar(arts);	
+		
+		return xmlSolEnv;
 	}
-	
-	public ArticuloRopaVO getArticuloHogarVOFromXML(XMLArticulo art)
+
+	public XMLSolFab getXMLSolFabFromSolFabVO(SolicitudFabricaVO solFab)
 	{
-		return null;
+		XMLFabrica xmlFabrica = new XMLFabrica();
+		xmlFabrica.setCodigoFabrica(solFab.getFabrica().getCodigoFabrica());
+		xmlFabrica.setNombreFabrica(solFab.getFabrica().getNombreFabrica());
+		
+		XMLCentro xmlCentro = new XMLCentro();
+		xmlCentro.setCodCentro(solFab.getCdVO().getCodCentro());
+		xmlCentro.setNombreCentro(solFab.getCdVO().getNombreCentro());
+		xmlCentro.setLatitud(solFab.getCdVO().getLatitud());
+		xmlCentro.setLongitud(solFab.getCdVO().getLongitud());
+		
+		Vector<XMLArticuloFabrica> xmlArticulos = new Vector<XMLArticuloFabrica>();
+		
+		for(Iterator i = solFab.getArticulosAFabricar().iterator(); i.hasNext();)
+		{
+			ArticuloAFabricarVO arVO = (ArticuloAFabricarVO)i.next();
+			XMLArticuloFabrica xmlArtFab = new XMLArticuloFabrica();
+			xmlArtFab.setCod(arVO.getArt().getCodigo());
+			xmlArtFab.setCant(arVO.getCantidadAFabricar());
+			xmlArticulos.add(xmlArtFab);
+		}
+		
+		XMLSolFab xmlSolFab = new XMLSolFab();
+		xmlSolFab.setNumero(solFab.getIdFab());
+		xmlSolFab.setFecha(solFab.getFechaEmision());
+		xmlSolFab.setCentro(xmlCentro);
+		xmlSolFab.setFabrica(xmlFabrica);
+		xmlSolFab.setArticulosAFabricar(xmlArticulos);
+		
+		return xmlSolFab;
 	}
 }

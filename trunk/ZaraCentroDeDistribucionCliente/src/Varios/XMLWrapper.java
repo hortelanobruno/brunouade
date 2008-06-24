@@ -1,9 +1,5 @@
 package Varios;
 
-import java.util.Iterator;
-import java.util.Vector;
-import VO.ArticuloAEnviarVO;
-import VO.ArticuloAFabricarVO;
 import VO.FabricaVO;
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
@@ -60,6 +56,7 @@ public class XMLWrapper
 
 	public void parseXMLSolFab(SolicitudFabricaVO solFab) {
 		XStream xstream = new XStream();
+		XMLAdapter adapter = new XMLAdapter();
 		/*xstream.alias("centrodistribucion", CentroDistribucionVO.class);
 		xstream.alias("fabrica", FabricaVO.class);
 		xstream.alias("categoriahogar", CategoriaHogarVO.class);
@@ -75,34 +72,7 @@ public class XMLWrapper
 		xstream.alias("fabrica", XMLFabrica.class);
 		xstream.alias("solFab", XMLSolFab.class);
 
-		XMLFabrica xmlFabrica = new XMLFabrica();
-		xmlFabrica.setCodigoFabrica(solFab.getFabrica().getCodigoFabrica());
-		xmlFabrica.setNombreFabrica(solFab.getFabrica().getNombreFabrica());
-		
-		XMLCentro xmlCentro = new XMLCentro();
-		xmlCentro.setCodCentro(solFab.getCdVO().getCodCentro());
-		xmlCentro.setNombreCentro(solFab.getCdVO().getNombreCentro());
-		xmlCentro.setLatitud(solFab.getCdVO().getLatitud());
-		xmlCentro.setLongitud(solFab.getCdVO().getLongitud());
-		
-		Vector<XMLArticuloFabrica> xmlArticulos = new Vector<XMLArticuloFabrica>();
-		
-		for(Iterator i = solFab.getArticulosAFabricar().iterator(); i.hasNext();)
-		{
-			ArticuloAFabricarVO arVO = (ArticuloAFabricarVO)i.next();
-			XMLArticuloFabrica xmlArtFab = new XMLArticuloFabrica();
-			xmlArtFab.setCod(arVO.getArt().getCodigo());
-			xmlArtFab.setCant(arVO.getCantidadAFabricar());
-			xmlArticulos.add(xmlArtFab);
-		}
-		
-		XMLSolFab xmlSolFab = new XMLSolFab();
-		xmlSolFab.setNumero(solFab.getIdFab());
-		xmlSolFab.setFecha(solFab.getFechaEmision());
-		xmlSolFab.setCentro(xmlCentro);
-		xmlSolFab.setFabrica(xmlFabrica);
-		xmlSolFab.setArticulosAFabricar(xmlArticulos);
-		String solFabXML = xstream.toXML(xmlSolFab);
+		String solFabXML = xstream.toXML(adapter.getXMLSolFabFromSolFabVO(solFab));
 		int id = solFab.getIdFab();
 		//Escribo la salida en un archivo
 		String file = "xml/solfab"+id+".xml";
@@ -112,6 +82,7 @@ public class XMLWrapper
 
 	public void parseXMLSolEnvio(SolicitudEnvioVO solEnvio) {
 		XStream xstream = new XStream();
+		XMLAdapter adapter = new XMLAdapter();
 		/*xstream.alias("tienda", TiendaVO.class);
 		xstream.alias("articuloaenviar", ArticuloAEnviarVO.class);
 		xstream.alias("articuloheader", ArticuloHeaderVO.class);
@@ -123,41 +94,8 @@ public class XMLWrapper
 		xstream.alias("tienda", XMLTienda.class);
 		xstream.alias("solEnv", XMLSolEnv.class);
 		//Parsear el objeto saco a XML
-		
-		XMLTienda xmlTienda = new XMLTienda();
-		xmlTienda.setCodigoTienda(solEnvio.getTienda().getCodigoTienda());
-		xmlTienda.setNombreTienda(solEnvio.getTienda().getNombreTienda());
-		
-		XMLCentro xmlCentro = new XMLCentro();
-		xmlCentro.setCodCentro(solEnvio.getCdVO().getCodCentro());
-		xmlCentro.setNombreCentro(solEnvio.getCdVO().getNombreCentro());
-		xmlCentro.setLatitud(solEnvio.getCdVO().getLatitud());
-		xmlCentro.setLongitud(solEnvio.getCdVO().getLongitud());
-		
-		Vector<XMLArticuloAEnviar> arts = new Vector<XMLArticuloAEnviar>();
-		Iterator i = solEnvio.getArticulosAEnviar().iterator();
-		ArticuloAEnviarVO artAEnv = (ArticuloAEnviarVO)i.next();
-		int idSolDis = artAEnv.getSolDis().getIdDis();
-		
-		for(Iterator it = solEnvio.getArticulosAEnviar().iterator(); it.hasNext();)
-		{
-			ArticuloAEnviarVO artVO = new ArticuloAEnviarVO();
-			artVO = (ArticuloAEnviarVO) it.next();
-			XMLArticuloAEnviar xmlArt = new XMLArticuloAEnviar();
-			xmlArt.setCod(artVO.getArt().getCodigo());
-			xmlArt.setCant(artVO.getCantidadAEnviar());
-			arts.add(xmlArt);
-		}
-		
-		XMLSolEnv xmlSolEnv = new XMLSolEnv();
 
-		xmlSolEnv.setNumero(solEnvio.getIdEnv());
-		xmlSolEnv.setSolDis(idSolDis);
-		xmlSolEnv.setCentro(xmlCentro);
-		xmlSolEnv.setTienda(xmlTienda);
-		xmlSolEnv.setArticulosAEnviar(arts);	
-		
-		String solEnvXML = xstream.toXML(xmlSolEnv);
+		String solEnvXML = xstream.toXML(adapter.getXMLSolEnvFromSolEnvVO(solEnvio));
 		int id = solEnvio.getIdEnv();
 		//Escribo la salida en un archivo
 		String file = "xml/solenvio"+id+".xml";
