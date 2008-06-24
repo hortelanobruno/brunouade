@@ -247,4 +247,16 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 		return ret;
 	}
+
+	public ArrayList<Long> existenArts(ArrayList<Long> codigos) {
+		ArrayList<Long> codVer = new ArrayList<Long>();
+		for(int i = 0 ; i < codigos.size() ; i++){
+			Articulo ar = em.find(Articulo.class, codigos.get(i));
+			if(ar == null)
+			{
+				codVer.add(codigos.get(i));
+			}
+		}
+		return codVer;
+	}
 }

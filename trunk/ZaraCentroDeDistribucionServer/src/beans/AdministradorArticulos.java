@@ -36,4 +36,5 @@ public interface AdministradorArticulos
 	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
 	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
 	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis);
+	public ArrayList<Long> existenArts(ArrayList<Long> codigos);
 }
