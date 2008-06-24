@@ -140,10 +140,10 @@ public class PanelRepArt extends javax.swing.JPanel {
 		// Carga archivo XML
 		chooser = new FileChooser(ref, true, ref.getDefaltXmlPath());
 		urlXML = chooser.getPath();
-		if (urlXML.equals(""))
-			JOptionPane.showMessageDialog(this,
-					"Debe ingresar la ubicacion del archivo XML.\n",
-					Constantes.APPLICATION_NAME, JOptionPane.ERROR_MESSAGE);
+		String chooserButton = chooser.getButton();
+		if (chooserButton.equals("Cancel")) {
+		
+		}
 		else {
 			// Cargar los table
 			((ControladorPanelRepArt) vistaRepArt.getControlador()).doCargarXML(true);
