@@ -9,7 +9,10 @@ public class SolicitudFabricaVO extends SolicitudVO
 	private FabricaVO fabrica;
 	private Collection<ArticuloAFabricarVO> articulosAFabricar;
 	private int idFab;
+	private boolean cerrada;
 	
+
+
 	public SolicitudFabricaVO() {
 		super();
 	}
@@ -17,11 +20,20 @@ public class SolicitudFabricaVO extends SolicitudVO
 	public SolicitudFabricaVO(int id,int n, Date f, FabricaVO fa,Collection<ArticuloAFabricarVO> recibidos,CentroDistribucionVO centro )
 	{
 		super(id,f,centro);
+		this.cerrada = false;
 		this.fabrica = fa;
 		this.idFab = n;
 		this.setArticulosAFabricar(recibidos);
 	}
 
+	public boolean getCerrada() {
+		return cerrada;
+	}
+
+	public void setCerrada(boolean cerrada) {
+		this.cerrada = cerrada;
+	}
+	
 	public FabricaVO getFabrica() {
 		return fabrica;
 	}

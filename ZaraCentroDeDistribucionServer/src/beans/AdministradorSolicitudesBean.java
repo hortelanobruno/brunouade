@@ -35,12 +35,16 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 	}
 
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO) {
-		SolicitudDeFabricacion s = em.find(SolicitudDeFabricacion.class, solFabVO.getIdFab());
-		if(s != null)
+		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		while(it.hasNext())
 		{
-			s = new SolicitudDeFabricacion();
-			s.setVO(solFabVO);
-			em.merge(s);
+			SolicitudDeFabricacion aux = (SolicitudDeFabricacion)it.next();
+			if(aux.getIdFab() == solFabVO.getIdFab()){
+				aux.setVO(solFabVO);
+				em.merge(aux);
+			}
 		}
 	}
 

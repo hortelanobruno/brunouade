@@ -28,6 +28,7 @@ public class SolicitudDeFabricacion extends Solicitud
 	private Fabrica fabrica;
 	private Collection<ArticuloAFabricar> articulosAFabricar;
 	private int idFab;
+	private boolean cerrada;
 	
 	public SolicitudDeFabricacion() {
 		super();
@@ -37,9 +38,19 @@ public class SolicitudDeFabricacion extends Solicitud
 	public SolicitudDeFabricacion(int id,int n, Collection<ArticuloAFabricar> a, Date f, Fabrica fa)
 	{
 		super(id,f);
+		this.cerrada = false;
 		this.idFab = n;
 		this.fabrica = fa;
 		this.setArticulosAFabricar(a);
+	}
+	
+	@Column
+	public boolean getCerrada() {
+		return cerrada;
+	}
+
+	public void setCerrada(boolean cerrada) {
+		this.cerrada = cerrada;
 	}
 	
 	@Column
@@ -78,6 +89,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		vo.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		vo.setCdVO(this.getCentro().getVO());
 		vo.setId(this.getId());
+		vo.setCerrada(this.getCerrada());
 		Iterator it = (Iterator) this.getArticulosAFabricar().iterator();
 		Collection<ArticuloAFabricarVO> arts = new ArrayList<ArticuloAFabricarVO>();
 		while(it.hasNext()){
@@ -98,8 +110,6 @@ public class SolicitudDeFabricacion extends Solicitud
 			arti.setVO(art);
 			recibidos.add(arti);
 		}
-				
-		
 		CentroDistribucion cent = new CentroDistribucion();
 		cent.setVO(vo.getCdVO());
 		this.setCentro(cent);
@@ -110,7 +120,7 @@ public class SolicitudDeFabricacion extends Solicitud
 		this.setFabrica(fab);
 		this.setId(vo.getId());
 		this.setArticulosAFabricar(recibidos);
-		
+		this.setCerrada(vo.getCerrada());
 	}
 	
 	@Transient
@@ -167,4 +177,5 @@ public class SolicitudDeFabricacion extends Solicitud
 		}
 		return fn;
 	}
+
 }
