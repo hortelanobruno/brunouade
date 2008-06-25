@@ -56,6 +56,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 		this.ref = menu;
 		this.vistaEnvios = vista;
 		initComponents();
+		buttonEnviarTienda.setEnabled(false);
 	}
 
 	/**
@@ -224,9 +225,10 @@ public class PanelEnvios extends javax.swing.JPanel {
 			String tienda = comboBoxTiendas.getSelectedItem().toString();
 			solicitudes = ((BusinessDelegate) vistaEnvios.getModelo()).obtenerSolicitudesDeTienda(tienda);
 			cargarArbol(solicitudes);
-			ref.getJTextArea1().append(ref.getDate()+": Solicitudes de Distribucion cargadas");
+			ref.getJTextArea1().append(ref.getDate()+": Solicitudes de Distribucion cargadas\n");
 		}else{
 			if(cargarTable){
+				buttonEnviarTienda.setEnabled(true);
 				int codSolDis = Integer.parseInt(eventoTree.getPath().getLastPathComponent().toString());
 				for (int i = 0 ; i < solicitudes.size() ; i++){
 					solDis = solicitudes.get(i);
@@ -245,7 +247,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				ArrayList<ArticuloAEnviarVO> artsAEnviar = ((BusinessDelegate) vistaEnvios.getModelo()).getArtsAEnv(codSolDis);
 				vaciarTabla();
 				cargarTable(solDis,articulosReservados,stocks,artsAEnviar);
-				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion cargada");
+				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion cargada\n");
 			}else{
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
 				int id = this.ref.getVistaSolDis().getModelo().getNextId();
@@ -274,6 +276,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Envio generada\n");
 				String msj = codificarDetalle(solEnvio);
 				new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
+				buttonEnviarTienda.setEnabled(false);
 			}
 		}
 	}

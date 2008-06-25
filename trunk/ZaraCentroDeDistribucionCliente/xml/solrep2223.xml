@@ -2,7 +2,7 @@
 
 	<codigo>2223</codigo>
 	
-	<codSolFab>2</codSolFab>
+	<codSolFab>1</codSolFab>
 	
 	<fabrica>
 		<codigoFabrica>1</codigoFabrica>
@@ -11,8 +11,8 @@
 	
 	<articulosRecibidos>
 		<articulorecibido>
-			<codArt>1101</codArt>
-			<cant>80</cant>
+			<codArt>1000</codArt>
+			<cant>1000</cant>
 		</articulorecibido>
 	</articulosRecibidos>
 </solrep>
