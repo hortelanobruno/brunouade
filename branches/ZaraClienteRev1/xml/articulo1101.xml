@@ -1,0 +1,15 @@
+<XMLArticulo>
+	<codigo>1101</codigo>
+	<descripcion>jean levis</descripcion>
+	<precio>170</precio>
+	<seccion>hombre</seccion>
+	<color>negro</color>
+	<linea>sport</linea>
+	<cantidad>5</cantidad>
+	<detalles></detalles>
+	<composicion></composicion>
+	<categoria></categoria>
+	<medidas></medidas>
+	<talle>m</talle>
+	<origen>china</origen>
+</XMLArticulo>
