@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Packaging Generator" default="_packaging_generation_">
+<target name="_packaging_generation_" depends="N65540,N65565"/>
+<target name="N65540" description="ServerEJB.jar">
+<mkdir dir="dist"/>
+<jar destfile="dist/ServerEJB.jar">
+<zipfileset dir="." prefix="META-INF">
+<include name="persistence.xml"/>
+</zipfileset>
+<zipfileset dir="bin" includes="**/*.class"/>
+</jar>
+</target>
+<target name="N65565" description="ServerApp.ear">
+<mkdir dir="dist"/>
+<jar destfile="dist/ServerApp.ear">
+<zipfileset dir="." prefix="META-INF">
+<include name="application.xml"/>
+</zipfileset>
+<zipfileset dir="dist">
+<include name="ServerEJB.jar"/>
+</zipfileset>
+</jar>
+</target>
+</project>
