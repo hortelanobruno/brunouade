@@ -1,0 +1,27 @@
+<solicituddistribucion>
+
+	<numero>7002</numero>
+	
+	<tienda>
+		<codigoTienda>3</codigoTienda>
+		<nombreTienda>Ramos</nombreTienda>
+	</tienda>
+
+	<articulospedidos>
+		<articulopedido>
+			<cod>1003</cod>
+			<cant>-1</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1003</cod>
+			<cant>-500</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>2</cod>
+			<cant>500</cant>
+		</articulopedido>
+	</articulospedidos>
+	
+</solicituddistribucion>
