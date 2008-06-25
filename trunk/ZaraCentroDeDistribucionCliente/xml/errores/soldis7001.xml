@@ -1,0 +1,23 @@
+<solicituddistribucion>
+
+	<numero>7001</numero>
+	
+	<tienda>
+		<codigoTienda>1</codigoTienda>
+		<nombreTienda>Florida</nombreTienda>
+	</tienda>
+
+	<articulospedidos>
+		<articulopedido>
+			<cod>mil</cod>
+			<cant>tres</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1002</cod>
+			<cant>5</cant>
+		</articulopedido>
+		
+	</articulospedidos>
+	
+</solicituddistribucion>
