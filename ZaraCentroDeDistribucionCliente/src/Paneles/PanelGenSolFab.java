@@ -55,6 +55,8 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 							validateTable();
 					}
 		});
+		buttonEnviar.setEnabled(false);
+		buttonCargarPendientes.setEnabled(true);
 	}
 
 	/**
@@ -219,10 +221,19 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		
 		if(cargarTabla){
 			ArrayList<ArticuloAFabricarVO> arts = this.ref.getVistaGenSolFab().getModelo().getArticulosAFabricarVO();
-			this.setArticulosAFabricar(arts);
-			cargarTabla(arts);
-			cargarCombo();
-			ref.getJTextArea1().append(ref.getDate()+": Articulos a Fabricar Cargados\n");
+			if(arts.isEmpty()){
+				JOptionPane.showMessageDialog(this,
+						"No hay articulos para fabricar.",
+						Constantes.APPLICATION_NAME,
+						JOptionPane.ERROR_MESSAGE);
+			}else{
+				this.setArticulosAFabricar(arts);
+				cargarTabla(arts);
+				cargarCombo();
+				ref.getJTextArea1().append(ref.getDate()+": Articulos a Fabricar Cargados\n");
+				buttonEnviar.setEnabled(true);
+				buttonCargarPendientes.setEnabled(false);
+			}
 		}else{
 			ArrayList<ArticuloAFabricarVO> arts = leerArticulosDeTabla();
 			SolicitudFabricaVO solFab = new SolicitudFabricaVO();
@@ -244,13 +255,17 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();
 			idSolFab++;
 			solFab.setIdFab(idSolFab);
+			solFab.setCerrada(false);
 			this.ref.getVistaGenSolFab().getModelo().guardarSolicitudFabricacion(solFab);
 			vaciarTabla();
+			tablaArticulos.updateUI();
 			XMLWrapper xml = new XMLWrapper();
 			xml.parseXMLSolFab(solFab);
 			ref.getJTextArea1().append(ref.getDate()+": Solicitud de Fabricacion generada\n");
 			String msj = codificarDetalle(solFab);
 			new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
+			buttonEnviar.setEnabled(false);
+			buttonCargarPendientes.setEnabled(true);
 		}
 	}
 	

@@ -223,7 +223,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 						ref.getJTextArea1().append(ref.getDate()+": La Solicitud de Reposicion contiene una Solicitud de Fabricacion que no existe\n");
 						this.buttonCargarXML.setEnabled(true);
 						this.buttonGuardar.setEnabled(false);
-						JOptionPane.showMessageDialog(this,"La Solicitud de Reposicion contiene una Solicitud de Fabricacion que no existe\n");
+						JOptionPane.showMessageDialog(this,"La Solicitud de Reposicion contiene una Solicitud de Fabricacion que no existe\n",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 					}else{
 						ArrayList<Long> codigos = new ArrayList<Long>();
 						Iterator arts = (Iterator) solRepVO.getArticulosAReponer().iterator();
@@ -283,7 +283,6 @@ public class PanelRepArt extends javax.swing.JPanel {
 							solRepVO.setCdVO(centroVO);
 							long codigoSolRep = solRepVO.getIdRep();
 							String fabrica = solRepVO.getFabrica().getNombreFabrica();
-
 							vaciarTabla();
 							cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
 							ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion Cargada\n");
@@ -297,6 +296,15 @@ public class PanelRepArt extends javax.swing.JPanel {
 			//Falta generar las solicitudes
 			ArrayList<ArticuloAReponerVO> artsRep = collectionToArrayList(solRepVO.getArticulosAReponer());
 			this.ref.getVistaRepArt().getModelo().guardarSolicitudReposicion(solRepVO);
+			Iterator artFab = solFabVO.getArticulosAFabricar().iterator();
+			boolean aux = true;
+			while(artFab.hasNext()){
+				ArticuloAFabricarVO art = (ArticuloAFabricarVO) artFab.next();
+				if(art.getCantidadAFabricar() != art.getCantidadRecibida()){
+					aux=false;
+				}
+			}
+			solFabVO.setCerrada(aux);
 			this.ref.getVistaRepArt().getModelo().actualizarSolicitudFabricacion(solFabVO);
 			this.ref.getVistaRepArt().getModelo().actualizarStock(artsRep);
 			vaciarTabla();

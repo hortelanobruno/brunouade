@@ -162,7 +162,7 @@ public class PanelNewArt extends javax.swing.JPanel
 				}else{
 					vaciarTabla();
 					cargarTable(articuloXML);
-					ref.getJTextArea1().append(ref.getDate()+": Articulo cargado.");
+					ref.getJTextArea1().append(ref.getDate()+": Articulo cargado.\n");
 					this.buttonGuardar.setEnabled(true);
 					this.buttonCargarXML.setEnabled(false);
 				}
@@ -196,7 +196,7 @@ public class PanelNewArt extends javax.swing.JPanel
 				}
 			}
 			vaciarTabla();
-			ref.getJTextArea1().append(ref.getDate()+": Articulo guardado en el Centro de Distribucion");
+			ref.getJTextArea1().append(ref.getDate()+": Articulo guardado en el Centro de Distribucion\n");
 			this.buttonCargarXML.setEnabled(true);
 			this.buttonGuardar.setEnabled(false);
 			new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
