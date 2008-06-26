@@ -33,3 +33,6 @@ pendientes que serán despachados.
 
 - agregar comprobaciones al panel rep
 
+- si tenes iniciado el cliente y despues removes el ear, el server sigue y si quiere
+ejecutar algo del servidor putea xq no encuentra el ear, arreglarlo ya!!
+
