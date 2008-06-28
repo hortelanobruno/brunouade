@@ -9,7 +9,14 @@ public class XMLSolEnv
 	private XMLTienda tienda;
 	private int solDis;
 	private Vector<XMLArticuloAEnviar> articulosAEnviar;
+	private String fechaEmision;
 	
+	public String getFechaEmision() {
+		return fechaEmision;
+	}
+	public void setFechaEmision(String fechaEmision) {
+		this.fechaEmision = fechaEmision;
+	}
 	public Vector<XMLArticuloAEnviar> getArticulosAEnviar() {
 		return articulosAEnviar;
 	}

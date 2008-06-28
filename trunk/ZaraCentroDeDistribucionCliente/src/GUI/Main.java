@@ -33,7 +33,7 @@ public class Main
 		    VistaRepArt vRepArt = new VistaRepArt(modelo);
 		    VistaSolDis vSolDis = new VistaSolDis(modelo);
 		    VistaMain vMain = new VistaMain(modelo);
-		    MenuPrincipal princ = new MenuPrincipal(vMain,vSolDis,vEnvios,vGenSolFab,vRepArt,vNewArt,vConfig);
+		    MenuPrincipal princ = MenuPrincipal.getInstance(vMain,vSolDis,vEnvios,vGenSolFab,vRepArt,vNewArt,vConfig);
 	        princ.setVisible(true);
 	        
 	        vMain.setRef(princ);

@@ -17,6 +17,7 @@ import Paneles.PanelGenSolFab;
 import Paneles.PanelNewArt;
 import Paneles.PanelRepArt;
 import Paneles.PanelSolDist;
+import Varios.Constantes;
 
 /**
  * 
@@ -56,12 +57,12 @@ public class Dialogo3Opciones extends javax.swing.JDialog {
 		jPanel1 = new javax.swing.JPanel();
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jTextArea1 = new javax.swing.JTextArea();
+		this.setTitle(Constantes.APPLICATION_NAME);
 		this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 		Toolkit t = Toolkit.getDefaultToolkit();
-		this.setLocation(
-				(int) (t.getScreenSize().getWidth() - this.getWidth()) / 2,
-				(int) (t.getScreenSize().getHeight() - this.getHeight()) / 2);
+		this.setLocation((int) (t.getScreenSize().getWidth() - this.getWidth()) / 2, 
+						 (int) (t.getScreenSize().getHeight() - this.getHeight()) / 2);
 		btnPrinc.setText("Menu Principal");
 		btnPrinc.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
