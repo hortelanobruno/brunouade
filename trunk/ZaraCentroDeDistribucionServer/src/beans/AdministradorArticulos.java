@@ -18,7 +18,12 @@ import VO.ArticuloRopaVO;
 @Remote
 public interface AdministradorArticulos 
 {
-	
+
+	public int getNextIdArticuloPedido();
+	public int getNextIdArticuloAEnviar();
+	public int getNextIdArticuloAFabricar();
+	public int getNextIdArticuloAReponer();
+	public int getNextIdArticuloReservado();
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public ArrayList<String> getDescripciones(ArrayList<Long> cods);

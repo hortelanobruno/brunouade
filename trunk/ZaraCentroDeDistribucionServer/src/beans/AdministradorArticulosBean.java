@@ -259,4 +259,63 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 		return codVer;
 	}
+	
+	public int getNextIdArticuloReservado() {
+		Query q = em.createQuery("SELECT MAX(s.idAR) FROM ArticuloReservado s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 1;
+		}else{
+			int a = (Integer) l.get(0);
+			return a+1;
+		}
+	}
+	
+	public int getNextIdArticuloPedido()
+	{
+		Query q = em.createQuery("SELECT MAX(s.idAP) FROM ArticuloPedido s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 1;
+		}else{
+			int a = (Integer) l.get(0);
+			return a+1;
+		}
+	}
+	
+	public int getNextIdArticuloAReponer() {
+		Query q = em.createQuery("SELECT MAX(s.idAAR) FROM ArticuloAReponer s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 1;
+		}else{
+			int a = (Integer) l.get(0);
+			return a+1;
+		}
+	}
+	
+	public int getNextIdArticuloAEnviar()
+	{
+		Query q = em.createQuery("SELECT MAX(s.idAAE) FROM ArticuloAEnviar s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 1;
+		}else{
+			int a = (Integer) l.get(0);
+			return a+1;
+		}
+	}
+	
+	public int getNextIdArticuloAFabricar()
+	{
+		Query q = em.createQuery("SELECT MAX(s.id) FROM ArticuloAFabricar s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 1;
+		}else{
+			int a = (Integer) l.get(0);
+			return a+1;
+		}
+	}
+
 }

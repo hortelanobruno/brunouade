@@ -21,14 +21,9 @@ public interface AdministradorSolicitudes
     public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
     public int getNumeroSolEnv();
 	public int getNumeroSolFab();
-	public int getNextIdArticuloPedido();
-	public int getNextIdArticuloAEnviar();
-	public int getNextIdArticuloAFabricar();
 	public boolean existeSolDis(int codigo);
 	public boolean existeSolRep(int codigo);
-	public int getNextIdArticuloReservado();
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
-	public int getNextIdArticuloAReponer();
 	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tienda);
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio);
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
