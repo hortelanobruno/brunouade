@@ -78,8 +78,6 @@ public class BusinessDelegate extends ProxyModelo
     @SuppressWarnings("unchecked")
 	protected void getConnection() throws ErrorConectionException {
         try {
-        	//Context jndiContext = getInitialContext();
-        	//this.modCD = (ServerFacade)jndiContext.lookup(naming);
         	Hashtable props = new Hashtable();
 			props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
 			props.put(InitialContext.PROVIDER_URL,"jnp://127.0.0.1:1099");
@@ -88,7 +86,6 @@ public class BusinessDelegate extends ProxyModelo
 			
 
         } catch (Exception e) {
-        	e.printStackTrace();
         	throw new ErrorConectionException("No se pudo conectar");
         }
     }    

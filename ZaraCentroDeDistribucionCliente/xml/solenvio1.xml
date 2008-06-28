@@ -7,18 +7,22 @@
     <longitud>56.88752</longitud>
   </centro>
   <tienda>
-    <codigoTienda>1</codigoTienda>
-    <nombreTienda>Florida</nombreTienda>
+    <codigoTienda>3</codigoTienda>
+    <nombreTienda>palermo</nombreTienda>
   </tienda>
-  <solDis>1002</solDis>
+  <solDis>1114</solDis>
   <articulosAEnviar>
     <articuloaenviar>
-      <cod>1000</cod>
-      <cant>800</cant>
+      <cod>1100</cod>
+      <cant>10</cant>
     </articuloaenviar>
     <articuloaenviar>
-      <cod>1002</cod>
-      <cant>500</cant>
+      <cod>1103</cod>
+      <cant>30</cant>
+    </articuloaenviar>
+    <articuloaenviar>
+      <cod>1102</cod>
+      <cant>6</cant>
     </articuloaenviar>
   </articulosAEnviar>
 </solEnv>
