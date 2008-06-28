@@ -52,7 +52,6 @@ public class Main
 		    new ControladorPanelRepArt(modelo,vRepArt);
 		    new ControladorPanelSolDis(modelo,vSolDis);
 		} catch (ErrorConectionException e) {
-			//e.printStackTrace();
 			JOptionPane.showMessageDialog(null, e.getMessage(),Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 		}
 	    //Inicializo todas las vistas   
