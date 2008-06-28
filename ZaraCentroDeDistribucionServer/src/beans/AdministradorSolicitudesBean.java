@@ -121,7 +121,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return 0;
 		}else{
 			int a = (Integer) l.get(0);
-			return a;
+			return a+1;
 		}
 	}
 
@@ -133,7 +133,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return 0;
 		}else{
 			int a = (Integer) l.get(0);
-			return a;
+			return a+1;
 		}
 	}
 
@@ -144,7 +144,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return 0;
 		}else{
 			int a = (Integer) l.get(0);
-			return a;
+			return a+1;
 		}
 	}
 	
@@ -156,7 +156,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return 0;
 		}else{
 			int a = (Integer) l.get(0);
-			return a;
+			return a+1;
 		}
 	}
 	
@@ -167,7 +167,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return 0;
 		}else{
 			int a = (Integer) l.get(0);
-			return a;
+			return a+1;
 		}
 	}
 	
@@ -179,7 +179,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return 0;
 		}else{
 			int a = (Integer) l.get(0);
-			return a;
+			return a+1;
 		}
 	}
 	
@@ -191,7 +191,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return 0;
 		}else{
 			int a = (Integer) l.get(0);
-			return a;
+			return a+1;
 		}
 	}
 
@@ -298,7 +298,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return 0;
 		}else{
 			int a = (Integer) l.get(0);
-			return a;
+			return a+1;
 		}
 	}
 
