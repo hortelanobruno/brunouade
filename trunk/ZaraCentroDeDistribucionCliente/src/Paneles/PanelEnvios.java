@@ -251,7 +251,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 			}else{
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
 				int id = this.ref.getVistaSolDis().getModelo().getNextId();
-				id++;
+				//id++;
 				solEnvio.setId(id);
 				int idAE = ((BusinessDelegate) vistaEnvios.getModelo()).getNextIdAEnv();
 				ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE);
@@ -259,7 +259,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				solEnvio.setFechaEmision(ref.getDate());
 				solEnvio.setTienda(solDis.getTienda());
 				int numero = ((BusinessDelegate) vistaEnvios.getModelo()).getNumeroSolEnv();
-				numero++;
+				//numero++;
 				solEnvio.setIdEnv(numero);
 				solEnvio.setCdVO(solDis.getCdVO());
 				boolean cerrado = comprobarCerrado();
@@ -316,7 +316,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 	
 	private ArrayList<ArticuloAEnviarVO> articulosAEnviarDeTabla(int idAE) {
 		ArrayList<ArticuloAEnviarVO> articulosAEnviar = new ArrayList<ArticuloAEnviarVO>();
-		idAE++;
+		//idAE++;
 		Iterator art = solDis.getArticulosPedidos().iterator();
 		for(int i = 0 ; i < tablePendientes.getRowCount() ; i++){
 			int cantEnv = Integer.parseInt((((DefaultTableModel) tablePendientes.getModel()).getValueAt(i, 6)).toString());

@@ -254,8 +254,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 					ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
 					while (arts.hasNext()) {
 						ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
-						idMax++;
 						artVO.setIdAP(idMax);
+						idMax++;
 						codigos.add(artVO.getArt().getCodigo());
 						artsVO.add(artVO);
 					}
@@ -274,7 +274,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 					}else{
 						solDisVO.setArticulosPedidos(artsVO);
 						int id = this.ref.getVistaSolDis().getModelo().getNextId();
-						id++;
+						//id++;
 						solDisVO.setId(id);
 						solDisVO.setFechaEmision(ref.getDate());
 						ArrayList<String> descripciones = this.ref.getVistaSolDis()
@@ -338,8 +338,8 @@ public class PanelSolDist extends javax.swing.JPanel {
 								.getModel()).getValueAt(i, 2)));
 				arti = ((BusinessDelegate) vistaSolDis.getModelo()).getArticulo(cod);
 				ArticuloReservadoVO aRes = new ArticuloReservadoVO();
-				idMax++;
 				aRes.setIdAR(idMax);
+				idMax++;
 				aRes.setArt(arti);
 				aRes.setCantidadReservada(cant);
 				aRes.setSolDis(solDisVO);
@@ -376,7 +376,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 				aFab.setCantidadAFabricar(0);
 				// aFab.setFabrica()
 				// aFab.setIdAAF();
-				idMax++;
+				//idMax++;
 				aFab.setIdAAF(idMax);
 				aFab.setSol(solDisVO);
 				art.add(aFab);

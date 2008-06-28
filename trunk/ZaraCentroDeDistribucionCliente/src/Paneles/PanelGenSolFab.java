@@ -238,7 +238,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			ArrayList<ArticuloAFabricarVO> arts = leerArticulosDeTabla();
 			SolicitudFabricaVO solFab = new SolicitudFabricaVO();
 			int id = this.ref.getVistaSolDis().getModelo().getNextId();
-			id++;
+			//id++;
 			solFab.setId(id);
 			solFab.setArticulosAFabricar(arts);
 			CentroDistribucionVO centroVO = this.ref.getVistaGenSolFab().getModelo().getCentro();
@@ -253,7 +253,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			//aca hay que arreglar la fecha...
 			solFab.setFechaEmision(ref.getDate());
 			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();
-			idSolFab++;
+			//idSolFab++;
 			solFab.setIdFab(idSolFab);
 			solFab.setCerrada(false);
 			this.ref.getVistaGenSolFab().getModelo().guardarSolicitudFabricacion(solFab);
