@@ -1,8 +1,12 @@
 package Varios;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Vector;
 import VO.ArticuloAEnviarVO;
 import VO.ArticuloAFabricarVO;
@@ -34,6 +38,7 @@ public class XMLAdapter
 			arts.add(ar);
 		}
 		disVO.setArticulosPedidos(arts);
+		disVO.setFechaEmision(this.getFechaHoraFromString(sd.getFecha()));
 		return disVO;
 	}
 	
@@ -59,6 +64,7 @@ public class XMLAdapter
 		}
 		ret.setArticulosAReponer(arts);
 		ret.setSolFab(sf);
+		ret.setFechaEmision(this.getFechaHoraFromString(sr.getFechaEmision()));
 		return ret;
 	}
 
@@ -131,5 +137,56 @@ public class XMLAdapter
 		xmlSolFab.setArticulosAFabricar(xmlArticulos);
 		
 		return xmlSolFab;
+	}
+	
+	private String getFecha(String f)
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i<f.indexOf(" ");i++)
+			sb.append(f.charAt(i));
+		
+		return sb.toString();
+	}
+	
+	private String getHora(String f)
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = f.indexOf(" "); i<f.length();i++)
+			sb.append(f.charAt(i));
+		
+		return sb.toString();
+	}
+	
+	@SuppressWarnings("deprecation")
+	private Date getFechaHoraFromString(String f)
+	{
+		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
+		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+		
+		Date fn;
+		Date fn2;
+		try 
+		{
+			fn = df.parse(this.getFecha(f));
+			fn2 = df1.parse(this.getHora(f));	
+			fn.setHours(fn2.getHours());
+			fn.setMinutes(fn2.getMinutes());
+			fn.setSeconds(fn2.getSeconds());
+		} 
+		catch (ParseException e)
+		{
+			// TODO Auto-generated catch block
+			return null;
+		}
+		return fn;
+	}
+	
+	private String getFechaHoraFromDate(Date d)
+	{
+		String fecha;
+		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
+		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+		fecha = df.format(d ) + " " +df1.format(d );
+		return fecha;
 	}
 }

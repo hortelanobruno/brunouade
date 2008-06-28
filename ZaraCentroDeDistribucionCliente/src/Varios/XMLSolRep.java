@@ -10,7 +10,16 @@ public class XMLSolRep
 	private int codSolFab;
 	private FabricaVO fabrica;	
 	private Vector<XMLArticuloRecibido> articulosRecibidos;
+	private String fechaEmision;
 	
+	public String getFechaEmision() {
+		return fechaEmision;
+	}
+
+	public void setFechaEmision(String fechaEmision) {
+		this.fechaEmision = fechaEmision;
+	}
+
 	public Vector<XMLArticuloRecibido> getArticulosRecibidos() {
 		return articulosRecibidos;
 	}

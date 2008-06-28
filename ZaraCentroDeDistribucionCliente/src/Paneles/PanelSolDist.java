@@ -276,7 +276,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 						int id = this.ref.getVistaSolDis().getModelo().getNextId();
 						//id++;
 						solDisVO.setId(id);
-						solDisVO.setFechaEmision(ref.getDate());
+						//solDisVO.setFechaEmision(ref.getDate());
 						ArrayList<String> descripciones = this.ref.getVistaSolDis()
 								.getModelo().getDescripciones(codigos);
 						ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
@@ -381,7 +381,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 				aFab.setSol(solDisVO);
 				art.add(aFab);
 			} else {
-				ref.getJTextArea1().append("Error al cargar los articulos a fabricar, xq lo seleccionado es mayor que lo pedido\n");
+				ref.getJTextArea1().append(ref.getDate()+": Error al cargar los articulos a fabricar, porque lo seleccionado es mayor que lo pedido\n");
 			}
 		}
 		return art;

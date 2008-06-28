@@ -74,13 +74,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 	private File confFile;
 
-	/**
-	 * Creates new form MenuPrincipal
-	 * 
-	 * @param main
-	 */
-
-	public MenuPrincipal(VistaMain main, VistaSolDis solDis,
+	private static MenuPrincipal menu;
+	
+	public static MenuPrincipal getInstance(VistaMain main, VistaSolDis solDis,
+			VistaEnvios envios, VistaGenSolFab genSolFab, VistaRepArt repArt,
+			VistaNewArt newArt, VistaConfig config){
+		if(menu == null)
+		{
+			menu = new MenuPrincipal(main,solDis,envios,genSolFab,repArt,newArt,config);
+			return menu;
+		}
+		else return menu;
+	}
+	
+	private MenuPrincipal(VistaMain main, VistaSolDis solDis,
 		VistaEnvios envios, VistaGenSolFab genSolFab, VistaRepArt repArt,
 		VistaNewArt newArt, VistaConfig config) {
 		initComponents();
