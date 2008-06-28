@@ -180,13 +180,4 @@ public class XMLAdapter
 		}
 		return fn;
 	}
-	
-	private String getFechaHoraFromDate(Date d)
-	{
-		String fecha;
-		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
-		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
-		fecha = df.format(d ) + " " +df1.format(d );
-		return fecha;
-	}
 }
