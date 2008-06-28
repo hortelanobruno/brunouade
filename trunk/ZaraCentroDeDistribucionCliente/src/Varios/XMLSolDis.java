@@ -9,13 +9,13 @@ public class XMLSolDis
 	private int numero;
 	private TiendaVO tienda;
 	private Vector<XMLArticuloPedido> articulospedidos;
-	private String fecha;
+	private String fechaEmision;
 	
 	public String getFecha() {
-		return fecha;
+		return fechaEmision;
 	}
 	public void setFecha(String fecha) {
-		this.fecha = fecha;
+		this.fechaEmision = fecha;
 	}
 	public Vector<XMLArticuloPedido> getArticulosPedidos() {
 		return articulospedidos;

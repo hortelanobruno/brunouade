@@ -14,11 +14,8 @@
   <articulosAEnviar>
     <articuloaenviar>
       <cod>1000</cod>
-      <cant>800</cant>
-    </articuloaenviar>
-    <articuloaenviar>
-      <cod>1002</cod>
-      <cant>500</cant>
+      <cant>300</cant>
     </articuloaenviar>
   </articulosAEnviar>
+  <fechaEmision>2008-06-28 18:45:22.437 GMT</fechaEmision>
 </solEnv>

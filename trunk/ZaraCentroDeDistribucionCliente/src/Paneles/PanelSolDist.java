@@ -58,8 +58,12 @@ public class PanelSolDist extends javax.swing.JPanel {
 		tableArticulos.getModel().addTableModelListener(
 				new TableModelListener() {
 					public void tableChanged(TableModelEvent e) {
-						if (e.getColumn() > -1)
-							validateTable();
+						if (e.getColumn() > -1){
+							int valor = Integer.parseInt(((DefaultTableModel)tableArticulos.getModel()).getValueAt(e.getFirstRow(), e.getColumn()).toString());
+							if(valor != 0){
+								validateTable();	
+							}
+						}
 					}
 		});
 	}
@@ -376,12 +380,10 @@ public class PanelSolDist extends javax.swing.JPanel {
 				aFab.setCantidadAFabricar(0);
 				// aFab.setFabrica()
 				// aFab.setIdAAF();
-				//idMax++;
 				aFab.setIdAAF(idMax);
+				idMax++;
 				aFab.setSol(solDisVO);
 				art.add(aFab);
-			} else {
-				ref.getJTextArea1().append(ref.getDate()+": Error al cargar los articulos a fabricar, porque lo seleccionado es mayor que lo pedido\n");
 			}
 		}
 		return art;

@@ -245,7 +245,6 @@ public class PanelRepArt extends javax.swing.JPanel {
 						}else{
 							int idAR = this.ref.getVistaSolDis().getModelo().getNextIdARep();
 							int id = this.ref.getVistaSolDis().getModelo().getNextId();
-							//id++;
 							solRepVO.setId(id);
 							Iterator itit = solRepVO.getArticulosAReponer().iterator();
 							ArrayList<ArticuloAReponerVO> artsRep = new ArrayList<ArticuloAReponerVO>();
@@ -278,7 +277,6 @@ public class PanelRepArt extends javax.swing.JPanel {
 							int idSolFab = solRepVO.getSolFab().getIdFab();
 							solFabVO = this.ref.getVistaRepArt().getModelo().getSolicitudFabricacion(idSolFab);
 							solRepVO.setSolFab(solFabVO);
-							//solRepVO.setFechaEmision(ref.getDate());
 							CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
 							solRepVO.setCdVO(centroVO);
 							long codigoSolRep = solRepVO.getIdRep();

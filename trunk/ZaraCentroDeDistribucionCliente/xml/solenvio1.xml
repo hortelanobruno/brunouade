@@ -7,22 +7,19 @@
     <longitud>56.88752</longitud>
   </centro>
   <tienda>
-    <codigoTienda>3</codigoTienda>
-    <nombreTienda>palermo</nombreTienda>
+    <codigoTienda>1</codigoTienda>
+    <nombreTienda>Florida</nombreTienda>
   </tienda>
-  <solDis>1114</solDis>
+  <solDis>1002</solDis>
   <articulosAEnviar>
     <articuloaenviar>
-      <cod>1100</cod>
-      <cant>10</cant>
+      <cod>1000</cod>
+      <cant>500</cant>
     </articuloaenviar>
     <articuloaenviar>
-      <cod>1103</cod>
-      <cant>30</cant>
-    </articuloaenviar>
-    <articuloaenviar>
-      <cod>1102</cod>
-      <cant>6</cant>
+      <cod>1002</cod>
+      <cant>500</cant>
     </articuloaenviar>
   </articulosAEnviar>
+  <fechaEmision>2008-06-28 18:20:53.562 GMT</fechaEmision>
 </solEnv>

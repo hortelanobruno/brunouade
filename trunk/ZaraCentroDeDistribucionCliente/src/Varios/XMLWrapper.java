@@ -28,7 +28,8 @@ public class XMLWrapper
         
         SolicitudDistribucionVO sol = null; 
         try {
-        	sol = xmlAdapter.getSolDisVOFromXML((XMLSolDis) xstream.fromXML(XML));
+        	XMLSolDis xmlsoldis = (XMLSolDis) xstream.fromXML(XML);
+        	sol = xmlAdapter.getSolDisVOFromXML(xmlsoldis);
         } catch (Exception e) {
 
         }

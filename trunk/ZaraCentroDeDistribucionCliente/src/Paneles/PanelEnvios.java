@@ -12,7 +12,10 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTree;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -27,6 +30,7 @@ import VO.ArticuloReservadoVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.TiendaVO;
+import Varios.Constantes;
 import Varios.XMLWrapper;
 import Vistas.VistaEnvios;
 import controladores.ControladorPanelEnvios;
@@ -57,6 +61,31 @@ public class PanelEnvios extends javax.swing.JPanel {
 		this.vistaEnvios = vista;
 		initComponents();
 		buttonEnviarTienda.setEnabled(false);
+		tablePendientes.getModel().addTableModelListener(
+				new TableModelListener() {
+					public void tableChanged(TableModelEvent e) {
+						if (e.getColumn() > -1){
+							int valor = Integer.parseInt(((DefaultTableModel)tablePendientes.getModel()).getValueAt(e.getFirstRow(), e.getColumn()).toString());
+							if(valor != 0){
+								validateTable();	
+							}else{
+								int cantCeros = 0;
+								for (int i = 0; i < tablePendientes.getModel().getRowCount(); i++) {
+									int val = Integer.parseInt(tablePendientes.getModel().getValueAt(
+											i, 6).toString());
+									if(val == 0){
+										cantCeros++;
+									}
+								}
+								if (cantCeros < tablePendientes.getModel().getRowCount()) {
+									buttonEnviarTienda.setEnabled(true);
+								} else {
+									buttonEnviarTienda.setEnabled(false);
+								}
+							}
+						}
+					}
+		});
 	}
 
 	/**
@@ -194,6 +223,63 @@ public class PanelEnvios extends javax.swing.JPanel {
 			((ControladorPanelEnvios) vistaEnvios.getControlador()).doCargarSolicitud(false,false);
 	}
 
+	private void validateTable() {
+		int cantCeros = 0;
+		for (int i = 0; i < tablePendientes.getModel().getRowCount(); i++) {
+			//"Codigo", "Descripcion", "Cantidad pedida", "Cantidad reservada", "Stock", "Cantidad enviada", "Cantidad a enviar"
+			int cantEnviar = Integer.parseInt(tablePendientes.getModel().getValueAt(
+					i, 6).toString());
+			int cantEnviada = Integer.parseInt(tablePendientes.getModel().getValueAt(
+					i, 5).toString());
+			int stock = Integer.parseInt(tablePendientes.getModel().getValueAt(
+					i, 4).toString());
+			int cantReservada = Integer.parseInt(tablePendientes.getModel().getValueAt(
+					i, 3).toString());
+			int cantPedida = Integer.parseInt(tablePendientes.getModel().getValueAt(
+					i, 2).toString());
+			if (cantEnviar != 0){
+				if(cantEnviar<0){
+					tablePendientes.getModel().setValueAt(0,i, 6);
+					JOptionPane.showMessageDialog(this,
+							"El valor ingresado tiene que ser un numero positivo.",
+							Constantes.APPLICATION_NAME,
+							JOptionPane.ERROR_MESSAGE);
+					break;
+				}
+				if(cantPedida<cantEnviar+cantEnviada){
+					tablePendientes.getModel().setValueAt(0,i, 6);
+					JOptionPane.showMessageDialog(this,
+							"El valor ingresado es mayor a la cantidad pedida.",
+							Constantes.APPLICATION_NAME,
+							JOptionPane.ERROR_MESSAGE);
+					break;
+				}
+				if(stock+cantReservada<cantEnviar){
+					tablePendientes.getModel().setValueAt(0,i, 6);
+					JOptionPane.showMessageDialog(this,
+							"El valor ingresado es mayor al stock.",
+							Constantes.APPLICATION_NAME,
+							JOptionPane.ERROR_MESSAGE);
+					break;
+				}
+			}
+		}
+		for (int i = 0; i < tablePendientes.getModel().getRowCount(); i++) {
+			int valor = Integer.parseInt(tablePendientes.getModel().getValueAt(
+					i, 6).toString());
+			if(valor == 0){
+				cantCeros++;
+			}
+		}
+		if (cantCeros < tablePendientes.getModel().getRowCount()) {
+			buttonEnviarTienda.setEnabled(true);
+		} else {
+			buttonEnviarTienda.setEnabled(false);
+		}
+	}
+
+	
+	
 	public void cargarArbol(ArrayList<SolicitudDistribucionVO> solicitudes){
 		DefaultMutableTreeNode abuelo = new DefaultMutableTreeNode("Solicitudes");
 		DefaultTreeModel modelo = new DefaultTreeModel(abuelo);
@@ -228,7 +314,6 @@ public class PanelEnvios extends javax.swing.JPanel {
 			ref.getJTextArea1().append(ref.getDate()+": Solicitudes de Distribucion cargadas\n");
 		}else{
 			if(cargarTable){
-				buttonEnviarTienda.setEnabled(true);
 				int codSolDis = Integer.parseInt(eventoTree.getPath().getLastPathComponent().toString());
 				for (int i = 0 ; i < solicitudes.size() ; i++){
 					solDis = solicitudes.get(i);
@@ -251,7 +336,6 @@ public class PanelEnvios extends javax.swing.JPanel {
 			}else{
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
 				int id = this.ref.getVistaSolDis().getModelo().getNextId();
-				//id++;
 				solEnvio.setId(id);
 				int idAE = ((BusinessDelegate) vistaEnvios.getModelo()).getNextIdAEnv();
 				ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE);
@@ -259,7 +343,6 @@ public class PanelEnvios extends javax.swing.JPanel {
 				solEnvio.setFechaEmision(ref.getDate());
 				solEnvio.setTienda(solDis.getTienda());
 				int numero = ((BusinessDelegate) vistaEnvios.getModelo()).getNumeroSolEnv();
-				//numero++;
 				solEnvio.setIdEnv(numero);
 				solEnvio.setCdVO(solDis.getCdVO());
 				boolean cerrado = comprobarCerrado();
@@ -316,7 +399,6 @@ public class PanelEnvios extends javax.swing.JPanel {
 	
 	private ArrayList<ArticuloAEnviarVO> articulosAEnviarDeTabla(int idAE) {
 		ArrayList<ArticuloAEnviarVO> articulosAEnviar = new ArrayList<ArticuloAEnviarVO>();
-		//idAE++;
 		Iterator art = solDis.getArticulosPedidos().iterator();
 		for(int i = 0 ; i < tablePendientes.getRowCount() ; i++){
 			int cantEnv = Integer.parseInt((((DefaultTableModel) tablePendientes.getModel()).getValueAt(i, 6)).toString());
