@@ -102,7 +102,7 @@ public class XMLAdapter
 		xmlSolEnv.setCentro(xmlCentro);
 		xmlSolEnv.setTienda(xmlTienda);
 		xmlSolEnv.setArticulosAEnviar(arts);	
-		
+		xmlSolEnv.setFechaEmision(solEnvio.getFechaEmision());
 		return xmlSolEnv;
 	}
 

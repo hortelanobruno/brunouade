@@ -1,5 +1,6 @@
 package Varios;
 
+import java.util.Date;
 import java.util.Vector;
 
 public class XMLSolEnv 
@@ -9,12 +10,12 @@ public class XMLSolEnv
 	private XMLTienda tienda;
 	private int solDis;
 	private Vector<XMLArticuloAEnviar> articulosAEnviar;
-	private String fechaEmision;
+	private Date fechaEmision;
 	
-	public String getFechaEmision() {
+	public Date getFechaEmision() {
 		return fechaEmision;
 	}
-	public void setFechaEmision(String fechaEmision) {
+	public void setFechaEmision(Date fechaEmision) {
 		this.fechaEmision = fechaEmision;
 	}
 	public Vector<XMLArticuloAEnviar> getArticulosAEnviar() {
