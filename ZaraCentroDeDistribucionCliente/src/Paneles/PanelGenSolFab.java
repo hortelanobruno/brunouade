@@ -51,8 +51,26 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		tablaArticulos.getModel().addTableModelListener(
 				new TableModelListener() {
 					public void tableChanged(TableModelEvent e) {
-						if (e.getColumn() > -1)
-							validateTable();
+						if (e.getColumn() > -1){
+							int valor = Integer.parseInt(((DefaultTableModel)tablaArticulos.getModel()).getValueAt(e.getFirstRow(), e.getColumn()).toString());
+							if(valor != 0){
+								validateTable();	
+							}else{
+								int cantCeros = 0;
+								for (int i = 0; i < tablaArticulos.getModel().getRowCount(); i++) {
+									int val = Integer.parseInt(tablaArticulos.getModel().getValueAt(
+											i, 6).toString());
+									if(val == 0){
+										cantCeros++;
+									}
+								}
+								if (cantCeros < tablaArticulos.getModel().getRowCount()) {
+									buttonEnviar.setEnabled(true);
+								} else {
+									buttonEnviar.setEnabled(false);
+								}
+							}
+						}
 					}
 		});
 		buttonEnviar.setEnabled(false);
@@ -175,23 +193,30 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			int minimo = Integer.parseInt(tablaArticulos.getModel().getValueAt(
 					i, 5).toString());
 
-			if (valor == 0)
-				cantCeros++;
-			if(valor<minimo){
-				//tablaArticulos.getModel().setValueAt(0,i, 6);
-				JOptionPane.showMessageDialog(this,
-						"El valor ingresado es menor a la cantidad minima a pedir.",
-						Constantes.APPLICATION_NAME,
-						JOptionPane.ERROR_MESSAGE);
-				break;
+			if (valor != 0){
+				if(valor<minimo){
+					tablaArticulos.getModel().setValueAt(0,i, 6);
+					JOptionPane.showMessageDialog(this,
+							"El valor ingresado es menor a la cantidad minima a pedir.",
+							Constantes.APPLICATION_NAME,
+							JOptionPane.ERROR_MESSAGE);
+					break;
+				}
+				if(valor<0){
+					tablaArticulos.getModel().setValueAt(0,i, 6);
+					JOptionPane.showMessageDialog(this,
+							"El valor ingresado tiene que ser un numero positivo.",
+							Constantes.APPLICATION_NAME,
+							JOptionPane.ERROR_MESSAGE);
+					break;
+				}
 			}
-			if(valor<0){
-				//tablaArticulos.getModel().setValueAt(0,i, 6);
-				JOptionPane.showMessageDialog(this,
-						"El valor ingresado tiene que ser un numero positivo.",
-						Constantes.APPLICATION_NAME,
-						JOptionPane.ERROR_MESSAGE);
-				break;
+		}
+		for (int i = 0; i < tablaArticulos.getModel().getRowCount(); i++) {
+			int valor = Integer.parseInt(tablaArticulos.getModel().getValueAt(
+					i, 6).toString());
+			if(valor == 0){
+				cantCeros++;
 			}
 		}
 		if (cantCeros < tablaArticulos.getModel().getRowCount()) {
@@ -231,29 +256,24 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 				cargarTabla(arts);
 				cargarCombo();
 				ref.getJTextArea1().append(ref.getDate()+": Articulos a Fabricar Cargados\n");
-				buttonEnviar.setEnabled(true);
 				buttonCargarPendientes.setEnabled(false);
 			}
 		}else{
 			ArrayList<ArticuloAFabricarVO> arts = leerArticulosDeTabla();
 			SolicitudFabricaVO solFab = new SolicitudFabricaVO();
 			int id = this.ref.getVistaSolDis().getModelo().getNextId();
-			//id++;
 			solFab.setId(id);
 			solFab.setArticulosAFabricar(arts);
 			CentroDistribucionVO centroVO = this.ref.getVistaGenSolFab().getModelo().getCentro();
 			solFab.setCdVO(centroVO);
-			//aca hay que arreglar que la fabrica se setee de una combo o algo asi
 			String fab = comboFabricas.getSelectedItem().toString();
 			for(int j=0 ; j<fabricas.size() ; j++){
 				if(fabricas.get(j).getNombreFabrica().equals(fab)){
 					solFab.setFabrica(fabricas.get(j));
 				}
 			}
-			//aca hay que arreglar la fecha...
 			solFab.setFechaEmision(ref.getDate());
 			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();
-			//idSolFab++;
 			solFab.setIdFab(idSolFab);
 			solFab.setCerrada(false);
 			this.ref.getVistaGenSolFab().getModelo().guardarSolicitudFabricacion(solFab);
@@ -295,9 +315,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		}
 		return arts;
 	}
-	 /*"Codigo", "Descripcion", "Stock Actual",
-		"Stock Pedido","Stock Recibido", "Stock Minimo a Pedir",
-		"Cantidad a Fabricar"*/
+
 	public void cargarTabla(ArrayList<ArticuloAFabricarVO> arts){
 		for (int i = 0 ; i < arts.size() ; i++ ){
 			ArticuloAFabricarVO artVO = arts.get(i);

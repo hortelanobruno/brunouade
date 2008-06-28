@@ -231,7 +231,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 		jPanel3 = new javax.swing.JPanel();
 		jLabel3 = new javax.swing.JLabel();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+/*		setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new java.awt.event.WindowAdapter() {
 		    public void windowClosing(WindowEvent winEvt) {
 		    	if (JOptionPane.showConfirmDialog(MenuPrincipal.getFrames()[0],
@@ -579,7 +579,410 @@ public class MenuPrincipal extends javax.swing.JFrame {
 												org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)));
 
 		pack();
+		*/
+		setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+		    public void windowClosing(WindowEvent winEvt) {
+		    	if (JOptionPane.showConfirmDialog(MenuPrincipal.getFrames()[0],
+						"Esta seguro que desea cerrar la aplicacion?",
+						Constantes.APPLICATION_NAME, JOptionPane.YES_NO_OPTION,
+						JOptionPane.QUESTION_MESSAGE) == 0) {
+					System.exit(0);
+				}	
+		    }
+		});
+        
+        setTitle(Constantes.APPLICATION_NAME);
+        setResizable(false);
+
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+
+        buttonSolDist.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\showchild_mode.gif")); // NOI18N
+        buttonSolDist.setText("Solicitud de Distribucion");
+        buttonSolDist.setFocusable(false);
+        buttonSolDist.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        buttonSolDist.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        buttonSolDist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSolDistActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(buttonSolDist);
+
+        buttonEnvTienda.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\forward_nav.gif")); // NOI18N
+        buttonEnvTienda.setText("Envios a Tienda");
+        buttonEnvTienda.setFocusable(false);
+        buttonEnvTienda.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        buttonEnvTienda.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        buttonEnvTienda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEnvTiendaActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(buttonEnvTienda);
+
+        buttonSolFabr.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\addtsk_tsk.gif")); // NOI18N
+        buttonSolFabr.setText("Solicitud de Fabricacion");
+        buttonSolFabr.setFocusable(false);
+        buttonSolFabr.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        buttonSolFabr.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        buttonSolFabr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSolFabrActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(buttonSolFabr);
+
+        buttonRepArt.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\import_wiz.gif")); // NOI18N
+        buttonRepArt.setText("Reposicion de Articulos");
+        buttonRepArt.setFocusable(false);
+        buttonRepArt.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        buttonRepArt.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        buttonRepArt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRepArtActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(buttonRepArt);
+
+        buttonNewArt.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\file_obj.gif")); // NOI18N
+        buttonNewArt.setText("Nuevo Articulo");
+        buttonNewArt.setFocusable(false);
+        buttonNewArt.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        buttonNewArt.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        buttonNewArt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonNewArtActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(buttonNewArt);
+
+        org.jdesktop.layout.GroupLayout jPanel4Layout = new org.jdesktop.layout.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(290, Short.MAX_VALUE)
+                .add(labelHora, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel4Layout.createSequentialGroup()
+                .add(labelHora, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jToolBar1.add(jPanel4);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\background.jpg")); // NOI18N
+
+        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 955, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jLabel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+        );
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 930, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Consola", jPanel2);
+
+        jMenu1.setText("Archivo");
+
+        jMenuItem1.setText("Menu Principal");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+        jMenu1.add(jSeparator2);
+
+        jMenu4.setText("Servicios");
+
+        menuItemSolDistr.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemSolDistr.setText("Solicitud de distribucion");
+        menuItemSolDistr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemSolDistrActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menuItemSolDistr);
+
+        menuItemEnvTienda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemEnvTienda.setText("Generar envio a tienda");
+        menuItemEnvTienda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemEnvTiendaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menuItemEnvTienda);
+
+        menuItemSolFab.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemSolFab.setText("Generar solicitud de fabricacion");
+        menuItemSolFab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemSolFabActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menuItemSolFab);
+
+        menuItemRepArt.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemRepArt.setText("Reposicion articulos de fabrica");
+        menuItemRepArt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemRepArtActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menuItemRepArt);
+
+        menuItemNewArt.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemNewArt.setText("Informacion nuevo articulo");
+        menuItemNewArt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemNewArtActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menuItemNewArt);
+
+        jMenu1.add(jMenu4);
+
+        jMenu1.add(jSeparator1);
+
+        menuItemSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemSalir.setText("Salir");
+        menuItemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemSalirActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuItemSalir);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Opciones");
+
+        menuItemConfiguracion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemConfiguracion.setText("Configuracion");
+        menuItemConfiguracion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemConfiguracionActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuItemConfiguracion);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Ayuda");
+
+        menuItemAyuda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        menuItemAyuda.setText("Acerca de ...");
+        menuItemAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemAyudaActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menuItemAyuda);
+
+        jMenuBar1.add(jMenu3);
+
+        jToolBar2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jToolBar2.setFloatable(false);
+
+        jLabel3.setText("Menu Principal");
+
+        org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel3)
+                .addContainerGap(893, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
+        );
+
+		jMenu1.setText("Archivo");
+
+		jMenuItem1.setText("Menu Principal");
+		jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem1ActionPerformed(evt);
+			}
+		});
+		jMenu1.add(jMenuItem1);
+		jMenu1.add(jSeparator2);
+
+		jMenu4.setText("Servicios");
+
+		menuItemSolDistr.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_S,
+				java.awt.event.InputEvent.CTRL_MASK));
+		menuItemSolDistr.setText("Solicitud de distribucion");
+		menuItemSolDistr.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				menuItemSolDistrActionPerformed(evt);
+			}
+		});
+		jMenu4.add(menuItemSolDistr);
+
+		menuItemEnvTienda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_E,
+				java.awt.event.InputEvent.CTRL_MASK));
+		menuItemEnvTienda.setText("Generar envio a tienda");
+		menuItemEnvTienda
+				.addActionListener(new java.awt.event.ActionListener() {
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						menuItemEnvTiendaActionPerformed(evt);
+					}
+				});
+		jMenu4.add(menuItemEnvTienda);
+
+		menuItemSolFab.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_F,
+				java.awt.event.InputEvent.CTRL_MASK));
+		menuItemSolFab.setText("Generar solicitud de fabricacion");
+		menuItemSolFab.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				menuItemSolFabActionPerformed(evt);
+			}
+		});
+		jMenu4.add(menuItemSolFab);
+
+		menuItemRepArt.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_R,
+				java.awt.event.InputEvent.CTRL_MASK));
+		menuItemRepArt.setText("Reposicion articulos de fabrica");
+		menuItemRepArt.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				menuItemRepArtActionPerformed(evt);
+			}
+		});
+		jMenu4.add(menuItemRepArt);
+
+		menuItemNewArt.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_N,
+				java.awt.event.InputEvent.CTRL_MASK));
+		menuItemNewArt.setText("Informacion nuevo articulo");
+		menuItemNewArt.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				menuItemNewArtActionPerformed(evt);
+			}
+		});
+		jMenu4.add(menuItemNewArt);
+
+		jMenu1.add(jMenu4);
+
+		jMenu1.add(jSeparator1);
+
+		menuItemSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_F4,
+				java.awt.event.InputEvent.CTRL_MASK));
+		menuItemSalir.setText("Salir");
+		menuItemSalir.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				menuItemSalirActionPerformed(evt);
+			}
+		});
+		jMenu1.add(menuItemSalir);
+
+		jMenuBar1.add(jMenu1);
+
+		jMenu2.setText("Opciones");
+
+		menuItemConfiguracion.setAccelerator(javax.swing.KeyStroke
+				.getKeyStroke(java.awt.event.KeyEvent.VK_C,
+						java.awt.event.InputEvent.CTRL_MASK));
+		menuItemConfiguracion.setText("Configuracion");
+		menuItemConfiguracion
+				.addActionListener(new java.awt.event.ActionListener() {
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						menuItemConfiguracionActionPerformed(evt);
+					}
+				});
+		jMenu2.add(menuItemConfiguracion);
+
+		jMenuBar1.add(jMenu2);
+
+		jMenu3.setText("Ayuda");
+
+		menuItemAyuda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_A,
+				java.awt.event.InputEvent.CTRL_MASK));
+		menuItemAyuda.setText("Acerca de ...");
+		menuItemAyuda.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				menuItemAyudaActionPerformed(evt);
+			}
+		});
+		jMenu3.add(menuItemAyuda);
+
+		jMenuBar1.add(jMenu3);
+
+		setJMenuBar(jMenuBar1);
+
+		jToolBar2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+		jToolBar2.setFloatable(false);
+
 		
+        jToolBar2.add(jPanel3);
+
+        
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jToolBar1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
+            .add(jToolBar2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jTabbedPane1, 0, 0, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .add(jToolBar1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jTabbedPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jToolBar2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+        );
+
+        pack();
+
 	}// </editor-fold>
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
