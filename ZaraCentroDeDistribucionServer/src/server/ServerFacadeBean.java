@@ -147,17 +147,17 @@ public class ServerFacadeBean implements ServerFacade
 
 	public int getNextIdArticuloPedido() 
 	{
-		return this.admSol.getNextIdArticuloPedido();
+		return this.admArt.getNextIdArticuloPedido();
 	}
 	
 	public int getNextIdArticuloAEnviar() 
 	{
-		return this.admSol.getNextIdArticuloAEnviar();
+		return this.admArt.getNextIdArticuloAEnviar();
 	}
 	
 	public int getNextIdArticuloAFabricar() 
 	{
-		return this.admSol.getNextIdArticuloAFabricar();
+		return this.admArt.getNextIdArticuloAFabricar();
 	}
 
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
@@ -209,11 +209,11 @@ public class ServerFacadeBean implements ServerFacade
 	}
 
 	public int getNextIdArticuloReservado() {
-		return this.admSol.getNextIdArticuloReservado();
+		return this.admArt.getNextIdArticuloReservado();
 	}
 	
 	public int getNextIdArticuloAReponer() {
-		return this.admSol.getNextIdArticuloAReponer();
+		return this.admArt.getNextIdArticuloAReponer();
 	}
 
 	public void guardarArticulosReservado(Collection<ArticuloReservadoVO> artiReser) {

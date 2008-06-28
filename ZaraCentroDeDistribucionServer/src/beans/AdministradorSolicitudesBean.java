@@ -118,7 +118,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		Query q = em.createQuery("SELECT MAX(s.idEnv) FROM SolicitudEnvioATienda s");
 		List l = q.getResultList();
 		if(l.get(0) == null){
-			return 0;
+			return 1;
 		}else{
 			int a = (Integer) l.get(0);
 			return a+1;
@@ -130,70 +130,13 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		Query q = em.createQuery("SELECT MAX(s.idFab) FROM SolicitudDeFabricacion s");
 		List l = q.getResultList();
 		if(l.get(0) == null){
-			return 0;
+			return 1;
 		}else{
 			int a = (Integer) l.get(0);
 			return a+1;
 		}
 	}
 
-	public int getNextIdArticuloReservado() {
-		Query q = em.createQuery("SELECT MAX(s.idAR) FROM ArticuloReservado s");
-		List l = q.getResultList();
-		if(l.get(0) == null){
-			return 0;
-		}else{
-			int a = (Integer) l.get(0);
-			return a+1;
-		}
-	}
-	
-	public int getNextIdArticuloPedido()
-	{
-		Query q = em.createQuery("SELECT MAX(s.idAP) FROM ArticuloPedido s");
-		List l = q.getResultList();
-		if(l.get(0) == null){
-			return 0;
-		}else{
-			int a = (Integer) l.get(0);
-			return a+1;
-		}
-	}
-	
-	public int getNextIdArticuloAReponer() {
-		Query q = em.createQuery("SELECT MAX(s.idAAR) FROM ArticuloAReponer s");
-		List l = q.getResultList();
-		if(l.get(0) == null){
-			return 0;
-		}else{
-			int a = (Integer) l.get(0);
-			return a+1;
-		}
-	}
-	
-	public int getNextIdArticuloAEnviar()
-	{
-		Query q = em.createQuery("SELECT MAX(s.idAAE) FROM ArticuloAEnviar s");
-		List l = q.getResultList();
-		if(l.get(0) == null){
-			return 0;
-		}else{
-			int a = (Integer) l.get(0);
-			return a+1;
-		}
-	}
-	
-	public int getNextIdArticuloAFabricar()
-	{
-		Query q = em.createQuery("SELECT MAX(s.id) FROM ArticuloAFabricar s");
-		List l = q.getResultList();
-		if(l.get(0) == null){
-			return 0;
-		}else{
-			int a = (Integer) l.get(0);
-			return a+1;
-		}
-	}
 
 	public boolean existeSolDis(int codigo) 
 	{
@@ -271,6 +214,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			}
 		}
 		if(aux == 0){
+			sol = new SolicitudEnvioATienda();
 			sol.setVO(solEnvio);
 			em.merge(sol);
 		}
@@ -295,7 +239,7 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		Query q = em.createQuery("SELECT MAX(s.id) FROM Solicitud s");
 		List l = q.getResultList();
 		if(l.get(0) == null){
-			return 0;
+			return 1;
 		}else{
 			int a = (Integer) l.get(0);
 			return a+1;
