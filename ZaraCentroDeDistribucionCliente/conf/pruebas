@@ -18,7 +18,7 @@ Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
   que va a ser el String que va a apendear al text area.  FIXED
 
 - mirar la salida del panel solrep en el pdf, xq dice:Mostrar por pantalla un listado de todos los artículos recibidos, e indicando los envíos
-pendientes que serán despachados.
+pendientes que serán despachados. FIXED
 
 - En el panel new art hay que ordenar el detalle porque lo muestra pero esta desordenado
 
@@ -29,7 +29,7 @@ pendientes que serán despachados.
 
 - Arreglar las fechas. Las solicitudes tienen que tener fecha FIXED
 
-- arreglar la validacion del panel sol fab
+- arreglar la validacion del panel sol fab FIXED
 
 - agregar comprobaciones al panel rep
 
