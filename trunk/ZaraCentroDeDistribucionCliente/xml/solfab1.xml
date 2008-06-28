@@ -1,6 +1,14 @@
 <solFab>
   <numero>1</numero>
+<<<<<<< .mine
+<<<<<<< .mine
+  <fecha>2008-06-24 13:00:08.635 ART</fecha>
+=======
+  <fecha>2008-06-24 12:23:30.265 ART</fecha>
+=======
   <fecha>2008-06-25 00:52:01.390 GMT</fecha>
+>>>>>>> .r365
+>>>>>>> .r350
   <centro>
     <codCentro>1</codCentro>
     <nombreCentro>Shopping Centro</nombreCentro>
@@ -14,7 +22,7 @@
   <articulosAFabricar>
     <articuloFabrica>
       <cod>1000</cod>
-      <cant>2000</cant>
+      <cant>1600</cant>
     </articuloFabrica>
     <articuloFabrica>
       <cod>1002</cod>
