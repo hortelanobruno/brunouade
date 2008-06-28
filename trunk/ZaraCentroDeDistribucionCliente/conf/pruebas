@@ -12,7 +12,7 @@ Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
 	este atributo es unico y entonces si una solicitud (la que sea) tiene el numero 1,
 	las demas no pueden usar este numero (otra solicitud de otro tipo).  FIXED
 	
-- hay que ponerle singleton al cliente
+- hay que ponerle singleton al cliente FIXED
 
 - hay que agregar lo de "ver detalle". El dialogo de 3 botones tiene que recibir una variable mas
   que va a ser el String que va a apendear al text area.  FIXED
@@ -25,18 +25,17 @@ pendientes que serán despachados.
 - Hay que agarrar las excepciones cuando se quiere leer una soldis y lees otra (y para las otras tb)
   y mostrar por pantalla un msj que diga: "Archivo incorrecto" FIXED
   
-- El dialogo de 3 botones no aparece centrado.
+- El dialogo de 3 botones no aparece centrado. FIXED
 
-- Arreglar las fechas. Las solicitudes tienen que tener fecha
+- Arreglar las fechas. Las solicitudes tienen que tener fecha FIXED
 
 - arreglar la validacion del panel sol fab
 
 - agregar comprobaciones al panel rep
 
-
-- agregar titulos donde faltan
+- agregar titulos donde faltan FIXED
 
 - si tenes iniciado el cliente y despues removes el ear, el server sigue y si quiere
 ejecutar algo del servidor putea xq no encuentra el ear, arreglarlo ya!!
 
-- agregar el tema de la fecha del xml
+- agregar el tema de la fecha del xml FIXED
