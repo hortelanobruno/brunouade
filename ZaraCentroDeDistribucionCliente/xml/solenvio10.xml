@@ -1,5 +1,5 @@
 <solEnv>
-  <numero>1</numero>
+  <numero>10</numero>
   <centro>
     <codCentro>1</codCentro>
     <nombreCentro>Shopping Centro</nombreCentro>
@@ -8,14 +8,14 @@
   </centro>
   <tienda>
     <codigoTienda>3</codigoTienda>
-    <nombreTienda>Ramos</nombreTienda>
+    <nombreTienda>palermo</nombreTienda>
   </tienda>
-  <solDis>7000</solDis>
+  <solDis>1115</solDis>
   <articulosAEnviar>
     <articuloaenviar>
-      <cod>1003</cod>
-      <cant>333</cant>
+      <cod>1103</cod>
+      <cant>30</cant>
     </articuloaenviar>
   </articulosAEnviar>
-  <fechaEmision>2008-06-29 14:31:23.546 GMT</fechaEmision>
+  <fechaEmision>2008-06-29 11:59:59.756 ART</fechaEmision>
 </solEnv>
