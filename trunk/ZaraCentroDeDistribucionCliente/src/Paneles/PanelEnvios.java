@@ -262,7 +262,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 							JOptionPane.ERROR_MESSAGE);
 					break;
 				}
-				if(stock+cantReservada<cantEnviar){
+				if(stock+cantReservada<=cantEnviar){
 					tablePendientes.getModel().setValueAt(0,i, 6);
 					JOptionPane.showMessageDialog(this,
 							"El valor ingresado es mayor al stock.",
@@ -367,6 +367,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				buttonEnviarTienda.setEnabled(false);
 				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Envio generada\n");
 				String msj = codificarDetalle(solEnvio);
+				buttonEnviarTienda.setEnabled(false);
 				new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
 			}
 		}
@@ -458,12 +459,13 @@ public class PanelEnvios extends javax.swing.JPanel {
 				}
 			}
 			((DefaultTableModel) tablePendientes.getModel())
-			.addRow(new Object[] {codigo,artPed.getArt().getDescripcion(),artPed.getCantidad(),cantres,stock,cantenv,0});
+			.addRow(new Object[] {codigo,artPed.getArt().getDescripcion(),artPed.getCantidad(),cantres,stock,cantenv,artPed.getCantidad()-cantenv});
 			artsReserv = articulosReservados2.iterator();
 			artsEnvs = artsAEnviar.iterator();
 			count++;
 			cantres = 0;
 			cantenv = 0;
+			this.validateTable();
 		}
 	}
 
