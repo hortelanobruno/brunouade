@@ -4,7 +4,7 @@
 	
 	<fechaEmision>27/06/08 23:01</fechaEmision>
 	
-	<codSolFab>1</codSolFab>
+	<codSolFab>2</codSolFab>
 	
 	<fabrica>
 		<codigoFabrica>1</codigoFabrica>
@@ -14,12 +14,12 @@
 	<articulosRecibidos>
 		<articulorecibido>
 			<codArt>1002</codArt>
-			<cant>1000</cant>
+			<cant>910</cant>
 		</articulorecibido>
 	
 		<articulorecibido>
 			<codArt>1000</codArt>
-			<cant>1000</cant>
+			<cant>440</cant>
 		</articulorecibido>
 
 	</articulosRecibidos>

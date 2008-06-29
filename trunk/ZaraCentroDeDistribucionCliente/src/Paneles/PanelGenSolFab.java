@@ -245,7 +245,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 	public void update() {
 		
 		if(cargarTabla){
-			ArrayList<ArticuloAFabricarVO> arts = this.ref.getVistaGenSolFab().getModelo().getArticulosAFabricarVO();
+			ArrayList<ArticuloAFabricarVO> arts = ((BusinessDelegate)this.ref.getVistaGenSolFab().getModelo()).getArticulosAFabricarVO();
 			if(arts.isEmpty()){
 				JOptionPane.showMessageDialog(this,
 						"No hay articulos para fabricar.",
@@ -261,10 +261,10 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		}else{
 			ArrayList<ArticuloAFabricarVO> arts = leerArticulosDeTabla();
 			SolicitudFabricaVO solFab = new SolicitudFabricaVO();
-			int id = this.ref.getVistaSolDis().getModelo().getNextId();
+			int id = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextId();
 			solFab.setId(id);
 			solFab.setArticulosAFabricar(arts);
-			CentroDistribucionVO centroVO = this.ref.getVistaGenSolFab().getModelo().getCentro();
+			CentroDistribucionVO centroVO = ((BusinessDelegate)this.ref.getVistaGenSolFab().getModelo()).getCentro();
 			solFab.setCdVO(centroVO);
 			String fab = comboFabricas.getSelectedItem().toString();
 			for(int j=0 ; j<fabricas.size() ; j++){
@@ -273,10 +273,10 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 				}
 			}
 			solFab.setFechaEmision(ref.getDate());
-			int idSolFab = this.ref.getVistaGenSolFab().getModelo().getNumeroSolFab();
+			int idSolFab = ((BusinessDelegate)this.ref.getVistaGenSolFab().getModelo()).getNumeroSolFab();
 			solFab.setIdFab(idSolFab);
 			solFab.setCerrada(false);
-			this.ref.getVistaGenSolFab().getModelo().guardarSolicitudFabricacion(solFab);
+			((BusinessDelegate)this.ref.getVistaGenSolFab().getModelo()).guardarSolicitudFabricacion(solFab);
 			vaciarTabla();
 			tablaArticulos.updateUI();
 			buttonEnviar.setEnabled(false);

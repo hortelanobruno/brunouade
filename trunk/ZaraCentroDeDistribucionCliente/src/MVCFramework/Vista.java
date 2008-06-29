@@ -8,14 +8,12 @@
 
 package MVCFramework;
 
-import BusinessLogic.BusinessDelegate;
-
 public abstract class Vista
 {
-    protected BusinessDelegate modelo;
+    protected ProxyModelo modelo;
     protected Controlador controlador;
 
-    public Vista(BusinessDelegate bd) 
+    public Vista(ProxyModelo bd) 
     {
         modelo = bd;
         bd.setVista(this);
@@ -26,7 +24,7 @@ public abstract class Vista
         controlador = cp;
     }
 
-    public BusinessDelegate getModelo() 
+    public ProxyModelo getModelo() 
     {
         return modelo;
     }
