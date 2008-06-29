@@ -1,0 +1,15 @@
+<XMLArticulo>
+	<codigo>1</codigo>
+	<descripcion>camisa</descripcion>
+	<precio>100</precio>
+	<seccion>mujer</seccion>
+	<color>blanco</color>
+	<linea>basic</linea>
+	<cantidad>10</cantidad>
+	<detalles></detalles>
+	<composicion></composicion>
+	<categoria></categoria>
+	<medidas></medidas>
+	<talle>l</talle>
+	<origen>argentina</origen>
+</XMLArticulo>

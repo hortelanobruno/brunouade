@@ -1,0 +1,15 @@
+<XMLArticulo>
+	<codigo>1002</codigo>
+	<descripcion>chomba</descripcion>
+	<precio>120</precio>
+	<seccion>hombre</seccion>
+	<color>celeste</color>
+	<linea>verano</linea>
+	<cantidad>50</cantidad>
+	<detalles></detalles>
+	<composicion></composicion>
+	<categoria></categoria>
+	<medidas></medidas>
+	<talle>s</talle>
+	<origen>argentina</origen>
+</XMLArticulo>

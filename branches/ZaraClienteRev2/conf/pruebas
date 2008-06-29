@@ -1,0 +1,41 @@
+Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
+
+
+- HAY QUE PROBAR BIEN BIEN HACIENDO MUCHAS CONSULTAS EN TODOS LOS PANELES
+
+- Si apretas en el boton cargar xml del panel new art y no elegis nada y apretas en la cruz putea.
+	(hay que arreglar para que ande el boton cancelar y aceptar) FIXED
+
+- Hay que arreglar la consola. FIXED
+
+- Problema, las solicitudes todas extienden de Solicitud y herada el atributo "numero"
+	este atributo es unico y entonces si una solicitud (la que sea) tiene el numero 1,
+	las demas no pueden usar este numero (otra solicitud de otro tipo).  FIXED
+	
+- hay que ponerle singleton al cliente FIXED
+
+- hay que agregar lo de "ver detalle". El dialogo de 3 botones tiene que recibir una variable mas
+  que va a ser el String que va a apendear al text area.  FIXED
+
+- mirar la salida del panel solrep en el pdf, xq dice:Mostrar por pantalla un listado de todos los artículos recibidos, e indicando los envíos
+pendientes que serán despachados. FIXED
+
+- En el panel new art hay que ordenar el detalle porque lo muestra pero esta desordenado FIXED
+
+- Hay que agarrar las excepciones cuando se quiere leer una soldis y lees otra (y para las otras tb)
+  y mostrar por pantalla un msj que diga: "Archivo incorrecto" FIXED
+  
+- El dialogo de 3 botones no aparece centrado. FIXED
+
+- Arreglar las fechas. Las solicitudes tienen que tener fecha FIXED
+
+- arreglar la validacion del panel sol fab FIXED
+
+- agregar comprobaciones al panel rep
+
+- agregar titulos donde faltan FIXED
+
+- si tenes iniciado el cliente y despues removes el ear, el server sigue y si quiere
+ejecutar algo del servidor putea xq no encuentra el ear, arreglarlo ya!!
+
+- agregar el tema de la fecha del xml FIXED
