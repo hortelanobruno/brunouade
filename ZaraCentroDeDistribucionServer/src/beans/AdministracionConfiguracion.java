@@ -1,12 +1,14 @@
 package beans;
 
 import java.util.ArrayList;
-import javax.ejb.Remote;
+
+import javax.ejb.Local;
+
 import VO.CentroDistribucionVO;
 import VO.FabricaVO;
 import VO.TiendaVO;
 
-@Remote
+@Local
 public interface AdministracionConfiguracion 
 {
 	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, ArrayList<String> lineasRopa, ArrayList<String> categoriasHogar);

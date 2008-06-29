@@ -2,13 +2,14 @@ package beans;
 
 import java.util.ArrayList;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
+
 import VO.SolicitudDeReposicionVO;
 import VO.SolicitudDistribucionVO;
 import VO.SolicitudEnvioVO;
 import VO.SolicitudFabricaVO;
 
-@Remote
+@Local
 public interface AdministradorSolicitudes 
 {
 	public void guardarSolicitudDistribucion(SolicitudDistribucionVO soldist);
