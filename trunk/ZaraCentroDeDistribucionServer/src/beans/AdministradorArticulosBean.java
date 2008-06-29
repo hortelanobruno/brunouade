@@ -219,7 +219,9 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			for(int j = 0 ; j < articulosReservados.size() ; j++){
 				ArticuloReservadoVO artRes = articulosReservados.get(j);
 				if(artEnv.getArt().getCodigo() == artRes.getArt().getCodigo()){
-					articulosAEnviar.get(i).setCantidadAEnviar(artEnv.getCantidadAEnviar() - artRes.getCantidadReservada());
+					if(artRes.getCantidadReservada() <= artEnv.getCantidadAEnviar()){
+						articulosAEnviar.get(i).setCantidadAEnviar(artEnv.getCantidadAEnviar() - artRes.getCantidadReservada());
+					}
 				}
 			}
 		}
@@ -230,12 +232,13 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			Articulo a = em.find(Articulo.class,avo.getArt().getCodigo());
 			if(a != null)
 			{
-				int newCant = a.getCantidad() - avo.getCantidadAEnviar();
-				a.setCantidad(newCant);
-				em.merge(a);
+				if(a.getCantidad() > 0){
+					int newCant = a.getCantidad() - avo.getCantidadAEnviar();
+					a.setCantidad(newCant);
+					em.merge(a);
+				}
 			}
 		}
-		
 	}
 
 	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis) {
