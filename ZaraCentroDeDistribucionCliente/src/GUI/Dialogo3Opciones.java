@@ -61,8 +61,7 @@ public class Dialogo3Opciones extends javax.swing.JDialog {
 		this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 		Toolkit t = Toolkit.getDefaultToolkit();
-		this.setLocation((int) (t.getScreenSize().getWidth() - this.getWidth()) / 2, 
-						 (int) (t.getScreenSize().getHeight() - this.getHeight()) / 2);
+		
 		btnPrinc.setText("Menu Principal");
 		btnPrinc.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +200,8 @@ public class Dialogo3Opciones extends javax.swing.JDialog {
 												Short.MAX_VALUE)));
 
 		pack();
+		this.setLocation((int) (t.getScreenSize().getWidth() - this.getWidth()) / 2, 
+				 (int) (t.getScreenSize().getHeight() - this.getHeight()) / 2);
 	}// </editor-fold>
 
 	private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {
