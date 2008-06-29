@@ -279,13 +279,13 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 			this.ref.getVistaGenSolFab().getModelo().guardarSolicitudFabricacion(solFab);
 			vaciarTabla();
 			tablaArticulos.updateUI();
+			buttonEnviar.setEnabled(false);
+			buttonCargarPendientes.setEnabled(true);
 			XMLWrapper xml = new XMLWrapper();
 			xml.parseXMLSolFab(solFab);
 			ref.getJTextArea1().append(ref.getDate()+": Solicitud de Fabricacion generada\n");
 			String msj = codificarDetalle(solFab);
 			new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
-			buttonEnviar.setEnabled(false);
-			buttonCargarPendientes.setEnabled(true);
 		}
 	}
 	
@@ -296,7 +296,7 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 		msj = msj + "Fecha: "+solFab.getFechaEmision().toString()+"\n";
 		msj = msj + "Fabrica: "+solFab.getFabrica().getNombreFabrica()+"\n";
 		msj = msj + "Centro Distribucion: "+solFab.getCdVO().getNombreCentro()+"\n";
-		msj = msj + "Articulos:\n ";
+		msj = msj + "Articulos:\n";
 		Iterator arts = solFab.getArticulosAFabricar().iterator();
 		while(arts.hasNext()){
 			ArticuloAFabricarVO art = (ArticuloAFabricarVO) arts.next();
@@ -308,10 +308,12 @@ public class PanelGenSolFab extends javax.swing.JPanel {
 	public ArrayList<ArticuloAFabricarVO> leerArticulosDeTabla(){
 		ArrayList<ArticuloAFabricarVO> arts = new ArrayList<ArticuloAFabricarVO>();
 		for (int i = 0 ; i < articulosAFabricar.size() ; i++){
-			ArticuloAFabricarVO artVO = articulosAFabricar.get(i);
 			int cantAFabricar = Integer.parseInt(((DefaultTableModel)tablaArticulos.getModel()).getValueAt(i, 6).toString());
-			artVO.setCantidadAFabricar(cantAFabricar);
-			arts.add(artVO);
+			if(cantAFabricar > 0){
+				ArticuloAFabricarVO artVO = articulosAFabricar.get(i);
+				artVO.setCantidadAFabricar(cantAFabricar);
+				arts.add(artVO);
+			}
 		}
 		return arts;
 	}

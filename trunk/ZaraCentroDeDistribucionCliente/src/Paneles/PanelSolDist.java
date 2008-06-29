@@ -307,7 +307,6 @@ public class PanelSolDist extends javax.swing.JPanel {
 			ref.getJTextArea1().append(ref.getDate()+": Solicitudes de Distribucion guardada en el Centro de Distribucion\n");
 			String mensaje = codificarDetalle(artiReser,artiAFab);
 			new Dialogo3Opciones("Operacion concretada", this,mensaje).setVisible(true);	
-
 		}
 	}
 	

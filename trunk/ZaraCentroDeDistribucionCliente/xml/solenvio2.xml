@@ -7,15 +7,27 @@
     <longitud>56.88752</longitud>
   </centro>
   <tienda>
-    <codigoTienda>1</codigoTienda>
-    <nombreTienda>Florida</nombreTienda>
+    <codigoTienda>3</codigoTienda>
+    <nombreTienda>Ramos</nombreTienda>
   </tienda>
-  <solDis>1002</solDis>
+  <solDis>7000</solDis>
   <articulosAEnviar>
     <articuloaenviar>
+      <cod>1002</cod>
+      <cant>5</cant>
+    </articuloaenviar>
+    <articuloaenviar>
+      <cod>1</cod>
+      <cant>50000</cant>
+    </articuloaenviar>
+    <articuloaenviar>
       <cod>1000</cod>
-      <cant>300</cant>
+      <cant>600</cant>
+    </articuloaenviar>
+    <articuloaenviar>
+      <cod>2</cod>
+      <cant>500</cant>
     </articuloaenviar>
   </articulosAEnviar>
-  <fechaEmision>2008-06-28 18:45:22.437 GMT</fechaEmision>
+  <fechaEmision>2008-06-29 14:36:07.593 GMT</fechaEmision>
 </solEnv>

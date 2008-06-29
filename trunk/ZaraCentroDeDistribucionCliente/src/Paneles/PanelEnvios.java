@@ -146,8 +146,16 @@ public class PanelEnvios extends javax.swing.JPanel {
                 java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
+            boolean[] canEdit = new boolean [] {
+                    false, false, false, false, false, false, true
+            };
+            
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         tablePendientes.setRowSelectionAllowed(false);
@@ -356,10 +364,10 @@ public class PanelEnvios extends javax.swing.JPanel {
 				XMLWrapper xml = new XMLWrapper();
 				xml.parseXMLSolEnvio(solEnvio);
 				vaciarTabla();
+				buttonEnviarTienda.setEnabled(false);
 				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Envio generada\n");
 				String msj = codificarDetalle(solEnvio);
 				new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
-				buttonEnviarTienda.setEnabled(false);
 			}
 		}
 	}

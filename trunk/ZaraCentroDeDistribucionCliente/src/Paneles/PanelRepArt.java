@@ -282,10 +282,10 @@ public class PanelRepArt extends javax.swing.JPanel {
 							long codigoSolRep = solRepVO.getIdRep();
 							String fabrica = solRepVO.getFabrica().getNombreFabrica();
 							vaciarTabla();
-							cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
-							ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion Cargada\n");
 							this.buttonGuardar.setEnabled(true);
 							this.buttonCargarXML.setEnabled(false);
+							cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
+							ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion Cargada\n");
 						}	
 					}	
 				}
