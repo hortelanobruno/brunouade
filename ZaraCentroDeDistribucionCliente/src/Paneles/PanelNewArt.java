@@ -170,6 +170,7 @@ public class PanelNewArt extends javax.swing.JPanel
 		}else{
 			//persiste articulo
 			String msj = null;
+			long codigo = 0;
 			if(((DefaultTableModel)tableArticulo.getModel()).getValueAt(0, 1).equals("Ropa")){
 				//es un articulo ropa
 				ArticuloRopaVO articulo = crearArticuloRopaVO();
@@ -177,6 +178,7 @@ public class PanelNewArt extends javax.swing.JPanel
 				{
 					((BusinessDelegate)vistaNewArt.getModelo()).guardarArticuloRopa(articulo);
 					msj = codificarDetalle(articulo);
+					codigo = articulo.getCodigo();
 				}
 				catch(ExistingProductException e)
 				{
@@ -189,6 +191,7 @@ public class PanelNewArt extends javax.swing.JPanel
 				{
 					((BusinessDelegate)vistaNewArt.getModelo()).guardarArticuloHogar(articulo);
 					msj = codificarDetalle(articulo);
+					codigo = articulo.getCodigo();
 				}
 				catch(ExistingProductException e)
 				{
@@ -196,7 +199,7 @@ public class PanelNewArt extends javax.swing.JPanel
 				}
 			}
 			vaciarTabla();
-			ref.getJTextArea1().append(ref.getDate()+": Articulo guardado en el Centro de Distribucion\n");
+			ref.getJTextArea1().append(ref.getDate()+": Articulo " + codigo +" guardado  en el Centro de Distribucion\n");
 			this.buttonCargarXML.setEnabled(true);
 			this.buttonGuardar.setEnabled(false);
 			new Dialogo3Opciones("Operacion concretada", this,msj).setVisible(true);
