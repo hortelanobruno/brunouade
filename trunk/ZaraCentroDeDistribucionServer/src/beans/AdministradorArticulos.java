@@ -3,7 +3,7 @@ package beans;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import Exceptions.ExistingProductException;
 import VO.ArticuloAEnviarVO;
@@ -15,7 +15,7 @@ import VO.ArticuloReservadoVO;
 import VO.ArticuloRopaVO;
 
 
-@Remote
+@Local
 public interface AdministradorArticulos 
 {
 
