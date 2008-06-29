@@ -202,8 +202,13 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			ArticuloReservado aR = em.find(ArticuloReservado.class, art.getIdAR());
 			if(aR != null)
 			{
-				aR.setVO(art);
-				em.remove(aR);
+				if(art.getCantidadReservada() == aR.getCantidadReservada())
+					em.remove(aR);
+				else
+				{
+					aR.setCantidadReservada(aR.getCantidadReservada()-art.getCantidadReservada());
+					em.merge(aR);
+				}
 			}
 		}
 	}
