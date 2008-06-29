@@ -20,7 +20,7 @@ Este archivo contiene pruebas que hay que arreglar y si estan corregidas o no.
 - mirar la salida del panel solrep en el pdf, xq dice:Mostrar por pantalla un listado de todos los artículos recibidos, e indicando los envíos
 pendientes que serán despachados. FIXED
 
-- En el panel new art hay que ordenar el detalle porque lo muestra pero esta desordenado
+- En el panel new art hay que ordenar el detalle porque lo muestra pero esta desordenado FIXED
 
 - Hay que agarrar las excepciones cuando se quiere leer una soldis y lees otra (y para las otras tb)
   y mostrar por pantalla un msj que diga: "Archivo incorrecto" FIXED
