@@ -1,6 +1,6 @@
 <solFab>
   <numero>2</numero>
-  <fecha>2008-06-29 12:30:59.344 ART</fecha>
+  <fecha>2008-06-29 22:34:13.281 GMT</fecha>
   <centro>
     <codCentro>1</codCentro>
     <nombreCentro>Shopping Centro</nombreCentro>
@@ -13,12 +13,8 @@
   </fabrica>
   <articulosAFabricar>
     <articuloFabrica>
-      <cod>1000</cod>
-      <cant>440</cant>
-    </articuloFabrica>
-    <articuloFabrica>
-      <cod>1002</cod>
-      <cant>910</cant>
+      <cod>1100</cod>
+      <cant>2000</cant>
     </articuloFabrica>
   </articulosAFabricar>
 </solFab>
