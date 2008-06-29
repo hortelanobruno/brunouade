@@ -248,10 +248,9 @@ public class PanelEnvios extends javax.swing.JPanel {
 			if (cantEnviar != 0){
 				if(cantEnviar<0){
 					tablePendientes.getModel().setValueAt(0,i, 6);
-					JOptionPane.showMessageDialog(this,
-							"El valor ingresado tiene que ser un numero positivo.",
-							Constantes.APPLICATION_NAME,
-							JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(this,"" +
+					"El valor ingresado tiene que ser un numero positivo.",
+					Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 					break;
 				}
 				if(cantPedida<cantEnviar+cantEnviada){
@@ -262,7 +261,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 							JOptionPane.ERROR_MESSAGE);
 					break;
 				}
-				if(stock+cantReservada<=cantEnviar){
+				if(stock+cantReservada<cantEnviar){
 					tablePendientes.getModel().setValueAt(0,i, 6);
 					JOptionPane.showMessageDialog(this,
 							"El valor ingresado es mayor al stock.",
@@ -343,7 +342,7 @@ public class PanelEnvios extends javax.swing.JPanel {
 				ref.getJTextArea1().append(ref.getDate()+": Solicitud de Distribucion cargada\n");
 			}else{
 				SolicitudEnvioVO solEnvio = new SolicitudEnvioVO();
-				int id = this.ref.getVistaSolDis().getModelo().getNextId();
+				int id = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextId();
 				solEnvio.setId(id);
 				int idAE = ((BusinessDelegate) vistaEnvios.getModelo()).getNextIdAEnv();
 				ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE);
@@ -357,8 +356,18 @@ public class PanelEnvios extends javax.swing.JPanel {
 				if (cerrado){
 					solDis.setCerrada(cerrado);
 				}
+				ArrayList<ArticuloReservadoVO> arts2 = articulosReservados;   //ACA TOQUE
+				int index = 0;
+				for(int i = 0 ; i < tablePendientes.getRowCount() ; i++)
+				{
+					int enviar = Integer.parseInt(tablePendientes.getModel().getValueAt(
+							i, 6).toString());
+					int reservada = Integer.parseInt(tablePendientes.getModel().getValueAt(
+							i, 3).toString());
+					articulosReservados.get(index++).setCantidadReservada(reservada-enviar);
+				}
 				((BusinessDelegate) vistaEnvios.getModelo()).guardarSolicitudDeEnvio(solEnvio);
-				((BusinessDelegate) vistaEnvios.getModelo()).actualizarStock(articulosAEnviar,articulosReservados);
+				((BusinessDelegate) vistaEnvios.getModelo()).actualizarStock(articulosAEnviar,arts2);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarArticulosReservados(articulosReservados);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarSolicitudDistribucion(solDis);
 				XMLWrapper xml = new XMLWrapper();
@@ -458,14 +467,15 @@ public class PanelEnvios extends javax.swing.JPanel {
 					break;
 				}
 			}
+			//int numero = artPed.getCantidad()-cantenv;
+			//if(numero > stock)numero= stock;
 			((DefaultTableModel) tablePendientes.getModel())
-			.addRow(new Object[] {codigo,artPed.getArt().getDescripcion(),artPed.getCantidad(),cantres,stock,cantenv,artPed.getCantidad()-cantenv});
+			.addRow(new Object[] {codigo,artPed.getArt().getDescripcion(),artPed.getCantidad(),cantres,stock,cantenv,0});
 			artsReserv = articulosReservados2.iterator();
 			artsEnvs = artsAEnviar.iterator();
 			count++;
 			cantres = 0;
 			cantenv = 0;
-			this.validateTable();
 		}
 	}
 

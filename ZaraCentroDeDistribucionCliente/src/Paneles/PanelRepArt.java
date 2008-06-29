@@ -243,8 +243,8 @@ public class PanelRepArt extends javax.swing.JPanel {
 							JOptionPane.showMessageDialog(this,"La solicitud contiene articulos que no existen en el Centro de Distribucion\n" +
 									"("+codsfalse+")",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 						}else{
-							int idAR = this.ref.getVistaSolDis().getModelo().getNextIdARep();
-							int id = this.ref.getVistaSolDis().getModelo().getNextId();
+							int idAR = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextIdARep();
+							int id = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextId();
 							solRepVO.setId(id);
 							Iterator itit = solRepVO.getArticulosAReponer().iterator();
 							ArrayList<ArticuloAReponerVO> artsRep = new ArrayList<ArticuloAReponerVO>();
@@ -256,7 +256,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 							}
 							solRepVO.setArticulosAReponer(artsRep);
 							
-							ArrayList<ArticuloHeaderVO> articulos = this.ref.getVistaRepArt().getModelo().getArticulos(codigos);				
+							ArrayList<ArticuloHeaderVO> articulos = ((BusinessDelegate)this.ref.getVistaRepArt().getModelo()).getArticulos(codigos);				
 							Iterator itit2 = solRepVO.getArticulosAReponer().iterator();
 							Collection<ArticuloAReponerVO> artsReVO = new ArrayList<ArticuloAReponerVO>();
 							while(itit2.hasNext()){
@@ -275,9 +275,9 @@ public class PanelRepArt extends javax.swing.JPanel {
 								descripciones.add(articulos.get(k).getDescripcion());
 							}
 							int idSolFab = solRepVO.getSolFab().getIdFab();
-							solFabVO = this.ref.getVistaRepArt().getModelo().getSolicitudFabricacion(idSolFab);
+							solFabVO = ((BusinessDelegate)this.ref.getVistaRepArt().getModelo()).getSolicitudFabricacion(idSolFab);
 							solRepVO.setSolFab(solFabVO);
-							CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
+							CentroDistribucionVO centroVO = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getCentro();
 							solRepVO.setCdVO(centroVO);
 							long codigoSolRep = solRepVO.getIdRep();
 							String fabrica = solRepVO.getFabrica().getNombreFabrica();
@@ -293,7 +293,7 @@ public class PanelRepArt extends javax.swing.JPanel {
 		}else{
 			//Falta generar las solicitudes
 			ArrayList<ArticuloAReponerVO> artsRep = collectionToArrayList(solRepVO.getArticulosAReponer());
-			this.ref.getVistaRepArt().getModelo().guardarSolicitudReposicion(solRepVO);
+			((BusinessDelegate)this.ref.getVistaRepArt().getModelo()).guardarSolicitudReposicion(solRepVO);
 			Iterator artFab = solFabVO.getArticulosAFabricar().iterator();
 			boolean aux = true;
 			while(artFab.hasNext()){
@@ -303,8 +303,8 @@ public class PanelRepArt extends javax.swing.JPanel {
 				}
 			}
 			solFabVO.setCerrada(aux);
-			this.ref.getVistaRepArt().getModelo().actualizarSolicitudFabricacion(solFabVO);
-			this.ref.getVistaRepArt().getModelo().actualizarStock(artsRep);
+			((BusinessDelegate)this.ref.getVistaRepArt().getModelo()).actualizarSolicitudFabricacion(solFabVO);
+			((BusinessDelegate)this.ref.getVistaRepArt().getModelo()).actualizarStock(artsRep);
 			vaciarTabla();
 			ref.getJTextArea1().append(ref.getDate()+": Solicitudes de Reposicion guardada en el Centro de Distribucion\n");
 			this.buttonGuardar.setEnabled(false);

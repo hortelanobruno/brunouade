@@ -10,20 +10,16 @@
     <codigoTienda>1</codigoTienda>
     <nombreTienda>Florida</nombreTienda>
   </tienda>
-  <solDis>1112</solDis>
+  <solDis>1002</solDis>
   <articulosAEnviar>
     <articuloaenviar>
-      <cod>1103</cod>
-      <cant>1</cant>
+      <cod>1000</cod>
+      <cant>400</cant>
     </articuloaenviar>
     <articuloaenviar>
-      <cod>1101</cod>
-      <cant>52</cant>
-    </articuloaenviar>
-    <articuloaenviar>
-      <cod>1102</cod>
-      <cant>1</cant>
+      <cod>1002</cod>
+      <cant>500</cant>
     </articuloaenviar>
   </articulosAEnviar>
-  <fechaEmision>2008-06-29 14:40:58.609 GMT</fechaEmision>
+  <fechaEmision>2008-06-29 12:33:44.377 ART</fechaEmision>
 </solEnv>

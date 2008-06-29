@@ -12,17 +12,17 @@
 	<articulospedidos>
 		<articulopedido>
 			<cod>1100</cod>
-			<cant>1</cant>
+			<cant>100</cant>
 		</articulopedido>
 		
 		<articulopedido>
 			<cod>1102</cod>
-			<cant>5</cant>
+			<cant>500</cant>
 		</articulopedido>
 		
 		<articulopedido>
 			<cod>1002</cod>
-			<cant>60</cant>
+			<cant>600</cant>
 		</articulopedido>
 	</articulospedidos>
 	

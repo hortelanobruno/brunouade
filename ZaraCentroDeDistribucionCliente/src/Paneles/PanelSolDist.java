@@ -253,7 +253,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 					JOptionPane.showMessageDialog(this,"La Solicitud de Distribucion ya existe",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 				}else{
 					ArrayList<Long> codigos = new ArrayList<Long>();
-					int idMax = this.ref.getVistaSolDis().getModelo().getNextIdArtPed();
+					int idMax = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextIdArtPed();
 					Iterator arts = (Iterator) solDisVO.getArticulosPedidos().iterator();
 					ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
 					while (arts.hasNext()) {
@@ -277,14 +277,14 @@ public class PanelSolDist extends javax.swing.JPanel {
 								"("+codsfalse+")",Constantes.APPLICATION_NAME,JOptionPane.ERROR_MESSAGE);
 					}else{
 						solDisVO.setArticulosPedidos(artsVO);
-						int id = this.ref.getVistaSolDis().getModelo().getNextId();
+						int id = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextId();
 						//id++;
 						solDisVO.setId(id);
 						//solDisVO.setFechaEmision(ref.getDate());
-						ArrayList<String> descripciones = this.ref.getVistaSolDis()
-								.getModelo().getDescripciones(codigos);
-						ArrayList<Integer> stocks = this.ref.getVistaSolDis().getModelo().getStocks(codigos) ;
-						CentroDistribucionVO centroVO = this.ref.getVistaSolDis().getModelo().getCentro();
+						ArrayList<String> descripciones = ((BusinessDelegate)this.ref.getVistaSolDis()
+								.getModelo()).getDescripciones(codigos);
+						ArrayList<Integer> stocks = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getStocks(codigos) ;
+						CentroDistribucionVO centroVO = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getCentro();
 						solDisVO.setCdVO(centroVO);
 						solDisVO.setCerrada(false);
 						cargarTable(solDisVO, codigos, descripciones, stocks);
@@ -332,7 +332,7 @@ public class PanelSolDist extends javax.swing.JPanel {
 	public Collection<ArticuloReservadoVO> articulosEnviarDeTabla() {
 		Collection<ArticuloReservadoVO> art = new ArrayList<ArticuloReservadoVO>();
 		ArticuloHeaderVO arti;
-		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdARes();
+		int idMax = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextIdARes();
 		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
 			int cant = Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString());
 			if(cant > 0){
@@ -352,15 +352,10 @@ public class PanelSolDist extends javax.swing.JPanel {
 		return art;
 	}
 
-	/*
-	 * Falta completar la linea comentada
-	 * 
-	 * la fabrica se va obtener de un combo
-	 */
 	public Collection<ArticuloAFabricarVO> articulosFabricarDeTabla() {
 		Collection<ArticuloAFabricarVO> art = new ArrayList<ArticuloAFabricarVO>();
 		ArticuloHeaderVO arti;
-		int idMax = this.ref.getVistaSolDis().getModelo().getNextIdAFab();
+		int idMax = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextIdAFab();
 		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
 			int ped = Integer.parseInt((((DefaultTableModel) tableArticulos
 					.getModel()).getValueAt(i, 4)).toString());
