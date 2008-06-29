@@ -1,0 +1,29 @@
+<solEnv>
+  <numero>3</numero>
+  <centro>
+    <codCentro>1</codCentro>
+    <nombreCentro>Shopping Centro</nombreCentro>
+    <latitud>34.90417</latitud>
+    <longitud>56.88752</longitud>
+  </centro>
+  <tienda>
+    <codigoTienda>1</codigoTienda>
+    <nombreTienda>Florida</nombreTienda>
+  </tienda>
+  <solDis>1112</solDis>
+  <articulosAEnviar>
+    <articuloaenviar>
+      <cod>1103</cod>
+      <cant>1</cant>
+    </articuloaenviar>
+    <articuloaenviar>
+      <cod>1101</cod>
+      <cant>52</cant>
+    </articuloaenviar>
+    <articuloaenviar>
+      <cod>1102</cod>
+      <cant>1</cant>
+    </articuloaenviar>
+  </articulosAEnviar>
+  <fechaEmision>2008-06-29 14:40:58.609 GMT</fechaEmision>
+</solEnv>

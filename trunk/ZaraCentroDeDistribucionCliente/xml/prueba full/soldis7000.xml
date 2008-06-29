@@ -1,0 +1,39 @@
+<solicituddistribucion>
+
+	<numero>7000</numero>
+	
+	<tienda>
+		<codigoTienda>3</codigoTienda>
+		<nombreTienda>Ramos</nombreTienda>
+	</tienda>
+	
+	<fechaEmision>27/06/08 23:01</fechaEmision>
+
+	<articulospedidos>
+		<articulopedido>
+			<cod>1003</cod>
+			<cant>333</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1002</cod>
+			<cant>5</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1</cod>
+			<cant>50000</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1000</cod>
+			<cant>600</cant>
+		</articulopedido>
+				
+		<articulopedido>
+			<cod>2</cod>
+			<cant>500</cant>
+		</articulopedido>
+	</articulospedidos>
+	
+</solicituddistribucion>
