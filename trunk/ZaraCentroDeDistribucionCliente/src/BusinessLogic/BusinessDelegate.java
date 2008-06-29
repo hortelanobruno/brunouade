@@ -83,8 +83,6 @@ public class BusinessDelegate extends ProxyModelo
 			props.put(InitialContext.PROVIDER_URL,"jnp://127.0.0.1:1099");
 			InitialContext context = new InitialContext(props);
 			this.modCD = (ServerFacade) context.lookup(naming);
-			
-
         } catch (Exception e) {
         	throw new ErrorConectionException("No se pudo conectar");
         }
