@@ -10,28 +10,20 @@
     <codigoTienda>3</codigoTienda>
     <nombreTienda>Ramos</nombreTienda>
   </tienda>
-  <solDis>7000</solDis>
+  <solDis>7001</solDis>
   <articulosAEnviar>
     <articuloaenviar>
       <cod>1003</cod>
-      <cant>333</cant>
+      <cant>1000</cant>
     </articuloaenviar>
     <articuloaenviar>
       <cod>1002</cod>
-      <cant>5</cant>
+      <cant>800</cant>
     </articuloaenviar>
     <articuloaenviar>
       <cod>1</cod>
-      <cant>30000</cant>
-    </articuloaenviar>
-    <articuloaenviar>
-      <cod>1000</cod>
-      <cant>600</cant>
-    </articuloaenviar>
-    <articuloaenviar>
-      <cod>2</cod>
-      <cant>500</cant>
+      <cant>300</cant>
     </articuloaenviar>
   </articulosAEnviar>
-  <fechaEmision>2008-06-29 21:34:24.656 GMT</fechaEmision>
+  <fechaEmision>2008-06-29 22:32:23.281 GMT</fechaEmision>
 </solEnv>

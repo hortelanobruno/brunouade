@@ -182,7 +182,6 @@ public class PanelRepArt extends javax.swing.JPanel {
 			while (iteradorRep.hasNext()) {
 				ArticuloAReponerVO arti = (((ArticuloAReponerVO) iteradorRep.next()));
 				if((arti.getArt().getCodigo()) == codigos.get(i)){
-					cargarArticuloEnSolFab(arti);
 					cantidadareponer = arti.getCantidad();
 				}
 			}
@@ -285,6 +284,14 @@ public class PanelRepArt extends javax.swing.JPanel {
 							this.buttonGuardar.setEnabled(true);
 							this.buttonCargarXML.setEnabled(false);
 							cargarTable(codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
+							Iterator it = solRepVO.getArticulosAReponer().iterator();
+							while(it.hasNext()){
+								ArticuloAReponerVO arti = (ArticuloAReponerVO) it.next();
+								cargarArticuloEnSolFab(arti);	
+							}
+							
+							
+							
 							ref.getJTextArea1().append(ref.getDate()+": Solicitud de Reposicion Cargada\n");
 						}	
 					}	
