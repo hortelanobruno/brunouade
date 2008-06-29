@@ -598,7 +598,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
-        buttonSolDist.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\showchild_mode.gif")); // NOI18N
+        buttonSolDist.setIcon(new javax.swing.ImageIcon(".\\icons\\showchild_mode.gif")); // NOI18N
         buttonSolDist.setText("Solicitud de Distribucion");
         buttonSolDist.setFocusable(false);
         buttonSolDist.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -610,7 +610,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonSolDist);
 
-        buttonEnvTienda.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\forward_nav.gif")); // NOI18N
+        buttonEnvTienda.setIcon(new javax.swing.ImageIcon(".\\icons\\forward_nav.gif")); // NOI18N
         buttonEnvTienda.setText("Envios a Tienda");
         buttonEnvTienda.setFocusable(false);
         buttonEnvTienda.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -622,7 +622,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonEnvTienda);
 
-        buttonSolFabr.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\addtsk_tsk.gif")); // NOI18N
+        buttonSolFabr.setIcon(new javax.swing.ImageIcon(".\\icons\\addtsk_tsk.gif")); // NOI18N
         buttonSolFabr.setText("Solicitud de Fabricacion");
         buttonSolFabr.setFocusable(false);
         buttonSolFabr.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -634,7 +634,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonSolFabr);
 
-        buttonRepArt.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\import_wiz.gif")); // NOI18N
+        buttonRepArt.setIcon(new javax.swing.ImageIcon(".\\icons\\import_wiz.gif")); // NOI18N
         buttonRepArt.setText("Reposicion de Articulos");
         buttonRepArt.setFocusable(false);
         buttonRepArt.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -646,7 +646,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonRepArt);
 
-        buttonNewArt.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\file_obj.gif")); // NOI18N
+        buttonNewArt.setIcon(new javax.swing.ImageIcon(".\\icons\\file_obj.gif")); // NOI18N
         buttonNewArt.setText("Nuevo Articulo");
         buttonNewArt.setFocusable(false);
         buttonNewArt.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -676,7 +676,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jToolBar1.add(jPanel4);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Administrador\\Mis documentos\\workspace\\NetBeans\\ZaraClienteJRE1.5\\icons\\background.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(".\\icons\\background.jpg")); // NOI18N
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

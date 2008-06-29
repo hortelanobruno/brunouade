@@ -207,17 +207,17 @@ public class PanelNewArt extends javax.swing.JPanel
 	private String codificarDetalle(ArticuloHogarVO articulo) {
 		String msj = new String();
 		msj = "Articulo Nuevo: \n\n";
-		msj = msj + "Cantidad: "+articulo.getCantidad()+"\n";
-		msj = msj + "Categoria: "+articulo.getCategoria()+"\n";
 		msj = msj + "Codigo: "+articulo.getCodigo()+"\n";
-		msj = msj + "Color: "+articulo.getColor()+"\n";
-		msj = msj + "Composicion: "+articulo.getComposicion()+"\n";
 		msj = msj + "Descipcion: "+articulo.getDescripcion()+"\n";
 		msj = msj + "Detalles: "+articulo.getDetalles()+"\n";
-		msj = msj + "Linea: "+articulo.getLinea()+"\n";
-		msj = msj + "Medidas: "+articulo.getMedidas()+"\n";
+		msj = msj + "Cantidad: "+articulo.getCantidad()+"\n";
 		msj = msj + "Precio: "+articulo.getPrecio()+"\n";
+		msj = msj + "Linea: "+articulo.getLinea()+"\n";
+		msj = msj + "Categoria: "+articulo.getCategoria()+"\n";
 		msj = msj + "Seccion: "+articulo.getSeccion()+"\n";
+		msj = msj + "Color: "+articulo.getColor()+"\n";
+		msj = msj + "Composicion: "+articulo.getComposicion()+"\n";
+		msj = msj + "Medidas: "+articulo.getMedidas()+"\n";	
 		return msj;
 	}
 
@@ -225,14 +225,14 @@ public class PanelNewArt extends javax.swing.JPanel
 	private String codificarDetalle(ArticuloRopaVO articulo) {
 		String msj = new String();
 		msj = "Articulo Nuevo: \n\n";
-		msj = msj + "Cantidad: "+articulo.getCantidad()+"\n";
 		msj = msj + "Codigo: "+articulo.getCodigo()+"\n";
-		msj = msj + "Color: "+articulo.getColor()+"\n";
 		msj = msj + "Descripcion: "+articulo.getDescripcion()+"\n";
-		msj = msj + "Linea: "+articulo.getLinea()+"\n";
-		msj = msj + "Origen: "+articulo.getOrigen()+"\n";
+		msj = msj + "Cantidad: "+articulo.getCantidad()+"\n";
 		msj = msj + "Precio: "+articulo.getPrecio()+"\n";
+		msj = msj + "Linea: "+articulo.getLinea()+"\n";
 		msj = msj + "Seccion: "+articulo.getSeccion()+"\n";
+		msj = msj + "Color: "+articulo.getColor()+"\n";
+		msj = msj + "Origen: "+articulo.getOrigen()+"\n";	
 		msj = msj + "Talle: "+articulo.getTalle()+"\n";
 		return msj;
 	}
