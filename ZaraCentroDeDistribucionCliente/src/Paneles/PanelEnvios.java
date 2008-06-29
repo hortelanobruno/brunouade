@@ -356,18 +356,22 @@ public class PanelEnvios extends javax.swing.JPanel {
 				if (cerrado){
 					solDis.setCerrada(cerrado);
 				}
-				ArrayList<ArticuloReservadoVO> arts2 = articulosReservados;   //ACA TOQUE
-				int index = 0;
+				((BusinessDelegate) vistaEnvios.getModelo()).guardarSolicitudDeEnvio(solEnvio);
+				((BusinessDelegate) vistaEnvios.getModelo()).actualizarStock(articulosAEnviar,articulosReservados);
 				for(int i = 0 ; i < tablePendientes.getRowCount() ; i++)
 				{
-					int enviar = Integer.parseInt(tablePendientes.getModel().getValueAt(
-							i, 6).toString());
-					int reservada = Integer.parseInt(tablePendientes.getModel().getValueAt(
-							i, 3).toString());
-					articulosReservados.get(index++).setCantidadReservada(reservada-enviar);
+					long codd = Long.parseLong(tablePendientes.getModel().getValueAt(
+							i, 0).toString());
+					for(int r=0 ; r < articulosReservados.size() ; r++ ){
+						if(codd == articulosReservados.get(r).getArt().getCodigo()){
+							int enviar = Integer.parseInt(tablePendientes.getModel().getValueAt(
+									i, 6).toString());
+							if(enviar < articulosReservados.get(r).getCantidadReservada()){
+								articulosReservados.get(r).setCantidadReservada(enviar);
+							}
+						}
+					}
 				}
-				((BusinessDelegate) vistaEnvios.getModelo()).guardarSolicitudDeEnvio(solEnvio);
-				((BusinessDelegate) vistaEnvios.getModelo()).actualizarStock(articulosAEnviar,arts2);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarArticulosReservados(articulosReservados);
 				((BusinessDelegate) vistaEnvios.getModelo()).actualizarSolicitudDistribucion(solDis);
 				XMLWrapper xml = new XMLWrapper();
