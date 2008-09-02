@@ -10,7 +10,7 @@
 	</module>
 	<module>
 		<web>
-			<web-uri>ZaraCentroDeDistribucionWEB.war</web-uri>
+			<web-uri>ServerWEB.war</web-uri>
 			<context-root>/centro</context-root>
 		</web>
 	</module>
