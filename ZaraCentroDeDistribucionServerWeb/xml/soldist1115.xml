@@ -1,0 +1,29 @@
+<solicituddistribucion>
+
+	<numero>1115</numero>
+	
+	<tienda>
+		<codigoTienda>3</codigoTienda>
+		<nombreTienda>palermo</nombreTienda>
+	</tienda>
+	
+	<fechaEmision>27/06/08 23:01</fechaEmision>
+
+	<articulospedidos>
+		<articulopedido>
+			<cod>1100</cod>
+			<cant>10</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1103</cod>
+			<cant>30</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1101</cod>
+			<cant>6</cant>
+		</articulopedido>
+	</articulospedidos>
+	
+</solicituddistribucion>

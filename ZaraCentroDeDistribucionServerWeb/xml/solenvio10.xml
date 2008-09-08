@@ -1,0 +1,21 @@
+<solEnv>
+  <numero>10</numero>
+  <centro>
+    <codCentro>1</codCentro>
+    <nombreCentro>Shopping Centro</nombreCentro>
+    <latitud>34.90417</latitud>
+    <longitud>56.88752</longitud>
+  </centro>
+  <tienda>
+    <codigoTienda>3</codigoTienda>
+    <nombreTienda>palermo</nombreTienda>
+  </tienda>
+  <solDis>1115</solDis>
+  <articulosAEnviar>
+    <articuloaenviar>
+      <cod>1103</cod>
+      <cant>30</cant>
+    </articuloaenviar>
+  </articulosAEnviar>
+  <fechaEmision>2008-06-29 11:59:59.756 ART</fechaEmision>
+</solEnv>

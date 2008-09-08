@@ -1,0 +1,15 @@
+<XMLArticulo>
+	<codigo>1100</codigo>
+	<descripcion>florero</descripcion>
+	<precio>200</precio>
+	<seccion>decoracion</seccion>
+	<color>blanco</color>
+	<linea>nueva</linea>
+	<cantidad>50</cantidad>
+	<detalles>florero con plantitas</detalles>
+	<composicion>porcelana</composicion>
+	<categoria>casa</categoria>
+	<medidas>5x2</medidas>
+	<talle></talle>
+	<origen></origen>
+</XMLArticulo>

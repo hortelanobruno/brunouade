@@ -1,0 +1,29 @@
+<solEnv>
+  <numero>3</numero>
+  <centro>
+    <codCentro>1</codCentro>
+    <nombreCentro>Shopping Centro</nombreCentro>
+    <latitud>34.90417</latitud>
+    <longitud>56.88752</longitud>
+  </centro>
+  <tienda>
+    <codigoTienda>3</codigoTienda>
+    <nombreTienda>Ramos</nombreTienda>
+  </tienda>
+  <solDis>7002</solDis>
+  <articulosAEnviar>
+    <articuloaenviar>
+      <cod>1100</cod>
+      <cant>1000</cant>
+    </articuloaenviar>
+    <articuloaenviar>
+      <cod>2</cod>
+      <cant>800</cant>
+    </articuloaenviar>
+    <articuloaenviar>
+      <cod>1102</cod>
+      <cant>300</cant>
+    </articuloaenviar>
+  </articulosAEnviar>
+  <fechaEmision>2008-06-29 22:06:41.593 GMT</fechaEmision>
+</solEnv>
