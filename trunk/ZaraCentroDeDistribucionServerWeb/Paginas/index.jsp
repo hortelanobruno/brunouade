@@ -6,36 +6,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>.:: Zara - Centro de Distribución ::. </title>
 <link rel="StyleSheet" href="estilos.css" type="text/css">
-<script type="text/javascript">
-
-function getFecha_Hora()
-{
-	var ahora = new Date()  
-	document.write(ahora.getDate())  
-	document.write("/")  
-	document.write(ahora.getMonth() + 1)  
-	document.write("/")  
-	document.write(ahora.getFullYear())  
-	document.write("<br>")
-	document.write(ahora.getHours())
-	document.write(":")  
-	document.write(ahora.getMinutes())
-	document.write(":") 
-	document.write(ahora.getSeconds()) 
-}
-
+<script type="text/javascript" src="js/hora.js">
 </script>
 </head>
 <body>
-	<table border="1" width="100%" height="100%">
 	
 		<%@ include file="top.jsp" %>
 		
 		<tr height="500">
-			<td colspan="2" align="center">aa</td>
+			<td colspan="2" align="center">
+			<h1>Centro de Distribucion Uruguay</h1></td>
 		</tr>
 		
 		<%@ include file="footer.jsp" %>
-	</table>
 </body>
 </html>

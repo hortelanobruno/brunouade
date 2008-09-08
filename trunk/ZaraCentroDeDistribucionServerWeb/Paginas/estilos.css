@@ -22,3 +22,16 @@
 #menuhorizontal li {
   display:inline;
 }
+
+#tablaDatos table{
+ background-color:#000000;
+border:0;
+}
+
+#tablaDatos tr{
+background-color:#f7f8e8;
+}
+
+#tablaDatos td,th{
+width:100px;
+}

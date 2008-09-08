@@ -1,0 +1,15 @@
+function getFecha_Hora()
+{
+	var ahora = new Date()  
+	document.write(ahora.getDate())  
+	document.write("/")  
+	document.write(ahora.getMonth() + 1)  
+	document.write("/")  
+	document.write(ahora.getFullYear())  
+	document.write("<br>")
+	document.write(ahora.getHours())
+	document.write(":")  
+	document.write(ahora.getMinutes())
+	document.write(":") 
+	document.write(ahora.getSeconds()) 
+}
