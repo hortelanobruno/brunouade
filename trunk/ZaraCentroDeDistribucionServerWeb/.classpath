@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.jboss.ide.eclipse.jdt.aop.core.classpath.AOP_15_CONTAINER"/>
-	<classpathentry kind="con" path="org.jboss.ide.eclipse.jdt.ejb3.wizards.core.classpath.EJB3_CONTAINER/JBoss"/>
+	<classpathentry kind="con" path="org.jboss.ide.eclipse.jdt.ejb3.wizards.core.classpath.EJB3_CONTAINER/ServerJBoss"/>
 	<classpathentry kind="con" path="org.jboss.ide.eclipse.jdt.core.classpath.j2ee-1.4"/>
 	<classpathentry kind="lib" path="lib/xstream-1.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
