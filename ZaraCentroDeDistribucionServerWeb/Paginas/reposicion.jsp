@@ -13,6 +13,8 @@
 		
 		<tr height="500">
 			<td colspan="2" align="center">
+            <h1>Reponer articulos</h1>
+            <br><br><br>
 			<div id="tablaDatos">			
 				<table cellpadding="1" cellspacing="1">
 					<tr>

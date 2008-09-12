@@ -13,29 +13,25 @@
 
 		<%@ include file="top.jsp" %>	
         
+        
         <tr height="500px">
 			<td colspan="2" align="center">
 
-           <table>
-              <tr>
-                <td colspan="2">Tienda &nbsp;&nbsp;&nbsp;&nbsp; 
-                      <select name="nn" id="nn">
-                        <option value="Florida">Florida</option>
-                        <option value="Palermo">Palermo</option>
-                      
-                      </select>    </td>
-              </tr>
+           <table cellpadding="10" cellspacing="10">
+<tr>
+                <td colspan="2" align="center"><h1>Generar envios</h1></td>
+             </tr>
               <tr height="20px">
               </tr>
               <tr>
                 <td width="200">
-                  <select name="listaSolicitudesEnvio" size="10" style="width:150px" id="listaSolicitudesEnvio">
-                    <option value="10001">10001</option>
-                    <option value="10002">10002</option>
-                    <option value="10003">10003</option>
-                    <option value="10005">10005</option>
+                  <select name="listaSolicitudesEnvio" size="10" style="width:220px" id="listaSolicitudesEnvio">
+                    <option value="10001">Cod: 10001 - Tienda: Florida</option>
+                    <option value="10002">Cod: 10002 - Tienda: Florida</option>
+                    <option value="10003">Cod: 10003 - Tienda: Florida</option>
+                    <option value="10005">Cod: 10005 - Tienda: Palermo</option>
                   </select>    </td>
-                <td width="500">
+                <td width="500" valign="top">
                 <div id="tablaDatos">
                 <table width="100%">
                   <tr>
@@ -45,7 +41,6 @@
                     <th>Cantidad reservada</th>
                     <th>Stock</th>
                     <th>Cantidad enviada</th>
-                    <th>Cantidad a enviar</th>
                   </tr>
                   
                   <tr>
@@ -55,7 +50,6 @@
                     <td>10</td>
                     <td>50</td>
                     <td>0</td>
-                    <td>20</td>
                   </tr>
                   
                   <tr>
@@ -64,7 +58,6 @@
                     <td>300</td>
                     <td>100</td>
                     <td>1000</td>
-                    <td>100</td>
                     <td>100</td>
                   </tr>
                   
@@ -75,12 +68,11 @@
                     <td>20</td>
                     <td>120</td>
                     <td>10</td>
-                    <td>50</td>
                   </tr>
                 </table>
                 </div>
                 </td>
-              </tr>
+             </tr>
               <tr height="20px">
               </tr>
               <tr>
@@ -90,7 +82,7 @@
               </tr>
             </table> 
            
-            </td>
+          </td>
         </tr>
         
         <%@ include file="footer.jsp" %>

@@ -13,6 +13,8 @@
 		
 		<tr height="500">
 			<td colspan="2" align="center">
+            <h1>Pedidos atendidos</h1>
+            <br><br><br>
 				<div id="tablaDatos">
                 <table width="100%">
                   <tr>
