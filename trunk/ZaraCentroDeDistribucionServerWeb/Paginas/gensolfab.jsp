@@ -15,7 +15,7 @@
 		
 		<tr height="500px">
 			<td colspan="2">
-			<form action="gensolfab.html" method="post">
+			<form action="gensolfab.jsp" method="post">
 			<table width="100%">
 				<tr>
                 <td align="center"><h1>Articulos a fabricar</h1></td>
