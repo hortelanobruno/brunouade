@@ -1,6 +1,7 @@
 <table border="1" width="100%" height="100%">
 <tr height="100">
-	<td width="70%" align="center"><h1>ZARA FOTO</h1></td>
+	<!--<td width="70%" align="center"><h1>ZARA FOTO</h1></td>-->
+    <td width="70%" align="center"><img  src="img/zara2.JPG" height="100"  width="400"/></td>
 	<td width="30%" align="center">
 		<script type="text/javascript">
 			getFecha_Hora()
