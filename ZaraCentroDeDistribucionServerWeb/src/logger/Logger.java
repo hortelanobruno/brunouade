@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Logger 
@@ -11,7 +12,7 @@ public class Logger
 	@SuppressWarnings("deprecation")
 	private static String getNombre()
 	{
-		Date d = new Date();
+		Date d = Calendar.getInstance().getTime();
 		String nombre = d.getYear() + "-" + d.getMonth() + "-"+d.getDay();
 		return nombre;
 	}
