@@ -18,14 +18,21 @@ public class Logger
 	
 	public static void log(String msg)
 	{
-		File fd = new File("logs");
-		if(!(fd.exists())) fd.mkdirs();
-		
 		try
 		{
+			File fdir = new File("logs");
+			if(!(fdir.exists())) fdir.mkdirs();
+			
 			String nombre = getNombre();
-			FileOutputStream output = new FileOutputStream(new File("logs/"+nombre+".log"),true);
-			output.write(msg.getBytes());
+			File fd = new File("logs/"+nombre+".log");
+			if(!(fd.exists())) fd.createNewFile();
+		
+			FileOutputStream output = new FileOutputStream(fd,true);
+			
+			for( int i = 0; i < msg.length(); i++) 
+                output.write((int) msg.charAt(i));
+
+			output.flush();
 			output.close();
 		}
 		catch (FileNotFoundException e) 
