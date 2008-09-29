@@ -1,4 +1,4 @@
-package struts.actions;
+package struts.actions.ajax;
 
 import java.io.IOException;
 
@@ -11,23 +11,22 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import Exceptions.ErrorConectionException;
 import struts.model.BusinessDelegate;
-
+import Exceptions.ErrorConectionException;
 
 /**
  * 
  * @author Administrador
  *
- *	Este action de carga la tabla de la pagina reposicion
- *
+ *	Este action genera con AJAX la solicitud de envio correspondiente a los datos de la tabla de la
+ *  solicitud de distribucion.
+ *  
  */
-
-public class ReposicionAction extends Action
+public class AtenderSolicitudDistribucionAction extends Action
 {
 	private BusinessDelegate bd;
 	
-	public ReposicionAction()
+	public AtenderSolicitudDistribucionAction()
 	{
 		try
 		{
