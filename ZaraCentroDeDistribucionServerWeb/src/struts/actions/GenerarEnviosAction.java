@@ -14,6 +14,15 @@ import org.apache.struts.action.ActionMapping;
 import Exceptions.ErrorConectionException;
 import struts.model.BusinessDelegate;
 
+
+/**
+ * 
+ * @author Administrador
+ *
+ *	Este action carga la lista de solicitudes de distribucion en la pagina de generar envios.
+ *
+ */
+
 public class GenerarEnviosAction extends Action
 {
 	private BusinessDelegate bd;

@@ -14,6 +14,15 @@ import org.apache.struts.action.ActionMapping;
 import Exceptions.ErrorConectionException;
 import struts.model.BusinessDelegate;
 
+/**
+ * 
+ * @author Administrador
+ *
+ *	Este action carga la tabla de la pagina de articulos a fabricar
+ *
+ */
+
+
 public class GenSolFabAction extends Action 
 {
 	private BusinessDelegate bd;

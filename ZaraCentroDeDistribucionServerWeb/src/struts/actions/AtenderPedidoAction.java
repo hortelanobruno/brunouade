@@ -11,31 +11,32 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import Exceptions.ErrorConectionException;
 import struts.model.BusinessDelegate;
+import Exceptions.ErrorConectionException;
 
 
 /**
  * 
  * @author Administrador
  *
- *	Este action de carga la tabla de la pagina reposicion
+ * Este action te lleva a la pagina para atender pedidos, y te carga la tabla de la misma,
+ * con cada articulo con sus solicitudes pendientes.
  *
  */
 
-public class ReposicionAction extends Action
+public class AtenderPedidoAction extends Action
 {
 	private BusinessDelegate bd;
 	
-	public ReposicionAction()
+	public AtenderPedidoAction()
 	{
 		try
 		{
 			bd = new BusinessDelegate();
 		}
-		catch (ErrorConectionException e) 
+		catch(ErrorConectionException e)
 		{
-
+			
 		}
 	}
 	
