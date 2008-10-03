@@ -62,7 +62,7 @@ public class StockWatcher implements EntryPoint {
     newSymbolTextBox.addKeyboardListener(new KeyboardListenerAdapter() {
     	  @Override
     	  public void onKeyDown(Widget sender, char keyCode, int modifiers) {
-    	    if (keyCode == KEY_ENTER) {
+    		  if (keyCode == KEY_ENTER) {
     	      addStock();
     	    }
     	  }
