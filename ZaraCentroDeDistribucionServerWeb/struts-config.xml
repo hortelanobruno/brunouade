@@ -26,14 +26,12 @@
   <action-mappings>
 
     <!-- Alta Cliente -->
-    <action   path="/Alta"
+    <action   path="/genenvio"
               type="struts.actions.AltaClienteAction" 
-              name="AltaClienteForm" 
               scope="request"
-			  
 			  validate="false">
-              <forward name="success" path="/AltaClienteOK.jsp"/>
-			  <forward name="failure" path="/AltaClienteError.jsp"/>
+              <forward name="generarEnvios" path="/generarenvios.jsp"/>
+			  <forward name="nohayenvios" path="/nohayenviosparagenerar.jsp"/>
     </action>
 <!-- input="altaCliente.jsp" -->
   </action-mappings>

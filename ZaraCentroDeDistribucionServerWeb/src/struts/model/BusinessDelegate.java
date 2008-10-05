@@ -222,6 +222,10 @@ public class BusinessDelegate
 	public ArrayList<SolicitudDistribucionVO> obtenerSolicitudesDeTienda(String tienda) {
 		return this.getModCD().getSolicitudesDistribucion(tienda);
 	}
+	
+	public ArrayList<SolicitudDistribucionVO> obtenerSolicitudesDeTiendas() {
+		return this.getModCD().getAllSolicitudesDistribucion();
+	}
 
 	public ArrayList<ArticuloReservadoVO> obtenerArticulosReservados(int codSolDis) {
 		return this.getModCD().getArtsReservados(codSolDis);

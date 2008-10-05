@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title> .:: Zara - Centro De Distribucion - Envio correcto ::. </title>
+<title> .:: Zara - Centro De Distribucion - No hay articulos a reponer ::. </title>
 <link rel="StyleSheet" href="estilos.css" type="text/css">
 <script type="text/javascript" src="js/hora.js">
 </script>
@@ -13,7 +13,7 @@
 		
 		<tr height="500">
 			<td colspan="2" align="center">
-				<h1>Envio Correcto.</h1>
+				<h1>No hay articulos para reponer.</h1>
 				<form action="/zara/indexz.jsp" method="post">
 				<input type="submit" name="btnVolver" value="Volver"/>
 				</form>
