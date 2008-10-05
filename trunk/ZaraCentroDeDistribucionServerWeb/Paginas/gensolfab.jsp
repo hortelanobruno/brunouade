@@ -36,12 +36,14 @@
 							<th>Cantidad a fabricar</th>
 							</tr>
 							<tr>
-                            <td>1000</td>
+							<!-- property="codigo" -->
+                            <td><label>1000</label></td>
                             <td>Pantalon Azul</td>
                             <td>0</td>
                             <td>50</td>
                             <td>0</td>
                             <td>100</td>
+                            <!-- property="cantidad" -->
                             <td><input type="text" name="cantFab/"></td>
 							</tr>
                             <tr>
@@ -53,7 +55,6 @@
                             <td>40</td>
                             <td><input type="text" name="cantFab/"></td>
 							</tr>
-                            </tr>
                             <tr>
                             <td>1005</td>
                             <td>Sweater escote en v</td>
@@ -63,7 +64,6 @@
                             <td>10</td>
                             <td><input type="text" name="cantFab/"></td>
 							</tr>
-                            </tr>
                             <tr>
                             <td>1010</td>
                             <td>Bufanda lo lobo marino</td>
@@ -83,7 +83,6 @@
 					<td align="center">
 					<i>Generar solicitud Fabricacion</i>&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="submit" value="Generar"/>
-					</form>
 					</td>
 				</tr>
 			</table>

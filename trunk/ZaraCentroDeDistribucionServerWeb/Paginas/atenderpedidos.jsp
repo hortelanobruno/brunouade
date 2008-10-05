@@ -16,47 +16,36 @@
             <h1>Pedidos atendidos</h1>
             <br><br><br>
 				<div id="tablaDatos">
-                <table width="100%">
-                  <tr>
-                    <th>Codigo</th>
-                    <th>Descripcion</th>
-                    <th>Cantidad pedida</th>
-                    <th>Cantidad reservada</th>
-                    <th>Stock</th>
-                    <th>Cantidad enviada</th>
-                    <th>Cantidad a enviar</th>
-                  </tr>
-                  
-                  <tr>
-                    <td>1000</td>
-                    <td>Pantalon rosita</td>
-                    <td>20</td>
-                    <td>10</td>
-                    <td>50</td>
-                    <td>0</td>
-                    <td>20</td>
-                  </tr>
-                  
-                  <tr>
-                    <td>1001</td>
-                    <td>Ojotas havaianas</td>
-                    <td>300</td>
-                    <td>100</td>
-                    <td>1000</td>
-                    <td>100</td>
-                    <td>100</td>
-                  </tr>
-                  
-                  <tr>
-                    <td>1005</td>
-                    <td>Malla floreada</td>
-                    <td>60</td>
-                    <td>20</td>
-                    <td>120</td>
-                    <td>10</td>
-                    <td>50</td>
-                  </tr>
+                <table>
+                <tr>
+                <td>Articulo: </td>
+                <td>Codigo:</td>
+                <td><label>1000</label></td>
+                <td>Stock:</td>
+                <td><label>10</label></td>
+                <td>Llego:</td>
+                <td><label>20</label></td>
+                <td>Suficiente</td>
+                <td><label>NO</label></td>
+                </tr>
+                <tr>
+                <td>Solicitud:</td>
+                <td><label>1001</label></td>
+                <td>Pedido</td>
+                <td><label>20</label></td>
+                <td>Cantidad:</td>
+                <td><input type="text" /></td>
+                </tr>
+                <tr>
+                <td>Solicitud:</td>
+                <td><label>1002</label></td>
+                <td>Pedido</td>
+                <td><label>5</label></td>
+                <td>Cantidad:</td>
+                <td><input type="text" /></td>
+                </tr>
                 </table>
+                
                 </div>
 			</td>
 		</tr>

@@ -25,6 +25,7 @@
               </tr>
               <tr>
                 <td width="200">
+                <!-- property="codigoSolicitudDistribucion" -->
                   <select name="listaSolicitudesEnvio" size="10" style="width:220px" id="listaSolicitudesEnvio">
                     <option value="10001">Cod: 10001 - Tienda: Florida</option>
                     <option value="10002">Cod: 10002 - Tienda: Florida</option>
@@ -44,30 +45,15 @@
                   </tr>
                   
                   <tr>
-                    <td>1000</td>
+                    <!-- property="codigoArticulo" -->
+                    <td><label>1000</label></td>
                     <td>Pantalon rosita</td>
                     <td>20</td>
                     <td>10</td>
                     <td>50</td>
                     <td>0</td>
-                  </tr>
-                  
-                  <tr>
-                    <td>1001</td>
-                    <td>Ojotas havaianas</td>
-                    <td>300</td>
-                    <td>100</td>
-                    <td>1000</td>
-                    <td>100</td>
-                  </tr>
-                  
-                  <tr>
-                    <td>1005</td>
-                    <td>Malla floreada</td>
-                    <td>60</td>
-                    <td>20</td>
-                    <td>120</td>
-                    <td>10</td>
+                    <!-- property="cantEnviar" -->
+                    <td><input type="text"/></td>
                   </tr>
                 </table>
                 </div>
