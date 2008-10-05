@@ -88,5 +88,6 @@ public interface ServerFacade
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public boolean existeSolFab(int numSolFab);
+	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
 	
 }

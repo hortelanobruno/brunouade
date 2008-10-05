@@ -13,7 +13,7 @@
 
 		<%@ include file="top.jsp" %>	
         
-        
+        <%  %>
         <tr height="500px">
 			<td colspan="2" align="center">
 

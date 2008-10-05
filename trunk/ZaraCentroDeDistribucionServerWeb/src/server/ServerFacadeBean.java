@@ -268,6 +268,8 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.existeSolFab(numSolFab);
 	}
 
-
-
+	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
