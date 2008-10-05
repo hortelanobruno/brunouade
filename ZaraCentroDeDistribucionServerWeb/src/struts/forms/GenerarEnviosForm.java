@@ -14,6 +14,30 @@ public class GenerarEnviosForm extends ActionForm {
 	
 	/** vector cantEnviar */
 	private String[] _cantEnviar = null;
+
+	public String[] getCantEnviar() {
+		return _cantEnviar;
+	}
+
+	public void setCantEnviar(String[] enviar) {
+		_cantEnviar = enviar;
+	}
+
+	public String[] getCodigoArticulo() {
+		return _codigoArticulo;
+	}
+
+	public void setCodigoArticulo(String[] articulo) {
+		_codigoArticulo = articulo;
+	}
+
+	public String getCodigoSolicitudDistribucion() {
+		return _codigoSolicitudDistribucion;
+	}
+
+	public void setCodigoSolicitudDistribucion(String solicitudDistribucion) {
+		_codigoSolicitudDistribucion = solicitudDistribucion;
+	}
 	
 	
 }
