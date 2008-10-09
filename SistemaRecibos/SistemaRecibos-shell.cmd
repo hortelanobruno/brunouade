@@ -1,1 +1,0 @@
-@java -Xmx256M -cp "%~dp0\src;%~dp0\bin;D:/Archivos de programa/gwt-windows-1.5.2/gwt-user.jar;D:/Archivos de programa/gwt-windows-1.5.2/gwt-dev-windows.jar" com.google.gwt.dev.GWTShell -out "%~dp0\www" %* com.sistemarecibos.SistemaRecibos/SistemaRecibos.html
