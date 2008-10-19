@@ -1,0 +1,15 @@
+<XMLArticulo>
+	<codigo>2</codigo>
+	<descripcion>alfombra havana</descripcion>
+	<precio>200</precio>
+	<seccion>alfombra</seccion>
+	<color>unico</color>
+	<linea>unica</linea>
+	<cantidad>10</cantidad>
+	<detalles>alfombra de piel de vaca con patchwork</detalles>
+	<composicion>100% piel bovina</composicion>
+	<categoria>cama</categoria>
+	<medidas>150 X 220 cm</medidas>
+	<talle></talle>
+	<origen></origen>
+</XMLArticulo>

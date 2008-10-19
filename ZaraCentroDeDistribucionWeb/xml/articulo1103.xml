@@ -1,0 +1,15 @@
+<XMLArticulo>
+	<codigo>1103</codigo>
+	<descripcion>cuadro chino</descripcion>
+	<precio>700</precio>
+	<seccion>decoracion</seccion>
+	<color>unico</color>
+	<linea>chinese</linea>
+	<cantidad>2</cantidad>
+	<detalles>cuadro con letras chinas</detalles>
+	<composicion>madera</composicion>
+	<categoria>cuadros</categoria>
+	<medidas>2m x 2m</medidas>
+	<talle></talle>
+	<origen></origen>
+</XMLArticulo>

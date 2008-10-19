@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="solicituddistribucion">
+         <xsd:complexType>
+            <xsd:sequence>
+                 <xsd:element name="numero" type="xsd:integer"/>
+                 <xsd:element name="tienda" type="Tienda"/>
+                 <xsd:element name="articulosropa" type="aRopa"/>
+            </xsd:sequence>
+        </xsd:complexType>
+   </xsd:element>
+
+   <xsd:complexType name="articulo">
+   		<xsd:sequence>
+   			<xsd:element name="codigo" type="xsd:integer"/>
+	   		<xsd:element name="cantidad" type="xsd:integer"/>
+   		</xsd:sequence>
+   </xsd:complexType>
+   
+    <xsd:complexType name="Tienda">
+     	<xsd:sequence>
+     		<xsd:element name="codigoTienda" type="xsd:integer"/>
+     		<xsd:element name="nombreTienda" type="xsd:string"/>
+     	</xsd:sequence>
+     </xsd:complexType>  
+     
+     <xsd:complexType name="aRopa">
+     	<xsd:sequence>
+     		<xsd:element maxOccurs="60" minOccurs="1" name="articuloropa" type="articulo"/>
+    	</xsd:sequence>
+ 	 </xsd:complexType>
+ 	 
+ 	     
+</xsd:schema>

@@ -1,0 +1,24 @@
+<solicituddistribucion>
+	<numero>7007</numero>
+	
+	<tienda>
+		<codigoTienda>3</codigoTienda>
+		<nombreTienda>opep</nombreTienda>
+	</tienda>
+	
+	<fechaEmision>27/06/08 23:01</fechaEmision>
+
+	<articulospedidos>
+		
+		<articulopedido>
+			<cod>1003</cod>
+			<cant>500</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>2</cod>
+			<cant>500</cant>
+		</articulopedido>
+	</articulospedidos>
+	
+</solicituddistribucion>
