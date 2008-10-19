@@ -1,0 +1,49 @@
+package varios;
+
+import java.util.Vector;
+
+import vo.FabricaVO;
+
+public class XMLSolRep 
+{
+	private int codigo;
+	private int codSolFab;
+	private FabricaVO fabrica;	
+	private Vector<XMLArticuloRecibido> articulosRecibidos;
+	private String fechaEmision;
+	
+	public String getFechaEmision() {
+		return fechaEmision;
+	}
+
+	public void setFechaEmision(String fechaEmision) {
+		this.fechaEmision = fechaEmision;
+	}
+
+	public Vector<XMLArticuloRecibido> getArticulosRecibidos() {
+		return articulosRecibidos;
+	}
+	
+	public void setArticulosRecibidos(Vector<XMLArticuloRecibido> articulosRecibidos) {
+		this.articulosRecibidos = articulosRecibidos;
+	}
+	public int getCodSolFab() {
+		return codSolFab;
+	}
+	public void setCodSolFab(int codSolFab) {
+		this.codSolFab = codSolFab;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public FabricaVO getFabrica() {
+		return fabrica;
+	}
+	public void setFabrica(FabricaVO fabrica) {
+		this.fabrica = fabrica;
+	}
+
+}

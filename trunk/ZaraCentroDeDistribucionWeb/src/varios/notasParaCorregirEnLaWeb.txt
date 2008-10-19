@@ -1,0 +1,14 @@
+Generar envios:
+
+	Va a haber una lista que va a contener el codigo de la solicitud y el nombre
+	de la tienda, despues va a haber una tabla que va a mostrar los datos de la
+	solicitud seleccionada, y por ultimo un boton que va a generar automaticamente
+	todas las solicitudes de envios que pueda.
+
+
+Reponer articulo:
+
+	En este panel se reponen todos los articulos que llegaron y se actualiza el
+	stock, y luego de esto se puede apretar un boton para que atienda automaticamente
+	todos los pedidos que pueda (como en el panel envio), entonces tiene que mostrar
+	por pantalla todo lo que envio.
