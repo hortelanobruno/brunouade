@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Hello" default="all">
+	<target name="all" depends="clean,compile"/>
+    <target name="clean" description="borrar archivos temporales">
+        <delete dir="./bin"/>
+    </target>
+    <target name="compile" description="compilar el código java a un archivo class">
+        <mkdir dir="./bin"/>
+        <javac srcdir="./src" debug="on" destdir="./bin"/>
+    </target>
+</project>
