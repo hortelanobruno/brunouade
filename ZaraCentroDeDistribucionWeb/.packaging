@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<configurations/>
+<configurations>
+<archive destination="dist" exploded="false" name="ServerEJB.jar" used="true">
+<folder excludes="" includes="**/*.class" location="bin" name="bin" prefix="" project="" projectLocation="bin" used="true"/>
+<file location="persistence.xml" name="persistence.xml" prefix="META-INF" project="" projectLocation="persistence.xml" used="true"/>
+</archive>
+<archive destination="dist" exploded="false" name="ServerWEB.war" used="true">
+<folder excludes="" includes="" location="paginas" name="paginas" prefix="" project="" projectLocation="paginas" used="true"/>
+<file location="struts-config.xml" name="struts-config.xml" prefix="" project="" projectLocation="struts-config.xml" used="true"/>
+<file location="web.xml" name="web.xml" prefix="WEB-INF" project="" projectLocation="web.xml" used="true"/>
+<folder excludes="" includes="struts/actions/*.class,struts/forms/*.class,struts/model/*.class" location="bin" name="bin" prefix="" project="" projectLocation="bin" used="true"/>
+<folder excludes="" includes="*.tld" location="" prefix="" used="true"/>
+</archive>
+<archive destination="dist" exploded="false" name="ServerApp.ear" used="true">
+<file location="dist/ServerEJB.jar" name="ServerEJB.jar" prefix="" project="" projectLocation="dist/ServerEJB.jar" used="true"/>
+<file location="dist/ServerWEB.war" name="ServerWEB.war" prefix="" project="" projectLocation="dist/ServerWEB.war" used="true"/>
+<file location="application.xml" name="application.xml" prefix="META-INF" project="" projectLocation="application.xml" used="true"/>
+</archive>
+</configurations>

@@ -1,3 +1,6 @@
+<%@ page language="java" %>
+<%@ taglib uri="struts-logic.tld" prefix="logic"%> 
+<%@ taglib uri="struts-html.tld" prefix="html" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,33 +49,11 @@
                             <!-- property="cantidad" -->
                             <td><input type="text" name="cantFab/"></td>
 							</tr>
-                            <tr>
-                            <td>1001</td>
-                            <td>Remera manga larga</td>
-                            <td>0</td>
-                            <td>20</td>
-                            <td>0</td>
-                            <td>40</td>
-                            <td><input type="text" name="cantFab/"></td>
-							</tr>
-                            <tr>
-                            <td>1005</td>
-                            <td>Sweater escote en v</td>
-                            <td>0</td>
-                            <td>5</td>
-                            <td>0</td>
-                            <td>10</td>
-                            <td><input type="text" name="cantFab/"></td>
-							</tr>
-                            <tr>
-                            <td>1010</td>
-                            <td>Bufanda lo lobo marino</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>2</td>
-                            <td><input type="text" name="cantFab/"></td>
-							</tr>
+                            <logic:iterate id="codigo" name="GenerarSolFabForm" property="codigos" >
+							<tr><td>
+							<html:text name="codigo"/>
+							</td></tr>
+							</logic:iterate>
 					  </table>
                       </div>
 					</td>

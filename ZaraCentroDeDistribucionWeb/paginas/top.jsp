@@ -12,7 +12,7 @@
 	<td colspan="2" align="center">
 		<ul id="menuhorizontal">
 			<li><a href="generarenvios.jsp">Generar Envios</a></li>
-			<li><a href="gensolfab.jsp">Generar Solicitud de Fabricación</a></li>
+			<li><a href="gensolfab.do">Generar Solicitud de Fabricación</a></li>
 			<li><a href="reposicion.jsp">Reposición de Articulos</a></li>
 		</ul>
 	</td>
