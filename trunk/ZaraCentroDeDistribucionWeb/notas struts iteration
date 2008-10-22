@@ -1,0 +1,14 @@
+<logic:present name="list"> 
+   <logic:iterate id="myCollectionElement" name="list"> 
+     Element Value: <bean:write name="myCollectionElement" /><br /> 
+   </logic:iterate> 
+ </logic:present> 
+ 
+ HttpSession session = request.getSession();
+
+java.util.ArrayList list = new java.util.ArrayList();
+list.add("ONE");
+list.add("TWO");
+list.add("THREE");
+
+session.setAttribute("list",list);
