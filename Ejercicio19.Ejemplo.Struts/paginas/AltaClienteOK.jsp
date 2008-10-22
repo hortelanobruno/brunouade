@@ -1,7 +1,7 @@
 <%@ page language="java" %>
-<%@ taglib uri="struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="struts-html.tld" prefix="html" %>
-<%@ taglib uri="struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/struts-logic.tld" prefix="logic" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 
