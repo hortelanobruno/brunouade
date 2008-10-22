@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Packaging Generator" default="_packaging_generation_">
+<target name="_packaging_generation_" depends="N65540,N65557,N65607"/>
+<target name="N65540" description="AdministradorClientesEJB.jar">
+<jar destfile="AdministradorClientesEJB.jar">
+<zipfileset dir="bin" includes="**/*.class"/>
+</jar>
+</target>
+<target name="N65557" description="AdministradorClientesWEB.war">
+<jar destfile="AdministradorClientesWEB.war">
+<zipfileset dir=".">
+<include name="struts-config.xml"/>
+</zipfileset>
+<zipfileset dir="." prefix="WEB-INF">
+<include name="web.xml"/>
+</zipfileset>
+<zipfileset dir="paginas"/>
+<zipfileset dir="bin" includes="struts/actions/*.class,struts/forms/*.class,struts/model/*.class"/>
+<zipfileset dir="" includes="*.tld"/>
+</jar>
+</target>
+<target name="N65607" description="AdministradorClientesApp.ear">
+<jar destfile="AdministradorClientesApp.ear">
+<zipfileset dir=".">
+<include name="AdministradorClientesEJB.jar"/>
+</zipfileset>
+<zipfileset dir=".">
+<include name="AdministradorClientesWEB.war"/>
+</zipfileset>
+<zipfileset dir="." prefix="META-INF">
+<include name="application.xml"/>
+</zipfileset>
+</jar>
+</target>
+</project>
