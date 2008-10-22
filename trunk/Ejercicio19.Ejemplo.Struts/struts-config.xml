@@ -10,10 +10,8 @@
 
   <!-- ========== Definiciones de Form Bean =================================== -->
   <form-beans>
-     
     <form-bean      name="AltaClienteForm" 
                     type="struts.forms.AltaClienteForm" />
-
   </form-beans>
 
   <!-- ========== Definiciones de Global Forward ============================== -->
@@ -24,8 +22,6 @@
 
   <!-- ========== Definiciones de Action Mapping ============================== -->
   <action-mappings>
-
-    <!-- Alta Cliente -->
     <action   path="/Alta"
               type="struts.actions.AltaClienteAction" 
               name="AltaClienteForm" 
@@ -35,7 +31,15 @@
               <forward name="success" path="/AltaClienteOK.jsp"/>
 			  <forward name="failure" path="/AltaClienteError.jsp"/>
     </action>
-<!-- input="altaCliente.jsp" -->
+    <action   path="/Cargar"
+              type="struts.actions.CargarDatosAction" 
+              name="AltaClienteForm" 
+              scope="request"
+			  
+			  validate="false">
+              <forward name="success" path="/PorFin.jsp"/>
+			  <forward name="failure" path="/AltaClienteError.jsp"/>
+    </action>
   </action-mappings>
 
 </struts-config>

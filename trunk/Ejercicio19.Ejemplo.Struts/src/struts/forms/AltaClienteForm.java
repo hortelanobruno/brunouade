@@ -33,9 +33,16 @@ public final class AltaClienteForm extends ActionForm
 	private Integer _codigoCliente = null;
 
 	private ArrayList<BookBean> books = null;
-	/*<logic:iterate name="books" id="book" indexId="index">
-				<li><bean:write name="book" property="title"/></li>
-			</logic:iterate>*/
+	
+	private String edad = null;
+	
+	public String getEdad(){
+		return edad;
+	}
+	
+	public void setEdad(String e){
+		edad=e;
+	}
 	
 	public ArrayList<BookBean> getBooks()
 	{
