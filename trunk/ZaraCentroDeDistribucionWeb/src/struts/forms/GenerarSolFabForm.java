@@ -5,24 +5,42 @@ import org.apache.struts.action.ActionForm;
 
 public class GenerarSolFabForm extends ActionForm {
 
-	private Integer[] _codigo;
+	private Long[] _codigo;
 	
-	private Integer[] _cantidad;
+	private Integer[] _cantidadAFab;
+	private Integer[] _cantidadRec;
+	private Integer[] _cantidadPed;
 
 	public Integer[] getCantidad() {
-		return _cantidad;
+		return _cantidadAFab;
 	}
 
-	public void setCantidad(Integer[] _cantidad) {
-		this._cantidad = _cantidad;
+	public void setCantidadAFab(Integer[] _cantidad) {
+		this._cantidadAFab = _cantidad;
 	}
 
-	public Integer[] getCodigo() {
+	public Long[] getCodigo() {
 		return _codigo;
 	}
 
-	public void setCodigo(Integer[] _codigo) {
+	public void setCodigo(Long[] _codigo) {
 		this._codigo = _codigo;
+	}
+
+	public Integer[] getCantidadPed() {
+		return _cantidadPed;
+	}
+
+	public void setCantidadPed(Integer[] ped) {
+		_cantidadPed = ped;
+	}
+
+	public Integer[] getCantidadRec() {
+		return _cantidadRec;
+	}
+
+	public void setCantidadRec(Integer[] rec) {
+		_cantidadRec = rec;
 	}
 	
 	

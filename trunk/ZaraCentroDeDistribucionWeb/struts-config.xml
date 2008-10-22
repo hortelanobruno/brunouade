@@ -5,35 +5,20 @@
           "http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
 
 <struts-config>
-
-  <!-- ========== Configuraciones de Data Source ============================== -->
-
-  <!-- ========== Definiciones de Form Bean =================================== -->
-  <form-beans>
-     
-    <form-bean      name="AltaClienteForm" 
-                    type="struts.forms.AltaClienteForm" />
-
+  <form-beans> 
+    <form-bean  name="GenerarSolFabForm" type="struts.forms.GenerarSolFabForm" />
   </form-beans>
 
-  <!-- ========== Definiciones de Global Forward ============================== -->
   <global-forwards>
     <forward	name="Menu"				path="/index.jsp"/>
   </global-forwards>
 
-
-  <!-- ========== Definiciones de Action Mapping ============================== -->
   <action-mappings>
-
-    <!-- Alta Cliente -->
-    <action   path="/genenvio"
-              type="struts.actions.AltaClienteAction" 
-              scope="request"
-			  validate="false">
-              <forward name="generarEnvios" path="/generarenvios.jsp"/>
-			  <forward name="nohayenvios" path="/nohayenviosparagenerar.jsp"/>
+    <action   path="/gensolfab" type="struts.actions.GenSolFabAction" name="GenerarSolFabForm"
+              scope="request" validate="false">
+              <forward name="gensolfab" path="/gensolfab.jsp"/>
+			  <forward name="nohayarticulosafabricar" path="/nohayarticulosafabricar.jsp"/>
     </action>
-<!-- input="altaCliente.jsp" -->
   </action-mappings>
 
 </struts-config>
