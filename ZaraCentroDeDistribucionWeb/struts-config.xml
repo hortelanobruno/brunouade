@@ -14,10 +14,10 @@
   </global-forwards>
 
   <action-mappings>
-    <action   path="/gensolfab" type="struts.actions.GenSolFabAction" name="GenerarSolFabForm"
+    <action   path="/GenerarSolFab" type="struts.actions.GenSolFabAction" name="GenerarSolFabForm"
               scope="request" validate="false">
-              <forward name="gensolfab" path="/gensolfab.jsp"/>
-			  <forward name="nohayarticulosafabricar" path="/nohayarticulosafabricar.jsp"/>
+              <forward name="success" path="/gensolfab.jsp"/>
+			  <forward name="failure" path="/nohayarticulosafabricar.jsp"/>
     </action>
   </action-mappings>
 

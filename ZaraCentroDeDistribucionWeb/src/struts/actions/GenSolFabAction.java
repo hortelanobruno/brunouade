@@ -48,33 +48,20 @@ public class GenSolFabAction extends Action
 		//Ir a la base a ver si hay articulos a fabricar, y si hay los carga en la tabla, sino
 		//redirecciona a la pagina que dice que no hay articulos
 		
-		//ArrayList<ArticuloAFabricarVO> afvo = bd.getArticulosAFabricarVO();
-		List<ArticuloAFabricarVO> afvo = new ArrayList<ArticuloAFabricarVO>();
-		ArticuloAFabricarVO a1 = new ArticuloAFabricarVO();
-		ArticuloAFabricarVO a2 = new ArticuloAFabricarVO();
-		ArticuloAFabricarVO a3 = new ArticuloAFabricarVO();
-		a1.setIdAAF(1000);
-		a2.setIdAAF(1050);
-		a3.setIdAAF(1070);
-		
+		List<ArticuloAFabricarVO> afvo = bd.getArticulosAFabricarVO();
+
 		if(afvo != null)
 		{
-			GenerarSolFabForm gsfForm = (GenerarSolFabForm)form;
+			GenerarSolFabForm gsfForm = (GenerarSolFabForm) form;
 			
-			Long[] cods = new Long[afvo.size()];
-			Integer[] cantsAFab = new Integer[afvo.size()];
-			Integer[] cantsRec = new Integer[afvo.size()];
-			Integer[] cantsPed = new Integer[afvo.size()];
+			List<ArticuloAFabricarVO> aux = new ArrayList<ArticuloAFabricarVO>();
+			aux.add(afvo.get(0));
+			gsfForm.setArticulosAFabricar(aux);
+			gsfForm.setPrueba("bruno");
 			
-			for(int i = 0; i< afvo.size();i++)
-			{
-				cods[i] =  (long) afvo.get(i).getIdAAF();
-			}
-			
-			gsfForm.setCodigo(cods);
-			
-			return mapping.findForward("gensolfab");
+			return (mapping.findForward("success"));
+		}else{
+			return (mapping.findForward("failure"));
 		}
-		else return mapping.findForward("nohayarticulosafabricar");
 	}
 }

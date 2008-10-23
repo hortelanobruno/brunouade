@@ -1,10 +1,11 @@
 <%@ page language="java" %>
-<%@ taglib uri="struts-logic.tld" prefix="logic"%> 
-<%@ taglib uri="struts-html.tld" prefix="html" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/struts-logic.tld" prefix="logic" %> 
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title> .:: Zara - Centro de Distribucion - Generar Solicitud de Fabricacion ::. </title>
 <link rel="StyleSheet" href="estilos.css" type="text/css">
 <script type="text/javascript" src="js/hora.js">
@@ -49,16 +50,23 @@
                             <!-- property="cantidad" -->
                             <td><input type="text" name="cantFab/"></td>
 							</tr>
-                            <logic:iterate id="codigo" name="GenerarSolFabForm" property="codigos" >
-							<tr><td>
-							<html:text name="codigo"/>
-							</td></tr>
+                            <logic:iterate id="codigo" name="GenerarSolFabForm" property="articulosAFabricar" >
+							<tr>
+							<td><bean:write name="codigo" property="art.codigo" /></td>
+							<td><bean:write name="codigo" property="art.descripcion" /></td>
+							<td></td>
+							<td><bean:write name="codigo" property="cantidadPedida" /></td>
+							<td><bean:write name="codigo" property="cantidadRecibida" /></td>
+							<td><bean:write name="codigo" property="cantidadAFabricar" /></td>
+							<td></td>
+							</tr>
 							</logic:iterate>
 					  </table>
                       </div>
 					</td>
 				</tr>
 				<tr height="20px">
+				<bean:write name="GenerarSolFabForm" property="prueba"/>
                 </tr>
                 <tr>
 					<td align="center">
