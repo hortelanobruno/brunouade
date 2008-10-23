@@ -15,6 +15,7 @@ public class BookBean implements Serializable{
      * Book Title
      */
     private String title;
+    private Bruno bruno;
 
     // ------------------------------------------------------------ Constructors
 
@@ -23,9 +24,10 @@ public class BookBean implements Serializable{
      * @param title the book title
      * @param isbn the ISBN
      */
-    public BookBean(String isbn, String title) {
+    public BookBean(String isbn, String title, Bruno b) {
         this.isbn = isbn;
         this.title = title;
+        this.bruno = b;
     }
 
     // ------------------------------------------------------ Property Accessors
@@ -45,6 +47,14 @@ public class BookBean implements Serializable{
     public String getTitle() {
         return this.title;
     }
+
+	public void setBruno(Bruno bruno) {
+		this.bruno = bruno;
+	}
+
+	public Bruno getBruno() {
+		return bruno;
+	}
 
 
 }

@@ -8,6 +8,7 @@
 <html:html>
 	<head>
 		<title>Alta de un cliente</title>
+		<script type="text/javascript" src="script.js"></script> 
 	</head>
 	<body>
 	<form action="Cargar.do" method="get">
@@ -18,10 +19,12 @@
 			<li>Direccion: <bean:write name="AltaClienteForm" property="direccionCliente"/></li>
 		</ul>
       	<logic:iterate id="element" name="AltaClienteForm" property="books" > 
-	     Element Value: <bean:write name="element" property="title" /><br /> 
+	    <label name="title"><bean:write name="element" property="title" /></label><br /> 
+	    <label name="loca"><bean:write name="element" property="bruno.nombre" /></label><br />
 	   </logic:iterate> 
+	   <label id="title1">Ahorasi</label>
 	   <input type="text" size="45" maxlength="45" name="edad">
-	   <input type=submit value="Cargar" class="botonAccion">
+	   <input type="button" value="Cargar" class="botonAccion" onclick="llamarAjax()">
    </form>
 		<p><a href="AltaCliente.jsp">Alta de un nuevoCliente.</a></p>
 		<p><a href="index.jsp">Volver al menú principal.</a></p>

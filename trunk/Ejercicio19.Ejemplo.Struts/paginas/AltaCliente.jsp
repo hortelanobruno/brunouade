@@ -1,6 +1,6 @@
 <%@ page language="java" %>
-<%@ taglib uri="struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="struts-html.tld" prefix="html" %>
+<%@ taglib uri="/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/struts-html.tld" prefix="html" %>
 
 <html>
 	<head>

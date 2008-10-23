@@ -11,6 +11,7 @@ import org.apache.struts.action.ActionForm;
 import servidor.AdministradorClientes;
 import struts.forms.*;
 import util.BookBean;
+import util.Bruno;
 
 public class BusinessDelegate {
  
@@ -54,10 +55,16 @@ public class BusinessDelegate {
 			int codigo = facade.crearNuevoCliente(nombre, direccion);
 			Integer i = new Integer(codigo);
 			form.setCodigoCliente(i);
+			Bruno br1 = new Bruno();
+			br1.setNombre("carlos");
+			Bruno br2 = new Bruno();
+			br2.setNombre("carlosCalvo");
+			Bruno br3 = new Bruno();
+			br3.setNombre("carlosRamos");
 			ArrayList<BookBean> books = new ArrayList<BookBean>();
-			books.add(new BookBean("1","Al fin"));
-			books.add(new BookBean("2","Al fin222222222"));
-			books.add(new BookBean("3","Al fin33333333333"));
+			books.add(new BookBean("1","Al fin",br1));
+			books.add(new BookBean("2","Al fin222222222",br2));
+			books.add(new BookBean("3","Al fin33333333333",br3));
 			form.setBooks(books);
 			if (codigo == 0)
 				theActionErrors = new ActionErrors();
