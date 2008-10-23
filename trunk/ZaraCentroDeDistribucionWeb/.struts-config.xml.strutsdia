@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="Menu" NAME="forward0" PATH="/index.jsp"
+  SHAPE="32,17,0,0" TARGET="page0" TITLE="Menu" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#GenerarSolFab" NAME="action0" PATH="/GenerarSolFab"
+  SHAPE="32,129,0,0" TITLE="GenerarSolFabForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="failure" NAME="forward0"
+   PATH="/nohayarticulosafabricar.jsp" TARGET="page1" TITLE="failure"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward1"
+   PATH="/gensolfab.jsp" TARGET="page2" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0" PATH="/index.jsp" SHAPE="240,34,0,0"
+  SUBTYPE="jsp" TITLE="index.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1" PATH="/nohayarticulosafabricar.jsp"
+  SHAPE="256,146,0,0" SUBTYPE="jsp" TITLE="nohayarticulosafabricar.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page2" PATH="/gensolfab.jsp" SHAPE="256,290,0,0"
+  SUBTYPE="jsp" TITLE="gensolfab.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+</PROCESS>

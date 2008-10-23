@@ -1,47 +1,39 @@
 package struts.forms;
 
+import java.util.List;
+
 import org.apache.struts.action.ActionForm;
+
+import vo.ArticuloAFabricarVO;
 
 
 public class GenerarSolFabForm extends ActionForm {
 
-	private Long[] _codigo;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8538815922886360165L;
 	
-	private Integer[] _cantidadAFab;
-	private Integer[] _cantidadRec;
-	private Integer[] _cantidadPed;
-
-	public Integer[] getCantidad() {
-		return _cantidadAFab;
+	private List<ArticuloAFabricarVO> artsAFab;
+	
+	private String prueba;
+	
+	public void setPrueba(String p){
+		this.prueba = p;
+	}
+	
+	public String getPrueba(){
+		return prueba;
 	}
 
-	public void setCantidadAFab(Integer[] _cantidad) {
-		this._cantidadAFab = _cantidad;
+	public void setArticulosAFabricar(List<ArticuloAFabricarVO> artsAFab) {
+		this.artsAFab = artsAFab;
 	}
 
-	public Long[] getCodigo() {
-		return _codigo;
+	public List<ArticuloAFabricarVO> getArticulosAFabricar() {
+		return artsAFab;
 	}
 
-	public void setCodigo(Long[] _codigo) {
-		this._codigo = _codigo;
-	}
-
-	public Integer[] getCantidadPed() {
-		return _cantidadPed;
-	}
-
-	public void setCantidadPed(Integer[] ped) {
-		_cantidadPed = ped;
-	}
-
-	public Integer[] getCantidadRec() {
-		return _cantidadRec;
-	}
-
-	public void setCantidadRec(Integer[] rec) {
-		_cantidadRec = rec;
-	}
 	
 	
 }
