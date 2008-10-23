@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations>
+<archive destination="" exploded="false" name="EjemploAJAX.war" used="true">
+<folder excludes="" includes="**/*.class" location="bin" name="bin" prefix="" project="" projectLocation="bin" used="true"/>
+<file location="web.xml" name="web.xml" prefix="WEB-INF" project="" projectLocation="web.xml" used="true"/>
+<folder excludes="" includes="" location="paginas" name="paginas" prefix="" project="" projectLocation="paginas" used="true"/>
+</archive>
+<archive destination="" exploded="false" name="ValidatorAJAXApp.ear" used="true">
+<file location="application.xml" name="application.xml" prefix="META-INF" project="" projectLocation="application.xml" used="true"/>
+<file location="EjemploAJAX.war" name="EjemploAJAX.war" prefix="" project="" projectLocation="EjemploAJAX.war" used="true"/>
+</archive>
+</configurations>
