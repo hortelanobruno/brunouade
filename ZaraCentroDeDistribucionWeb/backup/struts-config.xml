@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.0//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
+
+<struts-config>
+  <form-beans> 
+    <form-bean  name="GenerarSolFabForm" type="struts.forms.GenerarSolFabForm" />
+  </form-beans>
+
+  <global-forwards>
+    <forward	name="Menu"				path="/index.jsp"/>
+  </global-forwards>
+
+  <action-mappings>
+    <action   path="/GenerarSolFab" type="struts.actions.GenSolFabAction" name="GenerarSolFabForm"
+              scope="request" validate="false">
+              <forward name="success" path="/gensolfab.jsp"/>
+			  <forward name="failure" path="/nohayarticulosafabricar.jsp"/>
+    </action>
+  </action-mappings>
+
+</struts-config>

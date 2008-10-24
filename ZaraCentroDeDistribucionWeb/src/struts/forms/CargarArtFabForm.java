@@ -7,7 +7,7 @@ import org.apache.struts.action.ActionForm;
 import vo.ArticuloAFabricarVO;
 
 
-public class GenerarSolFabForm extends ActionForm {
+public class CargarArtFabForm extends ActionForm {
 
 	/**
 	 * 
@@ -16,15 +16,6 @@ public class GenerarSolFabForm extends ActionForm {
 	
 	private List<ArticuloAFabricarVO> artsAFab;
 	
-	private String prueba;
-	
-	public void setPrueba(String p){
-		this.prueba = p;
-	}
-	
-	public String getPrueba(){
-		return prueba;
-	}
 
 	public void setArticulosAFabricar(List<ArticuloAFabricarVO> artsAFab) {
 		this.artsAFab = artsAFab;
