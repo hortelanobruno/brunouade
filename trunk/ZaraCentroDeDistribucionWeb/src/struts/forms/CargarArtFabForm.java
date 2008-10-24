@@ -15,6 +15,7 @@ public class CargarArtFabForm extends ActionForm {
 	private static final long serialVersionUID = -8538815922886360165L;
 	
 	private List<ArticuloAFabricarVO> artsAFab;
+	private List<ArticuloAFabricarVO> artsFabricandose;
 	
 
 	public void setArticulosAFabricar(List<ArticuloAFabricarVO> artsAFab) {
@@ -23,6 +24,14 @@ public class CargarArtFabForm extends ActionForm {
 
 	public List<ArticuloAFabricarVO> getArticulosAFabricar() {
 		return artsAFab;
+	}
+	
+	public void setArticulosFabricandose(List<ArticuloAFabricarVO> artsAFab) {
+		this.artsFabricandose = artsAFab;
+	}
+
+	public List<ArticuloAFabricarVO> getArticulosFabricandose() {
+		return artsFabricandose;
 	}
 
 	

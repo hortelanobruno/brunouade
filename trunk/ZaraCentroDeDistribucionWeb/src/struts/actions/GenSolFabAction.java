@@ -52,11 +52,20 @@ public class GenSolFabAction extends Action
 		if(afvo != null)
 		{
 			CargarArtFabForm gsfForm = (CargarArtFabForm) form;
-			for(int i=0; i < afvo.size() ; i++){
-				((ArticuloAFabricarVO)afvo.get(i)).setCantMinAPedir((((ArticuloAFabricarVO)afvo.get(i)).getCantidadPedida()-((ArticuloAFabricarVO)afvo.get(i)).getCantidadRecibida())*2);
-			}
-			gsfForm.setArticulosAFabricar(afvo);
+			List<ArticuloAFabricarVO> artAFab = new ArrayList<ArticuloAFabricarVO>();
+			List<ArticuloAFabricarVO> artFabricandose = new ArrayList<ArticuloAFabricarVO>();
 			
+			for(int i=0; i < afvo.size() ; i++){
+				((ArticuloAFabricarVO)afvo.get(i)).setCantMinAPedir((((ArticuloAFabricarVO)afvo.get(i)).getCantidadPedida())*2);
+				int cant = ((ArticuloAFabricarVO)afvo.get(i)).getCantidadAFabricar();
+				if(cant == 0){
+					artAFab.add(((ArticuloAFabricarVO)afvo.get(i)));
+				}else{
+					artFabricandose.add(((ArticuloAFabricarVO)afvo.get(i)));
+				}
+			}
+			gsfForm.setArticulosAFabricar(artAFab);
+			gsfForm.setArticulosFabricandose(artFabricandose);
 			return (mapping.findForward("success"));
 		}else{
 			return (mapping.findForward("failure"));
