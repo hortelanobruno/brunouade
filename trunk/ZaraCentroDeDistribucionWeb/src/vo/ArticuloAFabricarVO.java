@@ -11,12 +11,13 @@ public class ArticuloAFabricarVO implements Serializable
 	private int cantidadPedida;
 	private int cantidadRecibida;
 	private int cantidadAFabricar;
+	private int cantMinAPedir;
 
 	public ArticuloAFabricarVO() {
 
 	}
 
-	public ArticuloAFabricarVO(int id, ArticuloHeaderVO art,SolicitudDistribucionVO sd, int cantP, int cantR, int cantF)
+	public ArticuloAFabricarVO(int id, ArticuloHeaderVO art,SolicitudDistribucionVO sd, int cantP, int cantR, int cantF, int cantPed)
 	{
 		this.setIdAAF(id);
 		this.setArt(art);
@@ -24,6 +25,7 @@ public class ArticuloAFabricarVO implements Serializable
 		this.setCantidadPedida(cantP);
 		this.setCantidadRecibida(cantR);
 		this.setCantidadAFabricar(cantF);
+		this.setCantMinAPedir(cantPed);
 	}
 
 	public ArticuloHeaderVO getArt() {
@@ -72,6 +74,14 @@ public class ArticuloAFabricarVO implements Serializable
 
 	public void setSol(SolicitudDistribucionVO sol) {
 		this.sol = sol;
+	}
+
+	public void setCantMinAPedir(int cantMinAPedir) {
+		this.cantMinAPedir = cantMinAPedir;
+	}
+
+	public int getCantMinAPedir() {
+		return cantMinAPedir;
 	}
 
 }

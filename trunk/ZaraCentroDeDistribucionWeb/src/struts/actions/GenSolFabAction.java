@@ -49,14 +49,13 @@ public class GenSolFabAction extends Action
 		//redirecciona a la pagina que dice que no hay articulos
 		
 		List<ArticuloAFabricarVO> afvo = bd.getArticulosAFabricarVO();
-
 		if(afvo != null)
 		{
 			CargarArtFabForm gsfForm = (CargarArtFabForm) form;
-			
-			List<ArticuloAFabricarVO> aux = new ArrayList<ArticuloAFabricarVO>();
-			aux.add(afvo.get(0));
-			gsfForm.setArticulosAFabricar(aux);
+			for(int i=0; i < afvo.size() ; i++){
+				((ArticuloAFabricarVO)afvo.get(i)).setCantMinAPedir((((ArticuloAFabricarVO)afvo.get(i)).getCantidadPedida()-((ArticuloAFabricarVO)afvo.get(i)).getCantidadRecibida())*2);
+			}
+			gsfForm.setArticulosAFabricar(afvo);
 			
 			return (mapping.findForward("success"));
 		}else{

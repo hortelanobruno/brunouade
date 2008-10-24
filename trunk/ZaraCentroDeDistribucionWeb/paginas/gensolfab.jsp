@@ -8,9 +8,8 @@
 <head>
 <title> .:: Zara - Centro de Distribucion - Generar Solicitud de Fabricacion ::. </title>
 <link rel="StyleSheet" href="estilos.css" type="text/css">
-<script type="text/javascript" src="js/hora.js">
-<script type="text/javascript" src="js/genSolFabAjax.js">
-</script>
+<script type="text/javascript" src="js/hora.js"></script>
+<script type="text/javascript" src="js/validaciones.js"></script>
 </head>
 <body style="background-color:#f7f8e8;">
 	
@@ -20,7 +19,7 @@
 		
 		<tr height="500px">
 			<td colspan="2">
-			<form method="post" action="GenerarSolFab.do">
+			<form method="post" action="GenerarSolFab.do" name="form1">
 			<table width="100%">
 				<tr>
                 <td align="center"><h1>Articulos a fabricar</h1></td>
@@ -40,26 +39,15 @@
 							<th>Stock minimio a pedir</th>
 							<th>Cantidad a fabricar</th>
 							</tr>
-							<tr>
-							<!-- property="codigo" -->
-                            <td><label>1000</label></td>
-                            <td>Pantalon Azul</td>
-                            <td>0</td>
-                            <td>50</td>
-                            <td>0</td>
-                            <td>100</td>
-                            <!-- property="cantidad" -->
-                            <td><input type="text" name="cantFab/"></td>
-							</tr>
-                            <logic:iterate id="articulos" name="GenerarSolFabForm" property="articulosAFabricar" >
+                            <logic:iterate id="articulos" name="CargarArtFabForm" property="articulosAFabricar" >
 							<tr>
 							<td><input type="text" name="codigo" value="<bean:write name='articulos' property='art.codigo' />" readonly="readonly"/></td>
 							<td><input type="text" name="descripcion" value="<bean:write name="articulos" property="art.descripcion" />" readonly="readonly"/></td>
 							<td><input type="text" name="stock" value="<bean:write name="articulos" property="art.cantidad" />" readonly="readonly"/></td>
 							<td><input type="text" name="cantPedida" value="<bean:write name="articulos" property="cantidadPedida" />" readonly="readonly"/></td>
 							<td><input type="text" name="cantRecibida" value="<bean:write name="articulos" property="cantidadRecibida" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantMinAPedir" value="<bean:write name="articulos" property="cantidadAFabricar" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantAFab" /></td>
+							<td><input type="text" name="cantMinAPedir" value="<bean:write name="articulos" property="cantMinAPedir" />" readonly="readonly"/></td>
+							<td><input type="text" name="cantAFab" value="0" onblur="comprobarCantAPed()"/></td>
 							</tr>
 							</logic:iterate>
 					  </table>
@@ -71,11 +59,11 @@
                 <tr>
 					<td align="center">
 					<i>Generar solicitud Fabricacion</i>&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="button" value="Generar" onclick="cargarArticulosAFabricar()"/>
+					<input type="submit" value="Generar" />
 					</td>
 				</tr>
 			</table>
-			
+			</form>
 
 			</td>
 		</tr>
