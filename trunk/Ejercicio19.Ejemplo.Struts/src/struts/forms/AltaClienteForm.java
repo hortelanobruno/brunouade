@@ -36,6 +36,16 @@ public final class AltaClienteForm extends ActionForm
 	
 	private String edad = null;
 	
+	private String prueba = null;
+	
+	public String getPrueba(){
+		return prueba;
+	}
+	
+	public void setPrueba(String p){
+		prueba = p;
+	}
+	
 	public String getEdad(){
 		return edad;
 	}

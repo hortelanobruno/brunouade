@@ -12,6 +12,8 @@
   <form-beans>
     <form-bean      name="AltaClienteForm" 
                     type="struts.forms.AltaClienteForm" />
+    <form-bean      name="CargarDatosForm" 
+                    type="struts.forms.CargarDatosForm" />
   </form-beans>
 
   <!-- ========== Definiciones de Global Forward ============================== -->
@@ -33,7 +35,7 @@
     </action>
     <action   path="/Cargar"
               type="struts.actions.CargarDatosAction" 
-              name="AltaClienteForm" 
+              name="CargarDatosForm" 
               scope="request"
 			  
 			  validate="false">

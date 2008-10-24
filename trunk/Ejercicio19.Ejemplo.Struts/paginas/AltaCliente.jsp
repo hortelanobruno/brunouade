@@ -11,7 +11,7 @@
 	<body>
 		
 		<form action="Alta.do">
-
+		 <input type="text" name="prueba" value="BrunoliViernes" readonly="readonly" />
 		<table align="left">
 		<tr><td colspan="2" class="TitulosTextos">Alta de Cliente</td></tr>
 		<tr>
