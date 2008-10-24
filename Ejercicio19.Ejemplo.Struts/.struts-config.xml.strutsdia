@@ -20,7 +20,7 @@
   SHAPE="256,290,0,0" SUBTYPE="jsp" TITLE="AltaClienteOK.jsp"
   TYPE="page" model-entity="StrutsProcessItem"/>
  <PROCESS-ITEM ID="#Cargar" NAME="action1" PATH="/Cargar"
-  SHAPE="32,273,0,0" TITLE="AltaClienteForm" TYPE="action" model-entity="StrutsProcessItem">
+  SHAPE="32,273,0,0" TITLE="CargarDatosForm" TYPE="action" model-entity="StrutsProcessItem">
   <PROCESS-ITEM-OUTPUT ID="failure" NAME="forward0"
    PATH="/AltaClienteError.jsp" TARGET="page1" TITLE="failure"
    TYPE="forward" model-entity="StrutsProcessItemOutput"/>

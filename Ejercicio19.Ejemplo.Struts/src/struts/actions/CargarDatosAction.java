@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import struts.forms.CargarDatosForm;
 import struts.model.BusinessDelegate;
 
 public class CargarDatosAction extends Action {
@@ -27,7 +28,8 @@ public class CargarDatosAction extends Action {
 			throws IOException, ServletException {
 		
 		//Hay que cambiar todo
-
+		CargarDatosForm frm = (CargarDatosForm) form;
+		System.out.println(frm.getDireccion());
 		try {
 				return (mapping.findForward("success"));
 		} catch (Exception e) {
