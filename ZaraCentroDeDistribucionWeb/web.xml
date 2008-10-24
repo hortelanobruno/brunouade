@@ -10,8 +10,7 @@
         <servlet-name>action</servlet-name>
         <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
 
-		<servlet-name>gensolfabSrv</servlet-name>
-        <servlet-class>servlets.GenSolFabServlet</servlet-class>
+		
         
         
 		<!--clase base para internacionalizar -->
@@ -38,10 +37,7 @@
 
 
 
-	<servlet-mapping>
-        <servlet-name>gensolfabSrv</servlet-name>
-        <url-pattern>/cargarArtFab</url-pattern>
-    </servlet-mapping>
+	
     
 	<servlet-mapping>
         <servlet-name>action</servlet-name>

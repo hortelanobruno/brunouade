@@ -17,7 +17,7 @@
 		
 		<tr height="500px">
 			<td colspan="2">
-			<h1>Se genero la solicitud de fabricacion correctamente</h1>
+			<h1>Error al generar la solicitud de fabricacion</h1>
 			</td>
 		</tr>
 		
