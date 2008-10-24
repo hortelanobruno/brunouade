@@ -2,23 +2,42 @@
 
 <!DOCTYPE struts-config PUBLIC
           "-//Apache Software Foundation//DTD Struts Configuration 1.0//EN"
-          "http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
 
 <struts-config>
-  <form-beans> 
-    <form-bean  name="GenerarSolFabForm" type="struts.forms.GenerarSolFabForm" />
+
+  <!-- ========== Configuraciones de Data Source ============================== -->
+
+  <!-- ========== Definiciones de Form Bean =================================== -->
+  <form-beans>
+     
+    <form-bean  name="CargarArtFabForm" type="struts.forms.CargarArtFabForm" />
+	<form-bean  name="GenerarSolFabForm" type="struts.forms.GenerarSolFabForm" />
   </form-beans>
 
+  <!-- ========== Definiciones de Global Forward ============================== -->
   <global-forwards>
     <forward	name="Menu"				path="/index.jsp"/>
   </global-forwards>
 
+
+  <!-- ========== Definiciones de Action Mapping ============================== -->
   <action-mappings>
-    <action   path="/GenerarSolFab" type="struts.actions.GenSolFabAction" name="GenerarSolFabForm"
+
+    <action   path="/CargarArtFab" type="struts.actions.GenSolFabAction" name="CargarArtFabForm"
               scope="request" validate="false">
               <forward name="success" path="/gensolfab.jsp"/>
 			  <forward name="failure" path="/nohayarticulosafabricar.jsp"/>
     </action>
+    
+    <action   path="/GenerarSolFab" type="struts.actions.GenerarSolicitudFabricacionAction" name="GenerarSolFabForm"
+              scope="request" validate="false">
+              <forward name="success" path="/gensolfabok.jsp"/>
+			  <forward name="failure" path="/gensolfabfalse.jsp"/>
+    </action>
+    
   </action-mappings>
+  
+  <message-resources parameter="resources.application"/>
 
 </struts-config>

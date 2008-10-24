@@ -13,7 +13,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import struts.forms.GenerarSolFabForm;
+import struts.forms.CargarArtFabForm;
 import struts.model.BusinessDelegate;
 import vo.ArticuloAFabricarVO;
 import exceptions.ErrorConectionException;
@@ -52,12 +52,11 @@ public class GenSolFabAction extends Action
 
 		if(afvo != null)
 		{
-			GenerarSolFabForm gsfForm = (GenerarSolFabForm) form;
+			CargarArtFabForm gsfForm = (CargarArtFabForm) form;
 			
 			List<ArticuloAFabricarVO> aux = new ArrayList<ArticuloAFabricarVO>();
 			aux.add(afvo.get(0));
 			gsfForm.setArticulosAFabricar(aux);
-			gsfForm.setPrueba("bruno");
 			
 			return (mapping.findForward("success"));
 		}else{
