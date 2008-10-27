@@ -1,0 +1,26 @@
+<solrep>
+
+	<codigo>2222</codigo>codigo
+	
+	<fechaEmision>27/06/08 23:01</fechaEmision>fecha
+	
+	<codSolFab>2</codSolFab>codSolFab
+	
+	<fabrica>
+		<codigoFabrica>1</codigoFabrica>
+		<nombreFabrica>Lanus Este</nombreFabrica>
+	</fabrica>
+	
+	<articulosRecibidos>
+		<articulorecibido>
+			<codArt>1002</codArt>codArt
+			<cant>910</cant>cantidad
+		</articulorecibido>
+	
+		<articulorecibido>
+			<codArt>1000</codArt>
+			<cant>440</cant>
+		</articulorecibido>
+
+	</articulosRecibidos>
+</solrep>

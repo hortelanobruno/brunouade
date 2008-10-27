@@ -1,0 +1,17 @@
+VAMOS A RECIBIR UN STRING Y PEDIMOS POR LOS ATRIBUTOS (NO NECESITAMOS VO)
+
+<XMLArticulo>
+	<codigo>2</codigo>REFERENCIA /ROPA-HOGAR
+	<descripcion>alfombra havana</descripcion>DESCRIPCION /ROPA-HOGAR
+	<precio>200</precio>PRECIOVENTAUNITARIO /ROPA-HOGAR
+	<seccion>alfombra</seccion>SECCION /ROPA-HOGAR
+	<color>unico</color>COLOR /ROPA-HOGAR
+	<linea>unica</linea>LINEA /HOGAR
+	<cantidad>10</cantidad>NO VA ACA PAPAAAAAAAAAAAAAAAA
+	<detalles>alfombra de piel de vaca con patchwork</detalles>NOMBRE /HOGAR
+	<composicion>100% piel bovina</composicion>COMPOSICION /HOGAR
+	<categoria>cama</categoria>CATEGORIA /HOGAR
+	<medidas>150 X 220 cm</medidas>MEDIDAS /HOGAR
+	<talle></talle>TALLE /ROPA
+	<origen></origen>ORIGEN /ROPA
+</XMLArticulo>
