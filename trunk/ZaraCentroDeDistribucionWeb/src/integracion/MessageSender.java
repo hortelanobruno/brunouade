@@ -15,7 +15,7 @@ import javax.naming.NamingException;
 
 public class MessageSender {
 	
-	private Hashtable props = new Hashtable();
+	private Hashtable props;
 	private QueueConnectionFactory qfactory;
 	private Queue queue;
 	private QueueConnection qCon;
@@ -25,6 +25,7 @@ public class MessageSender {
 	@SuppressWarnings("unchecked")
 	public MessageSender(String cola)
 	{
+		props = new Hashtable();
 		props.put(InitialContext.INITIAL_CONTEXT_FACTORY , "org.jnp.interfaces.NamingContextFactory");
 		props.put(InitialContext.PROVIDER_URL, "jnp://127.0.0.1:1099");
 		
@@ -60,7 +61,5 @@ public class MessageSender {
 		{
 			System.out.println("Error al enviar mensaje. " + e);
 		}
-		
 	}
-
 }
