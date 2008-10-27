@@ -1,0 +1,31 @@
+
+
+<solicituddistribucion>
+
+	<numero>1111</numero> //LO GENERO YO
+	
+	<tienda>
+		<codigoTienda>1</codigoTienda>items -> itemSolDist -> tienda -> codigo
+		<nombreTienda>Florida</nombreTienda>items -> itemSolDist -> tienda -> nombre
+	</tienda>
+	
+	<fechaEmision>27/06/08 23:01</fechaEmision>FECHA /EJ: 2008-10-27 10:11:38.363 GST
+
+	<articulospedidos>
+		<articulopedido>
+			<cod>1100</cod>items -> ItemSolDist -> articulos -> referencia
+			<cant>8</cant>items -> ItemSolDist -> cantidad
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1001</cod>
+			<cant>2</cant>
+		</articulopedido>
+		
+		<articulopedido>
+			<cod>1102</cod>
+			<cant>4</cant>
+		</articulopedido>
+	</articulospedidos>
+	
+</solicituddistribucion>
