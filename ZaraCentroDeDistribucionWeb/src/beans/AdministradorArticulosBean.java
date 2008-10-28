@@ -1,5 +1,8 @@
 package beans;
 
+import interfaz.FileWriterWrapper;
+
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -9,6 +12,10 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
 
 import vo.ArticuloAEnviarVO;
 import vo.ArticuloAFabricarVO;
@@ -327,4 +334,24 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 	}
 
+	public void guardarArticuloFromJMS(String msg) 
+	{
+		FileWriterWrapper f = new FileWriterWrapper("\tmp.xml");
+		f.write(msg); // Guardo el mensaje como un archivo temporal XML y lo leo con JDOM
+		
+		try
+		{
+			SAXBuilder builder = new SAXBuilder ();
+			Document doc = builder.build (new FileInputStream ("files/tienda.xml"));
+			Element root = doc.getRootElement();
+			List hijos = root.getChildren();
+			for (Object hijo : hijos) {
+				
+			}
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
 }
