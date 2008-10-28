@@ -273,4 +273,9 @@ public class ServerFacadeBean implements ServerFacade
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void guardarArticuloFromJMS(String msg) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -29,6 +29,11 @@ public interface ServerFacade
 	public CentroDistribucionVO getCentro();
 	public void guardarFabrica(FabricaVO fab);
 	
+	//INTREGACION: JMS - WS
+	
+	public void guardarArticuloFromJMS(String msg);
+	
+	
 	//panel sol dist
 	public ArrayList<FabricaVO> getFabricas();
 	public boolean existeSolDis(int numero);//Nuevo hay que hacer
