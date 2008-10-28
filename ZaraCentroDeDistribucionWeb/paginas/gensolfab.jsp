@@ -41,12 +41,12 @@
 							</tr>
                             <logic:iterate id="articulos" name="CargarArtFabForm" property="articulosAFabricar" >
 							<tr>
-							<td><input type="text" name="codigo" value="<bean:write name='articulos' property='art.codigo' />" readonly="readonly"/></td>
-							<td><input type="text" name="descripcion" value="<bean:write name="articulos" property="art.descripcion" />" readonly="readonly"/></td>
-							<td><input type="text" name="stock" value="<bean:write name="articulos" property="art.cantidad" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantPedida" value="<bean:write name="articulos" property="cantidadPedida" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantRecibida" value="<bean:write name="articulos" property="cantidadRecibida" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantMinAPedir" value="<bean:write name="articulos" property="cantMinAPedir" />" readonly="readonly"/></td>
+							<td><bean:write name='articulos' property='art.codigo' /><input type="hidden" name="codigo" value="<bean:write name='articulos' property='art.codigo' />" /></td>
+							<td><bean:write name="articulos" property="art.descripcion" /><input type="hidden" name="descripcion" value="<bean:write name="articulos" property="art.descripcion" />" /></td>
+							<td><bean:write name="articulos" property="art.cantidad" /><input type="hidden" name="stock" value="<bean:write name="articulos" property="art.cantidad" />" /></td>
+							<td><bean:write name="articulos" property="cantidadPedida" /><input type="hidden" name="cantPedida" value="<bean:write name="articulos" property="cantidadPedida" />" /></td>
+							<td><bean:write name="articulos" property="cantidadRecibida" /><input type="hidden" name="cantRecibida" value="<bean:write name="articulos" property="cantidadRecibida" />" /></td>
+							<td><bean:write name="articulos" property="cantMinAPedir" /><input type="hidden" name="cantMinAPedir" value="<bean:write name="articulos" property="cantMinAPedir" />" /></td>
 							<td><input type="text" name="cantAFab" value="0" onblur="comprobarCantAPed()"/></td>
 							</tr>
 							</logic:iterate>
