@@ -77,6 +77,7 @@ public class GenerarSolicitudFabricacionAction extends Action
 				CentroDistribucionVO centroVO = bd.getCentro();
 				solFab.setCdVO(centroVO);
 				//TODO Aca habia algo de que agarra la fabrica, que hacemos??
+				solFab.setFabrica(bd.getFabricas().get(0));
 				solFab.setFechaEmision(new Date());
 				int idSolFab = bd.getNumeroSolFab();
 				solFab.setIdFab(idSolFab);
@@ -85,13 +86,13 @@ public class GenerarSolicitudFabricacionAction extends Action
 				// TODO aca hay que hacer que te genere el xml y haga algo
 				
 				// TODO poner mensaje al log
-				return (mapping.findForward("gensolfabok"));
+				return (mapping.findForward("success"));
 			}
 		} catch (NumberFormatException e) {
 			// TODO poner mensaje al log
 			e.printStackTrace();
-			return (mapping.findForward("gensolfabfalse"));
+			return (mapping.findForward("failure"));
 		}
-		return (mapping.findForward("gensolfabfalse"));
+		return (mapping.findForward("failure"));
 	}
 }
