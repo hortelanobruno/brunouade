@@ -14,9 +14,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.input.SAXBuilder;
+
 
 import vo.ArticuloAEnviarVO;
 import vo.ArticuloAFabricarVO;
@@ -335,9 +333,10 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 	}
 
-	public void guardarArticuloFromJMS(String msg) 
+	//ESTE METODO LO COMENTE PARA PROBAR PORQUE TIRABA ERROR DE SAX
+public void guardarArticuloFromJMS(String msg) 
 	{
-		FileWriterWrapper f = new FileWriterWrapper("/tmp.xml");
+	/*		FileWriterWrapper f = new FileWriterWrapper("/tmp.xml");
 		f.write(msg); // Guardo el mensaje como un archivo temporal XML y lo leo con JDOM
 		
 		try
@@ -396,6 +395,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		catch(Exception e)
 		{
 			
-		}
+		}*/
 	}
 }

@@ -2,6 +2,7 @@ package struts.actions;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import struts.forms.GenerarEnviosForm;
 import struts.model.BusinessDelegate;
 import vo.SolicitudDistribucionVO;
 import exceptions.ErrorConectionException;
@@ -33,7 +35,7 @@ public class GenerarEnviosAction extends Action
 	{
 		try
 		{
-			bd = new BusinessDelegate();
+			this.bd = new BusinessDelegate();
 		}
 		catch(ErrorConectionException e)
 		{
@@ -43,11 +45,20 @@ public class GenerarEnviosAction extends Action
 	
 	public ActionForward execute(ActionMapping mapping,	 ActionForm form, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException 
 	{
-		ArrayList<SolicitudDistribucionVO> lista = bd.obtenerSolicitudesDeTiendas();
+		ArrayList<SolicitudDistribucionVO> lista = this.bd.obtenerSolicitudesDeTiendas();
 		
-		if(!(lista.isEmpty()))
-			return mapping.findForward("generarEnvios");
-		else
-			return mapping.findForward("nohayenvios");
+		if(!(lista.isEmpty())){
+			List codigos = new ArrayList();
+			
+			for(int i=0; i < lista.size() ; i++){
+				codigos.add(((SolicitudDistribucionVO)lista.get(i)).getIdDis());
+			}
+			GenerarEnviosForm frm = (GenerarEnviosForm) form;
+			frm.setCodigosSolDist(codigos);
+			return mapping.findForward("success");
+		}else{
+			return mapping.findForward("failure");
+		}
+			
 	}
 }

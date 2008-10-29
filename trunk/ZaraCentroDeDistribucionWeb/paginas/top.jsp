@@ -11,9 +11,9 @@
 <tr height="20">
 	<td colspan="2" align="center">
 		<ul id="menuhorizontal">
-			<li><a href="generarenvios.jsp">Generar Envios</a></li>
+			<li><a href="GenerarEnvios.do">Generar Envios</a></li>
 			<li><a href="CargarArtFab.do">Generar Solicitud de Fabricación</a></li>
-			<li><a href="reposicion.jsp">Reposición de Articulos</a></li>
+			<li><a href="">Reposición de Articulos</a></li>
 		</ul>
 	</td>
 </tr>

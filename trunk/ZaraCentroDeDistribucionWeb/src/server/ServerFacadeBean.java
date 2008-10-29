@@ -270,8 +270,7 @@ public class ServerFacadeBean implements ServerFacade
 	}
 
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion() {
-		// TODO Auto-generated method stub
-		return null;
+		return admSol.getAllSolicitudesDistribucion();
 	}
 
 	public void guardarArticuloFromJMS(String msg)

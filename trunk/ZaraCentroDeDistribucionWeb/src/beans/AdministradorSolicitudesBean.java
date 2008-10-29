@@ -180,6 +180,20 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return false;
 	}
 
+	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion() {
+		Query q = em.createQuery("SELECT s FROM SolicitudDistribucion s WHERE s.cerrada =:state");
+		q.setParameter("state", false);
+		List lVO = q.getResultList();
+		Iterator i = lVO.iterator();
+		ArrayList<SolicitudDistribucionVO> ret = new ArrayList<SolicitudDistribucionVO>();
+		while(i.hasNext())
+		{
+			SolicitudDistribucion sol = (SolicitudDistribucion)i.next();
+			ret.add(sol.getVO());
+		}
+		return ret;
+	}
+	
 	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tien) 
 	{
 		Query q = em.createQuery("SELECT t FROM Tienda t");
@@ -271,4 +285,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 		return false;
 	}
+
+
 }
