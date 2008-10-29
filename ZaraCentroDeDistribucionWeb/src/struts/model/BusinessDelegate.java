@@ -272,4 +272,8 @@ public class BusinessDelegate
 	public boolean existeSolFab(int numSolFab) {
 		return this.getModCD().existeSolFab(numSolFab);
 	}
+
+	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis) {
+		return this.getModCD().obtenerSolicitudDistribucion(codSolDis);
+	}
 }

@@ -277,4 +277,8 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		this.admArt.guardarArticuloFromJMS(msg);
 	}
+
+	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis) {
+		return this.admSol.obtenerSolicitudDistribucion(codSolDis);
+	}
 }

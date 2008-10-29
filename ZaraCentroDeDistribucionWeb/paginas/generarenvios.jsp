@@ -20,7 +20,7 @@
         <%  %>
         <tr height="500px">
 			<td colspan="2" align="center">
-			<form name="form1">
+			<form name="form1" action="GenerarSolEnvio.do">
            <table cellpadding="10" cellspacing="10">
 			<tr>
                 <td colspan="2" align="center"><h1>Generar envios</h1></td>
@@ -29,8 +29,7 @@
               </tr>
               <tr>
                <td width="200">
-               <label id="capo">hola</label>
-		            <select name="select1" onchange="fillSolDis()">
+		            <select name="idsoldis" onchange="fillSolDis()">
 		            <option value="">-SELECT–</option>
 		            <logic:iterate id="articulos" name="GenerarEnviosForm" property="codigosSolDist" >
 		            <option value="<bean:write name='articulos'/>"><bean:write name='articulos'/></option>
@@ -39,28 +38,6 @@
 				</td>
                 <td width="500" valign="top">
                 <div id="tablaDatos">
-                <table width="100%">
-                  <tr>
-                    <th>Codigo</th>
-                    <th>Descripcion</th>
-                    <th>Cantidad pedida</th>
-                    <th>Cantidad reservada</th>
-                    <th>Stock</th>
-                    <th>Cantidad enviada</th>
-                    <th></th>
-                  </tr>
-                  <tr>
-                    <!-- property="codigoArticulo" -->
-                    <td><label>1000</label></td>
-                    <td>Pantalon rosita</td>
-                    <td>20</td>
-                    <td>10</td>
-                    <td>50</td>
-                    <td>0</td>
-                    <!-- property="cantEnviar" -->
-                    <td><input type="text"/></td>
-                  </tr>
-                </table>
                 </div>
                 </td>
              </tr>
