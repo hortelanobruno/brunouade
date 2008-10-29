@@ -8,14 +8,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-
-
+import com.thoughtworks.xstream.XStream;
+import xml.XMLAdapter;
 import vo.ArticuloAEnviarVO;
 import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
@@ -23,6 +21,7 @@ import vo.ArticuloHeaderVO;
 import vo.ArticuloHogarVO;
 import vo.ArticuloReservadoVO;
 import vo.ArticuloRopaVO;
+import xml.XMLArticuloLaCoruna;
 import businesslogic.Articulo;
 import businesslogic.ArticuloAEnviar;
 import businesslogic.ArticuloAFabricar;
@@ -333,68 +332,24 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 	}
 
-	//ESTE METODO LO COMENTE PARA PROBAR PORQUE TIRABA ERROR DE SAX
-public void guardarArticuloFromJMS(String msg) 
+	public void guardarArticuloFromJMS(String msg) 
 	{
-	/*		FileWriterWrapper f = new FileWriterWrapper("/tmp.xml");
-		f.write(msg); // Guardo el mensaje como un archivo temporal XML y lo leo con JDOM
-		
 		try
 		{
-			SAXBuilder builder = new SAXBuilder ();
-			Document doc = builder.build (new FileInputStream ("/tmp.xml"));
-			Element root = doc.getRootElement();
-			ArticuloHeaderVO ahvo = new ArticuloHeaderVO();
+			XStream xstream = new XStream();
+			XMLAdapter adapter = new XMLAdapter();
+			xstream.alias("XMLArticulo", XMLArticuloLaCoruna.class);
+			XMLArticuloLaCoruna xmlLC = (XMLArticuloLaCoruna)xstream.fromXML(msg);
+			ArticuloHeaderVO art = adapter.getArticuloFromXMLArticuloLaCoruna(xmlLC);
 			
-			ahvo.setCodigo(Integer.valueOf(root.getAttributeValue("referencia")));
-			ahvo.setCantidad(0);
-			ahvo.setColor(root.getAttributeValue("color"));
-			ahvo.setDescripcion(root.getAttributeValue("descripcion"));
-			ahvo.setPrecio(Float.valueOf(root.getAttributeValue("PRECIOVENTAUNITARIO")));
-			ahvo.setSeccion(root.getAttributeValue("seccion"));
-			
-			String auxTalle = root.getAttributeValue("talle");
-			
-			if(auxTalle == null) //Es hogar
-			{
-				ArticuloHogarVO ahovo = new ArticuloHogarVO();
-				ahovo.setCodigo(ahvo.getCodigo());
-				ahovo.setCantidad(ahvo.getCantidad());
-				ahovo.setColor(ahvo.getColor());
-				ahovo.setDescripcion(ahvo.getDescripcion());
-				ahovo.setPrecio(ahvo.getPrecio());
-				ahovo.setSeccion(ahvo.getSeccion());
-				
-				ahovo.setLinea(root.getAttributeValue("linea"));
-				ahovo.setDetalles(root.getAttributeValue("nombre"));
-				ahovo.setComposicion(root.getAttributeValue("composicion"));
-				ahovo.setCategoria(root.getAttributeValue("categoria"));
-				ahovo.setMedidas(root.getAttributeValue("medidas"));
-				
-				this.guardarArticuloHogar(ahovo);
-			}
-			else //es ropa
-			{
-				ArticuloRopaVO arvo = new ArticuloRopaVO();
-				arvo.setCodigo(ahvo.getCodigo());
-				arvo.setCantidad(ahvo.getCantidad());
-				arvo.setColor(ahvo.getColor());
-				arvo.setDescripcion(ahvo.getDescripcion());
-				arvo.setPrecio(ahvo.getPrecio());
-				arvo.setSeccion(ahvo.getSeccion());
-				arvo.setTalle(auxTalle);
-				arvo.setOrigen(root.getAttributeValue("origen"));
-				
-				this.guardarArticuloRopa(arvo);
-				
-				File fd = new File("/tmp.xml");
-				
-				if(fd.exists()) fd.delete();
-			}
+			if(art instanceof ArticuloRopaVO) 
+				this.guardarArticuloRopa((ArticuloRopaVO)art);
+			else 
+				this.guardarArticuloHogar((ArticuloHogarVO)art);
 		}
 		catch(Exception e)
 		{
 			
-		}*/
+		}
 	}
 }
