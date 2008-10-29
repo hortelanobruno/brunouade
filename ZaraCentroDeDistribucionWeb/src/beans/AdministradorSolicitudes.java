@@ -30,5 +30,6 @@ public interface AdministradorSolicitudes
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
 	public int getNextId();
 	public boolean existeSolFab(int numSolFab);
+	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
 	
 }
