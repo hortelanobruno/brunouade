@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.util.Hashtable;
+
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.EJBException;
 import javax.ejb.MessageDriven;
@@ -9,8 +11,16 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
+import javax.naming.Context;
+import javax.naming.InitialContext;
 
 import javax.ejb.CreateException;
+
+import exceptions.ErrorConectionException;
+
+import varios.Constantes;
+
+import businesslogic.ServerFacade;
 
 @MessageDriven(activationConfig = {
 		@ActivationConfigProperty(propertyName="destinationType", propertyValue="javax.jms.Queue"),
@@ -19,10 +29,11 @@ import javax.ejb.CreateException;
 
 public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
 {
-//	private ServerFacade modCD = null;
-//private String naming = Constantes.BEAN_STRING;
+	private static final long serialVersionUID = -4262941444807681915L;
+	private ServerFacade modCD = null;
+	private String naming = Constantes.BEAN_STRING;
 	
-	/*@SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	protected void getConnection() throws ErrorConectionException {
         try {
         	Hashtable props = new Hashtable();
@@ -33,21 +44,21 @@ public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
         } catch (Exception e) {
         	throw new ErrorConectionException("No se pudo conectar");
         }
-    }    */
+    }    
 	
 	public RecibirArticuloBean()
 	{
 		
 	}
 	
-	/*public ServerFacade getModCD() {
+	public ServerFacade getModCD() {
 		return modCD;
 	}
 	
     @SuppressWarnings("unused")
 	private static Context getInitialContext() throws javax.naming.NamingException {
         return new javax.naming.InitialContext();
-    }*/
+    }
 
 	public void ejbRemove() throws EJBException {
 		// TODO Auto-generated method stub
@@ -60,18 +71,20 @@ public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
 
 	}
 
-	public void onMessage(Message arg0) {
-		// TODO Auto-generated method stub
-		System.out.println("Llego algo");
+	public void onMessage(Message m) 
+	{	
 		TextMessage msg = null;
 		
-		try {
-			if (arg0 instanceof TextMessage) {
-				msg = (TextMessage) arg0;
-				System.out.println("MESSAGE BEAN: Mensaje recibido: "+ msg.getText() );
-			} else {
-				System.out.println("MESSAGE BEAN: Mensaje de tipo incorrecto ");
-			}
+		try 
+		{
+			if (m instanceof TextMessage) 
+			{
+				msg = (TextMessage) m;
+				String mens = msg.getText();
+				this.getConnection();
+				this.getModCD().guardarArticuloFromJMS(mens);
+			} 
+			else System.out.println("MESSAGE BEAN: Mensaje de tipo incorrecto ");
 				
 		} catch (JMSException e) {
 			e.printStackTrace();
