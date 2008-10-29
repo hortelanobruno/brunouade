@@ -2,6 +2,7 @@ package beans;
 
 import interfaz.FileWriterWrapper;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -386,9 +387,11 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 				arvo.setOrigen(root.getAttributeValue("origen"));
 				
 				this.guardarArticuloRopa(arvo);
+				
+				File fd = new File("/tmp.xml");
+				
+				if(fd.exists()) fd.delete();
 			}
-			
-			
 		}
 		catch(Exception e)
 		{
