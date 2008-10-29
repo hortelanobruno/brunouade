@@ -31,7 +31,7 @@ public class ClienteJMS {
 			QueueConnectionFactory qfactory = (QueueConnectionFactory) ctx.lookup("ConnectionFactory");
 			
 			// buscar la Cola en JNDI
-			Queue queue = (Queue) ctx.lookup("queue/testQueue");
+			Queue queue = (Queue) ctx.lookup("queue/queueArticulos");
 			
 			// crear la connection y la session a partir de la connection
 			QueueConnection qCon = qfactory.createQueueConnection();
@@ -71,10 +71,13 @@ public class ClienteJMS {
 			// enviar el mensaje
 			qSender.send(message);
 			
+			System.out.println("Mande el de hogar\n");
+			
 			message.setText(msgRopa);
 			
 			// enviar el mensaje
 			qSender.send(message);
+			System.out.println("Mande el de ropa\n");
 			
 		} catch (Exception e) {
 			System.out.println("Error al efectuar pedido " + e);
