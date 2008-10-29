@@ -1,36 +1,28 @@
 package interfaz;
 
-import java.util.Hashtable;
-
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.EJBException;
 import javax.ejb.MessageDriven;
 import javax.ejb.MessageDrivenBean;
 import javax.ejb.MessageDrivenContext;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.TextMessage;
 
-import exceptions.ErrorConectionException;
-
-import varios.Constantes;
-import businesslogic.ServerFacade;
+import javax.ejb.CreateException;
 
 @MessageDriven(activationConfig = {
 		@ActivationConfigProperty(propertyName="destinationType", propertyValue="javax.jms.Queue"),
-		@ActivationConfigProperty(propertyName="destination", propertyValue="queue/queueArticulos")
+		@ActivationConfigProperty(propertyName="destination", propertyValue="queue/testQueue")
 })
 
 public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
 {
-	private static final long serialVersionUID = 1537709922823367360L;
-	private ServerFacade modCD = null;
-	private String naming = Constantes.BEAN_STRING;
+//	private ServerFacade modCD = null;
+//private String naming = Constantes.BEAN_STRING;
 	
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	protected void getConnection() throws ErrorConectionException {
         try {
         	Hashtable props = new Hashtable();
@@ -41,47 +33,59 @@ public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
         } catch (Exception e) {
         	throw new ErrorConectionException("No se pudo conectar");
         }
-    }    
+    }    */
 	
-	public ServerFacade getModCD() {
+	public RecibirArticuloBean()
+	{
+		
+	}
+	
+	/*public ServerFacade getModCD() {
 		return modCD;
 	}
 	
     @SuppressWarnings("unused")
 	private static Context getInitialContext() throws javax.naming.NamingException {
         return new javax.naming.InitialContext();
-    }
-	
-	public void onMessage(Message message) 
-	{
+    }*/
+
+	public void ejbRemove() throws EJBException {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void setMessageDrivenContext(MessageDrivenContext arg0)
+		throws EJBException {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void onMessage(Message arg0) {
+		// TODO Auto-generated method stub
 		TextMessage msg = null;
 		
 		try {
-			if (message instanceof TextMessage) {
-				msg = (TextMessage) message;			
-				String mens = msg.getText();
-				
-				System.out.println(mens);
-				//this.getConnection();
-				//this.getModCD().guardarArticuloFromJMS(mens);
+			if (arg0 instanceof TextMessage) {
+				msg = (TextMessage) arg0;
+				System.out.println("MESSAGE BEAN: Mensaje recibido: "+ msg.getText() );
+			} else {
+				System.out.println("MESSAGE BEAN: Mensaje de tipo incorrecto ");
 			}
 				
 		} catch (JMSException e) {
-			System.out.println("error");
 			e.printStackTrace();
 		} catch (Exception e) {
-			System.out.println("error1");
 			e.printStackTrace();
 		}
+
 	}
 
-	public void ejbRemove() throws EJBException 
-	{
-	
-	}
-
-	public void setMessageDrivenContext(MessageDrivenContext ctx) throws EJBException 
-	{
-
+	/**
+	 * Default create method
+	 * 
+	 * @throws CreateException
+	 */
+	public void ejbCreate() throws CreateException {
+		// TODO Auto-generated method stub
 	}
 }
