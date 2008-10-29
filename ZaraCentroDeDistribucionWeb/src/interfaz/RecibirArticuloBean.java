@@ -21,7 +21,7 @@ import businesslogic.ServerFacade;
 
 @MessageDriven(activationConfig = {
 		@ActivationConfigProperty(propertyName="destinationType", propertyValue="javax.jms.Queue"),
-		@ActivationConfigProperty(propertyName="destination", propertyValue="queue/testQueue")
+		@ActivationConfigProperty(propertyName="destination", propertyValue="queue/queueArticulos")
 })
 
 public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
@@ -60,13 +60,17 @@ public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
 			if (message instanceof TextMessage) {
 				msg = (TextMessage) message;			
 				String mens = msg.getText();
-				this.getConnection();
-				this.getModCD().guardarArticuloFromJMS(mens);
+				
+				System.out.println(mens);
+				//this.getConnection();
+				//this.getModCD().guardarArticuloFromJMS(mens);
 			}
 				
 		} catch (JMSException e) {
+			System.out.println("error");
 			e.printStackTrace();
 		} catch (Exception e) {
+			System.out.println("error1");
 			e.printStackTrace();
 		}
 	}
