@@ -342,13 +342,53 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		try
 		{
 			SAXBuilder builder = new SAXBuilder ();
-			Document doc = builder.build (new FileInputStream ("tmp.xml"));
+			Document doc = builder.build (new FileInputStream ("/tmp.xml"));
 			Element root = doc.getRootElement();
-			List hijos = root.getChildren();
-			for (Object hijo : hijos) 
+			ArticuloHeaderVO ahvo = new ArticuloHeaderVO();
+			
+			ahvo.setCodigo(Integer.valueOf(root.getAttributeValue("referencia")));
+			ahvo.setCantidad(0);
+			ahvo.setColor(root.getAttributeValue("color"));
+			ahvo.setDescripcion(root.getAttributeValue("descripcion"));
+			ahvo.setPrecio(Float.valueOf(root.getAttributeValue("PRECIOVENTAUNITARIO")));
+			ahvo.setSeccion(root.getAttributeValue("seccion"));
+			
+			String auxTalle = root.getAttributeValue("talle");
+			
+			if(auxTalle == null) //Es hogar
 			{
+				ArticuloHogarVO ahovo = new ArticuloHogarVO();
+				ahovo.setCodigo(ahvo.getCodigo());
+				ahovo.setCantidad(ahvo.getCantidad());
+				ahovo.setColor(ahvo.getColor());
+				ahovo.setDescripcion(ahvo.getDescripcion());
+				ahovo.setPrecio(ahvo.getPrecio());
+				ahovo.setSeccion(ahvo.getSeccion());
 				
+				ahovo.setLinea(root.getAttributeValue("linea"));
+				ahovo.setDetalles(root.getAttributeValue("nombre"));
+				ahovo.setComposicion(root.getAttributeValue("composicion"));
+				ahovo.setCategoria(root.getAttributeValue("categoria"));
+				ahovo.setMedidas(root.getAttributeValue("medidas"));
+				
+				this.guardarArticuloHogar(ahovo);
 			}
+			else //es ropa
+			{
+				ArticuloRopaVO arvo = new ArticuloRopaVO();
+				arvo.setCodigo(ahvo.getCodigo());
+				arvo.setCantidad(ahvo.getCantidad());
+				arvo.setColor(ahvo.getColor());
+				arvo.setDescripcion(ahvo.getDescripcion());
+				arvo.setPrecio(ahvo.getPrecio());
+				arvo.setSeccion(ahvo.getSeccion());
+				arvo.setTalle(auxTalle);
+				arvo.setOrigen(root.getAttributeValue("origen"));
+				
+				this.guardarArticuloRopa(arvo);
+			}
+			
+			
 		}
 		catch(Exception e)
 		{
