@@ -39,6 +39,7 @@ public class XMLAdapter
 		}
 		disVO.setArticulosPedidos(arts);
 		disVO.setFechaEmision(this.getFechaHoraFromString(sd.getFecha()));
+		disVO.setFechaEmision(new Date());
 		return disVO;
 	}
 	
@@ -168,10 +169,10 @@ public class XMLAdapter
 		try 
 		{
 			fn = df.parse(this.getFecha(f));
-			fn2 = df1.parse(this.getHora(f));	
-			fn.setHours(fn2.getHours());
-			fn.setMinutes(fn2.getMinutes());
-			fn.setSeconds(fn2.getSeconds());
+			//fn2 = df1.parse(this.getHora(f));	
+			fn.setHours(Integer.parseInt(this.getHora(f).split(":")[0].trim()));
+			fn.setMinutes(Integer.parseInt(this.getHora(f).split(":")[1].trim()));
+			//fn.setSeconds(fn2.getSeconds());
 		} 
 		catch (ParseException e)
 		{
