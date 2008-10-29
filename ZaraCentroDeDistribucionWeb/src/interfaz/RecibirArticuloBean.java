@@ -62,6 +62,7 @@ public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
 
 	public void onMessage(Message arg0) {
 		// TODO Auto-generated method stub
+		System.out.println("Llego algo");
 		TextMessage msg = null;
 		
 		try {
