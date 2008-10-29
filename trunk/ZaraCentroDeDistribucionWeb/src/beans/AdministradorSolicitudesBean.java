@@ -225,6 +225,15 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return ret;
 	}
 
+	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis) {
+		Query q = em.createQuery("SELECT s FROM SolicitudDistribucion s WHERE s.idDis =:cod");
+		q.setParameter("cod", codSolDis);
+		List lVO = q.getResultList();
+		Iterator i = lVO.iterator();
+		SolicitudDistribucion sol = (SolicitudDistribucion)i.next();
+		return sol.getVO();
+	}
+	
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio)
 	{
 		Query q = em.createQuery("SELECT s FROM SolicitudEnvioATienda s");

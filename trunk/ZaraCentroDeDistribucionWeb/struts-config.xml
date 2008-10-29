@@ -15,6 +15,7 @@
     <form-bean  name="CargarArtFabForm" type="struts.forms.CargarArtFabForm" />
 	<form-bean  name="GenerarSolFabForm" type="struts.forms.GenerarSolFabForm" />
 	<form-bean  name="GenerarEnviosForm" type="struts.forms.GenerarEnviosForm" />
+	<form-bean  name="CargarGenerarEnviosForm" type="struts.forms.CargarGenerarEnviosForm" />
   </form-beans>
 
   <!-- ========== Definiciones de Global Forward ============================== -->
@@ -41,9 +42,14 @@
     <action   path="/GenerarEnvios" type="struts.actions.GenerarEnviosAction" name="GenerarEnviosForm"
               scope="request" validate="false">
               <forward name="success" path="/generarenvios.jsp"/>
-			  <forward name="failure" path="/error.jsp"/>
+			  <forward name="failure" path="/nohayenviosparagenerar.jsp"/>
     </action>
     
+    <action   path="/GenerarSolEnvio" type="struts.actions.GenerarSolicitudesDeEnvioAction" name="CargarGenerarEnviosForm"
+              scope="request" validate="false">
+              <forward name="success" path="/generarenviosok.jsp"/>
+			  <forward name="failure" path="/error.jsp"/>
+    </action>
   </action-mappings>
   
   <message-resources parameter="resources.application"/>

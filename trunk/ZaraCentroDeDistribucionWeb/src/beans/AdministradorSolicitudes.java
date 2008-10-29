@@ -31,5 +31,6 @@ public interface AdministradorSolicitudes
 	public int getNextId();
 	public boolean existeSolFab(int numSolFab);
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
+	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
 	
 }

@@ -71,6 +71,8 @@ public interface ServerFacade
 	public ArrayList<TiendaVO> getTiendas();
 	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis);
 	public int getNumeroSolEnv();
+	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
+	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
 	
 	
 	//panel gen sol fab
@@ -93,6 +95,7 @@ public interface ServerFacade
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public boolean existeSolFab(int numSolFab);
-	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
+	
+	
 	
 }
