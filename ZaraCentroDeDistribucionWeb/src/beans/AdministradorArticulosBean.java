@@ -336,16 +336,17 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	public void guardarArticuloFromJMS(String msg) 
 	{
-		FileWriterWrapper f = new FileWriterWrapper("\tmp.xml");
+		FileWriterWrapper f = new FileWriterWrapper("/tmp.xml");
 		f.write(msg); // Guardo el mensaje como un archivo temporal XML y lo leo con JDOM
 		
 		try
 		{
 			SAXBuilder builder = new SAXBuilder ();
-			Document doc = builder.build (new FileInputStream ("files/tienda.xml"));
+			Document doc = builder.build (new FileInputStream ("tmp.xml"));
 			Element root = doc.getRootElement();
 			List hijos = root.getChildren();
-			for (Object hijo : hijos) {
+			for (Object hijo : hijos) 
+			{
 				
 			}
 		}
