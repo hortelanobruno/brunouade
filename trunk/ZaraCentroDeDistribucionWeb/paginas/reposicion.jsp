@@ -10,7 +10,7 @@
 <body>
 	
 		<%@ include file="top.jsp" %>
-		
+		<form action="AtenderPedido.do" id="form2" name="form2" method="post" >
 		<tr height="500">
 			<td colspan="2" align="center">
             <h1>Reponer articulos</h1>
@@ -28,45 +28,43 @@
 						<th>Cantidad Recibida</th>
 						<th>Cantidad a Reponer</th>
 					</tr>
+					<logic:iterate id="articulos" name="ReposicionForm" property="articulosAReponer" >
 					<tr>
-						<td>1</td>
-						<td>82</td>
-						<td>Lanus</td>
-						<td>1000</td>
-						<td>Florero chino</td>
-						<td>20</td>
-						<td>40</td>
-						<td>0</td>
-						<td>10</td>
+					<td><bean:write name='articulos' property='codSolRep' /><input type="hidden" name="codSolRep" value="<bean:write name='articulos' property='codSolRep' />" /></td>
+					<td><bean:write name="articulos" property="codSolFab" /><input type="hidden" name="codSolFab" value="<bean:write name="articulos" property="codSolFab" />" /></td>
+					<td><bean:write name="articulos" property="fabrica" /><input type="hidden" name="fabrica" value="<bean:write name="articulos" property="fabrica" />" /></td>
+					<td><bean:write name="articulos" property="codigoArticulo" /><input type="hidden" name="codigoArticulo" value="<bean:write name="articulos" property="codigoArticulo" />" /></td>
+					<td><bean:write name="articulos" property="descripcion" /><input type="hidden" name="descripcion" value="<bean:write name="articulos" property="descripcion" />" /></td>
+					<td><bean:write name="articulos" property="cantidadPedida" /><input type="hidden" name="cantidadPedida" value="<bean:write name="articulos" property="cantidadPedida" />" /></td>
+					<td><bean:write name="articulos" property="cantidadAFabricar" /><input type="hidden" name="cantidadAFabricar" value="<bean:write name="articulos" property="cantidadAFabricar" />" /></td>
+					<td><bean:write name="articulos" property="cantidadRecibida" /><input type="hidden" name="cantidadRecibida" value="<bean:write name="articulos" property="cantidadRecibida" />" /></td>
+					<td><bean:write name="articulos" property="cantidadAReponer" /><input type="hidden" name="cantidadAReponer" value="<bean:write name="articulos" property="cantidadAReponer" />" /></td>
 					</tr>
+					</logic:iterate>
 				</table>
 				</div>
 				<table>
 				<tr height="20">
 		</tr>		
 		<tr>
-		 <form id="form1" name="form1" method="post" action="indexz.jsp">
+		
 		<td>
-			      <label>
-			      <input type="submit" name="Submit" value="Volver" />
-		          </label>
-
+          <label>
+          <input type="submit" name="Submit2" value="Atender pedidos" />
+          </label>
+		  </td>
+	      </form>
+	      <form id="form1" name="form1" method="post" action="indexz.jsp">
+		<td>
+	      <label>
+	      <input type="submit" name="Submit" value="Volver" />
+          </label>
 		</td>
 		</form>
-		<td>
-				 <form id="form2" name="form2" method="post" action="atenderpedidos.jsp">
-		          <label>
-		          <input type="submit" name="Submit2" value="Atender pedidos" />
-		          </label>
-		
-		
-			  </td>
-		      </form>
-		      <p>&nbsp;</p>
-
+	      <p>&nbsp;</p>
 		</tr>
-				</table>
-			</td>	
+		</table>
+		</td>	
 		</tr>
 		
 		<%@ include file="footer.jsp" %>

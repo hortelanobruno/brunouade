@@ -13,7 +13,7 @@
 		<ul id="menuhorizontal">
 			<li><a href="GenerarEnvios.do">Generar Envios</a></li>
 			<li><a href="CargarArtFab.do">Generar Solicitud de Fabricación</a></li>
-			<li><a href="">Reposición de Articulos</a></li>
+			<li><a href="Reposicion.do">Reposición de Articulos</a></li>
 		</ul>
 	</td>
 </tr>
