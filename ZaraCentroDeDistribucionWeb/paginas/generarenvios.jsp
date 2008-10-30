@@ -20,7 +20,7 @@
         <%  %>
         <tr height="500px">
 			<td colspan="2" align="center">
-			<form name="form1" action="GenerarSolEnvio.do">
+			<form name="form1" action="GenerarSolEnvio.do" method="post">
            <table cellpadding="10" cellspacing="10">
 			<tr>
                 <td colspan="2" align="center"><h1>Generar envios</h1></td>
