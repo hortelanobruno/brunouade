@@ -1,9 +1,5 @@
 package beans;
 
-import interfaz.FileWriterWrapper;
-
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -336,6 +332,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	{
 		try
 		{
+			System.out.println("llego al bean: " + msg);
 			XStream xstream = new XStream();
 			XMLAdapter adapter = new XMLAdapter();
 			xstream.alias("XMLArticulo", XMLArticuloLaCoruna.class);
@@ -349,7 +346,8 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 		catch(Exception e)
 		{
-			
+			System.out.println("Exception en guardarArticuloFromJMS!!\n\n");
+			e.printStackTrace();
 		}
 	}
 }

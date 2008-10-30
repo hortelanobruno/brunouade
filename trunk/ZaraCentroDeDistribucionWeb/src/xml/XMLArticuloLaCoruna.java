@@ -4,7 +4,7 @@ public class XMLArticuloLaCoruna
 {
 	private long referencia;
 	private String descripcion;
-	private float precio;
+	private float precioventaunitario;
 	private String seccion;
 	private String color;
 	private String linea; //hogar
@@ -13,7 +13,7 @@ public class XMLArticuloLaCoruna
 	private String categoria; //hogar
 	private String medidas; //hogar
 	private String talle;	//ropa
-	private String origen;	//
+	private String origen;	//ropa
 	
 	public XMLArticuloLaCoruna(long referencia, String descripcion, float precio, String seccion, 
 							   String color,String linea, String nombre, String composicion, String categoria, 
@@ -21,7 +21,7 @@ public class XMLArticuloLaCoruna
 	{
 		this.setReferencia(referencia);
 		this.setDescripcion(descripcion);
-		this.setPrecio(precio);
+		this.setPrecioventaunitario(precio);
 		this.setSeccion(seccion);
 		this.setColor(color);
 		this.setLinea(linea);
@@ -81,12 +81,14 @@ public class XMLArticuloLaCoruna
 	public void setOrigen(String origen) {
 		this.origen = origen;
 	}
-	public float getPrecio() {
-		return precio;
+	public float getPrecioventaunitario() {
+		return precioventaunitario;
 	}
-	public void setPrecio(float precio) {
-		this.precio = precio;
+
+	public void setPrecioventaunitario(float precioventaunitario) {
+		this.precioventaunitario = precioventaunitario;
 	}
+
 	public long getReferencia() {
 		return referencia;
 	}

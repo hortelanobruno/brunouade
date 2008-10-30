@@ -14,7 +14,7 @@ public class XMLAdapter
 		ahvo.setCantidad(0);
 		ahvo.setColor(art.getColor());
 		ahvo.setDescripcion(art.getDescripcion());
-		ahvo.setPrecio(art.getPrecio());
+		ahvo.setPrecio(art.getPrecioventaunitario());
 		ahvo.setSeccion(art.getSeccion());
 		
 		String auxTalle = art.getTalle();
