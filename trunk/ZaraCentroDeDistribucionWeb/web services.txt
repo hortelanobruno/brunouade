@@ -1,0 +1,6 @@
+recibirSolFabr(String xml):boolean -> Lo publica la Fabrica, nosotros lo llamamos
+recibirSolRep(String xml):boolean -> Lo publicamos nosotros, lo llama la Fabrica
+
+recibirSolDis(String xml):boolean -> Lo publicamos nosotros, lo llama La Coruña
+
+recibirEnvio(String xml):boolean -> Lo publican las Tiendas, lo llamamos nosotros
