@@ -30,17 +30,21 @@ import exceptions.ErrorConectionException;
 public class GenSolFabAction extends Action 
 {
 	private BusinessDelegate bd;
+	//private Logger logger;
 	
 	public GenSolFabAction()
 	{
 		try
 		{
 			bd = new BusinessDelegate();
+			//PropertyConfigurator.configure("loggin.xml");
+			//logger = Logger.getLogger(GenSolFabAction.class);
 		}
 		catch (ErrorConectionException e) 
 		{
 
 		}
+		
 	}
 	
 	public ActionForward execute(ActionMapping mapping,	 ActionForm form, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException 
@@ -48,6 +52,8 @@ public class GenSolFabAction extends Action
 		//Ir a la base a ver si hay articulos a fabricar, y si hay los carga en la tabla, sino
 		//redirecciona a la pagina que dice que no hay articulos
 		
+		//logger.debug("Hacela vos brunoli");
+		//System.out.println("HOLA");
 		List<ArticuloAFabricarVO> afvo = bd.getArticulosAFabricarVO();
 		if(afvo != null)
 		{
