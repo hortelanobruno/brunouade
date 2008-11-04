@@ -1,6 +1,6 @@
 package interfaz.webservices;
 
-public interface recibirSolRep extends java.rmi.Remote
+public interface recibirSolRep
 {	
 	public boolean recibirSolRep(String xml);
 }
