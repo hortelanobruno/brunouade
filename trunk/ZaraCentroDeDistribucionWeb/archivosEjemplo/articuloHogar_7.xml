@@ -1,0 +1,27 @@
+<Articulo>
+  <referencia>7</referencia>
+  <linea>Unica</linea>
+  <descripcion>76</descripcion>
+  <color>Unico</color>
+  <seccion>Alfombra</seccion>
+  <precioVentaUnitario>33.0</precioVentaUnitario>
+  <ultimoPedido>2008-10-27 10:06:38.124 GST</ultimoPedido>
+  <mesRebaja>1</mesRebaja>
+  <centros class="set">
+    <CentroDistribucion>
+      <codigo>6</codigo>
+      <nombre>Montevideo Sur</nombre>
+      <pais>Uruguay</pais>
+    </CentroDistribucion>
+    <CentroDistribucion>
+      <codigo>2</codigo>
+      <nombre>Centro</nombre>
+      <pais>Argentina</pais>
+    </CentroDistribucion>
+  </centros>
+  <esNuevo>true</esNuevo>
+  <nombre>56</nombre>
+  <compocicion>56</compocicion>
+  <categoria>Cama</categoria>
+  <medidas>56</medidas>
+</Articulo>
