@@ -66,7 +66,7 @@ public class XMLAdapter
 		}
 	}
 
-	public SolicitudDeReposicionVO getSolReoVOFromXMLSolRepFabrica(XMLSolRepFabrica sol)
+	public SolicitudDeReposicionVO getSolRepVOFromXMLSolRepFabrica(XMLSolRepFabrica sol)
 	{
 		SolicitudDeReposicionVO ret = new SolicitudDeReposicionVO();
 		SolicitudFabricaVO sf = new SolicitudFabricaVO();

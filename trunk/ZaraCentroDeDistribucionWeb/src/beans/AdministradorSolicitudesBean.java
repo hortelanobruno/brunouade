@@ -9,10 +9,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import com.thoughtworks.xstream.XStream;
+
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
 import vo.SolicitudEnvioVO;
 import vo.SolicitudFabricaVO;
+import xml.XMLAdapter;
+import xml.XMLSolDisLaCoruna;
+import xml.XMLSolRepFabrica;
 import businesslogic.SolicitudDeFabricacion;
 import businesslogic.SolicitudDistribucion;
 import businesslogic.SolicitudEnvioATienda;
@@ -297,13 +302,26 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public void guardarSolDisFromWS(String solDis) 
 	{
-		System.out.println("Llego la soldis!!!");
+		System.out.println("Llego la soldis: " + solDis);
+		XStream xstream = new XStream();
+		XMLAdapter adapter = new XMLAdapter();
+		
+		xstream.alias("solicituddistribucion", XMLSolDisLaCoruna.class);
+		XMLSolDisLaCoruna xmlsd = (XMLSolDisLaCoruna)xstream.fromXML(solDis);
+		SolicitudDistribucionVO sd = adapter.getSolDisVOFromXMLSolDisLaCoruna(xmlsd);
+		this.guardarSolicitudDistribucion(sd);
 	}
 
 	public void guardarSolRepFromWS(String solRep) 
 	{
-		System.out.println("Llego la solrep!!!");
+		System.out.println("Llego la solrep: " + solRep);
+		
+		XStream xstream = new XStream();
+		XMLAdapter adapter = new XMLAdapter();
+		
+		xstream.alias("solrep", XMLSolRepFabrica.class);
+		XMLSolRepFabrica xmlsrf = (XMLSolRepFabrica)xstream.fromXML(solRep);
+		SolicitudDeReposicionVO sr = adapter.getSolRepVOFromXMLSolRepFabrica(xmlsrf);
+		this.guardarSolicitudReposicion(sr);
 	}
-
-
 }
