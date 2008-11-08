@@ -180,7 +180,7 @@ public class ClienteJMS
 			QueueConnectionFactory qfactory = (QueueConnectionFactory) ctx.lookup("ConnectionFactory");
 			
 			// buscar la Cola en JNDI
-			Queue queue = (Queue) ctx.lookup("queue/testQueue");
+			Queue queue = (Queue) ctx.lookup("queue/colaArticulos");
 			
 			// crear la connection y la session a partir de la connection
 			QueueConnection qCon = qfactory.createQueueConnection();
