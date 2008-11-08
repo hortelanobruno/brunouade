@@ -33,4 +33,6 @@ public interface AdministradorSolicitudes
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
 	
+	public void guardarSolDisFromWS(String solDis);
+	public void guardarSolRepFromWS(String solRep);
 }

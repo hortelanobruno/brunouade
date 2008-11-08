@@ -295,5 +295,15 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return false;
 	}
 
+	public void guardarSolDisFromWS(String solDis) 
+	{
+		System.out.println("Llego la soldis!!!");
+	}
+
+	public void guardarSolRepFromWS(String solRep) 
+	{
+		System.out.println("Llego la solrep!!!");
+	}
+
 
 }

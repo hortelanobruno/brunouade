@@ -32,7 +32,8 @@ public interface ServerFacade
 	//INTREGACION: JMS - WS
 	
 	public void guardarArticuloFromJMS(String msg);
-	
+	public void guardarSolDisFromWS(String solDis);
+	public void guardarSolRepFromWS(String solRep);
 	
 	//panel sol dist
 	public ArrayList<FabricaVO> getFabricas();
