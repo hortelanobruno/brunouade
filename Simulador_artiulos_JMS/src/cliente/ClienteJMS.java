@@ -170,7 +170,8 @@ public class ClienteJMS
 		Hashtable props = new Hashtable();
 		
 		props.put(InitialContext.INITIAL_CONTEXT_FACTORY , "org.jnp.interfaces.NamingContextFactory");
-		props.put(InitialContext.PROVIDER_URL, "jnp://127.0.0.1:1099");
+		//props.put(InitialContext.PROVIDER_URL, "jnp://127.0.0.1:1099");
+		props.put(InitialContext.PROVIDER_URL, "jnp://192.168.1.103:1099");
 		
 		try {
 //			InitialContext ctx = new InitialContext(props);
