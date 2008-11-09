@@ -128,4 +128,12 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 		}
 		return fabVO;
 	}
+
+	public void guardarTienda(TiendaVO tienda) {
+		if(em.find(Tienda.class, tienda.getCodigoTienda()) == null)
+		{
+			Tienda t = new Tienda(tienda.getCodigoTienda(), tienda.getNombreTienda());
+			em.persist(t);
+		}
+	}
 }

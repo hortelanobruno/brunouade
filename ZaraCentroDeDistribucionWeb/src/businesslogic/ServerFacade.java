@@ -28,6 +28,7 @@ public interface ServerFacade
 	public void guardarDatosCD(int codigo,String nombre,float longitud, float latitud, ArrayList<String> lineasRopa, ArrayList<String> categoriasHogar);
 	public CentroDistribucionVO getCentro();
 	public void guardarFabrica(FabricaVO fab);
+	public void guardarTienda(TiendaVO tienda);
 	
 	//INTREGACION: JMS - WS
 	
@@ -96,6 +97,7 @@ public interface ServerFacade
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public boolean existeSolFab(int numSolFab);
+	
 	
 	
 	

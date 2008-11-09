@@ -10,11 +10,14 @@ package webservices;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -46,6 +49,7 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
 
     public boolean recibirSolDis(java.lang.String in0) throws java.rmi.RemoteException {
     	try {
+    		
 			bd = new BusinessDelegate();
 			SolicitudDistribucionVO soldis = generarSolDisFromString(in0);
 			soldis.setIdDis(bd.getNextIdSolDis());
@@ -77,18 +81,18 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
 				soldis.setCerrada(false);
 			}
 			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla(soldis);
-			Collection<ArticuloReservadoVO> artiReser = (Collection<ArticuloReservadoVO>) articulosEnviarDeTabla();
+			Collection<ArticuloReservadoVO> artiReser = (Collection<ArticuloReservadoVO>) articulosEnviarDeTabla(soldis);
 			bd.guardarSolicitud(soldis);
 			bd.guardarArticulosReservados(artiReser);
 			bd.guardarArticulosAFabricar(artiAFab);
 			bd.modificarStock(artiReser);
 			logger.debug("Solicitudes de Distribucion guardada en el Centro de Distribucion\n");
-			
+			return true;
 		} catch (ErrorConectionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	return true;
+    	return false;
     }
 
     private Collection<ArticuloAFabricarVO> articulosFabricarDeTabla(SolicitudDistribucionVO soldis) {
@@ -97,50 +101,44 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
 		int idMax = bd.getNextIdAFab();
 		List<ArticuloPedidoVO> arts = (List<ArticuloPedidoVO>) soldis.getArticulosPedidos();
 		for (int i = 0; i < arts.size(); i++) {
-			
-			int ped = Integer.parseInt((((DefaultTableModel) tableArticulos
-					.getModel()).getValueAt(i, 4)).toString());
-			int sel = Integer.parseInt((((DefaultTableModel) tableArticulos
-					.getModel()).getValueAt(i, 6)).toString());
-			if (ped > sel) {
-				long cod = (Long
-						.parseLong((String) ((DefaultTableModel) tableArticulos
-								.getModel()).getValueAt(i, 2)));
-				arti = ((BusinessDelegate) vistaSolDis.getModelo())
-						.getArticulo(cod);
+			ArticuloPedidoVO artVO = arts.get(i);
+			long cod = artVO.getArt().getCodigo();
+			int stock = bd.getStockArticulo(cod);
+			int ped = artVO.getCantidad();
+			if (ped > stock) {
+				arti = bd.getArticulo(cod);
 				ArticuloAFabricarVO aFab = new ArticuloAFabricarVO();
 				aFab.setArt(arti);
-				aFab.setCantidadPedida(ped - sel);
+				aFab.setCantidadPedida(ped);
 				aFab.setCantidadRecibida(0);
 				aFab.setCantidadAFabricar(0);
-				// aFab.setFabrica()
-				// aFab.setIdAAF();
 				aFab.setIdAAF(idMax);
 				idMax++;
-				aFab.setSol(solDisVO);
+				aFab.setSol(soldis);
 				art.add(aFab);
 			}
 		}
 		return art;
 	}
     
-    private Collection<ArticuloReservadoVO> articulosEnviarDeTabla() {
+    private Collection<ArticuloReservadoVO> articulosEnviarDeTabla(SolicitudDistribucionVO soldis) {
 		Collection<ArticuloReservadoVO> art = new ArrayList<ArticuloReservadoVO>();
 		ArticuloHeaderVO arti;
-		int idMax = ((BusinessDelegate)this.ref.getVistaSolDis().getModelo()).getNextIdARes();
-		for (int i = 0; i < tableArticulos.getRowCount(); i++) {
-			int cant = Integer.parseInt((((DefaultTableModel) tableArticulos.getModel()).getValueAt(i, 6)).toString());
-			if(cant > 0){
-				long cod = (Long
-						.parseLong((String) ((DefaultTableModel) tableArticulos
-								.getModel()).getValueAt(i, 2)));
-				arti = ((BusinessDelegate) vistaSolDis.getModelo()).getArticulo(cod);
+		int idMax = bd.getNextIdARes();
+		List<ArticuloPedidoVO> arts = (List<ArticuloPedidoVO>) soldis.getArticulosPedidos();
+		for (int i = 0; i < arts.size(); i++) {
+			ArticuloPedidoVO artVO = arts.get(i);
+			long cod = artVO.getArt().getCodigo();
+			int cantPed = artVO.getCantidad(); 
+			int stock = bd.getStockArticulo(cod);
+			if(stock > cantPed){
+				arti = bd.getArticulo(cod);
 				ArticuloReservadoVO aRes = new ArticuloReservadoVO();
 				aRes.setIdAR(idMax);
 				idMax++;
 				aRes.setArt(arti);
-				aRes.setCantidadReservada(cant);
-				aRes.setSolDis(solDisVO);
+				aRes.setCantidadReservada(cantPed);
+				aRes.setSolDis(soldis);
 				art.add(aRes);
 			}
 		}
@@ -155,7 +153,7 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
 			doc = builder.build(in);
 			Element root = doc.getRootElement();
 			SolicitudDistribucionVO soldis = new SolicitudDistribucionVO();
-			soldis.setFechaEmision(new Date(root.getChild("fechaSolicitud").getText()));
+			soldis.setFechaEmision(getFechaHoraFromString((root.getChild("fechaSolicitud").getText())));
 			Element items = root.getChild("items");
 			List hijos = items.getChildren();
 			List<ArticuloPedidoVO> articulos = new ArrayList<ArticuloPedidoVO>();
@@ -182,4 +180,46 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
 		}
 		return null;
     }
+    
+    private String getFecha(String f)
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i<f.indexOf(" ");i++)
+			sb.append(f.charAt(i));
+		
+		return sb.toString();
+	}
+	
+	private String getHora(String f)
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = f.indexOf(" "); i<f.length();i++)
+			sb.append(f.charAt(i));
+		
+		return sb.toString();
+	}
+	
+	@SuppressWarnings("deprecation")
+	private Date getFechaHoraFromString(String f)
+	{
+		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
+		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+		
+		Date fn;
+		Date fn2;
+		try 
+		{
+			fn = df.parse(this.getFecha(f));
+			fn2 = df1.parse(this.getHora(f));	
+			fn.setHours(fn2.getHours());
+			fn.setMinutes(fn2.getMinutes());
+			fn.setSeconds(fn2.getSeconds());
+		} 
+		catch (ParseException e)
+		{
+			// TODO Auto-generated catch block
+			return null;
+		}
+		return fn;
+	}
 }
