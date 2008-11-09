@@ -1,6 +1,7 @@
 package interfaz.webservices;
 
-public interface recibirSolRep
+public interface Servicios
 {	
 	public boolean recibirSolRep(String xml);
+	public boolean recibirSolDis(String xml);
 }
