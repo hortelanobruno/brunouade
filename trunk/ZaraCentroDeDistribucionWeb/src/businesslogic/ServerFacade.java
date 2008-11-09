@@ -49,6 +49,7 @@ public interface ServerFacade
 	public int getNextId();
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos);
 	public int getNextIdSolDis();
+	public int getStockArticulo(long codigo);
 	
 	//estos no van - verificar
 	//public int getNumeroSolEnv();

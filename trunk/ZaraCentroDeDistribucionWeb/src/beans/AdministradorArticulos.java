@@ -43,4 +43,5 @@ public interface AdministradorArticulos
 	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis);
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos);
 	public void guardarArticuloFromJMS(String msg);
+	public int getStockArticulo(long codigo);
 }

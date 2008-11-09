@@ -280,4 +280,9 @@ public class BusinessDelegate
 	public int getNextIdSolDis(){
 		return this.getModCD().getNextIdSolDis();
 	}
+	
+	public int getStockArticulo(long codigo)
+	{
+		return this.getModCD().getStockArticulo(codigo);
+	}
 }
