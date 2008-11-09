@@ -115,7 +115,7 @@ public class XMLAdapter
 		ret.setArticulosPedidos(arts);
 		ret.setFechaEmision(this.getFechaHoraFromString(sol.getFecha()));
 		
-		ret.setTienda(t); //VER LO COMENTADO DE ARRIBA!!!!!!!!!!!!!!!!!!!
+		//ret.setTienda(t); //VER LO COMENTADO DE ARRIBA!!!!!!!!!!!!!!!!!!!
 		
 		return ret;
 	}

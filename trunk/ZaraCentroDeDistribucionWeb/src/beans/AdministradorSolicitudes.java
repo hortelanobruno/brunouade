@@ -32,7 +32,6 @@ public interface AdministradorSolicitudes
 	public boolean existeSolFab(int numSolFab);
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
+	public int getNextIdSolDis();
 	
-	public void guardarSolDisFromWS(String solDis);
-	public void guardarSolRepFromWS(String solRep);
 }

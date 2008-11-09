@@ -25,7 +25,7 @@ public class XMLAdapter
 	{
 		SolicitudDistribucionVO disVO = new SolicitudDistribucionVO();
 		disVO.setIdDis(sd.getNumero());
-		disVO.setTienda(sd.getTienda());
+		//disVO.setTienda(sd.getTienda());
 		Collection<ArticuloPedidoVO> arts = new ArrayList<ArticuloPedidoVO>();
 		
 		for (int i =0 ; i < sd.getArticulosPedidos().size() ; i++)

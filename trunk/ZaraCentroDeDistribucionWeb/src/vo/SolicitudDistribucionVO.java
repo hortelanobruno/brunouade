@@ -6,7 +6,6 @@ import java.util.Date;
 public class SolicitudDistribucionVO extends SolicitudVO
 {
 	private static final long serialVersionUID = -5633098382339627713L;
-	private TiendaVO tienda;
 	private Collection<ArticuloPedidoVO> articulosPedidos;
 	private boolean cerrada;
 	private int idDis;
@@ -15,20 +14,11 @@ public class SolicitudDistribucionVO extends SolicitudVO
 		
 	}
 	
-	public SolicitudDistribucionVO(int id,int n, Collection<ArticuloPedidoVO> a, Date f, TiendaVO t, CentroDistribucionVO centro, boolean cerrada){
+	public SolicitudDistribucionVO(int id,int n, Collection<ArticuloPedidoVO> a, Date f, CentroDistribucionVO centro, boolean cerrada){
 		super(id,f,centro);
 		this.articulosPedidos = a;
-		this.tienda = t;
 		this.setCerrada(cerrada);
 		this.idDis = n;
-	}
-	
-	public TiendaVO getTienda() {
-		return tienda;
-	}
-
-	public void setTienda(TiendaVO tienda) {
-		this.tienda = tienda;
 	}
 
 	public Collection<ArticuloPedidoVO> getArticulosPedidos() {
