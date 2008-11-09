@@ -286,4 +286,8 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getNextIdSolDis();
 	}
 
+	public int getStockArticulo(long codigo) 
+	{
+		return this.admArt.getStockArticulo(codigo);
+	}
 }
