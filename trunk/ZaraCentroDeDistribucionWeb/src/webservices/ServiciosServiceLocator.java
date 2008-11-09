@@ -22,7 +22,7 @@ public class ServiciosServiceLocator extends org.apache.axis.client.Service impl
     }
 
     // Use to get a proxy class for Servicios
-    private java.lang.String Servicios_address = "http://localhost:8080/axis/services/Servicios";
+    private java.lang.String Servicios_address = "http://192.168.1.103:8080/axis/services/Servicios";
 
     public java.lang.String getServiciosAddress() {
         return Servicios_address;
