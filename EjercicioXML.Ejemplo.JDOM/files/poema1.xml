@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<poema descripcion="ejemplo DOM IS2">
+	<titulo>Roses are Red</titulo>
+	<linea>Roses are red,</linea>
+	<linea>Violets are blue;</linea>
+	<linea>Sugar is sweet,</linea>
+	<linea>And I love you.</linea>
+</poema>
+

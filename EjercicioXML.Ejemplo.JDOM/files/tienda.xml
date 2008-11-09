@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tienda nombre="Tienda 1" ubicación="Buenos Aires, Argentina">
+	<computadora nombre="iBook" precio="$1200">
+		<Procesador>amd k2</Procesador>
+	</computadora>
+</tienda>
