@@ -20,5 +20,6 @@ public interface AdministracionConfiguracion
 	public void addCategoriaHogar(int cod, String categoria);
 	public Vector<String> getCategoriasHogar();
 	public Vector<String> getLineasRopa();*/
+	public void guardarTienda(TiendaVO tienda);
 	
 }

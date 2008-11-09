@@ -290,4 +290,8 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		return this.admArt.getStockArticulo(codigo);
 	}
+
+	public void guardarTienda(TiendaVO tienda) {
+		this.admConf.guardarTienda(tienda);
+	}
 }
