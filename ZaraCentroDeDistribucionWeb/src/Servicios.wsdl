@@ -93,7 +93,7 @@ Built on Oct 05, 2005 (05:23:37 EDT)-->
 
       <wsdl:port binding="impl:ServiciosSoapBinding" name="Servicios">
 
-         <wsdlsoap:address location="http://localhost:8080/axis/services/Servicios"/>
+         <wsdlsoap:address location="http://192.168.1.103:8080/axis/services/Servicios"/>
 
       </wsdl:port>
 

@@ -13,7 +13,8 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
     }
 
     public boolean recibirSolDis(java.lang.String in0) throws java.rmi.RemoteException {
-        return false;
+        System.out.println(in0);
+    	return true;
     }
 
 }
