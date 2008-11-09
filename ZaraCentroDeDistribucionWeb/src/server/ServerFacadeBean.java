@@ -282,13 +282,8 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.obtenerSolicitudDistribucion(codSolDis);
 	}
 
-	public void guardarSolDisFromWS(String solDis) 
-	{
-		this.admSol.guardarSolDisFromWS(solDis);
+	public int getNextIdSolDis() {
+		return this.admSol.getNextIdSolDis();
 	}
 
-	public void guardarSolRepFromWS(String solRep) 
-	{
-		this.admSol.guardarSolRepFromWS(solRep);
-	}
 }

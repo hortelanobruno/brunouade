@@ -7,6 +7,7 @@ public class ArticuloPedidoVO implements Serializable
 {
 	private static final long serialVersionUID = 8841838453399640020L;
 	private int idAP;
+	private TiendaVO tienda;
 	private ArticuloHeaderVO art;
 	private int cantidad;
 	
@@ -44,6 +45,14 @@ public class ArticuloPedidoVO implements Serializable
 
 	public void setIdAP(int idAP) {
 		this.idAP = idAP;
+	}
+
+	public void setTienda(TiendaVO tienda) {
+		this.tienda = tienda;
+	}
+
+	public TiendaVO getTienda() {
+		return tienda;
 	}
 
 }

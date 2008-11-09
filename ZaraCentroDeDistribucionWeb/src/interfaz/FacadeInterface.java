@@ -1,9 +1,12 @@
 package interfaz;
 
 import java.util.Hashtable;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
+
 import varios.Constantes;
+import vo.SolicitudDistribucionVO;
 import businesslogic.ServerFacade;
 import exceptions.ErrorConectionException;
 
@@ -56,13 +59,4 @@ public class FacadeInterface
     	this.getModCD().guardarArticuloFromJMS(mens);
     }
     
-    public void guardarSolDisFromWS(String solDis)
-    {
-    	this.getModCD().guardarSolDisFromWS(solDis);
-    }
-    
-    public void guardarSolRepFromWS(String solRep)
-    {
-    	this.getModCD().guardarSolRepFromWS(solRep);
-    }
 }

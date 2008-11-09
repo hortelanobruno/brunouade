@@ -276,4 +276,8 @@ public class BusinessDelegate
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis) {
 		return this.getModCD().obtenerSolicitudDistribucion(codSolDis);
 	}
+	
+	public int getNextIdSolDis(){
+		return this.getModCD().getNextIdSolDis();
+	}
 }

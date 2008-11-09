@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -30,15 +31,13 @@ import exceptions.ErrorConectionException;
 public class GenSolFabAction extends Action 
 {
 	private BusinessDelegate bd;
-	//private Logger logger = Logger.getLogger("zara.centro");
+	private Logger logger = Logger.getLogger("zara.centro");
 	
 	public GenSolFabAction()
 	{
 		try
 		{
 			bd = new BusinessDelegate();
-			//PropertyConfigurator.configure("loggin.xml");
-			//logger = Logger.getLogger(GenSolFabAction.class);
 		}
 		catch (ErrorConectionException e) 
 		{
@@ -53,7 +52,7 @@ public class GenSolFabAction extends Action
 		//redirecciona a la pagina que dice que no hay articulos
 		
 		
-		//logger.debug("TEST info");
+		logger.debug("TEST info");
 		List<ArticuloAFabricarVO> afvo = bd.getArticulosAFabricarVO();
 		if(afvo != null)
 		{

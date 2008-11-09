@@ -32,8 +32,6 @@ public interface ServerFacade
 	//INTREGACION: JMS - WS
 	
 	public void guardarArticuloFromJMS(String msg);
-	public void guardarSolDisFromWS(String solDis);
-	public void guardarSolRepFromWS(String solRep);
 	
 	//panel sol dist
 	public ArrayList<FabricaVO> getFabricas();
@@ -50,6 +48,7 @@ public interface ServerFacade
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public int getNextId();
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos);
+	public int getNextIdSolDis();
 	
 	//estos no van - verificar
 	//public int getNumeroSolEnv();
@@ -96,6 +95,7 @@ public interface ServerFacade
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public boolean existeSolFab(int numSolFab);
+	
 	
 	
 	

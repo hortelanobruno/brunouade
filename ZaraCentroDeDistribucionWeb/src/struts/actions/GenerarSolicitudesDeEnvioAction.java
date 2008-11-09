@@ -60,7 +60,7 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 			ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE,frm,solDis);
 			solEnvio.setArticulosAEnviar(articulosAEnviar);
 			solEnvio.setFechaEmision(new Date());
-			solEnvio.setTienda(solDis.getTienda());
+			//ACA FALTA SETEAR LA TIENDA
 			int numero = bd.getNumeroSolEnv();
 			solEnvio.setIdEnv(numero);
 			solEnvio.setCdVO(solDis.getCdVO());

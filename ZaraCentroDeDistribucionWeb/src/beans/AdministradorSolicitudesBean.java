@@ -300,28 +300,15 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return false;
 	}
 
-	public void guardarSolDisFromWS(String solDis) 
-	{
-		System.out.println("Llego la soldis: " + solDis);
-		XStream xstream = new XStream();
-		XMLAdapter adapter = new XMLAdapter();
-		
-		xstream.alias("solicituddistribucion", XMLSolDisLaCoruna.class);
-		XMLSolDisLaCoruna xmlsd = (XMLSolDisLaCoruna)xstream.fromXML(solDis);
-		SolicitudDistribucionVO sd = adapter.getSolDisVOFromXMLSolDisLaCoruna(xmlsd);
-		this.guardarSolicitudDistribucion(sd);
+	public int getNextIdSolDis() {
+		Query q = em.createQuery("SELECT MAX(s.idDis) FROM SolicitudDistribucion s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 1;
+		}else{
+			int a = (Integer) l.get(0);
+			return a+1;
+		}
 	}
 
-	public void guardarSolRepFromWS(String solRep) 
-	{
-		System.out.println("Llego la solrep: " + solRep);
-		
-		XStream xstream = new XStream();
-		XMLAdapter adapter = new XMLAdapter();
-		
-		xstream.alias("solrep", XMLSolRepFabrica.class);
-		XMLSolRepFabrica xmlsrf = (XMLSolRepFabrica)xstream.fromXML(solRep);
-		SolicitudDeReposicionVO sr = adapter.getSolRepVOFromXMLSolRepFabrica(xmlsrf);
-		this.guardarSolicitudReposicion(sr);
-	}
 }

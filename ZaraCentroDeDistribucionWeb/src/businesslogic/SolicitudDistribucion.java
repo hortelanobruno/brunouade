@@ -24,7 +24,6 @@ import vo.SolicitudDistribucionVO;
 public class SolicitudDistribucion extends Solicitud
 {
 	private static final long serialVersionUID = 1694955054674640622L;
-	private Tienda tienda;
 	private Collection<ArticuloPedido> articulosPedidos;
 	private boolean cerrada;
 	private int idDis;
@@ -35,10 +34,9 @@ public class SolicitudDistribucion extends Solicitud
 		this.setCerrada(false);
 	}
 
-	public SolicitudDistribucion(int id,int n, Date f, Tienda t, Collection<ArticuloPedido> a) {
+	public SolicitudDistribucion(int id,int n, Date f, Collection<ArticuloPedido> a) {
 		super(id,f);
 		this.idDis = n;
-		this.tienda = t;
 		this.setArticulosPedidos(a);
 		this.setCerrada(false);
 	}
@@ -51,15 +49,6 @@ public class SolicitudDistribucion extends Solicitud
 
 	public void setIdDis(int idDis) {
 		this.idDis = idDis;
-	}
-	
-	@ManyToOne(cascade={CascadeType.MERGE})
-	public Tienda getTienda() {
-		return tienda;
-	}
-
-	public void setTienda(Tienda tienda) {
-		this.tienda = tienda;
 	}
 
 	@OneToMany(cascade={CascadeType.MERGE})
@@ -85,7 +74,6 @@ public class SolicitudDistribucion extends Solicitud
 		SolicitudDistribucionVO sol = new SolicitudDistribucionVO();
 		sol.setIdDis(this.getIdDis());
 		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
-		sol.setTienda(this.getTienda().getVO());
 		sol.setCdVO(this.getCentro().getVO());
 		sol.setId(this.getId());
 		Collection<ArticuloPedidoVO> arts = new ArrayList<ArticuloPedidoVO>();
@@ -101,9 +89,6 @@ public class SolicitudDistribucion extends Solicitud
 	public void setVO(SolicitudDistribucionVO vo) {
 		this.setFechaEmision(this.getFechaHoraFromDate(vo.getFechaEmision()));
 		this.setIdDis(vo.getIdDis());
-		Tienda tienda = new Tienda();
-		tienda.setVO(vo.getTienda());
-		this.setTienda(tienda);
 		CentroDistribucion centro = new CentroDistribucion();
 		centro.setVO(vo.getCdVO());
 		this.setCentro(centro);

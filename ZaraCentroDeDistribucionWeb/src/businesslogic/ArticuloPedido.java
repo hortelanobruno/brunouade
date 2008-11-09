@@ -2,10 +2,12 @@ package businesslogic;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -16,6 +18,7 @@ import vo.ArticuloPedidoVO;
 public class ArticuloPedido  implements Serializable
 {
 	private static final long serialVersionUID = -1411171933550730204L;
+	private Tienda tienda;
 	private int idAP;
 	private Articulo art;
 	private int cantidad;
@@ -47,7 +50,15 @@ public class ArticuloPedido  implements Serializable
 	public void setIdAP(int idAP) {
 		this.idAP = idAP;
 	}
-		
+
+	@ManyToOne(cascade={CascadeType.MERGE})
+	public void setTienda(Tienda tienda) {
+		this.tienda = tienda;
+	}
+
+	public Tienda getTienda() {
+		return tienda;
+	}
 	
 	@Transient
 	public ArticuloPedidoVO getVO(){
@@ -55,6 +66,7 @@ public class ArticuloPedido  implements Serializable
 		art.setIdAP(this.getIdAP());
 		art.setCantidad(this.getCantidad());
 		art.setArt(this.getArt().getVO());
+		art.setTienda(this.getTienda().getVO());
 		return art;
 	}
 	
@@ -64,6 +76,10 @@ public class ArticuloPedido  implements Serializable
 		Articulo art2 = new Articulo();
 		art2.setVO(art.getArt());
 		this.setArt(art2);
+		Tienda tienda = new Tienda();
+		tienda.setVO(art.getTienda());
+		this.setTienda(tienda);
 	}
+
 	
 }
