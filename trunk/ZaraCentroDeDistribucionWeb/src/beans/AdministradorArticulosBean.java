@@ -353,10 +353,12 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	public int getStockArticulo(long codigo) 
 	{
-		Query q = em.createQuery("SELECT a FROM Articulo a WHERE a.codigo = :codigo");
+		Query q = em.createQuery("SELECT a.cantidad FROM Articulo a WHERE a.codigo = :codigo");
 		q.setParameter("codigo", codigo);
 		List l = q.getResultList();
 		if(l.get(0) == null) return -1;
 		else return (Integer) l.get(0);
 	}
+	
+	
 }
