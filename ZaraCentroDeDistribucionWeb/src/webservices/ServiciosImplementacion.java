@@ -1,10 +1,3 @@
-/**
- * ServiciosSoapBindingImpl.java
- *
- * This file was auto-generated from WSDL
- * by the Apache Axis 1.3 Oct 05, 2005 (05:23:37 EDT) WSDL2Java emitter.
- */
-
 package webservices;
 
 import java.io.IOException;
@@ -19,13 +12,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import javax.swing.table.DefaultTableModel;
-
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
+
+import exceptions.ErrorConectionException;
 
 import struts.model.BusinessDelegate;
 import vo.ArticuloAFabricarVO;
@@ -35,21 +28,18 @@ import vo.ArticuloReservadoVO;
 import vo.CentroDistribucionVO;
 import vo.SolicitudDistribucionVO;
 import vo.TiendaVO;
-import exceptions.ErrorConectionException;
 
-
-public class ServiciosSoapBindingImpl implements webservices.Servicios{
+public class ServiciosImplementacion {
 	
-	private Logger logger = Logger.getLogger("zara.centro");
 	private BusinessDelegate bd;
-	
-    public boolean recibirSolRep(java.lang.String in0) throws java.rmi.RemoteException {
-        return false;
-    }
 
-    public boolean recibirSolDis(java.lang.String in0) throws java.rmi.RemoteException {
-    	try {
-    		
+	public ServiciosImplementacion() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public boolean recibirSolDis(String in0){
+		try {
+    		Logger logger = Logger.getLogger("zara.centro");
 			bd = new BusinessDelegate();
 			SolicitudDistribucionVO soldis = generarSolDisFromString(in0);
 			soldis.setIdDis(bd.getNextIdSolDis());
@@ -89,13 +79,12 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
 			logger.debug("Solicitudes de Distribucion guardada en el Centro de Distribucion\n");
 			return true;
 		} catch (ErrorConectionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	return false;
-    }
-
-    private Collection<ArticuloAFabricarVO> articulosFabricarDeTabla(SolicitudDistribucionVO soldis) {
+	}
+	
+	private Collection<ArticuloAFabricarVO> articulosFabricarDeTabla(SolicitudDistribucionVO soldis) {
 		Collection<ArticuloAFabricarVO> art = new ArrayList<ArticuloAFabricarVO>();
 		ArticuloHeaderVO arti;
 		int idMax = bd.getNextIdAFab();
@@ -172,10 +161,8 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
 			soldis.setArticulosPedidos(articulos);
 			return soldis;
 		} catch (JDOMException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -204,20 +191,18 @@ public class ServiciosSoapBindingImpl implements webservices.Servicios{
 	{
 		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
 		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
-		
+		f = f.replace("-", "/");
 		Date fn;
 		Date fn2;
 		try 
 		{
 			fn = df.parse(this.getFecha(f));
-			fn2 = df1.parse(this.getHora(f));	
-			fn.setHours(fn2.getHours());
-			fn.setMinutes(fn2.getMinutes());
-			fn.setSeconds(fn2.getSeconds());
+			fn.setHours(Integer.parseInt(this.getHora(f).split(":")[0].trim()));
+			fn.setMinutes(Integer.parseInt(this.getHora(f).split(":")[1].trim()));
 		} 
 		catch (ParseException e)
 		{
-			// TODO Auto-generated catch block
+			e.printStackTrace();
 			return null;
 		}
 		return fn;
