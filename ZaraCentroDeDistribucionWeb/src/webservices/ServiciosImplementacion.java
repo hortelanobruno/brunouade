@@ -32,52 +32,56 @@ import vo.TiendaVO;
 public class ServiciosImplementacion {
 	
 	private BusinessDelegate bd;
-
+	private Logger logger = Logger.getLogger("zara.centro");
+	
 	public ServiciosImplementacion() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public boolean recibirSolDis(String in0){
 		try {
-    		Logger logger = Logger.getLogger("zara.centro");
 			bd = new BusinessDelegate();
 			SolicitudDistribucionVO soldis = generarSolDisFromString(in0);
-			soldis.setIdDis(bd.getNextIdSolDis());
-			
-			ArrayList<Long> codigos = new ArrayList<Long>();
-			int idMax = bd.getNextIdArtPed();
-			Iterator arts = (Iterator) soldis.getArticulosPedidos().iterator();
-			ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
-			while (arts.hasNext()) {
-				ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
-				artVO.setIdAP(idMax);
-				idMax++;
-				codigos.add(artVO.getArt().getCodigo());
-				artsVO.add(artVO);
-			}
-			ArrayList<Long>  verCod = bd.existenArts(codigos);
-			if(!verCod.isEmpty()){
-				String codsfalse = "Cod. "+verCod.get(0);
-				for(int q = 1 ; q < verCod.size() ; q++){
-					codsfalse = codsfalse + " Cod. "+verCod.get(q);
+			if(soldis != null){
+				soldis.setIdDis(bd.getNextIdSolDis());
+				
+				ArrayList<Long> codigos = new ArrayList<Long>();
+				int idMax = bd.getNextIdArtPed();
+				Iterator arts = (Iterator) soldis.getArticulosPedidos().iterator();
+				ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
+				while (arts.hasNext()) {
+					ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
+					artVO.setIdAP(idMax);
+					idMax++;
+					codigos.add(artVO.getArt().getCodigo());
+					artsVO.add(artVO);
 				}
-				logger.debug(": La solicitud contiene articulos que no existen en el Centro de Distribucion\n");
+				ArrayList<Long>  verCod = bd.existenArts(codigos);
+				if(!verCod.isEmpty()){
+					String codsfalse = "Cod. "+verCod.get(0);
+					for(int q = 1 ; q < verCod.size() ; q++){
+						codsfalse = codsfalse + " Cod. "+verCod.get(q);
+					}
+					logger.debug(": La solicitud contiene articulos que no existen en el Centro de Distribucion");
+				}else{
+					soldis.setArticulosPedidos(artsVO);
+					int id = bd.getNextId();
+					soldis.setId(id);
+					CentroDistribucionVO centroVO = bd.getCentro();
+					soldis.setCdVO(centroVO);
+					soldis.setCerrada(false);
+				}
+				Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla(soldis);
+				Collection<ArticuloReservadoVO> artiReser = (Collection<ArticuloReservadoVO>) articulosEnviarDeTabla(soldis);
+				bd.guardarSolicitud(soldis);
+				bd.guardarArticulosReservados(artiReser);
+				bd.guardarArticulosAFabricar(artiAFab);
+				bd.modificarStock(artiReser);
+				logger.debug("Solicitudes de Distribucion guardada en el Centro de Distribucion");
+				return true;
 			}else{
-				soldis.setArticulosPedidos(artsVO);
-				int id = bd.getNextId();
-				soldis.setId(id);
-				CentroDistribucionVO centroVO = bd.getCentro();
-				soldis.setCdVO(centroVO);
-				soldis.setCerrada(false);
+				return false;
 			}
-			Collection<ArticuloAFabricarVO> artiAFab = (Collection<ArticuloAFabricarVO>) articulosFabricarDeTabla(soldis);
-			Collection<ArticuloReservadoVO> artiReser = (Collection<ArticuloReservadoVO>) articulosEnviarDeTabla(soldis);
-			bd.guardarSolicitud(soldis);
-			bd.guardarArticulosReservados(artiReser);
-			bd.guardarArticulosAFabricar(artiAFab);
-			bd.modificarStock(artiReser);
-			logger.debug("Solicitudes de Distribucion guardada en el Centro de Distribucion\n");
-			return true;
 		} catch (ErrorConectionException e) {
 			e.printStackTrace();
 		}
@@ -144,27 +148,51 @@ public class ServiciosImplementacion {
 			SolicitudDistribucionVO soldis = new SolicitudDistribucionVO();
 			soldis.setFechaEmision(getFechaHoraFromString((root.getChild("fechaSolicitud").getText())));
 			Element items = root.getChild("items");
-			List hijos = items.getChildren();
-			List<ArticuloPedidoVO> articulos = new ArrayList<ArticuloPedidoVO>();
-			for(Object hijo : hijos){
-				ArticuloPedidoVO articulo = new ArticuloPedidoVO();
-				ArticuloHeaderVO art = new ArticuloHeaderVO();
-				TiendaVO tienda = new TiendaVO();
-				tienda.setCodigoTienda(Integer.parseInt(((Element)hijo).getChild("tienda").getChild("codigo").getText()));
-				tienda.setNombreTienda(((Element)hijo).getChild("tienda").getChild("nombre").getText());
-				articulo.setTienda(tienda);
-				art.setCodigo(Integer.parseInt(((Element)hijo).getChild("articulo").getChild("referencia").getText()));
-				articulo.setCantidad(Integer.parseInt(((Element)hijo).getChild("catidad").getText()));
-				articulo.setArt(art);
-				articulos.add(articulo);
+			if(items != null){
+				List hijos = items.getChildren();
+				List<ArticuloPedidoVO> articulos = new ArrayList<ArticuloPedidoVO>();
+				String cod,nombre,referencia,cantidad;
+				for(Object hijo : hijos){
+					ArticuloPedidoVO articulo = new ArticuloPedidoVO();
+					ArticuloHeaderVO art = new ArticuloHeaderVO();
+					TiendaVO tienda = new TiendaVO();
+					cod = ((Element)hijo).getChild("tienda").getChild("codigo").getText();
+					if(cod.equals("")){
+						logger.debug("Error al leer la solicitud de distribucion");
+						return null;
+					}
+					tienda.setCodigoTienda(Integer.parseInt(cod));
+					nombre = ((Element)hijo).getChild("tienda").getChild("nombre").getText();
+					if(nombre.equals("")){
+						logger.debug("Error al leer la solicitud de distribucion");
+						return null;
+					}
+					tienda.setNombreTienda(nombre);
+					articulo.setTienda(tienda);
+					referencia = ((Element)hijo).getChild("articulo").getChild("referencia").getText();
+					if(referencia.equals("")){
+						logger.debug("Error al leer la solicitud de distribucion");
+						return null;
+					}
+					art.setCodigo(Integer.parseInt(referencia));
+					cantidad = ((Element)hijo).getChild("catidad").getText();
+					if(cantidad.equals("")){
+						logger.debug("Error al leer la solicitud de distribucion");
+						return null;
+					}
+					articulo.setCantidad(Integer.parseInt(cantidad));
+					articulo.setArt(art);
+					articulos.add(articulo);
+				}
+				soldis.setArticulosPedidos(articulos);
+				return soldis;
 			}
-			soldis.setArticulosPedidos(articulos);
-			return soldis;
 		} catch (JDOMException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		logger.debug("Error al leer la solicitud de distribucion");
 		return null;
     }
     
