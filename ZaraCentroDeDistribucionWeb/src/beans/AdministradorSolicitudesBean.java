@@ -1,6 +1,7 @@
 package beans;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -89,6 +90,23 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			}
 		}
 		return ret;
+	}
+	
+	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab) {
+		Collection<SolicitudFabricaVO> solsFabricacion = new ArrayList<SolicitudFabricaVO>();
+		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
+		List l = q.getResultList();
+		for(int i=0 ; i < numsSolFab.size() ; i++){
+			Iterator it = l.iterator();
+			while(it.hasNext())
+			{
+				SolicitudDeFabricacion sol = (SolicitudDeFabricacion)it.next();
+				if(sol.getIdFab() == numsSolFab.get(i)){
+					solsFabricacion.add(sol.getVO());
+				}
+			}
+		}
+		return solsFabricacion;
 	}
 
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda) 
@@ -294,6 +312,23 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 		return false;
 	}
+	
+	public boolean existenSolsFab(List<Integer> numsSolFab) {
+		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		List<Integer> numsBase = new ArrayList<Integer>();
+		while(it.hasNext())
+		{
+			SolicitudDeFabricacion sol = (SolicitudDeFabricacion)it.next();
+			numsBase.add(sol.getIdFab());
+		}
+		if(numsBase.containsAll(numsSolFab)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 	public int getNextIdSolDis() {
 		Query q = em.createQuery("SELECT MAX(s.idDis) FROM SolicitudDistribucion s");
@@ -316,5 +351,9 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return a+1;
 		}
 	}
+
+
+
+	
 
 }

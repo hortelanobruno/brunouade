@@ -102,7 +102,13 @@ public class SolicitudReposicion extends Solicitud
 		sol.setIdRep(this.getIdRep());
 		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		sol.setFabrica(this.getFabrica().getVO());
-		sol.setSolFab(this.getSolsFab().getVO());
+		Collection<SolicitudFabricaVO> sols = new ArrayList<SolicitudFabricaVO>();
+		Iterator it1 = (Iterator) this.getSolsFab().iterator();
+		while(it1.hasNext()){
+			SolicitudFabricaVO solvo = ((SolicitudDeFabricacion) it1.next()).getVO();
+			sols.add(solvo);
+		}
+		sol.setSolsFab(sols);
 		sol.setCdVO(this.getCentro().getVO());
 		sol.setId(this.getId());
 		Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
@@ -127,7 +133,7 @@ public class SolicitudReposicion extends Solicitud
 		centro.setVO(vo.getCdVO());
 		this.setCentro(centro);
 		Collection<SolicitudDeFabricacion> arts = new ArrayList<SolicitudDeFabricacion>();
-		Iterator it1 = (Iterator) vo.getSolFab().iterator();
+		Iterator it1 = (Iterator) vo.getSolsFab().iterator();
 		while(it1.hasNext()){
 			SolicitudDeFabricacion sol = new SolicitudDeFabricacion();
 			sol.setVO(((SolicitudFabricaVO)it1.next()));

@@ -1,6 +1,8 @@
 package beans;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.Local;
 
@@ -34,5 +36,8 @@ public interface AdministradorSolicitudes
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
 	public int getNextIdSolDis();
 	public int getNexIdSolRep();
+	public boolean existenSolsFab(List<Integer> numsSolFab);
+	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(
+			List<Integer> numsSolFab);
 	
 }

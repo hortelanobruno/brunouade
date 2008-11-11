@@ -4,6 +4,7 @@ import java.lang.reflect.UndeclaredThrowableException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Hashtable;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -296,5 +297,13 @@ public class BusinessDelegate
 
 	public int getNexIdSolRep() {
 		return this.getModCD().getNexIdSolRep();
+	}
+
+	public boolean existenSolsFab(List<Integer> numsSolFab) {
+		return this.getModCD().existenSolsFab(numsSolFab);
+	}
+
+	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab) {
+		return this.getModCD().getSolicitudesDeFabricacion(numsSolFab);
 	}
 }
