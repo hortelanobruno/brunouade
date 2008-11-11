@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Packaging Generator" default="_packaging_generation_">
-<target name="_packaging_generation_" depends="N65540,N65565,N65615"/>
+<target name="_packaging_generation_" depends="N65540,N65565,N65615,N65654"/>
 <target name="N65540" description="ServerEJB.jar">
 <mkdir dir="dist"/>
 <jar destfile="dist/ServerEJB.jar">
@@ -36,6 +36,15 @@
 <zipfileset dir="." prefix="META-INF">
 <include name="application.xml"/>
 </zipfileset>
+<zipfileset dir="dist">
+<include name="WebServices.jar"/>
+</zipfileset>
+</jar>
+</target>
+<target name="N65654" description="WebServices.jar">
+<mkdir dir="dist"/>
+<jar destfile="dist/WebServices.jar">
+<zipfileset dir="bin/webservices" includes="Servicios.class, ServiciosSoapBindingSkeleton.class, ServiciosSoapBindingImpl.class"/>
 </jar>
 </target>
 </project>
