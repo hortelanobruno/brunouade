@@ -15,7 +15,6 @@
 <file location="dist/ServerEJB.jar" name="ServerEJB.jar" prefix="" project="" projectLocation="dist/ServerEJB.jar" used="true"/>
 <file location="dist/ServerWEB.war" name="ServerWEB.war" prefix="" project="" projectLocation="dist/ServerWEB.war" used="true"/>
 <file location="application.xml" name="application.xml" prefix="META-INF" project="" projectLocation="application.xml" used="true"/>
-<file location="dist/WebServices.jar" name="WebServices.jar" prefix="" project="" projectLocation="dist/WebServices.jar" used="true"/>
 </archive>
 <archive destination="dist" exploded="false" name="WebServices.jar" used="true">
 <folder excludes="" includes="Servicios.class, ServiciosSoapBindingSkeleton.class, ServiciosSoapBindingImpl.class," location="bin/webservices" name="webservices" prefix="" project="" projectLocation="bin/webservices" used="true"/>
