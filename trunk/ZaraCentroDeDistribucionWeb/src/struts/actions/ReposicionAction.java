@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -59,8 +60,13 @@ public class ReposicionAction extends Action
 		if(bd.existeSolRep(solRepVO.getIdRep())){
 			System.out.println(new Date()+": Solicitud de Reposicion 'existente' en el Centro de Distribucion \n");
 		}else{
-			int numSolFab = solRepVO.getSolFab().getIdFab();
-			if(!bd.existeSolFab(numSolFab)){
+			Collection<SolicitudFabricaVO> solsFab = solRepVO.getSolsFab();
+			Iterator it1 = (Iterator) solsFab.iterator();
+			List<Integer> numsSolFab = new ArrayList<Integer>();
+			while(it1.hasNext()){
+				numsSolFab.add(((SolicitudFabricaVO) it1.next()).getIdFab());
+			}
+			if(!bd.existenSolsFab(numsSolFab)){
 				System.out.println(new Date()+": La Solicitud de Reposicion contiene una Solicitud de Fabricacion que no existe\n");
 			}else{
 				ArrayList<Long> codigos = new ArrayList<Long>();
@@ -106,9 +112,8 @@ public class ReposicionAction extends Action
 					for(int k=0 ; k < articulos.size() ; k++){
 						descripciones.add(articulos.get(k).getDescripcion());
 					}
-					int idSolFab = solRepVO.getSolFab().getIdFab();
-					SolicitudFabricaVO solFabVO = bd.getSolicitudFabricacion(idSolFab);
-					solRepVO.setSolFab(solFabVO);
+					Collection<SolicitudFabricaVO> solFabVO = bd.getSolicitudesDeFabricacion(numsSolFab);
+					solRepVO.setSolsFab(solFabVO);
 					CentroDistribucionVO centroVO = bd.getCentro();
 					solRepVO.setCdVO(centroVO);
 					long codigoSolRep = solRepVO.getIdRep();
@@ -146,7 +151,7 @@ public class ReposicionAction extends Action
 
 	private void cargarForm(ReposicionForm frm, long codigoSolRep,
 			SolicitudDeReposicionVO solRepVO, ArrayList<Long> codigos,
-			ArrayList<String> descripciones, SolicitudFabricaVO solFabVO,
+			ArrayList<String> descripciones, Collection<SolicitudFabricaVO> solFabVO,
 			String fabrica) {
 		
 		Iterator iteradorRep = (Iterator) solRepVO.getArticulosAReponer().iterator();

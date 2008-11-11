@@ -2,6 +2,7 @@ package server;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -292,5 +293,13 @@ public class ServerFacadeBean implements ServerFacade
 
 	public int getNexIdSolRep() {
 		return this.admSol.getNexIdSolRep();
+	}
+
+	public boolean existenSolsFab(List<Integer> numsSolFab) {
+		return this.admSol.existenSolsFab(numsSolFab);
+	}
+
+	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab) {
+		return this.admSol.getSolicitudesDeFabricacion(numsSolFab);
 	}
 }
