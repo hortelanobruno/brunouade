@@ -9,15 +9,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import com.thoughtworks.xstream.XStream;
-
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
 import vo.SolicitudEnvioVO;
 import vo.SolicitudFabricaVO;
-import xml.XMLAdapter;
-import xml.XMLSolDisLaCoruna;
-import xml.XMLSolRepFabrica;
 import businesslogic.SolicitudDeFabricacion;
 import businesslogic.SolicitudDistribucion;
 import businesslogic.SolicitudEnvioATienda;
@@ -302,6 +297,17 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 
 	public int getNextIdSolDis() {
 		Query q = em.createQuery("SELECT MAX(s.idDis) FROM SolicitudDistribucion s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 1;
+		}else{
+			int a = (Integer) l.get(0);
+			return a+1;
+		}
+	}
+
+	public int getNexIdSolRep() {
+		Query q = em.createQuery("SELECT MAX(s.idRep) FROM SolicitudReposicion s");
 		List l = q.getResultList();
 		if(l.get(0) == null){
 			return 1;

@@ -273,11 +273,6 @@ public class ServerFacadeBean implements ServerFacade
 		return admSol.getAllSolicitudesDistribucion();
 	}
 
-	public void guardarArticuloFromJMS(String msg)
-	{
-		this.admArt.guardarArticuloFromJMS(msg);
-	}
-
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis) {
 		return this.admSol.obtenerSolicitudDistribucion(codSolDis);
 	}
@@ -293,5 +288,9 @@ public class ServerFacadeBean implements ServerFacade
 
 	public void guardarTienda(TiendaVO tienda) {
 		this.admConf.guardarTienda(tienda);
+	}
+
+	public int getNexIdSolRep() {
+		return this.admSol.getNexIdSolRep();
 	}
 }

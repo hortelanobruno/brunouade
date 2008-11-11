@@ -18,6 +18,7 @@ import javax.persistence.Transient;
 
 import vo.ArticuloAReponerVO;
 import vo.SolicitudDeReposicionVO;
+import vo.SolicitudFabricaVO;
 
 @Entity
 @DiscriminatorValue("reposicion")
@@ -26,9 +27,10 @@ public class SolicitudReposicion extends Solicitud
 	
 	private static final long serialVersionUID = -3577225904639518643L;
 	private Fabrica fabrica;
-	private SolicitudDeFabricacion solFab;
+	private Collection<SolicitudDeFabricacion> solsFab;
 	private Collection<ArticuloAReponer> articulosAReponer;
 	private int idRep;
+	private boolean procesada;
 
 
 
@@ -37,9 +39,9 @@ public class SolicitudReposicion extends Solicitud
 		super();
 	}
 	
-	public SolicitudReposicion(int id,int n, Collection<ArticuloAReponer> a, Date f, Fabrica fa,SolicitudDeFabricacion sol){
+	public SolicitudReposicion(int id,int n, Collection<ArticuloAReponer> a, Date f, Fabrica fa,Collection<SolicitudDeFabricacion> sol){
 		super(id,f);
-		this.solFab = sol;
+		this.solsFab = sol;
 		this.idRep = n;
 		this.fabrica = fa;
 		this.setArticulosAReponer(a);
@@ -75,13 +77,22 @@ public class SolicitudReposicion extends Solicitud
 		this.articulosAReponer = articulosAReponer;
 	}
 
-	@ManyToOne(cascade={CascadeType.MERGE})
-	public SolicitudDeFabricacion getSolFab() {
-		return solFab;
+	@OneToMany(cascade={CascadeType.MERGE})
+	public Collection<SolicitudDeFabricacion> getSolsFab() {
+		return solsFab;
 	}
 
-	public void setSolFab(SolicitudDeFabricacion solFab) {
-		this.solFab = solFab;
+	public void setSolsFab(Collection<SolicitudDeFabricacion> solFab) {
+		this.solsFab = solFab;
+	}
+	
+	public void setProcesada(boolean procesada) {
+		this.procesada = procesada;
+	}
+
+	@Column
+	public boolean getProcesada() {
+		return procesada;
 	}
 	
 	@Transient
@@ -91,7 +102,7 @@ public class SolicitudReposicion extends Solicitud
 		sol.setIdRep(this.getIdRep());
 		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		sol.setFabrica(this.getFabrica().getVO());
-		sol.setSolFab(this.getSolFab().getVO());
+		sol.setSolFab(this.getSolsFab().getVO());
 		sol.setCdVO(this.getCentro().getVO());
 		sol.setId(this.getId());
 		Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
@@ -101,6 +112,7 @@ public class SolicitudReposicion extends Solicitud
 			arts.add(art);
 		}
 		sol.setArticulosAReponer(arts);
+		sol.setProcesada(this.getProcesada());
 		return sol;
 	}
 
@@ -114,18 +126,24 @@ public class SolicitudReposicion extends Solicitud
 		CentroDistribucion centro = new CentroDistribucion();
 		centro.setVO(vo.getCdVO());
 		this.setCentro(centro);
-		SolicitudDeFabricacion solFab = new SolicitudDeFabricacion();
-		solFab.setVO(vo.getSolFab());
-		this.setSolFab(solFab);
+		Collection<SolicitudDeFabricacion> arts = new ArrayList<SolicitudDeFabricacion>();
+		Iterator it1 = (Iterator) vo.getSolFab().iterator();
+		while(it1.hasNext()){
+			SolicitudDeFabricacion sol = new SolicitudDeFabricacion();
+			sol.setVO(((SolicitudFabricaVO)it1.next()));
+			arts.add(sol);
+		}
+		this.setSolsFab(arts);
 		this.setId(vo.getId());
-		Collection<ArticuloAReponer> arts = new ArrayList<ArticuloAReponer>();
+		Collection<ArticuloAReponer> arts1 = new ArrayList<ArticuloAReponer>();
 		Iterator it = (Iterator) vo.getArticulosAReponer().iterator();
 		while(it.hasNext()){
 			ArticuloAReponer art = new ArticuloAReponer();
 			art.setVO(((ArticuloAReponerVO)it.next()));
-			arts.add(art);
+			arts1.add(art);
 		}
-		this.setArticulosAReponer(arts);
+		this.setArticulosAReponer(arts1);
+		this.setProcesada(vo.getProcesada());
 	}
 	
 	@Transient
