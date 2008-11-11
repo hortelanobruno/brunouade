@@ -16,7 +16,6 @@ import org.apache.struts.action.ActionMapping;
 
 import struts.forms.CargarGenerarEnviosForm;
 import struts.model.BusinessDelegate;
-import varios.XMLWrapper;
 import vo.ArticuloAEnviarVO;
 import vo.ArticuloPedidoVO;
 import vo.ArticuloReservadoVO;
