@@ -19,6 +19,7 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
+import vo.ArticuloAEnviarVO;
 import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
 import vo.ArticuloHeaderVO;
@@ -27,6 +28,7 @@ import vo.ArticuloPedidoVO;
 import vo.ArticuloRopaVO;
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
+import vo.SolicitudEnvioVO;
 import vo.SolicitudFabricaVO;
 import vo.TiendaVO;
 
@@ -163,13 +165,12 @@ public class XMLConverter
 			solrep.setArticulosAReponer(arts);
 			return solrep;
 		} catch (JDOMException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
-		return null;	
 	}
 	
 	public static String getStringFromSolFab(SolicitudFabricaVO solFab)
@@ -215,6 +216,57 @@ public class XMLConverter
 		xmlSolFab.setArticulosAFabricar(xmlArticulos);
 		
 		return xmlSolFab;
+	}
+	
+	public static String getStringFromSolEnv(SolicitudEnvioVO solEnvio)
+	{
+		XStream xstream = new XStream();
+		
+		xstream.alias("articuloaenviar",XMLArticuloAEnviar.class);
+		xstream.alias("centro", XMLCentro.class);
+		xstream.alias("tienda", XMLTienda.class);
+		xstream.alias("solEnv", XMLSolEnv.class);
+		//Parsear el objeto saco a XML
+
+		return xstream.toXML(getXMLSolEnvFromSolEnvVO(solEnvio));
+	}
+	
+	private static XMLSolEnv getXMLSolEnvFromSolEnvVO(SolicitudEnvioVO solEnvio)
+	{
+		XMLTienda xmlTienda = new XMLTienda();
+		xmlTienda.setCodigoTienda(solEnvio.getTienda().getCodigoTienda());
+		xmlTienda.setNombreTienda(solEnvio.getTienda().getNombreTienda());
+		
+		XMLCentro xmlCentro = new XMLCentro();
+		xmlCentro.setCodCentro(solEnvio.getCdVO().getCodCentro());
+		xmlCentro.setNombreCentro(solEnvio.getCdVO().getNombreCentro());
+		xmlCentro.setLatitud(solEnvio.getCdVO().getLatitud());
+		xmlCentro.setLongitud(solEnvio.getCdVO().getLongitud());
+		
+		Vector<XMLArticuloAEnviar> arts = new Vector<XMLArticuloAEnviar>();
+		Iterator i = solEnvio.getArticulosAEnviar().iterator();
+		ArticuloAEnviarVO artAEnv = (ArticuloAEnviarVO)i.next();
+		int idSolDis = artAEnv.getSolDis().getIdDis();
+		
+		for(Iterator it = solEnvio.getArticulosAEnviar().iterator(); it.hasNext();)
+		{
+			ArticuloAEnviarVO artVO = new ArticuloAEnviarVO();
+			artVO = (ArticuloAEnviarVO) it.next();
+			XMLArticuloAEnviar xmlArt = new XMLArticuloAEnviar();
+			xmlArt.setCod(artVO.getArt().getCodigo());
+			xmlArt.setCant(artVO.getCantidadAEnviar());
+			arts.add(xmlArt);
+		}
+		
+		XMLSolEnv xmlSolEnv = new XMLSolEnv();
+
+		xmlSolEnv.setNumero(solEnvio.getIdEnv());
+		xmlSolEnv.setSolDis(idSolDis);
+		xmlSolEnv.setCentro(xmlCentro);
+		xmlSolEnv.setTienda(xmlTienda);
+		xmlSolEnv.setArticulosAEnviar(arts);	
+		xmlSolEnv.setFechaEmision(solEnvio.getFechaEmision());
+		return xmlSolEnv;
 	}
 	
 	private static String getFecha(String f)
