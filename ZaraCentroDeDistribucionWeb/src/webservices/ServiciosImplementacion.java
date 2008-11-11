@@ -1,33 +1,21 @@
 package webservices;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.StringReader;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 
 import org.apache.log4j.Logger;
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.JDOMException;
-import org.jdom.input.SAXBuilder;
 
 import struts.model.BusinessDelegate;
+import varios.XMLConverter;
 import vo.ArticuloAFabricarVO;
-import vo.ArticuloAReponerVO;
 import vo.ArticuloHeaderVO;
 import vo.ArticuloPedidoVO;
 import vo.ArticuloReservadoVO;
 import vo.CentroDistribucionVO;
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
-import vo.TiendaVO;
 import exceptions.ErrorConectionException;
 
 public class ServiciosImplementacion {
@@ -42,14 +30,11 @@ public class ServiciosImplementacion {
 	public boolean recibirSolRep(String in0){
 		try {
 			bd = new BusinessDelegate();
-			SolicitudDeReposicionVO solrep = generarSolRepFromString(in0,bd);
+			SolicitudDeReposicionVO solrep = XMLConverter.getSolRepVOFromString(in0, bd.getNextIdARep());
 			solrep.setProcesada(false);
 			solrep.setCdVO(bd.getCentro());
 			solrep.setFabrica(bd.getFabricas().get(0));
 			solrep.setIdRep(bd.getNexIdSolRep());
-			
-			
-			
 		} catch (ErrorConectionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,7 +45,7 @@ public class ServiciosImplementacion {
 	public boolean recibirSolDis(String in0){
 		try {
 			bd = new BusinessDelegate();
-			SolicitudDistribucionVO soldis = generarSolDisFromString(in0);
+			SolicitudDistribucionVO soldis = XMLConverter.getSolDisVOFromString(in0);
 			if(soldis != null){
 				soldis.setIdDis(bd.getNextIdSolDis());
 				
@@ -155,132 +140,5 @@ public class ServiciosImplementacion {
 			}
 		}
 		return art;
-	}
-    
-    private SolicitudDeReposicionVO generarSolRepFromString(String in0, BusinessDelegate bd){
-    	SAXBuilder builder = new SAXBuilder();
-		Reader in = new StringReader(in0);
-		Document doc;
-		try {
-			doc = builder.build(in);
-			Element root = doc.getRootElement();
-			SolicitudDeReposicionVO solrep = new SolicitudDeReposicionVO();
-			solrep.setFechaEmision(new Date());
-			Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
-			ArticuloAReponerVO art = new ArticuloAReponerVO();
-			ArticuloHeaderVO artH = new ArticuloHeaderVO();
-			artH.setCodigo(Long.parseLong(root.getChild("int").getText()));
-			art.setArt(artH);
-			art.setCantidad(Integer.parseInt(root.getChild("cantidad").getText()));
-			art.setIdAAR(bd.getNextIdARep());
-			arts.add(art);
-			solrep.setArticulosAReponer(arts);
-			return solrep;
-		} catch (JDOMException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;	
     }
-    
-    private SolicitudDistribucionVO generarSolDisFromString(String in0){
-    	SAXBuilder builder = new SAXBuilder();
-		Reader in = new StringReader(in0);
-		Document doc;
-		try {
-			doc = builder.build(in);
-			Element root = doc.getRootElement();
-			SolicitudDistribucionVO soldis = new SolicitudDistribucionVO();
-			soldis.setFechaEmision(getFechaHoraFromString((root.getChild("fechaSolicitud").getText())));
-			Element items = root.getChild("items");
-			if(items != null){
-				List hijos = items.getChildren();
-				List<ArticuloPedidoVO> articulos = new ArrayList<ArticuloPedidoVO>();
-				String cod,nombre,referencia,cantidad;
-				for(Object hijo : hijos){
-					ArticuloPedidoVO articulo = new ArticuloPedidoVO();
-					ArticuloHeaderVO art = new ArticuloHeaderVO();
-					TiendaVO tienda = new TiendaVO();
-					cod = ((Element)hijo).getChild("tienda").getChild("codigo").getText();
-					if(cod.equals("")){
-						logger.debug("Error al leer la solicitud de distribucion");
-						return null;
-					}
-					tienda.setCodigoTienda(Integer.parseInt(cod));
-					nombre = ((Element)hijo).getChild("tienda").getChild("nombre").getText();
-					if(nombre.equals("")){
-						logger.debug("Error al leer la solicitud de distribucion");
-						return null;
-					}
-					tienda.setNombreTienda(nombre);
-					articulo.setTienda(tienda);
-					referencia = ((Element)hijo).getChild("articulo").getChild("referencia").getText();
-					if(referencia.equals("")){
-						logger.debug("Error al leer la solicitud de distribucion");
-						return null;
-					}
-					art.setCodigo(Integer.parseInt(referencia));
-					cantidad = ((Element)hijo).getChild("catidad").getText();
-					if(cantidad.equals("")){
-						logger.debug("Error al leer la solicitud de distribucion");
-						return null;
-					}
-					articulo.setCantidad(Integer.parseInt(cantidad));
-					articulo.setArt(art);
-					articulos.add(articulo);
-				}
-				soldis.setArticulosPedidos(articulos);
-				return soldis;
-			}
-		} catch (JDOMException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		logger.debug("Error al leer la solicitud de distribucion");
-		return null;
-    }
-    
-    private String getFecha(String f)
-	{
-		StringBuffer sb = new StringBuffer();
-		for(int i = 0; i<f.indexOf(" ");i++)
-			sb.append(f.charAt(i));
-		
-		return sb.toString();
-	}
-	
-	private String getHora(String f)
-	{
-		StringBuffer sb = new StringBuffer();
-		for(int i = f.indexOf(" "); i<f.length();i++)
-			sb.append(f.charAt(i));
-		
-		return sb.toString();
-	}
-	
-	@SuppressWarnings("deprecation")
-	private Date getFechaHoraFromString(String f)
-	{
-		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
-		DateFormat df1 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
-		f = f.replace("-", "/");
-		Date fn;
-		Date fn2;
-		try 
-		{
-			fn = df.parse(this.getFecha(f));
-			fn.setHours(Integer.parseInt(this.getHora(f).split(":")[0].trim()));
-			fn.setMinutes(Integer.parseInt(this.getHora(f).split(":")[1].trim()));
-		} 
-		catch (ParseException e)
-		{
-			e.printStackTrace();
-			return null;
-		}
-		return fn;
-	}
 }
