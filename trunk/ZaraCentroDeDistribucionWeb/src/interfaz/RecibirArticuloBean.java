@@ -46,8 +46,8 @@ public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
 			{
 				msg = (TextMessage) m;
 				String mens = msg.getText();
-				FacadeInterface fi = FacadeInterface.getInstance();
-				fi.guardarArticuloFromJMS(mens);
+				RecibirArticuloImplementacion rArt = new RecibirArticuloImplementacion(); 
+				rArt.guardarArticuloFromJMS(mens);
 			} 
 			else System.out.println("MESSAGE BEAN: Mensaje de tipo incorrecto ");
 				

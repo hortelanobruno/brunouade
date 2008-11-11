@@ -30,10 +30,6 @@ public interface ServerFacade
 	public void guardarFabrica(FabricaVO fab);
 	public void guardarTienda(TiendaVO tienda);
 	
-	//INTREGACION: JMS - WS
-	
-	public void guardarArticuloFromJMS(String msg);
-	
 	//panel sol dist
 	public ArrayList<FabricaVO> getFabricas();
 	public boolean existeSolDis(int numero);//Nuevo hay que hacer
@@ -91,15 +87,12 @@ public interface ServerFacade
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
 	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
+	public int getNexIdSolRep();
 	
 	//panel new art
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public boolean existeSolFab(int numSolFab);
-	
-	
-	
-	
 	
 }

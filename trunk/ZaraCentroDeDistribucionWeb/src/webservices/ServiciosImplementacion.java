@@ -18,16 +18,17 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
-import exceptions.ErrorConectionException;
-
 import struts.model.BusinessDelegate;
 import vo.ArticuloAFabricarVO;
+import vo.ArticuloAReponerVO;
 import vo.ArticuloHeaderVO;
 import vo.ArticuloPedidoVO;
 import vo.ArticuloReservadoVO;
 import vo.CentroDistribucionVO;
+import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
 import vo.TiendaVO;
+import exceptions.ErrorConectionException;
 
 public class ServiciosImplementacion {
 	
@@ -36,6 +37,24 @@ public class ServiciosImplementacion {
 	
 	public ServiciosImplementacion() {
 		
+	}
+	
+	public boolean recibirSolRep(String in0){
+		try {
+			bd = new BusinessDelegate();
+			SolicitudDeReposicionVO solrep = generarSolRepFromString(in0,bd);
+			solrep.setProcesada(false);
+			solrep.setCdVO(bd.getCentro());
+			solrep.setFabrica(bd.getFabricas().get(0));
+			solrep.setIdRep(bd.getNexIdSolRep());
+			
+			
+			
+		} catch (ErrorConectionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
 	public boolean recibirSolDis(String in0){
@@ -137,6 +156,35 @@ public class ServiciosImplementacion {
 		}
 		return art;
 	}
+    
+    private SolicitudDeReposicionVO generarSolRepFromString(String in0, BusinessDelegate bd){
+    	SAXBuilder builder = new SAXBuilder();
+		Reader in = new StringReader(in0);
+		Document doc;
+		try {
+			doc = builder.build(in);
+			Element root = doc.getRootElement();
+			SolicitudDeReposicionVO solrep = new SolicitudDeReposicionVO();
+			solrep.setFechaEmision(new Date());
+			Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
+			ArticuloAReponerVO art = new ArticuloAReponerVO();
+			ArticuloHeaderVO artH = new ArticuloHeaderVO();
+			artH.setCodigo(Long.parseLong(root.getChild("int").getText()));
+			art.setArt(artH);
+			art.setCantidad(Integer.parseInt(root.getChild("cantidad").getText()));
+			art.setIdAAR(bd.getNextIdARep());
+			arts.add(art);
+			solrep.setArticulosAReponer(arts);
+			return solrep;
+		} catch (JDOMException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;	
+    }
     
     private SolicitudDistribucionVO generarSolDisFromString(String in0){
     	SAXBuilder builder = new SAXBuilder();

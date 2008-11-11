@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import com.thoughtworks.xstream.XStream;
-import xml.XMLAdapter;
+
 import vo.ArticuloAEnviarVO;
 import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
@@ -17,7 +17,6 @@ import vo.ArticuloHeaderVO;
 import vo.ArticuloHogarVO;
 import vo.ArticuloReservadoVO;
 import vo.ArticuloRopaVO;
-import xml.XMLArticuloLaCoruna;
 import businesslogic.Articulo;
 import businesslogic.ArticuloAEnviar;
 import businesslogic.ArticuloAFabricar;
@@ -325,29 +324,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}else{
 			int a = (Integer) l.get(0);
 			return a+1;
-		}
-	}
-
-	public void guardarArticuloFromJMS(String msg) 
-	{
-		try
-		{
-			System.out.println("llego al bean: " + msg);
-			XStream xstream = new XStream();
-			XMLAdapter adapter = new XMLAdapter();
-			xstream.alias("XMLArticulo", XMLArticuloLaCoruna.class);
-			XMLArticuloLaCoruna xmlLC = (XMLArticuloLaCoruna)xstream.fromXML(msg);
-			ArticuloHeaderVO art = adapter.getArticuloFromXMLArticuloLaCoruna(xmlLC);
-			
-			if(art instanceof ArticuloRopaVO) 
-				this.guardarArticuloRopa((ArticuloRopaVO)art);
-			else 
-				this.guardarArticuloHogar((ArticuloHogarVO)art);
-		}
-		catch(Exception e)
-		{
-			System.out.println("Exception en guardarArticuloFromJMS!!\n\n");
-			e.printStackTrace();
 		}
 	}
 

@@ -9,7 +9,8 @@ package webservices;
 
 public class ServiciosSoapBindingImpl implements webservices.Servicios{
     public boolean recibirSolRep(java.lang.String in0) throws java.rmi.RemoteException {
-        return false;
+    	ServiciosImplementacion sI = new ServiciosImplementacion();
+    	return sI.recibirSolRep(in0);
     }
 
     public boolean recibirSolDis(java.lang.String in0) throws java.rmi.RemoteException {

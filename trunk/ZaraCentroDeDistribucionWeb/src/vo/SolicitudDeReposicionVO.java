@@ -8,8 +8,9 @@ public class SolicitudDeReposicionVO extends SolicitudVO
 	private static final long serialVersionUID = -4383653090680302766L;
 	private FabricaVO fabrica;
 	private int idRep;
-	private SolicitudFabricaVO solFab;
+	private Collection<SolicitudFabricaVO> solFab;
 	private Collection<ArticuloAReponerVO> articulosAReponer;
+	private boolean procesada;
 	
 	public SolicitudDeReposicionVO(){
 		
@@ -37,11 +38,11 @@ public class SolicitudDeReposicionVO extends SolicitudVO
 		this.articulosAReponer = articulosAReponer;
 	}
 
-	public SolicitudFabricaVO getSolFab() {
+	public Collection<SolicitudFabricaVO> getSolFab() {
 		return solFab;
 	}
 
-	public void setSolFab(SolicitudFabricaVO solFab) {
+	public void setSolFab(Collection<SolicitudFabricaVO> solFab) {
 		this.solFab = solFab;
 	}
 
@@ -51,5 +52,13 @@ public class SolicitudDeReposicionVO extends SolicitudVO
 
 	public void setIdRep(int idRep) {
 		this.idRep = idRep;
+	}
+
+	public void setProcesada(boolean procesada) {
+		this.procesada = procesada;
+	}
+
+	public boolean getProcesada() {
+		return procesada;
 	}
 }
