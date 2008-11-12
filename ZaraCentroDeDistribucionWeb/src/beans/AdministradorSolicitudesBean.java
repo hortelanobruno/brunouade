@@ -352,6 +352,36 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 	}
 
+	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar() {
+		List<SolicitudDeReposicionVO> solicitudes = new ArrayList<SolicitudDeReposicionVO>();
+		Query q = em.createQuery("SELECT s FROM SolicitudReposicion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		while(it.hasNext())
+		{
+			SolicitudReposicion sol = (SolicitudReposicion)it.next();
+			if(sol.getProcesada() == false){
+				solicitudes.add(sol.getVO());
+			}
+		}
+		return solicitudes;
+	}
+
+	public List<SolicitudDistribucionVO> obtenerSolDisAbiertas() {
+		List<SolicitudDistribucionVO> sols = new ArrayList<SolicitudDistribucionVO>();
+		Query q = em.createQuery("SELECT s FROM SolicitudDistribucion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		while(it.hasNext())
+		{
+			SolicitudDistribucion sol = (SolicitudDistribucion)it.next();
+			if(sol.getCerrada() == false){
+				sols.add(sol.getVO());
+			}
+		}
+		return sols;
+	}
+
 
 
 	

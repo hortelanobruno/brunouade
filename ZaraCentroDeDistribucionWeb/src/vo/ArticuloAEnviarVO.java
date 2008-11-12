@@ -8,19 +8,18 @@ public class ArticuloAEnviarVO implements Serializable
 	private int idAAE;
 	private ArticuloHeaderVO art;
 	private int cantidadAEnviar;
-	private SolicitudDistribucionVO solDis;
+	
 	
 	public ArticuloAEnviarVO() {
 
 	}
 	
 	
-	public ArticuloAEnviarVO(int id, ArticuloHeaderVO art, int cantE, SolicitudDistribucionVO sol)
+	public ArticuloAEnviarVO(int id, ArticuloHeaderVO art, int cantE)
 	{
 		this.setIdAAE(id);
 		this.setArt(art);
 		this.setCantidadAEnviar(cantE);
-		this.setSolDis(sol);
 	}
 
 	
@@ -42,10 +41,5 @@ public class ArticuloAEnviarVO implements Serializable
 	public void setIdAAE(int idAAE) {
 		this.idAAE = idAAE;
 	}
-	public SolicitudDistribucionVO getSolDis() {
-		return solDis;
-	}
-	public void setSolDis(SolicitudDistribucionVO solDis) {
-		this.solDis = solDis;
-	}
+
 }

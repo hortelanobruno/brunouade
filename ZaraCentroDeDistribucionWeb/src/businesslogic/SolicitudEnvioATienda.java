@@ -27,7 +27,7 @@ public class SolicitudEnvioATienda extends Solicitud
 	private Tienda tienda;
 	private Collection<ArticuloAEnviar> articulosAEnviar;
 	private int idEnv;
-	
+	private SolicitudDistribucion solDis;
 
 
 	public SolicitudEnvioATienda() {
@@ -49,6 +49,17 @@ public class SolicitudEnvioATienda extends Solicitud
 
 	public void setIdEnv(int idEnv) {
 		this.idEnv = idEnv;
+	}
+	
+	@ManyToOne
+	public SolicitudDistribucion getSolDis() 
+	{
+		return solDis;
+	}
+
+	public void setSolDis(SolicitudDistribucion solDis) 
+	{
+		this.solDis = solDis;
 	}
 	
 	@ManyToOne(cascade={CascadeType.MERGE})
@@ -86,6 +97,7 @@ public class SolicitudEnvioATienda extends Solicitud
 			arts.add(art);
 		}
 		sol.setArticulosAEnviar(arts);
+		sol.setSolDis(this.getSolDis().getVO());
 		return sol;
 	}
 
@@ -107,6 +119,9 @@ public class SolicitudEnvioATienda extends Solicitud
 		}
 		this.setArticulosAEnviar(arts);
 		this.setId(vo.getId());
+		SolicitudDistribucion sold = new SolicitudDistribucion();
+		sold.setVO(vo.getSolDis());
+		this.setSolDis(sold);
 	}
 	
 	@Transient

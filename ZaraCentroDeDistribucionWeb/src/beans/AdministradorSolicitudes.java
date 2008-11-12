@@ -37,7 +37,8 @@ public interface AdministradorSolicitudes
 	public int getNextIdSolDis();
 	public int getNexIdSolRep();
 	public boolean existenSolsFab(List<Integer> numsSolFab);
-	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(
-			List<Integer> numsSolFab);
+	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab);
+	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar();
+	public List<SolicitudDistribucionVO> obtenerSolDisAbiertas();
 	
 }

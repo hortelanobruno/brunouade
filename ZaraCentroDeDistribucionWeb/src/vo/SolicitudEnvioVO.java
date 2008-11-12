@@ -9,16 +9,18 @@ public class SolicitudEnvioVO extends SolicitudVO
 	private TiendaVO tienda;
 	private Collection<ArticuloAEnviarVO> articulosAEnviar;
 	private int idEnv;
+	private SolicitudDistribucionVO solDis;
 	
     public SolicitudEnvioVO() {
 
 	}
 	
-	public SolicitudEnvioVO(int id,int n, Collection<ArticuloAEnviarVO> a, Date f, TiendaVO t, CentroDistribucionVO centro){
+	public SolicitudEnvioVO(int id,int n, SolicitudDistribucionVO solDis, Collection<ArticuloAEnviarVO> a, Date f, TiendaVO t, CentroDistribucionVO centro){
 		super(id,f,centro);
 		this.idEnv = n;
 		this.tienda = t;
 		this.articulosAEnviar = a;
+		this.solDis = solDis;
 	}
 	
 	public TiendaVO getTienda() {
@@ -45,6 +47,11 @@ public class SolicitudEnvioVO extends SolicitudVO
 		this.idEnv = idEnv;
 	}
 
-	
+	public SolicitudDistribucionVO getSolDis() {
+		return solDis;
+	}
+	public void setSolDis(SolicitudDistribucionVO solDis) {
+		this.solDis = solDis;
+	}
 	
 }
