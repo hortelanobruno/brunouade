@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+<archive destination="" exploded="false" name="RecibirSolFabWS.jar" used="true">
+<folder excludes="" includes="RecibirSolFabr.class , RecibirSolFabrSoapBindingImpl.class , RecibirSolFabrSoapBindingSkeleton.class" location="bin/webServices" name="webServices" prefix="" project="" projectLocation="bin/webServices" used="true"/>
+</archive>
+</configurations>
