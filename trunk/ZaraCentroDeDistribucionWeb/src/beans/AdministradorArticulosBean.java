@@ -2,8 +2,10 @@ package beans;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -23,6 +25,7 @@ import businesslogic.ArticuloAFabricar;
 import businesslogic.ArticuloHogar;
 import businesslogic.ArticuloReservado;
 import businesslogic.ArticuloRopa;
+import businesslogic.SolicitudDistribucion;
 import exceptions.ExistingProductException;
 
 @Stateless
@@ -61,7 +64,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		return stocks;
 	}
 
-	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts) 
+	public void actualizarStock(List<ArticuloAReponerVO> arts) 
 	{
 		for(int i = 0; i < arts.size();i++)
 		{
@@ -242,20 +245,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 	}
 
-	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis) {
-		Query q = em.createQuery("Select a FROM ArticuloAEnviar a");
-		List l = q.getResultList();
-		Iterator i = l.iterator();
-		ArrayList<ArticuloAEnviarVO> ret = new ArrayList<ArticuloAEnviarVO>();
-		while(i.hasNext())
-		{
-			ArticuloAEnviar art = (ArticuloAEnviar)i.next();
-			if(art.getSolDis().getIdDis() == codSolDis){
-				ret.add(art.getVO());
-			}
-		}
-		return ret;
-	}
+
 
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos) {
 		ArrayList<Long> codVer = new ArrayList<Long>();
@@ -334,6 +324,19 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		List l = q.getResultList();
 		if(l.get(0) == null) return -1;
 		else return (Integer) l.get(0);
+	}
+
+	public HashMap<Long, Integer> getStocks() {
+		HashMap<Long,Integer> stocks = new HashMap<Long,Integer>();
+		Query q = em.createQuery("SELECT a FROM Articulo a");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		while(it.hasNext())
+		{
+			Articulo a = (Articulo)it.next();
+			stocks.put(a.getCodigo(), a.getCantidad());
+		}
+		return stocks;
 	}
 	
 	

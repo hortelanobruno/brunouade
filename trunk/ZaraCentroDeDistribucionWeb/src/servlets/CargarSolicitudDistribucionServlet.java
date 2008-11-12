@@ -46,6 +46,8 @@ public class CargarSolicitudDistribucionServlet extends HttpServlet {
 			codigos.add(artPed.getArt().getCodigo());
 		}
 		ArrayList<Integer> stocks = bd.getStocks(codigos);
+		//ACA PUTEA PORQUE BRUNO SACO LA REFERENCIA QUE TENIAN LOS ARTSAENVIAR CON LA SOLDIS
+		//Y LO PUSE QUE LA SOLAENV TENGA LA REFERENCIA DE LA SOLDIS
 		ArrayList<ArticuloAEnviarVO> artsAEnviar = bd.getArtsAEnv(codSolDis);
 		cargarTable(solDis,articulosReservados,stocks,artsAEnviar,response);
     }

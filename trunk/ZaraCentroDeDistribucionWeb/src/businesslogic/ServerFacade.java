@@ -2,6 +2,7 @@ package businesslogic;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.ejb.Remote;
@@ -68,7 +69,6 @@ public interface ServerFacade
 	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
 	public ArrayList<TiendaVO> getTiendas();
-	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis);
 	public int getNumeroSolEnv();
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
@@ -87,17 +87,19 @@ public interface ServerFacade
 	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab);
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
-	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts);
+	public void actualizarStock(List<ArticuloAReponerVO> arts);
 	public int getNexIdSolRep();
 	public boolean existenSolsFab(List<Integer> numsSolFab);
 	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab);
+	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar();
+	public List<SolicitudDistribucionVO> obtenerSolDisAbiertas();
+	public HashMap<Long, Integer> getStocks();
 	
 	//panel new art
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
 	public boolean existeSolFab(int numSolFab);
-	
 	
 	
 }

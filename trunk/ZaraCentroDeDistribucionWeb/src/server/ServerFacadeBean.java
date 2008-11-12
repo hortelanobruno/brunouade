@@ -2,6 +2,7 @@ package server;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -186,7 +187,7 @@ public class ServerFacadeBean implements ServerFacade
 		this.admArt.modificarStock(artiReservado);	
 	}
 
-	public void actualizarStock(ArrayList<ArticuloAReponerVO> arts)
+	public void actualizarStock(List<ArticuloAReponerVO> arts)
 	{
 		admArt.actualizarStock(arts);
 	}
@@ -254,10 +255,6 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.actualizarSolDis(solDis);
 	}
 
-	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis) {
-		return this.admArt.getArtsAEnv(codSolDis);
-	}
-
 	public int getNextId() {
 		return this.admSol.getNextId();
 	}
@@ -301,5 +298,17 @@ public class ServerFacadeBean implements ServerFacade
 
 	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab) {
 		return this.admSol.getSolicitudesDeFabricacion(numsSolFab);
+	}
+
+	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar() {
+		return this.admSol.obtenerSolicitudesDeReposicionAProcesar();
+	}
+
+	public List<SolicitudDistribucionVO> obtenerSolDisAbiertas() {
+		return this.admSol.obtenerSolDisAbiertas();
+	}
+
+	public HashMap<Long, Integer> getStocks() {
+		return this.admArt.getStocks();
 	}
 }

@@ -27,14 +27,19 @@ public class ServiciosImplementacion {
 		
 	}
 	
+	
 	public boolean recibirSolRep(String in0){
 		try {
 			bd = new BusinessDelegate();
+			//Parsea la solicitud de reposicion
 			SolicitudDeReposicionVO solrep = XMLConverter.getSolRepVOFromString(in0, bd.getNextIdARep());
 			solrep.setProcesada(false);
 			solrep.setCdVO(bd.getCentro());
 			solrep.setFabrica(bd.getFabricas().get(0));
 			solrep.setIdRep(bd.getNexIdSolRep());
+			//Guardar la solicitud de reposicion
+			bd.guardarSolicitudReposicion(solrep);
+			return true;
 		} catch (ErrorConectionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

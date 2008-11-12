@@ -19,18 +19,17 @@ public class ArticuloAEnviar implements Serializable
 	private int idAAE;
 	private Articulo art;
 	private int cantidadAEnviar;
-	private SolicitudDistribucion solDis;
+	
 	
 	public ArticuloAEnviar()
 	{
 		
 	}
 	
-	public ArticuloAEnviar(int id, Articulo art, SolicitudDistribucion sd, int cant)
+	public ArticuloAEnviar(int id, Articulo art, int cant)
 	{
 		this.setIdAAE(id);
 		this.setArt(art);
-		this.setSolDis(sd);
 		this.setCantidadAEnviar(cant);
 	}
 	
@@ -57,17 +56,6 @@ public class ArticuloAEnviar implements Serializable
 		this.idAAE = idAAE;
 	}
 
-	@ManyToOne
-	public SolicitudDistribucion getSolDis() 
-	{
-		return solDis;
-	}
-
-	public void setSolDis(SolicitudDistribucion solDis) 
-	{
-		this.solDis = solDis;
-	}
-
 	@Column
 	public int getCantidadAEnviar() {
 		return cantidadAEnviar;
@@ -83,7 +71,6 @@ public class ArticuloAEnviar implements Serializable
 		art.setIdAAE(this.getIdAAE());
 		art.setCantidadAEnviar(this.getCantidadAEnviar());
 		art.setArt(this.getArt().getVO());
-		art.setSolDis(this.getSolDis().getVO());
 		return art;
 	}
 	
@@ -93,9 +80,6 @@ public class ArticuloAEnviar implements Serializable
 		Articulo art2 = new Articulo();
 		art2.setVO(art.getArt());
 		this.setArt(art2);
-		SolicitudDistribucion solDis = new SolicitudDistribucion();
-		solDis.setVO(art.getSolDis());
-		this.setSolDis(solDis);
 	}
 	
 }

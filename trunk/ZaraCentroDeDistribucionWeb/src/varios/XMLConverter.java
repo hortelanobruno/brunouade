@@ -163,6 +163,8 @@ public class XMLConverter
 			art.setIdAAR(nextID);
 			arts.add(art);
 			solrep.setArticulosAReponer(arts);
+			//TODO ACA falta agregar la parte donde lee las solicitudes de fabricacion asociadas
+			//     a la solicitud de reposicion
 			return solrep;
 		} catch (JDOMException e) {
 			e.printStackTrace();
@@ -245,8 +247,8 @@ public class XMLConverter
 		
 		Vector<XMLArticuloAEnviar> arts = new Vector<XMLArticuloAEnviar>();
 		Iterator i = solEnvio.getArticulosAEnviar().iterator();
-		ArticuloAEnviarVO artAEnv = (ArticuloAEnviarVO)i.next();
-		int idSolDis = artAEnv.getSolDis().getIdDis();
+		
+		int idSolDis = solEnvio.getSolDis().getIdDis();
 		
 		for(Iterator it = solEnvio.getArticulosAEnviar().iterator(); it.hasNext();)
 		{

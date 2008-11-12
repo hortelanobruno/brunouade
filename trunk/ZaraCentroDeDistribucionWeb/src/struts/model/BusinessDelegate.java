@@ -3,6 +3,7 @@ package struts.model;
 import java.lang.reflect.UndeclaredThrowableException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -155,8 +156,8 @@ public class BusinessDelegate
 		this.getModCD().guardarSolicitudReposicion(solRepVO);
 	}
 
-	public void actualizarStock(ArrayList<ArticuloAReponerVO> articulo) {
-		this.getModCD().actualizarStock((ArrayList<ArticuloAReponerVO>) articulo);
+	public void actualizarStock(List<ArticuloAReponerVO> articulo) {
+		this.getModCD().actualizarStock(articulo);
 	}
 	
 	public ArticuloHeaderVO getArticulo(long cod) {
@@ -262,10 +263,6 @@ public class BusinessDelegate
 		return this.getModCD().getTiendas();
 	}
 
-	public ArrayList<ArticuloAEnviarVO> getArtsAEnv(int codSolDis) {
-		return this.getModCD().getArtsAEnv(codSolDis);
-	}
-
 	public int getNumeroSolEnv() {
 		return this.getModCD().getNumeroSolEnv();
 	}
@@ -305,5 +302,17 @@ public class BusinessDelegate
 
 	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab) {
 		return this.getModCD().getSolicitudesDeFabricacion(numsSolFab);
+	}
+
+	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar() {
+		return this.getModCD().obtenerSolicitudesDeReposicionAProcesar();
+	}
+
+	public List<SolicitudDistribucionVO> obtenerSolDisAbiertas() {
+		return this.getModCD().obtenerSolDisAbiertas();
+	}
+
+	public HashMap<Long, Integer> getStocks() {
+		return this.getModCD().getStocks();
 	}
 }

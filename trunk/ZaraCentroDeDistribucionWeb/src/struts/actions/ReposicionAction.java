@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -22,8 +23,10 @@ import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
 import vo.ArticuloAReponerWebVO;
 import vo.ArticuloHeaderVO;
+import vo.ArticuloPedidoVO;
 import vo.CentroDistribucionVO;
 import vo.SolicitudDeReposicionVO;
+import vo.SolicitudDistribucionVO;
 import vo.SolicitudFabricaVO;
 import exceptions.ErrorConectionException;
 
@@ -52,102 +55,99 @@ public class ReposicionAction extends Action
 		}
 	}
 	
+	/*
+	 * 1) Levantar de la base todas las solicitudes de reposicion que no han sido procesadas
+	 * 2) Actualizar stock real
+	 * 3) Actualizar las solicitudes de fabricacion que generaron esta solicitud de reposicion
+	 * 4) Si se pueden atender a todos los pedidos, se atienden y se notifica, sino no hace nada y
+	 *    habilita el boton para atender a los que quiera
+	 * 
+	 */
 	public ActionForward execute(ActionMapping mapping,	 ActionForm form, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException 
 	{
-		ReposicionForm frm = (ReposicionForm) form;
-		//ACA ESTA solRepVO nos llega por webservice o jms y hay q hacer q vaya agarrando de a una
-		SolicitudDeReposicionVO solRepVO = new SolicitudDeReposicionVO();
-		if(bd.existeSolRep(solRepVO.getIdRep())){
-			System.out.println(new Date()+": Solicitud de Reposicion 'existente' en el Centro de Distribucion \n");
-		}else{
-			Collection<SolicitudFabricaVO> solsFab = solRepVO.getSolsFab();
-			Iterator it1 = (Iterator) solsFab.iterator();
-			List<Integer> numsSolFab = new ArrayList<Integer>();
-			while(it1.hasNext()){
-				numsSolFab.add(((SolicitudFabricaVO) it1.next()).getIdFab());
-			}
-			if(!bd.existenSolsFab(numsSolFab)){
-				System.out.println(new Date()+": La Solicitud de Reposicion contiene una Solicitud de Fabricacion que no existe\n");
-			}else{
-				ArrayList<Long> codigos = new ArrayList<Long>();
-				Iterator arts = (Iterator) solRepVO.getArticulosAReponer().iterator();
-				while (arts.hasNext()) {
-					codigos.add(((ArticuloAReponerVO) arts.next()).getArt().getCodigo());
+		try{
+			ReposicionForm frm = (ReposicionForm) form;
+			//Obtiene las solicitudes de reposicion a procesar
+			List<SolicitudDeReposicionVO> solicitudesDeReposicion = bd.obtenerSolicitudesDeReposicionAProcesar();
+			
+			List<ArticuloAReponerVO> artsRep = null;
+			SolicitudDeReposicionVO solicitudRep = null;
+			List<SolicitudFabricaVO> solsFab = null;
+			for(int i=0 ; i<solicitudesDeReposicion.size() ; i++){
+				solicitudRep = solicitudesDeReposicion.get(i);
+				//Actualizo stock real
+				artsRep = new ArrayList<ArticuloAReponerVO>(solicitudRep.getArticulosAReponer());
+				bd.actualizarStock(artsRep);
+				
+				//Actualizo solicitudes de fabricacion
+				solsFab = new ArrayList<SolicitudFabricaVO>(solicitudRep.getSolsFab());
+				ordenarSolicitudesPorFecha(solsFab);
+				for(int j=0 ; j<solsFab.size() ; j++ ){
+					actualizarSolsFab(solsFab.get(j),artsRep);
+					bd.actualizarSolicitudFabricacion(solsFab.get(j));
 				}
-				ArrayList<Long>  verCod = bd.existenArts(codigos);
-				if(!verCod.isEmpty()){
-					String codsfalse = "Cod. "+verCod.get(0);
-					for(int q = 1 ; q < verCod.size() ; q++){
-						codsfalse = codsfalse + " Cod. "+verCod.get(q);
-					}
-					System.out.println(new Date()+": La solicitud contiene articulos que no existen en el Centro de Distribucion\n");
-				}else{
-					int idAR = bd.getNextIdARep();
-					int id = bd.getNextId();
-					solRepVO.setId(id);
-					Iterator itit = solRepVO.getArticulosAReponer().iterator();
-					ArrayList<ArticuloAReponerVO> artsRep = new ArrayList<ArticuloAReponerVO>();
-					while(itit.hasNext()){
-						ArticuloAReponerVO aRep = (ArticuloAReponerVO) itit.next();
-						aRep.setIdAAR(idAR);
-						idAR++;
-						artsRep.add(aRep);
-					}
-					solRepVO.setArticulosAReponer(artsRep);
-					ArrayList<ArticuloHeaderVO> articulos = bd.getArticulos(codigos);				
-					Iterator itit2 = solRepVO.getArticulosAReponer().iterator();
-					Collection<ArticuloAReponerVO> artsReVO = new ArrayList<ArticuloAReponerVO>();
-					while(itit2.hasNext()){
-						ArticuloAReponerVO artRe = (ArticuloAReponerVO) itit2.next();
-						long co = artRe.getArt().getCodigo();
-						for(int j=0 ; j < articulos.size() ; j++){
-							if(co == articulos.get(j).getCodigo()){
-								artRe.setArt(articulos.get(j));
-							}
-						}
-						artsReVO.add(artRe);
-					}
-					solRepVO.setArticulosAReponer(artsReVO);
-					ArrayList<String> descripciones = new ArrayList<String>();
-					for(int k=0 ; k < articulos.size() ; k++){
-						descripciones.add(articulos.get(k).getDescripcion());
-					}
-					Collection<SolicitudFabricaVO> solFabVO = bd.getSolicitudesDeFabricacion(numsSolFab);
-					solRepVO.setSolsFab(solFabVO);
-					CentroDistribucionVO centroVO = bd.getCentro();
-					solRepVO.setCdVO(centroVO);
-					long codigoSolRep = solRepVO.getIdRep();
-					String fabrica = solRepVO.getFabrica().getNombreFabrica();
-					cargarForm(frm,codigoSolRep,solRepVO, codigos, descripciones, solFabVO,fabrica);
-					Iterator it = solRepVO.getArticulosAReponer().iterator();
-					while(it.hasNext()){
-						ArticuloAReponerVO arti = (ArticuloAReponerVO) it.next();
-						cargarArticuloEnSolFab(solFabVO,arti);	
-					}
-					System.out.println(new Date()+": Solicitud de Reposicion Cargada\n");
-					//ACA HAY QUE VER SI SE ACTUALIZA BIEN LA solFabVO
-					bd.actualizarSolicitudFabricacion(solFabVO);
-					return (mapping.findForward("success"));
-				}	
-				return (mapping.findForward("failure"));
-			}	
+				//Proceso la sol rep
+				solicitudRep.setProcesada(true);
+				bd.guardarSolicitudReposicion(solicitudRep);
+			}
+			//Chequeo si se pueden atender todas las solicitudes de distribucion
+			boolean auto = chequearSiAtenderSolDisAutomaticamente();
+			if(true){
+				//Se atendieron todas, notificar
+				
+			}else{
+				//No se puedieron atender a todas, asi que habilitar el boton para que pueda atenderlas
+			}
+			return (mapping.findForward("success"));
+		}catch(Exception e){
 			return (mapping.findForward("failure"));
 		}
-		return (mapping.findForward("failure"));
 	}
 	
-	private void cargarArticuloEnSolFab(SolicitudFabricaVO solFabVO,ArticuloAReponerVO arti)
-	{
-		Collection<ArticuloAFabricarVO> articulos = solFabVO.getArticulosAFabricar();
-		Iterator itArt = articulos.iterator();
-		while(itArt.hasNext()){
-			ArticuloAFabricarVO art = (ArticuloAFabricarVO)itArt.next();
-			if(arti.getArt().getCodigo() == (art.getArt().getCodigo())){
-				int cantidad = art.getCantidadRecibida();
-				art.setCantidadRecibida(cantidad + arti.getCantidad());
+
+	private boolean chequearSiAtenderSolDisAutomaticamente() {
+		// TODO Chequea si se pueden atender todas los sol dis que no estan cerradas
+		// Si se pueden atender, se atiende y devuelve true,
+		// sino no hace nada y devuelve false
+		
+		List<SolicitudDistribucionVO> solsDis = bd.obtenerSolDisAbiertas();
+		HashMap<Long,Integer> stocks = bd.getStocks();
+		for(int i=0 ; i < solsDis.size() ; i++){
+			SolicitudDistribucionVO sol = (SolicitudDistribucionVO) solsDis.get(i);
+			List<ArticuloPedidoVO> artsPed = new ArrayList<ArticuloPedidoVO>(sol.getArticulosPedidos());
+			for(int j=0 ; j<artsPed.size() ; j++){
+				ArticuloPedidoVO art = (ArticuloPedidoVO) artsPed.get(j);
+				long codigo = art.getArt().getCodigo();
+				int cantPed = art.getCantidad();
+				int stock = stocks.get(codigo);
+				if(stock>=cantPed){
+					stocks.put(codigo, stock-cantPed);
+				}else{
+					return false;
+				}
 			}
 		}
+		//Se pueden atender a todos
+		atenderTodasLasSolDis();
+		return true;
 	}
+
+	private void atenderTodasLasSolDis() {
+		// TODO Atender a todas las soldis que hay en la base
+		
+	}
+
+	private void actualizarSolsFab(SolicitudFabricaVO solicitudFabricaVO,List<ArticuloAReponerVO> artsRep) {
+		// TODO Actualizar la solicitud, y setear "cerrada" si corresponde
+		
+	}
+
+	private void ordenarSolicitudesPorFecha(List<SolicitudFabricaVO> solsFab) {
+		// TODO Ordenar las solicitudes por fecha de forma que el index 0 sea el mas viejo
+		
+	}
+
+	
 
 	private void cargarForm(ReposicionForm frm, long codigoSolRep,
 			SolicitudDeReposicionVO solRepVO, ArrayList<Long> codigos,
