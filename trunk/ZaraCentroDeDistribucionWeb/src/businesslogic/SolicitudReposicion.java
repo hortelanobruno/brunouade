@@ -27,7 +27,6 @@ public class SolicitudReposicion extends Solicitud
 	
 	private static final long serialVersionUID = -3577225904639518643L;
 	private Fabrica fabrica;
-	private Collection<SolicitudDeFabricacion> solsFab;
 	private Collection<ArticuloAReponer> articulosAReponer;
 	private int idRep;
 	private boolean procesada;
@@ -39,9 +38,8 @@ public class SolicitudReposicion extends Solicitud
 		super();
 	}
 	
-	public SolicitudReposicion(int id,int n, Collection<ArticuloAReponer> a, Date f, Fabrica fa,Collection<SolicitudDeFabricacion> sol){
+	public SolicitudReposicion(int id,int n, Collection<ArticuloAReponer> a, Date f, Fabrica fa){
 		super(id,f);
-		this.solsFab = sol;
 		this.idRep = n;
 		this.fabrica = fa;
 		this.setArticulosAReponer(a);
@@ -76,15 +74,6 @@ public class SolicitudReposicion extends Solicitud
 	public void setArticulosAReponer(Collection<ArticuloAReponer> articulosAReponer) {
 		this.articulosAReponer = articulosAReponer;
 	}
-
-	@OneToMany(cascade={CascadeType.MERGE})
-	public Collection<SolicitudDeFabricacion> getSolsFab() {
-		return solsFab;
-	}
-
-	public void setSolsFab(Collection<SolicitudDeFabricacion> solFab) {
-		this.solsFab = solFab;
-	}
 	
 	public void setProcesada(boolean procesada) {
 		this.procesada = procesada;
@@ -102,13 +91,6 @@ public class SolicitudReposicion extends Solicitud
 		sol.setIdRep(this.getIdRep());
 		sol.setFechaEmision(this.getFechaHoraFromString(this.getFechaEmision()));
 		sol.setFabrica(this.getFabrica().getVO());
-		Collection<SolicitudFabricaVO> sols = new ArrayList<SolicitudFabricaVO>();
-		Iterator it1 = (Iterator) this.getSolsFab().iterator();
-		while(it1.hasNext()){
-			SolicitudFabricaVO solvo = ((SolicitudDeFabricacion) it1.next()).getVO();
-			sols.add(solvo);
-		}
-		sol.setSolsFab(sols);
 		sol.setCdVO(this.getCentro().getVO());
 		sol.setId(this.getId());
 		Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
@@ -132,14 +114,6 @@ public class SolicitudReposicion extends Solicitud
 		CentroDistribucion centro = new CentroDistribucion();
 		centro.setVO(vo.getCdVO());
 		this.setCentro(centro);
-		Collection<SolicitudDeFabricacion> arts = new ArrayList<SolicitudDeFabricacion>();
-		Iterator it1 = (Iterator) vo.getSolsFab().iterator();
-		while(it1.hasNext()){
-			SolicitudDeFabricacion sol = new SolicitudDeFabricacion();
-			sol.setVO(((SolicitudFabricaVO)it1.next()));
-			arts.add(sol);
-		}
-		this.setSolsFab(arts);
 		this.setId(vo.getId());
 		Collection<ArticuloAReponer> arts1 = new ArrayList<ArticuloAReponer>();
 		Iterator it = (Iterator) vo.getArticulosAReponer().iterator();

@@ -91,7 +91,7 @@ public class CargarSolicitudDistribucionServlet extends HttpServlet {
 		    response.getWriter().write("<articulo>");
             response.getWriter().write("<codigo>"+codigo+"</codigo>");
             response.getWriter().write("<descripcion>"+artPed.getArt().getDescripcion()+"</descripcion>");
-            response.getWriter().write("<cantpedida>"+artPed.getCantidad()+"</cantpedida>");
+            response.getWriter().write("<cantpedida>"+artPed.getCantidadPedida()+"</cantpedida>");
             response.getWriter().write("<cantreservada>"+cantres+"</cantreservada>");
             response.getWriter().write("<stock>"+stock+"</stock>");
             response.getWriter().write("<cantenviada>"+cantenv+"</cantenviada>");

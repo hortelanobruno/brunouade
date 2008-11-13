@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -17,15 +16,12 @@ import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
 import vo.ArticuloHeaderVO;
 import vo.ArticuloHogarVO;
-import vo.ArticuloReservadoVO;
 import vo.ArticuloRopaVO;
 import businesslogic.Articulo;
 import businesslogic.ArticuloAEnviar;
 import businesslogic.ArticuloAFabricar;
 import businesslogic.ArticuloHogar;
-import businesslogic.ArticuloReservado;
 import businesslogic.ArticuloRopa;
-import businesslogic.SolicitudDistribucion;
 import exceptions.ExistingProductException;
 
 @Stateless
@@ -71,7 +67,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			Articulo a = em.find(Articulo.class, arts.get(i).getArt().getCodigo());
 			if(a != null)
 			{
-				a.setCantidad(a.getCantidad()+arts.get(i).getCantidad());
+				a.setCantidad(a.getCantidad()+arts.get(i).getCantidadRecibida());
 				em.merge(a);
 			}
 		}
@@ -137,22 +133,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 	}
 
-	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv) 
-	{
-		Iterator i = (Iterator)artiAEnv.iterator();
-		while(i.hasNext())
-		{
-			ArticuloReservadoVO avo = (ArticuloReservadoVO) i.next();
-			Articulo a = em.find(Articulo.class,avo.getArt().getCodigo());
-			if(a != null)
-			{
-				int newCant = a.getCantidad() - avo.getCantidadReservada();
-				a.setCantidad(newCant);
-				em.merge(a);
-			}
-		}
-	}
-
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar() {
 		Query q = em.createQuery("SELECT a FROM ArticuloAFabricar a WHERE cantidadAFabricar =:cant");
 		q.setParameter("cant", 0);
@@ -171,81 +151,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	{
 		return (em.find(Articulo.class, codigo) == null)?false:true;
 	}
-
-	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser) {
-		Iterator it = artiReser.iterator();
-		while(it.hasNext()){
-			ArticuloReservadoVO artVO = (ArticuloReservadoVO) it.next();
-			ArticuloReservado art = new ArticuloReservado();
-			art.setVO(artVO);
-			em.persist(art);
-		}
-	}
-
-	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis) 
-	{
-		Query q = em.createQuery("Select a FROM ArticuloReservado a");
-		List l = q.getResultList();
-		Iterator i = l.iterator();
-		ArrayList<ArticuloReservadoVO> ret = new ArrayList<ArticuloReservadoVO>();
-		while(i.hasNext())
-		{
-			ArticuloReservado art = (ArticuloReservado)i.next();
-			if(art.getSolDis().getIdDis() == codSolDis){
-				ret.add(art.getVO());
-			}
-		}
-		return ret;
-	}
-
-	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados) 
-	{
-		for(int i = 0; i<articulosReservados.size();i++)
-		{
-			ArticuloReservadoVO art = articulosReservados.get(i);
-			ArticuloReservado aR = em.find(ArticuloReservado.class, art.getIdAR());
-			if(aR != null)
-			{
-				if(art.getCantidadReservada() == aR.getCantidadReservada())
-					em.remove(aR);
-				else
-				{
-					aR.setCantidadReservada(aR.getCantidadReservada()-art.getCantidadReservada());
-					em.merge(aR);
-				}
-			}
-		}
-	}
-
-	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
-		for(int i = 0 ; i < articulosAEnviar.size() ; i++){
-			ArticuloAEnviarVO artEnv = articulosAEnviar.get(i);
-			for(int j = 0 ; j < articulosReservados.size() ; j++){
-				ArticuloReservadoVO artRes = articulosReservados.get(j);
-				if(artEnv.getArt().getCodigo() == artRes.getArt().getCodigo()){
-					if(artRes.getCantidadReservada() <= artEnv.getCantidadAEnviar()){
-						articulosAEnviar.get(i).setCantidadAEnviar(artEnv.getCantidadAEnviar() - artRes.getCantidadReservada());
-					}
-				}
-			}
-		}
-		Iterator i = (Iterator)articulosAEnviar.iterator();
-		while(i.hasNext())
-		{
-			ArticuloAEnviarVO avo = (ArticuloAEnviarVO) i.next();
-			Articulo a = em.find(Articulo.class,avo.getArt().getCodigo());
-			if(a != null)
-			{
-				if(a.getCantidad() > 0){
-					int newCant = a.getCantidad() - avo.getCantidadAEnviar();
-					a.setCantidad(newCant);
-					em.merge(a);
-				}
-			}
-		}
-	}
-
-
 
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos) {
 		ArrayList<Long> codVer = new ArrayList<Long>();

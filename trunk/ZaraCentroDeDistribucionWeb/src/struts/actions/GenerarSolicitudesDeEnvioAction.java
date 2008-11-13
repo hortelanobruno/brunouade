@@ -18,7 +18,6 @@ import struts.forms.CargarGenerarEnviosForm;
 import struts.model.BusinessDelegate;
 import vo.ArticuloAEnviarVO;
 import vo.ArticuloPedidoVO;
-import vo.ArticuloReservadoVO;
 import vo.SolicitudDistribucionVO;
 import vo.SolicitudEnvioVO;
 import exceptions.ErrorConectionException;

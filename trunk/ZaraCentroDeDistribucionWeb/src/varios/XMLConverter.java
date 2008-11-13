@@ -128,7 +128,7 @@ public class XMLConverter
 						logger.debug("Error al leer la solicitud de distribucion");
 						return null;
 					}
-					articulo.setCantidad(Integer.parseInt(cantidad));
+					articulo.setCantidadPedida(Integer.parseInt(cantidad));
 					articulo.setArt(art);
 					articulos.add(articulo);
 				}
@@ -159,12 +159,10 @@ public class XMLConverter
 			ArticuloHeaderVO artH = new ArticuloHeaderVO();
 			artH.setCodigo(Long.parseLong(root.getChild("int").getText()));
 			art.setArt(artH);
-			art.setCantidad(Integer.parseInt(root.getChild("cantidad").getText()));
+			art.setCantidadRecibida(Integer.parseInt(root.getChild("cantidad").getText()));
 			art.setIdAAR(nextID);
 			arts.add(art);
 			solrep.setArticulosAReponer(arts);
-			//TODO ACA falta agregar la parte donde lee las solicitudes de fabricacion asociadas
-			//     a la solicitud de reposicion
 			return solrep;
 		} catch (JDOMException e) {
 			e.printStackTrace();

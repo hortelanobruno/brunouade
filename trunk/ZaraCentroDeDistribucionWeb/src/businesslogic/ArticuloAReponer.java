@@ -19,7 +19,7 @@ public class ArticuloAReponer implements Serializable
 	private static final long serialVersionUID = 1409325381648482564L;
 	private int idAAR;
 	private Articulo art;
-	private int cantidad;
+	private int cantidadRecibida;
 	
 	public ArticuloAReponer() {
 		// TODO Auto-generated constructor stub
@@ -29,7 +29,7 @@ public class ArticuloAReponer implements Serializable
 	{
 		this.setIdAAR(id);
 		this.setArt(art);
-		this.setCantidad(cant);
+		this.setCantidadRecibida(cant);
 	}
 	
 	@ManyToOne
@@ -42,12 +42,12 @@ public class ArticuloAReponer implements Serializable
 	}
 	
 	@Column
-	public int getCantidad() {
-		return cantidad;
+	public int getCantidadRecibida() {
+		return cantidadRecibida;
 	}
 	
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
+	public void setCantidadRecibida(int cantidad) {
+		this.cantidadRecibida = cantidad;
 	}
 	@Id
 	@Column
@@ -64,14 +64,14 @@ public class ArticuloAReponer implements Serializable
 	public ArticuloAReponerVO getVO(){
 		ArticuloAReponerVO art = new ArticuloAReponerVO();
 		art.setIdAAR(this.getIdAAR());
-		art.setCantidad(this.getCantidad());
+		art.setCantidadRecibida(this.getCantidadRecibida());
 		art.setArt(this.getArt().getVO());
 		return art;
 	}
 	
 	public void setVO(ArticuloAReponerVO art){
 		this.setIdAAR(art.getIdAAR());
-		this.setCantidad(art.getCantidad());
+		this.setCantidadRecibida(art.getCantidadRecibida());
 		Articulo art2 = new Articulo();
 		art2.setVO(art.getArt());
 		this.setArt(art2);

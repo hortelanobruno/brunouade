@@ -12,7 +12,6 @@ import varios.XMLConverter;
 import vo.ArticuloAFabricarVO;
 import vo.ArticuloHeaderVO;
 import vo.ArticuloPedidoVO;
-import vo.ArticuloReservadoVO;
 import vo.CentroDistribucionVO;
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
@@ -106,7 +105,7 @@ public class ServiciosImplementacion {
 			ArticuloPedidoVO artVO = arts.get(i);
 			long cod = artVO.getArt().getCodigo();
 			int stock = bd.getStockArticulo(cod);
-			int ped = artVO.getCantidad();
+			int ped = artVO.getCantidadPedida();
 			if (ped > stock) {
 				arti = bd.getArticulo(cod);
 				ArticuloAFabricarVO aFab = new ArticuloAFabricarVO();
@@ -131,7 +130,7 @@ public class ServiciosImplementacion {
 		for (int i = 0; i < arts.size(); i++) {
 			ArticuloPedidoVO artVO = arts.get(i);
 			long cod = artVO.getArt().getCodigo();
-			int cantPed = artVO.getCantidad(); 
+			int cantPed = artVO.getCantidadPedida(); 
 			int stock = bd.getStockArticulo(cod);
 			if(stock > cantPed){
 				arti = bd.getArticulo(cod);

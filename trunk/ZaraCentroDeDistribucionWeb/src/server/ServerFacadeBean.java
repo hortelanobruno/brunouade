@@ -13,7 +13,6 @@ import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
 import vo.ArticuloHeaderVO;
 import vo.ArticuloHogarVO;
-import vo.ArticuloReservadoVO;
 import vo.ArticuloRopaVO;
 import vo.CentroDistribucionVO;
 import vo.FabricaVO;
@@ -181,12 +180,6 @@ public class ServerFacadeBean implements ServerFacade
 		this.admConf.guardarFabrica(fab);
 	}
 
-	
-	public void modificarStock(Collection<ArticuloReservadoVO> artiReservado) 
-	{
-		this.admArt.modificarStock(artiReservado);	
-	}
-
 	public void actualizarStock(List<ArticuloAReponerVO> arts)
 	{
 		admArt.actualizarStock(arts);
@@ -219,10 +212,6 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admArt.getNextIdArticuloAReponer();
 	}
 
-	public void guardarArticulosReservado(Collection<ArticuloReservadoVO> artiReser) {
-		this.admArt.guardarArticulosReservados(artiReser);
-	}
-
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO) {
 		this.admSol.actualizarSolFab(solFabVO);
 	}
@@ -235,20 +224,8 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getSolsDis(tienda);
 	}
 
-	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis) {
-		return this.admArt.getArtsReservados(codSolDis);
-	}
-
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio) {
 		this.admSol.guardarSolEnv(solEnvio);
-	}
-
-	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados) {
-		this.admArt.actArtsRes(articulosReservados);
-	}
-
-	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
-		this.admArt.actualizarStock(articulosAEnviar,articulosReservados);
 	}
 
 	public void actualizarSolDis(SolicitudDistribucionVO solDis) {
@@ -310,5 +287,9 @@ public class ServerFacadeBean implements ServerFacade
 
 	public HashMap<Long, Integer> getStocks() {
 		return this.admArt.getStocks();
+	}
+
+	public List<SolicitudFabricaVO> getSolicitudesDeFabricacionAbiertas() {
+		return this.admSol.getSolicitudesDeFabricacionAbiertas();
 	}
 }
