@@ -12,7 +12,6 @@ import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
 import vo.ArticuloHeaderVO;
 import vo.ArticuloHogarVO;
-import vo.ArticuloReservadoVO;
 import vo.ArticuloRopaVO;
 import exceptions.ExistingProductException;
 
@@ -34,14 +33,9 @@ public interface AdministradorArticulos
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic2);
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2);
-	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv);
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
 	public boolean existeArticulo(long codigo);
-	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser);
 	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
-	public ArrayList<ArticuloReservadoVO> getArtsReservados(int codSolDis);
-	public void actArtsRes(ArrayList<ArticuloReservadoVO> articulosReservados);
-	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados);
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos);
 	public int getStockArticulo(long codigo);
 	public HashMap<Long, Integer> getStocks();

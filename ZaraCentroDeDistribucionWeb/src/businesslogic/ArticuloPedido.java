@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -21,8 +20,18 @@ public class ArticuloPedido  implements Serializable
 	private Tienda tienda;
 	private int idAP;
 	private Articulo art;
-	private int cantidad;
+	private int cantidadPedida;
+	private int cantidadEnviada;
 	
+	@Column
+	public int getCantidadEnviada() {
+		return cantidadEnviada;
+	}
+
+	public void setCantidadEnviada(int cantidadEnviada) {
+		this.cantidadEnviada = cantidadEnviada;
+	}
+
 	@ManyToOne
 	public Articulo getArt() {
 		return art;
@@ -33,12 +42,12 @@ public class ArticuloPedido  implements Serializable
 	}
 	
 	@Column
-	public int getCantidad() {
-		return cantidad;
+	public int getCantidadPedida() {
+		return cantidadPedida;
 	}
 	
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
+	public void setCantidadPedida(int cantidad) {
+		this.cantidadPedida = cantidad;
 	}
 	
 	@Id
@@ -64,21 +73,23 @@ public class ArticuloPedido  implements Serializable
 	public ArticuloPedidoVO getVO(){
 		ArticuloPedidoVO art = new ArticuloPedidoVO();
 		art.setIdAP(this.getIdAP());
-		art.setCantidad(this.getCantidad());
+		art.setCantidadPedida(this.getCantidadPedida());
 		art.setArt(this.getArt().getVO());
 		art.setTienda(this.getTienda().getVO());
+		art.setCantidadEnviada(this.getCantidadEnviada());
 		return art;
 	}
 	
 	public void setVO(ArticuloPedidoVO art){
 		this.setIdAP(art.getIdAP());
-		this.setCantidad(art.getCantidad());
+		this.setCantidadPedida(art.getCantidadPedida());
 		Articulo art2 = new Articulo();
 		art2.setVO(art.getArt());
 		this.setArt(art2);
 		Tienda tienda = new Tienda();
 		tienda.setVO(art.getTienda());
 		this.setTienda(tienda);
+		this.setCantidadEnviada(art.getCantidadEnviada());
 	}
 
 	

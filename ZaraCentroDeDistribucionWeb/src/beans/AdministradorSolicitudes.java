@@ -40,5 +40,6 @@ public interface AdministradorSolicitudes
 	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab);
 	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar();
 	public List<SolicitudDistribucionVO> obtenerSolDisAbiertas();
+	public List<SolicitudFabricaVO> getSolicitudesDeFabricacionAbiertas();
 	
 }

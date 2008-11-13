@@ -9,7 +9,8 @@ public class ArticuloPedidoVO implements Serializable
 	private int idAP;
 	private TiendaVO tienda;
 	private ArticuloHeaderVO art;
-	private int cantidad;
+	private int cantidadPedida;
+	private int cantidadEnviada;
 	
 	public ArticuloPedidoVO() {
 
@@ -19,7 +20,7 @@ public class ArticuloPedidoVO implements Serializable
 	{
 		this.setIdAP(id);
 		this.setArt(art);
-		this.setCantidad(cant);
+		this.setCantidadPedida(cant);
 	}
 	
 
@@ -31,12 +32,12 @@ public class ArticuloPedidoVO implements Serializable
 		this.art = art;
 	}
 
-	public int getCantidad() {
-		return cantidad;
+	public int getCantidadPedida() {
+		return cantidadPedida;
 	}
 
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
+	public void setCantidadPedida(int cantidad) {
+		this.cantidadPedida = cantidad;
 	}
 
 	public int getIdAP() {
@@ -53,6 +54,14 @@ public class ArticuloPedidoVO implements Serializable
 
 	public TiendaVO getTienda() {
 		return tienda;
+	}
+
+	public int getCantidadEnviada() {
+		return cantidadEnviada;
+	}
+
+	public void setCantidadEnviada(int cantidadEnviada) {
+		this.cantidadEnviada = cantidadEnviada;
 	}
 
 }

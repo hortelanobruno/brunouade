@@ -28,6 +28,7 @@ import vo.CentroDistribucionVO;
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
 import vo.SolicitudFabricaVO;
+import vo.TiendaVO;
 import exceptions.ErrorConectionException;
 
 
@@ -80,8 +81,8 @@ public class ReposicionAction extends Action
 				bd.actualizarStock(artsRep);
 				
 				//Actualizo solicitudes de fabricacion
-				solsFab = new ArrayList<SolicitudFabricaVO>(solicitudRep.getSolsFab());
-				ordenarSolicitudesPorFecha(solsFab);
+				solsFab = bd.getSolicitudesDeFabricacionAbiertas();
+				solsFab = ordenarSolicitudesPorFecha(solsFab);
 				for(int j=0 ; j<solsFab.size() ; j++ ){
 					actualizarSolsFab(solsFab.get(j),artsRep);
 					bd.actualizarSolicitudFabricacion(solsFab.get(j));
@@ -92,7 +93,7 @@ public class ReposicionAction extends Action
 			}
 			//Chequeo si se pueden atender todas las solicitudes de distribucion
 			boolean auto = chequearSiAtenderSolDisAutomaticamente();
-			if(true){
+			if(auto){
 				//Se atendieron todas, notificar
 				
 			}else{
@@ -118,7 +119,7 @@ public class ReposicionAction extends Action
 			for(int j=0 ; j<artsPed.size() ; j++){
 				ArticuloPedidoVO art = (ArticuloPedidoVO) artsPed.get(j);
 				long codigo = art.getArt().getCodigo();
-				int cantPed = art.getCantidad();
+				int cantPed = art.getCantidadPedida();
 				int stock = stocks.get(codigo);
 				if(stock>=cantPed){
 					stocks.put(codigo, stock-cantPed);
@@ -134,17 +135,90 @@ public class ReposicionAction extends Action
 
 	private void atenderTodasLasSolDis() {
 		// TODO Atender a todas las soldis que hay en la base
+		// Generar Envios
+		List<SolicitudDistribucionVO> solsDisAbiertas = bd.obtenerSolDisAbiertas();
+		
+		for(int i = 0; i<solsDisAbiertas.size();i++)
+		{
+			SolicitudDistribucionVO sol = solsDisAbiertas.get(i);
+			
+		}
 		
 	}
 
 	private void actualizarSolsFab(SolicitudFabricaVO solicitudFabricaVO,List<ArticuloAReponerVO> artsRep) {
 		// TODO Actualizar la solicitud, y setear "cerrada" si corresponde
+		List<ArticuloAFabricarVO> artsAFab = new ArrayList<ArticuloAFabricarVO>( solicitudFabricaVO.getArticulosAFabricar());
 		
+		for(int i = 0; i<artsAFab.size();i++)
+		{
+			long id = artsAFab.get(i).getArt().getCodigo();
+			for(int j = 0; j < artsRep.size();j++)
+			{
+				if(artsRep.get(j).getArt().getCodigo() == id)
+				{
+					int cantARep = artsRep.get(j).getCantidadRecibida();      //10 -> Recibi 10 ahora
+					int cantRecibida = artsAFab.get(i).getCantidadRecibida(); //40 -> Recibi antes
+					int cantAFab = artsAFab.get(i).getCantidadAFabricar(); 	  //50 -> Mande
+					
+					if(cantARep > 0)
+					{
+						if(cantARep >= (cantAFab-cantRecibida) )
+						{
+							//Puedo satisfacer todo
+							int aux = cantAFab - cantRecibida;  //10
+							artsRep.get(j).setCantidadRecibida(artsRep.get(j).getCantidadRecibida() - aux);
+							artsAFab.get(i).setCantidadRecibida(artsAFab.get(i).getCantidadRecibida() + aux);
+						}
+						else
+						{
+							//No puedo satisfacer todo
+							int aux = cantARep;
+							artsRep.get(j).setCantidadRecibida(0);
+							artsAFab.get(i).setCantidadRecibida(artsAFab.get(i).getCantidadRecibida() + aux);
+						}
+					}
+				}
+			}
+		}
+		
+		int aux2 = 0;
+		for(int j = 0; j < artsAFab.size();j++)
+		{
+			if( artsAFab.get(j).getCantidadAFabricar() != artsAFab.get(j).getCantidadRecibida())
+				aux2++;
+		}
+		if(aux2 == 0)solicitudFabricaVO.setCerrada(true);
+		else solicitudFabricaVO.setCerrada(false);
+		
+		Collection<ArticuloAFabricarVO> col = new ArrayList<ArticuloAFabricarVO>(artsAFab);
+		solicitudFabricaVO.setArticulosAFabricar(col);
 	}
 
-	private void ordenarSolicitudesPorFecha(List<SolicitudFabricaVO> solsFab) {
+	private List<SolicitudFabricaVO> ordenarSolicitudesPorFecha(List<SolicitudFabricaVO> solsFab) {
 		// TODO Ordenar las solicitudes por fecha de forma que el index 0 sea el mas viejo
+		List<SolicitudFabricaVO> aux = new ArrayList<SolicitudFabricaVO>();
+		int size = solsFab.size();
+		SolicitudFabricaVO min = null;
 		
+		for(int j = 0; j < size; j++)
+		{
+			for(int i=0 ; i < solsFab.size() ; i++)
+			{
+				if(i == 0)
+				{
+					min = solsFab.get(i);
+				}
+				
+				if(solsFab.get(i).getFechaEmision().after(min.getFechaEmision()))
+				{
+					min = solsFab.get(i);
+				}
+			}
+			aux.add(min);
+			solsFab.remove(min);
+		}
+		return aux;
 	}
 
 	
@@ -164,7 +238,7 @@ public class ReposicionAction extends Action
 			while (iteradorRep.hasNext()) {
 				ArticuloAReponerVO arti = (((ArticuloAReponerVO) iteradorRep.next()));
 				if((arti.getArt().getCodigo()) == codigos.get(i)){
-					cantidadareponer = arti.getCantidad();
+					cantidadareponer = arti.getCantidadRecibida();
 				}
 			}
 			while (iteradorFab.hasNext()) {

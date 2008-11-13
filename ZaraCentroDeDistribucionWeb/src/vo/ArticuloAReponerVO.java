@@ -8,7 +8,7 @@ public class ArticuloAReponerVO implements Serializable
 	private static final long serialVersionUID = -6231271589298853218L;
 	private int idAAR;
 	private ArticuloHeaderVO art;
-	private int cantidad;
+	private int cantidadRecibida;
 	
 	public ArticuloAReponerVO() 
 	{
@@ -19,7 +19,7 @@ public class ArticuloAReponerVO implements Serializable
 	{
 		this.setIdAAR(id);
 		this.setArt(art);
-		this.setCantidad(cant);
+		this.setCantidadRecibida(cant);
 	}
 	
 	public ArticuloHeaderVO getArt() {
@@ -28,11 +28,11 @@ public class ArticuloAReponerVO implements Serializable
 	public void setArt(ArticuloHeaderVO art) {
 		this.art = art;
 	}
-	public int getCantidad() {
-		return cantidad;
+	public int getCantidadRecibida() {
+		return cantidadRecibida;
 	}
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
+	public void setCantidadRecibida(int cantidad) {
+		this.cantidadRecibida = cantidad;
 	}
 	public int getIdAAR() {
 		return idAAR;

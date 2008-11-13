@@ -8,7 +8,6 @@ public class SolicitudDeReposicionVO extends SolicitudVO
 	private static final long serialVersionUID = -4383653090680302766L;
 	private FabricaVO fabrica;
 	private int idRep;
-	private Collection<SolicitudFabricaVO> solicitudesFabricacion;
 	private Collection<ArticuloAReponerVO> articulosAReponer;
 	private boolean procesada;
 	
@@ -36,14 +35,6 @@ public class SolicitudDeReposicionVO extends SolicitudVO
 
 	public void setArticulosAReponer(Collection<ArticuloAReponerVO> articulosAReponer) {
 		this.articulosAReponer = articulosAReponer;
-	}
-
-	public Collection<SolicitudFabricaVO> getSolsFab() {
-		return solicitudesFabricacion;
-	}
-
-	public void setSolsFab(Collection<SolicitudFabricaVO> solFab) {
-		this.solicitudesFabricacion = solFab;
 	}
 
 	public int getIdRep() {

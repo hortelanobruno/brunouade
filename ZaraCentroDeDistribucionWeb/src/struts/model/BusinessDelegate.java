@@ -16,7 +16,6 @@ import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
 import vo.ArticuloHeaderVO;
 import vo.ArticuloHogarVO;
-import vo.ArticuloReservadoVO;
 import vo.ArticuloRopaVO;
 import vo.CentroDistribucionVO;
 import vo.FabricaVO;
@@ -191,10 +190,6 @@ public class BusinessDelegate
 		return this.getModCD().getFabricas();
 	}
 
-	public void modificarStock(Collection<ArticuloReservadoVO> artiAEnv) {
-		this.getModCD().modificarStock(artiAEnv);		
-	}
-
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricarVO() {
 		return this.getModCD().getArticulosAFabricar();
 	}
@@ -213,10 +208,6 @@ public class BusinessDelegate
 
 	public int getNextIdARes() {
 		return this.getModCD().getNextIdArticuloReservado();
-	}
-
-	public void guardarArticulosReservados(Collection<ArticuloReservadoVO> artiReser) {
-		this.getModCD().guardarArticulosReservado(artiReser);
 	}
 
 	public void actualizarSolicitudFabricacion(SolicitudFabricaVO solFabVO) {
@@ -239,20 +230,8 @@ public class BusinessDelegate
 		return this.getModCD().getAllSolicitudesDistribucion();
 	}
 
-	public ArrayList<ArticuloReservadoVO> obtenerArticulosReservados(int codSolDis) {
-		return this.getModCD().getArtsReservados(codSolDis);
-	}
-
 	public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnvio) {
 		this.getModCD().guardarSolEnv(solEnvio);
-	}
-
-	public void actualizarArticulosReservados(ArrayList<ArticuloReservadoVO> articulosReservados) {
-		this.getModCD().actArtsRes(articulosReservados);
-	}
-
-	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar, ArrayList<ArticuloReservadoVO> articulosReservados) {
-		this.getModCD().actualizarStock(articulosAEnviar,articulosReservados);
 	}
 
 	public void actualizarSolicitudDistribucion(SolicitudDistribucionVO solDis) {
@@ -314,5 +293,9 @@ public class BusinessDelegate
 
 	public HashMap<Long, Integer> getStocks() {
 		return this.getModCD().getStocks();
+	}
+
+	public List<SolicitudFabricaVO> getSolicitudesDeFabricacionAbiertas() {
+		return this.getModCD().getSolicitudesDeFabricacionAbiertas();
 	}
 }

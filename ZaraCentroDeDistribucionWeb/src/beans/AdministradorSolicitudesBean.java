@@ -382,8 +382,18 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return sols;
 	}
 
-
-
-	
-
+	public List<SolicitudFabricaVO> getSolicitudesDeFabricacionAbiertas() {
+		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
+		List l = q.getResultList();
+		Iterator it = l.iterator();
+		List<SolicitudFabricaVO> sols = new ArrayList<SolicitudFabricaVO>();
+		while(it.hasNext())
+		{
+			SolicitudDeFabricacion sol = (SolicitudDeFabricacion)it.next();
+			if(sol.getCerrada()==false){
+				sols.add(sol.getVO());
+			}
+		}
+		return sols;
+	}
 }
