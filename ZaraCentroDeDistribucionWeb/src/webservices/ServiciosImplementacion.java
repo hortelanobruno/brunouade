@@ -117,7 +117,7 @@ public class ServiciosImplementacion {
 			if(cantEnv < cantPed){
 				artAFab = new ArticuloAFabricarVO();
 				artAFab.setArt(bd.getArticulo(artsPed.get(i).getArt().getCodigo()));
-				artAFab.setCantidadAFabricar((cantPed-cantEnv)*2);
+				artAFab.setCantidadAFabricar(0);
 				artAFab.setCantidadPedida(cantPed);
 				artAFab.setCantidadRecibida(0);
 				artAFab.setCantMinAPedir((cantPed-cantEnv)*2);

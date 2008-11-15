@@ -49,12 +49,11 @@ function fillSolDisRequest(){
         			var codigo = nodes[0].childNodes[0].nodeValue;
         			var descripcion = nodes[1].childNodes[0].nodeValue;
         			var cantidadpedida = nodes[2].childNodes[0].nodeValue;
-        			var cantidadreservada = nodes[3].childNodes[0].nodeValue;
         			var stock = nodes[4].childNodes[0].nodeValue;
         			var cantidadenviada = nodes[5].childNodes[0].nodeValue;
         			var cantidadaenviar = 0;
-        			datos += "<tr><td align='center'>"+codigo+"</td><td align='center'>"+descripcion+"</td><td align='center'>"+cantidadpedida+"</td><td align='center'>"+cantidadreservada+"</td><td align='center'>"+stock+"</td><td>"+cantidadenviada+"</td><td align='center'><input id='"+i+"' name='cantidadaenviar' type='text' value='"+cantidadaenviar+"' /></td></tr>";
-        			hidden += "<input type='hidden' name='codigo' value='"+codigo+"' /><input type='hidden' name='descripcion' value='"+descripcion+"' /><input type='hidden' name='cantidadpedida' value='"+cantidadpedida+"' /><input type='hidden' name='cantidadreservada' value='"+cantidadreservada+"' /><input type='hidden' name='stock' value='"+stock+"' /><input type='hidden' name='cantidadenviada' value='"+cantidadenviada+"' />";
+        			datos += "<tr><td align='center'>"+codigo+"</td><td align='center'>"+descripcion+"</td><td align='center'>"+cantidadpedida+"</td><td align='center'>"+stock+"</td><td>"+cantidadenviada+"</td><td align='center'><input id='"+i+"' name='cantidadaenviar' type='text' value='"+cantidadaenviar+"' /></td></tr>";
+        			hidden += "<input type='hidden' name='codigo' value='"+codigo+"' /><input type='hidden' name='descripcion' value='"+descripcion+"' /><input type='hidden' name='cantidadpedida' value='"+cantidadpedida+"' /><input type='hidden' name='stock' value='"+stock+"' /><input type='hidden' name='cantidadenviada' value='"+cantidadenviada+"' />";
         		}
         		datos += "</table>";
                 div.innerHTML = datos+hidden;
