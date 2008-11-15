@@ -1,5 +1,7 @@
 package struts.actions;
 
+import integracion.ImplementacionMandarSolFab;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -16,6 +19,7 @@ import org.apache.struts.action.ActionMapping;
 
 import struts.forms.GenerarSolFabForm;
 import struts.model.BusinessDelegate;
+import varios.XMLConverter;
 import vo.ArticuloAFabricarVO;
 import vo.CentroDistribucionVO;
 import vo.SolicitudFabricaVO;
@@ -34,6 +38,7 @@ import exceptions.ErrorConectionException;
 public class GenerarSolicitudFabricacionAction extends Action
 {
 	private BusinessDelegate bd;
+	private Logger logger = Logger.getLogger("zara.centro");
 	
 	public GenerarSolicitudFabricacionAction()
 	{
@@ -76,20 +81,27 @@ public class GenerarSolicitudFabricacionAction extends Action
 				solFab.setArticulosAFabricar(articulosAFAb);
 				CentroDistribucionVO centroVO = bd.getCentro();
 				solFab.setCdVO(centroVO);
-				//TODO Aca habia algo de que agarra la fabrica, que hacemos??
 				solFab.setFabrica(bd.getFabricas().get(0));
 				solFab.setFechaEmision(new Date());
 				int idSolFab = bd.getNumeroSolFab();
 				solFab.setIdFab(idSolFab);
 				solFab.setCerrada(false);
 				bd.guardarSolicitudFabricacion(solFab);
-				// TODO aca hay que hacer que te genere el xml y haga algo
+				String xmlSolFab = XMLConverter.getStringFromSolFab(solFab);
+				ImplementacionMandarSolFab envSolFab = new ImplementacionMandarSolFab();
+				boolean estado = envSolFab.enviarSolFab(xmlSolFab);
+				logger.debug("Se envio la solicitud de fabricacion a la Fabrica");
+				if(estado){
+					logger.debug("La solicitud de fabricacion fue recibida con exito");
+					return (mapping.findForward("success"));
+				}else{
+					logger.debug("La recepcion de la solicitud de fabricacion ha fallado");
+					return (mapping.findForward("failure"));
+				}
 				
-				// TODO poner mensaje al log
-				return (mapping.findForward("success"));
 			}
 		} catch (NumberFormatException e) {
-			// TODO poner mensaje al log
+			logger.debug("Error al generar la solicitud de fabricacion");
 			e.printStackTrace();
 			return (mapping.findForward("failure"));
 		}

@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+
 import javax.ejb.Remote;
+
+import vo.ArticuloAEnviarVO;
 import vo.ArticuloAFabricarVO;
 import vo.ArticuloAReponerVO;
 import vo.ArticuloHeaderVO;
@@ -64,6 +67,7 @@ public interface ServerFacade
 	public int getNumeroSolEnv();
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar);	
 	
 	
 	//panel gen sol fab
@@ -92,5 +96,6 @@ public interface ServerFacade
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
-	public boolean existeSolFab(int numSolFab);	
+	public boolean existeSolFab(int numSolFab);
+	
 }

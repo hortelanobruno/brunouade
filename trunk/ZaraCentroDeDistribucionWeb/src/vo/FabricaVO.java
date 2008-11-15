@@ -9,7 +9,6 @@ public class FabricaVO implements Serializable
 	private int codigoFabrica;
 	
 	public FabricaVO() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public FabricaVO(int c, String n){

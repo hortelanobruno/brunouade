@@ -18,7 +18,6 @@ import javax.persistence.Transient;
 
 import vo.ArticuloAReponerVO;
 import vo.SolicitudDeReposicionVO;
-import vo.SolicitudFabricaVO;
 
 @Entity
 @DiscriminatorValue("reposicion")

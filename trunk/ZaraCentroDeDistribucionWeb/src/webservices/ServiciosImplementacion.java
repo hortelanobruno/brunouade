@@ -1,5 +1,7 @@
 package webservices;
 
+import integracion.ImplementacionMandarSolEnv;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -10,12 +12,11 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import struts.model.BusinessDelegate;
+import varios.Constantes;
 import varios.XMLConverter;
 import vo.ArticuloAEnviarVO;
 import vo.ArticuloAFabricarVO;
-import vo.ArticuloHeaderVO;
 import vo.ArticuloPedidoVO;
-import vo.ArticuloReservadoVO;
 import vo.CentroDistribucionVO;
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
@@ -35,8 +36,7 @@ public class ServiciosImplementacion {
 		try {
 			bd = new BusinessDelegate();
 			// Parsea la solicitud de reposicion
-			SolicitudDeReposicionVO solrep = XMLConverter
-					.getSolRepVOFromString(in0, bd.getNextIdARep());
+			SolicitudDeReposicionVO solrep = XMLConverter.getSolRepVOFromString(in0, bd.getNextIdARep());
 			solrep.setProcesada(false);
 			solrep.setCdVO(bd.getCentro());
 			solrep.setFabrica(bd.getFabricas().get(0));
@@ -45,7 +45,6 @@ public class ServiciosImplementacion {
 			bd.guardarSolicitudReposicion(solrep);
 			return true;
 		} catch (ErrorConectionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return false;
@@ -203,7 +202,9 @@ public class ServiciosImplementacion {
 			solEnv.setSolDis(soldis);
 			solEnv.setTienda(bd.obtenerTiendas().get(0));
 			bd.guardarSolicitudDeEnvio(solEnv);
-			//TODO ACA HAY QUE LLAMAR AL WEBSERVICE Y ENVIARLO A LA TIENDA
+			String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
+			ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
+			envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA1);
 		}
 		if (!artsAEnvTienda1.isEmpty()) {
 			//Genero envio a la tienda 2
@@ -216,7 +217,9 @@ public class ServiciosImplementacion {
 			solEnv.setSolDis(soldis);
 			solEnv.setTienda(bd.obtenerTiendas().get(1));
 			bd.guardarSolicitudDeEnvio(solEnv);
-			//TODO ACA HAY QUE LLAMAR AL WEBSERVICE Y ENVIARLO A LA TIENDA
+			String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
+			ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
+			envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA2);
 		}
 	}
 }

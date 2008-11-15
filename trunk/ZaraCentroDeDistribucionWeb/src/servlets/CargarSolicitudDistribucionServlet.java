@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -13,9 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import struts.model.BusinessDelegate;
-import vo.ArticuloAEnviarVO;
 import vo.ArticuloPedidoVO;
-import vo.ArticuloReservadoVO;
 import vo.SolicitudDistribucionVO;
 import exceptions.ErrorConectionException;
 

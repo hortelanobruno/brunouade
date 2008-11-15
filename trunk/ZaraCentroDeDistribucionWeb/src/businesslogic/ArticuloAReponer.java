@@ -22,7 +22,6 @@ public class ArticuloAReponer implements Serializable
 	private int cantidadRecibida;
 	
 	public ArticuloAReponer() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public ArticuloAReponer(int id, Articulo art, int cant)

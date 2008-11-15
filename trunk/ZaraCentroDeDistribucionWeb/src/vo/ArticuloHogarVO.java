@@ -18,7 +18,6 @@ public class ArticuloHogarVO extends ArticuloHeaderVO
 		this.setMedidas(medidas);
 	}
 	public ArticuloHogarVO() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public String getCategoria() {
