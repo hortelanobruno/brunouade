@@ -58,7 +58,6 @@ public class GenSolFabAction extends Action
 			List<ArticuloAFabricarVO> artFabricandose = new ArrayList<ArticuloAFabricarVO>();
 			
 			for(int i=0; i < afvo.size() ; i++){
-				((ArticuloAFabricarVO)afvo.get(i)).setCantMinAPedir((((ArticuloAFabricarVO)afvo.get(i)).getCantidadPedida())*2);
 				int cant = ((ArticuloAFabricarVO)afvo.get(i)).getCantidadAFabricar();
 				if(cant == 0){
 					artAFab.add(((ArticuloAFabricarVO)afvo.get(i)));

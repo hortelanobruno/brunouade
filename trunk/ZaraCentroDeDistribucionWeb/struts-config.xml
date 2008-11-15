@@ -58,11 +58,6 @@
 			  <forward name="failure" path="/nohayarticuloareponer.jsp"/>
     </action>
     
-    <action   path="/AtenderPedido" type="struts.actions.AtenderPedidoAction" name="ReposicionForm"
-              scope="request" validate="false">
-              <forward name="success" path="/atenderpedidos.jsp"/>
-			  <forward name="failure" path="/error.jsp"/>
-    </action>
   </action-mappings>
   
   <message-resources parameter="resources.application"/>

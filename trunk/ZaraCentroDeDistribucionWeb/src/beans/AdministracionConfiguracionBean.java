@@ -77,7 +77,11 @@ public  class AdministracionConfiguracionBean implements AdministracionConfigura
 	public CentroDistribucionVO getCentro() 
 	{
 		CentroDistribucion centro = em.find(CentroDistribucion.class, 1);
-		return centro.getVO();
+		if(centro == null){
+			return null;
+		}else{
+			return centro.getVO();
+		}
 	}
 
 	public ArrayList<FabricaVO> getFabricas() 

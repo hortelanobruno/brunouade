@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:webservices" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="urn:webservices" xmlns:intf="urn:webservices" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.3
+Built on Oct 05, 2005 (05:23:37 EDT)-->
+
+   <wsdl:message name="recibirSolDisRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="recibirSolRepResponse">
+
+      <wsdl:part name="recibirSolRepReturn" type="xsd:boolean"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="recibirSolDisResponse">
+
+      <wsdl:part name="recibirSolDisReturn" type="xsd:boolean"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="recibirSolRepRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Servicios">
+
+      <wsdl:operation name="recibirSolRep" parameterOrder="in0">
+
+         <wsdl:input message="impl:recibirSolRepRequest" name="recibirSolRepRequest"/>
+
+         <wsdl:output message="impl:recibirSolRepResponse" name="recibirSolRepResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="recibirSolDis" parameterOrder="in0">
+
+         <wsdl:input message="impl:recibirSolDisRequest" name="recibirSolDisRequest"/>
+
+         <wsdl:output message="impl:recibirSolDisResponse" name="recibirSolDisResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiciosSoapBinding" type="impl:Servicios">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="recibirSolRep">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="recibirSolRepRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:webservices" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="recibirSolRepResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:webservices" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="recibirSolDis">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="recibirSolDisRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:webservices" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="recibirSolDisResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:webservices" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiciosService">
+
+      <wsdl:port binding="impl:ServiciosSoapBinding" name="Servicios">
+
+         <wsdlsoap:address location="http://192.168.1.103:8080/axis/services/Servicios"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -98,7 +98,6 @@ public class GenerarSolicitudFabricacionAction extends Action
 					logger.debug("La recepcion de la solicitud de fabricacion ha fallado");
 					return (mapping.findForward("failure"));
 				}
-				
 			}
 		} catch (NumberFormatException e) {
 			logger.debug("Error al generar la solicitud de fabricacion");

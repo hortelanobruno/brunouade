@@ -36,8 +36,10 @@ public class ServiciosImplementacion {
 		try {
 			bd = new BusinessDelegate();
 			// Parsea la solicitud de reposicion
-			SolicitudDeReposicionVO solrep = XMLConverter.getSolRepVOFromString(in0, bd.getNextIdARep());
+			int id = bd.getNextIdARep();
+			SolicitudDeReposicionVO solrep = XMLConverter.getSolRepVOFromString(in0, id);
 			solrep.setProcesada(false);
+			solrep.setId(bd.getNextId());
 			solrep.setCdVO(bd.getCentro());
 			solrep.setFabrica(bd.getFabricas().get(0));
 			solrep.setIdRep(bd.getNexIdSolRep());
@@ -57,11 +59,11 @@ public class ServiciosImplementacion {
 					.getSolDisVOFromString(in0);// Setea la fecha y los
 												// articulos
 			if (soldis != null) {
+				logger.debug("Se esta procesando una Solicitud Distribucion");
 				soldis.setIdDis(bd.getNextIdSolDis());
 				ArrayList<Long> codigos = new ArrayList<Long>();
 				int idMax = bd.getNextIdArtPed();
-				Iterator arts = (Iterator) soldis.getArticulosPedidos()
-						.iterator();
+				Iterator arts = (Iterator) soldis.getArticulosPedidos().iterator();
 				ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
 				while (arts.hasNext()) {
 					ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
@@ -76,8 +78,8 @@ public class ServiciosImplementacion {
 					for (int q = 1; q < verCod.size(); q++) {
 						codsfalse = codsfalse + " Cod. " + verCod.get(q);
 					}
-					logger
-							.debug("La solicitud contiene articulos que no existen en el Centro de Distribucion");
+					logger.debug("La solicitud contiene articulos que no existen en el Centro de Distribucion");
+					return false;
 				} else {
 					soldis.setArticulosPedidos(artsVO);
 					int id = bd.getNextId();
@@ -95,9 +97,10 @@ public class ServiciosImplementacion {
 					List<ArticuloAFabricarVO> artiAFab = generarArticulosAFabricar(soldis);
 					bd.guardarArticulosAFabricar(artiAFab);
 				}
-				logger.debug("Solicitudes de Distribucion guardada en el Centro de Distribucion");
+				logger.debug("Solicitud de Distribucion guardada en el Centro de Distribucion");
 				return true;
 			} else {
+				logger.debug("Error al leer la solicitud de distribucion");
 				return false;
 			}
 		} catch (ErrorConectionException e) {
@@ -110,6 +113,7 @@ public class ServiciosImplementacion {
 		List<ArticuloAFabricarVO> artsAFab = new ArrayList<ArticuloAFabricarVO>();
 		ArticuloAFabricarVO artAFab = null;
 		List<ArticuloPedidoVO> artsPed = new ArrayList<ArticuloPedidoVO>(soldis.getArticulosPedidos());
+		int idArtFab = bd.getNextIdAFab();
 		for(int i=0 ; i < artsPed.size() ; i++){
 			int cantEnv = artsPed.get(i).getCantidadEnviada();
 			int cantPed = artsPed.get(i).getCantidadPedida();
@@ -120,7 +124,7 @@ public class ServiciosImplementacion {
 				artAFab.setCantidadPedida(cantPed);
 				artAFab.setCantidadRecibida(0);
 				artAFab.setCantMinAPedir((cantPed-cantEnv)*2);
-				artAFab.setIdAAF(bd.getNextIdAFab());
+				artAFab.setIdAAF(idArtFab++);
 				artAFab.setSol(soldis);
 				artsAFab.add(artAFab);
 			}

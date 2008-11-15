@@ -134,15 +134,16 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	}
 
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar() {
-		Query q = em.createQuery("SELECT a FROM ArticuloAFabricar a WHERE cantidadAFabricar =:cant");
-		q.setParameter("cant", 0);
+		Query q = em.createQuery("SELECT a FROM ArticuloAFabricar a");
 		List l = q.getResultList();
-		
 		ArrayList<ArticuloAFabricarVO> ret = new ArrayList<ArticuloAFabricarVO>();
 		Iterator it = l.iterator();
 		while(it.hasNext()){
 			ArticuloAFabricarVO artVO = ((ArticuloAFabricar)it.next()).getVO();
-			ret.add(artVO);
+			if(((artVO.getCantidadAFabricar() == 0)&&(artVO.getCantidadRecibida()==0))||(artVO.getCantidadAFabricar() != artVO.getCantidadRecibida())){
+				ret.add(artVO);
+			}
+			
 		}
 		return ret;
 	}

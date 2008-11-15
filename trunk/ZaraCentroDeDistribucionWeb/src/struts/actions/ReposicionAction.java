@@ -67,40 +67,36 @@ public class ReposicionAction extends Action
 			ReposicionForm frm = (ReposicionForm) form;
 			//Obtiene las solicitudes de reposicion a procesar
 			List<SolicitudDeReposicionVO> solicitudesDeReposicion = bd.obtenerSolicitudesDeReposicionAProcesar();
-			
 			List<ArticuloAReponerVO> artsRep = null;
 			SolicitudDeReposicionVO solicitudRep = null;
 			List<SolicitudFabricaVO> solsFab = null;
-			List<SolicitudFabricaVO> allSolsFab = new ArrayList<SolicitudFabricaVO>();
+			solsFab = bd.getSolicitudesDeFabricacionAbiertas();
+			solsFab = ordenarSolicitudesPorAntiguedad(solsFab);
+			List<SolicitudFabricaVO> allSolsFab = new ArrayList<SolicitudFabricaVO>(solsFab);
+			cargarForm(frm,solicitudesDeReposicion,allSolsFab);
 			for(int i=0 ; i<solicitudesDeReposicion.size() ; i++){
 				solicitudRep = solicitudesDeReposicion.get(i);
 				//Actualizo stock real
 				artsRep = new ArrayList<ArticuloAReponerVO>(solicitudRep.getArticulosAReponer());
 				bd.actualizarStock(artsRep);
-				//Actualizo solicitudes de fabricacion
-				solsFab = bd.getSolicitudesDeFabricacionAbiertas();
-				solsFab = ordenarSolicitudesPorFecha(solsFab);
-				for(int j=0 ; j<solsFab.size() ; j++ ){
-					actualizarSolsFab(solsFab.get(j),artsRep);
-					bd.actualizarSolicitudFabricacion(solsFab.get(j));
-					allSolsFab.add(solsFab.get(j));
-				}
 				//Proceso la sol rep
 				solicitudRep.setProcesada(true);
 				bd.guardarSolicitudReposicion(solicitudRep);
+				//Actualizo solicitudes de fabricacion
+				for(int j=0 ; j<solsFab.size() ; j++ ){
+					actualizarSolsFab(solsFab.get(j),artsRep);
+					bd.actualizarSolicitudFabricacion(solsFab.get(j));
+				}
 			}
 			//Chequeo si se pueden atender todas las solicitudes de distribucion
 			boolean auto = chequearSiAtenderSolDisAutomaticamente();
 			if(auto){
 				//Se atendieron todas, notificar
-				frm.setPrenderBoton(false);
-				frm.setSeAtendieronATodas(true);
+				request.setAttribute("prenderBoton", "no");
 			}else{
 				//No se puedieron atender a todas, asi que habilitar el boton para que pueda atenderlas
-				frm.setPrenderBoton(true);
-				frm.setSeAtendieronATodas(false);
+				request.setAttribute("prenderBoton", "si");
 			}
-			cargarForm(frm,solicitudesDeReposicion,allSolsFab);
 			return (mapping.findForward("success"));
 		}catch(Exception e){
 			return (mapping.findForward("failure"));
@@ -197,12 +193,11 @@ public class ReposicionAction extends Action
 		solicitudFabricaVO.setArticulosAFabricar(col);
 	}
 
-	private List<SolicitudFabricaVO> ordenarSolicitudesPorFecha(List<SolicitudFabricaVO> solsFab) {
+	private List<SolicitudFabricaVO> ordenarSolicitudesPorAntiguedad(List<SolicitudFabricaVO> solsFab) {
 		// TODO Ordenar las solicitudes por fecha de forma que el index 0 sea el mas viejo
 		List<SolicitudFabricaVO> aux = new ArrayList<SolicitudFabricaVO>();
 		int size = solsFab.size();
 		SolicitudFabricaVO min = null;
-		
 		for(int j = 0; j < size; j++)
 		{
 			for(int i=0 ; i < solsFab.size() ; i++)
@@ -212,7 +207,7 @@ public class ReposicionAction extends Action
 					min = solsFab.get(i);
 				}
 				
-				if(solsFab.get(i).getFechaEmision().after(min.getFechaEmision()))
+				if(solsFab.get(i).getIdFab()>min.getIdFab())
 				{
 					min = solsFab.get(i);
 				}
