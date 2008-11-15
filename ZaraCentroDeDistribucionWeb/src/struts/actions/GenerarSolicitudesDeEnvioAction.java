@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -39,6 +40,7 @@ import exceptions.ErrorConectionException;
 public class GenerarSolicitudesDeEnvioAction extends Action
 {
 	private BusinessDelegate bd;
+	private Logger logger = Logger.getLogger("zara.centro");
 	
 	public GenerarSolicitudesDeEnvioAction()
 	{
@@ -59,6 +61,7 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 			int idAE = bd.getNextIdAEnv();
 			SolicitudDistribucionVO solDis = bd.obtenerSolicitudDistribucion(Integer.parseInt(frm.getIdsoldis()));
 			ArrayList<ArticuloAEnviarVO> articulosAEnviar = articulosAEnviarDeTabla(idAE,frm,solDis);
+			actualizarSolDis(solDis,articulosAEnviar);
 			List<ArticuloPedidoVO> artsPed = new ArrayList<ArticuloPedidoVO>(solDis.getArticulosPedidos());
 			Collection<ArticuloAEnviarVO> artsAEnvTienda1 = new ArrayList<ArticuloAEnviarVO>();
 			Collection<ArticuloAEnviarVO> artsAEnvTienda2 = new ArrayList<ArticuloAEnviarVO>();
@@ -98,9 +101,15 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				bd.guardarSolicitudDeEnvio(solEnv);
 				String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 				ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
-				envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA1);
+				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA1);
+				if(b){
+					logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+				}else{
+					logger.debug("Error al enviar la solicitud de envio a la tienda");
+					return mapping.findForward("failure");
+				}
 			}
-			if (!artsAEnvTienda1.isEmpty()) {
+			if (!artsAEnvTienda2.isEmpty()) {
 				//Genero envio a la tienda 2
 				SolicitudEnvioVO solEnv = new SolicitudEnvioVO();
 				solEnv.setArticulosAEnviar(artsAEnvTienda2);
@@ -113,7 +122,13 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				bd.guardarSolicitudDeEnvio(solEnv);
 				String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 				ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
-				envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA2);
+				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA2);
+				if(b){
+					logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+				}else{
+					logger.debug("Error al enviar la solicitud de envio a la tienda");
+					return mapping.findForward("failure");
+				}
 			}
 			return mapping.findForward("success");
 		} catch (NumberFormatException e) {
@@ -122,6 +137,23 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 		}
 	}
 	
+	private void actualizarSolDis(SolicitudDistribucionVO solDis,ArrayList<ArticuloAEnviarVO> articulosAEnviar) {
+		List<ArticuloPedidoVO> artsPed = new ArrayList<ArticuloPedidoVO>(solDis.getArticulosPedidos());
+		for(int i=0 ; i < articulosAEnviar.size() ; i++){
+			ArticuloAEnviarVO art = articulosAEnviar.get(i);
+			int cantEnv = art.getCantidadAEnviar();
+			if(cantEnv >0){
+				long cod = art.getArt().getCodigo();
+				for(int j=0 ; j < artsPed.size() ; j++){
+					if(artsPed.get(j).getArt().getCodigo()==cod){
+						artsPed.get(j).setCantidadEnviada(artsPed.get(j).getCantidadEnviada()+cantEnv);
+					}
+				}
+			}
+		}
+		solDis.setArticulosPedidos(artsPed);
+	}
+
 	public boolean comprobarCerrado(CargarGenerarEnviosForm frm){
 		boolean cerrado = true;
 		for(int i = 0 ; i < frm.getCantidadaenviar().length ; i++){

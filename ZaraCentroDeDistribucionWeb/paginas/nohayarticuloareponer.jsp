@@ -14,7 +14,7 @@
 		<tr height="500">
 			<td colspan="2" align="center">
 				<h1>No hay articulos para reponer.</h1>
-				<form action="/zara/indexz.jsp" method="post">
+				<form action="index.jsp" method="post">
 				<input type="submit" name="btnVolver" value="Volver"/>
 				</form>
 			</td>

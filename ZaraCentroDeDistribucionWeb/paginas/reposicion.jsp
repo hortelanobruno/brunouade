@@ -61,7 +61,7 @@
 						out.print("</label>");
 					}%></td>
 	      </form>
-	      <form id="form1" name="form1" method="post" action="indexz.jsp">
+	      <form id="form1" name="form1" method="post" action="index.jsp">
 		<td>
 	      <label>
 	      <input type="submit" name="Submit" value="Volver" />
