@@ -1,0 +1,15 @@
+Panel nuevo articulo:
+	-Testear cargar articulo		ok
+	-Testear articulo/s repetido/s		ok
+	-Testar si faltan datos
+
+Panel soldis:
+	-Recibir soldis				ok
+	-Recibir soldis picada
+
+
+Panel rep:
+	-Ver que pasa si repones un articulo que no esta para fabricar
+
+
+Validaciones java script
