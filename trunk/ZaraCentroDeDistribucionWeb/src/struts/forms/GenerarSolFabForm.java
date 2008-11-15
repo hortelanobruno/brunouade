@@ -12,7 +12,6 @@ public class GenerarSolFabForm extends ActionForm{
 	private String[] descripcion;
 	private String[] stock;
 	private String[] cantPedida;
-	private String[] cantRecibida;
 	private String[] cantMinAPedir;
 	private String[] cantAFab;
 	
@@ -27,12 +26,6 @@ public class GenerarSolFabForm extends ActionForm{
 	}
 	public String[] getCantMinAPedir() {
 		return cantMinAPedir;
-	}
-	public void setCantRecibida(String[] cantRecibida) {
-		this.cantRecibida = cantRecibida;
-	}
-	public String[] getCantRecibida() {
-		return cantRecibida;
 	}
 	public void setCantPedida(String[] cantPedida) {
 		this.cantPedida = cantPedida;

@@ -30,7 +30,7 @@
               <tr>
                <td width="200">
 		            <select name="idsoldis" onchange="fillSolDis()">
-		            <option value="">-SELECT–</option>
+		            <option value=""></option>
 		            <logic:iterate id="articulos" name="GenerarEnviosForm" property="codigosSolDist" >
 		            <option value="<bean:write name='articulos'/>"><bean:write name='articulos'/></option>
 					</logic:iterate>

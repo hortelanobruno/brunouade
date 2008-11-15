@@ -67,6 +67,9 @@ public class ReposicionAction extends Action
 			ReposicionForm frm = (ReposicionForm) form;
 			//Obtiene las solicitudes de reposicion a procesar
 			List<SolicitudDeReposicionVO> solicitudesDeReposicion = bd.obtenerSolicitudesDeReposicionAProcesar();
+			if(solicitudesDeReposicion.isEmpty()){
+				return (mapping.findForward("failure"));
+			}
 			List<ArticuloAReponerVO> artsRep = null;
 			SolicitudDeReposicionVO solicitudRep = null;
 			List<SolicitudFabricaVO> solsFab = null;

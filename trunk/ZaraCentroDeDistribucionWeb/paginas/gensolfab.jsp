@@ -34,9 +34,8 @@
 							<th>Codigo</th>
 							<th>Descripcion</th>
 							<th>Stock actual</th>
-							<th>Stock pedido</th>
-							<th>Stock recibido</th>
-							<th>Stock minimio a pedir</th>
+							<th>Cantidad pedida</th>
+							<th>Cantidad minimio a pedir</th>
 							<th>Cantidad a fabricar</th>
 							</tr>
                             <logic:iterate id="articulos" name="CargarArtFabForm" property="articulosAFabricar" >
@@ -45,7 +44,6 @@
 							<td><bean:write name="articulos" property="art.descripcion" /><input type="hidden" name="descripcion" value="<bean:write name="articulos" property="art.descripcion" />" /></td>
 							<td><bean:write name="articulos" property="art.cantidad" /><input type="hidden" name="stock" value="<bean:write name="articulos" property="art.cantidad" />" /></td>
 							<td><bean:write name="articulos" property="cantidadPedida" /><input type="hidden" name="cantPedida" value="<bean:write name="articulos" property="cantidadPedida" />" /></td>
-							<td><bean:write name="articulos" property="cantidadRecibida" /><input type="hidden" name="cantRecibida" value="<bean:write name="articulos" property="cantidadRecibida" />" /></td>
 							<td><bean:write name="articulos" property="cantMinAPedir" /><input type="hidden" name="cantMinAPedir" value="<bean:write name="articulos" property="cantMinAPedir" />" /></td>
 							<td><input type="text" name="cantAFab" value="0" onblur="comprobarCantAPed()"/></td>
 							</tr>
