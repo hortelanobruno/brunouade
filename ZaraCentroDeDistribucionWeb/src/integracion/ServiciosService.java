@@ -9,8 +9,10 @@ package integracion;
 
 public interface ServiciosService extends javax.xml.rpc.Service {
     public java.lang.String getServiciosAddress();
-
+    
     public integracion.Servicios getServicios() throws javax.xml.rpc.ServiceException;
 
     public integracion.Servicios getServicios(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    
+    
 }

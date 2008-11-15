@@ -101,7 +101,8 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				bd.guardarSolicitudDeEnvio(solEnv);
 				String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 				ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
-				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA1);
+				Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
+				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 				if(b){
 					logger.debug("Se envio la solicitud de envio correctamente a la tienda");
 				}else{
@@ -122,7 +123,8 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				bd.guardarSolicitudDeEnvio(solEnv);
 				String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 				ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
-				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA2);
+				Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA2;
+				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 				if(b){
 					logger.debug("Se envio la solicitud de envio correctamente a la tienda");
 				}else{
