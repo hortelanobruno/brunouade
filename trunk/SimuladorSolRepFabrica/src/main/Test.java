@@ -15,7 +15,9 @@ public class Test
 			Servicios port = service.getServicios();
 			
 			String solrep = "<src.RepAF> <centroDistribucionReferencia>5</centroDistribucionReferencia>"
-			  + "<cantidad>550.0</cantidad> <productoList class='list'><int>9697005</int> </productoList></src.RepAF>";
+			  + "<cantidad>2000</cantidad> <productoList class='list'><int>1234</int> </productoList></src.RepAF>";
+			
+			System.out.println("Mandando....");
 			
 			boolean r = port.recibirSolRep(solrep);
 			
