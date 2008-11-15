@@ -15,6 +15,7 @@ import javax.naming.InitialContext;
 public class ClienteJMS 
 {
 	private List<String> lista;
+	private List<String> lista2;
 	
 	public static void main(String[] args) {
 		new ClienteJMS();
@@ -24,7 +25,7 @@ public class ClienteJMS
 	{
 		System.out.println("Llenando lista...");
 		
-		String art1000 = 
+	/*	String art1000 = 
 			"<XMLArticulo> " +
 				"<referencia>1000</referencia>" +
 				"<descripcion>camisa</descripcion>" +
@@ -154,13 +155,80 @@ public class ClienteJMS
 				"<categoria>cama</categoria>" +
 				"<medidas>150 X 220 cm</medidas>" +
 			"</XMLArticulo>";
-		this.lista.add(art2);
+		this.lista.add(art2);*/
+		
+		String art = "<vo.ArtPersonalVO> <referencia>1515</referencia> <linea>Woman</linea>"
+		  + "<descripcion>Julian</descripcion> <color>Blanco</color> <seccion>Mujer</seccion>"
+		  +"<precioVentaUnitario>32.0</precioVentaUnitario> <ultimoPedido>2008-11-03 10:30:31.412 GST</ultimoPedido>"
+		  + "<mesRebaja>3</mesRebaja> <centros class='set'> <CentroDistribucion> <codigo>2</codigo> <nombre>Centro</nombre>"
+		      +"<pais>Argentina</pais> </CentroDistribucion> <CentroDistribucion> <codigo>4</codigo><nombre>Parque Norte</nombre>"
+		      +"<pais>Chile</pais> </CentroDistribucion> <CentroDistribucion> <codigo>5</codigo><nombre>Shopping Centro</nombre>"
+		      +"<pais>Uruguay</pais></CentroDistribucion><CentroDistribucion> <codigo>6</codigo><nombre>Montevideo Sur</nombre>"
+		      +"<pais>Uruguay</pais> </CentroDistribucion></centros><esNuevo>true</esNuevo> <talle>32</talle> <origen>Brasil</origen>"
+		+"</vo.ArtPersonalVO>";
+		this.lista.add(art);
+		
+		art = "<vo.ArtPersonalVO> <referencia>2020</referencia> <linea>Woman</linea>"
+		  + "<descripcion>Mulo</descripcion> <color>Verga</color> <seccion>Mujer</seccion>"
+		  +"<precioVentaUnitario>2.0</precioVentaUnitario> <ultimoPedido>2008-11-03 10:30:31.412 GST</ultimoPedido>"
+		  + "<mesRebaja>3</mesRebaja> <centros class='set'> <CentroDistribucion> <codigo>2</codigo> <nombre>Centro</nombre>"
+		      +"<pais>Argentina</pais> </CentroDistribucion> <CentroDistribucion> <codigo>4</codigo><nombre>Parque Norte</nombre>"
+		      +"<pais>Chile</pais> </CentroDistribucion> <CentroDistribucion> <codigo>5</codigo><nombre>Shopping Centro</nombre>"
+		      +"<pais>Uruguay</pais></CentroDistribucion><CentroDistribucion> <codigo>6</codigo><nombre>Montevideo Sur</nombre>"
+		      +"<pais>Uruguay</pais> </CentroDistribucion></centros><esNuevo>true</esNuevo> <talle>2</talle> <origen>Wilde</origen>"
+		+"</vo.ArtPersonalVO>";
+		this.lista.add(art);
+		
+		art = "<vo.ArtPersonalVO> <referencia>1234</referencia> <linea>SuperMan</linea>"
+			  + "<descripcion>Nacho</descripcion> <color>Blanco</color> <seccion>Groso</seccion>"
+			  +"<precioVentaUnitario>320.0</precioVentaUnitario> <ultimoPedido>2008-11-03 10:30:31.412 GST</ultimoPedido>"
+			  + "<mesRebaja>3</mesRebaja> <centros class='set'> <CentroDistribucion> <codigo>2</codigo> <nombre>Centro</nombre>"
+			      +"<pais>Argentina</pais> </CentroDistribucion> <CentroDistribucion> <codigo>4</codigo><nombre>Parque Norte</nombre>"
+			      +"<pais>Chile</pais> </CentroDistribucion> <CentroDistribucion> <codigo>5</codigo><nombre>Shopping Centro</nombre>"
+			      +"<pais>Uruguay</pais></CentroDistribucion><CentroDistribucion> <codigo>6</codigo><nombre>Montevideo Sur</nombre>"
+			      +"<pais>Uruguay</pais> </CentroDistribucion></centros><esNuevo>true</esNuevo> <talle>32</talle> <origen>Ramos Mejia</origen>"
+			+"</vo.ArtPersonalVO>";
+			this.lista.add(art);
 			
+			
+			art = "<vo.ArtPersonalVO> <referencia>1111</referencia> <linea>Woman</linea>"
+				  + "<descripcion>Mulo2</descripcion> <color>Verga</color> <seccion>Mujer</seccion>"
+				  +"<precioVentaUnitario>2.0</precioVentaUnitario> <ultimoPedido>2008-11-03 10:30:31.412 GST</ultimoPedido>"
+				  + "<mesRebaja>3</mesRebaja> <centros class='set'> <CentroDistribucion> <codigo>2</codigo> <nombre>Centro</nombre>"
+				      +"<pais>Argentina</pais> </CentroDistribucion> <CentroDistribucion> <codigo>4</codigo><nombre>Parque Norte</nombre>"
+				      +"<pais>Chile</pais> </CentroDistribucion> <CentroDistribucion> <codigo>5</codigo><nombre>Shopping Centro</nombre>"
+				      +"<pais>Uruguay</pais></CentroDistribucion><CentroDistribucion> <codigo>6</codigo><nombre>Montevideo Sur</nombre>"
+				      +"<pais>Uruguay</pais> </CentroDistribucion></centros><esNuevo>true</esNuevo> <talle>2</talle> <origen>Wilde</origen>"
+				+"</vo.ArtPersonalVO>";
+				this.lista2.add(art);
+				
+				art = "<vo.ArtPersonalVO> <referencia>2222</referencia> <linea>Woman</linea>"
+					  + "<descripcion>Mulo3</descripcion> <color>Verga</color> <seccion>Mujer</seccion>"
+					  +"<precioVentaUnitario>2.0</precioVentaUnitario> <ultimoPedido>2008-11-03 10:30:31.412 GST</ultimoPedido>"
+					  + "<mesRebaja>3</mesRebaja> <centros class='set'> <CentroDistribucion> <codigo>2</codigo> <nombre>Centro</nombre>"
+					      +"<pais>Argentina</pais> </CentroDistribucion> <CentroDistribucion> <codigo>4</codigo><nombre>Parque Norte</nombre>"
+					      +"<pais>Chile</pais> </CentroDistribucion> <CentroDistribucion> <codigo>5</codigo><nombre>Shopping Centro</nombre>"
+					      +"<pais>Uruguay</pais></CentroDistribucion><CentroDistribucion> <codigo>6</codigo><nombre>Montevideo Sur</nombre>"
+					      +"<pais>Uruguay</pais> </CentroDistribucion></centros><esNuevo>true</esNuevo> <talle>2</talle> <origen>Wilde</origen>"
+					+"</vo.ArtPersonalVO>";
+					this.lista2.add(art);
+					
+					art = "<vo.ArtPersonalVO> <referencia>3333</referencia> <linea>Woman</linea>"
+						  + "<descripcion>Mulo4</descripcion> <color>Verga</color> <seccion>Mujer</seccion>"
+						  +"<precioVentaUnitario>2.0</precioVentaUnitario> <ultimoPedido>2008-11-03 10:30:31.412 GST</ultimoPedido>"
+						  + "<mesRebaja>3</mesRebaja> <centros class='set'> <CentroDistribucion> <codigo>2</codigo> <nombre>Centro</nombre>"
+						      +"<pais>Argentina</pais> </CentroDistribucion> <CentroDistribucion> <codigo>4</codigo><nombre>Parque Norte</nombre>"
+						      +"<pais>Chile</pais> </CentroDistribucion> <CentroDistribucion> <codigo>5</codigo><nombre>Shopping Centro</nombre>"
+						      +"<pais>Uruguay</pais></CentroDistribucion><CentroDistribucion> <codigo>6</codigo><nombre>Montevideo Sur</nombre>"
+						      +"<pais>Uruguay</pais> </CentroDistribucion></centros><esNuevo>true</esNuevo> <talle>2</talle> <origen>Wilde</origen>"
+						+"</vo.ArtPersonalVO>";
+						this.lista2.add(art);
 	}
 	
 	public ClienteJMS()
 	{
 		this.lista = new ArrayList<String>();
+		this.lista2 = new ArrayList<String>();
 		cargarMensajesArticulos();
 		efectuarPedido();
 	}
@@ -199,9 +267,11 @@ public class ClienteJMS
 			{
 				message.setText(this.lista.get(i));
 				qSender.send(message);
+				message.setText(this.lista2.get(i));
+				qSender.send(message);
 			}
 			
-			System.out.println(this.lista.size() + " mensajes enviados.");
+			System.out.println(this.lista.size() + this.lista.size() + " mensajes enviados.");
 			
 		} catch (Exception e) {
 			System.out.println("Error al efectuar pedido " + e);
