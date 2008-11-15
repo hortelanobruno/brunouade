@@ -298,4 +298,8 @@ public class BusinessDelegate
 	public List<SolicitudFabricaVO> getSolicitudesDeFabricacionAbiertas() {
 		return this.getModCD().getSolicitudesDeFabricacionAbiertas();
 	}
+
+	public void actualizarStock(HashMap<Long, Integer> stocks) {
+		this.getModCD().actualizarStock(stocks);
+	}
 }

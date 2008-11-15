@@ -39,4 +39,5 @@ public interface AdministradorArticulos
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos);
 	public int getStockArticulo(long codigo);
 	public HashMap<Long, Integer> getStocks();
+	public void actualizarStock(HashMap<Long, Integer> stocks);
 }

@@ -243,6 +243,20 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 		return stocks;
 	}
+
+	public void actualizarStock(HashMap<Long, Integer> stocks2) {
+		List<Long> codigos = new ArrayList<Long>(stocks2.keySet());
+		ArrayList<Articulo> arts = new ArrayList<Articulo>();
+		for(int i=0 ; i< codigos.size() ; i++){
+			Articulo art = em.find(Articulo.class, codigos.get(i));
+			arts.add(art);
+		}
+		
+		for(int i=0 ; i < arts.size() ; i++){
+			arts.get(i).setCantidad(stocks2.get(arts.get(i).getCodigo()));
+			em.persist(arts.get(i));
+		}
+	}
 	
 	
 }

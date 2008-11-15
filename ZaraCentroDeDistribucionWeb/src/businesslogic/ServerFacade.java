@@ -43,6 +43,7 @@ public interface ServerFacade
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos);
 	public int getNextIdSolDis();
 	public int getStockArticulo(long codigo);
+	public void actualizarStock(HashMap<Long, Integer> stocks);
 	
 	//estos no van - verificar
 	//public int getNumeroSolEnv();
@@ -91,8 +92,5 @@ public interface ServerFacade
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
-	public boolean existeSolFab(int numSolFab);
-
-	
-	
+	public boolean existeSolFab(int numSolFab);	
 }
