@@ -7,12 +7,14 @@
 
 package integracion;
 
+import varios.Constantes;
+
 public class ServiciosServiceLocator extends org.apache.axis.client.Service implements integracion.ServiciosService {
 
-	String ip;
 	
-    public ServiciosServiceLocator(String ip) {
-    	this.ip = ip;
+	
+    public ServiciosServiceLocator() {
+    	
     }
 
 
@@ -25,7 +27,8 @@ public class ServiciosServiceLocator extends org.apache.axis.client.Service impl
     }
 
     // Use to get a proxy class for Servicios
-    private java.lang.String Servicios_address = "http://"+ip+":8080/axis/services/Servicios";
+    private java.lang.String Servicios_address = "http://"+Constantes.IP_TINEDADINAMICA+":8080/axis/services/Servicios";
+    
 
     public java.lang.String getServiciosAddress() {
         return Servicios_address;

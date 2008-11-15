@@ -10,4 +10,5 @@ public class Constantes
     public static final String IP_LACORUNIA = "192.168.1.101";
     public static final String IP_TIENDA1 = "192.168.1.101";
     public static final String IP_TIENDA2 = "192.168.1.101";
+    public static String IP_TINEDADINAMICA = "";
 }

@@ -208,7 +208,13 @@ public class ServiciosImplementacion {
 			bd.guardarSolicitudDeEnvio(solEnv);
 			String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 			ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
-			envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA1);
+			Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
+			boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
+			if(b){
+				logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+			}else{
+				logger.debug("Error al enviar la solicitud de envio a la tienda");
+			}
 		}
 		if (!artsAEnvTienda1.isEmpty()) {
 			//Genero envio a la tienda 2
@@ -223,7 +229,13 @@ public class ServiciosImplementacion {
 			bd.guardarSolicitudDeEnvio(solEnv);
 			String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 			ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
-			envSolEnv.enviarSolEnv(xmlSolEnv, Constantes.IP_TIENDA2);
+			Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
+			boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
+			if(b){
+				logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+			}else{
+				logger.debug("Error al enviar la solicitud de envio a la tienda");
+			}
 		}
 	}
 }
