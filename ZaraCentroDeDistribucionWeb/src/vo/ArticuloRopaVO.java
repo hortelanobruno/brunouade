@@ -15,7 +15,6 @@ public class ArticuloRopaVO extends ArticuloHeaderVO
 		this.setOrigen(origen);
 	}
 	public ArticuloRopaVO() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public String getOrigen() {

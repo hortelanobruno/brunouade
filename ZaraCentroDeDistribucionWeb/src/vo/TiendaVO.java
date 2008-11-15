@@ -9,7 +9,6 @@ public class TiendaVO implements Serializable
 	private String nombreTienda;
 	
 	public TiendaVO() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public TiendaVO(int c, String n) {

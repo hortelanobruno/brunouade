@@ -257,6 +257,14 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			em.persist(arts.get(i));
 		}
 	}
+
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar) {
+		for(int i=0 ; i < articulosAEnviar.size() ; i++){
+			Articulo art = em.find(Articulo.class, articulosAEnviar.get(i).getArt().getCodigo());
+			art.setCantidad(art.getCantidad()-articulosAEnviar.get(i).getCantidadAEnviar());
+			em.persist(art);
+		}
+	}
 	
 	
 }

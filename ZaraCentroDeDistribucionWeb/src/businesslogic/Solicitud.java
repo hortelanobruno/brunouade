@@ -35,7 +35,6 @@ public class Solicitud implements Serializable
 
 
 	public Solicitud() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Solicitud(int id, Date d){

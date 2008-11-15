@@ -89,7 +89,7 @@ public class BusinessDelegate
         try {
         	Hashtable props = new Hashtable();
 			props.put(InitialContext.INITIAL_CONTEXT_FACTORY,"org.jnp.interfaces.NamingContextFactory");
-			props.put(InitialContext.PROVIDER_URL,"jnp://"+Constantes.IP+":1099");
+			props.put(InitialContext.PROVIDER_URL,"jnp://"+Constantes.IP_CENTRODISTRIBUCION+":1099");
 			InitialContext context = new InitialContext(props);
 			this.modCD = (ServerFacade) context.lookup(naming);
         } catch (Exception e) {
@@ -301,5 +301,9 @@ public class BusinessDelegate
 
 	public void actualizarStock(HashMap<Long, Integer> stocks) {
 		this.getModCD().actualizarStock(stocks);
+	}
+
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar) {
+		this.getModCD().actualizarStock(articulosAEnviar);
 	}
 }

@@ -6,9 +6,9 @@ public class ImplementacionMandarSolEnv {
 
 	}
 	
-	public boolean enviarSolEnv(String solEnv)
+	public boolean enviarSolEnv(String solEnv, String ip)
 	{
-		ServiciosService service = new ServiciosServiceLocator();
+		ServiciosService service = new ServiciosServiceLocator(ip);
 		
 		try
 		{

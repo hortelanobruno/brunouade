@@ -296,4 +296,8 @@ public class ServerFacadeBean implements ServerFacade
 	public void actualizarStock(HashMap<Long, Integer> stocks) {
 		this.admArt.actualizarStock(stocks);
 	}
+
+	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar) {
+		this.admArt.actualizarStock(articulosAEnviar);
+	}
 }

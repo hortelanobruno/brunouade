@@ -27,7 +27,6 @@ public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
 	}
 
 	public void ejbRemove() throws EJBException {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -65,6 +64,6 @@ public class RecibirArticuloBean implements MessageDrivenBean, MessageListener
 	 * @throws CreateException
 	 */
 	public void ejbCreate() throws CreateException {
-		// TODO Auto-generated method stub
+
 	}
 }

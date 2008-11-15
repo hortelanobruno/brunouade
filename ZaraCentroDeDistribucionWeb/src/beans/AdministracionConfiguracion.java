@@ -1,6 +1,7 @@
 package beans;
 
 import java.util.ArrayList;
+
 import javax.ejb.Local;
 
 import vo.CentroDistribucionVO;

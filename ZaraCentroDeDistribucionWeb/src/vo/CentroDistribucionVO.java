@@ -17,7 +17,7 @@ public class CentroDistribucionVO  implements Serializable
 	
 	
 	public CentroDistribucionVO() {
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	public CentroDistribucionVO(int codigo, String nombre, float longitud, float latitud, Collection<LineaRopaVO> lineasRopa, Collection<CategoriaHogarVO> categoriasHogar)
