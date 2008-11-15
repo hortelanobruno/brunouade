@@ -22,7 +22,7 @@ public class ArticuloAFabricar implements Serializable
 	private int cantidadPedida;
 	private int cantidadRecibida;
 	private int cantidadAFabricar;
-
+	private int cantMinAPedir;
 
 
 	public ArticuloAFabricar()
@@ -98,6 +98,15 @@ public class ArticuloAFabricar implements Serializable
 		this.cantidadAFabricar = cantidadAFabricar;
 	}
 	
+	@Column
+	public int getCantMinAPedir() {
+		return cantMinAPedir;
+	}
+
+	public void setCantMinAPedir(int cantMinAPedir) {
+		this.cantMinAPedir = cantMinAPedir;
+	}
+	
 	@Transient
 	public ArticuloAFabricarVO getVO(){
 		ArticuloAFabricarVO art = new ArticuloAFabricarVO();
@@ -107,6 +116,7 @@ public class ArticuloAFabricar implements Serializable
 		art.setSol(this.getSol().getVO());
 		art.setArt(this.getArt().getVO());
 		art.setCantidadAFabricar(this.getCantidadAFabricar());
+		art.setCantMinAPedir(this.getCantMinAPedir());
 		return art;
 	}
 	
@@ -120,6 +130,7 @@ public class ArticuloAFabricar implements Serializable
 		this.setArt(art2);
 		SolicitudDistribucion sol = new SolicitudDistribucion();
 		sol.setVO(art.getSol());
+		this.setCantMinAPedir(art.getCantMinAPedir());
 		this.setSol(sol);
 	}
 

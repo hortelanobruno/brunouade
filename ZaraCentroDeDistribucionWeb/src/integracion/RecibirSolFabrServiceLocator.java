@@ -7,6 +7,8 @@
 
 package integracion;
 
+import varios.Constantes;
+
 public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service implements integracion.RecibirSolFabrService {
 
     public RecibirSolFabrServiceLocator() {
@@ -22,7 +24,7 @@ public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service
     }
 
     // Use to get a proxy class for RecibirSolFabr
-    private java.lang.String RecibirSolFabr_address = "http://localhost:8080/axis/services/RecibirSolFabr";
+    private java.lang.String RecibirSolFabr_address = "http://"+Constantes.IP_FABRICA+":8080/axis/services/RecibirSolFabr";
 
     public java.lang.String getRecibirSolFabrAddress() {
         return RecibirSolFabr_address;

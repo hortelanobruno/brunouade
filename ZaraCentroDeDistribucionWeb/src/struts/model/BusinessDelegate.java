@@ -37,11 +37,17 @@ public class BusinessDelegate
 	{
 		super();
 		this.getConnection();
-		this.guardarDatosCD();
-		this.guardarFabrica();
-		this.guardarTiendas();
+		cagarDatosIniciales();
 	}
 	
+	public void cagarDatosIniciales() {
+		if(this.getModCD().getCentro() == null){
+			this.guardarDatosCD();
+			this.guardarFabrica();
+			this.guardarTiendas();
+		}
+	}
+
 	private synchronized void guardarTiendas(){
 		TiendaVO tienda = new TiendaVO();
 		tienda.setCodigoTienda(1);
@@ -49,7 +55,7 @@ public class BusinessDelegate
 		this.getModCD().guardarTienda(tienda);
 	}
 	
-	private void guardarDatosCD()
+	private synchronized void guardarDatosCD()
 	{
 		ArrayList<String> lineasRopa = new ArrayList<String>();
 		lineasRopa.add("woman");

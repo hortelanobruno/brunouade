@@ -157,7 +157,7 @@ public class XMLConverter
 			Collection<ArticuloAReponerVO> arts = new ArrayList<ArticuloAReponerVO>();
 			ArticuloAReponerVO art = new ArticuloAReponerVO();
 			ArticuloHeaderVO artH = new ArticuloHeaderVO();
-			artH.setCodigo(Long.parseLong(root.getChild("int").getText()));
+			artH.setCodigo(Long.parseLong(root.getChild("productoList").getChild("int").getText()));
 			art.setArt(artH);
 			art.setCantidadRecibida(Integer.parseInt(root.getChild("cantidad").getText()));
 			art.setIdAAR(nextID);

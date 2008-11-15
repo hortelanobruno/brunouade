@@ -68,21 +68,15 @@
 							<tr>
 							<th>Codigo</th>
 							<th>Descripcion</th>
-							<th>Stock actual</th>
-							<th>Stock pedido</th>
-							<th>Stock recibido</th>
-							<th>Stock minimio a pedir</th>
-							<th>Cantidad a fabricar</th>
+							<th>Cantidad pedida</th>
+							<th>Cantidad recibida</th>
 							</tr>
                             <logic:iterate id="articulos" name="CargarArtFabForm" property="articulosFabricandose" >
 							<tr>
-							<td><input type="text" name="codigo1" value="<bean:write name='articulos' property='art.codigo' />" readonly="readonly"/></td>
-							<td><input type="text" name="descripcion1" value="<bean:write name="articulos" property="art.descripcion" />" readonly="readonly"/></td>
-							<td><input type="text" name="stock1" value="<bean:write name="articulos" property="art.cantidad" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantPedida1" value="<bean:write name="articulos" property="cantidadPedida" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantRecibida1" value="<bean:write name="articulos" property="cantidadRecibida" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantMinAPedir1" value="<bean:write name="articulos" property="cantMinAPedir" />" readonly="readonly"/></td>
-							<td><input type="text" name="cantAFab1" value="<bean:write name="articulos" property="cantMinAPedir" />" readonly="readonly"/></td>
+							<td><bean:write name='articulos' property='art.codigo' /></td>
+							<td><bean:write name="articulos" property="art.descripcion" /></td>
+							<td><bean:write name="articulos" property="cantidadAFabricar" /></td>
+							<td><bean:write name="articulos" property="cantidadRecibida" /></td>
 							</tr>
 							</logic:iterate>
 					  </table>

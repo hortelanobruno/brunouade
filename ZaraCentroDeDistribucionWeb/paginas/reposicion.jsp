@@ -1,3 +1,7 @@
+<%@ page language="java" %>
+<%@ taglib uri="/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/struts-logic.tld" prefix="logic" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,7 +14,7 @@
 <body>
 	
 		<%@ include file="top.jsp" %>
-		<form action="AtenderPedido.do" id="form2" name="form2" method="post" >
+		<form action="GenerarEnvios.do" id="form2" name="form2" method="post" >
 		<tr height="500">
 			<td colspan="2" align="center">
             <h1>Reponer articulos</h1>
@@ -30,15 +34,15 @@
 					</tr>
 					<logic:iterate id="articulos" name="ReposicionForm" property="articulosAReponer" >
 					<tr>
-					<td><bean:write name='articulos' property='codSolRep' /><input type="hidden" name="codSolRep" value="<bean:write name='articulos' property='codSolRep' />" /></td>
-					<td><bean:write name="articulos" property="codSolFab" /><input type="hidden" name="codSolFab" value="<bean:write name="articulos" property="codSolFab" />" /></td>
-					<td><bean:write name="articulos" property="fabrica" /><input type="hidden" name="fabrica" value="<bean:write name="articulos" property="fabrica" />" /></td>
-					<td><bean:write name="articulos" property="codigoArticulo" /><input type="hidden" name="codigoArticulo" value="<bean:write name="articulos" property="codigoArticulo" />" /></td>
-					<td><bean:write name="articulos" property="descripcion" /><input type="hidden" name="descripcion" value="<bean:write name="articulos" property="descripcion" />" /></td>
-					<td><bean:write name="articulos" property="cantidadPedida" /><input type="hidden" name="cantidadPedida" value="<bean:write name="articulos" property="cantidadPedida" />" /></td>
-					<td><bean:write name="articulos" property="cantidadAFabricar" /><input type="hidden" name="cantidadAFabricar" value="<bean:write name="articulos" property="cantidadAFabricar" />" /></td>
-					<td><bean:write name="articulos" property="cantidadRecibida" /><input type="hidden" name="cantidadRecibida" value="<bean:write name="articulos" property="cantidadRecibida" />" /></td>
-					<td><bean:write name="articulos" property="cantidadAReponer" /><input type="hidden" name="cantidadAReponer" value="<bean:write name="articulos" property="cantidadAReponer" />" /></td>
+					<td><bean:write name="articulos" property="codSolRep" /><input type="hidden" name="codSolRep" value="codSolRep" /></td>
+					<td><bean:write name="articulos" property="codSolFab" /><input type="hidden" name="codSolFab" value="codSolFab" /></td>
+					<td><bean:write name="articulos" property="fabrica" /><input type="hidden" name="fabrica" value="fabrica" /></td>
+					<td><bean:write name="articulos" property="codigoArticulo" /><input type="hidden" name="codigoArticulo" value="codigoArticulo" /></td>
+					<td><bean:write name="articulos" property="descripcion" /><input type="hidden" name="descripcion" value="descripcion" /></td>
+					<td><bean:write name="articulos" property="cantidadPedida" /><input type="hidden" name="cantidadPedida" value="cantidadPedida" /></td>
+					<td><bean:write name="articulos" property="cantidadAFabricar" /><input type="hidden" name="cantidadAFabricar" value="cantidadAFabricar" /></td>
+					<td><bean:write name="articulos" property="cantidadRecibida" /><input type="hidden" name="cantidadRecibida" value="cantidadRecibida" /></td>
+					<td><bean:write name="articulos" property="cantidadAReponer" /><input type="hidden" name="cantidadAReponer" value="cantidadAReponer" /></td>
 					</tr>
 					</logic:iterate>
 				</table>
@@ -47,12 +51,15 @@
 				<tr height="20">
 		</tr>		
 		<tr>
-		
-		<td>
-          <label>
-          <input type="submit" name="Submit2" value="Atender pedidos" />
-          </label>
-		  </td>
+		<td><% String boton = request.getAttribute("prenderBoton").toString();
+					if(boton.equalsIgnoreCase("si")){
+						out.print("<label>No se pudieron atender a todas las solicitudes</label>");
+						out.print("<input type='submit' name='Submit2' value='Atender pedidos' />");
+					}else{
+						out.print("<label>");
+						out.print("Se atendieron a todas las solicitudes");
+						out.print("</label>");
+					}%></td>
 	      </form>
 	      <form id="form1" name="form1" method="post" action="indexz.jsp">
 		<td>
