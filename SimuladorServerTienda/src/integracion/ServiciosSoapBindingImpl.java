@@ -10,7 +10,8 @@ package integracion;
 public class ServiciosSoapBindingImpl implements integracion.Servicios{
     public boolean recibirEnvio(java.lang.String in0) throws java.rmi.RemoteException {
     	System.out.println("llego " + in0);
-        return false;
+    	if(in0.equalsIgnoreCase(""))return false;
+    	else return true;
     }
 
     public boolean recibirOfad(java.lang.String in0) throws java.rmi.RemoteException {
