@@ -9,7 +9,6 @@ public class CargarGenerarEnviosForm extends ActionForm
 	private String[] codigo;
 	private String[] descripcion;
 	private String[] cantidadpedida;
-	private String[] cantidadreservada;
 	private String[] stock;
 	private String[] cantidadenviada;
 	private String[] cantidadaenviar;
@@ -32,12 +31,6 @@ public class CargarGenerarEnviosForm extends ActionForm
 	}
 	public String[] getCantidadpedida() {
 		return cantidadpedida;
-	}
-	public void setCantidadreservada(String[] cantidadreservada) {
-		this.cantidadreservada = cantidadreservada;
-	}
-	public String[] getCantidadreservada() {
-		return cantidadreservada;
 	}
 	public void setStock(String[] stock) {
 		this.stock = stock;
