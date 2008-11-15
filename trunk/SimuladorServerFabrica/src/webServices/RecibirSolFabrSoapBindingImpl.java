@@ -9,8 +9,9 @@ package webServices;
 
 public class RecibirSolFabrSoapBindingImpl implements webServices.RecibirSolFabr{
     public boolean recibirSolFabr(java.lang.String in0) throws java.rmi.RemoteException {
-    	System.out.println("llego!");
-        return false;
+    	System.out.println("llego: "+in0 );
+    	if(in0.equalsIgnoreCase("")) return false;
+    	else return true;
     }
 
 }
