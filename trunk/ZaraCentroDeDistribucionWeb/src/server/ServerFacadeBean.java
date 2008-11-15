@@ -292,4 +292,8 @@ public class ServerFacadeBean implements ServerFacade
 	public List<SolicitudFabricaVO> getSolicitudesDeFabricacionAbiertas() {
 		return this.admSol.getSolicitudesDeFabricacionAbiertas();
 	}
+
+	public void actualizarStock(HashMap<Long, Integer> stocks) {
+		this.admArt.actualizarStock(stocks);
+	}
 }

@@ -29,6 +29,7 @@ import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
 import vo.SolicitudFabricaVO;
 import vo.TiendaVO;
+import webservices.ServiciosImplementacion;
 import exceptions.ErrorConectionException;
 
 
@@ -74,18 +75,19 @@ public class ReposicionAction extends Action
 			List<ArticuloAReponerVO> artsRep = null;
 			SolicitudDeReposicionVO solicitudRep = null;
 			List<SolicitudFabricaVO> solsFab = null;
+			List<SolicitudFabricaVO> allSolsFab = new ArrayList<SolicitudFabricaVO>();
 			for(int i=0 ; i<solicitudesDeReposicion.size() ; i++){
 				solicitudRep = solicitudesDeReposicion.get(i);
 				//Actualizo stock real
 				artsRep = new ArrayList<ArticuloAReponerVO>(solicitudRep.getArticulosAReponer());
 				bd.actualizarStock(artsRep);
-				
 				//Actualizo solicitudes de fabricacion
 				solsFab = bd.getSolicitudesDeFabricacionAbiertas();
 				solsFab = ordenarSolicitudesPorFecha(solsFab);
 				for(int j=0 ; j<solsFab.size() ; j++ ){
 					actualizarSolsFab(solsFab.get(j),artsRep);
 					bd.actualizarSolicitudFabricacion(solsFab.get(j));
+					allSolsFab.add(solsFab.get(j));
 				}
 				//Proceso la sol rep
 				solicitudRep.setProcesada(true);
@@ -95,16 +97,20 @@ public class ReposicionAction extends Action
 			boolean auto = chequearSiAtenderSolDisAutomaticamente();
 			if(auto){
 				//Se atendieron todas, notificar
-				
+				frm.setPrenderBoton(false);
+				frm.setSeAtendieronATodas(true);
 			}else{
 				//No se puedieron atender a todas, asi que habilitar el boton para que pueda atenderlas
+				frm.setPrenderBoton(true);
+				frm.setSeAtendieronATodas(false);
 			}
+			cargarForm(frm,solicitudesDeReposicion,allSolsFab);
 			return (mapping.findForward("success"));
 		}catch(Exception e){
 			return (mapping.findForward("failure"));
 		}
 	}
-	
+
 
 	private boolean chequearSiAtenderSolDisAutomaticamente() {
 		// TODO Chequea si se pueden atender todas los sol dis que no estan cerradas
@@ -137,13 +143,13 @@ public class ReposicionAction extends Action
 		// TODO Atender a todas las soldis que hay en la base
 		// Generar Envios
 		List<SolicitudDistribucionVO> solsDisAbiertas = bd.obtenerSolDisAbiertas();
-		
+		ServiciosImplementacion serviciosImplementacion = new ServiciosImplementacion();
 		for(int i = 0; i<solsDisAbiertas.size();i++)
 		{
 			SolicitudDistribucionVO sol = solsDisAbiertas.get(i);
-			
+			serviciosImplementacion.enviarArticulosDisponibles(sol);//Este metodo ya lo usamos para gensoldis
+			bd.actualizarSolicitudDistribucion(sol);
 		}
-		
 	}
 
 	private void actualizarSolsFab(SolicitudFabricaVO solicitudFabricaVO,List<ArticuloAReponerVO> artsRep) {
@@ -221,39 +227,62 @@ public class ReposicionAction extends Action
 		return aux;
 	}
 
-	
-
-	private void cargarForm(ReposicionForm frm, long codigoSolRep,
-			SolicitudDeReposicionVO solRepVO, ArrayList<Long> codigos,
-			ArrayList<String> descripciones, Collection<SolicitudFabricaVO> solFabVO,
-			String fabrica) {
-		
-		Iterator iteradorRep = (Iterator) solRepVO.getArticulosAReponer().iterator();
-		Iterator iteradorFab = (Iterator) solFabVO.getArticulosAFabricar().iterator();
-		int cantidpedida = 0;
-		int cantidadareponer = 0;
-		int catidadafabricar = 0;
-		int cantidadrecibida = 0;
-		for (int i = 0; i < codigos.size(); i++) {
-			while (iteradorRep.hasNext()) {
-				ArticuloAReponerVO arti = (((ArticuloAReponerVO) iteradorRep.next()));
-				if((arti.getArt().getCodigo()) == codigos.get(i)){
-					cantidadareponer = arti.getCantidadRecibida();
-				}
-			}
-			while (iteradorFab.hasNext()) {
-				ArticuloAFabricarVO arti2 = (((ArticuloAFabricarVO) iteradorFab.next()));
-				if((arti2.getArt().getCodigo()) == codigos.get(i)){
-					catidadafabricar = (arti2.getCantidadAFabricar());
-					cantidpedida = (arti2.getCantidadPedida());
-					cantidadrecibida = (arti2.getCantidadRecibida());
-				}
-			}
-			ArticuloAReponerWebVO vo = new ArticuloAReponerWebVO(codigoSolRep,solFabVO.getIdFab(),fabrica,
-					codigos.get(i),descripciones.get(i),cantidpedida,catidadafabricar,cantidadrecibida,cantidadareponer);
-			frm.getArticulosAReponer().add(vo);
-			iteradorRep = (Iterator) solRepVO.getArticulosAReponer().iterator();
-			iteradorFab = (Iterator) solFabVO.getArticulosAFabricar().iterator();
+	private void cargarForm(ReposicionForm frm,List<SolicitudDeReposicionVO> solsRep, List<SolicitudFabricaVO> allSolsFab) {
+		List<ArticuloAReponerWebVO> artsWeb = new ArrayList<ArticuloAReponerWebVO>();
+		List<ArticuloAFabricarVO> artsFab = new ArrayList<ArticuloAFabricarVO>();
+		for(int i=0 ; i < allSolsFab.size() ; i++){
+			artsFab.addAll(allSolsFab.get(i).getArticulosAFabricar());
 		}
+		SolicitudDeReposicionVO solRep = null;
+		ArticuloAReponerWebVO artWeb = null;
+		ArticuloAReponerVO artRep = null;
+		ArticuloAFabricarVO artFab = null;
+		List<ArticuloAReponerVO> artsRep = null;
+		for(int k=0 ; k< solsRep.size() ; k++){
+			solRep = solsRep.get(k);
+			artsRep = new ArrayList<ArticuloAReponerVO>(solRep.getArticulosAReponer());
+			for(int i=0 ; i<artsRep.size() ; i++){
+				artRep = artsRep.get(i);
+				artWeb = new ArticuloAReponerWebVO();
+				for(int j=0 ; j< artsFab.size() ; j++){
+					artFab = artsFab.get(j);
+					if(artFab.getArt().getCodigo() == artRep.getArt().getCodigo()){
+						artWeb.setCantidadAFabricar(artFab.getCantidadAFabricar());
+						break;
+					}
+				}
+				artWeb.setCantidadAReponer(artRep.getCantidadRecibida());
+				for(int j=0 ; j< artsFab.size() ; j++){
+					artFab = artsFab.get(j);
+					if(artFab.getArt().getCodigo() == artRep.getArt().getCodigo()){
+						artWeb.setCantidadPedida(artFab.getCantidadPedida());
+						break;
+					}
+				}
+				for(int j=0 ; j< artsFab.size() ; j++){
+					artFab = artsFab.get(j);
+					if(artFab.getArt().getCodigo() == artRep.getArt().getCodigo()){
+						artWeb.setCantidadRecibida(artFab.getCantidadRecibida());
+						break;
+					}
+				}
+				artWeb.setCodigoArticulo(artRep.getArt().getCodigo());
+				artWeb.setCodSolRep(solRep.getIdRep());
+				artWeb.setDescripcion(artRep.getArt().getDescripcion());
+				artWeb.setFabrica(bd.getFabricas().get(0).getNombreFabrica());
+				for(int j=0 ; j < allSolsFab.size() ; j++){
+					Iterator<ArticuloAFabricarVO> it = allSolsFab.get(j).getArticulosAFabricar().iterator();
+					while(it.hasNext()){
+						ArticuloAFabricarVO artvo = it.next();
+						if(artvo.getArt().getCodigo() == artRep.getArt().getCodigo()){
+							artWeb.setCodSolFab(allSolsFab.get(j).getIdFab());
+							break;
+						}
+					}
+				}
+			}
+			artsWeb.add(artWeb);
+		}
+		frm.setArticulosAReponer(artsWeb);
 	}
 }
