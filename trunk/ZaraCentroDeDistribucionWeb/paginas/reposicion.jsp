@@ -1,26 +1,37 @@
-<%@ page language="java" %>
-<%@ taglib uri="/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/struts-logic.tld" prefix="logic" %> 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title> .:: Zara - Centro De Distribucion - Reponer Articulos ::. </title>
-<link rel="StyleSheet" href="estilos.css" type="text/css">
-<script type="text/javascript" src="js/hora.js">
-</script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Zara - Centro de Distribuci&oacute;n</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="js/validaciones.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
 </head>
 <body>
-	
-		<%@ include file="top.jsp" %>
-		<form action="GenerarEnvios.do" id="form2" name="form2" method="post" >
-		<tr height="500">
-			<td colspan="2" align="center">
-            <h1>Reponer articulos</h1>
-            <br><br><br>
-			<div id="tablaDatos">			
+<div id="logo">
+	<h1><a href="#">Zara - Centro de Distribuci&oacute;n</a></h1>
+</div>
+<div id="menu">
+	<%@ include file="top.jsp" %>
+</div>
+<hr />
+<div id="banner"></div>
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+		<div class="post">
+			<div class="entry">
+				<form action="GenerarEnvios.do" id="form2" name="form2" method="post" >
+            <h2 class="title">Reponer articulos</h2>
+            <p class="title">&nbsp;</p>
+            <div id="tablaDatos">			
 				<table cellpadding="1" cellspacing="1">
+                <thead>
 					<tr>
 						<th>Solicitud de Reposicion</th>
 						<th>Solicitud de Fabricacion</th>
@@ -32,6 +43,8 @@
 						<th>Cantidad Recibida</th>
 						<th>Cantidad a Reponer</th>
 					</tr>
+                  </thead>
+                    <tbody>
 					<logic:iterate id="articulos" name="ReposicionForm" property="articulosAReponer" >
 					<tr>
 					<td><bean:write name="articulos" property="codSolRep" /><input type="hidden" name="codSolRep" value="codSolRep" /></td>
@@ -45,13 +58,10 @@
 					<td><bean:write name="articulos" property="cantidadAReponer" /><input type="hidden" name="cantidadAReponer" value="cantidadAReponer" /></td>
 					</tr>
 					</logic:iterate>
+                    </tbody>
 				</table>
 				</div>
-				<table>
-				<tr height="20">
-		</tr>		
-		<tr>
-		<td><% String boton = request.getAttribute("prenderBoton").toString();
+				<% String boton = request.getAttribute("prenderBoton").toString();
 					if(boton.equalsIgnoreCase("si")){
 						out.print("<label>No se pudieron atender a todas las solicitudes</label>");
 						out.print("<input type='submit' name='Submit2' value='Atender pedidos' />");
@@ -59,21 +69,23 @@
 						out.print("<label>");
 						out.print("Se atendieron a todas las solicitudes");
 						out.print("</label>");
-					}%></td>
+					}%>
 	      </form>
 	      <form id="form1" name="form1" method="post" action="index.jsp">
-		<td>
 	      <label>
 	      <input type="submit" name="Submit" value="Volver" />
           </label>
-		</td>
 		</form>
-	      <p>&nbsp;</p>
-		</tr>
-		</table>
-		</td>	
-		</tr>
-		
-		<%@ include file="footer.jsp" %>
+			</div>
+			<p class="meta">Posted on November 5, 2007 by <a href="#">Someone</a> &nbsp;|&nbsp; <a href="#">32 comments</a></p>
+		</div>
+	</div>
+	<!-- end content -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<div id="footer">
+	<%@ include file="footer.jsp" %>
+</div>
 </body>
 </html>
