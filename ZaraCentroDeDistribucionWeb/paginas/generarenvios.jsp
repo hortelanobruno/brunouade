@@ -1,26 +1,33 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
-<%@ taglib uri="/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/struts-logic.tld" prefix="logic" %> 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title> .:: Zara - Centro De Distribucion - Generar envios ::. </title>
-<link rel="StyleSheet" href="estilos.css" type="text/css" />
-<script type="text/javascript" src="js/hora.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Zara - Centro de Distribuci&oacute;n</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="js/validaciones.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
 </head>
-
 <body>
-
-		<%@ include file="top.jsp" %>	
-        
-        <%  %>
-        <tr height="500px">
-			<td colspan="2" align="center">
-			<form name="form1" action="GenerarSolEnvio.do" method="post">
+<div id="logo">
+	<h1><a href="#">Zara - Centro de Distribuci&oacute;n</a></h1>
+</div>
+<div id="menu">
+	<%@ include file="top.jsp" %>
+</div>
+<hr />
+<div id="banner"></div>
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+		<div class="post">
+			<h2 class="title"><a href="#">Centro de Distribucion Uruguay</a></h2>
+			<div class="entry">
+				<form name="form1" action="GenerarSolEnvio.do" method="post">
            <table cellpadding="10" cellspacing="10">
 			<tr>
                 <td colspan="2" align="center"><h1>Generar envios</h1></td>
@@ -50,9 +57,26 @@
               </tr>
             </table> 
            </form>
-          </td>
-        </tr>
-        
-        <%@ include file="footer.jsp" %>
+			</div>
+			<p class="meta">Posted on November 5, 2007 by <a href="#">Someone</a> &nbsp;|&nbsp; <a href="#">32 comments</a></p>
+		</div>
+	</div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+			<li>
+				<h2>Etiam dolore</h2>
+				<p>Nulla pellentesque dolor non tellus. Duis vel elit sit <a href="#">amet ipsum vehicula</a> varius. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<div id="footer">
+	<%@ include file="footer.jsp" %>
+</div>
 </body>
 </html>

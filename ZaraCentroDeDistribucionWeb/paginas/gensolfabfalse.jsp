@@ -1,30 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title> .:: Zara - Centro de Distribucion - Generar Solicitud de Fabricacion ::. </title>
-<link rel="StyleSheet" href="estilos.css" type="text/css">
-<script type="text/javascript" src="js/hora.js">
-<script type="text/javascript" src="js/genSolFabAjax.js">
-</script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Zara - Centro de Distribuci&oacute;n</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
-<body style="background-color:#f7f8e8;">
-	
-		<%@ include file="top.jsp" %>	
-		
-		<!-- VA DE ACA -->
-		
-		<tr height="500px">
-			<td colspan="2">
-			<h1>Error al generar la solicitud de fabricacion</h1>
-			</td>
-		</tr>
-		
-		
-		<!-- HASTA ACA -->
-
-		<%@ include file="footer.jsp" %>
-	
+<body>
+<div id="logo">
+	<h1><a href="#">Zara - Centro de Distribuci&oacute;n</a></h1>
+</div>
+<div id="menu">
+	<%@ include file="top.jsp" %>
+</div>
+<hr />
+<div id="banner"></div>
+<!-- start page -->
+<div id="page">
+	<!-- start sidebar -->
+	<div id="mensaje">
+		<ul>
+			<li>
+				<h2>Generar Solicitudes de fabricacion</h2>
+				<p>Error al generar la solicitud de fabricacion</p>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<div id="footer">
+	<%@ include file="footer.jsp" %>
+</div>
 </body>
 </html>

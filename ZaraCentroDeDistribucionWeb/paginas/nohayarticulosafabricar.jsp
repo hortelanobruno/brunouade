@@ -1,27 +1,43 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title> .:: Zara - Centro de Distribucion - No hay Articulos a Fabricar ::. </title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Zara - Centro de Distribuci&oacute;n</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
-
 <body>
-
-	<%@ include file="top.jsp" %>	
-        
-    <tr height="500px">
-        <td colspan="2">
-            <form action="index.jsp"  method="get">
-            <h1>
-            No hay articulos a fabricar.
-            </h1>
-            <input type="submit" value="Volver" />
-            </form>
-        </td>
-    </tr>
-    
-    <%@ include file="footer.jsp" %>
-        
+<div id="logo">
+	<h1><a href="#">Zara - Centro de Distribuci&oacute;n</a></h1>
+</div>
+<div id="menu">
+	<%@ include file="top.jsp" %>
+</div>
+<hr />
+<div id="banner"></div>
+<!-- start page -->
+<div id="page">
+	<!-- start sidebar -->
+	<div id="mensaje">
+		<ul>
+			<li>
+				<h2>Generar solicitud de fabricacion</h2>
+				<p>No hay articulos para fabricar.</p>
+				<form action="index.jsp" method="post">
+				<input type="submit" name="btnVolver" value="Volver"/>
+				</form>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<div id="footer">
+	<%@ include file="footer.jsp" %>
+</div>
 </body>
 </html>
