@@ -254,6 +254,7 @@ public class XMLConverter
 			artVO = (ArticuloAEnviarVO) it.next();
 			XMLArticuloAEnviar xmlArt = new XMLArticuloAEnviar();
 			xmlArt.setCod(artVO.getArt().getCodigo());
+			xmlArt.setIdPedido(artVO.getIdPedido());
 			xmlArt.setCant(artVO.getCantidadAEnviar());
 			arts.add(xmlArt);
 		}

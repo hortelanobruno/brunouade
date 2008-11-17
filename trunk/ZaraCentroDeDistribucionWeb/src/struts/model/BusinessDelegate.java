@@ -1,6 +1,5 @@
 package struts.model;
 
-import java.lang.reflect.UndeclaredThrowableException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -107,28 +106,6 @@ public class BusinessDelegate
 	private static Context getInitialContext() throws javax.naming.NamingException {
         return new javax.naming.InitialContext();
     }
-	
-	public ArrayList<String> getDescripciones(ArrayList<Long> codigos) {
-		ArrayList<String> descripciones = new ArrayList<String>();
-		try {
-			descripciones = getModCD().getDescripciones(codigos);
-		} catch (UndeclaredThrowableException ex) {
-			ex.getUndeclaredThrowable();
-			ex.getMessage();
-			ex.getCause();
-		}
-		return descripciones;
-	}
-
-	public ArrayList<Integer> getStocks(ArrayList<Long> codigos) {
-		ArrayList<Integer> stocks = new ArrayList<Integer>();
-		try {
-			stocks = getModCD().getStocks(codigos);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return stocks;
-	}
 
 	public void guardarArticuloHogar(ArticuloHogarVO a)  throws ExistingProductException
 	{
@@ -144,13 +121,8 @@ public class BusinessDelegate
 		this.getModCD().guardarSolicitudDistribucion(soldis);
 	}
 
-
 	public ServerFacade getModCD() {
 		return modCD;
-	}
-
-	public SolicitudFabricaVO getSolicitudFabricacion(int codigoSolFab) {
-		return this.getModCD().cargarSolicitudFabricacion(codigoSolFab);
 	}
 
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) {
@@ -168,6 +140,7 @@ public class BusinessDelegate
 	public ArticuloHeaderVO getArticulo(long cod) {
 		return this.getModCD().getArticulo(cod);
 	}
+
 	public int getNumeroSolFab() {
 		return this.getModCD().getNumeroSolFab();
 	}
@@ -204,32 +177,12 @@ public class BusinessDelegate
 		return this.getModCD().existeArticulo(codigo);
 	}
 
-	public boolean existeSolDis(int numero) {
-		return this.getModCD().existeSolDis(numero);
-	}
-
-	public boolean existeSolRep(int numero) {
-		return this.getModCD().existeSolRep(numero);
-	}
-
-	public int getNextIdARes() {
-		return this.getModCD().getNextIdArticuloReservado();
-	}
-
 	public void actualizarSolicitudFabricacion(SolicitudFabricaVO solFabVO) {
 		this.getModCD().actualizarSolFab(solFabVO);
 	}
 
 	public int getNextIdARep() {
 		return this.getModCD().getNextIdArticuloAReponer();
-	}
-
-	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos) {
-		return this.getModCD().getArticulos(codigos);
-	}
-
-	public ArrayList<SolicitudDistribucionVO> obtenerSolicitudesDeTienda(String tienda) {
-		return this.getModCD().getSolicitudesDistribucion(tienda);
 	}
 	
 	public ArrayList<SolicitudDistribucionVO> obtenerSolicitudesDeTiendas() {
@@ -248,20 +201,12 @@ public class BusinessDelegate
 		return this.getModCD().getTiendas();
 	}
 
-	public int getNumeroSolEnv() {
-		return this.getModCD().getNumeroSolEnv();
-	}
-
 	public int getNextId() {
 		return this.getModCD().getNextId();
 	}
 
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos) {
 		return this.getModCD().existenArts(codigos);
-	}
-
-	public boolean existeSolFab(int numSolFab) {
-		return this.getModCD().existeSolFab(numSolFab);
 	}
 
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis) {
@@ -271,22 +216,9 @@ public class BusinessDelegate
 	public int getNextIdSolDis(){
 		return this.getModCD().getNextIdSolDis();
 	}
-	
-	public int getStockArticulo(long codigo)
-	{
-		return this.getModCD().getStockArticulo(codigo);
-	}
 
 	public int getNexIdSolRep() {
 		return this.getModCD().getNexIdSolRep();
-	}
-
-	public boolean existenSolsFab(List<Integer> numsSolFab) {
-		return this.getModCD().existenSolsFab(numsSolFab);
-	}
-
-	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab) {
-		return this.getModCD().getSolicitudesDeFabricacion(numsSolFab);
 	}
 
 	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar() {

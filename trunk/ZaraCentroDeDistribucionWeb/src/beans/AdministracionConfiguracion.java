@@ -17,10 +17,6 @@ public interface AdministracionConfiguracion
 	public ArrayList<FabricaVO> getFabricas();	
 	public ArrayList<TiendaVO> getTiendas();
 	public FabricaVO getFabrica();
-	/*public void addLineaRopa(int cod, String linea);
-	public void addCategoriaHogar(int cod, String categoria);
-	public Vector<String> getCategoriasHogar();
-	public Vector<String> getLineasRopa();*/
 	public void guardarTienda(TiendaVO tienda);
 	
 }

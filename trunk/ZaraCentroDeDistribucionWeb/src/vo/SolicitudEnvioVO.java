@@ -10,8 +10,8 @@ public class SolicitudEnvioVO extends SolicitudVO
 	private Collection<ArticuloAEnviarVO> articulosAEnviar;
 	private int idEnv;
 	private SolicitudDistribucionVO solDis;
-	
-    public SolicitudEnvioVO() {
+
+	public SolicitudEnvioVO() {
 
 	}
 	

@@ -35,31 +35,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 
 	}
 	
-	public ArrayList<String> getDescripciones(ArrayList<Long> cods) 
-	{
-		ArrayList<String> descs = new ArrayList<String>();
-		for(int i = 0; i < cods.size();i++)
-		{
-			Query q = em.createQuery("SELECT a FROM Articulo a WHERE a.codigo = :codigo");
-			q.setParameter("codigo", cods.get(i));
-			List l = q.getResultList();
-			descs.add(((Articulo)l.get(0)).getDescripcion());
-		}
-		return descs;
-	}
-	public ArrayList<Integer> getStocks(ArrayList<Long> cods) 
-	{
-		ArrayList<Integer> stocks = new ArrayList<Integer>();
-		for(int i = 0; i < cods.size();i++)
-		{
-			Query q = em.createQuery("SELECT a FROM Articulo a WHERE a.codigo = :codigo");
-			q.setParameter("codigo", cods.get(i));
-			List l = q.getResultList();
-			stocks.add(((Articulo)l.get(0)).getCantidad());
-		}
-		return stocks;
-	}
-
 	public void actualizarStock(List<ArticuloAReponerVO> arts) 
 	{
 		for(int i = 0; i < arts.size();i++)
@@ -102,15 +77,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 	public ArticuloHeaderVO getArticulo(long codigo)
 	{
 		return em.find(Articulo.class, codigo).getVO();
-	}
-	
-	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos) {
-		ArrayList<ArticuloHeaderVO> arts = new ArrayList<ArticuloHeaderVO>();
-		for(int i=0 ; i< codigos.size() ; i++){
-			ArticuloHeaderVO art = em.find(Articulo.class, codigos.get(i)).getVO();
-			arts.add(art);
-		}
-		return arts;
 	}
 
 	public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2) {
@@ -165,17 +131,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		return codVer;
 	}
 	
-	public int getNextIdArticuloReservado() {
-		Query q = em.createQuery("SELECT MAX(s.idAR) FROM ArticuloReservado s");
-		List l = q.getResultList();
-		if(l.get(0) == null){
-			return 1;
-		}else{
-			int a = (Integer) l.get(0);
-			return a+1;
-		}
-	}
-	
 	public int getNextIdArticuloPedido()
 	{
 		Query q = em.createQuery("SELECT MAX(s.idAP) FROM ArticuloPedido s");
@@ -221,15 +176,6 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			int a = (Integer) l.get(0);
 			return a+1;
 		}
-	}
-
-	public int getStockArticulo(long codigo) 
-	{
-		Query q = em.createQuery("SELECT a.cantidad FROM Articulo a WHERE a.codigo = :codigo");
-		q.setParameter("codigo", codigo);
-		List l = q.getResultList();
-		if(l.get(0) == null) return -1;
-		else return (Integer) l.get(0);
 	}
 
 	public HashMap<Long, Integer> getStocks() {
