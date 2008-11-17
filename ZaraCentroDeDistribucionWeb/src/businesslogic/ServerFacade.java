@@ -33,60 +33,36 @@ public interface ServerFacade
 	
 	//panel sol dist
 	public ArrayList<FabricaVO> getFabricas();
-	public boolean existeSolDis(int numero);//Nuevo hay que hacer
 	public int getNextIdArticuloPedido();
-	public ArrayList<String> getDescripciones(ArrayList<Long> codigos);
-	public ArrayList<Integer> getStocks(ArrayList<Long> codigos);
 	public void guardarSolicitudDistribucion(SolicitudDistribucionVO soldist);
 	public void guardarArticulosAFabricar(Collection<ArticuloAFabricarVO> artic);
-	public int getNextIdArticuloReservado();
 	public int getNextIdArticuloAFabricar();
 	public ArticuloHeaderVO getArticulo(long codigo);
 	public int getNextId();
 	public ArrayList<Long> existenArts(ArrayList<Long> codigos);
 	public int getNextIdSolDis();
-	public int getStockArticulo(long codigo);
 	public void actualizarStock(HashMap<Long, Integer> stocks);
-	
-	//estos no van - verificar
-	//public int getNumeroSolEnv();
-	//public void guardarArticulosAEnviar(Collection<ArticuloAEnviarVO> artic2);
-	//public SolicitudFabricaVO getSolFab(int codigo);
-	//public ArrayList<SolicitudFabricaVO> getAllSolFab();
-	//public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda);
-	//ublic void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv);
-	//public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab);
-	/////////////////////////////////////
 	
 	//	panel envios
 	public int getNextIdArticuloAEnviar();
-	public ArrayList<SolicitudDistribucionVO> getSolicitudesDistribucion(String tienda);
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio);	
 	public void actualizarSolDis(SolicitudDistribucionVO solDis);
 	public ArrayList<TiendaVO> getTiendas();
-	public int getNumeroSolEnv();
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
 	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar);	
-	
 	
 	//panel gen sol fab
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
 	public int getNumeroSolFab();
 	public void guardarSolFab(SolicitudFabricaVO solFab);
 	
-	
 	//panel reposicion
-	public boolean existeSolRep(int numero);//Nuevo hay que hacer
 	public int getNextIdArticuloAReponer();
-	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos);
-	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab);
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO);
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO);
 	public void actualizarStock(List<ArticuloAReponerVO> arts);
 	public int getNexIdSolRep();
-	public boolean existenSolsFab(List<Integer> numsSolFab);
-	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab);
 	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar();
 	public List<SolicitudDistribucionVO> obtenerSolDisAbiertas();
 	public HashMap<Long, Integer> getStocks();
@@ -96,6 +72,5 @@ public interface ServerFacade
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
-	public boolean existeSolFab(int numSolFab);
 	
 }

@@ -1,7 +1,6 @@
 package beans;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -18,7 +17,6 @@ import businesslogic.SolicitudDeFabricacion;
 import businesslogic.SolicitudDistribucion;
 import businesslogic.SolicitudEnvioATienda;
 import businesslogic.SolicitudReposicion;
-import businesslogic.Tienda;
 
 @Stateless
 public class AdministradorSolicitudesBean implements AdministradorSolicitudes
@@ -91,23 +89,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 		return ret;
 	}
-	
-	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab) {
-		Collection<SolicitudFabricaVO> solsFabricacion = new ArrayList<SolicitudFabricaVO>();
-		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
-		List l = q.getResultList();
-		for(int i=0 ; i < numsSolFab.size() ; i++){
-			Iterator it = l.iterator();
-			while(it.hasNext())
-			{
-				SolicitudDeFabricacion sol = (SolicitudDeFabricacion)it.next();
-				if(sol.getIdFab() == numsSolFab.get(i)){
-					solsFabricacion.add(sol.getVO());
-				}
-			}
-		}
-		return solsFabricacion;
-	}
 
 	public ArrayList<SolicitudFabricaVO> getSolsFab(int codTienda) 
 	{
@@ -143,18 +124,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		em.merge(sr);
 	}
 
-	public int getNumeroSolEnv() 
-	{
-		Query q = em.createQuery("SELECT MAX(s.idEnv) FROM SolicitudEnvioATienda s");
-		List l = q.getResultList();
-		if(l.get(0) == null){
-			return 1;
-		}else{
-			int a = (Integer) l.get(0);
-			return a+1;
-		}
-	}
-
 	public int getNumeroSolFab() 
 	{
 		Query q = em.createQuery("SELECT MAX(s.idFab) FROM SolicitudDeFabricacion s");
@@ -165,37 +134,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			int a = (Integer) l.get(0);
 			return a+1;
 		}
-	}
-
-
-	public boolean existeSolDis(int codigo) 
-	{
-		Query q = em.createQuery("SELECT s FROM SolicitudDistribucion s");
-		List l = q.getResultList();
-		Iterator it = l.iterator();
-		while(it.hasNext())
-		{
-			SolicitudDistribucion sol = (SolicitudDistribucion)it.next();
-			if(sol.getIdDis() == codigo){
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public boolean existeSolRep(int codigo)
-	{
-		Query q = em.createQuery("SELECT s FROM SolicitudReposicion s");
-		List l = q.getResultList();
-		Iterator it = l.iterator();
-		while(it.hasNext())
-		{
-			SolicitudReposicion sol = (SolicitudReposicion)it.next();
-			if(sol.getIdRep() == codigo){
-				return true;
-			}
-		}
-		return false;
 	}
 
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion() {
@@ -212,37 +150,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		return ret;
 	}
 	
-	public ArrayList<SolicitudDistribucionVO> getSolsDis(String tien) 
-	{
-		Query q = em.createQuery("SELECT t FROM Tienda t");
-		List l = q.getResultList();
-		ArrayList<SolicitudDistribucionVO> ret = new ArrayList<SolicitudDistribucionVO>();
-		if(l == null) return null;
-		else
-		{
-			Iterator tiendas = l.iterator();
-			int cod = 0;
-			while(tiendas.hasNext()){
-				Tienda tiendaa = (Tienda) tiendas.next();
-				if(tiendaa.getNombreTienda().equals(tien)){
-					cod = tiendaa.getCodigoTienda();
-				}
-			}
-			q = em.createQuery("SELECT s FROM SolicitudDistribucion s WHERE s.tienda.codigoTienda =:cod AND s.cerrada =:state");
-			q.setParameter("cod", cod);
-			q.setParameter("state", false);
-			List lVO = q.getResultList();
-			Iterator i = lVO.iterator();
-			
-			while(i.hasNext())
-			{
-				SolicitudDistribucion sol = (SolicitudDistribucion)i.next();
-				ret.add(sol.getVO());
-			}
-		}
-		return ret;
-	}
-
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis) {
 		Query q = em.createQuery("SELECT s FROM SolicitudDistribucion s WHERE s.idDis =:cod");
 		q.setParameter("cod", codSolDis);
@@ -296,37 +203,6 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}else{
 			int a = (Integer) l.get(0);
 			return a+1;
-		}
-	}
-
-	public boolean existeSolFab(int numSolFab) {
-		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
-		List l = q.getResultList();
-		Iterator it = l.iterator();
-		while(it.hasNext())
-		{
-			SolicitudDeFabricacion sol = (SolicitudDeFabricacion)it.next();
-			if(sol.getIdFab() == numSolFab){
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public boolean existenSolsFab(List<Integer> numsSolFab) {
-		Query q = em.createQuery("SELECT s FROM SolicitudDeFabricacion s");
-		List l = q.getResultList();
-		Iterator it = l.iterator();
-		List<Integer> numsBase = new ArrayList<Integer>();
-		while(it.hasNext())
-		{
-			SolicitudDeFabricacion sol = (SolicitudDeFabricacion)it.next();
-			numsBase.add(sol.getIdFab());
-		}
-		if(numsBase.containsAll(numsSolFab)){
-			return true;
-		}else{
-			return false;
 		}
 	}
 

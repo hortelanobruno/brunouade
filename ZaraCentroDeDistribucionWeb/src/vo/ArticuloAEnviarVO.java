@@ -8,8 +8,18 @@ public class ArticuloAEnviarVO implements Serializable
 	private int idAAE;
 	private ArticuloHeaderVO art;
 	private int cantidadAEnviar;
+	private int idPedido; //Dato que necesita Gaby
 	
-	
+	public int getIdPedido() {
+		return idPedido;
+	}
+
+
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
+	}
+
+
 	public ArticuloAEnviarVO() {
 
 	}

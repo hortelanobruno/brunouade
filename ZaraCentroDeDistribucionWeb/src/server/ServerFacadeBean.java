@@ -64,24 +64,9 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getSolsFab(codTienda);
 	}
 
-	/*public void guardarSolicitudDeEnvio(SolicitudEnvioVO solEnv) 
-	{
-		this.admSol.guardarSolicitudDeEnvio(solEnv);
-	}*/
-
 	public void guardarSolicitudFabricacion(SolicitudFabricaVO solFab) 
 	{
 		this.admSol.guardarSolicitudFabricacion(solFab);
-	}
-
-	public ArrayList<String> getDescripciones(ArrayList<Long> codigos) 
-	{
-		return admArt.getDescripciones(codigos);
-	}
-
-	public ArrayList<Integer> getStocks(ArrayList<Long> codigos) 
-	{
-		return admArt.getStocks(codigos);
 	}
 
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException
@@ -99,10 +84,6 @@ public class ServerFacadeBean implements ServerFacade
 		this.admSol.guardarSolFab(solFab);
 	}
 
-	public SolicitudFabricaVO cargarSolicitudFabricacion(int codigoSolFab) 
-	{
-		return this.admSol.getSolFab(codigoSolFab);
-	}
 
 	public void guardarSolicitudReposicion(SolicitudDeReposicionVO solRepVO)
 	{
@@ -119,11 +100,6 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admArt.getArticulo(codigo);
 	}
 
-	public int getNumeroSolEnv() 
-	{
-		return this.admSol.getNumeroSolEnv();
-	}
-
 	public int getNumeroSolFab() 
 	{
 		return this.admSol.getNumeroSolFab();
@@ -134,13 +110,10 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admConf.getFabrica();
 	}
 
-
 	public ArrayList<TiendaVO> getTiendas() 
 	{
 		return this.admConf.getTiendas();
 	}
-
-
 
 	public CentroDistribucionVO getCentro() 
 	{
@@ -193,20 +166,6 @@ public class ServerFacadeBean implements ServerFacade
 	{
 		return this.admArt.existeArticulo(codigo);
 	}
-
-	public boolean existeSolDis(int codigo) 
-	{
-		return this.admSol.existeSolDis(codigo);
-	}
-
-	public boolean existeSolRep(int codigo) 
-	{
-		return this.admSol.existeSolRep(codigo);
-	}
-
-	public int getNextIdArticuloReservado() {
-		return this.admArt.getNextIdArticuloReservado();
-	}
 	
 	public int getNextIdArticuloAReponer() {
 		return this.admArt.getNextIdArticuloAReponer();
@@ -214,14 +173,6 @@ public class ServerFacadeBean implements ServerFacade
 
 	public void actualizarSolFab(SolicitudFabricaVO solFabVO) {
 		this.admSol.actualizarSolFab(solFabVO);
-	}
-
-	public ArrayList<ArticuloHeaderVO> getArticulos(ArrayList<Long> codigos) {
-		return this.admArt.getArticulos(codigos);
-	}
-
-	public ArrayList<SolicitudDistribucionVO> getSolicitudesDistribucion(String tienda) {
-		return this.admSol.getSolsDis(tienda);
 	}
 
 	public void guardarSolEnv(SolicitudEnvioVO solEnvio) {
@@ -240,10 +191,6 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admArt.existenArts(codigos);
 	}
 
-	public boolean existeSolFab(int numSolFab) {
-		return this.admSol.existeSolFab(numSolFab);
-	}
-
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion() {
 		return admSol.getAllSolicitudesDistribucion();
 	}
@@ -256,11 +203,6 @@ public class ServerFacadeBean implements ServerFacade
 		return this.admSol.getNextIdSolDis();
 	}
 
-	public int getStockArticulo(long codigo) 
-	{
-		return this.admArt.getStockArticulo(codigo);
-	}
-
 	public void guardarTienda(TiendaVO tienda) {
 		this.admConf.guardarTienda(tienda);
 	}
@@ -268,15 +210,7 @@ public class ServerFacadeBean implements ServerFacade
 	public int getNexIdSolRep() {
 		return this.admSol.getNexIdSolRep();
 	}
-
-	public boolean existenSolsFab(List<Integer> numsSolFab) {
-		return this.admSol.existenSolsFab(numsSolFab);
-	}
-
-	public Collection<SolicitudFabricaVO> getSolicitudesDeFabricacion(List<Integer> numsSolFab) {
-		return this.admSol.getSolicitudesDeFabricacion(numsSolFab);
-	}
-
+	
 	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar() {
 		return this.admSol.obtenerSolicitudesDeReposicionAProcesar();
 	}

@@ -13,7 +13,7 @@ import javax.jms.TextMessage;
 
 @MessageDriven(activationConfig = {
 		@ActivationConfigProperty(propertyName="destinationType", propertyValue="javax.jms.Queue"),
-		@ActivationConfigProperty(propertyName="destination", propertyValue="queue/colaArticulos")
+		@ActivationConfigProperty(propertyName="destination", propertyValue="queue/testQueue")
 })
 
 public class RecibirArticuloBean implements MessageDrivenBean, MessageListener

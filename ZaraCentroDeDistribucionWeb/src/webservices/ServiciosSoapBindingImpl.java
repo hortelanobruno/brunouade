@@ -7,7 +7,6 @@
 
 package webservices;
 
-import org.apache.log4j.Logger;
 
 public class ServiciosSoapBindingImpl implements webservices.Servicios{
     public boolean recibirSolRep(java.lang.String in0) throws java.rmi.RemoteException {

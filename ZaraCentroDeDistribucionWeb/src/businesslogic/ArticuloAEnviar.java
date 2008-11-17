@@ -19,7 +19,18 @@ public class ArticuloAEnviar implements Serializable
 	private int idAAE;
 	private Articulo art;
 	private int cantidadAEnviar;
+	private int idPedido; //Dato que necesita Gaby
 	
+	@Column
+	public int getIdPedido() {
+		return idPedido;
+	}
+
+
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
+	}
+
 	
 	public ArticuloAEnviar()
 	{
@@ -71,12 +82,14 @@ public class ArticuloAEnviar implements Serializable
 		art.setIdAAE(this.getIdAAE());
 		art.setCantidadAEnviar(this.getCantidadAEnviar());
 		art.setArt(this.getArt().getVO());
+		art.setIdPedido(this.getIdPedido());
 		return art;
 	}
 	
 	public void setVO(ArticuloAEnviarVO art){
 		this.setIdAAE(art.getIdAAE());
 		this.setCantidadAEnviar(art.getCantidadAEnviar());
+		this.setIdPedido(art.getIdPedido());
 		Articulo art2 = new Articulo();
 		art2.setVO(art.getArt());
 		this.setArt(art2);
