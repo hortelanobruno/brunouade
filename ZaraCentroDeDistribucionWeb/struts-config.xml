@@ -60,6 +60,6 @@
     
   </action-mappings>
   
-  <message-resources parameter="resources.application"/>
+  <message-resources parameter="resources.application" />
 
 </struts-config>
