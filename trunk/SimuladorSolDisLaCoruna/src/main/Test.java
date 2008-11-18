@@ -18,9 +18,9 @@ public class Test
 					"<fechaSolicitud>2008-10-27 10:11:38.363 GST</fechaSolicitud> " +
 					"<items class='set'>"
 			    + "<ItemSolDist><tienda><codigo>1</codigo> <nombre>Florida</nombre> <pais>Chile</pais> </tienda>"
-			      +"<catidad>1000</catidad>  <articulo>  <referencia>1234</referencia>  <color>Unico</color>  </articulo> </ItemSolDist>"
+			      +"<catidad>1000</catidad>  <articulo>  <referencia>9697005</referencia>  <color>Unico</color>  </articulo> </ItemSolDist>"
 			      + "<ItemSolDist><tienda><codigo>1</codigo> <nombre>Florida</nombre> <pais>Chile</pais> </tienda>"
-			      +"<catidad>10</catidad>  <articulo>  <referencia>3333</referencia>  <color>Unico</color>  </articulo> </ItemSolDist>"
+			      +"<catidad>10</catidad>  <articulo>  <referencia>9697002</referencia>  <color>Unico</color>  </articulo> </ItemSolDist>"
 			  + "</items><centro><codigo>1</codigo><nombre>Shopping Centro</nombre><pais>Argentina</pais></centro></SolDist>";
 			
 			System.out.println("Mandando...");
