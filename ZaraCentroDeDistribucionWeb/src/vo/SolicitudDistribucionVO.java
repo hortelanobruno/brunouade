@@ -9,6 +9,7 @@ public class SolicitudDistribucionVO extends SolicitudVO
 	private Collection<ArticuloPedidoVO> articulosPedidos;
 	private boolean cerrada;
 	private int idDis;
+	private int idPedido;
 
 	public SolicitudDistribucionVO() {
 		
@@ -19,6 +20,14 @@ public class SolicitudDistribucionVO extends SolicitudVO
 		this.articulosPedidos = a;
 		this.setCerrada(cerrada);
 		this.idDis = n;
+	}
+	
+	public int getIdPedido() {
+		return idPedido;
+	}
+
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
 	}
 
 	public Collection<ArticuloPedidoVO> getArticulosPedidos() {

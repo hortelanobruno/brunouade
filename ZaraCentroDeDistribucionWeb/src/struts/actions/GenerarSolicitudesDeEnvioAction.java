@@ -185,6 +185,7 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 						artEnv.setArt(artPed.getArt());
 					}
 				}
+				artEnv.setIdPedido(solDis.getIdPedido());
 				articulosAEnviar.add(artEnv);
 				art = solDis.getArticulosPedidos().iterator();
 				idAE++;

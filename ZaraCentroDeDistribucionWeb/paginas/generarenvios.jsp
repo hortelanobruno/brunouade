@@ -25,53 +25,25 @@
 	<!-- start content -->
 	<div id="content">
 		<div class="post">
-			<h2 class="title"><a href="#">Centro de Distribucion Uruguay</a></h2>
 			<div class="entry">
 				<form name="form1" action="GenerarSolEnvio.do" method="post">
-           <table cellpadding="10" cellspacing="10">
-			<tr>
-                <td colspan="2" align="center"><h1>Generar envios</h1></td>
-             </tr>
-              <tr height="20px">
-              </tr>
-              <tr>
-               <td width="200">
-		            <select name="idsoldis" onchange="fillSolDis()">
+                <h1>Generar envios</h1>
+                <div class="left">
+		            <select name="idsoldis" onChange="fillSolDis()">
 		            <option value=""></option>
 		            <logic:iterate id="articulos" name="GenerarEnviosForm" property="codigosSolDist" >
 		            <option value="<bean:write name='articulos'/>"><bean:write name='articulos'/></option>
 					</logic:iterate>
 		            </select>
-				</td>
-                <td width="500" valign="top">
+		            </div>
                 <div id="tablaDatos">
                 </div>
-                </td>
-             </tr>
-              <tr height="20px">
-              </tr>
-              <tr>
-                <td colspan="2">
                   <input name="buttonEnvio" type="submit" id="buttonEnvio" value="Generar solicitud de envio" />
-                </td>
-              </tr>
-            </table> 
            </form>
 			</div>
-			<p class="meta">Posted on November 5, 2007 by <a href="#">Someone</a> &nbsp;|&nbsp; <a href="#">32 comments</a></p>
 		</div>
 	</div>
 	<!-- end content -->
-	<!-- start sidebar -->
-	<div id="sidebar">
-		<ul>
-			<li>
-				<h2>Etiam dolore</h2>
-				<p>Nulla pellentesque dolor non tellus. Duis vel elit sit <a href="#">amet ipsum vehicula</a> varius. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
-			</li>
-		</ul>
-	</div>
-	<!-- end sidebar -->
 	<div style="clear: both;">&nbsp;</div>
 </div>
 <!-- end page -->
