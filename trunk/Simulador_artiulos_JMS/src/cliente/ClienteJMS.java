@@ -157,7 +157,7 @@ public class ClienteJMS
 			"</XMLArticulo>";
 		this.lista.add(art2);*/
 		
-		String art = "<vo.ArtPersonalVO> <referencia>1515</referencia> <linea>Woman</linea>"
+		String art = "<vo.ArtPersonalVO> <referencia>9697005</referencia> <linea>Woman</linea>"
 		  + "<descripcion>Julian</descripcion> <color>Blanco</color> <seccion>Mujer</seccion>"
 		  +"<precioVentaUnitario>32.0</precioVentaUnitario> <ultimoPedido>2008-11-03 10:30:31.412 GST</ultimoPedido>"
 		  + "<mesRebaja>3</mesRebaja> <centros class='set'> <CentroDistribucion> <codigo>2</codigo> <nombre>Centro</nombre>"
@@ -168,7 +168,7 @@ public class ClienteJMS
 		+"</vo.ArtPersonalVO>";
 		this.lista.add(art);
 		
-		art = "<vo.ArtPersonalVO> <referencia>2020</referencia> <linea>Woman</linea>"
+		art = "<vo.ArtPersonalVO> <referencia>9697002</referencia> <linea>Woman</linea>"
 		  + "<descripcion>Mulo</descripcion> <color>Verga</color> <seccion>Mujer</seccion>"
 		  +"<precioVentaUnitario>2.0</precioVentaUnitario> <ultimoPedido>2008-11-03 10:30:31.412 GST</ultimoPedido>"
 		  + "<mesRebaja>3</mesRebaja> <centros class='set'> <CentroDistribucion> <codigo>2</codigo> <nombre>Centro</nombre>"
