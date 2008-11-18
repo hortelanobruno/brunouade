@@ -86,6 +86,7 @@ public class XMLConverter
 
 	public static SolicitudDistribucionVO getSolDisVOFromString(String in0)
 	{
+		//TODO aca hay que agregar la parte que agrega el idPedido y lo setea al VO
 		Logger logger = Logger.getLogger("zara.centro");
 		SAXBuilder builder = new SAXBuilder();
 		Reader in = new StringReader(in0);

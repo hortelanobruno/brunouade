@@ -26,6 +26,7 @@ public class SolicitudDistribucion extends Solicitud
 	private Collection<ArticuloPedido> articulosPedidos;
 	private boolean cerrada;
 	private int idDis;
+	private int idPedido;
 
 
 	public SolicitudDistribucion() {
@@ -40,7 +41,15 @@ public class SolicitudDistribucion extends Solicitud
 		this.setCerrada(false);
 	}
 
+	@Column
+	public int getIdPedido() {
+		return idPedido;
+	}
 
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
+	}
+	
 	@Column
 	public int getIdDis() {
 		return idDis;
@@ -82,6 +91,7 @@ public class SolicitudDistribucion extends Solicitud
 			arts.add(art);
 		}
 		sol.setArticulosPedidos(arts);
+		sol.setIdPedido(this.getIdPedido());
 		return sol;
 	}
 
@@ -102,6 +112,7 @@ public class SolicitudDistribucion extends Solicitud
 		}
 		this.setArticulosPedidos(arts);
 		this.setId(vo.getId());
+		this.setIdPedido(vo.getIdPedido());
 	}
 	
 	@Transient
