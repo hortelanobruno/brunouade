@@ -51,7 +51,7 @@
 							<td><bean:write name="articulos" property="art.cantidad" /><input type="hidden" name="stock" value="<bean:write name="articulos" property="art.cantidad" />" /></td>
 							<td><bean:write name="articulos" property="cantidadPedida" /><input type="hidden" name="cantPedida" value="<bean:write name="articulos" property="cantidadPedida" />" /></td>
 							<td><bean:write name="articulos" property="cantMinAPedir" /><input type="hidden" name="cantMinAPedir" value="<bean:write name="articulos" property="cantMinAPedir" />" /></td>
-							<td><input type="text" name="cantAFab" value="0" onBlur="comprobarCantAPed()"/></td>
+							<td><input type="text" name="cantAFab" value="0" /></td>
 							</tr>
 							</logic:iterate>
                             </tbody>
@@ -82,7 +82,7 @@
 					  </table>
                   </div>
 					<i>Generar solicitud Fabricacion</i>&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="submit" value="Generar" />
+					<input type="button" value="Generar" onclick="comprobarCantAPed()" /><label class="error" id="msj" style="visibility:hidden"></label>
 			</form>
 			</div>
 		</div>

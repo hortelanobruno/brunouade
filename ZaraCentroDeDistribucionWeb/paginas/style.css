@@ -404,3 +404,9 @@ tbody th a {
 tbody tr:hover {
 		background:#fafafa
 }
+
+/*LABELS ERROR*/
+.error {
+        color:#FF0000
+
+}
