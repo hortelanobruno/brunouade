@@ -1,5 +1,5 @@
 @echo on
-set axis_home=D:\axis-1_3
+set axis_home=c:\axis-1_3
 
 set NAME=Servicios
 set PACKAGE=webservices

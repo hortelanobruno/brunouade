@@ -49,8 +49,12 @@ public class BusinessDelegate
 
 	private synchronized void guardarTiendas(){
 		TiendaVO tienda = new TiendaVO();
-		tienda.setCodigoTienda(1);
-		tienda.setNombreTienda("Florida");
+		tienda.setCodigoTienda(22);
+		tienda.setNombreTienda("Paseo Alcorta");
+		this.getModCD().guardarTienda(tienda);
+		tienda = new TiendaVO();
+		tienda.setCodigoTienda(3);
+		tienda.setNombreTienda("Punta Carretas");
 		this.getModCD().guardarTienda(tienda);
 	}
 	

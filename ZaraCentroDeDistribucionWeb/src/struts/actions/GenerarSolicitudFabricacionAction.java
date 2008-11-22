@@ -86,12 +86,12 @@ public class GenerarSolicitudFabricacionAction extends Action
 				int idSolFab = bd.getNumeroSolFab();
 				solFab.setIdFab(idSolFab);
 				solFab.setCerrada(false);
-				bd.guardarSolicitudFabricacion(solFab);
 				String xmlSolFab = XMLConverter.getStringFromSolFab(solFab);
 				ImplementacionMandarSolFab envSolFab = new ImplementacionMandarSolFab();
 				boolean estado = envSolFab.enviarSolFab(xmlSolFab);
 				logger.debug("Se envio la solicitud de fabricacion a la Fabrica");
 				if(estado){
+					bd.guardarSolicitudFabricacion(solFab);
 					logger.debug("La solicitud de fabricacion fue recibida con exito");
 					return (mapping.findForward("success"));
 				}else{
