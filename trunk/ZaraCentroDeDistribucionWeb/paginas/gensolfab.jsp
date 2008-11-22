@@ -81,6 +81,7 @@
                             <t/body>
 					  </table>
                   </div>
+                  </br>
 					<i>Generar solicitud Fabricacion</i>&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="button" value="Generar" onclick="comprobarCantAPed()" /><label class="error" id="msj" style="visibility:hidden"></label>
 			</form>

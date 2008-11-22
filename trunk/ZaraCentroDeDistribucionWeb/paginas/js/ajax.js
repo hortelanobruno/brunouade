@@ -15,7 +15,7 @@ function initRequest(url) {
 
 
 function fillSolDis(){
-	var value = this.form1.idsoldis.value
+	var value = document.form1.idsoldis.value
 	if(value != ""){
 		var url = "cargarsoldis?codigo=" + value; 
 	    initRequest(url);

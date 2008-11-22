@@ -5,11 +5,11 @@
  * by the Apache Axis 1.3 Oct 05, 2005 (05:23:37 EDT) WSDL2Java emitter.
  */
 
-package integracion;
+package fabricacion;
 
 import varios.Constantes;
 
-public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service implements integracion.RecibirSolFabrService {
+public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service implements fabricacion.RecibirSolFabrService {
 
     public RecibirSolFabrServiceLocator() {
     }
@@ -41,7 +41,7 @@ public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service
         RecibirSolFabrWSDDServiceName = name;
     }
 
-    public integracion.RecibirSolFabr getRecibirSolFabr() throws javax.xml.rpc.ServiceException {
+    public fabricacion.RecibirSolFabr getRecibirSolFabr() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(RecibirSolFabr_address);
@@ -52,9 +52,9 @@ public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service
         return getRecibirSolFabr(endpoint);
     }
 
-    public integracion.RecibirSolFabr getRecibirSolFabr(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public fabricacion.RecibirSolFabr getRecibirSolFabr(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-        	integracion.RecibirSolFabrSoapBindingStub _stub = new integracion.RecibirSolFabrSoapBindingStub(portAddress, this);
+            fabricacion.RecibirSolFabrSoapBindingStub _stub = new fabricacion.RecibirSolFabrSoapBindingStub(portAddress, this);
             _stub.setPortName(getRecibirSolFabrWSDDServiceName());
             return _stub;
         }
@@ -74,8 +74,8 @@ public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (integracion.RecibirSolFabr.class.isAssignableFrom(serviceEndpointInterface)) {
-            	integracion.RecibirSolFabrSoapBindingStub _stub = new integracion.RecibirSolFabrSoapBindingStub(new java.net.URL(RecibirSolFabr_address), this);
+            if (fabricacion.RecibirSolFabr.class.isAssignableFrom(serviceEndpointInterface)) {
+                fabricacion.RecibirSolFabrSoapBindingStub _stub = new fabricacion.RecibirSolFabrSoapBindingStub(new java.net.URL(RecibirSolFabr_address), this);
                 _stub.setPortName(getRecibirSolFabrWSDDServiceName());
                 return _stub;
             }
@@ -107,7 +107,7 @@ public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("urn:webServices", "RecibirSolFabrService");
+        return new javax.xml.namespace.QName("urn:fabricacion", "RecibirSolFabrService");
     }
 
     private java.util.HashSet ports = null;
@@ -115,7 +115,7 @@ public class RecibirSolFabrServiceLocator extends org.apache.axis.client.Service
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("urn:webServices", "RecibirSolFabr"));
+            ports.add(new javax.xml.namespace.QName("urn:fabricacion", "RecibirSolFabr"));
         }
         return ports.iterator();
     }

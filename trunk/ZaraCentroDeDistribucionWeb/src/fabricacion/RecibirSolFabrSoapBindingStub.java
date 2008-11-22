@@ -5,9 +5,9 @@
  * by the Apache Axis 1.3 Oct 05, 2005 (05:23:37 EDT) WSDL2Java emitter.
  */
 
-package integracion;
+package fabricacion;
 
-public class RecibirSolFabrSoapBindingStub extends org.apache.axis.client.Stub implements integracion.RecibirSolFabr {
+public class RecibirSolFabrSoapBindingStub extends org.apache.axis.client.Stub implements fabricacion.RecibirSolFabr {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -96,7 +96,7 @@ public class RecibirSolFabrSoapBindingStub extends org.apache.axis.client.Stub i
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("urn:webServices", "recibirSolFabr"));
+        _call.setOperationName(new javax.xml.namespace.QName("urn:fabricacion", "recibirSolFabr"));
 
         setRequestHeaders(_call);
         setAttachments(_call);

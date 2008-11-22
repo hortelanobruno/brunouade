@@ -86,7 +86,6 @@ public class XMLConverter
 
 	public static SolicitudDistribucionVO getSolDisVOFromString(String in0)
 	{
-		//TODO aca hay que agregar la parte que agrega el idPedido y lo setea al VO
 		Logger logger = Logger.getLogger("zara.centro");
 		SAXBuilder builder = new SAXBuilder();
 		Reader in = new StringReader(in0);
@@ -101,7 +100,9 @@ public class XMLConverter
 				List hijos = items.getChildren();
 				List<ArticuloPedidoVO> articulos = new ArrayList<ArticuloPedidoVO>();
 				String cod,nombre,referencia,cantidad;
+				
 				for(Object hijo : hijos){
+					soldis.setIdPedido(Integer.parseInt(((Element)hijo).getChild("idPedido").getText()));
 					ArticuloPedidoVO articulo = new ArticuloPedidoVO();
 					ArticuloHeaderVO art = new ArticuloHeaderVO();
 					TiendaVO tienda = new TiendaVO();
@@ -160,7 +161,7 @@ public class XMLConverter
 			ArticuloHeaderVO artH = new ArticuloHeaderVO();
 			artH.setCodigo(Long.parseLong(root.getChild("productoList").getChild("int").getText()));
 			art.setArt(artH);
-			art.setCantidadRecibida(Integer.parseInt(root.getChild("cantidad").getText()));
+			art.setCantidadRecibida((int)Float.parseFloat(root.getChild("cantidad").getText()));
 			art.setIdAAR(nextID);
 			arts.add(art);
 			solrep.setArticulosAReponer(arts);

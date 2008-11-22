@@ -1,6 +1,6 @@
 @echo on
 
-set axis_home=D:\axis-1_3
+set axis_home=c:\axis-1_3
 
 set NAME=Servicios
 set PACKAGE=webservices
@@ -13,7 +13,7 @@ set project_bin_nacho="C:\Documents and Settings\dext\Mis documentos\UADE\2º cua
 set project_bin_bruno=D:\EclipseyJBoss\workspace2\ZaraCentroDeDistribucionWeb\bin\webservices
 
 set jboss_nacho=C:\jboss-4.0.5.GA\server\default\deploy\axis.war\WEB-INF\classes\webservices
-set jboss_bruno=D:\EclipseyJBoss\jboss-4.0.5.GA\server\default\deploy\webapps\axis.war\WEB-INF\classes\webservices
+set jboss_bruno=C:\EclipseyJBoss\jboss-4.0.5.GA\server\default\deploy\webapps\axis.war\WEB-INF\classes\webservices
 
 echo Copiando archivos
 copy /Y %project_bin_bruno%\ServiciosSoapBindingImpl.class %jboss_bruno%\ServiciosSoapBindingImpl.class

@@ -6,10 +6,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
 import org.apache.log4j.Logger;
+
+import businesslogic.ServerFacade;
 
 import struts.model.BusinessDelegate;
 import varios.Constantes;
@@ -25,105 +31,132 @@ import exceptions.ErrorConectionException;
 
 public class ServiciosImplementacion {
 
-	private BusinessDelegate bd;
 	private Logger logger = Logger.getLogger("zara.centro");
+	private ServerFacade modCD = null;
+	private String naming = Constantes.BEAN_STRING;
+
+	private ServerFacade getModCD() {
+		return modCD;
+	}
+
+	@SuppressWarnings("unchecked")
+	protected void getConnection() throws ErrorConectionException {
+		try {
+			Hashtable props = new Hashtable();
+			props.put(InitialContext.INITIAL_CONTEXT_FACTORY,
+					"org.jnp.interfaces.NamingContextFactory");
+			props.put(InitialContext.PROVIDER_URL, "jnp://"
+					+ Constantes.IP_CENTRODISTRIBUCION + ":1099");
+			InitialContext context = new InitialContext(props);
+			this.modCD = (ServerFacade) context.lookup(naming);
+		} catch (Exception e) {
+			throw new ErrorConectionException("No se pudo conectar");
+		}
+	}
+
+	@SuppressWarnings("unused")
+	private static Context getInitialContext()
+			throws javax.naming.NamingException {
+		return new javax.naming.InitialContext();
+	}
 
 	public ServiciosImplementacion() {
-
+		try {
+			this.getConnection();
+		} catch (ErrorConectionException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean recibirSolRep(String in0) {
-		try {
-			bd = new BusinessDelegate();
-			// Parsea la solicitud de reposicion
-			int id = bd.getNextIdARep();
-			SolicitudDeReposicionVO solrep = XMLConverter.getSolRepVOFromString(in0, id);
-			solrep.setProcesada(false);
-			solrep.setId(bd.getNextId());
-			solrep.setCdVO(bd.getCentro());
-			solrep.setFabrica(bd.getFabricas().get(0));
-			solrep.setIdRep(bd.getNexIdSolRep());
-			// Guardar la solicitud de reposicion
-			bd.guardarSolicitudReposicion(solrep);
-			return true;
-		} catch (ErrorConectionException e) {
-			e.printStackTrace();
-		}
-		return false;
+		System.out.println("Esta llegando la solicitud de reposicion");
+		// Parsea la solicitud de reposicion
+		int id = this.getModCD().getNextIdArticuloAReponer();
+		SolicitudDeReposicionVO solrep = XMLConverter
+				.getSolRepVOFromString(in0, id);
+		solrep.setProcesada(false);
+		solrep.setId(this.getModCD().getNextId());
+		solrep.setCdVO(this.getModCD().getCentro());
+		solrep.setFabrica(this.getModCD().getFabricas().get(0));
+		solrep.setIdRep(this.getModCD().getNexIdSolRep());
+		// Guardar la solicitud de reposicion
+		this.getModCD().guardarSolicitudReposicion(solrep);
+		return true;
 	}
 
 	public boolean recibirSolDis(String in0) {
-		try {
-			bd = new BusinessDelegate();
-			SolicitudDistribucionVO soldis = XMLConverter
-					.getSolDisVOFromString(in0);// Setea la fecha y los
-												// articulos
-			if (soldis != null) {
-				logger.debug("Se esta procesando una Solicitud Distribucion");
-				soldis.setIdDis(bd.getNextIdSolDis());
-				ArrayList<Long> codigos = new ArrayList<Long>();
-				int idMax = bd.getNextIdArtPed();
-				Iterator arts = (Iterator) soldis.getArticulosPedidos().iterator();
-				ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
-				while (arts.hasNext()) {
-					ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
-					artVO.setIdAP(idMax);
-					idMax++;
-					codigos.add(artVO.getArt().getCodigo());
-					artsVO.add(artVO);
-				}
-				ArrayList<Long> verCod = bd.existenArts(codigos);
-				if (!verCod.isEmpty()) {
-					String codsfalse = "Cod. " + verCod.get(0);
-					for (int q = 1; q < verCod.size(); q++) {
-						codsfalse = codsfalse + " Cod. " + verCod.get(q);
-					}
-					logger.debug("La solicitud contiene articulos que no existen en el Centro de Distribucion");
-					return false;
-				} else {
-					soldis.setArticulosPedidos(artsVO);
-					int id = bd.getNextId();
-					soldis.setId(id);
-					CentroDistribucionVO centroVO = bd.getCentro();
-					soldis.setCdVO(centroVO);
-					soldis.setCerrada(false);
-				}
-				// Hay que generar lo que puedo y lo que no puedo lo mando a
-				// fabricar
-				enviarArticulosDisponibles(soldis);
-				bd.guardarSolicitud(soldis);
-				if(soldis.getCerrada() == false){
-					//genero articulos a fabricar
-					List<ArticuloAFabricarVO> artiAFab = generarArticulosAFabricar(soldis);
-					bd.guardarArticulosAFabricar(artiAFab);
-				}
-				logger.debug("Solicitud de Distribucion guardada en el Centro de Distribucion");
-				return true;
-			} else {
-				logger.debug("Error al leer la solicitud de distribucion");
-				return false;
+		System.out.println("Esta llegando");
+		SolicitudDistribucionVO soldis = XMLConverter
+				.getSolDisVOFromString(in0);// Setea la fecha y los
+		// articulos
+		if (soldis != null) {
+			logger.debug("Se esta procesando una Solicitud Distribucion");
+			soldis.setIdDis(this.getModCD().getNextIdSolDis());
+			ArrayList<Long> codigos = new ArrayList<Long>();
+			int idMax = this.getModCD().getNextIdArticuloPedido();
+			Iterator arts = (Iterator) soldis.getArticulosPedidos()
+					.iterator();
+			ArrayList<ArticuloPedidoVO> artsVO = new ArrayList<ArticuloPedidoVO>();
+			while (arts.hasNext()) {
+				ArticuloPedidoVO artVO = ((ArticuloPedidoVO) arts.next());
+				artVO.setIdAP(idMax);
+				idMax++;
+				codigos.add(artVO.getArt().getCodigo());
+				artsVO.add(artVO);
 			}
-		} catch (ErrorConectionException e) {
-			e.printStackTrace();
+			ArrayList<Long> verCod = this.getModCD().existenArts(codigos);
+			if (!verCod.isEmpty()) {
+				String codsfalse = "Cod. " + verCod.get(0);
+				for (int q = 1; q < verCod.size(); q++) {
+					codsfalse = codsfalse + " Cod. " + verCod.get(q);
+				}
+				logger
+						.debug("La solicitud contiene articulos que no existen en el Centro de Distribucion");
+				return false;
+			} else {
+				soldis.setArticulosPedidos(artsVO);
+				int id = this.getModCD().getNextId();
+				soldis.setId(id);
+				CentroDistribucionVO centroVO = this.getModCD().getCentro();
+				soldis.setCdVO(centroVO);
+				soldis.setCerrada(false);
+			}
+			// Hay que generar lo que puedo y lo que no puedo lo mando a
+			// fabricar
+			enviarArticulosDisponibles(soldis);
+			this.getModCD().guardarSolicitudDistribucion(soldis);
+			if (soldis.getCerrada() == false) {
+				// genero articulos a fabricar
+				List<ArticuloAFabricarVO> artiAFab = generarArticulosAFabricar(soldis);
+				this.getModCD().guardarArticulosAFabricar(artiAFab);
+			}
+			logger
+					.debug("Solicitud de Distribucion guardada en el Centro de Distribucion");
+			return true;
+		} else {
+			logger.debug("Error al leer la solicitud de distribucion");
+			return false;
 		}
-		return false;
 	}
 
-	private List<ArticuloAFabricarVO> generarArticulosAFabricar(SolicitudDistribucionVO soldis) {
+	private List<ArticuloAFabricarVO> generarArticulosAFabricar(
+			SolicitudDistribucionVO soldis) {
 		List<ArticuloAFabricarVO> artsAFab = new ArrayList<ArticuloAFabricarVO>();
 		ArticuloAFabricarVO artAFab = null;
-		List<ArticuloPedidoVO> artsPed = new ArrayList<ArticuloPedidoVO>(soldis.getArticulosPedidos());
-		int idArtFab = bd.getNextIdAFab();
-		for(int i=0 ; i < artsPed.size() ; i++){
+		List<ArticuloPedidoVO> artsPed = new ArrayList<ArticuloPedidoVO>(soldis
+				.getArticulosPedidos());
+		int idArtFab = this.getModCD().getNextIdArticuloAFabricar();
+		for (int i = 0; i < artsPed.size(); i++) {
 			int cantEnv = artsPed.get(i).getCantidadEnviada();
 			int cantPed = artsPed.get(i).getCantidadPedida();
-			if(cantEnv < cantPed){
+			if (cantEnv < cantPed) {
 				artAFab = new ArticuloAFabricarVO();
-				artAFab.setArt(bd.getArticulo(artsPed.get(i).getArt().getCodigo()));
+				artAFab.setArt(this.getModCD().getArticulo(artsPed.get(i).getArt()
+						.getCodigo()));
 				artAFab.setCantidadAFabricar(0);
 				artAFab.setCantidadPedida(cantPed);
 				artAFab.setCantidadRecibida(0);
-				artAFab.setCantMinAPedir((cantPed-cantEnv)*2);
+				artAFab.setCantMinAPedir((cantPed - cantEnv) * 2);
 				artAFab.setIdAAF(idArtFab++);
 				artAFab.setSol(soldis);
 				artsAFab.add(artAFab);
@@ -133,10 +166,10 @@ public class ServiciosImplementacion {
 	}
 
 	public void enviarArticulosDisponibles(SolicitudDistribucionVO soldis) {
-		int codTienda1 = bd.obtenerTiendas().get(0).getCodigoTienda();
+		int codTienda1 = this.getModCD().getTiendas().get(0).getCodigoTienda();
 		Collection<ArticuloAEnviarVO> artsAEnvTienda1 = new ArrayList<ArticuloAEnviarVO>();
 		Collection<ArticuloAEnviarVO> artsAEnvTienda2 = new ArrayList<ArticuloAEnviarVO>();
-		HashMap<Long, Integer> stocks = bd.getStocks();
+		HashMap<Long, Integer> stocks = this.getModCD().getStocks();
 		List<ArticuloPedidoVO> artsPed = new ArrayList<ArticuloPedidoVO>(soldis
 				.getArticulosPedidos());
 		ArticuloAEnviarVO artAEnv = null;
@@ -151,12 +184,12 @@ public class ServiciosImplementacion {
 					if (artsPed.get(i).getTienda().getCodigoTienda() == codTienda1) {
 						artAEnv = new ArticuloAEnviarVO();
 						artAEnv.setCantidadAEnviar(cantPedida);
-						artAEnv.setArt(bd.getArticulo(cod));
+						artAEnv.setArt(this.getModCD().getArticulo(cod));
 						artsAEnvTienda1.add(artAEnv);
 					} else {
 						artAEnv = new ArticuloAEnviarVO();
 						artAEnv.setCantidadAEnviar(cantPedida);
-						artAEnv.setArt(bd.getArticulo(cod));
+						artAEnv.setArt(this.getModCD().getArticulo(cod));
 						artsAEnvTienda2.add(artAEnv);
 					}
 					stocks.put(cod, stocks.get(cod) - cantPedida);
@@ -165,20 +198,20 @@ public class ServiciosImplementacion {
 					if (artsPed.get(i).getTienda().getCodigoTienda() == codTienda1) {
 						artAEnv = new ArticuloAEnviarVO();
 						artAEnv.setCantidadAEnviar(stock);
-						artAEnv.setArt(bd.getArticulo(cod));
+						artAEnv.setArt(this.getModCD().getArticulo(cod));
 						artsAEnvTienda1.add(artAEnv);
 					} else {
 						artAEnv = new ArticuloAEnviarVO();
 						artAEnv.setCantidadAEnviar(stock);
-						artAEnv.setArt(bd.getArticulo(cod));
+						artAEnv.setArt(this.getModCD().getArticulo(cod));
 						artsAEnvTienda2.add(artAEnv);
 					}
 					stocks.put(cod, stocks.get(cod) - stock);
 				}
 			}
 		}
-		//Actualizo stocks
-		bd.actualizarStock(stocks);
+		// Actualizo stocks
+		this.getModCD().actualizarStock(stocks);
 		soldis.setArticulosPedidos(artsPed);
 		int aux = 0;
 		for (int i = 0; i < artsPed.size(); i++) {
@@ -196,45 +229,49 @@ public class ServiciosImplementacion {
 		}
 		// Genero soldis a las tiendas
 		if (!artsAEnvTienda1.isEmpty()) {
-			//Genero envio a la tienda 1
+			// Genero envio a la tienda 1
 			SolicitudEnvioVO solEnv = new SolicitudEnvioVO();
 			solEnv.setArticulosAEnviar(artsAEnvTienda1);
-			solEnv.setCdVO(bd.getCentro());
+			solEnv.setCdVO(this.getModCD().getCentro());
 			solEnv.setFechaEmision(new Date());
-			solEnv.setId(bd.getNextId());
-			solEnv.setIdEnv(bd.getNextIdSolDis());
+			solEnv.setId(this.getModCD().getNextId());
+			solEnv.setIdEnv(this.getModCD().getNextIdSolDis());
 			solEnv.setSolDis(soldis);
-			solEnv.setTienda(bd.obtenerTiendas().get(0));
-			bd.guardarSolicitudDeEnvio(solEnv);
+			solEnv.setTienda(this.getModCD().getTiendas().get(0));
+			this.getModCD().guardarSolEnv(solEnv);
 			String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 			ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
 			Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
 			boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
-			if(b){
-				logger.debug("Se envio la solicitud de envio correctamente a la tienda");
-			}else{
-				logger.debug("Error al enviar la solicitud de envio a la tienda");
+			if (b) {
+				logger
+						.debug("Se envio la solicitud de envio correctamente a la tienda");
+			} else {
+				logger
+						.debug("Error al enviar la solicitud de envio a la tienda");
 			}
 		}
 		if (!artsAEnvTienda1.isEmpty()) {
-			//Genero envio a la tienda 2
+			// Genero envio a la tienda 2
 			SolicitudEnvioVO solEnv = new SolicitudEnvioVO();
 			solEnv.setArticulosAEnviar(artsAEnvTienda2);
-			solEnv.setCdVO(bd.getCentro());
+			solEnv.setCdVO(this.getModCD().getCentro());
 			solEnv.setFechaEmision(new Date());
-			solEnv.setId(bd.getNextId());
-			solEnv.setIdEnv(bd.getNextIdSolDis());
+			solEnv.setId(this.getModCD().getNextId());
+			solEnv.setIdEnv(this.getModCD().getNextIdSolDis());
 			solEnv.setSolDis(soldis);
-			solEnv.setTienda(bd.obtenerTiendas().get(1));
-			bd.guardarSolicitudDeEnvio(solEnv);
+			solEnv.setTienda(this.getModCD().getTiendas().get(1));
+			this.getModCD().guardarSolEnv(solEnv);
 			String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 			ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
 			Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
 			boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
-			if(b){
-				logger.debug("Se envio la solicitud de envio correctamente a la tienda");
-			}else{
-				logger.debug("Error al enviar la solicitud de envio a la tienda");
+			if (b) {
+				logger
+						.debug("Se envio la solicitud de envio correctamente a la tienda");
+			} else {
+				logger
+						.debug("Error al enviar la solicitud de envio a la tienda");
 			}
 		}
 	}

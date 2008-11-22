@@ -1,5 +1,9 @@
 package integracion;
 
+import fabricacion.RecibirSolFabr;
+import fabricacion.RecibirSolFabrService;
+import fabricacion.RecibirSolFabrServiceLocator;
+
 public class ImplementacionMandarSolFab 
 {
 	public ImplementacionMandarSolFab()
