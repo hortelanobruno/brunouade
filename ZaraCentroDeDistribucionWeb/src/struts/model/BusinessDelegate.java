@@ -248,4 +248,12 @@ public class BusinessDelegate
 	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar) {
 		this.getModCD().actualizarStock(articulosAEnviar);
 	}
+	
+	public int getNextIdSolEnv(){
+		return this.getModCD().getNextIdSolEnv();
+	}
+
+	public List<ArticuloAFabricarVO> getNuevosArticulosAFabricarVO() {
+		return this.getModCD().getNuevosArticulosAFabricarVO();
+	}
 }

@@ -95,16 +95,15 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				solEnv.setCdVO(bd.getCentro());
 				solEnv.setFechaEmision(new Date());
 				solEnv.setId(bd.getNextId());
-				solEnv.setIdEnv(bd.getNextIdSolDis());
+				solEnv.setIdEnv(bd.getNextIdSolEnv());
 				solEnv.setSolDis(solDis);
 				solEnv.setTienda(bd.obtenerTiendas().get(0));
-				bd.guardarSolicitudDeEnvio(solEnv);
 				String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 				ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
 				Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
 				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 				if(b){
-					logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+					logger.debug("Se envio la solicitud de envio correctamente a la tienda");bd.guardarSolicitudDeEnvio(solEnv);
 				}else{
 					logger.debug("Error al enviar la solicitud de envio a la tienda");
 					return mapping.findForward("failure");
@@ -117,16 +116,16 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				solEnv.setCdVO(bd.getCentro());
 				solEnv.setFechaEmision(new Date());
 				solEnv.setId(bd.getNextId());
-				solEnv.setIdEnv(bd.getNextIdSolDis());
+				solEnv.setIdEnv(bd.getNextIdSolEnv());
 				solEnv.setSolDis(solDis);
 				solEnv.setTienda(bd.obtenerTiendas().get(1));
-				bd.guardarSolicitudDeEnvio(solEnv);
 				String xmlSolEnv = XMLConverter.getStringFromSolEnv(solEnv);
 				ImplementacionMandarSolEnv envSolEnv = new ImplementacionMandarSolEnv();
 				Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA2;
 				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 				if(b){
 					logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+					bd.guardarSolicitudDeEnvio(solEnv);
 				}else{
 					logger.debug("Error al enviar la solicitud de envio a la tienda");
 					return mapping.findForward("failure");

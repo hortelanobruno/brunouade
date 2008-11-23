@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import vo.ArticuloAFabricarVO;
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
 import vo.SolicitudEnvioVO;
@@ -30,8 +31,10 @@ public interface AdministradorSolicitudes
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
 	public int getNextIdSolDis();
 	public int getNexIdSolRep();
+	public int getNextIdSolEnv();
 	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar();
 	public List<SolicitudDistribucionVO> obtenerSolDisAbiertas();
 	public List<SolicitudFabricaVO> getSolicitudesDeFabricacionAbiertas();
+	
 	
 }

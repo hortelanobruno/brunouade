@@ -36,4 +36,5 @@ public interface AdministradorArticulos
 	public HashMap<Long, Integer> getStocks();
 	public void actualizarStock(HashMap<Long, Integer> stocks);
 	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar);
+	public List<ArticuloAFabricarVO> getNuevosArticulosAFabricarVO();
 }

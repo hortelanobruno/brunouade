@@ -57,6 +57,7 @@ public class CargarSolicitudDistribucionServlet extends HttpServlet {
             response.getWriter().write("<cantpedida>"+artPed.getCantidadPedida()+"</cantpedida>");
             response.getWriter().write("<stock>"+stock+"</stock>");
             response.getWriter().write("<cantenviada>"+artPed.getCantidadEnviada()+"</cantenviada>");
+            response.getWriter().write("<tienda>"+artPed.getTienda().getNombreTienda()+"</tienda>");
             response.getWriter().write("</articulo>");
 		}
 		response.getWriter().write("</articulos>");

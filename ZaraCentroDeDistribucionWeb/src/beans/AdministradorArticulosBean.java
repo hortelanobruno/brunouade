@@ -113,6 +113,21 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 		}
 		return ret;
 	}
+	
+	public List<ArticuloAFabricarVO> getNuevosArticulosAFabricarVO() {
+		Query q = em.createQuery("SELECT a FROM ArticuloAFabricar a");
+		List l = q.getResultList();
+		ArrayList<ArticuloAFabricarVO> ret = new ArrayList<ArticuloAFabricarVO>();
+		Iterator it = l.iterator();
+		while(it.hasNext()){
+			ArticuloAFabricarVO artVO = ((ArticuloAFabricar)it.next()).getVO();
+			if(artVO.getCantidadAFabricar()==0){
+				ret.add(artVO);
+			}
+			
+		}
+		return ret;
+	}
 
 	public boolean existeArticulo(long codigo) 
 	{
@@ -212,6 +227,7 @@ public class AdministradorArticulosBean implements AdministradorArticulos
 			em.persist(art);
 		}
 	}
+
 	
 	
 }

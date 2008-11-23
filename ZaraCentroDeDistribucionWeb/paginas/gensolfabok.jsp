@@ -24,7 +24,7 @@
 	<div id="mensaje">
 		<ul>
 			<li>
-				<h2>Generar Solicitudes de fabricacion</h2>
+				<h2>Solicitudes de fabricacion</h2>
 				<p>Se genero la solicitud de fabricacion correctamente</p>
 			</li>
 		</ul>

@@ -36,7 +36,7 @@ function fillSolDisRequest(){
         		var div = document.getElementById("tablaDatos");
         		var hidden = "";
         		var datos = "<table width='100%' border='1' cellpadding='1' cellspacing='0' bordercolor='#4D6FAC'>"
-                datos += "<tr><td align='center'>Codigo</td><td align='center'>Descripcion</td><td align='center'>Cantidad Pedida</td><td align='center'>Stock</td><td align='center'>Cantidad Enviada</td><td align='center'>Cantidad a Enviar</td></tr>";
+                datos += "<tr><td align='center'>Codigo</td><td align='center'>Descripcion</td><td>Tienda</td><td align='center'>Cantidad Pedida</td><td align='center'>Stock</td><td align='center'>Cantidad Enviada</td><td align='center'>Cantidad a Enviar</td></tr>";
         		var articulo = req.responseXML.getElementsByTagName("articulo");
         		for(i=0 ; i < articulo.length ; i++){
         			var nodes = articulo[i].childNodes;
@@ -45,8 +45,9 @@ function fillSolDisRequest(){
         			var cantidadpedida = nodes[2].childNodes[0].nodeValue;
         			var stock = nodes[3].childNodes[0].nodeValue;
         			var cantidadenviada = nodes[4].childNodes[0].nodeValue;
+        			var tienda = nodes[5].childNodes[0].nodeValue;
         			var cantidadaenviar = 0;
-        			datos += "<tr><td align='center'>"+codigo+"</td><td align='center'>"+descripcion+"</td><td align='center'>"+cantidadpedida+"</td><td align='center'>"+stock+"</td><td>"+cantidadenviada+"</td><td align='center'><input id='"+i+"' name='cantidadaenviar' type='text' value='"+cantidadaenviar+"' /></td></tr>";
+        			datos += "<tr><td align='center'>"+codigo+"</td><td align='center'>"+descripcion+"</td><td align='center'>"+tienda+"</td><td align='center'>"+cantidadpedida+"</td><td align='center'>"+stock+"</td><td>"+cantidadenviada+"</td><td align='center'><input id='"+i+"' name='cantidadaenviar' type='text' value='"+cantidadaenviar+"' /></td></tr>";
         			hidden += "<input type='hidden' name='codigo' value='"+codigo+"' /><input type='hidden' name='descripcion' value='"+descripcion+"' /><input type='hidden' name='cantidadpedida' value='"+cantidadpedida+"' /><input type='hidden' name='stock' value='"+stock+"' /><input type='hidden' name='cantidadenviada' value='"+cantidadenviada+"' />";
         		}
         		datos += "</table>";

@@ -51,11 +51,13 @@ public interface ServerFacade
 	public SolicitudDistribucionVO obtenerSolicitudDistribucion(int codSolDis);
 	public ArrayList<SolicitudDistribucionVO> getAllSolicitudesDistribucion();
 	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar);	
+	public int getNextIdSolEnv();
 	
 	//panel gen sol fab
 	public ArrayList<ArticuloAFabricarVO> getArticulosAFabricar();
 	public int getNumeroSolFab();
 	public void guardarSolFab(SolicitudFabricaVO solFab);
+	public List<ArticuloAFabricarVO> getNuevosArticulosAFabricarVO();
 	
 	//panel reposicion
 	public int getNextIdArticuloAReponer();
@@ -72,5 +74,6 @@ public interface ServerFacade
 	public boolean existeArticulo(long codigo);//Nuevo hay que hacer
 	public void guardarArticuloHogar(ArticuloHogarVO a) throws ExistingProductException;
 	public void guardarArticuloRopa(ArticuloRopaVO a) throws ExistingProductException;
+	
 	
 }
