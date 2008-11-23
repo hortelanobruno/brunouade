@@ -49,11 +49,11 @@ public class BusinessDelegate
 
 	private synchronized void guardarTiendas(){
 		TiendaVO tienda = new TiendaVO();
-		tienda.setCodigoTienda(22);
+		tienda.setCodigoTienda(Integer.parseInt(Constantes.TIENDA1CODIGO));
 		tienda.setNombreTienda("Paseo Alcorta");
 		this.getModCD().guardarTienda(tienda);
 		tienda = new TiendaVO();
-		tienda.setCodigoTienda(3);
+		tienda.setCodigoTienda(Integer.parseInt(Constantes.TIENDA2CODIGO));
 		tienda.setNombreTienda("Punta Carretas");
 		this.getModCD().guardarTienda(tienda);
 	}

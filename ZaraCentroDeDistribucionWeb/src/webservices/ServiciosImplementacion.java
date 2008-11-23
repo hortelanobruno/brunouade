@@ -207,28 +207,29 @@ public class ServiciosImplementacion {
 		int idAAE = this.getModCD().getNextIdArticuloAEnviar();
 		for (int i = 0; i < artsPed.size(); i++) {
 			int cantPedida = artsPed.get(i).getCantidadPedida();
+			int cantEnviada = artsPed.get(i).getCantidadEnviada();
 			long cod = artsPed.get(i).getArt().getCodigo();
 			int stock = stocks.get(cod);
 			if (stock > 0) {
-				if (stock >= cantPedida) {
+				if (stock >= (cantPedida-cantEnviada)) {
 					// se puede mandar todo el articulo
 					artsPed.get(i).setCantidadEnviada(cantPedida);
 					if (artsPed.get(i).getTienda().getCodigoTienda() == codTienda1) {
 						artAEnv = new ArticuloAEnviarVO();
-						artAEnv.setCantidadAEnviar(cantPedida);
+						artAEnv.setCantidadAEnviar(cantPedida-cantEnviada);
 						artAEnv.setIdPedido(soldis.getIdPedido());
 						artAEnv.setArt(this.getModCD().getArticulo(cod));
 						artAEnv.setIdAAE(idAAE);
 						artsAEnvTienda1.add(artAEnv);
 					} else {
 						artAEnv = new ArticuloAEnviarVO();
-						artAEnv.setCantidadAEnviar(cantPedida);
+						artAEnv.setCantidadAEnviar(cantPedida-cantEnviada);
 						artAEnv.setIdPedido(soldis.getIdPedido());
 						artAEnv.setArt(this.getModCD().getArticulo(cod));
 						artAEnv.setIdAAE(idAAE);
 						artsAEnvTienda2.add(artAEnv);
 					}
-					stocks.put(cod, stocks.get(cod) - cantPedida);
+					stocks.put(cod, stocks.get(cod) - (cantPedida-cantEnviada));
 				} else {
 					artsPed.get(i).setCantidadEnviada(stock);
 					if (artsPed.get(i).getTienda().getCodigoTienda() == codTienda1) {
@@ -251,7 +252,6 @@ public class ServiciosImplementacion {
 				idAAE++;
 			}
 		}
-		
 		soldis.setArticulosPedidos(artsPed);
 		int aux = 0;
 		for (int i = 0; i < artsPed.size(); i++) {
@@ -285,14 +285,14 @@ public class ServiciosImplementacion {
 			Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
 			boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 			if (b) {
-				logger.debug("Se envio la solicitud de envio correctamente a la Tienda 3 (devolvio true)");
+				logger.debug("Se envio la solicitud de envio correctamente a la Tienda "+Constantes.TIENDA1CODIGO+" (devolvio true)");
 				this.getModCD().guardarSolEnv(solEnv);
 				// Actualizo stocks
 				this.getModCD().actualizarStock(stocks);
 				this.getModCD().actualizarSolDis(soldis);
 				aux2++;
 			} else {
-				logger.debug("Error al enviar la solicitud de envio a la Tienda 3 (devolvio false)");
+				logger.debug("Error al enviar la solicitud de envio a la Tienda "+Constantes.TIENDA1CODIGO+" (devolvio false)");
 			}
 		}
 		if (!artsAEnvTienda2.isEmpty()) {
@@ -311,14 +311,14 @@ public class ServiciosImplementacion {
 			Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA2;
 			boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 			if (b) {
-				logger.debug("Se envio la solicitud de envio correctamente a la Tienda 22 (devolvio true)");
+				logger.debug("Se envio la solicitud de envio correctamente a la Tienda "+Constantes.TIENDA2CODIGO+" (devolvio true)");
 				this.getModCD().guardarSolEnv(solEnv);
-				if(aux>0){
+				if(aux==0){
 					this.getModCD().actualizarStock(stocks);
 					this.getModCD().actualizarSolDis(soldis);
 				}
 			} else {
-				logger.debug("Error al enviar la solicitud de envio a la Tienda 22 (devolvio false)");
+				logger.debug("Error al enviar la solicitud de envio a la Tienda "+Constantes.TIENDA2CODIGO+" (devolvio false)");
 			}
 		}
 		
