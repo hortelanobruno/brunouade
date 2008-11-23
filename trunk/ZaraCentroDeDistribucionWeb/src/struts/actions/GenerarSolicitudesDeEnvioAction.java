@@ -102,14 +102,15 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
 				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 				if(b){
-					logger.debug("Se envio la solicitud de envio correctamente a la Tienda 3 (devolvio true)");
+					logger.debug("Se envio la solicitud de envio correctamente a la Tienda "+Constantes.TIENDA1CODIGO+" (devolvio true)");
 					bd.guardarSolicitudDeEnvio(solEnv);
 					bd.actualizarStock(articulosAEnviar);
 					bd.actualizarSolicitudDistribucion(solDis);
 					aux++;
 					request.setAttribute("tienda1", "ok");
+					request.setAttribute("tienda1cod", Constantes.TIENDA1CODIGO);
 				}else{
-					logger.debug("Error al enviar la solicitud de envio a la Tienda 3 (devolvio false)");
+					logger.debug("Error al enviar la solicitud de envio a la Tienda "+Constantes.TIENDA1CODIGO+" (devolvio false)");
 					request.setAttribute("tienda1", "no");
 				}
 			}
@@ -128,15 +129,16 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA2;
 				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 				if(b){
-					logger.debug("Se envio la solicitud de envio correctamente a la Tienda 22 (devolvio true)");
+					logger.debug("Se envio la solicitud de envio correctamente a la Tienda "+Constantes.TIENDA2CODIGO+" (devolvio true)");
 					bd.guardarSolicitudDeEnvio(solEnv);
-					if(aux>0){
+					if(aux==0){
 						bd.actualizarStock(articulosAEnviar);
 						bd.actualizarSolicitudDistribucion(solDis);
 					}
 					request.setAttribute("tienda2", "ok");
+					request.setAttribute("tienda2cod", Constantes.TIENDA2CODIGO);
 				}else{
-					logger.debug("Error al enviar la solicitud de envio a la Tienda 22 (devolvio false)");
+					logger.debug("Error al enviar la solicitud de envio a la Tienda "+Constantes.TIENDA2CODIGO+" (devolvio false)");
 					request.setAttribute("tienda2", "no");
 				}
 			}

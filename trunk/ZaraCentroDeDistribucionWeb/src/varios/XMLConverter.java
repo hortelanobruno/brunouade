@@ -102,7 +102,6 @@ public class XMLConverter
 				List hijos = items.getChildren();
 				List<ArticuloPedidoVO> articulos = new ArrayList<ArticuloPedidoVO>();
 				String cod,nombre,referencia,cantidad;
-				
 				for(Object hijo : hijos){
 					soldis.setIdPedido(Integer.parseInt(((Element)hijo).getChild("idPedido").getText()));
 					ArticuloPedidoVO articulo = new ArticuloPedidoVO();
