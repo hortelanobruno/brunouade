@@ -8,9 +8,11 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Vector;
 
 import org.apache.log4j.Logger;
@@ -212,13 +214,27 @@ public class XMLConverter
 		xmlCentro.setLongitud(solFab.getCdVO().getLongitud());
 		
 		Vector<XMLArticuloFabrica> xmlArticulos = new Vector<XMLArticuloFabrica>();
+		Map<Long,Integer> mapa = new HashMap<Long,Integer>();
 		
 		for(Iterator i = solFab.getArticulosAFabricar().iterator(); i.hasNext();)
 		{
 			ArticuloAFabricarVO arVO = (ArticuloAFabricarVO)i.next();
-			XMLArticuloFabrica xmlArtFab = new XMLArticuloFabrica();
-			xmlArtFab.setCod(arVO.getArt().getCodigo());
-			xmlArtFab.setCant(arVO.getCantidadAFabricar());
+			long cod = arVO.getArt().getCodigo();
+			int cant = arVO.getCantidadAFabricar();
+			if(!mapa.containsKey(cod)){
+				mapa.put(cod,cant);
+			}else{
+				mapa.put(cod, cant + mapa.get(cod));
+			}
+		}
+		
+		XMLArticuloFabrica xmlArtFab;
+		Object[] keys = mapa.keySet().toArray();
+		Object[] values = mapa.values().toArray();
+		for(int i=0 ; i < mapa.size() ; i++){
+			xmlArtFab = new XMLArticuloFabrica();
+			xmlArtFab.setCod((Long)keys[i]);
+			xmlArtFab.setCant((Integer)values[i]);
 			xmlArticulos.add(xmlArtFab);
 		}
 		

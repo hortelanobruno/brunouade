@@ -92,8 +92,7 @@ public class ServiciosImplementacion {
 
 	public boolean recibirSolDis(String in0) {
 		System.out.println("Esta llegando");
-		SolicitudDistribucionVO soldis = XMLConverter
-				.getSolDisVOFromString(in0);// Setea la fecha y los
+		SolicitudDistribucionVO soldis = XMLConverter.getSolDisVOFromString(in0);// Setea la fecha y los
 		// articulos
 		if (soldis != null) {
 			logger.debug("Se esta procesando una Solicitud Distribucion");
@@ -129,12 +128,14 @@ public class ServiciosImplementacion {
 			// Hay que generar lo que puedo y lo que no puedo lo mando a
 			// fabricar
 			//this.enviarArticulosDisponibles(soldis);
-			this.getModCD().guardarSolicitudDistribucion(soldis);
 			if (soldis.getCerrada() == false) {
 				// genero articulos a fabricar
 				List<ArticuloAFabricarVO> artiAFab = generarArticulosAFabricar(soldis);
+				this.getModCD().guardarSolicitudDistribucion(soldis);
 				this.getModCD().guardarArticulosAFabricar(artiAFab);
 				this.getModCD().actualizarSolDis(soldis);
+			}else{
+				this.getModCD().guardarSolicitudDistribucion(soldis);
 			}
 			logger.debug("Solicitud de Distribucion guardada en el Centro de Distribucion");
 			return true;
@@ -159,12 +160,34 @@ public class ServiciosImplementacion {
 			if(stock <cantPed){
 				if (cantEnv < cantPed) {
 					artAFab = new ArticuloAFabricarVO();
-					artAFab.setArt(this.getModCD().getArticulo(artsPed.get(i).getArt()
-							.getCodigo()));
+					artAFab.setArt(this.getModCD().getArticulo(artsPed.get(i).getArt().getCodigo()));
 					artAFab.setCantidadAFabricar(0);
 					artAFab.setCantidadPedida(cantPed);
 					artAFab.setCantidadRecibida(0);
-					artAFab.setCantMinAPedir((cantPed) * 2);
+					artAFab.setCantMinAPedir((cantPed-stock) * 2);
+					artAFab.setIdAAF(idArtFab++);
+					artAFab.setSol(soldis);
+					artsAFab.add(artAFab);
+				}
+			}else{
+				List<SolicitudDistribucionVO> sols =this.getModCD().obtenerSolDisAbiertas();
+				int cantaux = 0;
+				for(int j=0 ; j < sols.size() ; j++){
+					Iterator<ArticuloPedidoVO> it = sols.get(j).getArticulosPedidos().iterator();
+					while(it.hasNext()){
+						ArticuloPedidoVO avo = it.next();
+						if(avo.getArt().getCodigo()==cod){
+							cantaux += (avo.getCantidadPedida()-avo.getCantidadEnviada());
+						}
+					}
+				}
+				if(stock < cantaux+cantPed){
+					artAFab = new ArticuloAFabricarVO();
+					artAFab.setArt(this.getModCD().getArticulo(artsPed.get(i).getArt().getCodigo()));
+					artAFab.setCantidadAFabricar(0);
+					artAFab.setCantidadPedida(cantPed);
+					artAFab.setCantidadRecibida(0);
+					artAFab.setCantMinAPedir(((cantaux+cantPed)-(stock)) * 2);
 					artAFab.setIdAAF(idArtFab++);
 					artAFab.setSol(soldis);
 					artsAFab.add(artAFab);
@@ -228,8 +251,7 @@ public class ServiciosImplementacion {
 				idAAE++;
 			}
 		}
-		// Actualizo stocks
-		this.getModCD().actualizarStock(stocks);
+		
 		soldis.setArticulosPedidos(artsPed);
 		int aux = 0;
 		for (int i = 0; i < artsPed.size(); i++) {
@@ -246,6 +268,7 @@ public class ServiciosImplementacion {
 			soldis.setCerrada(false);
 		}
 		// Genero soldis a las tiendas
+		int aux2 = 0;
 		if (!artsAEnvTienda1.isEmpty()) {
 			// Genero envio a la tienda 1
 			logger.debug("Se va a generar automaticamente una solicitud de envio hacia la tienda");
@@ -262,10 +285,14 @@ public class ServiciosImplementacion {
 			Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
 			boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 			if (b) {
-				logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+				logger.debug("Se envio la solicitud de envio correctamente a la Tienda 3 (devolvio true)");
 				this.getModCD().guardarSolEnv(solEnv);
+				// Actualizo stocks
+				this.getModCD().actualizarStock(stocks);
+				this.getModCD().actualizarSolDis(soldis);
+				aux2++;
 			} else {
-				logger.debug("Error al enviar la solicitud de envio a la tienda");
+				logger.debug("Error al enviar la solicitud de envio a la Tienda 3 (devolvio false)");
 			}
 		}
 		if (!artsAEnvTienda2.isEmpty()) {
@@ -284,13 +311,17 @@ public class ServiciosImplementacion {
 			Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA2;
 			boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 			if (b) {
-				logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+				logger.debug("Se envio la solicitud de envio correctamente a la Tienda 22 (devolvio true)");
 				this.getModCD().guardarSolEnv(solEnv);
+				if(aux>0){
+					this.getModCD().actualizarStock(stocks);
+					this.getModCD().actualizarSolDis(soldis);
+				}
 			} else {
-				logger.debug("Error al enviar la solicitud de envio a la tienda");
+				logger.debug("Error al enviar la solicitud de envio a la Tienda 22 (devolvio false)");
 			}
 		}
-		this.getModCD().actualizarSolDis(soldis);
+		
 	}
 	
 }

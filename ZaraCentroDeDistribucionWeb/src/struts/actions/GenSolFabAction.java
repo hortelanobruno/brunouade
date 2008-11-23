@@ -2,7 +2,9 @@ package struts.actions;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -56,14 +58,24 @@ public class GenSolFabAction extends Action
 			CargarArtFabForm gsfForm = (CargarArtFabForm) form;
 			List<ArticuloAFabricarVO> artAFab = new ArrayList<ArticuloAFabricarVO>();
 			List<ArticuloAFabricarVO> artFabricandose = new ArrayList<ArticuloAFabricarVO>();
-			
+			Map<Long,Integer> stocks = bd.getStocks();
+			int aux = 0;
 			for(int i=0; i < afvo.size() ; i++){
 				int cant = ((ArticuloAFabricarVO)afvo.get(i)).getCantidadAFabricar();
+				long cod = ((ArticuloAFabricarVO)afvo.get(i)).getArt().getCodigo();
 				if(cant == 0){
 					artAFab.add(((ArticuloAFabricarVO)afvo.get(i)));
 				}else{
 					artFabricandose.add(((ArticuloAFabricarVO)afvo.get(i)));
 				}
+				if(stocks.get(cod) > 0){
+					aux++;
+				}
+			}
+			if(aux > 0){
+				request.setAttribute("stock", "si");
+			}else{
+				request.setAttribute("stock", "no");
 			}
 			gsfForm.setArticulosAFabricar(artAFab);
 			gsfForm.setArticulosFabricandose(artFabricandose);

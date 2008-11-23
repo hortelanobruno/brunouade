@@ -70,7 +70,7 @@
 						out.print("<label>No se pudieron atender a todas las solicitudes</label>&nbsp;&nbsp;&nbsp;&nbsp;");
 						out.print("<input type='submit' name='Submit2' value='Atender pedidos' />");
 					}else{
-						out.print("<label>");
+						out.print("<label class='error'>");
 						out.print("Se atendieron a todas las solicitudes");
 						out.print("</label>");
 					}%>

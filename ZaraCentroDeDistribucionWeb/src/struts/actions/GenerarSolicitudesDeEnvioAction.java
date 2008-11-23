@@ -86,8 +86,7 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 			if (cerrado){
 				solDis.setCerrada(cerrado);
 			}
-			bd.actualizarStock(articulosAEnviar);
-			bd.actualizarSolicitudDistribucion(solDis);
+			int aux = 0;
 			if (!artsAEnvTienda1.isEmpty()) {
 				//Genero envio a la tienda 1
 				SolicitudEnvioVO solEnv = new SolicitudEnvioVO();
@@ -103,10 +102,15 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA1;
 				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 				if(b){
-					logger.debug("Se envio la solicitud de envio correctamente a la tienda");bd.guardarSolicitudDeEnvio(solEnv);
+					logger.debug("Se envio la solicitud de envio correctamente a la Tienda 3 (devolvio true)");
+					bd.guardarSolicitudDeEnvio(solEnv);
+					bd.actualizarStock(articulosAEnviar);
+					bd.actualizarSolicitudDistribucion(solDis);
+					aux++;
+					request.setAttribute("tienda1", "ok");
 				}else{
-					logger.debug("Error al enviar la solicitud de envio a la tienda");
-					return mapping.findForward("failure");
+					logger.debug("Error al enviar la solicitud de envio a la Tienda 3 (devolvio false)");
+					request.setAttribute("tienda1", "no");
 				}
 			}
 			if (!artsAEnvTienda2.isEmpty()) {
@@ -124,11 +128,16 @@ public class GenerarSolicitudesDeEnvioAction extends Action
 				Constantes.IP_TINEDADINAMICA = Constantes.IP_TIENDA2;
 				boolean b = envSolEnv.enviarSolEnv(xmlSolEnv);
 				if(b){
-					logger.debug("Se envio la solicitud de envio correctamente a la tienda");
+					logger.debug("Se envio la solicitud de envio correctamente a la Tienda 22 (devolvio true)");
 					bd.guardarSolicitudDeEnvio(solEnv);
+					if(aux>0){
+						bd.actualizarStock(articulosAEnviar);
+						bd.actualizarSolicitudDistribucion(solDis);
+					}
+					request.setAttribute("tienda2", "ok");
 				}else{
-					logger.debug("Error al enviar la solicitud de envio a la tienda");
-					return mapping.findForward("failure");
+					logger.debug("Error al enviar la solicitud de envio a la Tienda 22 (devolvio false)");
+					request.setAttribute("tienda2", "no");
 				}
 			}
 			return mapping.findForward("success");

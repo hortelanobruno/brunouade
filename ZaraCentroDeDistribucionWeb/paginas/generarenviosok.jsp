@@ -26,6 +26,19 @@
 			<li>
 				<h2>Generar envios</h2>
 				<p>Se genero la solicitud de envio correctamente.</p>
+				<% String tienda1 = (String)request.getAttribute("tienda1");
+				String tienda2 = (String)request.getAttribute("tienda2");
+				if((tienda1 != null)&&(tienda1.equalsIgnoreCase("ok"))){
+					out.print("<label style='color: black'>Tienda 3 no reporto errores</label>");	
+				}else if(tienda1 != null){
+					out.print("<label style='color: red'>Tienda 3  reporto error</label>");
+				}
+				if((tienda2 != null)&&(tienda2.equalsIgnoreCase("ok"))){
+					out.print("<label style='color: black'>Tienda 22 no reporto errores</label>");	
+				}else if(tienda2 != null){
+					out.print("<label style='color: red'>Tienda 22  reporto error</label>");
+				}
+				%>	
 			</li>
 		</ul>
 	</div>
