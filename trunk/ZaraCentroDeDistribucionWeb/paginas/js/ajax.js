@@ -47,7 +47,7 @@ function fillSolDisRequest(){
         			var cantidadenviada = nodes[4].childNodes[0].nodeValue;
         			var tienda = nodes[5].childNodes[0].nodeValue;
         			var cantidadaenviar = 0;
-        			datos += "<tr><td align='center'>"+codigo+"</td><td align='center'>"+descripcion+"</td><td align='center'>"+tienda+"</td><td align='center'>"+cantidadpedida+"</td><td align='center'>"+stock+"</td><td>"+cantidadenviada+"</td><td align='center'><input id='"+i+"' name='cantidadaenviar' type='text' value='"+cantidadaenviar+"' /></td></tr>";
+        			datos += "<tr><td align='center'>"+codigo+"</td><td align='center'>"+descripcion+"</td><td align='center'>"+tienda+"</td><td align='center'>"+cantidadpedida+"</td><td align='center'>"+stock+"</td><td align='center'>"+cantidadenviada+"</td><td align='center'><input id='"+i+"' name='cantidadaenviar' type='text' value='"+cantidadaenviar+"' /></td></tr>";
         			hidden += "<input type='hidden' name='codigo' value='"+codigo+"' /><input type='hidden' name='descripcion' value='"+descripcion+"' /><input type='hidden' name='cantidadpedida' value='"+cantidadpedida+"' /><input type='hidden' name='stock' value='"+stock+"' /><input type='hidden' name='cantidadenviada' value='"+cantidadenviada+"' />";
         		}
         		datos += "</table>";

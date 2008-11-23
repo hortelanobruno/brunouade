@@ -8,7 +8,7 @@ public class Constantes
     public static final String IP_CENTRODISTRIBUCION = "192.168.1.102";
     public static final String IP_FABRICA = "192.168.1.101";
     public static final String IP_LACORUNIA = "192.168.1.101";
-    public static final String IP_TIENDA1 = "192.168.1.101";//YAS
+    public static final String IP_TIENDA1 = "190.17.140.136";//YAS
     public static final String IP_TIENDA2 = "192.168.1.101";//GABY
     public static String IP_TINEDADINAMICA = "";
 }

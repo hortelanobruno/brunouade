@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-ERROR EN EL SISTEMA
+		ERROR EN EL SISTEMA
 </body>
 </html>

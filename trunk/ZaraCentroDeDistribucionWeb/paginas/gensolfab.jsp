@@ -59,7 +59,13 @@
                             </tbody>
 					  </table>
                   </div>
-                  </br>
+                  <br>
+                  <%String label = request.getAttribute("stock").toString();
+                  if(label.equalsIgnoreCase("si")){
+						out.print("<label>Hay articulos para atender solicitudes</label>&nbsp;&nbsp;&nbsp;&nbsp;");
+					}
+                  %>
+                  <br>
 					<h2 class="title">Articulos fabricandose</h2>
 					<p class="title">&nbsp;</p>
 					<div id="tablaDatos">
