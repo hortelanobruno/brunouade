@@ -234,4 +234,12 @@ public class ServerFacadeBean implements ServerFacade
 	public void actualizarStock(ArrayList<ArticuloAEnviarVO> articulosAEnviar) {
 		this.admArt.actualizarStock(articulosAEnviar);
 	}
+
+	public int getNextIdSolEnv() {
+		return this.admSol.getNextIdSolEnv();
+	}
+
+	public List<ArticuloAFabricarVO> getNuevosArticulosAFabricarVO() {
+		return this.admArt.getNuevosArticulosAFabricarVO();
+	}
 }

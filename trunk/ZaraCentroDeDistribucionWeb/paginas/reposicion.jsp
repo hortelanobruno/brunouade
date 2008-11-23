@@ -39,11 +39,11 @@
 						<th>Solicitud de Reposicion</th>
 						<th>Solicitud de Fabricacion</th>
 						<th>Fabrica</th>
-						<th>Codigo</th>
-						<th>Descripcion</th>
+						<th>Codigo Articulo</th>
+						<th>Descripcion Articulo</th>
 						<th>Cantidad Pedida</th>
 						<th>Cantidad a Fabricar</th>
-						<th>Cantidad Recibida</th>
+						<th>Cantidad Recibida Anteriormente</th>
 						<th>Cantidad a Reponer</th>
 					</tr>
                   </thead>
@@ -64,9 +64,10 @@
                     </tbody>
 				</table>
 				</div>
+			<br><br>	
 				<% String boton = request.getAttribute("prenderBoton").toString();
 					if(boton.equalsIgnoreCase("si")){
-						out.print("<label>No se pudieron atender a todas las solicitudes</label>");
+						out.print("<label>No se pudieron atender a todas las solicitudes</label>&nbsp;&nbsp;&nbsp;&nbsp;");
 						out.print("<input type='submit' name='Submit2' value='Atender pedidos' />");
 					}else{
 						out.print("<label>");
@@ -74,6 +75,7 @@
 						out.print("</label>");
 					}%>
 	      </form>
+	      <br><br>
 	      <form id="form1" name="form1" method="post" action="index.jsp">
 	      <label>
 	      <input type="submit" name="Submit" value="Volver" />

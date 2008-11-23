@@ -148,9 +148,12 @@ public class XMLConverter
 	
 	public static SolicitudDeReposicionVO getSolRepVOFromString(String in0, int nextID)
 	{
+		
 		SAXBuilder builder = new SAXBuilder();
 		Reader in = new StringReader(in0);
 		Document doc;
+		Logger logger = Logger.getLogger("zara.centro");
+		int aux = 0;
 		try {
 			doc = builder.build(in);
 			Element root = doc.getRootElement();
@@ -161,16 +164,25 @@ public class XMLConverter
 			ArticuloHeaderVO artH = new ArticuloHeaderVO();
 			artH.setCodigo(Long.parseLong(root.getChild("productoList").getChild("int").getText()));
 			art.setArt(artH);
+			aux++;
 			art.setCantidadRecibida((int)Float.parseFloat(root.getChild("cantidad").getText()));
 			art.setIdAAR(nextID);
 			arts.add(art);
 			solrep.setArticulosAReponer(arts);
 			return solrep;
 		} catch (JDOMException e) {
-			e.printStackTrace();
+			if(aux==0){
+				logger.debug("Error al parsear la solicitud de reposicion. Error en el codigo del articulo");
+			}else{
+				logger.debug("Error al parsear la solicitud de reposicion. Error en la cantidad enviada del articulo");
+			}
 			return null;
 		} catch (IOException e) {
-			e.printStackTrace();
+			if(aux==0){
+				logger.debug("Error al parsear la solicitud de reposicion. Error en el codigo del articulo");
+			}else{
+				logger.debug("Error al parsear la solicitud de reposicion. Error en la cantidad enviada del articulo");
+			}
 			return null;
 		}
 	}

@@ -39,9 +39,15 @@
 					</logic:iterate>
 		            </select>
 		            </div>
+		           <br>
+		           <br>
+		           <br> 
                 <div id="tablaDatos">
                 </div>
-                  <input name="buttonEnvio" type="submit" id="buttonEnvio" value="Generar solicitud de envio" />
+                <br>
+	           <br>
+	           <br>
+                  <input name="buttonEnvio" type="button" id="buttonEnvio" value="Generar solicitud de envio" onclick="validarEnvio()" />&nbsp;&nbsp;&nbsp;<label class="error" id="msj" style="visibility:hidden"></label>
            </form>
 			</div>
 		</div>

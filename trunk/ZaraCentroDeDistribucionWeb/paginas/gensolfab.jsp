@@ -37,6 +37,7 @@
 							<tr>
 							<th>Codigo</th>
 							<th>Descripcion</th>
+							<th>Solicitud Distribucion</th>
 							<th>Stock actual</th>
 							<th>Cantidad pedida</th>
 							<th>Cantidad minimio a pedir</th>
@@ -48,6 +49,7 @@
 							<tr>
 							<td><bean:write name='articulos' property='art.codigo' /><input type="hidden" name="codigo" value="<bean:write name='articulos' property='art.codigo' />" /></td>
 							<td><bean:write name="articulos" property="art.descripcion" /><input type="hidden" name="descripcion" value="<bean:write name="articulos" property="art.descripcion" />" /></td>
+							<td><bean:write name="articulos" property="sol.idDis" /><input type="hidden" name="descripcion" value="<bean:write name="articulos" property="sol.idDis" />" /></td>
 							<td><bean:write name="articulos" property="art.cantidad" /><input type="hidden" name="stock" value="<bean:write name="articulos" property="art.cantidad" />" /></td>
 							<td><bean:write name="articulos" property="cantidadPedida" /><input type="hidden" name="cantPedida" value="<bean:write name="articulos" property="cantidadPedida" />" /></td>
 							<td><bean:write name="articulos" property="cantMinAPedir" /><input type="hidden" name="cantMinAPedir" value="<bean:write name="articulos" property="cantMinAPedir" />" /></td>
@@ -57,6 +59,7 @@
                             </tbody>
 					  </table>
                   </div>
+                  </br>
 					<h2 class="title">Articulos fabricandose</h2>
 					<p class="title">&nbsp;</p>
 					<div id="tablaDatos">
@@ -81,6 +84,8 @@
                             <t/body>
 					  </table>
                   </div>
+                  </br>
+                  </br>
                   </br>
 					<i>Generar solicitud Fabricacion</i>&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="button" value="Generar" onclick="comprobarCantAPed()" /><label class="error" id="msj" style="visibility:hidden"></label>

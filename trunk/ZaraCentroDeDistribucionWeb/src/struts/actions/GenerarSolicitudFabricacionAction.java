@@ -5,7 +5,9 @@ import integracion.ImplementacionMandarSolFab;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -56,7 +58,7 @@ public class GenerarSolicitudFabricacionAction extends Action
 	{
 		try {
 			GenerarSolFabForm frm = (GenerarSolFabForm) form;
-			List<ArticuloAFabricarVO> arts = bd.getArticulosAFabricarVO();
+			List<ArticuloAFabricarVO> arts = bd.getNuevosArticulosAFabricarVO();
 			List<ArticuloAFabricarVO> articulosAFAb = new ArrayList<ArticuloAFabricarVO>();
 			for(int i=0;i<frm.getCodigo().length;i++){
 				long codigo = Long.parseLong(frm.getCodigo()[i]);
@@ -92,18 +94,19 @@ public class GenerarSolicitudFabricacionAction extends Action
 				logger.debug("Se envio la solicitud de fabricacion a la Fabrica");
 				if(estado){
 					bd.guardarSolicitudFabricacion(solFab);
-					logger.debug("La solicitud de fabricacion fue recibida con exito");
+					logger.debug("La solicitud de fabricacion fue recibida con exito (devolvio true)");
 					return (mapping.findForward("success"));
 				}else{
-					logger.debug("La recepcion de la solicitud de fabricacion ha fallado");
+					logger.debug("La recepcion de la solicitud de fabricacion ha fallado (devolvio false)");
 					return (mapping.findForward("failure"));
 				}
+			}else{
+				logger.debug("Error al generar la solicitud de fabricacion");
+				return (mapping.findForward("failure"));
 			}
 		} catch (NumberFormatException e) {
 			logger.debug("Error al generar la solicitud de fabricacion");
-			e.printStackTrace();
 			return (mapping.findForward("failure"));
 		}
-		return (mapping.findForward("failure"));
 	}
 }

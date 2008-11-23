@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import vo.ArticuloAFabricarVO;
 import vo.SolicitudDeReposicionVO;
 import vo.SolicitudDistribucionVO;
 import vo.SolicitudEnvioVO;
@@ -227,6 +228,17 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 			return a+1;
 		}
 	}
+	
+	public int getNextIdSolEnv() {
+		Query q = em.createQuery("SELECT MAX(s.idEnv) FROM SolicitudEnvioATienda s");
+		List l = q.getResultList();
+		if(l.get(0) == null){
+			return 1;
+		}else{
+			int a = (Integer) l.get(0);
+			return a+1;
+		}
+	}
 
 	public List<SolicitudDeReposicionVO> obtenerSolicitudesDeReposicionAProcesar() {
 		List<SolicitudDeReposicionVO> solicitudes = new ArrayList<SolicitudDeReposicionVO>();
@@ -272,4 +284,8 @@ public class AdministradorSolicitudesBean implements AdministradorSolicitudes
 		}
 		return sols;
 	}
+
+	
+
+	
 }

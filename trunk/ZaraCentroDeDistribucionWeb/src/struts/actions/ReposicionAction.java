@@ -143,7 +143,7 @@ public class ReposicionAction extends Action
 		{
 			SolicitudDistribucionVO sol = solsDisAbiertas.get(i);
 			serviciosImplementacion.enviarArticulosDisponibles(sol);//Este metodo ya lo usamos para gensoldis
-			bd.actualizarSolicitudDistribucion(sol);
+			//bd.actualizarSolicitudDistribucion(sol);
 		}
 	}
 
@@ -210,7 +210,7 @@ public class ReposicionAction extends Action
 					min = solsFab.get(i);
 				}
 				
-				if(solsFab.get(i).getIdFab()>min.getIdFab())
+				if(solsFab.get(i).getIdFab()<min.getIdFab())
 				{
 					min = solsFab.get(i);
 				}
@@ -226,6 +226,11 @@ public class ReposicionAction extends Action
 		List<ArticuloAFabricarVO> artsFab = new ArrayList<ArticuloAFabricarVO>();
 		for(int i=0 ; i < allSolsFab.size() ; i++){
 			artsFab.addAll(allSolsFab.get(i).getArticulosAFabricar());
+		}
+		for(int i=0 ; i < artsFab.size() ; i++){
+			if(artsFab.get(i).getCantidadAFabricar() <= artsFab.get(i).getCantidadRecibida()){
+				artsFab.remove(i);
+			}
 		}
 		SolicitudDeReposicionVO solRep = null;
 		ArticuloAReponerWebVO artWeb = null;
