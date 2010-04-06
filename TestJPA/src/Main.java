@@ -1,7 +1,11 @@
 
 import portal.db.controller.PackEntityJpaController;
 import portal.db.entity.PackEntity;
+import portal.util.MetricPrice;
 import portal.util.PlanType;
+import portal.util.Price;
+import portal.util.Time;
+import portal.util.Volume;
 
 /*
  * To change this template, choose Tools | Templates
@@ -23,13 +27,24 @@ public class Main {
 
     private void solver() {
         PackEntityJpaController con = new PackEntityJpaController();
-        PackEntity entity = new PackEntity();
-        entity.setDuration(100L);
-        entity.setName("Pack 2");
-        entity.setPackValue(300L);
-        entity.setPlanType(PlanType.MIXTO);
-        entity.setPrice(30D);
-        entity.setStock(300);
-        con.create(entity);
+
+        PackEntity ent = con.findPackEntity(2L);
+        System.out.println("aaaaa");
+
+
+
+
+
+
+
+
+//        PackEntity entity = new PackEntity();
+//        entity.setDuration(new Time(100L));
+//        entity.setName("Pack 2");
+//        entity.setPackValue(new Volume(300L));
+//        entity.setPlanType(PlanType.MIXTO);
+//        entity.setPrice(new Price(MetricPrice.PESOS, 3.3D));
+//        entity.setStock(300);
+//        con.create(entity);
     }
 }

@@ -12,6 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import portal.util.PlanType;
+import portal.util.Price;
+import portal.util.Time;
+import portal.util.Volume;
 import portal.vo.PackVO;
 
 /**
@@ -29,11 +32,11 @@ public class PackEntity implements Serializable {
     @Column(name = "NANE")
     private String name;
     @Column(name = "PRICE")
-    private Double price;
+    private Price price;
     @Column(name = "DURATION")
-    private Long duration;//seconds
+    private Time duration;//seconds
     @Column(name = "PACK_VALUE")
-    private Long packValue;//kb
+    private Volume packValue;//kb
     @Column(name = "STOCK")
     private Integer stock;
     @Column(name = "PLAN_TYPE")
@@ -47,12 +50,28 @@ public class PackEntity implements Serializable {
         this.planType = planType;
     }
 
-    public Long getDuration() {
+    public Time getDuration() {
         return duration;
     }
 
-    public void setDuration(Long duration) {
+    public void setDuration(Time duration) {
         this.duration = duration;
+    }
+
+    public Volume getPackValue() {
+        return packValue;
+    }
+
+    public void setPackValue(Volume packValue) {
+        this.packValue = packValue;
+    }
+
+    public Price getPrice() {
+        return price;
+    }
+
+    public void setPrice(Price price) {
+        this.price = price;
     }
 
     public String getName() {
@@ -61,22 +80,6 @@ public class PackEntity implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getPackValue() {
-        return packValue;
-    }
-
-    public void setPackValue(Long packValue) {
-        this.packValue = packValue;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
     }
 
     public Integer getStock() {
@@ -97,21 +100,21 @@ public class PackEntity implements Serializable {
 
     public PackVO getVO() {
         PackVO vo = new PackVO();
-        vo.setDuration(duration);
-        vo.setId(id);
-        vo.setName(name);
-        vo.setPackValue(packValue);
-        vo.setPrice(price);
+//        vo.setDuration(duration);
+//        vo.setId(id);
+//        vo.setName(name);
+//        vo.setPackValue(packValue);
+//        vo.setPrice(price);
         vo.setStock(stock);
         return vo;
     }
 
     public void setVO(PackVO vo) {
-        this.setDuration(vo.getDuration());
-        this.setId(vo.getId());
-        this.setName(vo.getName());
-        this.setPackValue(vo.getPackValue());
-        this.setPrice(vo.getPrice());
+//        this.setDuration(vo.getDuration());
+//        this.setId(vo.getId());
+//        this.setName(vo.getName());
+//        this.setPackValue(vo.getPackValue());
+//        this.setPrice(vo.getPrice());
         this.setStock(vo.getStock());
     }
 
