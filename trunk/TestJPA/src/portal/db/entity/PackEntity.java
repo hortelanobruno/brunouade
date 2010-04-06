@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package portal.db.entity;
 
 import java.io.Serializable;
@@ -12,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import portal.util.PlanType;
 import portal.vo.PackVO;
 
 /**
@@ -19,22 +19,33 @@ import portal.vo.PackVO;
  * @author brunoli
  */
 @Entity
-@Table(name="PACKS")
+@Table(name = "PACKS")
 public class PackEntity implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name="NANE")
+    @Column(name = "NANE")
     private String name;
-    @Column(name="PRICE")
+    @Column(name = "PRICE")
     private Double price;
-    @Column(name="DURATION")
+    @Column(name = "DURATION")
     private Long duration;//seconds
-    @Column(name="PACK_VALUE")
+    @Column(name = "PACK_VALUE")
     private Long packValue;//kb
-    @Column(name="STOCK")
+    @Column(name = "STOCK")
     private Integer stock;
+    @Column(name = "PLAN_TYPE")
+    private PlanType planType;
+
+    public PlanType getPlanType() {
+        return planType;
+    }
+
+    public void setPlanType(PlanType planType) {
+        this.planType = planType;
+    }
 
     public Long getDuration() {
         return duration;
@@ -84,7 +95,7 @@ public class PackEntity implements Serializable {
         this.id = id;
     }
 
-    public PackVO getVO(){
+    public PackVO getVO() {
         PackVO vo = new PackVO();
         vo.setDuration(duration);
         vo.setId(id);
@@ -95,7 +106,7 @@ public class PackEntity implements Serializable {
         return vo;
     }
 
-    public void setVO(PackVO vo){
+    public void setVO(PackVO vo) {
         this.setDuration(vo.getDuration());
         this.setId(vo.getId());
         this.setName(vo.getName());
@@ -128,5 +139,4 @@ public class PackEntity implements Serializable {
     public String toString() {
         return "portal.vo.PackEntity[id=" + id + "]";
     }
-
 }
