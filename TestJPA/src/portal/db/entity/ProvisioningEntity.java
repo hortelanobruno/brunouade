@@ -29,7 +29,7 @@ public class ProvisioningEntity implements Serializable {
     private String email;
     @Column(name="CLIENT_ID")
     private String clientId;
-    @Column(name="CM-MAC")
+    @Column(name="CM_MAC")
     private String cmMac;
 
     public String getClientId() {
