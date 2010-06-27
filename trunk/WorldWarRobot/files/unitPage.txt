@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/> 
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/global.css?v=306"/><script type="text/javascript" src="http://static.storm8.com/wwar/js/global.js?v=306"></script><title>Units</title>
+  <script type="text/javascript">
+    var walkDOM = function walk(node, func) {
+    	  func(node);
+    	  node = node.firstChild;
+    	  while (node) {
+    		  walk(node, func);
+    		  node = node.nextSibling;
+    		}
+    };  
+    if (!window.devicePixelRatio) {
+    	var body = document.getElementsByTagName('*');
+    	walkDOM(body[0], function(n) {
+        	if (n.style) {
+        	 n.style.display = "none";
+        	}
+    	});
+    }
+  </script>
+</head>
+
+<body style="">
+<div id="overlay" class="dialogOverlay"></div>
+<div id="topBar" class="topBar"><div class="topBarBg"></div><a href="/bank.php?formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=31d30b986eda862ef8956a522561b3cb48875c67"><div class="cashTopArea">
+        <span class="topBarCash"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;"><span id="cashCurrent" style="white-space:nowrap">4,837,278</span></span>
+      </div>
+      <div id="cashTimerDiv" class="cashBottomArea"><span style="font-size: 11px; font-weight: normal;"><span>+<span style="white-space: nowrap;">2,116,350</span></span> in </span><span id="cashType" style="font-size:11px;font-weight:normal;">27:19</span></div></a><div class="levelTopArea">
+          <div class="levelBgTopArea"></div>
+          <div class="levelFrontTopArea"><a style="text-decoration:none" href="/profile.php?formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=39d3d2b7c14365ea56366cb2f8bd7a4c1912e5d9">32</a></div>
+        </div>
+        <div class="levelBottomArea">
+        Level
+        </div><div class="levelBarTopArea">
+             <div class="levelBar" style="width:90px">
+             <div class="bgLevelBar" style="width:90px"><div id="expBar" class="frontLevelBar" style="width:38px">&nbsp;</div>
+        </div>
+              </div>
+        </div>
+        <div class="levelBarBottomArea">
+        Exp: <span id="expText">6140/6337</span>
+        </div>
+        <a href="/favor.php?"><div class="energyAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="energyCurrent" class="statEmphasis">24</span> / <span id="energyMax">400</span></div>        
+            <div id="energyTimerDiv" class="statBottomArea"><span id="energyType" style="font-size:11px;font-weight:normal;">2:30</span></div></td></tr></table></div></a>
+        <a href="/hospital.php?"><div class="healthAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="healthCurrent" class="statEmphasis">200</span> / <span id="healthMax">200</span></div>        
+            <div id="healthTimerDiv" class="statBottomArea"><span id="healthType" style="font-size:11px;font-weight:normal;">Health</span></div></td></tr></table></div></a>
+        <a href="/favor.php?"><div class="staminaAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="staminaCurrent" class="statEmphasis">20</span> / <span id="staminaMax">20</span></div>        
+            <div id="staminaTimerDiv" class="statBottomArea"><span id="staminaType" style="font-size:11px;font-weight:normal;">Ammo</span></div></td></tr></table></div></a></div><script>
+        setTopBarTimerData({"cash":{"page":"\/bank.php?","text":"Money","timeLeft":1639,"value":4837278,"maxValue":999999999999,"rate":3600,"update":2116350},"energy":{"page":"\/favor.php?","text":"Energy","timeLeft":150,"value":24,"maxValue":400,"rate":300,"update":16},"health":{"page":"\/hospital.php?","text":"Health","timeLeft":-1,"value":200,"maxValue":200,"rate":180,"update":1},"stamina":{"page":"\/favor.php?","text":"Ammo","timeLeft":-1,"value":20,"maxValue":20,"rate":120,"update":1},"experience":{"width":90,"value":6140,"previousLevelValue":5993,"nextLevelValue":6337}});      
+        createTopBarTimer();
+      </script></div>    <div class="messageBox infoBox">
+  You have 25 pending Alliance invites. <a href="/group.php?formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=e8ccefb36b5986fea43b3bba975263102dfed4c6">View and accept them.</a>    </div>
+  
+  <link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/equipment.css?v=306"/><script type="text/javascript" src="http://static.storm8.com/wwar/js/equipment.js?v=306"></script>
+<div id="overlay" class="dialogOverlay"></div>
+
+
+
+
+<div id="messages">
+
+</div>
+
+      <table style="margin: 1px auto 0pt;" cellspacing="0" cellpadding="0"><tr><td>
+        <div id="sectionTabs" class="sectionTabs"><ul>
+                      <li class="selected"><a href="javascript:new storm8.ajax.Request('ajax/getItemList.php?cat=1&url=%2Fequipment.php', {updateElement: 'equipmentContent', onComplete: hideMessages}).send()">Infantry</a></li>
+                      <li class=""><a href="javascript:new storm8.ajax.Request('ajax/getItemList.php?cat=2&url=%2Fequipment.php', {updateElement: 'equipmentContent', onComplete: hideMessages}).send()">Ground</a></li>
+                      <li class=""><a href="javascript:new storm8.ajax.Request('ajax/getItemList.php?cat=3&url=%2Fequipment.php', {updateElement: 'equipmentContent', onComplete: hideMessages}).send()">Water</a></li>
+                      <li class=""><a href="javascript:new storm8.ajax.Request('ajax/getItemList.php?cat=4&url=%2Fequipment.php', {updateElement: 'equipmentContent', onComplete: hideMessages}).send()">Air</a></li>
+                  </ul></div>
+      </td></tr></table>
+      <script>new storm8.widget.SectionTabs("sectionTabs");</script>
+    <div style="height: 5px;"></div>
+
+<div class="section">
+  <div class="sectionHeader">Your Units (Upkeep <span style="color:red"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">329,150</span></span>)</div>        <div class="sectionBar"></div>
+      <div class="sectionContent">
+        <div><img src="/images/btnInfo.png" style="float:right; align:top; padding-top: 8px; padding-left:5px; padding-right: 5px" onclick="window.location.href='objectiveC.php?stopLoad=true&invokeAlertOneBtnTitle=Units&invokeAlertOneBtnName=OK&invokeAlertOneBtnJS=return%20false%3B&invokeAlertOneBtnBody=Each unit has a chance of being killed in battle. Expendable units have a high casualty rate.'; return false;">During attacks, your allies will automatically use your best units. Each ally can command up to <b>6</b> units.</div>
+                  <div style="height: 5px;"></div>
+          <div class="unlockTextMed"><div class="tac"><table class="unlockTextTable"><tr><td class="unlockTextTableImg"><img src="http://static.storm8.com/wwar/images/locked.png?v=306" width="12" height="12"></td><td width=5></td><td class="unlockTextTableText">Unlock more units at level 33.</td></tr></table></div></div>
+              </div>
+    </div>
+
+<div class="section" id="equipment">
+  <div class="sectionContent">
+    <div style="height:5px"></div>    <div id="equipmentContent"><div style="height:5px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/1m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Minigunners</div>
+          <div class="equipmentInfoItem">Attack: 1</div>
+          <div class="equipmentInfoItem">Defense: 1</div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div class="ownedOverflowTop"></div>
+                <div class="cash ownedOverflowBottom"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">400</span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=1&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=c2d2a64067a35442e9bd9b51ba43a531eff946ea"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              <div class="ownedOverflow">
+                Deployed:
+              </div>
+              <div class="ownedNum ownedOverflow">50</div>
+            </div>
+                                              <a href="/equipment.php?action=sell&iid=1&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=d87ecccdd96f13f8eb2bdb31c7dc47ad21003afb">
+            <div class="equipmentSellActionInner">
+              <div class="equipmentActionInner">
+                                  Disband                              </div>
+            </div>
+          </a>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/2m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Fireteam</div>
+          <div class="equipmentInfoItem">Attack: 2</div>
+          <div class="equipmentInfoItem">Defense: 1</div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div><span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">700</span></span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=2&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=eea3f74543ad71fd2c91afb6b42984629f066d6b"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              Deployed:
+              <span class="ownedNum">4</span>
+            </div>
+                                              <a href="/equipment.php?action=sell&iid=2&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=371d9d51d2653ba5d6031af748c85bbaee485b2c">
+            <div class="equipmentSellActionInner">
+              <div class="equipmentActionInner">
+                                  Disband                              </div>
+            </div>
+          </a>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/3m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Marines</div>
+          <div class="equipmentInfoItem">Attack: 2</div>
+          <div class="equipmentInfoItem">Defense: 2</div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div class="ownedOverflowTop"></div>
+                <div class="cash ownedOverflowBottom"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">1,200</span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=3&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=65ad8f520c99b86464e1cdfbdd7501f1af96edb4"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              <div class="ownedOverflow">
+                Deployed:
+              </div>
+              <div class="ownedNum ownedOverflow">24</div>
+            </div>
+                                              <a href="/equipment.php?action=sell&iid=3&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=e7bdbf6d55f10328d9c1e3695057714b4b194ee0">
+            <div class="equipmentSellActionInner">
+              <div class="equipmentActionInner">
+                                  Disband                              </div>
+            </div>
+          </a>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/4m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Paratroopers</div>
+          <div class="equipmentInfoItem">Attack: 4</div>
+          <div class="equipmentInfoItem">Defense: 1</div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div><span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">1,800</span></span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=4&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=89d630be6858de16249c8703119a9e5480934e3b"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              Deployed:
+              <span class="ownedNum">6</span>
+            </div>
+                                              <a href="/equipment.php?action=sell&iid=4&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=f1759ce6a7e11c0c935e50a0267db1dea01934a6">
+            <div class="equipmentSellActionInner">
+              <div class="equipmentActionInner">
+                                  Disband                              </div>
+            </div>
+          </a>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/5m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Medics</div>
+          <div class="equipmentInfoItem">Attack: 0</div>
+          <div class="equipmentInfoItem">Defense: 6</div>
+                      <div class="equipmentInfoItem">
+              Upkeep: <span class="upkeepCost">
+                <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">25</span>              </span>
+            </div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div><span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">2,500</span></span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=5&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=692233ce8de63cdcfbe9ae176cd840d5d7fe1645"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              Deployed:
+              <span class="ownedNum">0</span>
+            </div>
+                                    <div class="equipmentSellDisabledActionInner">
+		        <div class="equipmentActionInner">
+                              Disband                          </div>
+          </div>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/6m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Grenadiers</div>
+          <div class="equipmentInfoItem">Attack: 6</div>
+          <div class="equipmentInfoItem">Defense: 1</div>
+                      <div class="equipmentInfoItem">
+              Upkeep: <span class="upkeepCost">
+                <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">50</span>              </span>
+            </div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div class="ownedOverflowTop"></div>
+                <div class="cash ownedOverflowBottom"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">3,500</span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=6&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=33a48c58542d6243d151bfe1f74559150247465c"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              <div class="ownedOverflow">
+                Deployed:
+              </div>
+              <div class="ownedNum ownedOverflow">35</div>
+            </div>
+                                              <a href="/equipment.php?action=sell&iid=6&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=48d09e455c794017ddf96bd686419271657222c9">
+            <div class="equipmentSellActionInner">
+              <div class="equipmentActionInner">
+                                  Disband                              </div>
+            </div>
+          </a>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/7m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Snipers</div>
+          <div class="equipmentInfoItem">Attack: 3</div>
+          <div class="equipmentInfoItem">Defense: 5</div>
+                      <div class="equipmentInfoItem">
+              Upkeep: <span class="upkeepCost">
+                <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">100</span>              </span>
+            </div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div><span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">5,000</span></span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=7&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=aeff5daa84eafc382690e516e7a2dacb76d8fbdc"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              Deployed:
+              <span class="ownedNum">0</span>
+            </div>
+                                    <div class="equipmentSellDisabledActionInner">
+		        <div class="equipmentActionInner">
+                              Disband                          </div>
+          </div>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/8m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Navy Seals</div>
+          <div class="equipmentInfoItem">Attack: 5</div>
+          <div class="equipmentInfoItem">Defense: 4</div>
+                      <div class="equipmentInfoItem">
+              Upkeep: <span class="upkeepCost">
+                <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">200</span>              </span>
+            </div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div><span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">7,500</span></span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=8&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=d4bc4926929cad75543e9f9695d004c97294d559"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              Deployed:
+              <span class="ownedNum">0</span>
+            </div>
+                                    <div class="equipmentSellDisabledActionInner">
+		        <div class="equipmentActionInner">
+                              Disband                          </div>
+          </div>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/11m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Heavy Machine Gunners</div>
+          <div class="equipmentInfoItem">Attack: 6</div>
+          <div class="equipmentInfoItem">Defense: 4</div>
+                      <div class="equipmentInfoItem">
+              Upkeep: <span class="upkeepCost">
+                <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">320</span>              </span>
+            </div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div><span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">10,000</span></span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=11&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=edf80975ccbbb84fd8d37f0efade83772851ca49"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              Deployed:
+              <span class="ownedNum">0</span>
+            </div>
+                                    <div class="equipmentSellDisabledActionInner">
+		        <div class="equipmentActionInner">
+                              Disband                          </div>
+          </div>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/equipment/med/9m.png?v=1026" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentName">Rocketeers</div>
+          <div class="equipmentInfoItem">Attack: 9</div>
+          <div class="equipmentInfoItem">Defense: 2</div>
+                      <div class="equipmentInfoItem">
+              Upkeep: <span class="upkeepCost">
+                <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">400</span>              </span>
+            </div>
+                     
+                  </td>
+    <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                          <div>
+                              <div><span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">12,000</span></span></div>
+                          </div>
+            <a href="/equipment.php?action=buy&iid=9&cat=1&formNonce=07e0252d415679b3fea094671d11e6ee34046724&h=8900a8470b0fc484f8fd9082f8683aa69e74b566"><div class="equipmentBuyActionInner"><div class="equipmentActionInner">Deploy</div></div></a>
+                        </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                      <div class="ownedText">
+              Deployed:
+              <span class="ownedNum">0</span>
+            </div>
+                                    <div class="equipmentSellDisabledActionInner">
+		        <div class="equipmentActionInner">
+                              Disband                          </div>
+          </div>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div><div style="height:4px"></div><div class="sectionBarVMinor"></div><div style="height:4px"></div><div class=""><table class="equipmentTable"><tr>                    <td class="equipmentPic">
+          <img src="http://static.storm8.com/wwar/images/locked-2.png?v=306" width="65" height="65">        </td>
+        <td class="equipmentSpLg">&nbsp;</td>
+        <td class="equipmentInfo">
+          <div class="equipmentNameLocked">Corner Shot Recon</div>
+          <div class="equipmentInfoItemLocked">
+            Unlock at <br /> Level 33          </div>
+        </td>
+      <td class="equipmentSp"></td>      <td class="equipmentBuyAction">
+                                                        <div class="sellsFor">
+                <div class="equipmentBuyDisabledActionInner">
+                  <div class="equipmentActionInner">
+                    Deploy                  </div>
+                </div>
+              </div>
+                                    </td>
+      <td class="equipmentSp"></td>
+      <td class="equipmentSellAction">
+                                  <div class="equipmentSellDisabledActionInner">
+		        <div class="equipmentActionInner">
+                              Disband                          </div>
+          </div>
+              </td>
+    <td class="equipmentSp">&nbsp;</td></tr></table></div></div>  </div>
+</div>
+
+    <div id="itemDialog" class="popupDialog">
+      <div class="dialogHeader">
+        <div class="dialogClose" rel="close"></div>
+        <div class="dialogTitle" rel="title"></div>
+      </div>
+      <div class="dialogBody" style="padding-left: 0; padding-right: 0;">
+        <div class="dialogImage" align="center">
+          <img src="http://static.storm8.com/wwar/images/indMed.gif?v=306" xheight="65" rel="image"/><br/>
+          <span rel="itemType"></span>
+
+          <div rel="pricediv" style="margin-top: 5px; font-size: 14px;">
+            <span rel="sellsfor">Sells for</span>
+            <span rel="cashSpan" class="cash"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;"><span rel="price"></span></span>
+            <span rel="favorSpan" class="favorCost"><span rel="favorPrice"></span> Honor Points</span>            
+          </div>
+        </div>
+
+        <div style="margin-top: 4px; margin-left: 170px;">
+          <div class="infoItem">Attack: <span rel="offense"></span></div>
+          <div class="infoItem">Defense: <span rel="defense"></span></div>
+
+          <div class="infoItem" rel="upkeepdiv" style="margin-top: 3px;">Upkeep:
+            <span class="upkeepCost"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;"><span rel="upkeep"></span></span>
+          </div>
+          <div class="infoItem" style="margin-top: 3px;">Deployed: <span rel="owned"></span></div>
+        </div>
+
+        <div rel="specialdiv" style="clear: left; padding-top: 10px; text-align: center;"></div>
+
+        <div class="buttonGroup" align="center" rel="buttons" style="padding-top: 10px; border-top: 1px solid #303030; margin: 0 8px;">
+          <form name="buyForm" action="#" method="post" rel="form" style="font-size: 14px;">
+            <input type="hidden" id="buysellAction" name="action" value="buy"/>
+            <span rel="quantitySection">
+            Quantity: <select name="numberOfItem" rel="select" style="font-size: 14px;" ontouchstart="scrollY = window.pageYOffset;" onblur="setTimeout(function() {window.scrollTo(0, scrollY - 0);}, 500); return false;">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>10</option><option>25</option><option>50</option><option>100</option><option>250</option><option>500</option><option>1000</option>            </select></span>
+            <span rel="itemDesc"></span>
+            <table style="margin-top: 15px;"><tr>
+              <td>
+                <a href="javascript:document.buyForm.submit();" onclick="document.getElementById('buysellAction').value='buy';" rel="buybutton" class="actionButton">
+                  Deploy</a>
+                <a href="javascript:void(0);" rel="buydisabled" class="actionButton disabled">Deploy</a>
+              </td>
+              <td width="10"></td>
+              <td>
+                                <a href="javascript:document.buyForm.submit()" onclick="document.getElementById('buysellAction').value='sell';"
+                 rel="sellbutton" class="actionButton">
+                  Disband</a>
+                <a href="javascript:void(0);" rel="selldisabled" class="actionButton disabled">Disband</a>
+              </td>
+            </tr></table>
+          </form>
+        </div>
+      </div>
+    </div>
+
+          <script>
+        function closeElementFight() {
+      	  skipFightStatTutorial();     	  
+          window.dialog.hideDialog();
+        }
+      </script>
+      
+      <div id="tutorialFightStatDialog" class="popupDialog">
+        <div class="dialogHeader">
+          <div class="dialogClose" rel="close" style="display: none;"></div>
+          <div class="dialogTitle" rel="title">Deploying Units</div>
+        </div>
+        <div class="dialogBody">
+          <div class="fightTutorialMsg">
+            <div id="elementPageFight">
+              <table><tr><td><img src="http://static.storm8.com/wwar/images/tutorialGuideSm3.gif?v=306" width="60" height="60"></td><td style="width: 10px;"></td>
+              <td style="vertical-align: middle; font-size: 10pt">"When you deploy units, you will have a better chance of succeeding when you battle."</td></tr></table>
+              <div style="font-size: 10pt; ">
+                <div style="line-height:16px; padding-top: 10px">
+                  <img src="http://static.storm8.com/wwar/images/stats/attack.gif?v=306" width="20" height="20" style="position:relative; top:4px; padding-right:5px">Attack helps when you battle others.                </div>
+                <div style="line-height:16px;">
+                  <img src="http://static.storm8.com/wwar/images/stats/defense.gif?v=306" width="20" height="20" style="position:relative; top:4px; padding-right:5px">Defense helps when others battle you.                </div>
+                <div style="height:8px"></div>
+                "Try deploying more Units to defeat your opponents."              </div>
+              <div style="clear: both"></div>
+            </div>
+          </div>
+          <div class="buttonGroup" style="padding-top: 5px !important; padding-bottom: 3px;">
+            <table style="margin: auto;">
+              <tr>
+                <td>
+                  <a id="elementCloseFight"                      href="javascript:closeElementFight()" rel="closebutton" class="actionButton">Close</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>    
+    <br/><br/><script> window.onload = function() { window.location.href = "#&setTab0Badge=&changeApplicationBadge=0&setTab4Badge=25";}</script></body></html>

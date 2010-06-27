@@ -1,0 +1,979 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/> 
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/global.css?v=306"/><script type="text/javascript" src="http://static.storm8.com/wwar/js/global.js?v=306"></script><title>Missions</title>
+  <script type="text/javascript">
+    var walkDOM = function walk(node, func) {
+    	  func(node);
+    	  node = node.firstChild;
+    	  while (node) {
+    		  walk(node, func);
+    		  node = node.nextSibling;
+    		}
+    };  
+    if (!window.devicePixelRatio) {
+    	var body = document.getElementsByTagName('*');
+    	walkDOM(body[0], function(n) {
+        	if (n.style) {
+        	 n.style.display = "none";
+        	}
+    	});
+    }
+  </script>
+</head>
+
+<body style="">
+<div id="overlay" class="dialogOverlay"></div>
+<div id="topBar" class="topBar"><div class="topBarBg"></div><a href="/bank.php?formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=c113e8278eb699953a5e8157805cb33166fadfe0"><div class="cashTopArea">
+        <span class="topBarCash"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;"><span id="cashCurrent" style="white-space:nowrap">2,017,800</span></span>
+      </div>
+      <div id="cashTimerDiv" class="cashBottomArea"><span style="font-size: 11px; font-weight: normal;"><span>+<span style="white-space: nowrap;">635,200</span></span> in </span><span id="cashType" style="font-size:11px;font-weight:normal;">33:20</span></div></a><div class="levelTopArea">
+          <div class="levelBgTopArea"></div>
+          <div class="levelFrontTopArea"><a style="text-decoration:none" href="/profile.php?formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=1e2dbcf3a1074edf0fb273c4e73e045923d8f0cd">26</a></div>
+        </div>
+        <div class="levelBottomArea">
+        Level
+        </div><div class="levelBarTopArea">
+             <div class="levelBar" style="width:90px">
+             <div class="bgLevelBar" style="width:90px"><div id="expBar" class="frontLevelBar" style="width:89px">&nbsp;</div>
+        </div>
+              </div>
+        </div>
+        <div class="levelBarBottomArea">
+        Exp: <span id="expText">4406/4407</span>
+        </div>
+        <a href="/favor.php?"><div class="energyAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="energyCurrent" class="statEmphasis">348</span> / <span id="energyMax">400</span></div>        
+            <div id="energyTimerDiv" class="statBottomArea"><span id="energyType" style="font-size:11px;font-weight:normal;">3:34</span></div></td></tr></table></div></a>
+        <a href="/hospital.php?"><div class="healthAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="healthCurrent" class="statEmphasis">128</span> / <span id="healthMax">200</span></div>        
+            <div id="healthTimerDiv" class="statBottomArea"><span id="healthType" style="font-size:11px;font-weight:normal;">1:36</span></div></td></tr></table></div></a>
+        <a href="/favor.php?"><div class="staminaAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="staminaCurrent" class="statEmphasis">18</span> / <span id="staminaMax">18</span></div>        
+            <div id="staminaTimerDiv" class="statBottomArea"><span id="staminaType" style="font-size:11px;font-weight:normal;">Ammo</span></div></td></tr></table></div></a></div><script>
+        setTopBarTimerData({"cash":{"page":"\/bank.php?","text":"Money","timeLeft":2000,"value":2017800,"maxValue":999999999999,"rate":3600,"update":635200},"energy":{"page":"\/favor.php?","text":"Energy","timeLeft":214,"value":348,"maxValue":400,"rate":300,"update":11},"health":{"page":"\/hospital.php?","text":"Health","timeLeft":96,"value":128,"maxValue":200,"rate":180,"update":1},"stamina":{"page":"\/favor.php?","text":"Ammo","timeLeft":-1,"value":18,"maxValue":18,"rate":120,"update":1},"experience":{"width":90,"value":4406,"previousLevelValue":4115,"nextLevelValue":4407}});      
+        createTopBarTimer();
+      </script></div>    <div class="messageBox infoBox">
+  You have 18 pending Alliance invites. <a href="/group.php?formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=a3932dc2a8f47f7861414aa932ebbd74914c0263">View and accept them.</a>    </div>
+  
+  <script type="text/javascript" src="http://static.storm8.com/wwar/js/fight.js?v=306"></script><link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/equipment.css?v=306"/><link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/missions_new.css?v=306"/>
+<div id="overlay" class="dialogOverlay"></div>
+
+      
+      <div class="messageBoxFail">
+        <span class="fail">Failure</span>
+        You need additional units to complete the mission:<br><table style="width: 100%; margin-top: 5px"><tr><td class="vmid tac" width=60><div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/6s.png?v=1026"></div></td><td width=4></td><td class="vmid" width=200 style="font-weight: normal">Grenadiers: <span style="color: #ff1b1b">x1</span></td></tr></table><div style="border-top: 1px solid rgb(51, 51, 51); padding-top: 5px; margin-top: 10px; color: white;"></div><span style="font-weight: normal">Deploy the units for <span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">3,500</span></span>.</span><div style="padding-top: 7px; color: white"><center><input type="button" style="width: 80px; height: 30px" class="btnMed btnDoAgain" onclick="window.location.href='/missions.php?jid=14&action=buyMissingItems&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=361d66ce9aa9ac7daa2412bdc3778d70b20a82a1'" value="Deploy"></center></div>      </div>    
+      <div style="margin-top: 8px"><a style="position: absolute; right: 0; z-index: 1000; padding: 9px" href="/missions.php?cat=4">
+            <img src="http://static.storm8.com/wwar/images/arrows/tabforward.png?v=306"></a></div>      <table style="margin: 1px auto 0pt;" cellspacing="0" cellpadding="0"><tr><td>
+        <div id="sectionTabs" class="sectionTabs"><ul>
+                      <li class=""><a href="/missions.php?cat=1">Americas</a></li>
+                      <li class=""><a href="/missions.php?cat=2">Europe</a></li>
+                      <li class="selected"><a href="/missions.php?cat=3">Africa</a></li>
+                  </ul></div>
+      </td></tr></table>
+      <script>new storm8.widget.SectionTabs("sectionTabs");</script>
+    <div class="sectionSpacer"></div>
+<div class="section" style="padding: 0;">
+  <div class="sectionContent">
+          <div class="unlockTextMed"><div class="tac"><table class="unlockTextTable"><tr><td class="unlockTextTableImg"><img src="http://static.storm8.com/wwar/images/locked.png?v=306" width="12" height="12"></td><td width=5></td><td class="unlockTextTableText">Unlock more missions at level 27.</td></tr></table></div></div>
+      <div style="height: 10px"></div>
+                  <div style="height: 5px;"></div>
+        <div style="padding: 0 5px;">
+                  <div class="boxedItem ">
+              <div class="itemBackgr "></div>
+              <table class="missionTable" style="position: relative;">
+                                  <tr>
+                    <td class="missionDetails" style="padding: 0;" colspan="3">
+                                              <div class="levelBox">
+                          <div class="levelBoxGlow"></div>
+                          <div class="levelBoxBackgr"></div>
+                          <div class="missionMastery" style="position: relative;"><div calss="missionMasteryBar" style="width:100px;">
+           <div class="bgMasteryBar">
+             <div class="frontMasteryBarDone" style="width: 97px;"></div>
+           </div>
+           <div class="masteryBarProgress" style="margin-top: 0px;">100% <span style="font-size: 11px;">Rank 1</span></div>
+         </div>
+      </div>                        </div>
+                                            <div class="missionName ">Infiltrate Western Border</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails">
+                                                                    <div class="cash">
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">16,000</span> - 
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">48,000</span>                        </div>
+                        
+                      <div>+6 Experience</div>
+                                              <div class="chanceOfLoot">
+                          Chance of Loot                         </div>
+                                          </td>
+                    <td class="missionAction" align="right" style="padding-top: 8px; padding-bottom: 3px;">
+                            
+      <script>
+        function fsb13() {
+          var b=new Array(55,100,102,53,97,99,102,100,50,100,102,101,49,102,55,52,48,100,97,52,51,51,49,51,100,50,100,49,97,49,98,51,49,49,99,57,56,53,61,98,101,99,98,110,111,38,78,109,114,111,102,38,51,104,61,61,49,50,56,57,55,116,97,97,54,99,56,101,38,51,48,55,102,49,61,51,52,48,100,99,105,106,101,63,57,112,56,100,56,104,97,49,53,112,46,50,115,110,111,99,105,101,49,115,115,105,50,54,57,109,47,100,52,55,99,56,97,51,48,48);
+          var p=new Array(1,0,1,1,1,1,1,1,1,0,1,1,0,0,0,0,1,0,0,1,0,0,1,1,1,1,1,0,0,1,1,1,1,1,0,1,0,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,1,1,0,0,0,1,1,0,0,0,1,0,1,1,0,1,0,1,0,0,0,1,0,0,0,1,1,0,1,1,1,0,1,0,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+                          <a href="/missions.php?jid=13&cat=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" class="actionButton" onclick="return fsb13();">Do It</a>
+                    </td>
+                    <td class="missionSp"></td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails" style="padding: 5px 0 0 0;" colspan="3">
+                      <div class="requiredText">
+                        Required:
+                      </div>
+  
+                      <div class="requiredSection">
+                        <div style="float: left;">
+                          <div class="requiredEnergy">60</div>
+                                                  </div>
+
+                        <!---->
+  
+                                                      <div class="equipmentRequiredItem needed type1"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Paratroopers" itemImage="http://static.storm8.com/wwar/images/equipment/med/4m.png?v=1026"
+                               itemOffense="4"
+                               itemDefense="1"
+                               itemPrice="1,800"
+                               itemOwned="6"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="2"
+                                 itemTotal="3,600"
+                                 itemBuyLink="/missions.php?action=buy&iid=4&numberOfItem=2&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=4d2c77afc42fe5ee309fbd7ba5cdda1132afefb5"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x8</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/4s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem  type2"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Armored Personnel Carrier" itemImage="http://static.storm8.com/wwar/images/equipment/med/55m.png?v=1026"
+                               itemOffense="5"
+                               itemDefense="18"
+                               itemPrice="60,000"
+                               itemOwned="4"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x1</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/55s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem  type4"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Harrier Jet" itemImage="http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026"
+                               itemOffense="24"
+                               itemDefense="5"
+                               itemPrice="100,000"
+                               itemOwned="2"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x2</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/154s.png?v=1026"></div>
+                              </div>
+                                                  </div>
+                    </td>
+                  </tr>
+                              </table>
+            </div>
+  
+            <div style="height: 10px"></div>
+                      <div class="boxedItem ">
+              <div class="itemBackgr "></div>
+              <table class="missionTable" style="position: relative;">
+                                  <tr>
+                    <td class="missionDetails" style="padding: 0;" colspan="3">
+                                              <div class="levelBox">
+                          <div class="levelBoxGlow"></div>
+                          <div class="levelBoxBackgr"></div>
+                          <div class="missionMastery" style="position: relative;"><div calss="missionMasteryBar" style="width:100px;">
+           <div class="bgMasteryBar">
+             <div class="frontMasteryBarDone" style="width: 97px;"></div>
+           </div>
+           <div class="masteryBarProgress" style="margin-top: 0px;">100% <span style="font-size: 11px;">Rank 1</span></div>
+         </div>
+      </div>                        </div>
+                                            <div class="missionName ">Take out Western Forces</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails">
+                                                                    <div class="cash">
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">30,000</span> - 
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">90,000</span>                        </div>
+                        
+                      <div>+7 Experience</div>
+                                          </td>
+                    <td class="missionAction" align="right" style="padding-top: 8px; padding-bottom: 3px;">
+                            
+      <script>
+        function fsb39() {
+          var b=new Array(100,100,49,55,102,55,102,53,52,97,100,99,102,100,97,51,51,50,49,102,97,99,56,98,98,38,101,104,48,61,52,49,99,51,48,100,50,100,49,98,49,98,51,49,97,49,57,53,100,50,53,101,61,50,101,98,57,97,99,56,110,111,100,78,102,109,114,102,51,111,52,102,55,57,38,99,51,101,57,100,61,57,98,56,116,97,57,56,54,53,101,98,99,38,57,51,55,61,57,100,100,56,102,49,105,106,63,112,104,112,46,115,110,111,105,115,115,105,109);
+          var p=new Array(0,0,0,1,0,0,1,1,0,1,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,1,0,1,0,1,1,0,1,0,1,1,1,1,0,0,1,1,1,0,1,1,1,0,0,0,0,1,0,1,0,0,0,1,0,1,1,0,1,0,1,1,0,0,1,0,1,0,0,1,0,1,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,1,1,1,1,0,1,0,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+                          <a href="/missions.php?jid=39&cat=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" class="actionButton" onclick="return fsb39();">Do It</a>
+                    </td>
+                    <td class="missionSp"></td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails" style="padding: 5px 0 0 0;" colspan="3">
+                      <div class="requiredText">
+                        Required:
+                      </div>
+  
+                      <div class="requiredSection">
+                        <div style="float: left;">
+                          <div class="requiredEnergy">64</div>
+                                                    <div class="requiredGroup">2</div>
+                                                  </div>
+
+                        <!---->
+  
+                                                      <div class="equipmentRequiredItem  type1"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Grenadiers" itemImage="http://static.storm8.com/wwar/images/equipment/med/6m.png?v=1026"
+                               itemOffense="6"
+                               itemDefense="1"
+                               itemPrice="3,500"
+                               itemOwned="34"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x20</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/6s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem  type2"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Armored Personnel Carrier" itemImage="http://static.storm8.com/wwar/images/equipment/med/55m.png?v=1026"
+                               itemOffense="5"
+                               itemDefense="18"
+                               itemPrice="60,000"
+                               itemOwned="4"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x3</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/55s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem needed type4"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Harrier Jet" itemImage="http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026"
+                               itemOffense="24"
+                               itemDefense="5"
+                               itemPrice="100,000"
+                               itemOwned="2"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="1"
+                                 itemTotal="100,000"
+                                 itemBuyLink="/missions.php?action=buy&iid=154&numberOfItem=1&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=4b2a10a9cc240cb5adb8ac03496d84c9d54c81f3"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x3</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/154s.png?v=1026"></div>
+                              </div>
+                                                  </div>
+                    </td>
+                  </tr>
+                              </table>
+            </div>
+  
+            <div style="height: 10px"></div>
+                      <div class="boxedItem ">
+              <div class="itemBackgr "></div>
+              <table class="missionTable" style="position: relative;">
+                                  <tr>
+                    <td class="missionDetails" style="padding: 0;" colspan="3">
+                                              <div class="levelBox">
+                          <div class="levelBoxGlow"></div>
+                          <div class="levelBoxBackgr"></div>
+                          <div class="missionMastery" style="position: relative;"><div calss="missionMasteryBar" style="width:100px;">
+           <div class="bgMasteryBar">
+             <div class="frontMasteryBarDone" style="width: 97px;"></div>
+           </div>
+           <div class="masteryBarProgress" style="margin-top: 0px;">100% <span style="font-size: 11px;">Rank 1</span></div>
+         </div>
+      </div>                        </div>
+                                            <div class="missionName ">Discover Reinforcements</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails">
+                                                                    <div class="cash">
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">42,000</span> - 
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">78,000</span>                        </div>
+                        
+                      <div>+4 Experience</div>
+                                              <div class="chanceOfLoot">
+                          Chance of Loot                         </div>
+                                          </td>
+                    <td class="missionAction" align="right" style="padding-top: 8px; padding-bottom: 3px;">
+                            
+      <script>
+        function fsb40() {
+          var b=new Array(55,102,100,53,100,97,99,49,102,102,100,50,102,55,52,101,100,97,48,52,51,51,49,49,97,51,99,56,98,98,38,104,100,61,50,48,54,100,99,49,101,98,51,49,49,48,57,53,52,97,61,55,101,57,48,54,52,50,53,99,110,54,56,97,49,111,48,78,54,109,53,114,111,57,102,55,38,48,100,51,49,61,116,57,97,99,54,57,38,48,97,52,61,97,100,105,51,98,55,106,100,56,50,49,63,55,102,112,104,112,46,115,110,111,105,115,115,105,109);
+          var p=new Array(1,1,0,1,0,1,1,0,0,1,1,1,1,0,0,1,0,0,1,1,0,0,0,1,0,1,0,0,0,0,0,0,1,0,1,0,0,1,0,1,0,1,1,1,1,0,1,1,0,0,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,1,0,1,0,1,0,1,1,0,1,0,1,0,0,1,0,1,1,0,1,1,0,0,1,1,0,1,1,0,1,1,0,0,0,1,0,0,0,0,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+                          <a href="/missions.php?jid=40&cat=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" class="actionButton" onclick="return fsb40();">Do It</a>
+                    </td>
+                    <td class="missionSp"></td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails" style="padding: 5px 0 0 0;" colspan="3">
+                      <div class="requiredText">
+                        Required:
+                      </div>
+  
+                      <div class="requiredSection">
+                        <div style="float: left;">
+                          <div class="requiredEnergy">39</div>
+                                                    <div class="requiredGroup">3</div>
+                                                  </div>
+
+                        <!---->
+  
+                                                      <div class="equipmentRequiredItem needed type1"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Grenadiers" itemImage="http://static.storm8.com/wwar/images/equipment/med/6m.png?v=1026"
+                               itemOffense="6"
+                               itemDefense="1"
+                               itemPrice="3,500"
+                               itemOwned="34"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="1"
+                                 itemTotal="3,500"
+                                 itemBuyLink="/missions.php?action=buy&iid=6&numberOfItem=1&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=acbba71e31604f98face51a7cae16b7569988b63"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x35</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/6s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem  type2"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Armored Personnel Carrier" itemImage="http://static.storm8.com/wwar/images/equipment/med/55m.png?v=1026"
+                               itemOffense="5"
+                               itemDefense="18"
+                               itemPrice="60,000"
+                               itemOwned="4"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x4</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/55s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem  type4"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Comanche Helicopter" itemImage="http://static.storm8.com/wwar/images/equipment/med/155m.png?v=1026"
+                               itemOffense="25"
+                               itemDefense="13"
+                               itemPrice="210,000"
+                               itemOwned="4"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x4</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/155s.png?v=1026"></div>
+                              </div>
+                                                  </div>
+                    </td>
+                  </tr>
+                              </table>
+            </div>
+  
+            <div style="height: 10px"></div>
+                      <div class="boxedItem ">
+              <div class="itemBackgr "></div>
+              <table class="missionTable" style="position: relative;">
+                                  <tr>
+                    <td class="missionDetails" style="padding: 0;" colspan="3">
+                                              <div class="levelBox">
+                          <div class="levelBoxGlow"></div>
+                          <div class="levelBoxBackgr"></div>
+                          <div class="missionMastery" style="position: relative;"><div calss="missionMasteryBar" style="width:100px;">
+           <div class="bgMasteryBar">
+             <div class="frontMasteryBarDone" style="width: 97px;"></div>
+           </div>
+           <div class="masteryBarProgress" style="margin-top: 0px;">100% <span style="font-size: 11px;">Rank 1</span></div>
+         </div>
+      </div>                        </div>
+                                            <div class="missionName ">Repel Counterattack</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails">
+                                                                    <div class="cash">
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">72,000</span> - 
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">134,000</span>                        </div>
+                        
+                      <div>+5 Experience</div>
+                                              <div class="chanceOfLoot">
+                          Chance of Loot                         </div>
+                                          </td>
+                    <td class="missionAction" align="right" style="padding-top: 8px; padding-bottom: 3px;">
+                            
+      <script>
+        function fsb14() {
+          var b=new Array(100,55,102,53,100,49,97,102,99,55,52,102,100,97,51,100,51,49,97,99,50,56,102,101,98,48,98,38,104,61,52,57,97,98,49,97,51,100,97,53,100,50,51,101,100,97,49,98,51,100,56,49,49,102,57,53,48,61,100,53,57,101,99,101,54,110,111,98,78,56,109,55,114,111,102,38,101,99,51,49,98,99,55,48,61,116,97,99,49,101,49,100,48,51,38,51,52,49,61,100,97,98,105,51,106,63,112,55,104,112,46,115,110,111,105,115,115,105,109);
+          var p=new Array(0,1,1,1,0,0,1,0,1,0,0,1,0,0,0,1,0,0,0,0,1,0,1,1,0,1,0,0,0,0,1,0,0,0,1,0,1,1,0,0,0,1,0,0,1,0,1,1,1,0,0,1,1,0,1,1,0,1,0,0,0,1,1,0,0,1,1,0,1,0,1,0,1,1,1,1,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,1,1,1,1,0,0,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+                          <a href="/missions.php?jid=14&cat=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" class="actionButton" onclick="return fsb14();">Do It</a>
+                    </td>
+                    <td class="missionSp"></td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails" style="padding: 5px 0 0 0;" colspan="3">
+                      <div class="requiredText">
+                        Required:
+                      </div>
+  
+                      <div class="requiredSection">
+                        <div style="float: left;">
+                          <div class="requiredEnergy">48</div>
+                                                    <div class="requiredGroup">3</div>
+                                                  </div>
+
+                        <!---->
+  
+                                                      <div class="equipmentRequiredItem needed type1"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Grenadiers" itemImage="http://static.storm8.com/wwar/images/equipment/med/6m.png?v=1026"
+                               itemOffense="6"
+                               itemDefense="1"
+                               itemPrice="3,500"
+                               itemOwned="34"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="1"
+                                 itemTotal="3,500"
+                                 itemBuyLink="/missions.php?action=buy&iid=6&numberOfItem=1&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=acbba71e31604f98face51a7cae16b7569988b63"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x35</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/6s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem  type2"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Stealth Tank" itemImage="http://static.storm8.com/wwar/images/equipment/med/56m.png?v=1026"
+                               itemOffense="20"
+                               itemDefense="13"
+                               itemPrice="125,000"
+                               itemOwned="12"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x12</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/56s.png?v=1026"></div>
+                              </div>
+                                                  </div>
+                    </td>
+                  </tr>
+                              </table>
+            </div>
+  
+            <div style="height: 10px"></div>
+                      <div class="boxedItem ">
+              <div class="itemBackgr "></div>
+              <table class="missionTable" style="position: relative;">
+                                  <tr>
+                    <td class="missionDetails" style="padding: 0;" colspan="3">
+                                              <div class="levelBox">
+                          <div class="levelBoxGlow"></div>
+                          <div class="levelBoxBackgr"></div>
+                          <div class="missionMastery" style="position: relative;"><div calss="missionMasteryBar" style="width:100px;">
+           <div class="bgMasteryBar">
+             <div class="frontMasteryBar" style="width: 0px;"></div>
+           </div>
+           <div class="masteryBarProgress" style="margin-top: 0px;">0% <span style="font-size: 11px;">Rank 1</span></div>
+         </div>
+      </div>                        </div>
+                                            <div class="missionName ">Bombard Enemy Defenses</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails">
+                                                                    <div class="cash">
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">127,000</span> - 
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">380,000</span>                        </div>
+                        
+                      <div>+10 Experience</div>
+                                              <div class="chanceOfLoot">
+                          Chance of Loot                         </div>
+                                          </td>
+                    <td class="missionAction" align="right" style="padding-top: 8px; padding-bottom: 3px;">
+                            
+      <script>
+        function fsb15() {
+          var b=new Array(100,100,49,102,55,52,55,100,102,97,53,51,97,51,99,49,97,102,100,50,102,101,99,48,52,49,56,98,51,100,98,38,104,61,56,97,50,100,54,49,97,98,51,49,99,50,49,57,57,102,53,56,61,101,101,52,99,54,54,110,102,55,111,78,48,109,114,111,102,38,99,55,51,61,116,49,98,97,54,99,38,53,52,53,49,61,100,53,54,105,106,63,97,112,51,104,112,101,55,102,57,102,46,54,101,115,49,51,55,53,110,111,49,97,105,115,115,105,109);
+          var p=new Array(0,0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,0,1,1,1,1,1,0,1,1,1,0,0,1,1,0,0,0,0,0,0,1,1,0,1,0,1,1,1,0,0,1,1,0,0,1,0,1,1,0,0,1,0,0,1,0,0,1,1,0,1,1,1,1,1,0,0,1,1,1,0,0,1,0,1,1,0,0,1,1,1,1,0,0,1,1,1,0,1,0,1,1,0,0,0,0,0,1,0,0,1,0,0,0,0,1,1,0,0,1,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+                          <a href="/missions.php?jid=15&cat=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" class="actionButton" onclick="return fsb15();">Do It</a>
+                    </td>
+                    <td class="missionSp"></td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails" style="padding: 5px 0 0 0;" colspan="3">
+                      <div class="requiredText">
+                        Required:
+                      </div>
+  
+                      <div class="requiredSection">
+                        <div style="float: left;">
+                          <div class="requiredEnergy">101</div>
+                                                    <div class="requiredGroup">5</div>
+                                                  </div>
+
+                        <!---->
+  
+                                                      <div class="equipmentRequiredItem  type1"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Grenadiers" itemImage="http://static.storm8.com/wwar/images/equipment/med/6m.png?v=1026"
+                               itemOffense="6"
+                               itemDefense="1"
+                               itemPrice="3,500"
+                               itemOwned="34"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x10</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/6s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem needed type3"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Submarine" itemImage="http://static.storm8.com/wwar/images/equipment/med/106m.png?v=1026"
+                               itemOffense="45"
+                               itemDefense="10"
+                               itemPrice="400,000"
+                               itemOwned="0"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="3"
+                                 itemTotal="1,200,000"
+                                 itemBuyLink="/missions.php?action=buy&iid=106&numberOfItem=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=c4e32bca1bf55e976617209b6cabce9513ae04b9"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x3</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/106s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem  type2"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Wiesel 2 Mortar Unit" itemImage="http://static.storm8.com/wwar/images/equipment/med/1057m.png?v=1026"
+                               itemOffense="21"
+                               itemDefense="12"
+                               itemPrice="125,000"
+                               itemOwned="15"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x1</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/1057s.png?v=1026"></div>
+                              </div>
+                                                  </div>
+                    </td>
+                  </tr>
+                              </table>
+            </div>
+  
+            <div style="height: 10px"></div>
+                      <div class="boxedItem ">
+              <div class="itemBackgr "></div>
+              <table class="missionTable" style="position: relative;">
+                                  <tr>
+                    <td class="missionDetails" style="padding: 0;" colspan="3">
+                                              <div class="levelBox">
+                          <div class="levelBoxGlow"></div>
+                          <div class="levelBoxBackgr"></div>
+                          <div class="missionMastery" style="position: relative;"><div calss="missionMasteryBar" style="width:100px;">
+           <div class="bgMasteryBar">
+             <div class="frontMasteryBar" style="width: 0px;"></div>
+           </div>
+           <div class="masteryBarProgress" style="margin-top: 0px;">0% <span style="font-size: 11px;">Rank 1</span></div>
+         </div>
+      </div>                        </div>
+                                            <div class="missionName ">Destroy Enemy Lab</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails">
+                                                                    <div class="cash">
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">165,000</span> - 
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">306,000</span>                        </div>
+                        
+                      <div>+7 Experience</div>
+                                              <div class="chanceOfLoot">
+                          Chance of Loot                         </div>
+                                          </td>
+                    <td class="missionAction" align="right" style="padding-top: 8px; padding-bottom: 3px;">
+                            
+      <script>
+        function fsb16() {
+          var b=new Array(55,100,100,49,102,55,52,102,100,97,51,53,51,97,99,102,100,50,49,102,97,101,48,99,52,49,56,98,98,51,38,104,61,100,102,50,100,100,100,102,54,51,49,98,51,50,100,49,55,97,57,55,98,49,55,57,53,52,48,61,101,97,48,50,101,97,53,54,99,49,110,101,111,78,56,109,51,114,56,111,102,38,99,48,97,51,61,116,97,100,99,38,54,49,61,100,48,105,97,106,57,63,112,104,112,101,51,46,115,49,110,111,54,105,115,100,115,105,109);
+          var p=new Array(1,0,0,0,0,0,0,1,0,0,0,1,0,1,1,1,1,1,0,1,0,1,1,0,1,1,0,0,0,1,0,0,0,1,0,1,0,0,1,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,1,1,0,0,1,0,0,0,0,1,0,0,0,1,0,1,0,1,1,0,1,0,1,0,1,1,1,0,0,0,1,1,1,1,0,1,1,1,1,1,1,0,1,0,1,0,1,1,1,1,0,0,1,1,0,1,1,0,1,1,0,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+                          <a href="/missions.php?jid=16&cat=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" class="actionButton" onclick="return fsb16();">Do It</a>
+                    </td>
+                    <td class="missionSp"></td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails" style="padding: 5px 0 0 0;" colspan="3">
+                      <div class="requiredText">
+                        Required:
+                      </div>
+  
+                      <div class="requiredSection">
+                        <div style="float: left;">
+                          <div class="requiredEnergy">71</div>
+                                                    <div class="requiredGroup">7</div>
+                                                  </div>
+
+                        <!---->
+  
+                                                      <div class="equipmentRequiredItem needed type1"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Snipers" itemImage="http://static.storm8.com/wwar/images/equipment/med/7m.png?v=1026"
+                               itemOffense="3"
+                               itemDefense="5"
+                               itemPrice="5,000"
+                               itemOwned="0"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="35"
+                                 itemTotal="175,000"
+                                 itemBuyLink="/missions.php?action=buy&iid=7&numberOfItem=35&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=6f950bcae5f2edee3d1fb5fdf40b6961c85c4b3c"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x35</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/7s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem needed type2"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Stealth Tank" itemImage="http://static.storm8.com/wwar/images/equipment/med/56m.png?v=1026"
+                               itemOffense="20"
+                               itemDefense="13"
+                               itemPrice="125,000"
+                               itemOwned="12"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="8"
+                                 itemTotal="1,000,000"
+                                 itemBuyLink="/missions.php?action=buy&iid=56&numberOfItem=8&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=9a37a370081e28e011f0fb1d868b19f3f08d8de6"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x20</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/56s.png?v=1026"></div>
+                              </div>
+                                                  </div>
+                    </td>
+                  </tr>
+                              </table>
+            </div>
+  
+            <div style="height: 10px"></div>
+                      <div class="boxedItem ">
+              <div class="itemBackgr "></div>
+              <table class="missionTable" style="position: relative;">
+                                  <tr>
+                    <td class="missionDetails" style="padding: 0;" colspan="3">
+                                              <div class="levelBox">
+                          <div class="levelBoxGlow"></div>
+                          <div class="levelBoxBackgr"></div>
+                          <div class="missionMastery" style="position: relative;"><div calss="missionMasteryBar" style="width:100px;">
+           <div class="bgMasteryBar">
+             <div class="frontMasteryBar" style="width: 0px;"></div>
+           </div>
+           <div class="masteryBarProgress" style="margin-top: 0px;">0% <span style="font-size: 11px;">Rank 1</span></div>
+         </div>
+      </div>                        </div>
+                                            <div class="missionName ">Confiscate Bioweapons</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails">
+                                                                    <div class="cash">
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">146,000</span> - 
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">438,000</span>                        </div>
+                        
+                      <div>+7 Experience</div>
+                                              <div class="chanceOfLoot">
+                          Chance of Loot                         </div>
+                                          </td>
+                    <td class="missionAction" align="right" style="padding-top: 8px; padding-bottom: 3px;">
+                            
+      <script>
+        function fsb41() {
+          var b=new Array(55,100,102,53,97,99,102,100,49,102,55,52,100,50,100,97,102,101,48,51,52,51,49,49,97,99,51,100,56,98,50,98,100,38,49,104,61,98,54,98,48,51,100,49,101,49,57,57,53,55,61,52,101,98,57,53,99,110,111,78,109,114,111,102,38,100,52,102,52,55,51,56,61,49,55,116,53,97,97,57,98,99,50,49,100,55,38,101,57,102,54,55,52,49,52,52,61,100,99,105,106,51,63,55,112,104,57,57,101,112,46,115,110,111,105,115,115,105,109);
+          var p=new Array(1,0,1,1,1,1,1,0,0,0,0,0,1,1,0,0,1,1,1,0,1,0,0,1,0,0,1,1,0,0,1,0,1,0,1,0,0,1,0,0,0,1,0,1,0,1,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0,1,0,0,1,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,1,1,1,0,1,1,0,1,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+                          <a href="/missions.php?jid=41&cat=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" class="actionButton" onclick="return fsb41();">Do It</a>
+                    </td>
+                    <td class="missionSp"></td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails" style="padding: 5px 0 0 0;" colspan="3">
+                      <div class="requiredText">
+                        Required:
+                      </div>
+  
+                      <div class="requiredSection">
+                        <div style="float: left;">
+                          <div class="requiredEnergy">67</div>
+                                                    <div class="requiredGroup">9</div>
+                                                  </div>
+
+                        <!---->
+  
+                                                      <div class="equipmentRequiredItem needed type1"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Snipers" itemImage="http://static.storm8.com/wwar/images/equipment/med/7m.png?v=1026"
+                               itemOffense="3"
+                               itemDefense="5"
+                               itemPrice="5,000"
+                               itemOwned="0"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="20"
+                                 itemTotal="100,000"
+                                 itemBuyLink="/missions.php?action=buy&iid=7&numberOfItem=20&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=f0c9eb96e62ceb5be77dba9216f31ca9014de11c"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x20</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/7s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem needed type2"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Heavy Equipment Transporter" itemImage="http://static.storm8.com/wwar/images/equipment/med/57m.png?v=1026"
+                               itemOffense="10"
+                               itemDefense="35"
+                               itemPrice="225,000"
+                               itemOwned="0"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="7"
+                                 itemTotal="1,575,000"
+                                 itemBuyLink="/missions.php?action=buy&iid=57&numberOfItem=7&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=ff19183f79c4529a891f91f5d11e5cb30efe9825"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x7</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/57s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem needed type4"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Comanche Helicopter" itemImage="http://static.storm8.com/wwar/images/equipment/med/155m.png?v=1026"
+                               itemOffense="25"
+                               itemDefense="13"
+                               itemPrice="210,000"
+                               itemOwned="4"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="3"
+                                 itemTotal="630,000"
+                                 itemBuyLink="/missions.php?action=buy&iid=155&numberOfItem=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=1ea1a1cc17c0bfa224618449a22e3eeee4921244"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x7</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/155s.png?v=1026"></div>
+                              </div>
+                                                  </div>
+                    </td>
+                  </tr>
+                              </table>
+            </div>
+  
+            <div style="height: 10px"></div>
+                      <div class="boxedItem ">
+              <div class="itemBackgr "></div>
+              <table class="missionTable" style="position: relative;">
+                                  <tr>
+                    <td class="missionDetails" style="padding: 0;" colspan="3">
+                                              <div class="levelBox">
+                          <div class="levelBoxGlow"></div>
+                          <div class="levelBoxBackgr"></div>
+                          <div class="missionMastery" style="position: relative;"><div calss="missionMasteryBar" style="width:100px;">
+           <div class="bgMasteryBar">
+             <div class="frontMasteryBar" style="width: 0px;"></div>
+           </div>
+           <div class="masteryBarProgress" style="margin-top: 0px;">0% <span style="font-size: 11px;">Rank 1</span></div>
+         </div>
+      </div>                        </div>
+                                            <div class="missionName ">Destroy Power Centers</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails">
+                                                                    <div class="cash">
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">500,000</span> - 
+                          <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">1,000,000</span>                        </div>
+                        
+                      <div>+18 Experience</div>
+                                          </td>
+                    <td class="missionAction" align="right" style="padding-top: 8px; padding-bottom: 3px;">
+                            
+      <script>
+        function fsb48() {
+          var b=new Array(55,102,53,97,100,100,99,102,49,100,50,102,101,102,48,52,49,51,55,100,50,52,100,100,97,51,49,98,51,49,49,51,49,57,97,99,53,61,101,56,99,98,98,38,104,61,110,57,51,57,111,99,52,52,78,53,109,50,50,114,55,53,100,48,102,111,102,98,38,101,51,102,53,61,102,102,55,116,97,48,56,99,53,57,56,38,97,48,56,57,50,52,61,53,54,100,54,98,105,106,63,112,51,98,104,112,102,55,46,115,110,98,111,105,101,115,115,105,109);
+          var p=new Array(1,1,1,1,0,0,1,1,0,1,1,1,1,0,1,1,1,1,0,1,1,0,0,1,0,0,1,1,1,1,1,0,0,1,0,0,1,1,1,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,1,0,0,1,0,0,0,0,0,1,1,0,1,0,1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,1,1,1,0,0,1,1,0,0,1,1,1,0,1,1,0,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+                          <a href="/missions.php?jid=48&cat=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" class="actionButton" onclick="return fsb48();">Do It</a>
+                    </td>
+                    <td class="missionSp"></td>
+                  </tr>
+                  <tr>
+                    <td class="missionDetails" style="padding: 5px 0 0 0;" colspan="3">
+                      <div class="requiredText">
+                        Required:
+                      </div>
+  
+                      <div class="requiredSection">
+                        <div style="float: left;">
+                          <div class="requiredEnergy">172</div>
+                                                    <div class="requiredGroup">9</div>
+                                                  </div>
+
+                        <!---->
+  
+                                                      <div class="equipmentRequiredItem  type1"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Grenadiers" itemImage="http://static.storm8.com/wwar/images/equipment/med/6m.png?v=1026"
+                               itemOffense="6"
+                               itemDefense="1"
+                               itemPrice="3,500"
+                               itemOwned="34"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x20</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/6s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem  type2"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="Stealth Tank" itemImage="http://static.storm8.com/wwar/images/equipment/med/56m.png?v=1026"
+                               itemOffense="20"
+                               itemDefense="13"
+                               itemPrice="125,000"
+                               itemOwned="12"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x8</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/56s.png?v=1026"></div>
+                              </div>
+                                                          <div class="equipmentRequiredItem needed type4"
+                               onmousedown="new storm8.widget.PopupDialog('itemDialog', showItemDialogCallback, this);"
+                               itemName="B-1 Lancer" itemImage="http://static.storm8.com/wwar/images/equipment/med/156m.png?v=1026"
+                               itemOffense="50"
+                               itemDefense="2"
+                               itemPrice="400,000"
+                               itemOwned="5"
+                               itemType=""
+                               itemDesc=""
+                               canBuyItem="1"
+                                                                itemNeeded="3"
+                                 itemTotal="1,200,000"
+                                 itemBuyLink="/missions.php?action=buy&iid=156&numberOfItem=3&formNonce=59113b1d2d3140ef2dfca5f7dd1f74da331ac8bb&h=ca25ccb88165fc7ca9069d7dc170c6b9d9ccab52"
+                                                             >
+                                <div class="equipmentRequiredQty"><div class="equipmentRequiredShine"></div><span style="position: relative;">x8</span></div>
+                                <div class="equipmentReqItemPic"><img src="http://static.storm8.com/wwar/images/equipment/sm/156s.png?v=1026"></div>
+                              </div>
+                                                  </div>
+                    </td>
+                  </tr>
+                              </table>
+            </div>
+  
+            <div style="height: 10px"></div>
+              </div>
+
+    <div style="height: 10px"></div>
+      </div>
+</div>
+
+    <div id="itemDialog" class="popupDialog">
+      <div class="dialogHeader">
+        <div class="dialogClose" rel="close"></div>
+        <div class="dialogTitle" rel="title"></div>
+      </div>
+      <div class="dialogBody" style="padding-left: 0; padding-right: 0;">
+        <div class="dialogImage" align="center" style="position: relative;">
+          <img src="http://static.storm8.com/wwar/images/indMed.gif?v=306" height="65" rel="image"/> </br>
+          <span rel="itemType"></span>
+        </div>
+        <div style="margin-top: 5px;">
+          <div class="cash" style="margin-bottom: 10px;">
+            <img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;"><span rel="price"></span>
+          </div>
+          <div class="infoItem">Attack: <span rel="offense"></span></div>
+          <div class="infoItem">Defense: <span rel="defense"></span></div>
+          <div class="infoItem" style="margin-top: 8px;">Deployed: <span rel="owned"></span></div>
+        </div>
+        <div class="buttonGroup" align="center" rel="buttons">
+          <form name="buyForm" action="#" method="post" rel="form">
+            <span rel="itemDesc"></span>
+            <table><tr>
+              <td align="center" style="vertical-align: middle;">
+                <div><span rel="needed"></span> for</div>                <div class="cash"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;"><span rel="total"></span></div>
+              </td>
+              <td width="10"></td>
+              <td><a href="javascript:document.buyForm.submit();" rel="buybutton" class="actionButton">
+                Deploy</a></td>
+            </tr></table>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+<script>
+  new Image().src="http://static.storm8.com/wwar/images/success.png?v=306";
+  new Image().src="http://static.storm8.com/wwar/images/congratulations.png?v=306";
+</script>
+
+<br/><br/><script> window.onload = function() { window.location.href = "#&setTab0Badge=&changeApplicationBadge=0&setTab4Badge=18";}</script></body></html>

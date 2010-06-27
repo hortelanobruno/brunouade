@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/> 
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/global.css?v=306"/><script type="text/javascript" src="http://static.storm8.com/wwar/js/global.js?v=306"></script><title>Battle</title>
+  <script type="text/javascript">
+    var walkDOM = function walk(node, func) {
+    	  func(node);
+    	  node = node.firstChild;
+    	  while (node) {
+    		  walk(node, func);
+    		  node = node.nextSibling;
+    		}
+    };  
+    if (!window.devicePixelRatio) {
+    	var body = document.getElementsByTagName('*');
+    	walkDOM(body[0], function(n) {
+        	if (n.style) {
+        	 n.style.display = "none";
+        	}
+    	});
+    }
+  </script>
+</head>
+
+<body style="">
+<div id="overlay" class="dialogOverlay"></div>
+<div id="topBar" class="topBar"><div class="topBarBg"></div><a href="/bank.php?formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=6f661fb0920f8a194f0bcf456061faa9f91e4340"><div class="cashTopArea">
+        <span class="topBarCash"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;"><span id="cashCurrent" style="white-space:nowrap">7,270,657</span></span>
+      </div>
+      <div id="cashTimerDiv" class="cashBottomArea"><span style="font-size: 11px; font-weight: normal;"><span>+<span style="white-space: nowrap;">883,550</span></span> in </span><span id="cashType" style="font-size:11px;font-weight:normal;">35:40</span></div></a><div class="levelTopArea">
+          <div class="levelBgTopArea"></div>
+          <div class="levelFrontTopArea"><a href="/profile.php?formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=689da5b220e262c2d16fd3aff58d6d9e4215a50e">27!</a></div>
+        </div>
+        <div class="levelBottomArea">
+        Level
+        </div><a href="/leading.php?formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=f5a79af8c1223e76ce010222c99e879171a30b51"><div class="levelBarTopArea">
+             <div class="levelBar" style="width:90px">
+             <div class="bgLevelBar" style="width:90px"><div id="expBar" class="frontLevelBarWinning" style="width:40px">&nbsp;</div>
+        </div>
+              </div>
+        </div>
+        <div class="levelBarBottomArea">
+        Exp: <span id="expText"><span class="cash">4542/4707</span></span>
+        </div></a>
+        <a href="/favor.php?"><div class="energyAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="energyCurrent" class="statEmphasis">38</span> / <span id="energyMax">400</span></div>        
+            <div id="energyTimerDiv" class="statBottomArea"><span id="energyType" style="font-size:11px;font-weight:normal;">2:58</span></div></td></tr></table></div></a>
+        <a href="/hospital.php?"><div class="healthAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="healthCurrent" class="statEmphasis">104</span> / <span id="healthMax">200</span></div>        
+            <div id="healthTimerDiv" class="statBottomArea"><span id="healthType" style="font-size:11px;font-weight:normal;">1:02</span></div></td></tr></table></div></a>
+        <a href="/favor.php?"><div class="staminaAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="staminaCurrent" class="statEmphasis">11</span> / <span id="staminaMax">18</span></div>        
+            <div id="staminaTimerDiv" class="statBottomArea"><span id="staminaType" style="font-size:11px;font-weight:normal;">1:02</span></div></td></tr></table></div></a></div><script>
+        setTopBarTimerData({"cash":{"page":"\/bank.php?","text":"Money","timeLeft":2140,"value":7270657,"maxValue":999999999999,"rate":3600,"update":883550},"energy":{"page":"\/favor.php?","text":"Energy","timeLeft":178,"value":38,"maxValue":400,"rate":300,"update":11},"health":{"page":"\/hospital.php?","text":"Health","timeLeft":62,"value":104,"maxValue":200,"rate":180,"update":1},"stamina":{"page":"\/favor.php?","text":"Ammo","timeLeft":62,"value":11,"maxValue":18,"rate":120,"update":1},"experience":{"width":90,"value":4542,"previousLevelValue":4407,"nextLevelValue":4707}});      
+        createTopBarTimer();
+      </script></div>    <div class="messageBox infoBox">
+  You have 18 pending Alliance invites. <a href="/group.php?formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=920c0d44c961b98be2bf0d560f8f7382f1281e3f">View and accept them.</a>    </div>
+  
+  <link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/fight.css?v=306"/><script type="text/javascript" src="http://static.storm8.com/wwar/js/fight.js?v=306"></script>
+
+<div id="fightResult">
+        <div class="messageBoxSuccess">
+                          <span class="success">Excellent!</span>
+      <div style="height:12px"></div>
+                    <span class="wonFight">
+        You won the battle,       </span>
+      taking 3 damage while dealing 26 damage to <a href="/profile.php?puid=3240376&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=105681a680fd4acdfb83f5b095392372782113c1">Elijah</a>. You took <span class="cash"><span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">0</span></span> and gained <span class="exp">3</span> experience points.                        <div style="padding-top:14px"><span class="itemsUsed">Your alliance of 4 used: <br><table><tr><td id="itemHiddenOffense"><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/156s.png?v=1026" alt="B-1 Lancer"></div>x5</div><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/155s.png?v=1026" alt="Comanche Helicopter"></div>x4</div><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/1058s.png?v=1026" alt="M163 Anti-aircraft Vehicle"></div>x7</div><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/154s.png?v=1026" alt="Harrier Jet"></div>x2</div><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/1057s.png?v=1026" alt="Wiesel 2 Mortar Unit"></div>x6</div></tr></table><br/><a href="/profile.php?puid=3240376&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=105681a680fd4acdfb83f5b095392372782113c1">Elijah</a>'s alliance of 2 used: <br><table><tr><td id="itemHiddenDefense"><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/157s.png?v=1026" alt="Stealth Jet"></div>x3</div><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/102s.png?v=1026" alt="Transport"></div>x1</div><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/54s.png?v=1026" alt="Mobile Artillery"></div>x2</div><div class="fightItemsTopRow" onclick="javascript://"><div style="height:30px"><img src="http://static.storm8.com/wwar/images/equipment/sm/154s.png?v=1026" alt="Harrier Jet"></div>x1</div><div id="itemMoreDefense" class="fightItemsTopRow" onclick="javascript:showItems('Defense', '&lt;div class=\&quot;fightItemsTopRow\&quot; onclick=\&quot;javascript://\&quot;&gt;&lt;div style=\&quot;height:30px\&quot;&gt;&lt;img src=\&quot;http://static.storm8.com/wwar/images/equipment/sm/103s.png?v=1026\&quot; alt=\&quot;Frigate\&quot;&gt;&lt;/div&gt;x2&lt;/div&gt;&lt;div class=\&quot;fightItemsTopRow\&quot; onclick=\&quot;javascript://\&quot;&gt;&lt;div style=\&quot;height:30px\&quot;&gt;&lt;img src=\&quot;http://static.storm8.com/wwar/images/equipment/sm/152s.png?v=1026\&quot; alt=\&quot;Cargo Chopper\&quot;&gt;&lt;/div&gt;x1&lt;/div&gt;&lt;div class=\&quot;fightItemsTopRow\&quot; onclick=\&quot;javascript://\&quot;&gt;&lt;div style=\&quot;height:30px\&quot;&gt;&lt;img src=\&quot;http://static.storm8.com/wwar/images/equipment/sm/53s.png?v=1026\&quot; alt=\&quot;Light Tank\&quot;&gt;&lt;/div&gt;x2&lt;/div&gt;')"><span class=itemMoreText>more</span></div></tr></table><br/></span></div>                                      <div style="height:12px"></div>
+        <div id="fightCommentStatus"></div>
+        <div id="fightComment" style="display: none;">
+          <form name="CommentForm" style="margin: 0; padding: 0; display: inline;">
+          <table>
+            <tr>
+              <td>
+                <textarea rows="1" cols="16" name="commentText" wrap="physical" style="font-size: 17px"></textarea>
+              </td>
+              <td style="vertical-align:middle;padding-left:5px">
+                <input type="button" class="btnMed" style="font-size:14px" value="Comment" name="action" onclick="leaveComment('/ajax/fightComment.php?toUserId=3240376&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=7a59ea0a10f383c87014b0fcfff7f7589a860761')">
+              </td>
+            </tr>
+          </table>
+          </form>
+          <div style="height:12px"></div>
+        </div>
+        
+        <table>
+          <tr>
+            <td>
+              <!-- Comment Message -->
+              <div id="commentButton">
+                <input type="button" class="btnMed" style="font-size:14px" value="Leave Comment" name="action" onclick="showComment()">
+              </div>
+            </td>
+            <td width=10></td>
+            <td>
+              <!-- Attack Again -->
+              <input type="button" 
+                     class="btnMed" 
+                     style="font-size:14px" 
+                     value="Attack Again" onclick="window.location.href='/fight.php?action=fight&rivalId=3240376&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=cce6bbdce35f9fc4218397ed185b4efcb9aa28ac'; return false"/>
+            </td>
+          </tr>
+        </table>
+              </div>
+      </div>
+
+        <table style="margin: 1px auto 0pt;" cellspacing="0" cellpadding="0"><tr><td>
+        <div id="sectionTabs" class="sectionTabs"><ul>
+                      <li class="selected"><a href="/fight.php?showAttackBg=true&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=c91a48935ec58815b3a73119ddaee450044cf54a">Attack Enemies</a></li>
+                      <li class=""><a href="/hitlist.php?tab=fight.php&showAttackBg=true&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=5a0469ef48fd82b847b6adcb42040a0c1ac59593">Sanctions (30)</a></li>
+                  </ul></div>
+      </td></tr></table>
+      <script>new storm8.widget.SectionTabs("sectionTabs");</script>
+    
+<div class="section">
+    
+  <div class="sectionContent">
+    <table>
+      <tr>
+        <div class="highlightSection"><div class="highlightSectionBox"></div><div class="highlightSectionContent"><a style="text-decoration:none; color:#FFFFFF" href="/leading.php?"><div class="highlightBoxLeft">Winning Country: </div><div class="highlightBoxRight"><img src="http://static.storm8.com/wwar/images/races/3.gif?v=306" width="38" height="20"></div><div style="margin-left:190px"><img src="http://static.storm8.com/wwar/images/btnInfo.png?v=306"></div></a></div></div><div style="height:5px"></div>      </tr>
+      <tr>
+        <th class="hdFightMobster">Enemy</th>
+        <td class="fightSp"></td>
+                  <th class="hdFightMobSize">Alliance</th>
+                <th class="fightSpLg"></th>
+        <th class="hdFightAction"></th>
+        <th class="fightSp"></th>
+      </tr>
+    </table>
+
+              <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=6280677&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=1584a99f2e89a2dd5383eaba7b0520c8aed12892"><img src="http://static.storm8.com/wwar/images/races/2.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=6280677&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=1584a99f2e89a2dd5383eaba7b0520c8aed12892">jsuuuu</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  3                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb6280677() {
+          var b=new Array(97,99,54,99,49,54,53,97,101,99,55,97,55,98,101,101,97,102,54,54,99,97,102,53,53,55,101,53,99,97,48,48,61,101,99,110,111,56,49,78,109,98,114,111,100,102,38,55,55,49,102,97,61,38,104,61,50,52,115,53,111,101,112,97,38,55,53,100,55,52,50,55,57,54,48,50,56,100,55,102,49,50,49,48,54,61,48,100,73,108,97,118,105,114,38,56,51,116,52,104,99,102,103,105,102,61,110,111,49,105,48,54,116,49,99,55,97,53,50,63,112,57,49,104,100,112,52,52,46,57,55,54,116,52,104,103,105,102);
+          var p=new Array(0,0,1,0,0,0,1,0,1,1,1,0,0,0,0,1,1,1,1,1,0,0,1,1,0,0,0,1,0,0,1,0,1,1,1,1,1,0,0,1,1,0,1,1,0,1,1,0,0,1,0,0,1,0,0,0,0,0,1,0,1,0,1,0,1,0,0,0,1,0,0,1,0,1,1,0,1,0,0,0,0,1,0,0,1,1,0,1,1,1,1,1,1,1,1,0,0,1,0,1,0,0,1,1,1,1,1,1,0,1,0,0,1,0,1,0,1,0,0,1,1,0,0,1,0,1,0,0,1,0,0,0,1,0,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=6280677&pos=1&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb6280677();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=7729616&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=d138a9fe86466fdd7f1d87cd25daef45aa8a2c9d"><img src="http://static.storm8.com/wwar/images/races/1.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=7729616&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=d138a9fe86466fdd7f1d87cd25daef45aa8a2c9d">zimi</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  4                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb7729616() {
+          var b=new Array(54,53,101,97,99,99,99,55,49,54,101,97,97,102,54,54,97,55,102,53,98,53,48,61,101,101,99,99,97,53,55,110,101,111,99,78,109,97,114,111,102,38,48,50,61,115,56,111,49,98,112,38,54,100,49,54,55,55,57,102,50,55,55,97,38,104,61,100,61,57,73,108,98,97,57,118,105,114,98,38,116,98,52,101,57,49,56,104,102,57,97,103,57,105,102,61,54,110,111,51,50,105,55,102,57,116,99,97,63,100,112,101,104,112,49,52,46,116,51,104,103,105,102,47,53,97,102,56,100,49,98,98,56,57,97,57,53,101,54);
+          var p=new Array(1,1,1,0,0,1,0,1,0,0,1,0,1,1,1,1,0,0,1,1,0,1,1,1,0,1,0,1,0,0,0,1,0,1,0,1,1,0,1,1,1,1,0,1,1,1,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,1,1,0,0,0,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,0,0,0,0,0,1,0,0,0,1,0,1,1,1,0,1,1,0,0,1,0,0,0,1,1,1,1,0,1,0,1,1,0,0,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=7729616&pos=2&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb7729616();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=8051857&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=6281de1c1ae0d2f7b6f7b7512b4781111510f6e6"><img src="http://static.storm8.com/wwar/images/races/5.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=8051857&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=6281de1c1ae0d2f7b6f7b7512b4781111510f6e6">0000A&#8203;peace2&#8203;</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  4                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb8051857() {
+          var b=new Array(97,54,53,101,99,55,99,99,49,54,97,97,101,55,97,98,101,102,99,54,54,102,97,53,55,53,101,99,53,48,61,97,48,101,99,56,110,111,78,49,109,98,114,111,102,100,55,55,102,38,51,97,61,115,38,111,104,61,112,48,38,55,55,53,56,49,53,52,48,101,99,56,61,100,52,97,49,48,100,73,108,101,97,118,54,51,105,101,114,38,116,100,104,56,103,105,51,102,61,110,51,55,111,55,99,56,105,52,116,101,53,100,52,57,55,99,51,50,97,63,56,112,49,104,112,46,51,116,99,104,103,54,50,105,49,100,53,102);
+          var p=new Array(0,1,1,1,1,1,0,0,0,0,0,0,1,0,1,0,0,1,0,1,1,1,0,0,0,1,0,0,1,1,1,0,0,1,1,0,1,1,1,0,1,0,1,1,1,0,0,0,0,1,1,0,1,1,0,1,0,0,1,0,1,0,1,1,1,1,1,0,1,0,0,1,1,0,0,0,0,0,1,1,1,0,1,1,0,0,1,0,1,1,1,0,1,0,1,1,0,1,1,1,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,1,1,0,1,0,1,1,1,0,1,0,1,1,0,0,1,0,0,0,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=8051857&pos=3&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb8051857();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=8027877&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=0e56ad021cec85ba0dfe54b36018bc0d86e6fdb7"><img src="http://static.storm8.com/wwar/images/races/2.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=8027877&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=0e56ad021cec85ba0dfe54b36018bc0d86e6fdb7">Edward</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  1                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb8027877() {
+          var b=new Array(54,53,97,101,99,99,55,101,99,97,102,49,54,54,54,102,97,97,53,53,55,48,98,61,101,99,97,101,53,55,101,99,99,110,111,97,78,48,109,114,56,111,49,102,98,38,100,55,55,52,102,97,38,104,61,115,111,61,112,38,55,55,53,56,55,50,50,50,50,100,54,48,50,98,56,61,99,56,97,100,56,49,73,54,101,51,51,108,97,98,118,56,55,56,105,55,114,53,38,50,52,116,104,97,48,103,97,53,54,105,102,61,110,97,111,105,54,54,52,116,99,97,51,56,50,97,63,112,104,100,98,112,46,116,104,103,105,102);
+          var p=new Array(1,1,0,1,0,1,1,1,0,1,1,0,1,0,1,1,0,0,1,1,0,1,0,1,0,0,0,1,0,0,0,0,1,1,1,0,1,0,1,1,0,1,0,1,0,1,0,0,0,1,0,0,0,0,1,1,1,0,1,1,1,1,0,1,1,0,0,0,1,0,0,1,0,0,1,1,0,0,0,1,0,0,1,0,0,0,0,1,1,0,1,0,0,0,1,0,1,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,1,0,1,1,0,0,0,1,1,1,0,0,0,0,1,1,1,0,0,1,1,1,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=8027877&pos=4&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb8027877();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=8190104&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=b08c182ad25df8dc53eeb7bf60e86ed467515447"><img src="http://static.storm8.com/wwar/images/races/1.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=8190104&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=b08c182ad25df8dc53eeb7bf60e86ed467515447">Zausil&#8203;l</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  4                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb8190104() {
+          var b=new Array(54,53,101,97,99,55,99,101,99,49,97,102,54,54,102,53,54,53,48,61,97,101,97,99,55,110,98,111,101,78,99,109,97,53,114,111,102,38,55,101,99,97,48,53,56,61,49,115,98,100,111,55,55,112,102,38,52,97,48,38,104,61,49,48,57,57,49,51,56,61,100,73,108,97,118,105,114,57,38,49,51,55,116,104,103,105,102,57,61,110,111,48,48,105,116,49,49,99,52,55,53,50,51,98,97,63,112,99,52,52,48,53,104,99,112,55,46,56,116,97,104,102,103,50,105,102,47,55,97,102,51,100,97,99,101,49,51,50,56);
+          var p=new Array(1,1,1,0,1,1,0,1,0,0,1,1,1,1,1,1,0,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,1,1,1,0,0,0,0,0,1,0,1,0,1,0,0,1,0,0,1,0,1,1,0,1,0,0,0,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,0,0,1,1,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=8190104&pos=5&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb8190104();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=7651133&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=4e71af09242c45a94bff61be5d4739261ffe677f"><img src="http://static.storm8.com/wwar/images/races/1.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=7651133&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=4e71af09242c45a94bff61be5d4739261ffe677f">atti</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  3                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb7651133() {
+          var b=new Array(54,97,53,99,99,49,54,101,99,97,55,101,97,55,97,98,102,54,54,101,99,102,97,53,53,48,61,101,53,55,99,101,99,97,48,56,49,98,100,55,55,110,102,97,38,111,78,109,114,111,102,104,38,54,61,61,115,54,55,48,111,112,56,38,51,51,49,49,55,48,53,102,54,55,61,51,100,73,101,108,97,98,118,97,105,48,55,51,99,114,52,38,55,116,104,102,101,51,103,105,102,52,61,97,110,98,111,105,50,102,116,99,51,56,97,57,97,63,49,100,112,56,104,56,112,102,52,55,54,46,101,116,100,104,51,103,105,102);
+          var p=new Array(1,0,1,0,0,0,0,1,1,0,1,1,0,0,1,0,1,1,1,0,0,1,0,1,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,0,1,1,1,0,1,0,0,0,1,1,0,1,1,1,1,1,0,0,1,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,0,1,0,1,1,0,0,0,1,1,1,0,1,0,1,0,1,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,1,0,1,0,0,0,0,1,0,1,0,1,0,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=7651133&pos=6&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb7651133();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=6531426&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=f26e9280d17b18eec83ee9b7fd7d35ad5776951c"><img src="http://static.storm8.com/wwar/images/races/2.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=6531426&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=f26e9280d17b18eec83ee9b7fd7d35ad5776951c">biffo1&#8203;980</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  3                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb6531426() {
+          var b=new Array(97,54,99,99,53,49,54,97,97,55,101,98,99,55,101,97,101,102,54,54,102,53,99,53,48,61,97,101,99,110,53,55,111,78,101,109,114,111,99,97,102,48,56,49,38,98,100,55,55,55,102,97,38,104,61,49,101,51,61,53,54,98,115,111,112,38,54,51,50,52,49,51,53,54,54,61,100,102,57,73,49,53,108,97,57,118,105,114,51,38,116,104,103,52,105,55,102,99,55,99,49,61,100,97,100,110,56,111,49,97,53,99,99,102,48,105,98,50,116,99,50,97,63,112,104,112,46,100,102,116,104,103,105,50,102,56,51,49);
+          var p=new Array(0,1,0,0,1,0,0,0,0,0,1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,0,1,1,1,0,0,1,1,0,1,1,1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,0,0,1,0,0,1,1,0,1,1,1,0,1,1,1,1,0,1,0,1,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,1,1,0,1,1,1,1,1,1,0,0,1,1,1,1,0,1,0,0,0);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=6531426&pos=7&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb6531426();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=7573075&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=421c7194a1a1f11db4b4b1a9ed237c98c38687f2"><img src="http://static.storm8.com/wwar/images/races/2.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=7573075&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=421c7194a1a1f11db4b4b1a9ed237c98c38687f2">J Mayne</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  3                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb7573075() {
+          var b=new Array(97,54,53,101,99,99,99,49,55,101,97,54,102,54,97,54,97,102,53,53,48,61,101,99,110,111,78,55,98,109,101,99,114,111,97,102,38,53,55,56,61,101,115,99,111,97,48,112,56,49,98,100,55,38,53,55,102,55,48,51,55,97,38,104,53,61,55,53,61,100,73,52,53,99,50,108,52,97,99,118,52,56,52,105,114,48,38,116,55,104,50,49,103,53,105,102,99,61,110,111,97,99,57,105,100,116,99,97,63,97,112,104,51,112,46,100,98,52,116,104,103,98,105,98,51,52,52,98,102,47,98,102,48,52,49,56,97,53,97);
+          var p=new Array(0,1,1,1,0,0,1,0,1,1,1,0,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,1,1,0,1,1,0,0,1,1,0,1,0,1,0,0,1,0,0,0,0,0,1,1,0,0,1,1,1,1,0,0,0,1,0,1,0,1,1,1,0,0,0,0,1,0,1,0,1,0,0,0,1,1,0,1,1,0,1,0,0,1,0,1,1,0,1,1,1,0,0,0,1,0,1,1,1,1,0,1,1,0,1,1,0,0,0,1,1,1,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=7573075&pos=8&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb7573075();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=8468635&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=500761fbd2fe214e671e1adb953fee7aa33776e6"><img src="http://static.storm8.com/wwar/images/races/1.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=8468635&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=500761fbd2fe214e671e1adb953fee7aa33776e6">ryokuc&#8203;ha</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  2                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb8468635() {
+          var b=new Array(54,97,99,99,49,53,54,101,97,99,97,55,98,101,55,101,99,97,97,102,54,54,102,53,53,55,53,48,101,61,101,99,99,97,48,56,49,98,110,111,78,109,114,100,55,111,55,102,97,102,38,38,104,61,100,57,54,61,115,57,111,54,97,49,49,49,112,38,53,49,51,54,56,56,54,52,56,51,101,55,55,61,48,100,100,73,52,102,97,108,101,97,118,57,97,57,49,50,55,105,114,49,54,54,52,38,116,100,104,103,100,105,100,102,61,110,111,105,116,99,99,99,101,56,100,97,63,112,104,48,51,112,46,116,104,103,105,102);
+          var p=new Array(1,0,0,0,0,1,0,1,0,1,0,0,0,0,1,1,0,0,1,1,1,1,1,1,0,0,1,1,0,1,1,1,0,0,0,0,0,0,1,1,1,1,1,0,0,1,0,0,0,1,1,0,0,0,0,1,0,1,1,0,1,0,0,0,0,0,1,1,1,0,1,1,1,0,1,1,1,0,0,0,0,1,0,1,0,1,0,0,0,1,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,1,1,0,1,0,1,1,1,1,1,1,0,1,0,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=8468635&pos=9&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb8468635();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+                  <div style="height:3px"></div><div class="sectionBarVMinor"></div><div style="height:3px"></div>
+          <div class="fightItem">
+            <table class="fightTable">
+              <tr>
+                <td class="fightClass"><a href="/profile.php?puid=3490735&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=88bec868f967cb60b660589ecf20be961241b2b0"><img src="http://static.storm8.com/wwar/images/races/2.gif?v=306" width="40" height="22"></a></td><td class="fightMobster"><div><a href="/profile.php?puid=3490735&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=88bec868f967cb60b660589ecf20be961241b2b0">Austin</a></div><div>Level 27</div></td>                <td class="fightSpLg"></td>
+                                
+                <td class="fightMobSize">
+                  4                </td>
+                
+                                
+                <td class="fightSp"></td>
+                <td class="fightAction">
+                        
+      <script>
+        function fsb3490735() {
+          var b=new Array(97,54,99,99,53,49,54,101,99,55,101,97,102,97,97,55,98,101,99,54,97,53,54,102,53,53,55,101,48,99,97,48,61,56,101,49,98,100,55,55,99,102,97,38,110,111,78,109,104,61,114,97,111,97,102,38,51,48,52,57,98,49,51,61,115,111,112,38,48,48,53,51,55,48,57,48,52,51,61,100,54,100,56,50,73,108,97,118,105,114,38,116,101,104,101,103,102,54,105,55,56,54,99,102,52,61,50,110,111,53,105,99,99,116,99,49,49,97,51,101,63,112,104,97,112,46,49,100,55,99,116,52,99,104,49,103,105,52,102);
+          var p=new Array(0,1,0,0,1,0,0,1,1,1,1,1,1,0,0,0,0,0,0,1,0,0,1,1,1,1,0,0,1,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,1,1,1,1,0,0,1,0,1,0,1,1,0,1,0,0,0,1,0,1,1,1,1,1,0,0,1,1,1,1,1,0,1,1,1,0,0,1,0,0,1,1,1,1,1,1,1,1,0,1,0,1,0,0,1,0,0,0,0,1,0,1,0,1,1,0,1,0,0,1,1,0,0,1,0,0,1,1,1,0,1,1,0,0,0,0,1,0,0,1,0,1,1,0,1);       
+          window.location = c(b,p);
+          return false;
+        }
+      </script>
+    <a href="/fight.php?action=fight&rivalId=3490735&pos=10&formNonce=055f66fae7ce56acc16aa7beca57eca081bd77fa&h=284e4fe4946e6fb8af3a662f4583454eebc8bd23" onclick="return fsb3490735();">
+               <div class="fightActionInner"><div class="fightActionInnerInner">Attack</div></div>
+            </a>      
+                </td>
+                <td class="fightSp"></td>
+              </tr>
+            </table>
+          </div>
+          </div>
+</div>
+
+<br/><br/><script> window.onload = function() { window.location.href = "#&setTab0Badge=&changeApplicationBadge=0&setTab4Badge=18";}</script></body></html>
