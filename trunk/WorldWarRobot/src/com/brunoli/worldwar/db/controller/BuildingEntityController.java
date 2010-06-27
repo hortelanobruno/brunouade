@@ -10,7 +10,6 @@ import javax.persistence.Query;
 
 import com.brunoli.worldwar.db.controller.exceptions.NonexistentEntityException;
 import com.brunoli.worldwar.db.entity.BuildingEntity;
-import com.brunoli.worldwar.db.entity.UnitEntity;
 
 public class BuildingEntityController {
 

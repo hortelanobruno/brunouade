@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.brunoli.beans.Mission;
+import com.brunoli.worldwar.beans.Mission;
 
 public class ObtainMission {
 

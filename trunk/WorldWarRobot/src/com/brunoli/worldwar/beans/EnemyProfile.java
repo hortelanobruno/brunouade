@@ -5,7 +5,9 @@ import java.util.Map;
 
 public class EnemyProfile {
 
-	private Map<Building, Integer> buildings;//cantidad
+	private Integer battleWon;
+	private Integer battleLost;
+	private Map<Building, Integer> buildings;// cantidad
 	private Map<Unit, Integer> units;
 
 	public EnemyProfile() {
@@ -27,5 +29,21 @@ public class EnemyProfile {
 
 	public void setUnits(Map<Unit, Integer> units) {
 		this.units = units;
+	}
+
+	public Integer getBattleLost() {
+		return battleLost;
+	}
+
+	public Integer getBattleWon() {
+		return battleWon;
+	}
+
+	public void setBattleLost(Integer battleLost) {
+		this.battleLost = battleLost;
+	}
+
+	public void setBattleWon(Integer battleWon) {
+		this.battleWon = battleWon;
 	}
 }

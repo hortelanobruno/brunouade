@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.util.UnitType;
 
 /**
@@ -39,7 +41,8 @@ public class UnitEntity implements Serializable {
 	private Integer defense;
 	@Column(name = "URL_IMG_REPRESENT")
 	private String urlImgRepresent;
-
+	@Column(name = "CANT_BUILD")
+	private Integer cantBuild;
 	public UnitEntity() {
 		super();
 	}
@@ -116,6 +119,41 @@ public class UnitEntity implements Serializable {
 		this.urlImgRepresent = urlImgRepresent;
 	}   
 	
+	public Integer getCantBuild() {
+		return cantBuild;
+	}
+	
+	public void setCantBuild(Integer cantBuild) {
+		this.cantBuild = cantBuild;
+	}
+	
+	public Unit getVO(){
+		Unit unit = new Unit();
+		unit.setAttack(attack);
+		unit.setDefense(defense);
+		unit.setId(id);
+		unit.setLevelRequiered(levelRequiered);
+		unit.setName(name);
+		unit.setPrice(price);
+		unit.setUnitType(unitType);
+		unit.setUnpkeep(unpkeep);
+		unit.setUrlImgRepresent(urlImgRepresent);
+		unit.setCantBuild(cantBuild);
+		return unit;
+	}
+	
+	public void setVO(Unit unit){
+		this.setAttack(unit.getAttack());
+		this.setDefense(unit.getDefense());
+		this.setId(unit.getId());
+		this.setLevelRequiered(unit.getLevelRequiered());
+		this.setName(unit.getName());
+		this.setPrice(unit.getPrice());
+		this.setUnitType(unit.getUnitType());
+		this.setUnpkeep(unit.getUnpkeep());
+		this.setUrlImgRepresent(unit.getUrlImgRepresent());
+		this.setCantBuild(cantBuild);
+	}
 	
    
 }

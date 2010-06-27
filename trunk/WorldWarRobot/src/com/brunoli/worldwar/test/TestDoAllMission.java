@@ -3,11 +3,11 @@ package com.brunoli.worldwar.test;
 import java.util.List;
 import java.util.Map;
 
-import com.brunoli.beans.Mission;
-import com.brunoli.parser.ObtainInformation;
-import com.brunoli.parser.ObtainMission;
-import com.brunoli.util.Menus;
-import com.brunoli.webmanager.HttpGetUrl;
+import com.brunoli.worldwar.beans.Mission;
+import com.brunoli.worldwar.parser.ObtainInformation;
+import com.brunoli.worldwar.parser.ObtainMission;
+import com.brunoli.worldwar.util.Menus;
+import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class TestDoAllMission {
 	private String urlInicio = "http://wwar.storm8.com/aindex.php?version=a1.54&udid=200145da554359fa&pf=0f86e6501f5b2c2654be9ddfd212da28&model=HTC+Dream&sv=2.1-update1";
