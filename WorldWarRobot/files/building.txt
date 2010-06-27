@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN' 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv='Content-Type' content='application/xhtml+xml; charset=UTF-8'/> 
+<meta name='viewport' content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'/>
+<meta name='format-detection' content='telephone=no'/>
+<link media='only screen and (max-device-width: 480px)'rel='stylesheet' type='text/css' href='http://static.storm8.com/wwar/css/global.css?v=304'/><script type='text/javascript' src='http://static.storm8.com/wwar/js/global.js?v=304'></script><title>Buildings</title>
+  <script type='text/javascript'>
+    var walkDOM = function walk(node, func) {
+    	  func(node);
+    	  node = node.firstChild;
+    	  while (node) {
+    		  walk(node, func);
+    		  node = node.nextSibling;
+    		}
+    };  
+    if (!window.devicePixelRatio) {
+    	var body = document.getElementsByTagName('*');
+    	walkDOM(body[0], function(n) {
+        	if (n.style) {
+        	 n.style.display = 'none';
+        	}
+    	});
+    }
+  </script>
+</head>
+
+<body style=''>
+<div id='overlay' class='dialogOverlay'></div>
+<div id='topBar' class='topBar'><div class='topBarBg'></div><a href='/bank.php?formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=423574d5fc942ff0eea91ffb5ea7f908cdd9b0c2'><div class='cashTopArea'>
+        <span class='topBarCash'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'><span id='cashCurrent' style='white-space:nowrap'>2,040,414</span></span>
+      </div>
+      <div id='cashTimerDiv' class='cashBottomArea'><span style='font-size: 11px; font-weight: normal;'><span>+<span style='white-space: nowrap;'>347,000</span></span> in </span><span id='cashType' style='font-size:11px;font-weight:normal;'>50:04</span></div></a><div class='levelTopArea'>
+          <div class='levelBgTopArea'></div>
+          <div class='levelFrontTopArea'><a style='text-decoration:none' href='/profile.php?formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=d0addb68ba4a740cd15f098c3ac143b74bbb1838'>24</a></div>
+        </div>
+        <div class='levelBottomArea'>
+        Level
+        </div><div class='levelBarTopArea'>
+             <div class='levelBar' style='width:90px'>
+             <div class='bgLevelBar' style='width:90px'><div id='expBar' class='frontLevelBar' style='width:29px'>&nbsp;</div>
+        </div>
+              </div>
+        </div>
+        <div class='levelBarBottomArea'>
+        Exp: <span id='expText'>3645/3831</span>
+        </div>
+        <a href='/favor.php?'><div class='energyAreaContainer'><table class='statTable'><tr><td class='statTableIcon'><div></div></td>
+          <td class='statTableInBetween'></td>
+          <td class='statTableInfo'>
+            <div class='statTopArea'>
+            <span id='energyCurrent' class='statEmphasis'>40</span> / <span id='energyMax'>390</span></div>        
+            <div id='energyTimerDiv' class='statBottomArea'><span id='energyType' style='font-size:11px;font-weight:normal;'>0:22</span></div></td></tr></table></div></a>
+        <a href='/hospital.php?'><div class='healthAreaContainer'><table class='statTable'><tr><td class='statTableIcon'><div></div></td>
+          <td class='statTableInBetween'></td>
+          <td class='statTableInfo'>
+            <div class='statTopArea'>
+            <span id='healthCurrent' class='statEmphasis'>40</span> / <span id='healthMax'>200</span></div>        
+            <div id='healthTimerDiv' class='statBottomArea'><span id='healthType' style='font-size:11px;font-weight:normal;'>2:45</span></div></td></tr></table></div></a>
+        <a href='/favor.php?'><div class='staminaAreaContainer'><table class='statTable'><tr><td class='statTableIcon'><div></div></td>
+          <td class='statTableInBetween'></td>
+          <td class='statTableInfo'>
+            <div class='statTopArea'>
+            <span id='staminaCurrent' class='statEmphasis'>4</span> / <span id='staminaMax'>17</span></div>        
+            <div id='staminaTimerDiv' class='statBottomArea'><span id='staminaType' style='font-size:11px;font-weight:normal;'>0:45</span></div></td></tr></table></div></a></div><script>
+        setTopBarTimerData({'cash':{'page':'\/bank.php?','text':'Money','timeLeft':3004,'value':2040414,'maxValue':999999999999,'rate':3600,'update':347000},'energy':{'page':'\/favor.php?','text':'Energy','timeLeft':22,'value':40,'maxValue':390,'rate':300,'update':11},'health':{'page':'\/hospital.php?','text':'Health','timeLeft':165,'value':40,'maxValue':200,'rate':180,'update':1},'stamina':{'page':'\/favor.php?','text':'Ammo','timeLeft':45,'value':4,'maxValue':17,'rate':120,'update':1},'experience':{'width':90,'value':3645,'previousLevelValue':3555,'nextLevelValue':3831}});      
+        createTopBarTimer();
+      </script></div>    <div class='messageBox infoBox'>
+  You have 15 pending Alliance invites. <a href='/group.php?formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=3463d1c2a07b8fc1f8d3e6c95c003f0fadd66efc'>View and accept them.</a>    </div>
+  
+  
+  
+<link media='only screen and (max-device-width: 480px)'rel='stylesheet' type='text/css' href='http://static.storm8.com/wwar/css/realEstate.css?v=304'/><script type='text/javascript' src='http://static.storm8.com/wwar/js/realEstate.js?v=304'></script>
+<div class='section'>
+    <div class='sectionHeader'>
+    Buildings <span style='font-size:12px;font-weight:normal'>(Income <span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>575,500</span></span>, Upkeep <span style='color:red'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>228,500</span></span>)</span>  </div>
+  <div class='sectionBar'></div>
+  <div class='sectionSubHeader'>
+    <div style='line-height:18px'>Money Flow: <span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>347,000</span></span> every 60 minutes.<br/>Next paid in: 51 minutes.</div>  </div>
+  <div class='sectionBar'></div>
+    <div class='sectionContent'>
+              <div style='height:5px'></div>
+      <div class='unlockTextMed'>
+        <div class='tac'><table class='unlockTextTable'><tr><td class='unlockTextTableImg'><img src='http://static.storm8.com/wwar/images/locked.png?v=304' width='12' height='12'></td><td width=5></td><td class='unlockTextTableText'>Unlock more buildings at level 25.</td></tr></table></div>      </div>
+        <div style='height:5px'></div>
+    <div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/1.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Supply Depot</div><div class='reInfoItem' style='width:160px'>Income: <span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>1,000</span></span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>90,000</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=1&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=cf0c0412dbf4a4a07e2d7a1278c81a69f881c7e7'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>40</span></div>
+          
+          <div style='height:5px'></div>
+          <a href='/investment.php?action=sell&inv_id=1&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=39a187e1d9a84c803733473e1c67e6cb3c44f67a'><div class='reSellActionInner'>
+      	        <div class='reActionInnerInner'>Disband</div></div></a>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/2.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Bunker</div><div class='reInfoItem' style='width:160px'>Defense: <span class='defense'>+3</span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>90,000</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=2&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=0d008b3bbd518d61c6dba107d1e5cbe36834afb8'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>20</span></div>
+          
+          <div style='height:5px'></div>
+          <a href='/investment.php?action=sell&inv_id=2&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=ed8ed6c77f73a5de32c2ea9b483607f04dfc9771'><div class='reSellActionInner'>
+      	        <div class='reActionInnerInner'>Disband</div></div></a>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/3.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Refinery</div><div class='reInfoItem' style='width:160px'>Income: <span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>6,500</span></span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>450,000</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=3&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=6dcf07b2629067521734ada45fbc634bf8497024'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>20</span></div>
+          
+          <div style='height:5px'></div>
+          <a href='/investment.php?action=sell&inv_id=3&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=89f22c8d4488b4bb6d0da0f61fb0939006693adc'><div class='reSellActionInner'>
+      	        <div class='reActionInnerInner'>Disband</div></div></a>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/4.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Barracks</div><div class='reInfoItem' style='width:160px'>Energy: <span class='defense'>+1 every 5 min</span><br/><i>(Limited to Own 1)</i></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>198,000</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <div class='reBuyDisabledActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>1</span></div>
+          
+          <div style='height:5px'></div>
+          <a href='/investment.php?action=sell&inv_id=4&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=654dffe2811234746aee1dc8c2a23eb8242afe51'><div class='reSellActionInner'>
+      	        <div class='reActionInnerInner'>Disband</div></div></a>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/5.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Guard Tower</div><div class='reInfoItem' style='width:160px'>Defense: <span class='defense'>+10</span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>340,000</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=5&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=b81bdea72d5d777a6b4d0918c7b9cc48ec5c83c1'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>7</span></div>
+          
+          <div style='height:5px'></div>
+          <a href='/investment.php?action=sell&inv_id=5&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=70e4af38092b73e5df7e547c57a1cf19201176a8'><div class='reSellActionInner'>
+      	        <div class='reActionInnerInner'>Disband</div></div></a>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/6.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Weapons Factory</div><div class='reInfoItem' style='width:160px'>Income: <span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>16,500</span></span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>1,134K</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=6&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=86910cac0dcc27d6932ee653e585d922b01482bc'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>11</span></div>
+          
+          <div style='height:5px'></div>
+          <a href='/investment.php?action=sell&inv_id=6&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=ab9a7c43e9ba33cb89fe7ef8c726c0bf4f4e0ce2'><div class='reSellActionInner'>
+      	        <div class='reActionInnerInner'>Disband</div></div></a>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/7.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Anti-Aircraft Launcher</div><div class='reInfoItem' style='width:160px'>Defense: <span class='defense'>+15</span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>672,000</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=7&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=17679587b33671ed841141e8ac2c0af37148f106'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>2</span></div>
+          
+          <div style='height:5px'></div>
+          <a href='/investment.php?action=sell&inv_id=7&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=d76bb75cc98058b4c01a34a0905004632e90c4a4'><div class='reSellActionInner'>
+      	        <div class='reActionInnerInner'>Disband</div></div></a>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/8.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Power Plant</div><div class='reInfoItem' style='width:160px'>Income: <span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>56,000</span></span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>3,780K</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=8&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=8472a801ff83dc36b247555f212c873a49b7f70b'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>4</span></div>
+          
+          <div style='height:5px'></div>
+          <a href='/investment.php?action=sell&inv_id=8&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=bfe01cfb91599f9110aa6685c729cb550e75b833'><div class='reSellActionInner'>
+      	        <div class='reActionInnerInner'>Disband</div></div></a>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/9.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Turret</div><div class='reInfoItem' style='width:160px'>Defense: <span class='defense'>+32</span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>2.8 mil</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=9&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=185b3e9e6f04c6b03fce6b0f7983fa0658bcfc82'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>0</span></div>
+          
+          <div style='height:5px'></div>
+          <div class='reSellDisabledActionInner'><div class='reActionInnerInner'>Disband</div></div>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/10.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Airfield</div><div class='reInfoItem' style='width:160px'>Energy: <span class='defense'>+2 every 5 min</span><br/><i>(Limited to Own 1)</i></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>8 mil</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=10&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=8ad973e1c6fc30ef8e1cf1485e604b73b55a345d'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>0</span></div>
+          
+          <div style='height:5px'></div>
+          <div class='reSellDisabledActionInner'><div class='reActionInnerInner'>Disband</div></div>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'>
+        <div class='tac'><img src='http://static.storm8.com/wwar/images/investments/med/11.png?v=1026' style='margin: 0 auto'><br/>
+        <div class='reName' style='width:160px'>Landmine Field</div><div class='reInfoItem' style='width:160px'>Defense: <span class='defense'>+50</span></div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+                      <div><span class='cash'><span style='white-space: nowrap;'><img src='http://static.storm8.com/wwar/images/money.png?v=304' width='15' height='12' style='padding:0 2px -1px 0;'>10 mil</span></span></div>
+          
+          <div style='height:5px'></div>
+                  <a href='/investment.php?action=buy&inv_id=11&formNonce=8132f9a21dcbbfc64af9479e6919b93dcd1477bb&h=ac4a3688e1e94beade87a78651f91c920e0f7328'>
+          <div class='reBuyActionInner'>
+          <div class='reActionInnerInner'>
+          Build          </div>
+          </div>
+          </a>
+                </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+
+                      <div class='ownedText'>Owned: <span class='ownedNum'>0</span></div>
+          
+          <div style='height:5px'></div>
+          <div class='reSellDisabledActionInner'><div class='reActionInnerInner'>Disband</div></div>        </td>
+          </tr></table></div><div style='height:4px'></div><div class='sectionBarVMinor'></div><div style='height:4px'></div><div class='investItem '><table class='reTable'><tr><td class='rePic' style='width:120px'><div class='tac'><img src='http://static.storm8.com/wwar/images/locked-1.png?v=304' style='margin: 0 auto'><br/><div class='reNameLocked' style='width:160px'>Oil Rig</div><div class='reInfoItemLocked' style='width:160px'>Unlock at Level 25</div></div></td><td class='reSp'></td>              <td class='reBuyAction'>
+          <div class='reBuyDisabledActionInner'><div class='reActionInnerInner'>Build</div></div>
+        </td>
+        <td class='reSp'></td>
+        <td class='reSellAction'>
+          <div class='reSellDisabledActionInner'><div class='reActionInnerInner'>Disband</div></div>
+        </td>
+          </tr></table></div>  </div>
+</div>
+
+<br/><br/><script> window.onload = function() { window.location.href = '#&setTab0Badge=&changeApplicationBadge=0&setTab4Badge=15';}</script></body></html>
