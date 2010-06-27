@@ -1,0 +1,154 @@
+Infantry	1	Minigunners	400	0	1	1
+Infantry	1	Fireteam	700	0	2	1
+Infantry	2	Marines	1,200	0	2	2
+Infantry	5	Paratroopers	1,800	0	4	1
+Infantry	8	Medics	2,500	25	0	6
+Infantry	12	Grenadiers	3,500	50	6	1
+Infantry	18	Snipers	5,000	100	3	5
+Infantry	24	Navy Seals	7,500	200	5	4
+Infantry	26	Heavy Machine Gunners	10,000	320	6	4
+Infantry	30	Rocketeers	12,000	400	9	2
+Infantry	33	Corner Shot Recon	15,000	500	10	1
+Infantry	36	Commandos	16,000	550	6	6
+Infantry	39	Aerial Vehicle Squad	29,000	1,000	12	4
+Infantry	42	XM-25 Gunner	35,000	1,200	14	3
+Infantry	45	Tank Blasters	48,000	1,600	17	5
+Infantry	50	PackBot Robot Troopers	80,000	2,700	24	4
+Infantry	55	FELIN Combat Infantry	120,000	4,000	27	9
+Infantry	60	Heavy Assault Squad	150,000	5,000	28	16
+Infantry	64	Future Force Warrior Squad	300,000	10,000	42	12
+Infantry	67	LW50 Machine Gun Squad	440,000	15,000	55	10
+Infantry	70	M110 Sniper Team	600,000	20,000	65	9
+Infantry	75	XM-307 Grenade Machine Gun Squad	780,000	26,000	75	10
+Infantry	80	Railgun Troopers	960,000	32,000	90	4
+Infantry	85	Mobile Infantry Marines	1,200,000	40,000	95	10
+Infantry	1	Prisoner	Loot	0	0	1
+Infantry	2	Cadet Squad	Loot	0	1	0
+Infantry	3	Patrol Unit	Loot	0	1	2
+Infantry	6	Light Machine Gunner	Loot	0	3	1
+Infantry	10	Avionics Engineers	Loot	100	3	5
+Infantry	20	Bioweapon Scientists	Loot	300	4	6
+Infantry	18	Biosoldier Unit	Loot	250	6	3
+Infantry	30	Rebel Fighter	Loot	360	4	7
+Infantry	41	Nuclear Squad	Loot	1,200	10	5
+Infantry	38	Stealth Infiltrator	Loot	2,000	14	6
+Infantry	Unknown Shipment	Big Dog Robot	50 Points	0	17	21
+Infantry	Unknown Shipment	Exosuit Infantry	50 Points	0	15	24
+Infantry	Secret Reinforcement	GMS Lynx Rifle Squad	50 Points	0	37	72
+Ground	1	Supply Truck	2,500	0	2	2
+Ground	1	Hum-Vee	4,500	0	3	2
+Ground	3	Light Tank	12,500	0	6	4
+Ground	6	Mobile Artillery	25,000	0	9	6
+Ground	10	Armored Personnel Carrier	60,000	1,200	5	18
+Ground	15	Stealth Tank	125,000	2,400	20	13
+Ground	20	Heavy Equipment Transporter	225,000	3,500	10	35
+Ground	22	Amphibious Assault Vehicle	340,000	4,200	28	24
+Ground	27	SSM Launcher	420,000	5,000	42	17
+Ground	30	Armored Snow Hovercraft	600,000	7,200	19	48
+Ground	32	Mammoth Tank	750,000	8,500	45	30
+Ground	34	Otokar Cobra Armored Vehicle	1,000,000	14,000	36	50
+Ground	39	M-ATV Ambush Protected Vehicle	1,700,000	26,000	46	51
+Ground	44	AHED Hybrid Electric Tank	2,200,000	36,000	54	54
+Ground	49	Predator Armored Tank	2,700,000	41,000	71	49
+Ground	54	Piranha V Armored Vehicle	3,400,000	55,000	83	57
+Ground	59	Warthog Tracked Carrier	4,200,000	65,000	90	60
+Ground	64	Black Knight Unmanned Combat Vehicle	5,100,000	75,000	115	50
+Ground	69	Hellfire Tank	6,200,000	80,000	108	72
+Ground	74	Expeditionary Fighting Vehicle	7,900,000	92,000	118	74
+Ground	79	T-95 Battle Tank	9,000,000	140,000	125	78
+Ground	84	XM 1202 Mounted Combat System	9,800,000	180,000	130	82
+Ground	89	Titan Self Propelled Artillery Tank	11,000,000	250,000	140	85
+Ground	15	Mobile Howitzer Cannon	Loot	2,800	13	15
+Ground	11	Wiesel 2 Mortar Unit	Loot	4,200	21	12
+Ground	14	M163 Anti-aircraft Vehicle	Loot	7,200	24	18
+Ground	16	SA-8 Gecko Missile Launcher	Loot	9,300	15	33
+Ground	28	Koalitcia-SV Artillery	Loot	25,000	47	29
+Ground	55	NLOS-C	Loot	10,000	52	25
+Ground	60	Patriot Missile System	Loot	173,000	60	100
+Ground	Expired Promotion	Flame Tank	Promo	0	14	5
+Ground	Expired Promotion	Caterpillar Track Tank	Promo	0	6	12
+Ground	Expired Promotion	Robotic Tank Drone	Promo	0	10	10
+Ground	Expired Promotion	AMX-30 Air Defense Tank	Promo	0	7	12
+Ground	Expired Promotion	Torpedo Launcher	Promo	0	12	7
+Ground	Expired Promotion	Fast Attack Vehicle	Promo	0	11	7
+Ground	Expired Promotion	Willys Army Jeep	Promo	0	8	9
+Ground	Unknown Shipment	Amphibious Combat Craft	50 Points	0	55	25
+Ground	Unknown Shipment	CV90120T Tank	50 Points	0	60	40
+Ground	Secret Reinforcement	BMP 3M Armored Personnel Carrier	50 Points	0	40	65
+Ground	Secret Reinforcement	Terrex Infantry Combat Vehicle	50 Points	0	110	80
+Water	1	Cruiser	6,000	0	4	2
+Water	2	Transport	10,000	0	2	7
+Water	4	Frigate	30,000	0	11	5
+Water	7	Naval Tanker	90,000	0	8	20
+Water	11	Naval Destroyer	200,000	3,000	27	15
+Water	14	M80 Stiletto	320,000	4,500	15	35
+Water	16	Submarine	400,000	5,200	45	10
+Water	20	Helicopter Carrier	600,000	6,500	28	34
+Water	23	Battleship	720,000	8,000	42	28
+Water	32	Aircraft Carrier	1,300,000	15,000	40	60
+Water	35	Horizon Frigate	1,800,000	22,000	45	65
+Water	38	Borey Class Missile Submarine	2,500,000	38,000	62	62
+Water	43	Type 45 Destroyer	3,100,000	50,000	80	50
+Water	48	Scorpene Submarine	3,700,000	58,000	74	74
+Water	53	DDG 1000 Destroyer	4,500,000	70,000	90	70
+Water	58	Elite Dreadnought	5,600,000	78,000	94	78
+Water	63	Astute Class Submarine	8,000,000	81,000	95	93
+Water	68	FSF-1 Sea Fighter	9,600,000	84,000	85	105
+Water	73	HSV-2 Swift	11,400,000	98,000	110	92
+Water	78	CG(X) Guided Missile Cruiser	12,500,000	150,000	95	115
+Water	83	UXV Combatant	14,300,000	200,000	130	90
+Water	200	Nuclear Battlecruiser	60,000,000	1,500,000	250	210
+Water	8	Corvette	Loot	0	9	4
+Water	21	Thresher Submarine	Loot	4,000	34	14
+Water	23	Guardian Patrol Boat	Loot	33,000	46	37
+Water	67	Nuclear Submarine	Loot	12,500	65	20
+Water	32	Amphibious Command Ship	Loot	83,000	55	66
+Water	82	Zubr Class Hovercraft	Loot	500,000	112	112
+Water	Expired Promotion	Sea Shadow Stealth Cruiser	Promo	0	11	11
+Water	Expired Promotion	PHM-1 Pegasus Hydrofoil Cruiser	Promo	0	6	17
+Water	Unknown Shipment	LCS-2 Littoral Combat Ship	50 Points	0	38	62
+Water	Secret Reinforcement	F124 Sachsen Class Frigate	50 Points	0	80	110
+Water	Secret Reinforcement	DDH 181 Hyuga Carrier	50 Points	0	135	135
+Air	1	Fighter	7,500	0	6	1
+Air	3	Cargo Chopper	14,000	0	6	4
+Air	5	Patrol Plane	32,000	0	12	3
+Air	8	Harrier Jet	100,000	1,100	24	5
+Air	13	Comanche Helicopter	210,000	3,500	25	13
+Air	17	B-1 Lancer	400,000	6,000	50	2
+Air	21	Stealth Jet	650,000	10,000	50	15
+Air	25	X-15 Supersonic Aircraft	840,000	12,000	68	6
+Air	28	Apache Helicopter	1,000,000	14,000	52	30
+Air	35	B-2 Bomber	1,650,000	22,000	110	5
+Air	38	F-18 Super Hornet Fighter	2,800,000	38,000	117	10
+Air	44	IAI Harop UAV	700,000	20,000	135	0
+Air	50	F-15 Silent Eagle Fighter	4,100,000	63,000	142	12
+Air	55	Havoc Helicopter	4,800,000	76,000	102	65
+Air	60	MQ-8B Fire Scout Helicopter	1,250,000	35,000	170	0
+Air	65	Mitsubishi F3 Interceptor	8,500,000	81,000	160	30
+Air	70	BAE Mantis UAV	2,100,000	60,000	180	0
+Air	75	AV-22 War Osprey Gunship	12,000,000	100,000	182	16
+Air	80	PAK-FA Fighter	13,500,000	170,000	190	18
+Air	85	Sikorsky X2 Helicopter	15,200,000	260,000	160	70
+Air	90	Boeing NGB Bomber	16,500,000	350,000	225	22
+Air	100	Aurora Aircraft	18,000,000	450,000	165	100
+Air	36	Raptor Jet	Loot	8,000	45	14
+Air	25	Annihilator Fighter	Loot	11,000	54	21
+Air	27	SU-34 Fullback Bomber	Loot	43,000	80	20
+Air	50	Eurocopter Tiger	Loot	167,000	110	56
+Air	100	Dark Sword Aircraft	Loot	600,000	145	125
+Air	Expired Promotion	SR-71 Blackbird	Promo	0	17	4
+Air	Expired Promotion	RQ-1 Predator	Promo	0	15	4
+Air	Expired Promotion	F-201 Starfighter	Promo	0	11	9
+Air	Expired Promotion	F-35 Lightning II Fighter	Promo	0	16	6
+Air	Expired Promotion	F-4 Phantom	Promo	0	14	6
+Air	Expired Promotion	AH-64 Cheyenne Helicopter	Promo	0	10	10
+Air	Expired Promotion	A-10 Thunderbolt II	Promo	0	11	8
+Air	Expired Promotion	F-16 Fighting Falcon	Promo	0	10	10
+Air	Expired Promotion	Hind Helicopter	Promo	0	11	10
+Air	Unknown Shipment	A129 Mangusta Helicopter	50 Points	0	20	25
+Air	Unknown Shipment	MiG-29 Fulcrum Fighter	50 Points	0	40	25
+Air	Unknown Shipment	SU-47 Berkut Fighter	50 Points	0	50	20
+Air	Unknown Shipment	Eurofighter Typhoon	50 Points	0	72	48
+Air	Secret Reinforcement	X-29 FSW Fighter	50 Points	0	170	20
+Air	Secret Reinforcement	KA-52 Alligator Helicopter	50 Points	0	150	80
+Air	Secret Reinforcement	JAS 39 Gripen Fighter	50 Points	0	200	40

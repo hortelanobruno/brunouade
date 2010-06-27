@@ -1,0 +1,17 @@
+Income	Supply Depot	1	18,000	1,800 More Than Previous	1,000 Income
+Income	Refinery	2	150,000	15,000 More Than Previous	6,500 Income
+Income	Weapons Factory	8	540,000	54,000 More Than Previous	16,500 Income
+Income	Power Plant	12	2,700,000	270,000 More Than Previous	56,000 Income
+Income	Oil Rig	25	20,000,000	2,000,000 More Than Previous	270,000 Income
+Income	Military Research Lab	35	60,000,000	6,000,000 More Than Previous	500,000 Income
+Income	Nuclear Testing Facility	40	100,000,000	10,000,000 More Than Previous	700,000 Income
+Income	Solar Satellite Network	60	340,000,000	34,000,000 More Than Previous	1,200,000 Income
+Defense	Bunker	1	30,000	3,000 More Than Previous	+3 Defense
+Defense	Guard Tower	5	200,000	20,000 More Than Previous	+10 Defense
+Defense	Anti-Aircraft Launcher	10	560,000	56,000 More Than Previous	+15 Defense
+Defense	Turret	15	2,800,000	280,000 More Than Previous	+32 Defense
+Defense	Landmine Field	22	10,000,000	1,000,000 More Than Previous	+50 Defense
+Defense	Automated Sentry Gun	37	24,000,000	2,400,000 More Than Previous	+75 Defense
+Energy	Barracks	3	180,000	Not Available	+1 Energy
+Energy	Airfield	18	8,000,000	Not Available	+2 Energy
+Energy	Communications Center	30	30,000,000	Not Available	+3 Energy

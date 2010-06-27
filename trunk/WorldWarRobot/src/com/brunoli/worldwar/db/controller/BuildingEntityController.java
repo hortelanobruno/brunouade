@@ -9,11 +9,12 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import com.brunoli.worldwar.db.controller.exceptions.NonexistentEntityException;
+import com.brunoli.worldwar.db.entity.BuildingEntity;
 import com.brunoli.worldwar.db.entity.UnitEntity;
 
-public class UnitEntityController {
+public class BuildingEntityController {
 
-	public UnitEntityController() {
+	public BuildingEntityController() {
         emf = Persistence.createEntityManagerFactory("WorldWarRobot");
     }
     private EntityManagerFactory emf = null;
@@ -22,12 +23,12 @@ public class UnitEntityController {
         return emf.createEntityManager();
     }
 
-    public void create(UnitEntity planEntity) {
+    public void create(BuildingEntity buildingEntity) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(planEntity);
+            em.persist(buildingEntity);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -36,19 +37,19 @@ public class UnitEntityController {
         }
     }
 
-    public void edit(UnitEntity planEntity) throws NonexistentEntityException, Exception {
+    public void edit(BuildingEntity buildingEntity) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            planEntity = em.merge(planEntity);
+            buildingEntity = em.merge(buildingEntity);
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Long id = planEntity.getId();
-                if (findUnitEntity(id) == null) {
-                    throw new NonexistentEntityException("The planEntity with id " + id + " no longer exists.");
+                Long id = buildingEntity.getId();
+                if (findBuildingEntity(id) == null) {
+                    throw new NonexistentEntityException("The buildingEntity with id " + id + " no longer exists.");
                 }
             }
             throw ex;
@@ -64,14 +65,14 @@ public class UnitEntityController {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            UnitEntity planEntity;
+            BuildingEntity buildingEntity;
             try {
-                planEntity = em.getReference(UnitEntity.class, id);
-                planEntity.getId();
+                buildingEntity = em.getReference(BuildingEntity.class, id);
+                buildingEntity.getId();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The planEntity with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The buildingEntity with id " + id + " no longer exists.", enfe);
             }
-            em.remove(planEntity);
+            em.remove(buildingEntity);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -82,24 +83,24 @@ public class UnitEntityController {
     
 
 	public void destroyAll() throws NonexistentEntityException {
-		List<UnitEntity> units = findUnitEntityEntities();
-		for (UnitEntity unitEntity : units) {
-			destroy(unitEntity.getId());
+		List<BuildingEntity> buildings = findBuildingEntityEntities();
+		for (BuildingEntity buildingEntity : buildings) {
+			destroy(buildingEntity.getId());
 		}
 	}
 
-    public List<UnitEntity> findUnitEntityEntities() {
-        return findUnitEntityEntities(true, -1, -1);
+    public List<BuildingEntity> findBuildingEntityEntities() {
+        return findBuildingEntityEntities(true, -1, -1);
     }
 
-    public List<UnitEntity> findUnitEntityEntities(int maxResults, int firstResult) {
-        return findUnitEntityEntities(false, maxResults, firstResult);
+    public List<BuildingEntity> findBuildingEntityEntities(int maxResults, int firstResult) {
+        return findBuildingEntityEntities(false, maxResults, firstResult);
     }
 
-    private List<UnitEntity> findUnitEntityEntities(boolean all, int maxResults, int firstResult) {
+    private List<BuildingEntity> findBuildingEntityEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("select object(o) from UnitEntity as o");
+            Query q = em.createQuery("select object(o) from BuildingEntity as o");
             if (!all) {
                 q.setMaxResults(maxResults);
                 q.setFirstResult(firstResult);
@@ -110,10 +111,10 @@ public class UnitEntityController {
         }
     }
 
-    public UnitEntity findUnitEntity(Long id) {
+    public BuildingEntity findBuildingEntity(Long id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(UnitEntity.class, id);
+            return em.find(BuildingEntity.class, id);
         } finally {
             em.close();
         }
@@ -122,7 +123,7 @@ public class UnitEntityController {
     public int getPlanEntityCount() {
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("select count(o) from UnitEntity as o");
+            Query q = em.createQuery("select count(o) from BuildingEntity as o");
             return ((Long) q.getSingleResult()).intValue();
         } finally {
             em.close();
