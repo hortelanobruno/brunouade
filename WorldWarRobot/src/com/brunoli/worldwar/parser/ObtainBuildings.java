@@ -6,10 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.brunoli.beans.Building;
-import com.brunoli.beans.Mission;
-import com.brunoli.util.BuildingEnum;
-import com.brunoli.util.BuildingType;
+import com.brunoli.worldwar.beans.Building;
+import com.brunoli.worldwar.util.BuildingEnum;
+import com.brunoli.worldwar.util.BuildingType;
 
 public class ObtainBuildings {
 
@@ -72,16 +71,16 @@ public class ObtainBuildings {
 					// name
 					String name = a.split("reName")[1].split("</div>")[0]
 							.split(">")[1];
-					building.setName(BuildingEnum.getType(name));
+					building.setName(name);
 					// type
 					String type = a.split("reInfoItem")[1].split("<span")[0]
 							.split(">")[1].replaceAll(":", "").trim();
-					building.setType(BuildingType.getType(type));
+					building.setCategory(BuildingType.getType(type));
 					String typeValue;
 					String price;
 					String cantBuild;
 					String url;
-					switch (building.getType()) {
+					switch (building.getCategory()) {
 					case INCOME:
 						// type value
 						typeValue = a.split("money.png")[1].split("</span>")[0]
@@ -97,7 +96,7 @@ public class ObtainBuildings {
 								.split(">")[1].replaceAll(",", "").replaceAll(
 								"\\.", "").replaceAll(" ", "");
 						try {
-							building.setPrice(parsearPrice(price));
+							building.setInitialCost(parsearPrice(price));
 						} catch (Exception ex) {
 
 						}
@@ -129,7 +128,7 @@ public class ObtainBuildings {
 								.split(">")[1].replaceAll(",", "").replaceAll(
 								"\\.", "").replaceAll(" ", "");
 						try {
-							building.setPrice(parsearPrice(price));
+							building.setInitialCost(parsearPrice(price));
 						} catch (Exception ex) {
 
 						}
@@ -161,7 +160,7 @@ public class ObtainBuildings {
 								.split(">")[1].replaceAll(",", "").replaceAll(
 								"\\.", "").replaceAll(" ", "");
 						try {
-							building.setPrice(parsearPrice(price));
+							building.setInitialCost(parsearPrice(price));
 						} catch (Exception ex) {
 
 						}

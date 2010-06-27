@@ -3,13 +3,13 @@ package com.brunoli.worldwar.test;
 import java.util.List;
 import java.util.Map;
 
-import com.brunoli.beans.Enemy;
-import com.brunoli.parser.ObtainFight;
-import com.brunoli.parser.ObtainInformation;
-import com.brunoli.util.Menus;
-import com.brunoli.webmanager.HttpGetUrl;
+import com.brunoli.worldwar.beans.Enemy;
+import com.brunoli.worldwar.parser.ObtainFight;
+import com.brunoli.worldwar.parser.ObtainInformation;
+import com.brunoli.worldwar.util.Menus;
+import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
-public class TestDoFight {
+public class TestFightList {
 
 	private String urlInicio = "http://wwar.storm8.com/aindex.php?version=a1.54&udid=200145da554359fa&pf=0f86e6501f5b2c2654be9ddfd212da28&model=HTC+Dream&sv=2.1-update1";
 	private ObtainInformation obtainInformation;
@@ -18,10 +18,10 @@ public class TestDoFight {
 	
 	
 	public static void main(String[] arg) {
-		new TestDoFight();
+		new TestFightList();
 	}
 	
-	public TestDoFight() {
+	public TestFightList() {
 		get = new HttpGetUrl();
 		obtainInformation = new ObtainInformation();
 		obtainFight = new ObtainFight();

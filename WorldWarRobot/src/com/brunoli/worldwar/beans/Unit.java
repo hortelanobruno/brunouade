@@ -1,6 +1,6 @@
 package com.brunoli.worldwar.beans;
 
-import com.brunoli.util.UnitType;
+import com.brunoli.worldwar.util.UnitType;
 
 public class Unit {
 
@@ -10,6 +10,7 @@ public class Unit {
 	private String name;
 	private Long price;
 	private Long unpkeep;
+	private Integer cantBuild;
 	private Integer attack;
 	private Integer defense;
 	private String urlImgRepresent;
@@ -17,21 +18,13 @@ public class Unit {
 	public Unit() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setId(Long id) {
 		this.id = id;
-	}
-	
-	public String getUrlImgRepresent() {
-		return urlImgRepresent;
-	}
-	
-	public void setUrlImgRepresent(String urlImgRepresent) {
-		this.urlImgRepresent = urlImgRepresent;
 	}
 
 	public UnitType getUnitType() {
@@ -89,7 +82,32 @@ public class Unit {
 	public void setDefense(Integer defense) {
 		this.defense = defense;
 	}
+
+	public String getUrlImgRepresent() {
+		return urlImgRepresent;
+	}
+
+	public void setUrlImgRepresent(String urlImgRepresent) {
+		this.urlImgRepresent = urlImgRepresent;
+	}
 	
+	public Integer getCantBuild() {
+		return cantBuild;
+	}
+	
+	public void setCantBuild(Integer cantBuild) {
+		this.cantBuild = cantBuild;
+	}
+	
+	
+	@Override
+	public String toString() {
+		StringBuilder buil = new StringBuilder();
+		buil.append("Name: "+name+"\n");
+		buil.append("CantBuild: "+cantBuild+"\n");
+		buil.append("URL: "+urlImgRepresent+"\n");
+		return buil.toString();
+	}
 	
 
 }

@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.brunoli.worldwar.util.BuildingEnum;
+import com.brunoli.worldwar.beans.Building;
 import com.brunoli.worldwar.util.BuildingType;
 
 /**
@@ -41,6 +41,7 @@ public class BuildingEntity implements Serializable {
 	private Long nextCost;
 	@Column(name = "URL")
 	private String url;
+	
 	public BuildingEntity() {
 		super();
 	}
@@ -117,6 +118,30 @@ public class BuildingEntity implements Serializable {
 		this.url = url;
 	}
 	
+	public Building getVO(){
+		Building building = new Building();
+		building.setCantBuild(cantBuild);
+		building.setCategory(category);
+		building.setId(id);
+		building.setInitialCost(initialCost);
+		building.setLevelRequiered(levelRequiered);
+		building.setName(name);
+		building.setNextCost(nextCost);
+		building.setTypeValue(typeValue);
+		building.setUrl(url);
+		return building;
+	}
 	
+	public void setVO(Building building){
+		this.setCantBuild(building.getCantBuild());
+		this.setCategory(building.getCategory());
+		this.setId(building.getId());
+		this.setInitialCost(building.getInitialCost());
+		this.setLevelRequiered(building.getLevelRequiered());
+		this.setName(building.getName());
+		this.setNextCost(building.getNextCost());
+		this.setTypeValue(building.getTypeValue());
+		this.setUrl(building.getUrl());
+	}
    
 }

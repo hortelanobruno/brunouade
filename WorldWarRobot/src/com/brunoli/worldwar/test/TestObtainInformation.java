@@ -1,7 +1,7 @@
 package com.brunoli.worldwar.test;
 
-import com.brunoli.parser.ObtainInformation;
-import com.brunoli.webmanager.HttpGetUrl;
+import com.brunoli.worldwar.parser.ObtainInformation;
+import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class TestObtainInformation {
 

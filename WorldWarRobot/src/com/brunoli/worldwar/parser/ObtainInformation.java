@@ -6,7 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import com.brunoli.util.Menus;
+import com.brunoli.worldwar.util.Menus;
+
 
 public class ObtainInformation {
 
