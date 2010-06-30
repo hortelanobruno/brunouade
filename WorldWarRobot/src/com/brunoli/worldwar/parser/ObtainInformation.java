@@ -70,48 +70,90 @@ public class ObtainInformation {
 	public Map<String, String> leerDatosUsuario(StringBuilder page) {
 		Map<String, String> datos = new HashMap<String, String>();
 		// LEVEL
-		String aux = page.toString().split("levelFrontTopArea")[1]
-				.split("</a>")[0].split(">")[2];
-		datos.put("Level", aux);
-		// ALIANZE SIZE
-		aux = page.toString().split("'crewCount'")[1].split("</")[0].split(">")[1];
-		datos.put("AlianzeSize", aux);
-		// EXPERIENCIA
-		aux = page.toString().split("expText")[1].split("</span>")[0]
-				.split(">")[1];
-		datos.put("Experience", aux);
-		// CURRENT ENERGY
-		aux = page.toString().split("energyCurrent")[1].split("</span>")[0]
-				.split(">")[1];
-		datos.put("EnergyCurrent", aux);
-		// MAX ENERGY
-		aux = page.toString().split("energyMax")[1].split("</span>")[0]
-				.split(">")[1];
-		datos.put("EnergyMax", aux);
-		// CURRENT HEALTH
-		aux = page.toString().split("healthCurrent")[1].split("</span>")[0]
-				.split(">")[1];
-		datos.put("HealthCurrent", aux);
-		// MAX HEALTH
-		aux = page.toString().split("healthMax")[1].split("</span>")[0]
-				.split(">")[1];
-		datos.put("HealthMax", aux);
-		// CURRENT STAMINA
-		aux = page.toString().split("staminaCurrent")[1].split("</span>")[0]
-				.split(">")[1];
-		datos.put("StaminaCurrent", aux);
-		// MAX STAMINA
-		aux = page.toString().split("staminaMax")[1].split("</span>")[0]
-				.split(">")[1];
-		datos.put("StaminaMax", aux);
-		// MONEY
-		aux = page.toString().split("'cashCurrent'")[1].split("</")[0]
-				.split(">")[1];
-		datos.put("Money", parsearMony(aux).toString());
+		String aux;
+		try {
+			aux = page.toString().split("levelFrontTopArea")[1].split("</a>")[0]
+					.split(">")[2];
+			datos.put("Level", aux.replaceAll("!", ""));
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL LEVEL.");
+		}
+		try {
+			// ALIANZE SIZE
+			aux = page.toString().split("'crewCount'")[1].split("</")[0]
+					.split(">")[1];
+			datos.put("AlianzeSize", aux);
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL ALIANZE SIZE.");
+		}
+		try {
+			// EXPERIENCIA
+			aux = page.toString().split("expText")[1].split("</span>")[0]
+					.split(">")[1];
+			datos.put("Experience", aux);
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EXPERIENCIA.");
+		}
+		try {
+			// CURRENT ENERGY
+			aux = page.toString().split("energyCurrent")[1].split("</span>")[0]
+					.split(">")[1];
+			datos.put("EnergyCurrent", aux);
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL CURRENT ENERGY.");
+		}
+		try {
+			// MAX ENERGY
+			aux = page.toString().split("energyMax")[1].split("</span>")[0]
+					.split(">")[1];
+			datos.put("EnergyMax", aux);
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL MAX ENERGY.");
+		}
+		try {
+			// CURRENT HEALTH
+			aux = page.toString().split("healthCurrent")[1].split("</span>")[0]
+					.split(">")[1];
+			datos.put("HealthCurrent", aux);
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL CURRENT HEALTH.");
+		}
+		try {
+			// MAX HEALTH
+			aux = page.toString().split("healthMax")[1].split("</span>")[0]
+					.split(">")[1];
+			datos.put("HealthMax", aux);
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL MAX HEALTH.");
+		}
+		try {
+			// CURRENT STAMINA
+			aux = page.toString().split("staminaCurrent")[1].split("</span>")[0]
+					.split(">")[1];
+			datos.put("StaminaCurrent", aux);
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL CURRENT STAMINA.");
+		}
+		try {
+			// MAX STAMINA
+			aux = page.toString().split("staminaMax")[1].split("</span>")[0]
+					.split(">")[1];
+			datos.put("StaminaMax", aux);
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL MAX STAMINA.");
+		}
+		try {
+			// MONEY
+			aux = page.toString().split("'cashCurrent'")[1].split("</")[0]
+					.split(">")[1];
+			datos.put("Money", parsearMony(aux).toString());
+		} catch (Exception ex) {
+			System.out.println("ERROR AL OBTENER EL MONEY.");
+		}
 		return datos;
 	}
-	
-	public Long parsearMony(String money){
+
+	public Long parsearMony(String money) {
 		return Long.parseLong(money.replaceAll(",", "").replaceAll("\\.", ""));
 	}
 
@@ -214,10 +256,10 @@ public class ObtainInformation {
 	}
 
 	public void leerLinks(StringBuilder page, Profile profile) {
-		Map<String,String> links = leerLinks(page);
-		for(String key : links.keySet()){
+		Map<String, String> links = leerLinks(page);
+		for (String key : links.keySet()) {
 			profile.getMenuUrls().put(Menus.getType(key), links.get(key));
 		}
-		
+
 	}
 }

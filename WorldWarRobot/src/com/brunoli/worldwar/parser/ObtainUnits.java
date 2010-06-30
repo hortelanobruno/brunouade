@@ -50,6 +50,7 @@ public class ObtainUnits {
 	public void cargarDatosUnits(StringBuilder page, List<Unit> units) {
 		int i=0;
 		String url;
+		String url2;
 		String name;
 		String cantBuild;
 		for(String a : page.toString().split("class='equipmentTable'")){
@@ -58,9 +59,11 @@ public class ObtainUnits {
 					url = a.split("src='")[1].split("'")[0];
 					name = a.split("'equipmentName'")[1].split("</")[0].split(">")[1];
 					cantBuild = a.split("ownedNum")[1].split("</")[0].split(">")[1];
+					url2 = "http://wwar.storm8.com/equipment.php"+a.split("equipmentActionInner")[0].split("/equipment.php")[1].split("'")[0];
 					Unit unit = findUnit(name,units);
 					unit.setCantBuild(Integer.parseInt(cantBuild));
-					unit.setUrlImgRepresent(url);
+					unit.setUrlImg(url);
+					unit.setUrlDeploy(url2);
 				}
 			}
 			

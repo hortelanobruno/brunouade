@@ -39,8 +39,10 @@ public class UnitEntity implements Serializable {
 	private Integer attack;
 	@Column(name = "DEFENSE")
 	private Integer defense;
-	@Column(name = "URL_IMG_REPRESENT")
-	private String urlImgRepresent;
+	@Column(name = "URL_IMG")
+	private String urlImg;
+	@Column(name = "URL_DEPLOY")
+	private String urlDeploy;
 	@Column(name = "CANT_BUILD")
 	private Integer cantBuild;
 	public UnitEntity() {
@@ -111,13 +113,21 @@ public class UnitEntity implements Serializable {
 		this.defense = defense;
 	}
 
-	public String getUrlImgRepresent() {
-		return urlImgRepresent;
+	public String getUrlDeploy() {
+		return urlDeploy;
 	}
-
-	public void setUrlImgRepresent(String urlImgRepresent) {
-		this.urlImgRepresent = urlImgRepresent;
-	}   
+	
+	public String getUrlImg() {
+		return urlImg;
+	}
+	
+	public void setUrlDeploy(String urlDeploy) {
+		this.urlDeploy = urlDeploy;
+	}
+	
+	public void setUrlImg(String urlImg) {
+		this.urlImg = urlImg;
+	}
 	
 	public Integer getCantBuild() {
 		return cantBuild;
@@ -137,7 +147,8 @@ public class UnitEntity implements Serializable {
 		unit.setPrice(price);
 		unit.setUnitType(unitType);
 		unit.setUnpkeep(unpkeep);
-		unit.setUrlImgRepresent(urlImgRepresent);
+		unit.setUrlDeploy(urlDeploy);
+		unit.setUrlImg(urlImg);
 		unit.setCantBuild(cantBuild);
 		return unit;
 	}
@@ -151,7 +162,8 @@ public class UnitEntity implements Serializable {
 		this.setPrice(unit.getPrice());
 		this.setUnitType(unit.getUnitType());
 		this.setUnpkeep(unit.getUnpkeep());
-		this.setUrlImgRepresent(unit.getUrlImgRepresent());
+		this.setUrlDeploy(unit.getUrlDeploy());
+		this.setUrlImg(unit.getUrlImg());
 		this.setCantBuild(cantBuild);
 	}
 	
