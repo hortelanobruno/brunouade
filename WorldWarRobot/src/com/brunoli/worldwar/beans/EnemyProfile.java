@@ -9,12 +9,21 @@ public class EnemyProfile {
 	private Integer battleLost;
 	private Map<Building, Integer> buildings;// cantidad
 	private Map<Unit, Integer> units;
+	private String attackUrl;
 
 	public EnemyProfile() {
 		buildings = new HashMap<Building, Integer>();
 		units = new HashMap<Unit, Integer>();
 	}
-
+	
+	public String getAttackUrl() {
+		return attackUrl;
+	}
+	
+	public void setAttackUrl(String attackUrl) {
+		this.attackUrl = attackUrl;
+	}
+	
 	public Map<Building, Integer> getBuildings() {
 		return buildings;
 	}

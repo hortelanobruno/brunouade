@@ -178,16 +178,17 @@ public class ObtainInformation {
 
 	public void leerDatosUsuario(StringBuilder page, Profile profile) {
 		// LEVEL
-		String aux = page.toString().split("'levelFrontTopArea'")[1]
-				.split("</a>")[0].split("'>")[1];
+		String aux;
 		try {
+			aux = page.toString().split("'levelFrontTopArea'")[1]
+			                                   				.split("</a>")[0].split("'>")[1];
 			profile.setLevel(Integer.parseInt(aux.replaceAll("!", "")));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL LEVEL.");
 		}
-		// ALIANZE SIZE
-		aux = page.toString().split("'crewCount'")[1].split("</")[0].split(">")[1];
 		try {
+			// ALIANZE SIZE
+			aux = page.toString().split("'crewCount'")[1].split("</")[0].split(">")[1];
 			profile.setAlianzeSize(Integer.parseInt(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL ALIANZE SIZE.");
@@ -196,59 +197,59 @@ public class ObtainInformation {
 		aux = page.toString().split("expText")[1].split("</span>")[0]
 				.split(">")[1];
 		profile.setExperience(aux);
-		// CURRENT ENERGY
-		aux = page.toString().split("energyCurrent")[1].split("</span>")[0]
-				.split(">")[1];
 		try {
+			// CURRENT ENERGY
+			aux = page.toString().split("energyCurrent")[1].split("</span>")[0]
+					.split(">")[1];
 			profile.setEnergyCurrent(Integer.parseInt(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL CURRENT ENERGY.");
 		}
-
-		// MAX ENERGY
-		aux = page.toString().split("energyMax")[1].split("</span>")[0]
-				.split(">")[1];
 		try {
+
+			// MAX ENERGY
+			aux = page.toString().split("energyMax")[1].split("</span>")[0]
+					.split(">")[1];
 			profile.setEnergyMax(Integer.parseInt(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL MAX ENERGY.");
 		}
-		// CURRENT HEALTH
-		aux = page.toString().split("healthCurrent")[1].split("</span>")[0]
-				.split(">")[1];
 		try {
+			// CURRENT HEALTH
+			aux = page.toString().split("healthCurrent")[1].split("</span>")[0]
+					.split(">")[1];
 			profile.setHealthCurrent(Integer.parseInt(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL CURRENT HEALTH.");
 		}
-		// MAX HEALTH
-		aux = page.toString().split("healthMax")[1].split("</span>")[0]
-				.split(">")[1];
 		try {
+			// MAX HEALTH
+			aux = page.toString().split("healthMax")[1].split("</span>")[0]
+					.split(">")[1];
 			profile.setHealthMax(Integer.parseInt(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL MAX HEALTH.");
 		}
-		// CURRENT STAMINA
-		aux = page.toString().split("staminaCurrent")[1].split("</span>")[0]
-				.split(">")[1];
 		try {
+			// CURRENT STAMINA
+			aux = page.toString().split("staminaCurrent")[1].split("</span>")[0]
+					.split(">")[1];
 			profile.setStaminaCurrent(Integer.parseInt(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL CURRENT STAMINA.");
 		}
-		// MAX STAMINA
-		aux = page.toString().split("staminaMax")[1].split("</span>")[0]
-				.split(">")[1];
 		try {
+			// MAX STAMINA
+			aux = page.toString().split("staminaMax")[1].split("</span>")[0]
+					.split(">")[1];
 			profile.setStaminaMax(Integer.parseInt(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL MAX STAMINA.");
 		}
-		// MONEY
-		aux = page.toString().split("'cashCurrent'")[1].split("</")[0]
-				.split(">")[1];
 		try {
+			// MONEY
+			aux = page.toString().split("'cashCurrent'")[1].split("</")[0]
+					.split(">")[1];
 			profile.setMoney(parsearMony(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL MONEY.");

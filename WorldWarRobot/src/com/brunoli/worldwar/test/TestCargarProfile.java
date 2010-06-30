@@ -7,6 +7,7 @@ import com.brunoli.worldwar.beans.Building;
 import com.brunoli.worldwar.beans.Profile;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
+import com.brunoli.worldwar.manager.FightManager;
 import com.brunoli.worldwar.parser.ObtainBuildings;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.parser.ObtainUnits;
@@ -21,6 +22,7 @@ public class TestCargarProfile {
 	private ObtainUnits obtainUnits;
 	private ObtainBuildings obtainBuildings;
 	private HttpGetUrl get;
+	private FightManager fightManager;
 	private DBManager dbManager;
 
 	public static void main(String[] arg) {
@@ -33,6 +35,7 @@ public class TestCargarProfile {
 		obtainUnits = new ObtainUnits();
 		dbManager = new DBManager();
 		obtainBuildings = new ObtainBuildings();
+		fightManager = new FightManager();
 		try {
 			StringBuilder page = get.getUrl(urlInicio);
 			Profile profile = new Profile();
@@ -47,6 +50,8 @@ public class TestCargarProfile {
 			leerBuildings(profile);
 			//mostrar profile
 			mostrarProfile(profile);
+			//FIGHT MODE
+			fightManager.startFighting(get,profile);
 		} catch (Exception e) {
 			System.out.println("Error en el get. " + e.getMessage());
 		}

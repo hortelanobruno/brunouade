@@ -140,7 +140,7 @@ public class UnitEntityController {
 		try {
 			Query q = em
 					.createQuery(
-							"select object(o) from UnitEntity as o where o.urlImgRepresent = :url")
+							"select object(o) from UnitEntity as o where o.urlImg = :url")
 					.setParameter("url", url);
 			return (UnitEntity) q.getSingleResult();
 		}catch(Exception ex){
