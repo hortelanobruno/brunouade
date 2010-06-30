@@ -136,10 +136,10 @@ public class ObtainInformation {
 
 	public void leerDatosUsuario(StringBuilder page, Profile profile) {
 		// LEVEL
-		String aux = page.toString().split("levelFrontTopArea")[1]
-				.split("</a>")[0].split(">")[2];
+		String aux = page.toString().split("'levelFrontTopArea'")[1]
+				.split("</a>")[0].split("'>")[1];
 		try {
-			profile.setLevel(Integer.parseInt(aux));
+			profile.setLevel(Integer.parseInt(aux.replaceAll("!", "")));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL LEVEL.");
 		}

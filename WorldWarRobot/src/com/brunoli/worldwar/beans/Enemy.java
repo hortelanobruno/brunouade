@@ -83,8 +83,8 @@ public class Enemy {
 
 	public Integer calcularPointDefense() {
 		// units
-		List<Unit> unitsOrdenadas = ordenarUnitsPorAttack();
-		List<Building> buildingsOrdenadas = ordenarBuildingsPorAttack();
+		List<Unit> unitsOrdenadas = ordenarUnitsPorDefense();
+		List<Building> buildingsOrdenadas = ordenarBuildingsPorDefense();
 		return calcularPointDefense(unitsOrdenadas,buildingsOrdenadas);
 	}
 
@@ -111,7 +111,7 @@ public class Enemy {
 		return points;
 	}
 
-	private List<Building> ordenarBuildingsPorAttack() {
+	private List<Building> ordenarBuildingsPorDefense() {
 		List<Building> buildingsSorted = new ArrayList<Building>();
 		for(Building b : profile.getBuildings()
 				.keySet()){
@@ -124,7 +124,7 @@ public class Enemy {
 		return buildingsSorted;
 	}
 
-	private List<Unit> ordenarUnitsPorAttack() {
+	private List<Unit> ordenarUnitsPorDefense() {
 		List<Unit> unitsSorted = new ArrayList<Unit>(profile.getUnits()
 				.keySet());
 		Collections.sort(unitsSorted, new UnitComparator());
@@ -136,7 +136,7 @@ public class Enemy {
 
 		// Comparator interface requires defining compare method.
 		public int compare(Unit unit1, Unit unit2) {
-			return unit1.getAttack().compareTo(unit2.getAttack());
+			return unit1.getDefense().compareTo(unit2.getDefense());
 		}
 	}
 	

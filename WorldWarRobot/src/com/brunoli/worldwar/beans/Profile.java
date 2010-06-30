@@ -1,6 +1,8 @@
 package com.brunoli.worldwar.beans;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -140,6 +142,51 @@ public class Profile {
 
 	public void setBuildings(List<Building> buildings) {
 		this.buildings = buildings;
+	}
+	
+	public Integer calcularPointAttack() {
+		// units
+		List<Unit> unitsOrdenadas = ordenarUnitsPorAttack();
+		return calcularPointAttack(unitsOrdenadas);
+	}
+
+	private Integer calcularPointAttack(List<Unit> unitsOrdenadas) {
+		Integer points = 0;
+		Integer cantUnits = 6 * alianzeSize;
+		Map<Unit,Integer> auxUnits = new HashMap<Unit,Integer>();
+		//llenar mapa
+		for(Unit u : units){
+			auxUnits.put(u, u.getCantBuild());
+		}
+		Integer aux = null;
+		for(int i = 0 ; i < cantUnits ; i++){
+			for(Unit u : unitsOrdenadas){
+				aux = auxUnits.get(u);
+				if(aux>0){
+					points += u.getDefense();
+					aux--;
+					auxUnits.put(u, aux);
+					break;
+				}
+			}
+		}
+		return points;
+	}
+
+
+	private List<Unit> ordenarUnitsPorAttack() {
+		List<Unit> unitsSorted = new ArrayList<Unit>(units);
+		Collections.sort(unitsSorted, new UnitComparator());
+		Collections.reverse(unitsSorted);
+		return unitsSorted;
+	}
+
+	public class UnitComparator implements Comparator<Unit> {
+
+		// Comparator interface requires defining compare method.
+		public int compare(Unit unit1, Unit unit2) {
+			return unit1.getAttack().compareTo(unit2.getAttack());
+		}
 	}
 	
 	
