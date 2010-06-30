@@ -9,14 +9,16 @@ import java.util.Scanner;
 import com.brunoli.worldwar.beans.Building;
 import com.brunoli.worldwar.beans.Enemy;
 import com.brunoli.worldwar.beans.EnemyProfile;
+import com.brunoli.worldwar.beans.FightResult;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
+import com.brunoli.worldwar.util.FightResultType;
 
 public class ObtainFight {
 
 	public static void main(String[] arg) {
 		ObtainFight o = new ObtainFight();
-		StringBuilder page = o.leerArchivo("./files/fightJugador1.htm");
+		StringBuilder page = o.leerArchivo("./files/fightPeleaGanada.htm");
 		if (page != null) {
 			o.parsearPagina(page);
 		} else {
@@ -50,17 +52,21 @@ public class ObtainFight {
 	
 	public void parsearPagina(StringBuilder page) {
 		page = new StringBuilder(page.toString().replaceAll("\"", "'"));
-		//List<Enemy> enemys = leerEnemyList(page);
-		//mostrarEnemys(enemys);
-		EnemyProfile profile = leerEnemyProfile(new StringBuilder(page));
-		Enemy enemy = new Enemy();
-		enemy.setAlianceSize(4);
-		enemy.setProfile(profile);
-		mostrarProfile(profile);
-		System.out.println("Points defense: "+enemy.calcularPointDefense());
+//		List<Enemy> enemys = leerEnemyList(page);
+//		mostrarEnemys(enemys);
+		
+		
+//		EnemyProfile profile = leerEnemyProfile(new StringBuilder(page));
+//		Enemy enemy = new Enemy();
+//		enemy.setAlianceSize(4);
+//		enemy.setProfile(profile);
+//		mostrarProfile(profile);
+//		System.out.println("Points defense: "+enemy.calcularPointDefense());
+		
+		FightResult result = resultFight(page);
 	}
 
-	private void mostrarProfile(EnemyProfile profile) {
+	public void mostrarProfile(EnemyProfile profile) {
 		// TODO Auto-generated method stub
 		System.out.println("Fight won: "+profile.getBattleWon());
 		System.out.println("Fight lost: "+profile.getBattleLost());
@@ -72,11 +78,13 @@ public class ObtainFight {
 		}
 	}
 
-	private EnemyProfile leerEnemyProfile(StringBuilder page) {
+	public EnemyProfile leerEnemyProfile(StringBuilder page) {
 		EnemyProfile profile = new EnemyProfile();
+		//leo url attack
+		profile.setAttackUrl("http://wwar.storm8.com/fight.php"+page.toString().split("/fight.php")[1].split("'")[0]);
 		//leo battles
-		profile.setBattleWon(Integer.parseInt(page.toString().split("class='statsCol4'")[1].split("</")[0].split(">")[1].replaceAll(" ", "")));
-		profile.setBattleLost(Integer.parseInt(page.toString().split("class='statsCol4'")[2].split("</")[0].split(">")[1].replaceAll(" ", "")));
+		profile.setBattleWon(Integer.parseInt(page.toString().split("class='statsCol4'")[1].split("</")[0].split(">")[1].replaceAll(" ", "").replaceAll("\\n", "")));
+		profile.setBattleLost(Integer.parseInt(page.toString().split("class='statsCol4'")[2].split("</")[0].split(">")[1].replaceAll(" ", "").replaceAll("\\n", "")));
 		int i=0;
 		String url;
 		String cant;
@@ -145,7 +153,7 @@ public class ObtainFight {
 					String name = a.split("class='fightMobster'")[1].split("</a>")[0]
 							.split("'>")[1];
 					enemy.setName(name);
-					String url = "/profile.php"+a.split("/profile.php")[1].split("'")[0];
+					String url = "http://wwar.storm8.com/profile.php"+a.split("/profile.php")[1].split("'")[0];
 					enemy.setProfileUrl(url);
 					String level = a.split("Level")[1].split("</div>")[0]
 					        .replaceAll(" ", "");
@@ -160,6 +168,34 @@ public class ObtainFight {
 			i++;
 		}
 		return enemys;
+	}
+
+	public FightResult resultFight(StringBuilder page) {
+		FightResult result = new FightResult();
+		if(page.toString().contains("won")){
+			//WON
+			result.setResult(FightResultType.WON);
+			String a = page.toString().split("You took")[1].split("gained")[0].split("</")[0];
+			System.out.println(a);
+			result.setMoney(parsearMony(a.split(">")[a.split(">").length-1]));
+		}else if(page.toString().contains("lost")){
+			//LOST
+			result.setResult(FightResultType.LOST);
+		}else if(page.toString().contains("retreating")){
+			//RETRITMENT
+			result.setResult(FightResultType.FORCES_RETRITMENT);
+		}
+		return result;
+	}
+	
+	public Long parsearMony(String money) {
+		return Long.parseLong(money.replaceAll(",", "").replaceAll("\\.", ""));
+	}
+
+	public String obtainAttackAgainUrl(StringBuilder page) {
+		String url = "http://wwar.storm8.com/fight.php"+page.toString().split("'Attack Again'")[1].split("/>")[0].
+		split("/fight.php")[1].split("'");
+		return url;
 	}
 
 }

@@ -25,6 +25,7 @@ public class Profile {
 	private String experience;
 	private List<Unit> units;
 	private List<Building> buildings;
+	public final static Integer DIFF_POINT_MINIMA = 200;//puntos minimo de dif con el rival
 
 	public Profile() {
 		menuUrls = new HashMap<Menus, String>();
