@@ -41,7 +41,7 @@ public class TestReloadInfoUnit {
 			Map<String,String> links = obtainInformation.leerLinks(page);
 			obtainInformation.mostrarDatos(links);
 			System.out.println("Go missions.");
-			String unitUrl = links.get(Menus.UNITS.name());
+			String unitUrl = links.get(Menus.UNITS.getValue());
 			System.out.println("Link... "+unitUrl);
 			page = get.getUrl(unitUrl);
 			System.out.println("Units....");

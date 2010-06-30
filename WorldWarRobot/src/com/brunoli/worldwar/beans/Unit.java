@@ -105,6 +105,7 @@ public class Unit {
 		StringBuilder buil = new StringBuilder();
 		buil.append("Name: "+name+"\n");
 		buil.append("CantBuild: "+cantBuild+"\n");
+		buil.append("Attack: "+attack+"\n");
 		buil.append("URL: "+urlImgRepresent+"\n");
 		return buil.toString();
 	}

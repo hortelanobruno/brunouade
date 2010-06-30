@@ -39,8 +39,10 @@ public class BuildingEntity implements Serializable {
 	private Long initialCost;
 	@Column(name = "NEXT_COST")
 	private Long nextCost;
-	@Column(name = "URL")
-	private String url;
+	@Column(name = "URL_DEPLOY")
+	private String urlDeploy;
+	@Column(name = "URL_IMG")
+	private String urlImg;
 	
 	public BuildingEntity() {
 		super();
@@ -110,12 +112,20 @@ public class BuildingEntity implements Serializable {
 		this.nextCost = nextCost;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getUrlDeploy() {
+		return urlDeploy;
 	}
-
-	public void setUrl(String url) {
-		this.url = url;
+	
+	public String getUrlImg() {
+		return urlImg;
+	}
+	
+	public void setUrlDeploy(String urlDeploy) {
+		this.urlDeploy = urlDeploy;
+	}
+	
+	public void setUrlImg(String urlImg) {
+		this.urlImg = urlImg;
 	}
 	
 	public Building getVO(){
@@ -128,7 +138,8 @@ public class BuildingEntity implements Serializable {
 		building.setName(name);
 		building.setNextCost(nextCost);
 		building.setTypeValue(typeValue);
-		building.setUrl(url);
+		building.setUrlDeploy(urlDeploy);
+		building.setUrlImg(urlImg);
 		return building;
 	}
 	
@@ -141,7 +152,8 @@ public class BuildingEntity implements Serializable {
 		this.setName(building.getName());
 		this.setNextCost(building.getNextCost());
 		this.setTypeValue(building.getTypeValue());
-		this.setUrl(building.getUrl());
+		this.setUrlDeploy(building.getUrlDeploy());
+		this.setUrlImg(building.getUrlImg());
 	}
    
 }

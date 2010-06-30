@@ -10,6 +10,7 @@ import javax.persistence.Query;
 
 import com.brunoli.worldwar.db.controller.exceptions.NonexistentEntityException;
 import com.brunoli.worldwar.db.entity.BuildingEntity;
+import com.brunoli.worldwar.db.entity.UnitEntity;
 
 public class BuildingEntityController {
 
@@ -128,4 +129,19 @@ public class BuildingEntityController {
             em.close();
         }
     }
+
+	public BuildingEntity findBuildingEntityByUrlImg(String url) {
+		EntityManager em = getEntityManager();
+		try {
+			Query q = em
+					.createQuery(
+							"select object(o) from BuildingEntity as o where o.urlImg = :url")
+					.setParameter("url", url);
+			return (BuildingEntity) q.getSingleResult();
+		}catch(Exception ex){
+			return null;
+		} finally {
+			em.close();
+		}
+	}
 }

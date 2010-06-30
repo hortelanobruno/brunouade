@@ -22,7 +22,7 @@ public class RunnableMissions implements Runnable{
 			test.ejecutarAllMissions();
 			System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Fin Ejecutando todas las misiones.");
 			try {
-				Thread.sleep(1000 * 60 * 60 * 2 + (30 * 60 * 1000));
+				Thread.sleep(1000 * 60 * 60 * 2);
 			} catch (InterruptedException e) {
 			}
 		}

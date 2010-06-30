@@ -12,7 +12,8 @@ public class Building {
 	private Long typeValue;
 	private Long initialCost;
 	private Long nextCost;
-	private String url;
+	private String urlDeploy;
+	private String urlImg;
 
 	public Building() {
 		// TODO Auto-generated constructor stub
@@ -82,23 +83,32 @@ public class Building {
 		this.nextCost = nextCost;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getUrlDeploy() {
+		return urlDeploy;
 	}
-
-	public void setUrl(String url) {
-		this.url = url;
+	
+	public void setUrlDeploy(String urlDeploy) {
+		this.urlDeploy = urlDeploy;
+	}
+	
+	public String getUrlImg() {
+		return urlImg;
+	}
+	
+	public void setUrlImg(String urlImg) {
+		this.urlImg = urlImg;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Name: " + name + "\n");
-		sb.append("Type: " + category.name() + "\n");
+		sb.append("Type: " + category.getValue() + "\n");
 		sb.append("Value: " + typeValue + "\n");
 		sb.append("Cant Build: " + cantBuild + "\n");
 		sb.append("Price: " + initialCost + "\n");
-		sb.append("URL: " + url + "\n");
+		sb.append("URL_DEPLOY: " + urlDeploy + "\n");
+		sb.append("URL_IMG: " + urlImg + "\n");
 		return sb.toString();
 	}
 

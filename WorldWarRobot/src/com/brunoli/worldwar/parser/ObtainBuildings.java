@@ -51,7 +51,7 @@ public class ObtainBuildings {
 		mostrarBuildings(buildings);
 	}
 
-	private void mostrarBuildings(List<Building> buildings) {
+	public void mostrarBuildings(List<Building> buildings) {
 		System.out.println("---------------------------------");
 		for (Building key : buildings) {
 			System.out.println(key.toString());
@@ -59,7 +59,161 @@ public class ObtainBuildings {
 		System.out.println("---------------------------------");
 	}
 
-	private List<Building> leerBuildings(StringBuilder page) {
+	public void cargarDatosBuildings(StringBuilder page,
+			List<Building> buildings) {
+		// BUILDING
+		int i = 0;
+		Building building;
+		for (String a : page.toString().split("investItem")) {
+			if (i > 0) {
+				try {
+					// name
+					if (!a.contains("Unlock")) {
+						String name = a.split("reName")[1].split("</div>")[0]
+								.split(">")[1];
+						building = findBuilding(name, buildings);
+						// type
+						String type = a.split("reInfoItem")[1].split("<span")[0]
+								.split(">")[1].replaceAll(":", "").trim();
+						building.setCategory(BuildingType.getType(type));
+						String typeValue;
+						String price;
+						String cantBuild;
+						String url;
+						switch (building.getCategory()) {
+						case INCOME:
+							// type value
+							typeValue = a.split("money.png")[1]
+									.split("</span>")[0].split(">")[1]
+									.replaceAll(",", "").replaceAll(" ", "");
+							try {
+								building.setTypeValue(Long.parseLong(typeValue));
+							} catch (Exception ex) {
+
+							}
+							// price
+							price = a.split("money.png")[2].split("</span>")[0]
+									.split(">")[1].replaceAll(",", "")
+									.replaceAll("\\.", "").replaceAll(" ", "");
+							try {
+								building.setInitialCost(parsearPrice(price));
+							} catch (Exception ex) {
+
+							}
+							// cantBuild
+							cantBuild = a.split("ownedNum")[1].split("</span>")[0]
+									.split(">")[1];
+							try {
+								building.setCantBuild(Integer
+										.parseInt(cantBuild));
+							} catch (Exception ex) {
+
+							}
+							// url deploy
+							url = "/investment.php"
+									+ a.split("reBuyActionInner")[0]
+											.split("/investment.php")[1]
+											.split("'")[0];
+							building.setUrlDeploy(url);
+							// url img
+							url = a.split("src='")[1].split("'")[0];
+							building.setUrlImg(url);
+							break;
+						case DEFENSE:
+							typeValue = a.split("class='defense'")[1]
+									.split("</span>")[0].split(">")[1]
+									.replaceAll("\\+", "").replaceAll(" ", "");
+							try {
+								building.setTypeValue(Long.parseLong(typeValue));
+							} catch (Exception ex) {
+
+							}
+							// price
+							price = a.split("money.png")[1].split("</span>")[0]
+									.split(">")[1].replaceAll(",", "")
+									.replaceAll("\\.", "").replaceAll(" ", "");
+							try {
+								building.setInitialCost(parsearPrice(price));
+							} catch (Exception ex) {
+
+							}
+							// cantBuild
+							cantBuild = a.split("ownedNum")[1].split("</span>")[0]
+									.split(">")[1];
+							try {
+								building.setCantBuild(Integer
+										.parseInt(cantBuild));
+							} catch (Exception ex) {
+
+							}
+							// url deploy
+							url = "/investment.php"
+									+ a.split("reBuyActionInner")[0]
+											.split("/investment.php")[1]
+											.split("'")[0];
+							building.setUrlDeploy(url);
+							// url img
+							url = a.split("src='")[1].split("'")[0];
+							building.setUrlImg(url);
+							break;
+						case ENERGY:
+							typeValue = a.split("class='defense'")[1]
+									.split(" ")[0].split(">")[1].replaceAll(
+									"\\+", "").replaceAll(" ", "");
+							try {
+								building.setTypeValue(Long.parseLong(typeValue));
+							} catch (Exception ex) {
+
+							}
+							// price
+							price = a.split("money.png")[1].split("</span>")[0]
+									.split(">")[1].replaceAll(",", "")
+									.replaceAll("\\.", "").replaceAll(" ", "");
+							try {
+								building.setInitialCost(parsearPrice(price));
+							} catch (Exception ex) {
+
+							}
+							// cantBuild
+							cantBuild = a.split("ownedNum")[1].split("</span>")[0]
+									.split(">")[1];
+							try {
+								building.setCantBuild(Integer
+										.parseInt(cantBuild));
+							} catch (Exception ex) {
+
+							}
+							// url deploy
+							url = "/investment.php"
+									+ a.split("reBuyActionInner")[0]
+											.split("/investment.php")[1]
+											.split("'")[0];
+							building.setUrlDeploy(url);
+							// url img
+							url = a.split("src='")[1].split("'")[0];
+							building.setUrlImg(url);
+							break;
+						}
+						buildings.add(building);
+					}
+				} catch (Exception ex) {
+					System.out.println("asdasd");
+				}
+			}
+			i++;
+		}
+	}
+
+	private Building findBuilding(String name, List<Building> buildings) {
+		for (Building building : buildings) {
+			if (building.getName().equalsIgnoreCase(name)) {
+				return building;
+			}
+		}
+		return null;
+	}
+
+	public List<Building> leerBuildings(StringBuilder page) {
 		List<Building> buildings = new ArrayList<Building>();
 		// BUILDING
 		Building building;
@@ -93,8 +247,8 @@ public class ObtainBuildings {
 						}
 						// price
 						price = a.split("money.png")[2].split("</span>")[0]
-								.split(">")[1].replaceAll(",", "").replaceAll(
-								"\\.", "").replaceAll(" ", "");
+								.split(">")[1].replaceAll(",", "")
+								.replaceAll("\\.", "").replaceAll(" ", "");
 						try {
 							building.setInitialCost(parsearPrice(price));
 						} catch (Exception ex) {
@@ -108,11 +262,14 @@ public class ObtainBuildings {
 						} catch (Exception ex) {
 
 						}
-						// url
+						// url deploy
 						url = "/investment.php"
 								+ a.split("reBuyActionInner")[0]
 										.split("/investment.php")[1].split("'")[0];
-						building.setUrl(url);
+						building.setUrlDeploy(url);
+						// url img
+						url = a.split("src='")[1].split("'")[0];
+						building.setUrlImg(url);
 						break;
 					case DEFENSE:
 						typeValue = a.split("class='defense'")[1]
@@ -125,8 +282,8 @@ public class ObtainBuildings {
 						}
 						// price
 						price = a.split("money.png")[1].split("</span>")[0]
-								.split(">")[1].replaceAll(",", "").replaceAll(
-								"\\.", "").replaceAll(" ", "");
+								.split(">")[1].replaceAll(",", "")
+								.replaceAll("\\.", "").replaceAll(" ", "");
 						try {
 							building.setInitialCost(parsearPrice(price));
 						} catch (Exception ex) {
@@ -140,11 +297,14 @@ public class ObtainBuildings {
 						} catch (Exception ex) {
 
 						}
-						// url
+						// url deploy
 						url = "/investment.php"
 								+ a.split("reBuyActionInner")[0]
 										.split("/investment.php")[1].split("'")[0];
-						building.setUrl(url);
+						building.setUrlDeploy(url);
+						// url img
+						url = a.split("src='")[1].split("'")[0];
+						building.setUrlImg(url);
 						break;
 					case ENERGY:
 						typeValue = a.split("class='defense'")[1].split(" ")[0]
@@ -157,8 +317,8 @@ public class ObtainBuildings {
 						}
 						// price
 						price = a.split("money.png")[1].split("</span>")[0]
-								.split(">")[1].replaceAll(",", "").replaceAll(
-								"\\.", "").replaceAll(" ", "");
+								.split(">")[1].replaceAll(",", "")
+								.replaceAll("\\.", "").replaceAll(" ", "");
 						try {
 							building.setInitialCost(parsearPrice(price));
 						} catch (Exception ex) {
@@ -172,11 +332,14 @@ public class ObtainBuildings {
 						} catch (Exception ex) {
 
 						}
-						// url
+						// url deploy
 						url = "/investment.php"
 								+ a.split("reBuyActionInner")[0]
 										.split("/investment.php")[1].split("'")[0];
-						building.setUrl(url);
+						building.setUrlDeploy(url);
+						// url img
+						url = a.split("src='")[1].split("'")[0];
+						building.setUrlImg(url);
 						break;
 					}
 					buildings.add(building);
@@ -189,7 +352,7 @@ public class ObtainBuildings {
 		return buildings;
 	}
 
-	private Long parsearPrice(String price) {
+	public Long parsearPrice(String price) {
 		if (price.contains("K")) {
 			// k
 			price = price.replace("K", "000");
