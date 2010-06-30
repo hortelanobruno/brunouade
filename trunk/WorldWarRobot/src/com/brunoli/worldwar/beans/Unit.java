@@ -13,7 +13,8 @@ public class Unit {
 	private Integer cantBuild;
 	private Integer attack;
 	private Integer defense;
-	private String urlImgRepresent;
+	private String urlImg;
+	private String urlDeploy;
 	
 	public Unit() {
 		// TODO Auto-generated constructor stub
@@ -83,12 +84,20 @@ public class Unit {
 		this.defense = defense;
 	}
 
-	public String getUrlImgRepresent() {
-		return urlImgRepresent;
+	public String getUrlDeploy() {
+		return urlDeploy;
 	}
-
-	public void setUrlImgRepresent(String urlImgRepresent) {
-		this.urlImgRepresent = urlImgRepresent;
+	
+	public String getUrlImg() {
+		return urlImg;
+	}
+	
+	public void setUrlDeploy(String urlDeploy) {
+		this.urlDeploy = urlDeploy;
+	}
+	
+	public void setUrlImg(String urlImg) {
+		this.urlImg = urlImg;
 	}
 	
 	public Integer getCantBuild() {
@@ -106,7 +115,8 @@ public class Unit {
 		buil.append("Name: "+name+"\n");
 		buil.append("CantBuild: "+cantBuild+"\n");
 		buil.append("Attack: "+attack+"\n");
-		buil.append("URL: "+urlImgRepresent+"\n");
+		buil.append("URL_IMG: "+urlImg+"\n");
+		buil.append("URL_DEPLOY: "+urlDeploy+"\n");
 		return buil.toString();
 	}
 	
