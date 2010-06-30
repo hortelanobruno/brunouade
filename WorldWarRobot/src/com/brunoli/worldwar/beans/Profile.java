@@ -14,7 +14,7 @@ public class Profile {
 	private Integer level;
 	private Integer alianzeSize;
 	private String startUrl;
-	private Map<Menus,String> menuUrls;
+	private Map<Menus, String> menuUrls;
 	private Long money;
 	private Integer staminaCurrent;
 	private Integer staminaMax;
@@ -25,9 +25,9 @@ public class Profile {
 	private String experience;
 	private List<Unit> units;
 	private List<Building> buildings;
-	
+
 	public Profile() {
-		menuUrls = new HashMap<Menus,String>();
+		menuUrls = new HashMap<Menus, String>();
 		units = new ArrayList<Unit>();
 		buildings = new ArrayList<Building>();
 	}
@@ -143,7 +143,7 @@ public class Profile {
 	public void setBuildings(List<Building> buildings) {
 		this.buildings = buildings;
 	}
-	
+
 	public Integer calcularPointAttack() {
 		// units
 		List<Unit> unitsOrdenadas = ordenarUnitsPorAttack();
@@ -153,26 +153,29 @@ public class Profile {
 	private Integer calcularPointAttack(List<Unit> unitsOrdenadas) {
 		Integer points = 0;
 		Integer cantUnits = 6 * alianzeSize;
-		Map<Unit,Integer> auxUnits = new HashMap<Unit,Integer>();
-		//llenar mapa
-		for(Unit u : units){
-			auxUnits.put(u, u.getCantBuild());
+		Map<Unit, Integer> auxUnits = new HashMap<Unit, Integer>();
+		// llenar mapa
+		for (Unit u : units) {
+			if (u.getCantBuild() != null) {
+				auxUnits.put(u, u.getCantBuild());
+			}
 		}
 		Integer aux = null;
-		for(int i = 0 ; i < cantUnits ; i++){
-			for(Unit u : unitsOrdenadas){
-				aux = auxUnits.get(u);
-				if(aux>0){
-					points += u.getDefense();
-					aux--;
-					auxUnits.put(u, aux);
-					break;
+		for (int i = 0; i < cantUnits; i++) {
+			for (Unit u : unitsOrdenadas) {
+				if(auxUnits.containsKey(u)){
+					aux = auxUnits.get(u);
+					if (aux > 0) {
+						points += u.getAttack();
+						aux--;
+						auxUnits.put(u, aux);
+						break;
+					}
 				}
 			}
 		}
 		return points;
 	}
-
 
 	private List<Unit> ordenarUnitsPorAttack() {
 		List<Unit> unitsSorted = new ArrayList<Unit>(units);
@@ -188,6 +191,5 @@ public class Profile {
 			return unit1.getAttack().compareTo(unit2.getAttack());
 		}
 	}
-	
-	
+
 }

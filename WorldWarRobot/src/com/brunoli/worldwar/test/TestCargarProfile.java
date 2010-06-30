@@ -67,6 +67,7 @@ public class TestCargarProfile {
 		for(Building b : profile.getBuildings()){
 			System.out.println(b.toString());
 		}
+		System.out.println("Attack Points: "+profile.calcularPointAttack());
 	}
 
 	private void leerBuildings(Profile profile) {
