@@ -64,13 +64,40 @@ public class DBManager {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
-		
+		}	
 	}
 
 
 	public Unit getUnitByUrlImg(String url) {
 		UnitEntity ent = unitEntityController.findUnitEntityByUrlImg(url);
+		if(ent!=null){
+			return ent.getVO();
+		}else{
+			return null;
+		}
+	}
+
+
+	public void guardarBuildings(List<Building> buildings) {
+		BuildingEntity ent;
+		for (Building building : buildings) {
+			ent = new BuildingEntity();
+			ent.setVO(building);
+			try {
+				buildingEntityController.edit(ent);
+			} catch (NonexistentEntityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+
+	public Building getBuildingByUrlImg(String url) {
+		BuildingEntity ent = buildingEntityController.findBuildingEntityByUrlImg(url);
 		if(ent!=null){
 			return ent.getVO();
 		}else{

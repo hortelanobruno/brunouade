@@ -46,4 +46,5 @@ public class EnemyProfile {
 	public void setBattleWon(Integer battleWon) {
 		this.battleWon = battleWon;
 	}
+	
 }

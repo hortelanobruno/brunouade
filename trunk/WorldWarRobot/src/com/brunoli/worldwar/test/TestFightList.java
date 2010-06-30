@@ -33,7 +33,7 @@ public class TestFightList {
 			//Leo links
 			System.out.println("Leo links.");
 			Map<String,String> links = obtainInformation.leerLinks(page);
-			String battleUrl = links.get(Menus.BATTLE.name());
+			String battleUrl = links.get(Menus.BATTLE.getValue());
 			System.out.println("Link... "+battleUrl);
 			page = get.getUrl(battleUrl);
 			System.out.println("Fight....");

@@ -35,7 +35,7 @@ public class TestDoOneMission {
 			Map<String,String> links = obtainInformation.leerLinks(page);
 			obtainInformation.mostrarDatos(links);
 			System.out.println("Go missions.");
-			String missionUrl = links.get(Menus.MISSION.name());
+			String missionUrl = links.get(Menus.MISSION.getValue());
 			System.out.println("Link... "+missionUrl);
 			page = get.getUrl(missionUrl);
 			System.out.println("Missions....");

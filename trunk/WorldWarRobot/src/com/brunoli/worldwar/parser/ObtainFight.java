@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.brunoli.worldwar.beans.Building;
 import com.brunoli.worldwar.beans.Enemy;
 import com.brunoli.worldwar.beans.EnemyProfile;
 import com.brunoli.worldwar.beans.Unit;
@@ -52,7 +53,11 @@ public class ObtainFight {
 		//List<Enemy> enemys = leerEnemyList(page);
 		//mostrarEnemys(enemys);
 		EnemyProfile profile = leerEnemyProfile(new StringBuilder(page));
+		Enemy enemy = new Enemy();
+		enemy.setAlianceSize(4);
+		enemy.setProfile(profile);
 		mostrarProfile(profile);
+		System.out.println("Points defense: "+enemy.calcularPointDefense());
 	}
 
 	private void mostrarProfile(EnemyProfile profile) {
@@ -62,10 +67,14 @@ public class ObtainFight {
 		for(Unit unit: profile.getUnits().keySet()){
 			System.out.println("Unit: "+unit.getName()+". Cant: "+profile.getUnits().get(unit));
 		}
+		for(Building building: profile.getBuildings().keySet()){
+			System.out.println("Building: "+building.getName()+". Cant: "+profile.getBuildings().get(building));
+		}
 	}
 
 	private EnemyProfile leerEnemyProfile(StringBuilder page) {
 		EnemyProfile profile = new EnemyProfile();
+		//leo battles
 		profile.setBattleWon(Integer.parseInt(page.toString().split("class='statsCol4'")[1].split("</")[0].split(">")[1].replaceAll(" ", "")));
 		profile.setBattleLost(Integer.parseInt(page.toString().split("class='statsCol4'")[2].split("</")[0].split(">")[1].replaceAll(" ", "")));
 		int i=0;
@@ -74,6 +83,7 @@ public class ObtainFight {
 		DBManager dbManager = new DBManager();
 		Unit unit;
 		int j=0;
+		//leo units
 		for(String c : page.toString().split("class='equipmentItems'")){
 			if(i>0&&i<5){
 				j=0;
@@ -85,10 +95,27 @@ public class ObtainFight {
 							cant = d.split("<div>x")[1].split("<")[0];
 							profile.getUnits().put(unit, Integer.parseInt(cant));
 						}else{
-							System.out.println("URL NOT FOUND: "+url);
+							System.out.println("URL NOT FOUND FOR UNIT: "+url);
 						}
 					}
 					j++;
+				}
+			}
+			i++;
+		}
+		//leo buildings
+		String a = page.toString().split("Buildings")[1];
+		i=0;
+		Building building;
+		for(String img : a.split("<img")){
+			if(i>0){
+				url = img.split("src='")[1].split("'")[0];
+				building = dbManager.getBuildingByUrlImg(url);
+				if(building!=null){
+					cant = img.split("<div>x")[1].split("<")[0];
+					profile.getBuildings().put(building, Integer.parseInt(cant));
+				}else{
+					System.out.println("URL NOT FOUND FOR BUILDING: "+url);
 				}
 			}
 			i++;
