@@ -176,7 +176,6 @@ public class ObtainFight {
 			//WON
 			result.setResult(FightResultType.WON);
 			String a = page.toString().split("You took")[1].split("gained")[0].split("</")[0];
-			System.out.println(a);
 			result.setMoney(parsearMony(a.split(">")[a.split(">").length-1]));
 		}else if(page.toString().contains("lost")){
 			//LOST
@@ -193,8 +192,7 @@ public class ObtainFight {
 	}
 
 	public String obtainAttackAgainUrl(StringBuilder page) {
-		String url = "http://wwar.storm8.com/fight.php"+page.toString().split("'Attack Again'")[1].split("/>")[0].
-		split("/fight.php")[1].split("'");
+		String url = "http://wwar.storm8.com/fight.php"+page.toString().split("'Attack Again'")[1].split("/>")[0].split("/fight.php")[1].split("'")[0];
 		return url;
 	}
 
