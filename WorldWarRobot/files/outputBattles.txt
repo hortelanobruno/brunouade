@@ -1,0 +1,2009 @@
+Going to Page Units....
+Actualizando units...
+Go to Infantry
+Go to Water
+Go to Ground
+Go to Air
+Units actualizadas.
+Going to Page Buildings....
+Actualizando buildings...
+Buildings actualizadas.
+Level: 37
+Alianze Size: 4
+Money: 3343506
+Experience: 8084/8192
+Health: 200/200
+Stamina: 20/20
+Energy: 144/400
+---------------------------------------------------------------
+Name: Minigunners
+CantBuild: 50
+Attack: 1
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/1m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=1&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=eb86c0bf333cb55febc99078c1475df1d8a72dfd
+
+Name: Fireteam
+CantBuild: 4
+Attack: 2
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/2m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=2&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=f27ed18780d5b03d8caa36514b2d96c4916996e1
+
+Name: Marines
+CantBuild: 24
+Attack: 2
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/3m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=3&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=6043143a49685b19cfaf0ecf655ff703edce116a
+
+Name: Paratroopers
+CantBuild: 6
+Attack: 4
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/4m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=4&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=a7d2a135349f409e12723ac2b1e47fc97a6e9719
+
+Name: Medics
+CantBuild: 0
+Attack: 0
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/5m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=5&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=56917c8a362a4626176ff7c20022f9330f135ea4
+
+Name: Grenadiers
+CantBuild: 33
+Attack: 6
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/6m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=6&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=a871a9c20e1562b638f3d34e720b8da47d402f76
+
+Name: Snipers
+CantBuild: 0
+Attack: 3
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/7m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=7&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=942d656410b76b89a7a89f160b0cff379ca32f99
+
+Name: Navy Seals
+CantBuild: 0
+Attack: 5
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/8m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=8&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=ec2e76aa605eeab724553887ffbf7fd9b549c9ba
+
+Name: Heavy Machine Gunners
+CantBuild: 0
+Attack: 6
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/11m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=11&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=84b6dcd36e1585ccc78437600239b1711f235233
+
+Name: Rocketeers
+CantBuild: 0
+Attack: 9
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/9m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=9&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=20a2c26196b8d5322f89f268c4a93c9964bce340
+
+Name: Corner Shot Recon
+CantBuild: 0
+Attack: 10
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/15m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=15&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=817fc912a4e58e32f770b5b0a593eb7738d84104
+
+Name: Commandos
+CantBuild: 0
+Attack: 6
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/10m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=10&cat=1&formNonce=43b4f84d731126946cd752304c996016a4736d46&h=890a9a804dbaaf5a74749c4c07410ce114acdd9f
+
+Name: Aerial Vehicle Squad
+CantBuild: null
+Attack: 12
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: XM-25 Gunner
+CantBuild: null
+Attack: 14
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Tank Blasters
+CantBuild: null
+Attack: 17
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: PackBot Robot Troopers
+CantBuild: null
+Attack: 24
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: FELIN Combat Infantry
+CantBuild: null
+Attack: 27
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Heavy Assault Squad
+CantBuild: null
+Attack: 28
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Future Force Warrior Squad
+CantBuild: null
+Attack: 42
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: LW50 Machine Gun Squad
+CantBuild: null
+Attack: 55
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: M110 Sniper Team
+CantBuild: null
+Attack: 65
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: XM-307 Grenade Machine Gun Squad
+CantBuild: null
+Attack: 75
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Railgun Troopers
+CantBuild: null
+Attack: 90
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Mobile Infantry Marines
+CantBuild: null
+Attack: 95
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Prisoner
+CantBuild: null
+Attack: 0
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Cadet Squad
+CantBuild: null
+Attack: 1
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Patrol Unit
+CantBuild: null
+Attack: 1
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Light Machine Gunner
+CantBuild: null
+Attack: 3
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Avionics Engineers
+CantBuild: null
+Attack: 3
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Bioweapon Scientists
+CantBuild: null
+Attack: 4
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Biosoldier Unit
+CantBuild: null
+Attack: 6
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Rebel Fighter
+CantBuild: null
+Attack: 4
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Nuclear Squad
+CantBuild: null
+Attack: 10
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Stealth Infiltrator
+CantBuild: null
+Attack: 14
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Big Dog Robot
+CantBuild: null
+Attack: 17
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Exosuit Infantry
+CantBuild: null
+Attack: 15
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: GMS Lynx Rifle Squad
+CantBuild: null
+Attack: 37
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Supply Truck
+CantBuild: 5
+Attack: 2
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/51m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=51&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=f1df0cb4c22da8f23cd1ec942d0aa5f017c2bc7f
+
+Name: Hum-Vee
+CantBuild: 5
+Attack: 3
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/52m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=52&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=2184b247cfbc5bfe3a69eb90381a835c4ee314c1
+
+Name: Light Tank
+CantBuild: 2
+Attack: 6
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/53m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=53&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=d745d0518efa61d091ce3c322a88602d9267f438
+
+Name: Mobile Artillery
+CantBuild: 2
+Attack: 9
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/54m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=54&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=b4fdc4bc08f46cbb4fa8a78811fb99d02dae9619
+
+Name: Armored Personnel Carrier
+CantBuild: 4
+Attack: 5
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/55m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=55&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=3b9b7348b1f14bc6484b802b5ef5b6c034c08854
+
+Name: Stealth Tank
+CantBuild: 12
+Attack: 20
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/56m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=56&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=9606278936f0fb624f9d087695ef8f6528e6ea96
+
+Name: Heavy Equipment Transporter
+CantBuild: 0
+Attack: 10
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/57m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=57&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=fcb6b1d8152263337da6ab3f3e7469be75e9d161
+
+Name: Amphibious Assault Vehicle
+CantBuild: 0
+Attack: 28
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/60m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=60&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=cfb3229de69130ad66d763c6177e5089e8da3c99
+
+Name: SSM Launcher
+CantBuild: 0
+Attack: 42
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/58m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=58&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=76da888865c63c2843a689ae0a23c6fdbde9f389
+
+Name: Armored Snow Hovercraft
+CantBuild: 0
+Attack: 19
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/61m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=61&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=7b38d7978a333f370a1efee62ae5608706296b2b
+
+Name: Mammoth Tank
+CantBuild: 0
+Attack: 45
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/59m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=59&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=f2c2d629587ca5f309de0abb045711ff31b416e1
+
+Name: Otokar Cobra Armored Vehicle
+CantBuild: 0
+Attack: 36
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/64m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=64&cat=2&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=94cf7fe6536a17cca85c90d04a261775c51fec26
+
+Name: M-ATV Ambush Protected Vehicle
+CantBuild: null
+Attack: 46
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: AHED Hybrid Electric Tank
+CantBuild: null
+Attack: 54
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Predator Armored Tank
+CantBuild: null
+Attack: 71
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Piranha V Armored Vehicle
+CantBuild: null
+Attack: 83
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Warthog Tracked Carrier
+CantBuild: null
+Attack: 90
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Black Knight Unmanned Combat Vehicle
+CantBuild: null
+Attack: 115
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Hellfire Tank
+CantBuild: null
+Attack: 108
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Expeditionary Fighting Vehicle
+CantBuild: null
+Attack: 118
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: T-95 Battle Tank
+CantBuild: null
+Attack: 125
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: XM 1202 Mounted Combat System
+CantBuild: null
+Attack: 130
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Titan Self Propelled Artillery Tank
+CantBuild: null
+Attack: 140
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Mobile Howitzer Cannon
+CantBuild: null
+Attack: 13
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/1012m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=sell&iid=1012&cat=2&formNonce=2d39ea872c12160ea0272cf415d8d5b360b19a10&h=8651c22d8717b083824f4675b1b233a8770c3676
+
+Name: Wiesel 2 Mortar Unit
+CantBuild: null
+Attack: 21
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/1057m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=sell&iid=1057&cat=2&formNonce=2d39ea872c12160ea0272cf415d8d5b360b19a10&h=775d70a21376aa5016bdec140d1045a440999abf
+
+Name: M163 Anti-aircraft Vehicle
+CantBuild: null
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/1058m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=sell&iid=1058&cat=2&formNonce=2d39ea872c12160ea0272cf415d8d5b360b19a10&h=835e2a7de49f2322a2be6e3ea80af81c50a1c930
+
+Name: SA-8 Gecko Missile Launcher
+CantBuild: null
+Attack: 15
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Koalitcia-SV Artillery
+CantBuild: null
+Attack: 47
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: NLOS-C
+CantBuild: null
+Attack: 52
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Patriot Missile System
+CantBuild: null
+Attack: 60
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Flame Tank
+CantBuild: null
+Attack: 14
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Caterpillar Track Tank
+CantBuild: null
+Attack: 6
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Robotic Tank Drone
+CantBuild: null
+Attack: 10
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: AMX-30 Air Defense Tank
+CantBuild: null
+Attack: 7
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Torpedo Launcher
+CantBuild: null
+Attack: 12
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Fast Attack Vehicle
+CantBuild: null
+Attack: 11
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Willys Army Jeep
+CantBuild: null
+Attack: 8
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Amphibious Combat Craft
+CantBuild: null
+Attack: 55
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: CV90120T Tank
+CantBuild: null
+Attack: 60
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: BMP 3M Armored Personnel Carrier
+CantBuild: null
+Attack: 40
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Terrex Infantry Combat Vehicle
+CantBuild: null
+Attack: 110
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Cruiser
+CantBuild: 3
+Attack: 4
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/101m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=101&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=8a6a57af868c22f4b5023ee0b31dcbf5f5cc75a8
+
+Name: Transport
+CantBuild: 2
+Attack: 2
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/102m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=102&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=12ca668f61ebdfdc45228ea61e00eb9b391e4e52
+
+Name: Frigate
+CantBuild: 2
+Attack: 11
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/103m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=103&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=625176873dd0375ab2d49d47a9ffba54ef9b5462
+
+Name: Naval Tanker
+CantBuild: 9
+Attack: 8
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/104m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=104&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=e66bfff1e77789ead08373fbd8513f8d4c9204f2
+
+Name: Naval Destroyer
+CantBuild: 0
+Attack: 27
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/105m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=105&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=f5cc8b0cc2187fb4bac6ab39635ee99bcada1872
+
+Name: M80 Stiletto
+CantBuild: 19
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=6a438d7063c14e11cabb3c41cc5dc4e16b71a66a
+
+Name: Submarine
+CantBuild: 0
+Attack: 45
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/106m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=106&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=7e63c76a47aabb8d0ac23c9cc833394e7c40c2fd
+
+Name: Helicopter Carrier
+CantBuild: 0
+Attack: 28
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/110m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=110&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=f048957adbfdefd73ceb39fcffe41455f8650c44
+
+Name: Battleship
+CantBuild: 0
+Attack: 42
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/107m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=107&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=5fa32e7fe51cf686ab247d7dee89d3117cf80ce3
+
+Name: Aircraft Carrier
+CantBuild: 0
+Attack: 40
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/108m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=108&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=4d76c0e7be249ff90a471faeff9f7e4bc32d1d8a
+
+Name: Horizon Frigate
+CantBuild: 0
+Attack: 45
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/113m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=113&cat=3&formNonce=1d4ed9c85ee072627e9cf9c4213c03e9f96f4646&h=7cdcad6e955b171d5c6d8fa7110bc0b013ce79b1
+
+Name: Borey Class Missile Submarine
+CantBuild: null
+Attack: 62
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Type 45 Destroyer
+CantBuild: null
+Attack: 80
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Scorpene Submarine
+CantBuild: null
+Attack: 74
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: DDG 1000 Destroyer
+CantBuild: null
+Attack: 90
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Elite Dreadnought
+CantBuild: null
+Attack: 94
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Astute Class Submarine
+CantBuild: null
+Attack: 95
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: FSF-1 Sea Fighter
+CantBuild: null
+Attack: 85
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: HSV-2 Swift
+CantBuild: null
+Attack: 110
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: CG(X) Guided Missile Cruiser
+CantBuild: null
+Attack: 95
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: UXV Combatant
+CantBuild: null
+Attack: 130
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Nuclear Battlecruiser
+CantBuild: null
+Attack: 250
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Corvette
+CantBuild: null
+Attack: 9
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Thresher Submarine
+CantBuild: null
+Attack: 34
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Guardian Patrol Boat
+CantBuild: null
+Attack: 46
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Nuclear Submarine
+CantBuild: null
+Attack: 65
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Amphibious Command Ship
+CantBuild: null
+Attack: 55
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Zubr Class Hovercraft
+CantBuild: null
+Attack: 112
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Sea Shadow Stealth Cruiser
+CantBuild: null
+Attack: 11
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: PHM-1 Pegasus Hydrofoil Cruiser
+CantBuild: null
+Attack: 6
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: LCS-2 Littoral Combat Ship
+CantBuild: null
+Attack: 38
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: F124 Sachsen Class Frigate
+CantBuild: null
+Attack: 80
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: DDH 181 Hyuga Carrier
+CantBuild: null
+Attack: 135
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Fighter
+CantBuild: 8
+Attack: 6
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/151m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=151&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=245c0a5951d578734e4f4f96248b9db80bfb0b9d
+
+Name: Cargo Chopper
+CantBuild: 2
+Attack: 6
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/152m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=152&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=ab14d476be2f1fb06c2611ad28ad7c85dafd7934
+
+Name: Patrol Plane
+CantBuild: 4
+Attack: 12
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/153m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=153&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=6e0e19f7c9ed4e16c77746841c6ceacee8ad0fbe
+
+Name: Harrier Jet
+CantBuild: 2
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=a1b1c868d9edbd4fc183380c99404bf272ddcf1b
+
+Name: Comanche Helicopter
+CantBuild: 3
+Attack: 25
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/155m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=155&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=eb466e01d9dcd310ee2b53b1dcb6bf16b13c8798
+
+Name: B-1 Lancer
+CantBuild: 5
+Attack: 50
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/156m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=156&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=b50c9d598e710a4f4978a5098c32fef77461c91d
+
+Name: Stealth Jet
+CantBuild: 0
+Attack: 50
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/157m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=157&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=4341d15fbe90f8c9dc6a414fa99b0fc9bb88f5a7
+
+Name: X-15 Supersonic Aircraft
+CantBuild: 4
+Attack: 68
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/160m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=160&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=2446d8417fb9bfbec80634a8c7dfbef355ca9290
+
+Name: Apache Helicopter
+CantBuild: 0
+Attack: 52
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/158m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=158&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=6237fc4345bbb14eebf73fcc574e37eea2a88ba3
+
+Name: B-2 Bomber
+CantBuild: 20
+Attack: 110
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/159m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=159&cat=4&formNonce=11a50247159b0d6c117aa145bc47a412f2de5877&h=bbb8e99f884d080612742d3b2ee6a307ecb8bcb2
+
+Name: F-18 Super Hornet Fighter
+CantBuild: null
+Attack: 117
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: IAI Harop UAV
+CantBuild: null
+Attack: 135
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: F-15 Silent Eagle Fighter
+CantBuild: null
+Attack: 142
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Havoc Helicopter
+CantBuild: null
+Attack: 102
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: MQ-8B Fire Scout Helicopter
+CantBuild: null
+Attack: 170
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Mitsubishi F3 Interceptor
+CantBuild: null
+Attack: 160
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: BAE Mantis UAV
+CantBuild: null
+Attack: 180
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: AV-22 War Osprey Gunship
+CantBuild: null
+Attack: 182
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: PAK-FA Fighter
+CantBuild: null
+Attack: 190
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Sikorsky X2 Helicopter
+CantBuild: null
+Attack: 160
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Boeing NGB Bomber
+CantBuild: null
+Attack: 225
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Aurora Aircraft
+CantBuild: null
+Attack: 165
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Raptor Jet
+CantBuild: null
+Attack: 45
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Annihilator Fighter
+CantBuild: null
+Attack: 54
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: SU-34 Fullback Bomber
+CantBuild: null
+Attack: 80
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Eurocopter Tiger
+CantBuild: null
+Attack: 110
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Dark Sword Aircraft
+CantBuild: null
+Attack: 145
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: SR-71 Blackbird
+CantBuild: null
+Attack: 17
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: RQ-1 Predator
+CantBuild: null
+Attack: 15
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: F-201 Starfighter
+CantBuild: null
+Attack: 11
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: F-35 Lightning II Fighter
+CantBuild: null
+Attack: 16
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: F-4 Phantom
+CantBuild: null
+Attack: 14
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: AH-64 Cheyenne Helicopter
+CantBuild: null
+Attack: 10
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: A-10 Thunderbolt II
+CantBuild: null
+Attack: 11
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: F-16 Fighting Falcon
+CantBuild: null
+Attack: 10
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Hind Helicopter
+CantBuild: null
+Attack: 11
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: A129 Mangusta Helicopter
+CantBuild: null
+Attack: 20
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: MiG-29 Fulcrum Fighter
+CantBuild: null
+Attack: 40
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: SU-47 Berkut Fighter
+CantBuild: null
+Attack: 50
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Eurofighter Typhoon
+CantBuild: null
+Attack: 72
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: X-29 FSW Fighter
+CantBuild: null
+Attack: 170
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: KA-52 Alligator Helicopter
+CantBuild: null
+Attack: 150
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: JAS 39 Gripen Fighter
+CantBuild: null
+Attack: 200
+URL_IMG: null
+URL_DEPLOY: null
+
+Name: Supply Depot
+Type: Income
+Value: 1000
+Cant Build: 66
+Price: 190000
+URL_DEPLOY: /investment.php?action=buy&inv_id=1&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=779b167ca39bc0f2207d4ac54856b55f5019fd03
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/1.png?v=1026
+
+Name: Refinery
+Type: Income
+Value: 6500
+Cant Build: 49
+Price: 1298000
+URL_DEPLOY: /investment.php?action=buy&inv_id=3&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=36e3287c617818c18dc9053c48df9e353d54e1ab
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/3.png?v=1026
+
+Name: Weapons Factory
+Type: Income
+Value: 16500
+Cant Build: 32
+Price: 3360000
+URL_DEPLOY: /investment.php?action=buy&inv_id=6&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=0e4d65007d121bd4447e3da78d9873dacc9af411
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/6.png?v=1026
+
+Name: Power Plant
+Type: Income
+Value: 56000
+Cant Build: 18
+Price: 112000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=8&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=a54061d96a59b3f59c48409e9453f95c04cfc2ca
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/8.png?v=1026
+
+Name: Oil Rig
+Type: Income
+Value: 270000
+Cant Build: 5
+Price: 45000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=12&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=33afe4eeefd6952de9a5a946dadcedb21d88123c
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/12.png?v=1026
+
+Name: Military Research Lab
+Type: Income
+Value: 500000
+Cant Build: 0
+Price: 90000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=14&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=243100a9fbf78e6186dfd1e051dbc02983956246
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/14.png?v=1026
+
+Name: Nuclear Testing Facility
+Type: Income
+Value: 700000
+Cant Build: null
+Price: 100000000
+URL_DEPLOY: null
+URL_IMG: null
+
+Name: Solar Satellite Network
+Type: Income
+Value: 1200000
+Cant Build: null
+Price: 340000000
+URL_DEPLOY: null
+URL_IMG: null
+
+Name: Bunker
+Type: Defense
+Value: 3
+Cant Build: null
+Price: 850500
+URL_DEPLOY: /investment.php?action=buy&inv_id=2&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=72a2a5faaf310afa8d17a7f605cb32f15b5d5adb
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/2.png?v=1026
+
+Name: Guard Tower
+Type: Defense
+Value: 10
+Cant Build: 68
+Price: 2340000
+URL_DEPLOY: /investment.php?action=buy&inv_id=5&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=0a45b3bbee9ed1d9265988d96064682df8a0b9a9
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/5.png?v=1026
+
+Name: Anti-Aircraft Launcher
+Type: Defense
+Value: 15
+Cant Build: 32
+Price: 3570000
+URL_DEPLOY: /investment.php?action=buy&inv_id=7&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=356003a351b701ffbdcfa403b197d5a8bfc74907
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/7.png?v=1026
+
+Name: Turret
+Type: Defense
+Value: 32
+Cant Build: 8
+Price: 7560000
+URL_DEPLOY: /investment.php?action=buy&inv_id=9&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=01650ff8597f531a95af6ddb766252cd94a9d818
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/9.png?v=1026
+
+Name: Landmine Field
+Type: Defense
+Value: 50
+Cant Build: 0
+Price: 15000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=11&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=e2feca6cc5667ff6ff1d3eb62eac90684d050c01
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/11.png?v=1026
+
+Name: Automated Sentry Gun
+Type: Defense
+Value: 75
+Cant Build: 0
+Price: 36000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=18&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=a56f0591d56a436032ebc5a6bec99e5a6db3ab8d
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/18.png?v=1026
+
+Name: Barracks
+Type: Energy
+Value: 1
+Cant Build: 1
+Price: 297000
+URL_DEPLOY: /investment.php?action=sell&inv_id=4&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=1d5307cdd20a317ad649a0de618e47edab324cab
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/4.png?v=1026
+
+Name: Airfield
+Type: Energy
+Value: 2
+Cant Build: 1
+Price: 132000000
+URL_DEPLOY: /investment.php?action=sell&inv_id=10&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=e6cb9aa23d7750e347e20b4085a51122a3ab4235
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/10.png?v=1026
+
+Name: Communications Center
+Type: Energy
+Value: 3
+Cant Build: 1
+Price: 495000000
+URL_DEPLOY: /investment.php?action=sell&inv_id=13&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=288fe206f008cda309e1e9a37d2c8b3d3cb597f9
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/13.png?v=1026
+
+Name: Supply Depot
+Type: Income
+Value: 1000
+Cant Build: 66
+Price: 190000
+URL_DEPLOY: /investment.php?action=buy&inv_id=1&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=779b167ca39bc0f2207d4ac54856b55f5019fd03
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/1.png?v=1026
+
+Name: Bunker
+Type: Defense
+Value: 3
+Cant Build: null
+Price: 850500
+URL_DEPLOY: /investment.php?action=buy&inv_id=2&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=72a2a5faaf310afa8d17a7f605cb32f15b5d5adb
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/2.png?v=1026
+
+Name: Refinery
+Type: Income
+Value: 6500
+Cant Build: 49
+Price: 1298000
+URL_DEPLOY: /investment.php?action=buy&inv_id=3&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=36e3287c617818c18dc9053c48df9e353d54e1ab
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/3.png?v=1026
+
+Name: Barracks
+Type: Energy
+Value: 1
+Cant Build: 1
+Price: 297000
+URL_DEPLOY: /investment.php?action=sell&inv_id=4&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=1d5307cdd20a317ad649a0de618e47edab324cab
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/4.png?v=1026
+
+Name: Guard Tower
+Type: Defense
+Value: 10
+Cant Build: 68
+Price: 2340000
+URL_DEPLOY: /investment.php?action=buy&inv_id=5&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=0a45b3bbee9ed1d9265988d96064682df8a0b9a9
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/5.png?v=1026
+
+Name: Weapons Factory
+Type: Income
+Value: 16500
+Cant Build: 32
+Price: 3360000
+URL_DEPLOY: /investment.php?action=buy&inv_id=6&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=0e4d65007d121bd4447e3da78d9873dacc9af411
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/6.png?v=1026
+
+Name: Anti-Aircraft Launcher
+Type: Defense
+Value: 15
+Cant Build: 32
+Price: 3570000
+URL_DEPLOY: /investment.php?action=buy&inv_id=7&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=356003a351b701ffbdcfa403b197d5a8bfc74907
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/7.png?v=1026
+
+Name: Power Plant
+Type: Income
+Value: 56000
+Cant Build: 18
+Price: 112000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=8&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=a54061d96a59b3f59c48409e9453f95c04cfc2ca
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/8.png?v=1026
+
+Name: Turret
+Type: Defense
+Value: 32
+Cant Build: 8
+Price: 7560000
+URL_DEPLOY: /investment.php?action=buy&inv_id=9&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=01650ff8597f531a95af6ddb766252cd94a9d818
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/9.png?v=1026
+
+Name: Airfield
+Type: Energy
+Value: 2
+Cant Build: 1
+Price: 132000000
+URL_DEPLOY: /investment.php?action=sell&inv_id=10&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=e6cb9aa23d7750e347e20b4085a51122a3ab4235
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/10.png?v=1026
+
+Name: Landmine Field
+Type: Defense
+Value: 50
+Cant Build: 0
+Price: 15000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=11&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=e2feca6cc5667ff6ff1d3eb62eac90684d050c01
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/11.png?v=1026
+
+Name: Oil Rig
+Type: Income
+Value: 270000
+Cant Build: 5
+Price: 45000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=12&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=33afe4eeefd6952de9a5a946dadcedb21d88123c
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/12.png?v=1026
+
+Name: Communications Center
+Type: Energy
+Value: 3
+Cant Build: 1
+Price: 495000000
+URL_DEPLOY: /investment.php?action=sell&inv_id=13&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=288fe206f008cda309e1e9a37d2c8b3d3cb597f9
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/13.png?v=1026
+
+Name: Military Research Lab
+Type: Income
+Value: 500000
+Cant Build: 0
+Price: 90000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=14&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=243100a9fbf78e6186dfd1e051dbc02983956246
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/14.png?v=1026
+
+Name: Automated Sentry Gun
+Type: Defense
+Value: 75
+Cant Build: 0
+Price: 36000000
+URL_DEPLOY: /investment.php?action=buy&inv_id=18&formNonce=f2d4996a86fdcbc89bc74b8e6f799b623acd0869&h=a56f0591d56a436032ebc5a6bec99e5a6db3ab8d
+URL_IMG: http://static.storm8.com/wwar/images/investments/med/18.png?v=1026
+
+Attack Points: 2472
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a wm5058
+Le gane a wm5058. Recaude 359042. Health: 200/200. Stamina: 20/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+Atacando de nuevo a wm5058
+ERROR AL OBTENER EL ALIANZE SIZE.
+wm5058 se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1082m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1025m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1087m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1083m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a kind
+Le gane a kind. Recaude 657958. Health: 195/200. Stamina: 19/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+Atacando de nuevo a kind
+ERROR AL OBTENER EL ALIANZE SIZE.
+Le gane a kind. Recaude 416707. Health: 181/200. Stamina: 17/20.
+Atacando de nuevo a kind
+ERROR AL OBTENER EL ALIANZE SIZE.
+kind se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1046m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1041m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1045m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1080m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1042m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a Aries
+Le gane a Aries. Recaude 1271. Health: 181/200. Stamina: 17/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a Andy
+Le gane a Andy. Recaude 445890. Health: 176/200. Stamina: 16/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+Atacando de nuevo a Andy
+ERROR AL OBTENER EL ALIANZE SIZE.
+Le gane a Andy. Recaude 93478. Health: 152/200. Stamina: 14/20.
+Atacando de nuevo a Andy
+ERROR AL OBTENER EL ALIANZE SIZE.
+Le gane a Andy. Recaude 405810. Health: 144/200. Stamina: 13/20.
+Atacando de nuevo a Andy
+ERROR AL OBTENER EL ALIANZE SIZE.
+Le gane a Andy. Recaude 200161. Health: 136/200. Stamina: 12/20.
+Atacando de nuevo a Andy
+ERROR AL OBTENER EL ALIANZE SIZE.
+Le gane a Andy. Recaude 161966. Health: 125/200. Stamina: 11/20.
+Atacando de nuevo a Andy
+ERROR AL OBTENER EL ALIANZE SIZE.
+Andy se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1044m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1064m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1016m.png?v=1026
+Atacando a Beast
+Le gane a Beast. Recaude 5324. Health: 125/200. Stamina: 11/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a wm5058
+wm5058 se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/203m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/205m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/1.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/2.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/3.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/4.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/5.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/6.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/7.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/8.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/9.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/10.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/11.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/12.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/14.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/18.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1079m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1072m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1080m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1073m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a 1luke&#8203;WOD
+Le gane a 1luke&#8203;WOD. Recaude 951105. Health: 120/200. Stamina: 10/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+Atacando de nuevo a 1luke&#8203;WOD
+ERROR AL OBTENER EL ALIANZE SIZE.
+1luke&#8203;WOD se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1072m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/1.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/3.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/4.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/6.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/8.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/10.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/12.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/14.png?v=1026
+Atacando a Msk-At&#8203;omik
+Le gane a Msk-At&#8203;omik. Recaude 567866. Health: 113/200. Stamina: 9/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+Atacando de nuevo a Msk-At&#8203;omik
+ERROR AL OBTENER EL ALIANZE SIZE.
+Msk-At&#8203;omik se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1079m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1072m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1080m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1073m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a 1luke&#8203;WOD
+1luke&#8203;WOD se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1073m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1082m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1025m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1087m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/203m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/204m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/205m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/206m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/1.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/2.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/3.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/4.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/5.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/6.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/7.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/8.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/9.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/10.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/11.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/12.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/13.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/14.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1064m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a J-dog
+Le gane a J-dog. Recaude 5661300. Health: 104/200. Stamina: 8/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+Atacando de nuevo a J-dog
+ERROR AL OBTENER EL ALIANZE SIZE.
+J-dog se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1079m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1072m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1080m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1073m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a 1luke&#8203;WOD
+1luke&#8203;WOD se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1082m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1025m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1087m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1079m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1070m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1016m.png?v=1026
+Atacando a pancho&#8203; Villa
+pancho&#8203; Villa se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a wm5058
+wm5058 se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1079m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1072m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1080m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1073m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a 1luke&#8203;WOD
+1luke&#8203;WOD se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1082m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1025m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1087m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a kind
+kind se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a gdyoh
+gdyoh se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1044m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+Atacando a Julio
+Le gane a Julio. Recaude 5664. Health: 96/200. Stamina: 7/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a Andy
+Andy se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a gdyoh
+gdyoh se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1064m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a J-dog
+J-dog se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1073m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1052m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1064m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a J-dog
+J-dog se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1082m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1025m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1087m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1043m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1039m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a kind
+kind se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1079m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1072m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1080m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1073m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a 1luke&#8203;WOD
+1luke&#8203;WOD se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a haywoo&#8203;d jablome
+Le gane a haywoo&#8203;d jablome. Recaude 0. Health: 91/200. Stamina: 6/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1079m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1070m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1016m.png?v=1026
+Atacando a pancho&#8203; Villa
+pancho&#8203; Villa se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/203m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/205m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/1.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/2.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/3.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/4.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/5.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/6.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/7.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/8.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/9.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/10.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/11.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/12.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/14.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/18.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1082m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1025m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1087m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/203m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/204m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/205m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/1.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/3.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/6.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/8.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/12.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/investments/med/14.png?v=1026
+Atacando a Agripp&#8203;a
+Le gane a Agripp&#8203;a. Recaude 495990. Health: 80/200. Stamina: 5/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+Atacando de nuevo a Agripp&#8203;a
+ERROR AL OBTENER EL ALIANZE SIZE.
+Le gane a Agripp&#8203;a. Recaude 576150. Health: 53/200. Stamina: 3/20.
+Atacando de nuevo a Agripp&#8203;a
+ERROR AL OBTENER EL ALIANZE SIZE.
+Le gane a Agripp&#8203;a. Recaude 591180. Health: 46/200. Stamina: 2/20.
+Atacando de nuevo a Agripp&#8203;a
+ERROR AL OBTENER EL ALIANZE SIZE.
+Le gane a Agripp&#8203;a. Recaude 571140. Health: 35/200. Stamina: 1/20.
+Atacando de nuevo a Agripp&#8203;a
+ERROR AL OBTENER EL ALIANZE SIZE.
+Agripp&#8203;a se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1082m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1025m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1047m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1087m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a kind
+kind se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1056m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1076m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1079m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1059m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1063m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1014m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1072m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1080m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1027m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1073m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a 1luke&#8203;WOD
+1luke&#8203;WOD se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+Atacando a gdyoh
+gdyoh se retiro.
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1007m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1008m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1009m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1010m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1042m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1011m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1060m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1013m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1015m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1061m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1064m.png?v=1026
+URL NOT FOUND FOR UNIT: http://static.storm8.com/wwar/images/equipment/med/1062m.png?v=1026
+Atacando a Brando&#8203;n
+Le gane a Brando&#8203;n. Recaude 91. Health: 35/200. Stamina: 1/20.
+ERROR AL OBTENER EL ALIANZE SIZE.
+SE ME ACABO LA ENERGIA. FIN.
