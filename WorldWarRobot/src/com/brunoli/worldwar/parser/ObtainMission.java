@@ -100,7 +100,7 @@ public class ObtainMission {
 		Mission mission = null;
 		String missionName = null;
 		String missionUrl = null;
-		String buttonText = "do againt";
+		String buttonText = "do again";
 		int i=0;
 		if(page.toString().contains("missionHeader")){
 			for(String a : page.toString().split("missionHeader")){
@@ -166,5 +166,13 @@ public class ObtainMission {
 			}
 		}
 		return null;
+	}
+
+	public Boolean checkDeployUnitsOK(StringBuilder page) {
+		if(page.toString().contains("have enough money")){
+			return false;
+		}else{
+			return true;
+		}
 	}
 }

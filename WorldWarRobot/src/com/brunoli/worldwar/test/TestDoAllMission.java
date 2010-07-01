@@ -77,6 +77,10 @@ public class TestDoAllMission {
 					String urlDeploy = obtainMission
 							.obtainUrlToDeployUnit(page);
 					page = get.getUrl(urlDeploy);
+					if(!obtainMission.checkDeployUnitsOK(page)){
+						System.out.println("NO TENGO PLATA PARA DEPLOYEAR, ESPERAR PROXIMA RUEDA");
+						return;
+					}
 				}
 				// Proceso mision
 				System.out.println("Procesando siguiente mision");

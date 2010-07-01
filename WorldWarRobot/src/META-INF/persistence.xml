@@ -5,9 +5,9 @@
 		<class>com.brunoli.worldwar.db.entity.UnitEntity</class>
 		<class>com.brunoli.worldwar.db.entity.BuildingEntity</class>
 		<properties>
-           <property name="eclipselink.logging.level" value="FINE"/>
+           <property name="eclipselink.logging.level" value="SEVERE"/>
            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>  
-           <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/worldwar"/> 
+           <property name="eclipselink.jdbc.url" value="jdbc:mysql://10.0.0.44:3306/worldwar"/> 
            <property name="eclipselink.jdbc.password" value="root"/> 
            <property name="eclipselink.jdbc.user" value="root"/> 
         </properties>

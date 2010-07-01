@@ -13,6 +13,7 @@ import com.brunoli.worldwar.beans.FightResult;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
 import com.brunoli.worldwar.util.FightResultType;
+import com.brunoli.worldwar.util.UtilsWW;
 
 public class ObtainFight {
 
@@ -176,7 +177,7 @@ public class ObtainFight {
 			//WON
 			result.setResult(FightResultType.WON);
 			String a = page.toString().split("You took")[1].split("gained")[0].split("</")[0];
-			result.setMoney(parsearMony(a.split(">")[a.split(">").length-1]));
+			result.setMoney(UtilsWW.parsearMoney(a.split(">")[a.split(">").length-1]));
 		}else if(page.toString().contains("lost")){
 			//LOST
 			result.setResult(FightResultType.LOST);
@@ -187,9 +188,6 @@ public class ObtainFight {
 		return result;
 	}
 	
-	public Long parsearMony(String money) {
-		return Long.parseLong(money.replaceAll(",", "").replaceAll("\\.", ""));
-	}
 
 	public String obtainAttackAgainUrl(StringBuilder page) {
 		String url = "http://wwar.storm8.com/fight.php"+page.toString().split("'Attack Again'")[1].split("/>")[0].split("/fight.php")[1].split("'")[0];
