@@ -105,7 +105,7 @@ public class ObtainFight {
 							cant = d.split("<div>x")[1].split("<")[0];
 							profile.getUnits().put(unit, Integer.parseInt(cant));
 						}else{
-							System.out.println("URL NOT FOUND FOR UNIT: "+url);
+							//System.out.println("URL NOT FOUND FOR UNIT: "+url);
 						}
 					}
 					j++;
@@ -182,8 +182,7 @@ public class ObtainFight {
 				result.setMoney(UtilsWW.parsearMoney(a.split(">")[a.split(">").length-1]));
 			}catch(Exception ex){
 				System.out.println("Error al obtener la plata ganada. "+ex.getMessage());
-				String hash = new String(""+page.hashCode());
-				FileWriterWrapper fww = new FileWriterWrapper("./files/errores/errorMonyFightGanada"+hash.substring(1,10)+".txt");
+				FileWriterWrapper fww = new FileWriterWrapper("./errorMonyFightGanada.txt");
 				fww.write(page.toString());
 				System.exit(0);
 			}

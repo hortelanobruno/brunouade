@@ -29,16 +29,16 @@ public class ObtainRestore {
 		mostrarDatos(restore);
 	}
 
-	private void mostrarDatos(RestoreValue restore) {
+	public void mostrarDatos(RestoreValue restore) {
 		System.out.println("Restore URL: "+restore.getUrlRestore());
 		System.out.println("Restore Value: "+restore.getValueRestore());
 		System.out.println("Vault Value: "+restore.getValueVault());
 	}
 
-	private RestoreValue leerDatos(StringBuilder page) {
+	public RestoreValue leerDatos(StringBuilder page) {
 		RestoreValue rv = new RestoreValue();
 		String a = page.toString().split("hospitalText")[1];
-		rv.setUrlRestore("/hospital.php"+a.split("/hospital.php")[1].split("'")[0]);
+		rv.setUrlRestore("http://wwar.storm8.com/hospital.php"+a.split("/hospital.php")[1].split("'")[0]);
 		rv.setValueVault(UtilsWW.parsearMoney(a.split("<img")[1].split("</")[0].split(">")[1]));
 		rv.setValueRestore(UtilsWW.parsearMoney(a.split("<img")[2].split("</")[0].split(">")[1]));
 		return rv;

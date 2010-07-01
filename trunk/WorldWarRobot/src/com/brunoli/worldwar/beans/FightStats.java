@@ -10,7 +10,7 @@ public class FightStats {
 	private Double avgMoneyGain = 0D;
 	private Long totalMoneyGain = 0L;
 	private List<Long> moneyWon;
-	private final Double MINIMO_RENTABILIDAD = 100000D;// 100mil
+	private final Double MINIMO_RENTABILIDAD = 400000D;// 100mil
 
 	public FightStats() {
 		moneyWon = new ArrayList<Long>();
