@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import com.brunoli.worldwar.beans.Profile;
 import com.brunoli.worldwar.util.Menus;
+import com.brunoli.worldwar.util.UtilsWW;
 
 public class ObtainInformation {
 
@@ -146,15 +147,11 @@ public class ObtainInformation {
 			// MONEY
 			aux = page.toString().split("'cashCurrent'")[1].split("</")[0]
 					.split(">")[1];
-			datos.put("Money", parsearMony(aux).toString());
+			datos.put("Money", UtilsWW.parsearMoney(aux).toString());
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL MONEY.");
 		}
 		return datos;
-	}
-
-	public Long parsearMony(String money) {
-		return Long.parseLong(money.replaceAll(",", "").replaceAll("\\.", ""));
 	}
 
 	public StringBuilder leerArchivo(String pathFile) {
@@ -250,7 +247,7 @@ public class ObtainInformation {
 			// MONEY
 			aux = page.toString().split("'cashCurrent'")[1].split("</")[0]
 					.split(">")[1];
-			profile.setMoney(parsearMony(aux));
+			profile.setMoney(UtilsWW.parsearMoney(aux));
 		} catch (Exception ex) {
 			System.out.println("ERROR AL OBTENER EL MONEY.");
 		}

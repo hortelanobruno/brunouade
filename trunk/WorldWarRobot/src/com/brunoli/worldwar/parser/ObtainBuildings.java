@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.brunoli.worldwar.beans.Building;
-import com.brunoli.worldwar.util.BuildingEnum;
 import com.brunoli.worldwar.util.BuildingType;
+import com.brunoli.worldwar.util.UtilsWW;
 
 public class ObtainBuildings {
 
@@ -96,7 +96,7 @@ public class ObtainBuildings {
 									.split(">")[1].replaceAll(",", "")
 									.replaceAll("\\.", "").replaceAll(" ", "");
 							try {
-								building.setInitialCost(parsearPrice(price));
+								building.setInitialCost(UtilsWW.parsearMoney(price));
 							} catch (Exception ex) {
 
 							}
@@ -133,7 +133,7 @@ public class ObtainBuildings {
 									.split(">")[1].replaceAll(",", "")
 									.replaceAll("\\.", "").replaceAll(" ", "");
 							try {
-								building.setInitialCost(parsearPrice(price));
+								building.setInitialCost(UtilsWW.parsearMoney(price));
 							} catch (Exception ex) {
 
 							}
@@ -170,7 +170,7 @@ public class ObtainBuildings {
 									.split(">")[1].replaceAll(",", "")
 									.replaceAll("\\.", "").replaceAll(" ", "");
 							try {
-								building.setInitialCost(parsearPrice(price));
+								building.setInitialCost(UtilsWW.parsearMoney(price));
 							} catch (Exception ex) {
 
 							}
@@ -250,7 +250,7 @@ public class ObtainBuildings {
 								.split(">")[1].replaceAll(",", "")
 								.replaceAll("\\.", "").replaceAll(" ", "");
 						try {
-							building.setInitialCost(parsearPrice(price));
+							building.setInitialCost(UtilsWW.parsearMoney(price));
 						} catch (Exception ex) {
 
 						}
@@ -285,7 +285,7 @@ public class ObtainBuildings {
 								.split(">")[1].replaceAll(",", "")
 								.replaceAll("\\.", "").replaceAll(" ", "");
 						try {
-							building.setInitialCost(parsearPrice(price));
+							building.setInitialCost(UtilsWW.parsearMoney(price));
 						} catch (Exception ex) {
 
 						}
@@ -320,7 +320,7 @@ public class ObtainBuildings {
 								.split(">")[1].replaceAll(",", "")
 								.replaceAll("\\.", "").replaceAll(" ", "");
 						try {
-							building.setInitialCost(parsearPrice(price));
+							building.setInitialCost(UtilsWW.parsearMoney(price));
 						} catch (Exception ex) {
 
 						}
@@ -350,16 +350,6 @@ public class ObtainBuildings {
 			i++;
 		}
 		return buildings;
-	}
-
-	public Long parsearPrice(String price) {
-		if (price.contains("K")) {
-			// k
-			price = price.replace("K", "000");
-		} else if (price.contains("mil")) {
-			price = price.replace("mil", "000000");
-		}
-		return Long.parseLong(price);
 	}
 
 }
