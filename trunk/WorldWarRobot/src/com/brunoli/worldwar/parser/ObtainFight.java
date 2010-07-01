@@ -13,6 +13,7 @@ import com.brunoli.worldwar.beans.FightResult;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
 import com.brunoli.worldwar.util.FightResultType;
+import com.brunoli.worldwar.util.FileWriterWrapper;
 import com.brunoli.worldwar.util.UtilsWW;
 
 public class ObtainFight {
@@ -176,8 +177,16 @@ public class ObtainFight {
 		if(page.toString().contains("won")){
 			//WON
 			result.setResult(FightResultType.WON);
-			String a = page.toString().split("You took")[1].split("gained")[0].split("</")[0];
-			result.setMoney(UtilsWW.parsearMoney(a.split(">")[a.split(">").length-1]));
+			try{
+				String a = page.toString().split("You took")[1].split("gained")[0].split("</")[0];
+				result.setMoney(UtilsWW.parsearMoney(a.split(">")[a.split(">").length-1]));
+			}catch(Exception ex){
+				System.out.println("Error al obtener la plata ganada. "+ex.getMessage());
+				String hash = new String(""+page.hashCode());
+				FileWriterWrapper fww = new FileWriterWrapper("./files/errores/errorMonyFightGanada"+hash.substring(1,10)+".txt");
+				fww.write(page.toString());
+				System.exit(0);
+			}
 		}else if(page.toString().contains("lost")){
 			//LOST
 			result.setResult(FightResultType.LOST);
