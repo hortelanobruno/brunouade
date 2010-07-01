@@ -114,21 +114,25 @@ public class ObtainFight {
 			i++;
 		}
 		//leo buildings
-		String a = page.toString().split("Buildings")[1];
-		i=0;
-		Building building;
-		for(String img : a.split("<img")){
-			if(i>0){
-				url = img.split("src='")[1].split("'")[0];
-				building = dbManager.getBuildingByUrlImg(url);
-				if(building!=null){
-					cant = img.split("<div>x")[1].split("<")[0];
-					profile.getBuildings().put(building, Integer.parseInt(cant));
-				}else{
-					System.out.println("URL NOT FOUND FOR BUILDING: "+url);
+		try{
+			String a = page.toString().split("Buildings")[1];
+			i=0;
+			Building building;
+			for(String img : a.split("<img")){
+				if(i>0){
+					url = img.split("src='")[1].split("'")[0];
+					building = dbManager.getBuildingByUrlImg(url);
+					if(building!=null){
+						cant = img.split("<div>x")[1].split("<")[0];
+						profile.getBuildings().put(building, Integer.parseInt(cant));
+					}else{
+						System.out.println("URL NOT FOUND FOR BUILDING: "+url);
+					}
 				}
+				i++;
 			}
-			i++;
+		}catch(Exception ex){
+			
 		}
 		return profile;
 	}
