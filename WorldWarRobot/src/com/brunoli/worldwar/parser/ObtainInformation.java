@@ -85,7 +85,6 @@ public class ObtainInformation {
 					.split(">")[1];
 			datos.put("AlianzeSize", aux);
 		} catch (Exception ex) {
-			System.out.println("ERROR AL OBTENER EL ALIANZE SIZE.");
 		}
 		try {
 			// EXPERIENCIA
@@ -188,7 +187,6 @@ public class ObtainInformation {
 			aux = page.toString().split("'crewCount'")[1].split("</")[0].split(">")[1];
 			profile.setAlianzeSize(Integer.parseInt(aux));
 		} catch (Exception ex) {
-			System.out.println("ERROR AL OBTENER EL ALIANZE SIZE.");
 		}
 		// EXPERIENCIA
 		aux = page.toString().split("expText")[1].split("</span>")[0]
