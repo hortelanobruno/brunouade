@@ -28,5 +28,6 @@ public class TestObtainInformation {
 		} catch (Exception e) {
 			System.out.println("Error en el get. "+e.getMessage());
 		}
+		get.close();
 	}
 }

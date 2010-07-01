@@ -55,6 +55,7 @@ public class TestCargarProfile {
 		} catch (Exception e) {
 			System.out.println("Error en el get. " + e.getMessage());
 		}
+		get.close();
 	}
 
 	private void mostrarProfile(Profile profile) {
