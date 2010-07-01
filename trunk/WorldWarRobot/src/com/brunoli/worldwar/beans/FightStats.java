@@ -89,7 +89,7 @@ public class FightStats {
 			aux += money.doubleValue();
 		}
 		aux = aux/moneyWon.size();
-		return null;
+		return aux;
 	}
 
 }

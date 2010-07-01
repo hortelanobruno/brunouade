@@ -58,8 +58,8 @@ public class FightManager {
 						pageEnemy = httpGet.getUrl(enemyToAttack.getProfile()
 								.getAttackUrl());
 						fightResult = obtainFight.resultFight(pageEnemy);
+						mostrarResultadoFight(profile, enemyToAttack,fightResult);
 						if (fightResult.getResult().equals(FightResultType.WON)) {
-							System.out.println("GANE");
 							// WON
 							recargarInfoProfile(profile, pageEnemy);
 							recargoFightStats(enemyToAttack, fightResult);
@@ -75,38 +75,45 @@ public class FightManager {
 									recargarInfoProfile(profile, pageEnemy);
 									recargoFightStats(enemyToAttack,
 											fightResult);
-									switch (fightResult.getResult()) {
-									case WON:
-										System.out.println("GANE");
-										break;
-									case LOST:
-										System.out.println("PERDI");
-										break;
-									case FORCES_RETRITMENT:
-										System.out.println("SE RETIRO");
-										break;
-									}
+									mostrarResultadoFight(profile, enemyToAttack,fightResult);
 								} while (fightResult.getResult().equals(
 										FightResultType.WON)
 										&& hasEnergyToAttack(profile));
 							}
 						} else if (fightResult.getResult().equals(FightResultType.LOST)) {
-							System.out.println("PERDI");
 							// LOST
 							recargarInfoProfile(profile, pageEnemy);
 							recargoFightStats(enemyToAttack, fightResult);
 						} else {
-							System.out.println("SE RETIRO");
 							// RETRITMENT
 						}
 					}
 				}
 			}
+			System.out.println("SE ME ACABO LA ENERGIA. FIN.");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+	}
+
+	private void mostrarResultadoFight(Profile profile, Enemy enemy, FightResult fightResult) {
+		switch (fightResult.getResult()) {
+		case WON:
+			System.out.print("Le gane a "+enemy.getName()+". Recaude "+fightResult.getMoney()+". ");
+			System.out.print("Health: "+profile.getHealthCurrent()+"/"+profile.getHealthMax()+". ");
+			System.out.println("Stamina: "+profile.getStaminaCurrent()+"/"+profile.getStaminaMax()+".");
+			break;
+		case LOST:
+			System.out.print("Perdi con "+enemy.getName()+". ");
+			System.out.print("Health: "+profile.getHealthCurrent()+"/"+profile.getHealthMax()+". ");
+			System.out.println("Stamina: "+profile.getStaminaCurrent()+"/"+profile.getStaminaMax()+".");
+			break;
+		case FORCES_RETRITMENT:
+			System.out.println(enemy.getName()+" se retiro.");
+			break;
+		}
 	}
 
 	private boolean sigoAtacando(Enemy enemy) {
