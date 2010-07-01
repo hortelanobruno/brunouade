@@ -1,5 +1,6 @@
 package com.brunoli.worldwar.manager;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -22,8 +23,10 @@ public class FightManager {
 	private ObtainFight obtainFight;
 	private ObtainInformation obtainInformation;
 	private Map<String, FightStats> fightStats;
+	private List<String> enemyRetired;
 
 	public FightManager() {
+		enemyRetired = new ArrayList<String>();
 		obtainFight = new ObtainFight();
 		obtainInformation = new ObtainInformation();
 		fightStats = new HashMap<String, FightStats>();
@@ -58,11 +61,11 @@ public class FightManager {
 						pageEnemy = httpGet.getUrl(enemyToAttack.getProfile()
 								.getAttackUrl());
 						fightResult = obtainFight.resultFight(pageEnemy);
-						mostrarResultadoFight(profile, enemyToAttack,fightResult);
 						if (fightResult.getResult().equals(FightResultType.WON)) {
 							// WON
 							recargarInfoProfile(profile, pageEnemy);
 							recargoFightStats(enemyToAttack, fightResult);
+							mostrarResultadoFight(profile, enemyToAttack,fightResult);
 							if (sigoAtacando(enemyToAttack)) {
 								do {
 									System.out.println("Atacando de nuevo a "
@@ -79,13 +82,19 @@ public class FightManager {
 								} while (fightResult.getResult().equals(
 										FightResultType.WON)
 										&& hasEnergyToAttack(profile));
+								if(fightResult.getResult().equals(FightResultType.FORCES_RETRITMENT)){
+									enemyRetired.add(enemyToAttack.getName());
+								}
 							}
 						} else if (fightResult.getResult().equals(FightResultType.LOST)) {
 							// LOST
 							recargarInfoProfile(profile, pageEnemy);
 							recargoFightStats(enemyToAttack, fightResult);
+							mostrarResultadoFight(profile, enemyToAttack,fightResult);
 						} else {
 							// RETRITMENT
+							enemyRetired.add(enemyToAttack.getName());
+							mostrarResultadoFight(profile, enemyToAttack,fightResult);
 						}
 					}
 				}
@@ -111,7 +120,9 @@ public class FightManager {
 			System.out.println("Stamina: "+profile.getStaminaCurrent()+"/"+profile.getStaminaMax()+".");
 			break;
 		case FORCES_RETRITMENT:
-			System.out.println(enemy.getName()+" se retiro.");
+			System.out.print(enemy.getName()+" se retiro. ");
+			System.out.print("Health: "+profile.getHealthCurrent()+"/"+profile.getHealthMax()+". ");
+			System.out.println("Stamina: "+profile.getStaminaCurrent()+"/"+profile.getStaminaMax()+".");
 			break;
 		}
 	}
@@ -160,14 +171,16 @@ public class FightManager {
 		Collections.sort(newEnemies, new EnemyComparator());
 		FightStats stats = null;
 		for (Enemy enemy : newEnemies) {
-			if (!fightStats.containsKey(enemy.getName())) {
-				// NO LO TENGO ASI QUE PODRIA SER.
-				return enemy;
-			} else {
-				// SI LO TENGO, CALCULO SI ES RENTABLE
-				stats = fightStats.get(enemy.getName());
-				if (stats.isRentable()) {
+			if(!enemyRetired.contains(enemy.getName())){
+				if (!fightStats.containsKey(enemy.getName())) {
+					// NO LO TENGO ASI QUE PODRIA SER.
 					return enemy;
+				} else {
+					// SI LO TENGO, CALCULO SI ES RENTABLE
+					stats = fightStats.get(enemy.getName());
+					if (stats.isRentable()) {
+						return enemy;
+					}
 				}
 			}
 		}
