@@ -1,0 +1,1280 @@
+Minigunners
+Level: 1
+Attack: 1
+Defense: 1
+Cost: $400
+Disband: $200
+Upkeep: $0
+
+Fireteam
+Level: 1
+Attack: 2
+Defense: 1
+Cost: $700
+Disband: $350
+Upkeep: $0
+
+Marines
+Level: 2
+Attack: 2
+Defense: 2
+Cost: $1,200
+Disband: $600
+Upkeep: $0
+
+Paratroopers
+Level: 5
+Attack: 4
+Defense: 1
+Cost: $1,800
+Disband: $900
+Upkeep: $0
+
+Medics
+Level: 8
+Attack: 0
+Defense: 6
+Cost: $2,500
+Disband: $1,250
+Upkeep: $25
+
+Grenadiers
+Level: 12
+Attack: 6
+Defense: 1
+Cost: $3,500
+Disband: $1,750
+Upkeep: $50
+
+Snipers
+Level: 18
+Attack: 3
+Defense: 5
+Cost: $5,000
+Disband: $2,500
+Upkeep: $100
+
+Navy Seals
+Level: 24
+Attack: 5
+Defense: 4
+Cost: $7,500
+Disband: $3,750
+Upkeep: $200
+
+Heavy Machine Gunners
+Level: 26
+Attack: 6
+Defense: 4
+Cost: $10,000
+Disband: $5,000
+Upkeep: $320
+
+Rocketeers
+Level: 30
+Attack: 9
+Defense: 2
+Cost: $12,000
+Disband: $6,000
+Upkeep: $400
+
+Corner Shot Recon
+Level: 33
+Attack: 10
+Defense: 1
+Cost: $15,000
+Disband: $7,500
+Upkeep: $500
+
+Commandos
+Level: 36
+Attack: 6
+Defense: 6
+Cost: $16,000
+Disband: $8,000
+Upkeep: $550
+
+Aerial Vehicle Squad
+Level: 39
+Attack: 12
+Defense: 4
+Cost: $29,000
+Disband: $14,500
+Upkeep: $1,000
+
+XM-25 Gunner
+Level: 42
+Attack: 14
+Defense: 3
+Cost: $35,000
+Disband: $17,500
+Upkeep: $1,200
+
+Tank Blasters
+Level: 45
+Attack: 17
+Defense: 5
+Cost: $48,000
+Disband: $24,000
+Upkeep: $1,600
+
+PackBot Robot Troopers
+Level: 50
+Attack: 24
+Defense: 4
+Cost: $80,000
+Disband: $40,000
+Upkeep: $2,700
+
+FELIN Combat Infantry
+Level: 55
+Attack: 27
+Defense: 9
+Cost: $120,000
+Disband: $60,000
+Upkeep: $4,000
+
+Heavy Assault Squad
+Level: 60
+Attack: 28
+Defense: 16
+Cost: $150,000
+Disband: $75,000
+Upkeep: $5,000
+
+Future Force Warrior Squad
+Level: 64
+Attack: 42
+Defense: 12
+Cost: $300,000
+Disband: $150,000
+Upkeep: $10,000
+
+LW50 Machine Gun Squad
+Level: 67
+Attack: 55
+Defense: 10
+Cost: $440,000
+Disband: $220,000
+Upkeep: $15,000
+
+M110 Sniper Team
+Level: 70
+Attack: 65
+Defense: 9
+Cost: $600,000
+Disband: $300,000
+Upkeep: $20,000
+
+XM-307 Grenade Machine Gun Squad
+Level: 75
+Attack: 75
+Defense: 10
+Cost: $780,000
+Disband: $390,000
+Upkeep: $26,000
+
+Railgun Troopers
+Level: 80
+Attack: 90
+Defense: 4
+Cost: $960,000
+Disband: $480,000
+Upkeep: $32,000
+
+Mobile Infantry Marines
+Level: 85
+Attack: 95
+Defense: 10
+Cost: $1,200,000
+Disband: $600,000
+Upkeep: $40,000
+
+Prisoner
+Level: 1
+Attack: 0
+Defense: 1
+Cost: Loot
+Disband: $50
+Upkeep: $0
+Mission: Tab #1 - Hunt Down Enemies
+
+Cadet Squad
+Level: 2
+Attack: 1
+Defense: 0
+Cost: Loot
+Disband: $125
+Upkeep: $0
+Mission: Tab #1 - Train Armed Forces
+
+Patrol Unit
+Level: 3
+Attack: 1
+Defense: 2
+Cost: Loot
+Disband: $300
+Upkeep: $0
+Mission: Tab #1 - Establish Base Defense
+
+Light Machine Gunner
+Level: 6
+Attack: 3
+Defense: 1
+Cost: Loot
+Disband: $700
+Upkeep: $0
+Mission: Tab #2 - Set Up Military Camp
+
+Avionics Engineers
+Level: 10
+Attack: 3
+Defense: 5
+Cost: Loot
+Disband: $2,100
+Upkeep: $100
+Mission: Tab #2 - Investigate Wreckage
+
+Bioweapon Scientists
+Level: 20
+Attack: 4
+Defense: 6
+Cost: Loot
+Disband: $3,750
+Upkeep: $300
+Mission: Tab #3 - Confiscate Bioweapons
+
+Biosoldier Unit
+Level: 18
+Attack: 6
+Defense: 3
+Cost: Loot
+Disband: $4,250
+Upkeep: $250
+Mission: Tab #3 - Destroy Enemy Lab
+
+Rebel Fighter
+Level: 30
+Attack: 4
+Defense: 7
+Cost: Loot
+Disband: $5,500
+Upkeep: $360
+Mission: Tab #5 - Capture Enemy Fighters
+
+Nuclear Squad
+Level: 45
+Attack: 10
+Defense: 5
+Cost: Loot
+Disband: $11,000
+Upkeep: $1,200
+Mission: Tab #5 - Destroy Nuclear Facility
+
+Stealth Infiltrator
+Level: 39
+Attack: 14
+Defense: 6
+Cost: Loot
+Disband: $22,500
+Upkeep: $2,000
+Mission: Tab #5 - Capture Enemy Spies
+
+Supply Truck
+Level: 1
+Attack: 2
+Defense: 2
+Cost: $2,500
+Disband: $1,250
+Upkeep: $0
+
+Hum-Vee
+Level: 1
+Attack: 3
+Defense: 2
+Cost: $4,500
+Disband: $2,250
+Upkeep: $0
+
+Light Tank
+Level: 3
+Attack: 6
+Defense: 4
+Cost: $12,500
+Disband: $6,250
+Upkeep: $0
+
+Mobile Artillery
+Level: 6
+Attack: 9
+Defense: 6
+Cost: $25,000
+Disband: $12,500
+Upkeep: $0
+
+Armored Personnel Carrier
+Level: 10
+Attack: 5
+Defense: 18
+Cost: $60,000
+Disband: $30,000
+Upkeep: $1,200
+
+Stealth Tank
+Level: 15
+Attack: 20
+Defense: 13
+Cost: $125,000
+Disband: $62,500
+Upkeep: $2,400
+
+Heavy Equipment Transporter
+Level: 20
+Attack: 10
+Defense: 35
+Cost: $225,000
+Disband: $112,500
+Upkeep: $3,500
+
+Amphibious Assault Vehicle
+Level: 22
+Attack: 28
+Defense: 24
+Cost: $340,000
+Disband: $170,000
+Upkeep: $4,200
+
+SSM Launcher
+Level: 27
+Attack: 42
+Defense: 17
+Cost: $420,000
+Disband: $210,000
+Upkeep: $5,000
+
+Armored Snow Hovercraft
+Level: 30
+Attack: 19
+Defense: 48
+Cost: $600,000
+Disband: $300,000
+Upkeep: $7,200
+
+Mammoth Tank
+Level: 32
+Attack: 45
+Defense: 30
+Cost: $750,000
+Disband: $375,000
+Upkeep: $8,500
+
+Otokar Cobra Armored Vehicle
+Level: 34
+Attack: 36
+Defense: 50
+Cost: $1,000,000
+Disband: $500,000
+Upkeep: $14,000
+
+M-ATV Ambush Protected Vehicle
+Level: 39
+Attack: 46
+Defense: 51
+Cost: $1,700,000
+Disband: $850,000
+Upkeep: $26,000
+
+AHED Hybrid Electric Tank
+Level: 44
+Attack: 54
+Defense: 54
+Cost: $2,200,000
+Disband: $1,100,000
+Upkeep: $36,000
+
+Predator Armored Tank
+Level: 49
+Attack: 71
+Defense: 49
+Cost: $2,700,000
+Disband: $1,350,000
+Upkeep: $41,000
+
+Piranha V Armored Vehicle
+Level: 54
+Attack: 83
+Defense: 57
+Cost: $3,400,000
+Disband: $1,700,000
+Upkeep: $55,000
+
+Warthog Tracked Carrier
+Level: 59
+Attack: 90
+Defense: 60
+Cost: $4,200,000
+Disband: $2,100,000
+Upkeep: $65,000
+
+Black Knight Unmanned Combat Vehicle
+Level: 64
+Attack: 115
+Defense: 50
+Cost: $5,100,000
+Disband: $2,550,000
+Upkeep: $75,000
+
+Hellfire Tank
+Level: 69
+Attack: 108
+Defense: 72
+Cost: $6,200,000
+Disband: $3,100,000
+Upkeep: $80,000
+
+Expeditionary Fighting Vehicle
+Level: 74
+Attack: 118
+Defense: 74
+Cost: $7,900,000
+Disband: $3,950,000
+Upkeep: $92,000
+
+T-95 Battle Tank
+Level: 79
+Attack: 125
+Defense: 78
+Cost: $9,000,000
+Disband: $4,500,000
+Upkeep: $140,000
+
+XM 1202 Mounted Combat System
+Level: 84
+Attack: 130
+Defense: 82
+Cost: $9,800,000
+Disband: $4,900,000
+Upkeep: $180,000
+
+Titan Self Propelled Artillery Tank
+Level: 89
+Attack: 140
+Defense: 85
+Cost: $11,000,000
+Disband: $5,500,000
+Upkeep: $250,000
+
+Caterpillar Track Tank
+Level: 1
+Attack: 6
+Defense: 12
+Cost: Loot
+Disband: $14,000
+Upkeep: $0
+Promotion: Install Vampires Live 25 Loyalty Points (June)
+
+Flame Tank
+Level: 1
+Attack: 14
+Defense: 5
+Cost: Loot
+Disband: $15,000
+Upkeep: $0
+Promotion: Install iMobsters 30 Favor Points (May/June)
+
+AMX-30 Air Defense Tank
+Level: 1
+Attack: 7
+Defense: 12
+Cost: Loot
+Disband: $15,000
+Upkeep: $0
+Promotion: Install Vampires Live 20 Loyalty Points (July/August)
+
+Robotic Tank Drone
+Level: 1
+Attack: 10
+Defense: 10
+Cost: Loot
+Disband: $15,000
+Upkeep: $0
+Promotion: Install Kingdoms Live 35 Legend Points (July/August)
+
+Willys Army Jeep
+Level: 1
+Attack: 8
+Defense: 9
+Cost: Loot
+Disband: $17,500
+Upkeep: $0
+Promotion: Install iMobsters Machine Guns (August)
+
+Fast Attack Vehicle
+Level: 1
+Attack: 11
+Defense: 7
+Cost: Loot
+Disband: $17,500
+Upkeep: $0
+Promotion: Install Ninjas Live (August/September)
+
+Torpedo Launcher
+Level: 1
+Attack: 12
+Defense: 7
+Cost: Loot
+Disband: $17,500
+Upkeep: $0
+Promotion: Install Kingdoms Live 10 Legend Points (July/August)
+
+Mobile Howitzer Cannon
+Level: 15
+Attack: 13
+Defense: 15
+Cost: Loot
+Disband: $40,000
+Upkeep: $2,800
+Mission: Tab #3 - Repel Counterattack
+
+Wiesel 2 Mortar Unit
+Level: 11
+Attack: 21
+Defense: 12
+Cost: Loot
+Disband: $62,500
+Upkeep: $4,200
+Mission: Tab #3 - Infiltrate Western Border
+
+M163 Anti-aircraft Vehicle
+Level: 14
+Attack: 24
+Defense: 18
+Cost: Loot
+Disband: $107,500
+Upkeep: $7,200
+Mission: Tab #3 - Discover Reinforcements
+
+SA-8 Gecko Missile Launcher
+Level: 16
+Attack: 15
+Defense: 33
+Cost: Loot
+Disband: $140,000
+Upkeep: $9,300
+Mission: Tab #3 - Bombard Enemy Defenses
+
+Koalitcia-SV Artillery
+Level: 28
+Attack: 47
+Defense: 29
+Cost: Loot
+Disband: $375,000
+Upkeep: $25,000
+Mission: Tab #4 - Take out Supply Depots
+
+NLOS-C
+Level: 55
+Attack: 52
+Defense: 25
+Cost: Loot
+Disband: $425,000
+Upkeep: $10,000
+Mission: Tab #6 - Defend Position
+
+Patriot Missile System
+Level: 60
+Attack: 60
+Defense: 100
+Cost: Loot
+Disband: $2,600,000
+Upkeep: $173,000
+Mission: Tab #6 - Set up Defensive Network
+
+Cruiser
+Level: 1
+Attack: 4
+Defense: 2
+Cost: $6,000
+Disband: $3,000
+Upkeep: $0
+
+Transport
+Level: 2
+Attack: 2
+Defense: 7
+Cost: $10,000
+Disband: $5,000
+Upkeep: $0
+
+Frigate
+Level: 4
+Attack: 11
+Defense: 5
+Cost: $30,000
+Disband: $15,000
+Upkeep: $0
+
+Naval Tanker
+Level: 7
+Attack: 8
+Defense: 20
+Cost: $90,000
+Disband: $45,000
+Upkeep: $0
+
+Naval Destroyer
+Level: 11
+Attack: 27
+Defense: 15
+Cost: $200,000
+Disband: $100,000
+Upkeep: $3,000
+
+M80 Stiletto
+Level: 14
+Attack: 15
+Defense: 35
+Cost: $320,000
+Disband: $160,000
+Upkeep: $4,500
+
+Submarine
+Level: 16
+Attack: 45
+Defense: 10
+Cost: $400,000
+Disband: $200,000
+Upkeep: $5,200
+
+Helicopter Carrier
+Level: 20
+Attack: 28
+Defense: 34
+Cost: $600,000
+Disband: $300,000
+Upkeep: $6,500
+
+Battleship
+Level: 23
+Attack: 42
+Defense: 28
+Cost: $720,000
+Disband: $360,000
+Upkeep: $8,000
+
+Aircraft Carrier
+Level: 32
+Attack: 40
+Defense: 60
+Cost: $1,300,000
+Disband: $650,000
+Upkeep: $15,000
+
+Horizon Frigate
+Level: 35
+Attack: 45
+Defense: 65
+Cost: $1,800,000
+Disband: $900,000
+Upkeep: $22,000
+
+Borey Class Missile Submarine
+Level: 38
+Attack: 62
+Defense: 62
+Cost: $2,500,000
+Disband: $1,250,000
+Upkeep: $38,000
+
+Type 45 Destroyer
+Level: 43
+Attack: 80
+Defense: 50
+Cost: $3,100,000
+Disband: $1,550,000
+Upkeep: $50,000
+
+Scorpene Submarine
+Level: 48
+Attack: 74
+Defense: 74
+Cost: $3,700,000
+Disband: $1,850,000
+Upkeep: $58,000
+
+DDG 1000 Destroyer
+Level: 53
+Attack: 90
+Defense: 70
+Cost: $4,500,000
+Disband: $2,250,000
+Upkeep: $70,000
+
+Elite Dreadnought
+Level: 58
+Attack: 94
+Defense: 78
+Cost: $5,600,000
+Disband: $2,800,000
+Upkeep: $78,000
+
+Astute Class Submarine
+Level: 63
+Attack: 95
+Defense: 93
+Cost: $8,000,000
+Disband: $4,000,000
+Upkeep: $81,000
+
+FSF-1 Sea Fighter
+Level: 68
+Attack: 85
+Defense: 105
+Cost: $9,600,000
+Disband: $4,800,000
+Upkeep: $84,000
+
+HSV-2 Swift
+Level: 73
+Attack: 110
+Defense: 92
+Cost: $11,400,000
+Disband: $5,700,000
+Upkeep: $98,000
+
+CG(X) Guided Missile Cruiser
+Level: 78
+Attack: 95
+Defense: 115
+Cost: $12,500,000
+Disband: $6,250,000
+Upkeep: $150,000
+
+UXV Combatant
+Level: 83
+Attack: 130
+Defense: 90
+Cost: $14,300,000
+Disband: $7,150,000
+Upkeep: $200,000
+
+Nuclear Battlecruiser
+Level: 200
+Attack: 250
+Defense: 210
+Cost: $60,000,000
+Disband: $30,000,000
+Upkeep: $1,500,000
+
+Sea Shadow Stealth Cruiser
+Level: 1
+Attack: 11
+Defense: 11
+Cost: Loot
+Disband: $15,000
+Upkeep: $0
+Promotion: Install Vampires Live 30 Loyalty Points (May/June)
+
+PHM-1 Pegasus Hydrofoil Cruiser
+Level: 1
+Attack: 6
+Defense: 17
+Cost: Loot
+Disband: $17,500
+Upkeep: $0
+Promotion: Install Racing Live 30 Prestige Points (July/August)
+
+Corvette
+Level: 8
+Attack: 9
+Defense: 4
+Cost: Loot
+Disband: $10,000
+Upkeep: $0
+Mission: Tab #2 - Intercept Shipment
+
+Thresher Submarine
+Level: 21
+Attack: 34
+Defense: 14
+Cost: Loot
+Disband: $150,000
+Upkeep: $4,000
+Mission: Tab #4 - Locate Submarines
+
+Nuclear Submarine
+Level: 67
+Attack: 65
+Defense: 20
+Cost: Loot
+Disband: $500,000
+Upkeep: $12,500
+Mission: Tab #6 - Assemble Naval Fleet
+
+Guardian Patrol Boat
+Level: 23
+Attack: 46
+Defense: 37
+Cost: Loot
+Disband: $500,000
+Upkeep: $33,000
+Mission: Tab #4 - Secure Shoreline
+
+Amphibious Command Ship
+Level: 32
+Attack: 55
+Defense: 66
+Cost: Loot
+Disband: $1,250,000
+Upkeep: $83,000
+Mission: Tab #5 - Disrupt Communications
+
+Zubr Class Hovercraft
+Level: 82
+Attack: 112
+Defense: 112
+Cost: Loot
+Disband: $7,500,000
+Upkeep: $500,000
+Mission: Tab #6 - Conquer Coastal Base
+
+Fighter
+Level: 1
+Attack: 6
+Defense: 1
+Cost: $7,500
+Disband: $3,750
+Upkeep: $0
+
+Cargo Chopper
+Level: 3
+Attack: 6
+Defense: 4
+Cost: $14,000
+Disband: $7,000
+Upkeep: $0
+
+Patrol Plane
+Level: 5
+Attack: 12
+Defense: 3
+Cost: $32,000
+Disband: $16,000
+Upkeep: $0
+
+Harrier Jet
+Level: 8
+Attack: 24
+Defense: 5
+Cost: $100,000
+Disband: $50,000
+Upkeep: $1,100
+
+Comanche Helicopter
+Level: 13
+Attack: 25
+Defense: 13
+Cost: $210,000
+Disband: $105,000
+Upkeep: $3,500
+
+B-1 Lancer
+Level: 17
+Attack: 50
+Defense: 2
+Cost: $400,000
+Disband: $200,000
+Upkeep: $6,000
+
+Stealth Jet
+Level: 21
+Attack: 50
+Defense: 15
+Cost: $650,000
+Disband: $325,000
+Upkeep: $10,000
+
+X-20 Supersonic Aircraft
+Level: 25
+Attack: 68
+Defense: 6
+Cost: $840,000
+Disband: $420,000
+Upkeep: $12,000
+
+Apache Helicopter
+Level: 28
+Attack: 52
+Defense: 30
+Cost: $1,000,000
+Disband: $500,000
+Upkeep: $14,000
+
+B-2 Bomber
+Level: 35
+Attack: 110
+Defense: 5
+Cost: $1,650,000
+Disband: $825,000
+Upkeep: $22,000
+
+F-18 Super Hornet Fighter
+Level: 38
+Attack: 117
+Defense: 10
+Cost: $2,800,000
+Disband: $1,400,000
+Upkeep: $38,000
+
+IAI Harop UAV
+Level: 44
+Attack: 135
+Defense: 0
+Cost: $700,000
+Disband: $350,000
+Upkeep: $20,000
+*** EXPENDABLE ***
+
+F-15 Silent Eagle Fighter
+Level: 50
+Attack: 142
+Defense: 12
+Cost: $4,100,000
+Disband: $2,050,000
+Upkeep: $63,000
+
+Havoc Helicopter
+Level: 55
+Attack: 102
+Defense: 65
+Cost: $4,800,000
+Disband: $2,400,000
+Upkeep: $76,000
+
+MQ-8B Fire Scout Helicopter
+Level: 60
+Attack: 170
+Defense: 0
+Cost: $1,250,000
+Disband: $625,000
+Upkeep: $35,000
+*** EXPENDABLE ***
+
+Mitsubishi F3 Interceptor
+Level: 65
+Attack: 160
+Defense: 30
+Cost: $8,500,000
+Disband: $4,250,000
+Upkeep: $81,000
+
+BAE Mantis UAV
+Level: 70
+Attack: 180
+Defense: 0
+Cost: $2,100,000
+Disband: $1,050,000
+Upkeep: $60,000
+*** EXPENDABLE ***
+
+AV-22 War Osprey Gunship
+Level: 75
+Attack: 182
+Defense: 16
+Cost: $12,000,000
+Disband: $6,000,000
+Upkeep: $100,000
+
+PAK-FA Fighter
+Level: 80
+Attack: 190
+Defense: 18
+Cost: $13,500,000
+Disband: $6,750,000
+Upkeep: $170,000
+
+Sikorsky X2 Helicopter
+Level: 85
+Attack: 160
+Defense: 70
+Cost: $15,200,000
+Disband: $7,600,000
+Upkeep: $260,000
+
+Boeing NGB Bomber
+Level: 90
+Attack: 225
+Defense: 22
+Cost: $16,500,000
+Disband: $8,250,000
+Upkeep: $350,000
+
+Aurora Aircraft
+Level: 100
+Attack: 165
+Defense: 100
+Cost: $18,000,000
+Disband: $9,000,000
+Upkeep: $450,000
+
+SR-71 Blackbird
+Level: 1
+Attack: 17
+Defense: 4
+Cost: Loot
+Disband: $15,000
+Upkeep: $0
+Promotion: Install Rockstars Live (May/June)
+
+RQ-1 Predator
+Level: 1
+Attack: 15
+Defense: 4
+Cost: Loot
+Disband: $15,000
+Upkeep: $0
+Promotion: Install Racing Live (May/June)
+
+F-201 Starfighter
+Level: 1
+Attack: 11
+Defense: 9
+Cost: Loot
+Disband: $15,000
+Upkeep: $0
+Promotion: Install Kingdoms Live 25 Legend Points (June)
+
+F-35 Lightning II Fighter
+Level: 1
+Attack: 16
+Defense: 6
+Cost: Loot
+Disband: $15,000
+Upkeep: $0
+Promotion: Install Zombies Live (June)
+
+F-4 Phantom
+Level: 1
+Attack: 14
+Defense: 6
+Cost: Loot
+Disband: $17,500
+Upkeep: $0
+Promotion: Install Racing Live Import Edition (July/August)
+
+AH-64 Cheyenne Helicopter
+Level: 1
+Attack: 10
+Defense: 10
+Cost: Loot
+Disband: $20,000
+Upkeep: $0
+Promotion: Install iMobsters 10 Favor Points (July/August)
+
+A-10 Thunderbolt II
+Level: 1
+Attack: 11
+Defense: 8
+Cost: Loot
+Disband: $20,000
+Upkeep: $0
+Promotion: Install Kingdoms Live 40 Legend Points (August)
+
+Hind Helicopter
+Level: 1
+Attack: 11
+Defense: 10
+Cost: Loot
+Disband: $20,000
+Upkeep: $0
+Promotion: Install World War 10 Honor Points (August)
+
+F-16 Fighting Falcon
+Level: 1
+Attack: 10
+Defense: 10
+Cost: Loot
+Disband: $22,500
+Upkeep: $0
+Promotion: Install Racing Live 40 Prestige Points (August)
+
+Raptor Jet
+Level: 36
+Attack: 45
+Defense: 14
+Cost: Loot
+Disband: $250,000
+Upkeep: $8,000
+Mission: Tab #5 - Perform Surprise Attack
+
+Annihilator Fighter
+Level: 25
+Attack: 54
+Defense: 21
+Cost: Loot
+Disband: $360,000
+Upkeep: $11,000
+Mission: Tab #4 - Level Enemy City
+
+SU-34 Fullback Bomber
+Level: 27
+Attack: 80
+Defense: 20
+Cost: Loot
+Disband: $650,000
+Upkeep: $43,000
+Mission: Tab #4 - Air Raid
+
+Eurocopter Tiger
+Level: 50
+Attack: 110
+Defense: 56
+Cost: Loot
+Disband: $2,500,000
+Upkeep: $167,000
+Mission: Tab #6 - Conquer Enemy Outpost
+
+Dark Sword Aircraft
+Level: 100
+Attack: 145
+Defense: 125
+Cost: Loot
+Disband: $9,000,000
+Upkeep: $600,000
+Mission: Tab #6 - Force Enemy to Retreat
+
+Big Dog Robot
+Level: 1
+Attack: 17
+Defense: 21
+Cost: 50 Honor Points - Unknown Shipment - Common
+Disband: $67,500
+Upkeep: $0
+
+Exosuit Infantry
+Level: 1
+Attack: 15
+Defense: 24
+Cost: 50 Honor Points - Unknown Shipment - Common
+Disband: $67,500
+Upkeep: $0
+
+A129 Mangusta Helicopter
+Level: 1
+Attack: 20
+Defense: 25
+Cost: 50 Honor Points - Unknown Shipment - Common
+Disband: $155,000
+Upkeep: $0
+
+MiG-29 Fulcrum Fighter
+Level: 1
+Attack: 40
+Defense: 25
+Cost: 50 Honor Points - Unknown Shipment - Uncommon
+Disband: $325,000
+Upkeep: $0
+
+Amphibious Assault Vehicle (version 2)
+Level: 1
+Attack: 55
+Defense: 25
+Cost: 50 Honor Points - Unknown Shipment - Uncommon
+Disband: $400,000
+Upkeep: $0
+
+SU-47 Berkut Fighter
+Level: 1
+Attack: 50
+Defense: 20
+Cost: 50 Honor Points - Unknown Shipment - Uncommon
+Disband: $675,000
+Upkeep: $0
+
+LCS-2 Littoral Combat Ship
+Level: 1
+Attack: 38
+Defense: 62
+Cost: 50 Honor Points - Unknown Shipment - Rare
+Disband: $650,000
+Upkeep: $0
+
+CV90120T Tank
+Level: 1
+Attack: 60
+Defense: 40
+Cost: 50 Honor Points - Unknown Shipment - Rare
+Disband: $900,000
+Upkeep: $0
+
+Eurofighter Typhoon
+Level: 1
+Attack: 72
+Defense: 48
+Cost: 50 Honor Points - Unknown Shipment - Rare
+Disband: $1,000,000
+Upkeep: $0
+
+GMS Lynx Rifle Squad
+Level: 36
+Attack: 37
+Defense: 72
+Cost: 50 Honor Points - Secret Reinforcement - Common
+Disband: $500,000
+Upkeep: $0
+
+BMP 3M Armored Personnel Carrier
+Level: 36
+Attack: 40
+Defense: 65
+Cost: 50 Honor Points - Secret Reinforcement - Common
+Disband: $1,000,000
+Upkeep: $0
+
+Terrex Infantry Combat Vehicle
+Level: 36
+Attack: 110
+Defense: 80
+Cost: 50 Honor Points - Secret Reinforcement - Uncommon
+Disband: 3,100,000
+Upkeep: $0
+
+F124 Sachsen Class Frigate
+Level: 36
+Attack: 80
+Defense: 110
+Cost: 50 Honor Points - Secret Reinforcement - Uncommon
+Disband: $3,500,000
+Upkeep: $0
+
+X-29 FSW Fighter 
+Level: 36
+Attack: 170
+Defense: 20
+Cost: 50 Honor Points - Secret Reinforcement - Uncommon
+Disband: $4,000,000
+Upkeep: $0
+
+KA-52 Alligator Helicopter
+Level: 36
+Attack: 150
+Defense: 80
+Cost: 50 Honor Points - Secret Reinforcement - Rare
+Disband: $7,600,000
+Upkeep: $0
+
+JAS 39 Gripen Fighter
+Level: 36
+Attack: 200
+Defense: 40
+Cost: 50 Honor Points - Secret Reinforcement - Rare
+Disband: $8,250,000
+Upkeep: $0
+
+DDH 181 Hyuga Carrier
+Level: 36
+Attack: 135
+Defense: 135
+Cost: 50 Honor Points - Secret Reinforcement - Rare
+Disband: $9,000,000
+Upkeep: $0

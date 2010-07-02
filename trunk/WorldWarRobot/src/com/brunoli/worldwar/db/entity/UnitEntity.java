@@ -45,8 +45,19 @@ public class UnitEntity implements Serializable {
 	private String urlDeploy;
 	@Column(name = "CANT_BUILD")
 	private Integer cantBuild;
+	@Column(name = "LOOT_TYPE")
+	private Boolean lootType;
+	
 	public UnitEntity() {
 		super();
+	}
+	
+	public Boolean getLootType() {
+		return lootType;
+	}
+	
+	public void setLootType(Boolean lootType) {
+		this.lootType = lootType;
 	}
 
 	public Long getId() {
@@ -150,6 +161,7 @@ public class UnitEntity implements Serializable {
 		unit.setUrlDeploy(urlDeploy);
 		unit.setUrlImg(urlImg);
 		unit.setCantBuild(cantBuild);
+		unit.setLootType(lootType);
 		return unit;
 	}
 	
@@ -165,6 +177,7 @@ public class UnitEntity implements Serializable {
 		this.setUrlDeploy(unit.getUrlDeploy());
 		this.setUrlImg(unit.getUrlImg());
 		this.setCantBuild(cantBuild);
+		this.setLootType(unit.getLootType());
 	}
 	
    
