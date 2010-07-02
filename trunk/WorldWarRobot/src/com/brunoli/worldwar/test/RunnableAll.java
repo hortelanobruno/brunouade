@@ -71,37 +71,20 @@ public class RunnableAll implements Runnable {
 				//mostrar profile
 				mostrarProfile(profile);
 				//RECARGAR HEALTH
-				System.out.println("Go to hospital.");
-				String unitUrl = profile.getMenuUrls().get(Menus.HOSPITAL);
-				System.out.println("Link... "+unitUrl);
-				page = get.getUrl(unitUrl);
-				try{
-					RestoreValue rv = obtainRestore.leerDatos(page);
-					if(rv.getValueVault()>rv.getValueRestore()){
-						page = get.getUrl(rv.getUrlRestore());
-						System.out.println("Se hizo el restore health.");
-					}else{
-						System.out.println("No alcanza para el restore health. Asi que deposito.");
-						depositar(profile,get,rv.getValueRestore()-rv.getValueVault());
-						rv = obtainRestore.leerDatos(page);
-						if(rv.getValueVault()>rv.getValueRestore()){
-							page = get.getUrl(rv.getUrlRestore());
-							System.out.println("Se hizo el restore health.");
-						}else{
-							System.out.println("No se pudo hacer el restore entonces salgo de la aplicacion.");
-							System.exit(0);
-						}
-					}
-				}catch(Exception ex){
-					//SI ENTRA ACA ES PORQUE NO HAY QUE RECUPERAR HEALTH
-				}
-				
+				recargarHealth(profile);
 				//INICIAR ATAQUES
-				fightManager.startFighting(get,profile);
+				attackAll(profile);
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Fin de los ataques.");
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Ejecutando todas las misiones.");
 				ejecutarAllMissions(profile);
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Fin Ejecutando todas las misiones.");
+				// Leo datos
+				obtainInformation.leerDatosUsuario(page, profile);
+				// Chequeo si tengo energy porque pase de nivel
+				if(fightManager.canDoAttacks(profile)){
+					System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Sigo atacando porque tengo energia.");
+					attackAll(profile);
+				}
 			} catch (Exception e) {
 				System.out.println("Error en el get. " + e.getMessage());
 			}
@@ -114,6 +97,41 @@ public class RunnableAll implements Runnable {
 		}
 	}
 	
+	private void recargarHealth(Profile profile) {
+		System.out.println("Go to hospital.");
+		String unitUrl = profile.getMenuUrls().get(Menus.HOSPITAL);
+		System.out.println("Link... "+unitUrl);
+		StringBuilder page;
+		try{
+			page = get.getUrl(unitUrl);
+			RestoreValue rv = obtainRestore.leerDatos(page);
+			if(rv.getValueVault()>rv.getValueRestore()){
+				page = get.getUrl(rv.getUrlRestore());
+				System.out.println("Se hizo el restore health.");
+			}else{
+				System.out.println("No alcanza para el restore health. Asi que deposito.");
+				depositar(profile,get,rv.getValueRestore()-rv.getValueVault());
+				page = get.getUrl(unitUrl);
+				rv = obtainRestore.leerDatos(page);
+				if(rv.getValueVault()>rv.getValueRestore()){
+					page = get.getUrl(rv.getUrlRestore());
+					System.out.println("Se hizo el restore health.");
+				}else{
+					System.out.println("No se pudo hacer el restore entonces salgo de la aplicacion.");
+					System.exit(0);
+				}
+			}
+		}catch(Exception ex){
+			//SI ENTRA ACA ES PORQUE NO HAY QUE RECUPERAR HEALTH
+		}
+	}
+
+
+	private void attackAll(Profile profile) {
+		fightManager.startFighting(get,profile);
+	}
+
+
 	private void depositar(Profile profile, HttpGetUrl get, Long depositValue) {
 		// TODO Auto-generated method stub
 		try {
@@ -240,11 +258,6 @@ public class RunnableAll implements Runnable {
 
 			}
 			System.out.println("Se acabo la energia.");
-			// No tengo mas energia
-			// Leo datos para el final
-			System.out.println("Leo datos.");
-			obtainInformation.mostrarDatos(obtainInformation
-					.leerDatosUsuario(page));
 		} catch (Exception e) {
 			System.out.println("Error en el get2. " + e.getMessage());
 		}
