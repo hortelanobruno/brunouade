@@ -96,6 +96,8 @@ public class FightManager {
 							enemyRetired.add(enemyToAttack.getName());
 							mostrarResultadoFight(profile, enemyToAttack,fightResult);
 						}
+					}else{
+						enemyRetired.add(enemyToAttack.getName());
 					}
 				}
 			}
@@ -154,6 +156,7 @@ public class FightManager {
 	private boolean canAttack(Profile profile, Enemy enemyToAttack) {
 		Integer enemyDefensePoints = enemyToAttack.calcularPointDefense();
 		Integer myAttackPoints = profile.calcularPointAttack();
+		System.out.println("Checking enemy "+enemyToAttack.getName()+" can attack: MyAttackPoints: "+myAttackPoints+". EnemyDefensePoints:"+enemyDefensePoints+".");
 		if (myAttackPoints >= (enemyDefensePoints + Profile.DIFF_POINT_MINIMA)) {
 			return true;
 		}

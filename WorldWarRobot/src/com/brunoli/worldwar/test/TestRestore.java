@@ -30,7 +30,7 @@ public class TestRestore {
 			obtainInformation.mostrarDatos(obtainInformation.leerDatosUsuario(page));
 			//Leo links
 			Map<String,String> links = obtainInformation.leerLinks(page);
-			System.out.println("Go to bank.");
+			System.out.println("Go to hospital.");
 			String unitUrl = links.get(Menus.HOSPITAL.getValue());
 			System.out.println("Link... "+unitUrl);
 			page = get.getUrl(unitUrl);
@@ -48,4 +48,6 @@ public class TestRestore {
 		}
 		get.close();
 	}
+
+
 }
