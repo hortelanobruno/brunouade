@@ -186,7 +186,7 @@ public class ObtainFight {
 				result.setMoney(UtilsWW.parsearMoney(a.split(">")[a.split(">").length-1]));
 			}catch(Exception ex){
 				System.out.println("Error al obtener la plata ganada. "+ex.getMessage());
-				FileWriterWrapper fww = new FileWriterWrapper("./errorMonyFightGanada.txt");
+				FileWriterWrapper fww = new FileWriterWrapper("./files/errores/errorMonyFightGanada.txt");
 				fww.write(page.toString());
 				System.exit(0);
 			}
