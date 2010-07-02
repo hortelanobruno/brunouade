@@ -1,0 +1,466 @@
+MISSIONS - TAB #1
+
+Master all of Rank 1 for 3 Extra Skill Points.
+Master all of Rank 2 for "Precision Guided Munitions" Bonus Item (Deal 8% more damage to opponents in battle).
+
+Fend off Enemy Attack
+Level: 1
+Allies: 1
+Energy: 9
+Units: None
+Possible Money Gained: $750 - $2,250
+Possible Loot Gained: Normal Buyable Units
+Experience Gained: 1
+
+Hunt Down Enemies
+Level: 1
+Allies: 1
+Energy: 28
+Units: (1) Minigunners
+Possible Money Gained: $3,500 - $6,500
+Possible Loot Gained: Prisoner
+Experience Gained: 3
+
+Train Armed Forces
+Level: 2
+Allies: 1
+Energy: 45
+Units: (3) Minigunners (1) Supply Truck
+Possible Money Gained: $5,000 - $15,000
+Possible Loot Gained: Cadet Squad
+Experience Gained: 5
+
+Seize Enemy
+Level: 3
+Allies: 1
+Energy: 39
+Units: (5) Minigunners (1) Cruiser (2) Fighter
+Possible Money Gained: $5,000 - $15,000
+Possible Loot Gained: Normal Buyable Units
+Experience Gained: 4
+
+Locate Enemy Camp
+Level: 3
+Allies: 1
+Energy: 50
+Units: (5) Minigunners (1) Hum-Vee
+Possible Money Gained: $10,000 - $18,000
+Possible Loot Gained: Normal Buyable Units
+Experience Gained: 5
+
+Establish Base Defense
+Level: 3
+Allies: 1
+Energy: 70
+Units: (4) Marines (2) Hum-Vee
+Possible Money Gained: $13,000 - $25,000
+Possible Loot Gained: Patrol Unit
+Experience Gained: 7
+
+Destroy Enemy Base
+Level: 4
+Allies: 1
+Energy: 78
+Units: (4) Fireteam (1) Light Tank
+Possible Money Gained: $12,000 - $37,000
+Possible Loot Gained: Normal Buyable Units
+Experience Gained: 8
+
+Invade Enemy Territory
+Level: 5
+Allies: 1
+Energy: 98
+Units: (3) Supply Truck (2) Transport (1) Cargo Chopper
+Possible Money Gained: $23,000 - $42,000
+Possible Loot Gained: Normal Buyable Units
+Experience Gained: 10
+
+
+MISSIONS - TAB #2
+
+Master all of Rank 1 for 5 Extra Skill Points.
+Master all of Rank 2 for "Military Advanced R&D" Bonus Item (Add 5% to "Chance of Loot").
+
+Set Up Military Camp
+Level: 6
+Allies: 1
+Energy: 30
+Units: (10) Marines (5) Supply Truck (2) Cargo Chopper
+Possible Money Gained: $6,000 - $17,000
+Possible Loot Gained: Light Machine Gunner
+Experience Gained: 3
+
+Scout Out Enemy
+Level: 7
+Allies: 1
+Energy: 35
+Units: (6) Paratroopers (3) Patrol Plane
+Possible Money Gained: $9,000 - $17,000
+Possible Loot Gained: None
+Experience Gained: 4
+
+Sink Enemy Boats
+Level: 7
+Allies: 1
+Energy: 61
+Units: (15) Marines (2) Frigate (2) Fighter
+Possible Money Gained: $20,000 - $38,000
+Possible Loot Gained: None
+Experience Gained: 4
+
+Intercept Shipment
+Level: 8
+Allies: 1
+Energy: 33
+Units: (25) Marines (2) Mobile Artillery
+Possible Money Gained: $7,000 - $22,000
+Possible Loot Gained: Corvette
+Experience Gained: 3
+
+Ship Supplies to Troops
+Level: 8
+Allies: 1
+Energy: 67
+Units: (2) Cruiser (2) Transport (1) Frigate
+Possible Money Gained: $15,000 - $46,000
+Possible Loot Gained: None
+Experience Gained: 7
+
+Shoot Down Aircraft
+Level: 9
+Allies: 1
+Energy: 52
+Units: (8) Fighter (1) Harrier Jet
+Possible Money Gained: $18,000 - $33,000
+Possible Loot Gained: None
+Experience Gained: 5
+
+Investigate Wreckage
+Level: 10
+Allies: 1
+Energy: 50
+Units: (7) Paratroopers (4) Patrol Plane
+Possible Money Gained: $14,000 - $42,000
+Possible Loot Gained: Avionics Engineers
+Experience Gained: 5
+
+Prepare Army to March
+Level: 10
+Allies: 1
+Energy: 112
+Units: (50) Minigunners (5) Hum-Vee (2) Light Tank
+Possible Money Gained: $18,000 - $33,000
+Possible Loot Gained: None
+Experience Gained: 11
+
+
+MISSIONS - TAB #3
+
+Master all of Rank 1 for 6 Extra Skill Points.
+Master all of Rank 2 for "Mercenary Arms Merchant" Bonus Item (Get 5% discount on unit purchases).
+
+Infiltrate Western Border
+Level: 11
+Allies: 1
+Energy: 60
+Units: (8) Paratroopers (1) Armored Personnel Carrier (2) Harrier Jet
+Possible Money Gained: $16,000 - $48,000
+Possible Loot Gained: Wiesel 2 Mortar Unit
+Experience Gained: 6
+
+Take out Western Forces
+Level: 12
+Allies: 2
+Energy: 64
+Units: (20) Grenadiers (3) Armored Personnel Carrier (3) Harrier Jet
+Possible Money Gained: $30,000 - $90,000
+Possible Loot Gained: None
+Experience Gained: 7
+
+Discover Reinforcements
+Level: 14
+Allies: 3
+Energy: 39
+Units: (35) Grenadiers (4) Armored Personnel Carrier (4) Comanche Helicopter
+Possible Money Gained: $42,000 - $78,000
+Possible Loot Gained: M163 Anti-aircraft Vehicle
+Experience Gained: 4
+
+Repel Counterattack
+Level: 15
+Allies: 3
+Energy: 48
+Units: (35) Grenadiers (12) Stealth Tank
+Possible Money Gained: $72,000 - $134,000
+Possible Loot Gained: Mobile Howitzer Cannon
+Experience Gained: 5
+
+Bombard Enemy Defenses
+Level: 16
+Allies: 5
+Energy: 101
+Units: (10) Grenadiers (3) Submarine (1) Wiesel 2 Mortar Unit
+Possible Money Gained: $127,000 - $380,000
+Possible Loot Gained: SA-8 Gecko Missile Launcher
+Experience Gained: 10
+
+Destroy Enemy Lab
+Level: 18
+Allies: 7
+Energy: 71
+Units: (35) Snipers (20) Stealth Tank
+Possible Money Gained: $165,000 - $306,000
+Possible Loot Gained: Biosoldier Unit
+Experience Gained: 7
+
+Confiscate Bioweapons
+Level: 20
+Allies: 9
+Energy: 67
+Units: (20) Snipers (7) Heavy Equipment Transporter (7) Comanche Helicopter
+Possible Money Gained: $146,000 - $438,000
+Possible Loot Gained: Bioweapon Scientists
+Experience Gained: 7
+
+Destroy Power Centers
+Level: 20
+Allies: 9
+Energy: 172
+Units: (20) Grenadiers (8) Stealth Tank (8) B-1 Lancer
+Possible Money Gained: $500,000 - $1,000,000
+Possible Loot Gained: None
+Experience Gained: 18
+
+
+MISSIONS - TAB #4
+
+Master all of Rank 1 for 6 Extra Skill Points.
+Master all of Rank 2 for "MASH Unit" Bonus Item (Get 50% discount on Restore Health).
+
+Locate Submarines
+Level: 21
+Allies: 11
+Energy: 70
+Units: (1) Helicopter Carrier (7) Stealth Jet
+Possible Money Gained: $160,000 - $480,000
+Possible Loot Gained: Thresher Submarine
+Experience Gained: 7
+
+Set Mines in Ocean
+Level: 22
+Allies: 12
+Energy: 92
+Units: (2) Cruiser (7) Helicopter Carrier
+Possible Money Gained: $350,000 - $650,000
+Possible Loot Gained: None
+Experience Gained: 9
+
+Secure Shoreline
+Level: 23
+Allies: 13
+Energy: 55
+Units: (10) Snipers (3) Battleship (7) Stealth Jet
+Possible Money Gained: $200,000 - $371,000
+Possible Loot Gained: Guardian Patrol Boat
+Experience Gained: 5
+
+Protect Arriving Ships
+Level: 24
+Allies: 14
+Energy: 133
+Units: (6) Amphibious Assault Vehicle (5) Battleship (1) Guardian Patrol Boat
+Possible Money Gained: $367,000 - $1,100,000
+Possible Loot Gained: None
+Experience Gained: 13
+
+Level Enemy City
+Level: 25
+Allies: 15
+Energy: 69
+Units: (10) Battleship (12) B-1 Lancer
+Possible Money Gained: $433,000 - $1,300,000
+Possible Loot Gained: Annihilator Fighter
+Experience Gained: 7
+
+Cut Off Enemy Oil Supply
+Level: 26
+Allies: 16
+Energy: 104
+Units: (10) Heavy Equipment Transporter (10) Helicopter Carrier (30) Comanche Helicopter
+Possible Money Gained: $945,000 - $1,755,000
+Possible Loot Gained: None
+Experience Gained: 11
+
+Air Raid
+Level: 27
+Allies: 17
+Energy: 75
+Units: (6) B-1 Lancer (8) Stealth Jet (10) X-20 Supersonic Aircraft
+Possible Money Gained: $567,000 - $1,700,000
+Possible Loot Gained: SU-34 Fullback Bomber
+Experience Gained: 7
+
+Take out Supply Depots
+Level: 28
+Allies: 18
+Energy: 224
+Units: (12) Battleship (12) Apache Helicopter
+Possible Money Gained: $2,800,000 - $5,200,000
+Possible Loot Gained: Koalitcia-SV Artillery
+Experience Gained: 22
+
+
+MISSIONS - TAB #5
+
+Master all of Rank 1 for 6 Extra Skill Points.
+Master all of Rank 2 for "USO Package" Bonus Item (30 seconds reduction on Energy timer).
+
+Capture Enemy Fighters
+Level: 30
+Allies: 21
+Energy: 112
+Units: (12) Rocketeers (33) Apache Helicopter (1) SU-34 Fullback Bomber
+Possible Money Gained: $1,300,000 - $3,300,000
+Possible Loot Gained: Rebel Fighter
+Experience Gained: 11
+
+Locate Recon Centers
+Level: 31
+Allies: 22
+Energy: 172
+Units: (20) Rocketeers (35) Stealth Tank (20) X-20 Supersonic Aircraft
+Possible Money Gained: $3,000,000 - $4,800,000
+Possible Loot Gained: None
+Experience Gained: 17
+
+Disrupt Communications
+Level: 32
+Allies: 23
+Energy: 360
+Units: (40) Rocketeers (25) Mammoth Tank (24) Apache Helicopter
+Possible Money Gained: $6,200,000 - $10,000,000
+Possible Loot Gained: Amphibious Command Ship
+Experience Gained: 36
+
+Take out Base Patrols
+Level: 34
+Allies: 24
+Energy: 125
+Units: (35) Mammoth Tank (25) Apache Helicopter (1) Koalitcia-SV Artillery
+Possible Money Gained: $1,700,000 - $4,300,000
+Possible Loot Gained: None
+Experience Gained: 13
+
+Perform Surprise Attack
+Level: 36
+Allies: 27
+Energy: 166
+Units: (60) Corner Shot Recon (40) SSM Launcher (40) B-2 Bomber
+Possible Money Gained: $3,500,000 - $8,800,000
+Possible Loot Gained: Raptor Jet
+Experience Gained: 17
+
+Capture Enemy Spies
+Level: 39
+Allies: 30
+Energy: 112
+Units: (80) Aerial Vehicle Squad (40) Otokar Cobra Armored Vehicle (50) Horizon Frigate
+Possible Money Gained: $3,100,000 - $5,100,000
+Possible Loot Gained: Stealth Infiltrator
+Experience Gained: 11
+
+Locate Nuclear Silo
+Level: 42
+Allies: 35
+Energy: 239
+Units: (95) XM-25 Gunner (95) Mammoth Tank (25) F-18 Super Hornet Fighter
+Possible Money Gained: $8,300,000 - $20,800,000
+Possible Loot Gained: None
+Experience Gained: 24
+
+Destroy Nuclear Facility
+Level: 45
+Allies: 39
+Energy: 508
+Units: (95) Tank Blasters (70) AHED Hybrid Electric Tank (40) IAI Harop UAV
+Possible Money Gained: $26,000,000 - $42,300,000
+Possible Loot Gained: Nuclear Squad
+Experience Gained: 51
+
+
+MISSIONS - TAB #6
+
+Master all of Rank 1 for 6 Extra Skill Points.
+Master all of Rank 2 for "Mercenary Ammo Reserves" Bonus Item (20 seconds reduction on Ammo timer).
+
+Conquer Enemy Outpost
+Level: 50
+Allies: 51
+Energy: 131
+Units: (95) PackBot Robot Troopers (70) Predator Armored Tank (38) F-15 Silent Eagle Fighter
+Possible Money Gained: $6,000,000 - $14,000,000
+Possible Loot Gained: Eurocopter Tiger
+Experience Gained: 13
+
+Defend Position
+Level: 55
+Allies: 64
+Energy: 273
+Units: (60) FELIN Combat Infantry (50) Piranha V Armored Vehicle (50) Havoc Helicopter
+Possible Money Gained: $18,000,000 - $30,000,000
+Possible Loot Gained: NLOS-C
+Experience Gained: 28
+
+Set up Defensive Network
+Level: 60
+Allies: 71
+Energy: 95
+Units: (95) Heavy Assult Squad (50) Warthog Tracked Carrier (50) DDG 1000 Destroyer
+Possible Money Gained: $5,000,000 - $13,000,000
+Possible Loot Gained: Patriot Missile System
+Experience Gained: 10
+
+Assemble Naval Fleet
+Level: 67
+Allies: 97
+Energy: 124
+Units: (70) Type 45 Destroyer (70) DDG 1000 Destroyer (1) Amphibious Command Ship
+Possible Money Gained: $9,000,000 - $15,000,000
+Possible Loot Gained: Nuclear Submarine
+Experience Gained: 12
+
+Attack Piracy Operation
+Level: 75
+Allies: 127
+Energy: 654
+Units: (95) Horizon Frigate (95) HSV-2 Swift
+Possible Money Gained: $41,000,000 - $104,000,000
+Possible Loot Gained: None
+Experience Gained: 65
+
+Conquer Coastal Base
+Level: 82
+Allies: 170
+Energy: 225
+Units: (50) Astute Class Submarine (50) CG(X) Guided Missile Cruiser (1) Stealth Infiltrator
+Possible Money Gained: $19,000,000 - $31,000,000
+Possible Loot Gained: Zubr Class Hovercraft
+Experience Gained: 23
+
+Reinforce Ally Capital
+Level: 90
+Allies: 202
+Energy: 140
+Units: (55) Titan Self Propelled Artillery Tank (45) PAK-FA Fighter (1) Patriot Missile System
+Possible Money Gained: $11,000,000 - $27,000,000
+Possible Loot Gained: None
+Experience Gained: 14
+
+Force Enemy to Retreat
+Level: 100
+Allies: 300
+Energy: 748
+Units: (95) M110 Sniper Team (50) Titan Self Propelled Artillery Tank (70) Boeing NGB Bomber
+Possible Money Gained: $78,000,000 - $126,000,000
+Possible Loot Gained: Dark Sword Aircraft
+Experience Gained: 75

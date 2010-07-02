@@ -4,6 +4,7 @@
 		<mapping-file>META-INF/eclipselink-orm.xml</mapping-file>
 		<class>com.brunoli.worldwar.db.entity.UnitEntity</class>
 		<class>com.brunoli.worldwar.db.entity.BuildingEntity</class>
+		<class>com.brunoli.worldwar.db.entity.MissionEntity</class>
 		<properties>
            <property name="eclipselink.logging.level" value="SEVERE"/>
            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>  

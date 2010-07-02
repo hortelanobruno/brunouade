@@ -13,11 +13,20 @@ public class Unit {
 	private Integer cantBuild;
 	private Integer attack;
 	private Integer defense;
+	private Boolean lootType;
 	private String urlImg;
 	private String urlDeploy;
 	
 	public Unit() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Boolean getLootType() {
+		return lootType;
+	}
+	
+	public void setLootType(Boolean lootType) {
+		this.lootType = lootType;
 	}
 
 	public Long getId() {

@@ -6,6 +6,7 @@ import java.util.List;
 import com.brunoli.worldwar.beans.Building;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.controller.BuildingEntityController;
+import com.brunoli.worldwar.db.controller.MissionEntityController;
 import com.brunoli.worldwar.db.controller.UnitEntityController;
 import com.brunoli.worldwar.db.controller.exceptions.NonexistentEntityException;
 import com.brunoli.worldwar.db.entity.BuildingEntity;
@@ -15,10 +16,12 @@ public class DBManager {
 
 	private BuildingEntityController buildingEntityController;
 	private UnitEntityController unitEntityController;
+	private MissionEntityController missionEntityController;
 	
 	public DBManager() {
 		buildingEntityController = new BuildingEntityController();
 		unitEntityController = new UnitEntityController();
+		missionEntityController = new MissionEntityController();
 	}
 	
 	
