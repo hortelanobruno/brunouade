@@ -79,6 +79,7 @@ public class RunnableAll implements Runnable {
 				ejecutarAllMissions(profile);
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Fin Ejecutando todas las misiones.");
 				// Leo datos
+				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
 				obtainInformation.leerDatosUsuario(page, profile);
 				// Chequeo si tengo energy porque pase de nivel
 				if(fightManager.canDoAttacks(profile)){
