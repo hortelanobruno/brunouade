@@ -197,4 +197,8 @@ public class FightManager {
 		}
 	}
 
+	public boolean canDoAttacks(Profile profile) {
+		return hasEnergyToAttack(profile);
+	}
+
 }

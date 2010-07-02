@@ -15,7 +15,7 @@ public class ObtainMission {
 		//mission.txt
 		//mission(doitarriba).txt
 		//mission(faltanunits).txt
-		StringBuilder page = obtainMission.leerArchivo("./files/mission(faltanunits).txt");
+		StringBuilder page = obtainMission.leerArchivo("./files/mission.txt");
 		if (page != null) {
 			obtainMission.parsearPagina(page);
 		} else {
@@ -32,24 +32,24 @@ public class ObtainMission {
 		// BAJO TODO A COMILLA SIMPLE
 		page = new StringBuilder(page.toString().replaceAll("\"", "\'"));
 		
-		if(checkDeployUnit(new StringBuilder(page))){
-			String urlDeploy = obtainUrlToDeployUnit(new StringBuilder(page));
-			System.out.println("URL Deploy: "+urlDeploy);
-		}else{
-			Mission missionHeader = leerMissionHeader(new StringBuilder(page));
-			System.out.println(missionHeader.getMissionName()+": "+missionHeader.getMissionUrl());
-		}
+//		if(checkDeployUnit(new StringBuilder(page))){
+//			String urlDeploy = obtainUrlToDeployUnit(new StringBuilder(page));
+//			System.out.println("URL Deploy: "+urlDeploy);
+//		}else{
+//			Mission missionHeader = leerMissionHeader(new StringBuilder(page));
+//			System.out.println(missionHeader.getMissionName()+": "+missionHeader.getMissionUrl());
+//		}
 		
 		
 		
-//		List<Mission> missions = leerMissions(new StringBuilder(page));
-//		mostrarMissions(missions);
+		List<Mission> missions = leerMissions(new StringBuilder(page));
+		mostrarMissions(missions);
 	}
 
 	public void mostrarMissions(List<Mission> missions) {
 		System.out.println("---------------------------------");
 		for(Mission mission : missions){
-			System.out.println(mission.getMissionName()+": "+mission.getMissionUrl());
+			System.out.println(mission.toString());
 		}
 		System.out.println("---------------------------------");	
 	}
@@ -57,16 +57,25 @@ public class ObtainMission {
 	public List<Mission> leerMissions(StringBuilder page) {
 		List<Mission> missions = new ArrayList<Mission>();
 		String missionName = null;
+		String percent = null;
 		String missionUrl = null;
 		Mission mission = null;
 		int i=0;
-		for(String a : page.toString().split("missionName")){
+		for(String a : page.toString().split("masteryBarProgress")){
 			if(i>0){
-				missionName = a.split("</div>")[0].split(">")[1];
+				percent = a.split("<")[0].split(">")[1].replaceAll(" ", "").replaceAll("%", "");
+				missionName = a.split("missionName")[1].split("</div>")[0].split(">")[1];
 				missionUrl = "http://wwar.storm8.com/missions.php"+a.split("/missions.php")[1].split("'")[0];
 				mission = new Mission();
 				mission.setMissionName(missionName);
 				mission.setMissionUrl(missionUrl);
+				mission.setPercentCompleted(Integer.parseInt(percent));
+				if(a.contains("requiredGroup")){
+					mission.setAlianzeSizeRequiered(Integer.parseInt(a.split("requiredGroup")[1].split("<")[0].split(">")[1]));
+				}else{
+					mission.setAlianzeSizeRequiered(0);
+				}
+				mission.setEnergyRequiered(Integer.parseInt(a.split("requiredEnergy")[1].split("<")[0].split(">")[1]));
 				missions.add(mission);
 			}
 			i++;
