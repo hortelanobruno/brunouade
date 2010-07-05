@@ -112,12 +112,17 @@ public class RunnableAll implements Runnable {
 				// HACIENDO BUILDINGS
 				page = get.getUrl(profile.getMenuUrls().get(Menus.BUILDINGS));
 				buildingManager.doAllBuilding(get, page, profile);
+				//FIN Actualizo el profile
+				// Leo datos
+				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
+				obtainInformation.leerDatosUsuario(page, profile);
 			} catch (Exception e) {
 				System.out.println("Error en el get. " + e.getMessage());
 			}
 			try {
-				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Durmiendo 1 hora.");
-				Thread.sleep(1000 * 60 * 60 );
+				int dif = profile.getStaminaMax()-profile.getStaminaCurrent();
+				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Durmiendo "+dif*2+" minutos.");
+				Thread.sleep(1000 * 60 * dif * 2 );
 			} catch (InterruptedException e) {
 			}
 			get.close();
