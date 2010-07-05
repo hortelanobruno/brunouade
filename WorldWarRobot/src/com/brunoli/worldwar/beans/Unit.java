@@ -16,11 +16,17 @@ public class Unit {
 	private Boolean lootType;
 	private String urlImg;
 	private String urlDeploy;
+	private String mission;
 	
 	public Unit() {
 		// TODO Auto-generated constructor stub
 	}
-	
+	public String getMission() {
+		return mission;
+	}
+	public void setMission(String mission) {
+		this.mission = mission;
+	}
 	public Boolean getLootType() {
 		return lootType;
 	}

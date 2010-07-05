@@ -10,6 +10,7 @@ import com.brunoli.worldwar.beans.Mission;
 import com.brunoli.worldwar.beans.Profile;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
+import com.brunoli.worldwar.manager.BuildingManager;
 import com.brunoli.worldwar.manager.FightManager;
 import com.brunoli.worldwar.parser.ObtainBuildings;
 import com.brunoli.worldwar.parser.ObtainInformation;
@@ -32,6 +33,7 @@ public class RunnableAll implements Runnable {
 	private FightManager fightManager;
 	private DBManager dbManager;
 	private ObtainRestore obtainRestore;
+	private BuildingManager buildingManager;
 	
 	public static void main (String[] args){
 		new RunnableAll();
@@ -52,6 +54,7 @@ public class RunnableAll implements Runnable {
 		obtainBuildings = new ObtainBuildings();
 		fightManager = new FightManager();
 		obtainRestore = new ObtainRestore();
+		buildingManager = new BuildingManager();
 		while(true){
 			get = new HttpGetUrl();
 			System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Atacando...");
@@ -86,6 +89,9 @@ public class RunnableAll implements Runnable {
 					System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Sigo atacando porque tengo energia.");
 					attackAll(profile);
 				}
+				// HACIENDO BUILDINGS
+				page = get.getUrl(profile.getMenuUrls().get(Menus.BUILDINGS));
+				buildingManager.doAllBuilding(get, page, profile);
 			} catch (Exception e) {
 				System.out.println("Error en el get. " + e.getMessage());
 			}

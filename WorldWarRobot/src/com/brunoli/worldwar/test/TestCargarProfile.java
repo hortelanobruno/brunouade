@@ -56,7 +56,8 @@ public class TestCargarProfile {
 			//FIGHT MODE
 			//fightManager.startFighting(get,profile);
 			page = get.getUrl(profile.getMenuUrls().get(Menus.MISSION));
-			missionManager.doAllMission(get, page, profile);
+			MissionManager mManager = new MissionManager();
+			mManager.doAllMission(get, page, profile);
 		} catch (Exception e) {
 			System.out.println("Error en el get. " + e.getMessage());
 		}

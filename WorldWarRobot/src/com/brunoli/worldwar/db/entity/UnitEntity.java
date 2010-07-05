@@ -47,9 +47,19 @@ public class UnitEntity implements Serializable {
 	private Integer cantBuild;
 	@Column(name = "LOOT_TYPE")
 	private Boolean lootType;
+	@Column(name = "MISSION")
+	private String mission;
 	
 	public UnitEntity() {
 		super();
+	}
+	
+	public String getMission() {
+		return mission;
+	}
+	
+	public void setMission(String mission) {
+		this.mission = mission;
 	}
 	
 	public Boolean getLootType() {
@@ -162,6 +172,7 @@ public class UnitEntity implements Serializable {
 		unit.setUrlImg(urlImg);
 		unit.setCantBuild(cantBuild);
 		unit.setLootType(lootType);
+		unit.setMission(mission);
 		return unit;
 	}
 	
@@ -178,6 +189,7 @@ public class UnitEntity implements Serializable {
 		this.setUrlImg(unit.getUrlImg());
 		this.setCantBuild(cantBuild);
 		this.setLootType(unit.getLootType());
+		this.setMission(unit.getMission());
 	}
 	
    

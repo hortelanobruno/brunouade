@@ -101,11 +101,12 @@ public class UnitEntityControllerTest {
 						}else{
 							unit.setLootType(false);
 						}
-					}
-					if (a.contains("elsePromotion:")) {
+					}else if (a.contains("elsePromotion:")) {
 
 					} else if (a.contains("Disband:")) {
 
+					} else if (a.contains("Mission:")) {
+						unit.setMission(a.replaceAll("Mission:","").trim());
 					} else if (a.contains("Upkeep:")) {
 						unit.setUnpkeep(Long.parseLong(a
 								.replaceAll("Upkeep:", "")
@@ -117,32 +118,15 @@ public class UnitEntityControllerTest {
 							controller.create(unit);
 						}
 						unit = new UnitEntity();
+						unit.setAttack(0);
+						unit.setDefense(0);
 						unit.setName(a.trim());
 					}
 				}
 			}
-
-			// unit = new UnitEntity();
-			// unit.setUnitType(UnitType.getType(line.split("\t")[0]));
-			// try{
-			// unit.setLevelRequiered(Integer.parseInt(line.split("\t")[1]));
-			// }catch(Exception ex){
-			// unit.setLevelRequiered(200);
-			// }
-			// unit.setName(line.split("\t")[2]);
-			// try{
-			// unit.setPrice(Long.parseLong(line.split("\t")[3].replaceAll(",",
-			// "")));
-			// }catch(Exception e){
-			// unit.setPrice(0L);
-			// }
-			// unit.setUnpkeep(Long.parseLong(line.split("\t")[4].replaceAll(",",
-			// "")));
-			// unit.setAttack(Integer.parseInt(line.split("\t")[5]));
-			// unit.setDefense(Integer.parseInt(line.split("\t")[6]));
-			// controller.create(unit);
-			// System.out.println("Name: "+unit.getName());
-
+			if (unit != null) {
+				controller.create(unit);
+			}
 			scan.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Error. " + e.getMessage());

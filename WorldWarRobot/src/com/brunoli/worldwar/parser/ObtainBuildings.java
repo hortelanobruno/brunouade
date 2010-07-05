@@ -93,8 +93,7 @@ public class ObtainBuildings {
 							}
 							// price
 							price = a.split("money.png")[2].split("</span>")[0]
-									.split(">")[1].replaceAll(",", "")
-									.replaceAll("\\.", "").replaceAll(" ", "");
+									.split(">")[1].replaceAll(" ", "");
 							try {
 								building.setInitialCost(UtilsWW.parsearMoney(price));
 							} catch (Exception ex) {
@@ -110,7 +109,7 @@ public class ObtainBuildings {
 
 							}
 							// url deploy
-							url = "/investment.php"
+							url = "http://wwar.storm8.com/investment.php"
 									+ a.split("reBuyActionInner")[0]
 											.split("/investment.php")[1]
 											.split("'")[0];
@@ -130,8 +129,7 @@ public class ObtainBuildings {
 							}
 							// price
 							price = a.split("money.png")[1].split("</span>")[0]
-									.split(">")[1].replaceAll(",", "")
-									.replaceAll("\\.", "").replaceAll(" ", "");
+									.split(">")[1].replaceAll(" ", "");
 							try {
 								building.setInitialCost(UtilsWW.parsearMoney(price));
 							} catch (Exception ex) {
@@ -147,7 +145,7 @@ public class ObtainBuildings {
 
 							}
 							// url deploy
-							url = "/investment.php"
+							url = "http://wwar.storm8.com/investment.php"
 									+ a.split("reBuyActionInner")[0]
 											.split("/investment.php")[1]
 											.split("'")[0];
@@ -167,8 +165,7 @@ public class ObtainBuildings {
 							}
 							// price
 							price = a.split("money.png")[1].split("</span>")[0]
-									.split(">")[1].replaceAll(",", "")
-									.replaceAll("\\.", "").replaceAll(" ", "");
+									.split(">")[1].replaceAll(" ", "");
 							try {
 								building.setInitialCost(UtilsWW.parsearMoney(price));
 							} catch (Exception ex) {
@@ -184,7 +181,7 @@ public class ObtainBuildings {
 
 							}
 							// url deploy
-							url = "/investment.php"
+							url = "http://wwar.storm8.com/investment.php"
 									+ a.split("reBuyActionInner")[0]
 											.split("/investment.php")[1]
 											.split("'")[0];
@@ -210,6 +207,7 @@ public class ObtainBuildings {
 				return building;
 			}
 		}
+		System.out.println("No se encontro building: "+name);
 		return null;
 	}
 

@@ -9,11 +9,11 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import com.brunoli.worldwar.db.controller.exceptions.NonexistentEntityException;
-import com.brunoli.worldwar.db.entity.BuildingEntity;
+import com.brunoli.worldwar.db.entity.BuildingToCreateEntity;
 
-public class BuildingEntityController {
+public class BuildingToCreateEntityController {
 
-	public BuildingEntityController() {
+	public BuildingToCreateEntityController() {
         emf = Persistence.createEntityManagerFactory("WorldWarRobot");
     }
     private EntityManagerFactory emf = null;
@@ -22,7 +22,7 @@ public class BuildingEntityController {
         return emf.createEntityManager();
     }
 
-    public void create(BuildingEntity buildingEntity) {
+    public void create(BuildingToCreateEntity buildingEntity) {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -36,7 +36,7 @@ public class BuildingEntityController {
         }
     }
 
-    public void edit(BuildingEntity buildingEntity) throws NonexistentEntityException, Exception {
+    public void edit(BuildingToCreateEntity buildingEntity) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -64,9 +64,9 @@ public class BuildingEntityController {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            BuildingEntity buildingEntity;
+            BuildingToCreateEntity buildingEntity;
             try {
-                buildingEntity = em.getReference(BuildingEntity.class, id);
+                buildingEntity = em.getReference(BuildingToCreateEntity.class, id);
                 buildingEntity.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The buildingEntity with id " + id + " no longer exists.", enfe);
@@ -82,24 +82,24 @@ public class BuildingEntityController {
     
 
 	public void destroyAll() throws NonexistentEntityException {
-		List<BuildingEntity> buildings = findBuildingEntityEntities();
-		for (BuildingEntity buildingEntity : buildings) {
+		List<BuildingToCreateEntity> buildings = findBuildingEntityEntities();
+		for (BuildingToCreateEntity buildingEntity : buildings) {
 			destroy(buildingEntity.getId());
 		}
 	}
 
-    public List<BuildingEntity> findBuildingEntityEntities() {
+    public List<BuildingToCreateEntity> findBuildingEntityEntities() {
         return findBuildingEntityEntities(true, -1, -1);
     }
 
-    public List<BuildingEntity> findBuildingEntityEntities(int maxResults, int firstResult) {
+    public List<BuildingToCreateEntity> findBuildingEntityEntities(int maxResults, int firstResult) {
         return findBuildingEntityEntities(false, maxResults, firstResult);
     }
 
-    private List<BuildingEntity> findBuildingEntityEntities(boolean all, int maxResults, int firstResult) {
+    private List<BuildingToCreateEntity> findBuildingEntityEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("select object(o) from BuildingEntity as o");
+            Query q = em.createQuery("select object(o) from BuildingToCreateEntity as o");
             if (!all) {
                 q.setMaxResults(maxResults);
                 q.setFirstResult(firstResult);
@@ -110,10 +110,10 @@ public class BuildingEntityController {
         }
     }
 
-    public BuildingEntity findBuildingEntity(Long id) {
+    public BuildingToCreateEntity findBuildingEntity(Long id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(BuildingEntity.class, id);
+            return em.find(BuildingToCreateEntity.class, id);
         } finally {
             em.close();
         }
@@ -122,25 +122,10 @@ public class BuildingEntityController {
     public int getPlanEntityCount() {
         EntityManager em = getEntityManager();
         try {
-            Query q = em.createQuery("select count(o) from BuildingEntity as o");
+            Query q = em.createQuery("select count(o) from BuildingToCreateEntity as o");
             return ((Long) q.getSingleResult()).intValue();
         } finally {
             em.close();
         }
     }
-
-	public BuildingEntity findBuildingEntityByUrlImg(String url) {
-		EntityManager em = getEntityManager();
-		try {
-			Query q = em
-					.createQuery(
-							"select object(o) from BuildingEntity as o where o.urlImg = :url")
-					.setParameter("url", url);
-			return (BuildingEntity) q.getSingleResult();
-		}catch(Exception ex){
-			return null;
-		} finally {
-			em.close();
-		}
-	}
 }
