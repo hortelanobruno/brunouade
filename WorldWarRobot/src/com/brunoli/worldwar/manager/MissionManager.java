@@ -28,9 +28,11 @@ public class MissionManager {
 			List<Mission> missions = lerrMisionesDisponibles(get);
 			// Obtengo la mision deseada
 			Mission mission = obtenerMissionParaHacer(profile,missions);
+			System.out.println("Energy: "+profile.getEnergyCurrent()+"/"
+					+profile.getEnergyMax()+". Mission requiered energy: "+mission.getEnergyRequiered());
 			while(canDoMission(profile,mission)){
 				// Consumo la mision
-				System.out.println("Proceso mision: "+mission.getMissionName());
+				System.out.println("Proceso mision: "+mission.getMissionName()+". Percent: "+mission.getPercentCompleted()+"%.");
 				pageMission = get.getUrl(mission.getMissionUrl());
 				//Chequeo si se hizo bien
 				// Tengo energia
@@ -57,6 +59,8 @@ public class MissionManager {
 				missions = obtainMission.leerMissions(pageMission);
 				// Obtengo la mision deseada
 				mission = obtenerMissionParaHacer(profile,missions);
+				System.out.println("Energy: "+profile.getEnergyCurrent()+"/"
+						+profile.getEnergyMax()+". Mission requiered energy: "+mission.getEnergyRequiered());
 			}
 			System.out.println("Se acabo la energia.");
 			// No tengo mas energia
@@ -106,7 +110,7 @@ public class MissionManager {
 				}
 			}
 		}
-		//BUsco la mision que me da mejor rentabilidad
+		//Busco la mision que me da mejor rentabilidad
 		Mission m = null;
 		for (Mission mission : missions) {
 			if(mission.getPercentCompleted()==100){
