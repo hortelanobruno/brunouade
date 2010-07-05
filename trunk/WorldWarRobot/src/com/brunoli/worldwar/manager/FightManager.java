@@ -70,7 +70,7 @@ public class FightManager {
 								recargarInfoProfile(profile, pageEnemy);
 								recargoFightStats(enemyToAttack, fightResult);
 								mostrarResultadoFight(profile, enemyToAttack,fightResult);
-								if (sigoAtacando(enemyToAttack)) {
+								if (hasEnergyToAttack(profile) && sigoAtacando(enemyToAttack)) {
 									do {
 										System.out.println("Atacando de nuevo a "
 												+ enemyToAttack.getName());
