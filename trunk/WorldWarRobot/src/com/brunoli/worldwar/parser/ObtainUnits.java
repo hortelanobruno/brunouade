@@ -10,16 +10,18 @@ import java.util.Scanner;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
 import com.brunoli.worldwar.util.UnitType;
+import com.brunoli.worldwar.util.UtilsWW;
 
 public class ObtainUnits {
 
 	private DBManager dbManager;
-	
+
 	public static void main(String[] arg) {
 		ObtainUnits o = new ObtainUnits();
 		StringBuilder page = o.leerArchivo("./files/unitPage.txt");
 		if (page != null) {
-			o.parsearPagina(new StringBuilder(page.toString().replaceAll("\"", "\'")));
+			o.parsearPagina(new StringBuilder(page.toString().replaceAll("\"",
+					"\'")));
 		} else {
 			System.out.println("Page not found.");
 			System.exit(0);
@@ -29,16 +31,16 @@ public class ObtainUnits {
 	public ObtainUnits() {
 		dbManager = new DBManager();
 	}
-	
+
 	public void parsearPagina(StringBuilder page) {
 		// BAJO TODO A COMILLA SIMPLE
 		List<Unit> units = dbManager.getUnits();
-		Map<UnitType,String> linksUnits = leerLinksUnits(page);
+		Map<UnitType, String> linksUnits = leerLinksUnits(page);
 		cargarDatosUnits(page, units);
 		mostrarDatos(linksUnits);
 		mostrarUnits(units);
 	}
-	
+
 	public void mostrarUnits(List<Unit> units) {
 		System.out.println("---------------------------------");
 		for (Unit unit : units) {
@@ -48,63 +50,78 @@ public class ObtainUnits {
 	}
 
 	public void cargarDatosUnits(StringBuilder page, List<Unit> units) {
-		int i=0;
+		int i = 0;
 		String url;
 		String url2;
 		String name;
 		String cantBuild;
-		for(String a : page.toString().split("class='equipmentTable'")){
-			if(i>0){
-				if(!a.contains("equipmentNameLocked")){
+		String cash = null;
+		for (String a : page.toString().split("class='equipmentTable'")) {
+			if (i > 0) {
+				if (!a.contains("equipmentNameLocked")) {
 					url = a.split("src='")[1].split("'")[0];
-					name = a.split("'equipmentName'")[1].split("</")[0].split(">")[1];
-					cantBuild = a.split("ownedNum")[1].split("</")[0].split(">")[1];
-					url2 = "http://wwar.storm8.com/equipment.php"+a.split("equipmentActionInner")[0].split("/equipment.php")[1].split("'")[0];
-					Unit unit = findUnit(name,units);
+					name = a.split("'equipmentName'")[1].split("</")[0]
+							.split(">")[1];
+					cantBuild = a.split("ownedNum")[1].split("</")[0]
+							.split(">")[1];
+
+					cash = a.split("money.png")[1].split("</")[0].split(">")[1];
+					url2 = "http://wwar.storm8.com/equipment.php"
+							+ a.split("equipmentActionInner")[0]
+									.split("/equipment.php")[1].split("'")[0];
+					cash = cash.replaceAll(" ", "").trim();
+					Unit unit = findUnit(name, units);
 					unit.setCantBuild(Integer.parseInt(cantBuild));
 					unit.setUrlImg(url);
 					unit.setUrlDeploy(url2);
+					try {
+						unit.setPrice(UtilsWW.parsearMoney(cash));
+					} catch (Exception ex) {
+						System.out.println("");
+					}
 				}
 			}
-			
+
 			i++;
 		}
 	}
 
 	public Unit findUnit(String name, List<Unit> units) {
 		for (Unit unit : units) {
-			if(unit.getName().equalsIgnoreCase(name)){
+			if (unit.getName().equalsIgnoreCase(name)) {
 				return unit;
 			}
 		}
-		System.out.println("No se encontro unit: "+name);
+		System.out.println("No se encontro unit: " + name);
 		return null;
 	}
 
 	public Map<UnitType, String> leerLinksUnits(StringBuilder page) {
 		String a = page.toString().split("id='sectionTabs'")[1].split("</div>")[0];
-		int i =0;
-		Map<UnitType, String> links = new HashMap<UnitType,String>();
+		int i = 0;
+		Map<UnitType, String> links = new HashMap<UnitType, String>();
 		for (String b : a.split("<li")) {
-			if(i>0){
-				links.put(UnitType.getType(b.split("<a")[1].split("</a>")[0].split(">")[1]), 
-						"http://wwar.storm8.com/"+b.split("Request\\('")[1].split("',")[0]);
+			if (i > 0) {
+				links.put(
+						UnitType.getType(b.split("<a")[1].split("</a>")[0]
+								.split(">")[1]),
+						"http://wwar.storm8.com/"
+								+ b.split("Request\\('")[1].split("',")[0]);
 			}
 			i++;
 		}
-		
+
 		return links;
 	}
 
 	public void mostrarDatos(Map<UnitType, String> datosUsuario) {
 		System.out.println("---------------------------------");
-		for(UnitType key : datosUsuario.keySet()){
-			System.out.println(key.getValue()+": "+datosUsuario.get(key));
+		for (UnitType key : datosUsuario.keySet()) {
+			System.out.println(key.getValue() + ": " + datosUsuario.get(key));
 		}
 		System.out.println("---------------------------------");
 	}
-	
-	
+
 	public StringBuilder leerArchivo(String pathFile) {
 		try {
 			Scanner scanner = new Scanner(new File(pathFile));

@@ -1,6 +1,7 @@
 package com.brunoli.worldwar.manager;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -24,6 +25,7 @@ public class FightManager {
 	private ObtainInformation obtainInformation;
 	private Map<String, FightStats> fightStats;
 	private List<String> enemyRetired;
+	private Calendar initTime;
 
 	public FightManager() {
 		enemyRetired = new ArrayList<String>();
@@ -39,74 +41,91 @@ public class FightManager {
 		StringBuilder pageEnemy = null;
 		EnemyProfile enemyProfile = null;
 		FightResult fightResult = null;
+		initTime = Calendar.getInstance();
 		try {
-			while (hasEnergyToAttack(profile)) {
-				// 1 - Voy a la pagina de FIGHT
-				pageFight = httpGet.getUrl(urlPageFight);
-				// 2 - Obtengo lista de enemies
-				List<Enemy> newEnemies = obtainFight.leerEnemyList(pageFight);
-				// 3 - Elijo mejor enemy
-				Enemy enemyToAttack = elegirMejorEnemy(newEnemies);
-				if (enemyToAttack != null) {
-					// 3 - Voy al profile de un enemy
-					pageEnemy = httpGet.getUrl(enemyToAttack.getProfileUrl());
-					// 4 - Leo el profile
-					enemyProfile = obtainFight.leerEnemyProfile(pageEnemy);
-					enemyToAttack.setProfile(enemyProfile);
-					// 5 - Calculo si le puedo ganar
-					if (canAttack(profile, enemyToAttack)) {
-						System.out.println("Atacando a "
-								+ enemyToAttack.getName());
-						// 6 - Attack
-						pageEnemy = httpGet.getUrl(enemyToAttack.getProfile()
-								.getAttackUrl());
-						fightResult = obtainFight.resultFight(pageEnemy);
-						if (fightResult.getResult().equals(FightResultType.WON)) {
-							// WON
-							recargarInfoProfile(profile, pageEnemy);
-							recargoFightStats(enemyToAttack, fightResult);
-							mostrarResultadoFight(profile, enemyToAttack,fightResult);
-							if (sigoAtacando(enemyToAttack)) {
-								do {
-									System.out.println("Atacando de nuevo a "
-											+ enemyToAttack.getName());
-									attackAgainUrl = obtainFight
-											.obtainAttackAgainUrl(pageEnemy);
-									pageEnemy = httpGet.getUrl(attackAgainUrl);
-									fightResult = obtainFight
-											.resultFight(pageEnemy);
-									recargarInfoProfile(profile, pageEnemy);
-									recargoFightStats(enemyToAttack,
-											fightResult);
-									mostrarResultadoFight(profile, enemyToAttack,fightResult);
-								} while (fightResult.getResult().equals(
-										FightResultType.WON)
-										&& hasEnergyToAttack(profile));
-								if(fightResult.getResult().equals(FightResultType.FORCES_RETRITMENT)){
-									enemyRetired.add(enemyToAttack.getName());
+			while(seguirPeleando()){
+				if (hasEnergyToAttack(profile)) {
+					// 1 - Voy a la pagina de FIGHT
+					pageFight = httpGet.getUrl(urlPageFight);
+					// 2 - Obtengo lista de enemies
+					List<Enemy> newEnemies = obtainFight.leerEnemyList(pageFight);
+					// 3 - Elijo mejor enemy
+					Enemy enemyToAttack = elegirMejorEnemy(newEnemies);
+					if (enemyToAttack != null) {
+						// 3 - Voy al profile de un enemy
+						pageEnemy = httpGet.getUrl(enemyToAttack.getProfileUrl());
+						// 4 - Leo el profile
+						enemyProfile = obtainFight.leerEnemyProfile(pageEnemy);
+						enemyToAttack.setProfile(enemyProfile);
+						// 5 - Calculo si le puedo ganar
+						if (canAttack(profile, enemyToAttack)) {
+							System.out.println("Atacando a "
+									+ enemyToAttack.getName());
+							// 6 - Attack
+							pageEnemy = httpGet.getUrl(enemyToAttack.getProfile()
+									.getAttackUrl());
+							fightResult = obtainFight.resultFight(pageEnemy);
+							if (fightResult.getResult().equals(FightResultType.WON)) {
+								// WON
+								recargarInfoProfile(profile, pageEnemy);
+								recargoFightStats(enemyToAttack, fightResult);
+								mostrarResultadoFight(profile, enemyToAttack,fightResult);
+								if (sigoAtacando(enemyToAttack)) {
+									do {
+										System.out.println("Atacando de nuevo a "
+												+ enemyToAttack.getName());
+										attackAgainUrl = obtainFight
+												.obtainAttackAgainUrl(pageEnemy);
+										pageEnemy = httpGet.getUrl(attackAgainUrl);
+										fightResult = obtainFight
+												.resultFight(pageEnemy);
+										recargarInfoProfile(profile, pageEnemy);
+										recargoFightStats(enemyToAttack,
+												fightResult);
+										mostrarResultadoFight(profile, enemyToAttack,fightResult);
+									} while (fightResult.getResult().equals(
+											FightResultType.WON)
+											&& hasEnergyToAttack(profile));
+									if(fightResult.getResult().equals(FightResultType.FORCES_RETRITMENT)){
+										enemyRetired.add(enemyToAttack.getName());
+									}
 								}
+							} else if (fightResult.getResult().equals(FightResultType.LOST)) {
+								// LOST
+								recargarInfoProfile(profile, pageEnemy);
+								recargoFightStats(enemyToAttack, fightResult);
+								mostrarResultadoFight(profile, enemyToAttack,fightResult);
+							} else {
+								// RETRITMENT
+								enemyRetired.add(enemyToAttack.getName());
+								mostrarResultadoFight(profile, enemyToAttack,fightResult);
 							}
-						} else if (fightResult.getResult().equals(FightResultType.LOST)) {
-							// LOST
-							recargarInfoProfile(profile, pageEnemy);
-							recargoFightStats(enemyToAttack, fightResult);
-							mostrarResultadoFight(profile, enemyToAttack,fightResult);
-						} else {
-							// RETRITMENT
+						}else{
 							enemyRetired.add(enemyToAttack.getName());
-							mostrarResultadoFight(profile, enemyToAttack,fightResult);
 						}
-					}else{
-						enemyRetired.add(enemyToAttack.getName());
 					}
+				}else{
+					System.out.println("SE ME ACABO LA ENERGIA. FIN.");
+					break;
 				}
 			}
-			System.out.println("SE ME ACABO LA ENERGIA. FIN.");
+			System.out.println("Fin peleas");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+	}
+
+	private boolean seguirPeleando() {
+		Calendar aux = Calendar.getInstance();
+		long timeMax = 1000 * 60 * 10;
+		if(initTime.getTimeInMillis()+timeMax>aux.getTimeInMillis()){
+			return true;
+		}else{
+			System.out.println("Se me acabo el tiempo para pelear");
+			return false;
+		}
 	}
 
 	private void mostrarResultadoFight(Profile profile, Enemy enemy, FightResult fightResult) {
