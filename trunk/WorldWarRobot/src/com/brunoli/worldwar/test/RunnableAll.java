@@ -76,6 +76,14 @@ public class RunnableAll implements Runnable {
 				leerBuildings(profile);
 				//mostrar profile
 				mostrarProfile(profile);
+				//Primero chequeo cuantos puntos de batalla tengo,
+				//Si tengo menos del total espero hasta tener a todos.
+				if(profile.getStaminaMax()>profile.getStaminaCurrent()){
+					//Espero para tener toda la stamina. 2min x stamina
+					int dif = profile.getStaminaMax()-profile.getStaminaCurrent();
+					System.out.println("Durmiendo "+dif*2+" mins para recargar Stamina.");
+					Thread.sleep(1000*60*2*dif);
+				}
 				//RECARGAR HEALTH
 				recargarHealth(profile);
 				//INICIAR ATAQUES
@@ -93,8 +101,12 @@ public class RunnableAll implements Runnable {
 					attackAll(profile);
 				}
 				//CONSTRUYENDO UNITS
+				//Primero actualizo las units
+				leerUnits(profile);
+				//Contruyo units ataque
 				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
 				unitsManager.buyUnitsAttack(get, page, profile);
+				//Construyo units defensa
 				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
 				unitsManager.buyUnitsDefense(get, page, profile);
 				// HACIENDO BUILDINGS
