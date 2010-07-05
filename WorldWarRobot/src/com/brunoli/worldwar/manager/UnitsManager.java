@@ -24,6 +24,7 @@ public class UnitsManager {
 		try {
 			String unitAttack = "IAI Harop UAV";
 			System.out.println("Contruyendo units...");
+			obtainInformation.leerDatosUsuario(pageUnit, profile);
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
 			//voy al tab air
 			pageUnit = get.getUrl(linksUnits.get(UnitType.AIR));
@@ -52,6 +53,7 @@ public class UnitsManager {
 		try {
 			String unitDefense = "Horizon Frigate";
 			System.out.println("Contruyendo units...");
+			obtainInformation.leerDatosUsuario(pageUnit, profile);
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
 			//voy al tab air
 			pageUnit = get.getUrl(linksUnits.get(UnitType.WATER));
