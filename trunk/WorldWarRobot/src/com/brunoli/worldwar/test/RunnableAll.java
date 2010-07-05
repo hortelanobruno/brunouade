@@ -12,6 +12,7 @@ import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
 import com.brunoli.worldwar.manager.BuildingManager;
 import com.brunoli.worldwar.manager.FightManager;
+import com.brunoli.worldwar.manager.MissionManager;
 import com.brunoli.worldwar.manager.UnitsManager;
 import com.brunoli.worldwar.parser.ObtainBuildings;
 import com.brunoli.worldwar.parser.ObtainInformation;
@@ -91,6 +92,9 @@ public class RunnableAll implements Runnable {
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Fin de los ataques.");
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Ejecutando todas las misiones.");
 //				ejecutarAllMissions(profile);
+				page = get.getUrl(profile.getMenuUrls().get(Menus.MISSION));
+				MissionManager mManager = new MissionManager();
+				mManager.doAllMission(get, page, profile);
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Fin Ejecutando todas las misiones.");
 				// Leo datos
 				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
