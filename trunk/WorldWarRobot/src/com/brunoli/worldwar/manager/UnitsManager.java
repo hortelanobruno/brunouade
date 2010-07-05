@@ -22,18 +22,47 @@ public class UnitsManager {
 	
 	public void buyUnitsAttack(HttpGetUrl get, StringBuilder pageUnit, Profile profile){
 		try {
+			String unitAttack = "IAI Harop UAV";
 			System.out.println("Contruyendo units...");
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
 			//voy al tab air
 			pageUnit = get.getUrl(linksUnits.get(UnitType.AIR));
-			Unit unit = getMejorUnitAtaque(profile.getUnits());
+			Unit unit = getMejorUnitAtaque(unitAttack,profile.getUnits());
 			int cantAbuy = profile.getAlianzeSize()*6-unit.getCantBuild();
 			for(int i=0;i<cantAbuy;i++){
 				if(profile.getMoney()>unit.getPrice()){
 					System.out.println("Contruyendo: "+unit.toString());
 					pageUnit = get.getUrl(unit.getUrlDeploy());
 					leerUnits(pageUnit,profile);
-					unit = getMejorUnitAtaque(profile.getUnits());
+					unit = getMejorUnitAtaque(unitAttack,profile.getUnits());
+					obtainInformation.leerDatosUsuario(pageUnit, profile);
+				}else{
+					System.out.println("Se me acabo la plata para comprar units.");
+					break;
+				}
+			}
+			System.out.println("FIN Contruir units.");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void buyUnitsDefense(HttpGetUrl get, StringBuilder pageUnit, Profile profile){
+		try {
+			String unitDefense = "Horizon Frigate";
+			System.out.println("Contruyendo units...");
+			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
+			//voy al tab air
+			pageUnit = get.getUrl(linksUnits.get(UnitType.WATER));
+			Unit unit = getMejorUnitAtaque(unitDefense,profile.getUnits());
+			int cantAbuy = profile.getAlianzeSize()*6-unit.getCantBuild();
+			for(int i=0;i<cantAbuy;i++){
+				if(profile.getMoney()>unit.getPrice()){
+					System.out.println("Contruyendo: "+unit.toString());
+					pageUnit = get.getUrl(unit.getUrlDeploy());
+					leerUnits(pageUnit,profile);
+					unit = getMejorUnitAtaque(unitDefense,profile.getUnits());
 					obtainInformation.leerDatosUsuario(pageUnit, profile);
 				}else{
 					System.out.println("Se me acabo la plata para comprar units.");
@@ -51,11 +80,10 @@ public class UnitsManager {
 		obtainUnits.cargarDatosUnits(pageUnit, profile.getUnits());
 	}
 
-	private Unit getMejorUnitAtaque(List<Unit> units) {
+	private Unit getMejorUnitAtaque(String unitName, List<Unit> units) {
 		// IAI Harop UAV
-		String n = "IAI Harop UAV";
 		for(Unit unit : units){
-			if(unit.getName().equalsIgnoreCase(n)){
+			if(unit.getName().equalsIgnoreCase(unitName)){
 				return unit;
 			}
 		}

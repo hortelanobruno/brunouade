@@ -95,6 +95,8 @@ public class RunnableAll implements Runnable {
 				//CONSTRUYENDO UNITS
 				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
 				unitsManager.buyUnitsAttack(get, page, profile);
+				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
+				unitsManager.buyUnitsDefense(get, page, profile);
 				// HACIENDO BUILDINGS
 				page = get.getUrl(profile.getMenuUrls().get(Menus.BUILDINGS));
 				buildingManager.doAllBuilding(get, page, profile);
