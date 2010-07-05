@@ -25,7 +25,7 @@ public class MissionManager {
 		try {
 			System.out.println("Missions....");
 			// Obtengo misiones
-			List<Mission> missions = obtainMission.leerMissions(pageMission);
+			List<Mission> missions = lerrMisionesDisponibles(get);
 			// Obtengo la mision deseada
 			Mission mission = obtenerMissionParaHacer(profile,missions);
 			while(canDoMission(profile,mission)){
@@ -63,6 +63,26 @@ public class MissionManager {
 		} catch (Exception e) {
 			System.out.println("Error en el get2. " + e.getMessage());
 		}
+	}
+
+	private List<Mission> lerrMisionesDisponibles(HttpGetUrl get) {
+		// http://wwar.storm8.com/missions.php?cat=
+		// obtainMission.leerMissions(pageMission)
+		String url = "http://wwar.storm8.com/missions.php?cat=";
+		List<Mission> missions;
+		for(int i = 1 ; i < 10 ; i++){
+			System.out.println("Checking tab "+i);
+			try {
+				missions = obtainMission.leerMissions(get.getUrl(url+i));
+				for(Mission m : missions){
+					if(m.getPercentCompleted()<100){
+						return missions;
+					}
+				}
+			} catch (Exception e) {
+			}
+		}
+		return null;
 	}
 
 	private boolean canDoMission(Profile profile,

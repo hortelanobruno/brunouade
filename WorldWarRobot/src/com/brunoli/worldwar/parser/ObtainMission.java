@@ -3,7 +3,9 @@ package com.brunoli.worldwar.parser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import com.brunoli.worldwar.beans.Mission;
@@ -53,6 +55,19 @@ public class ObtainMission {
 		}
 		System.out.println("---------------------------------");	
 	}
+	
+	public Map<Integer,String> leerTabs(StringBuilder page){
+		Map<Integer,String> tabs = new HashMap<Integer,String>();
+		int i=0;
+		for(String a : page.toString().split("class='sectionTabs'")[1].split("</ul")[0].split("/missions.php")){
+			if(i>0){
+				String b = "http://wwar.storm8.com/missions.php"+a.split("'")[0];
+				tabs.put(Integer.parseInt(b.split("=")[1]), b);
+			}
+			i++;
+		}
+		return tabs;
+	}
 
 	public List<Mission> leerMissions(StringBuilder page) {
 		List<Mission> missions = new ArrayList<Mission>();
@@ -63,20 +78,23 @@ public class ObtainMission {
 		int i=0;
 		for(String a : page.toString().split("masteryBarProgress")){
 			if(i>0){
-				percent = a.split("<")[0].split(">")[1].replaceAll(" ", "").replaceAll("%", "");
-				missionName = a.split("missionName")[1].split("</div>")[0].split(">")[1];
-				missionUrl = "http://wwar.storm8.com/missions.php"+a.split("/missions.php")[1].split("'")[0];
-				mission = new Mission();
-				mission.setMissionName(missionName);
-				mission.setMissionUrl(missionUrl);
-				mission.setPercentCompleted(Integer.parseInt(percent));
-				if(a.contains("requiredGroup")){
-					mission.setAlianzeSizeRequiered(Integer.parseInt(a.split("requiredGroup")[1].split("<")[0].split(">")[1]));
-				}else{
-					mission.setAlianzeSizeRequiered(0);
+				try{
+					percent = a.split("<")[0].split(">")[1].replaceAll(" ", "").replaceAll("%", "");
+					missionName = a.split("missionName")[1].split("</div>")[0].split(">")[1];
+					missionUrl = "http://wwar.storm8.com/missions.php"+a.split("/missions.php")[1].split("'")[0];
+					mission = new Mission();
+					mission.setMissionName(missionName);
+					mission.setMissionUrl(missionUrl);
+					mission.setPercentCompleted(Integer.parseInt(percent));
+					if(a.contains("requiredGroup")){
+						mission.setAlianzeSizeRequiered(Integer.parseInt(a.split("requiredGroup")[1].split("<")[0].split(">")[1]));
+					}else{
+						mission.setAlianzeSizeRequiered(0);
+					}
+					mission.setEnergyRequiered(Integer.parseInt(a.split("requiredEnergy")[1].split("<")[0].split(">")[1]));
+					missions.add(mission);
+				}catch(Exception ex){
 				}
-				mission.setEnergyRequiered(Integer.parseInt(a.split("requiredEnergy")[1].split("<")[0].split(">")[1]));
-				missions.add(mission);
 			}
 			i++;
 		}
