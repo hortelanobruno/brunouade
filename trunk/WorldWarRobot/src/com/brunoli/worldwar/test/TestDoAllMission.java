@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.brunoli.worldwar.beans.Mission;
+import com.brunoli.worldwar.manager.MissionManager;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.parser.ObtainMission;
 import com.brunoli.worldwar.util.Menus;

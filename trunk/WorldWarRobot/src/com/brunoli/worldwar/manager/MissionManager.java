@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.brunoli.worldwar.beans.Mission;
 import com.brunoli.worldwar.beans.Profile;
+import com.brunoli.worldwar.db.DBManager;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.parser.ObtainMission;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
@@ -12,10 +13,12 @@ public class MissionManager {
 	
 	private ObtainInformation obtainInformation;
 	private ObtainMission obtainMission;
+	private DBManager dbManager;
 
 	public MissionManager() {
 		obtainInformation = new ObtainInformation();
 		obtainMission = new ObtainMission();
+		dbManager = new DBManager();
 	}
 	
 	public void doAllMission(HttpGetUrl get, StringBuilder pageMission, Profile profile){
@@ -83,6 +86,23 @@ public class MissionManager {
 				}
 			}
 		}
-		return null;
+		//BUsco la mision que me da mejor rentabilidad
+		Mission m = null;
+		for (Mission mission : missions) {
+			if(mission.getPercentCompleted()==100){
+				if(m!=null){
+					Integer a1 = (m.getMaxMoneyGained()-m.getMinMoneyGained())/2;
+					a1 = a1/m.getEnergyRequiered();
+					Integer a2 = (mission.getMaxMoneyGained()-mission.getMinMoneyGained())/2;
+					a2 = a2/mission.getEnergyRequiered();
+					if(a1<a2){
+						m = mission;
+					}
+				}else{
+					m=mission;
+				}
+			}
+		}
+		return m;
 	}
 }

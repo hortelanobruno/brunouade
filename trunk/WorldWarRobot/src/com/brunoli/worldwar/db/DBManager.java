@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.brunoli.worldwar.beans.Building;
+import com.brunoli.worldwar.beans.Mission;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.controller.BuildingEntityController;
+import com.brunoli.worldwar.db.controller.BuildingToCreateEntityController;
 import com.brunoli.worldwar.db.controller.MissionEntityController;
 import com.brunoli.worldwar.db.controller.UnitEntityController;
 import com.brunoli.worldwar.db.controller.exceptions.NonexistentEntityException;
 import com.brunoli.worldwar.db.entity.BuildingEntity;
+import com.brunoli.worldwar.db.entity.BuildingToCreateEntity;
 import com.brunoli.worldwar.db.entity.UnitEntity;
 
 public class DBManager {
@@ -17,11 +20,13 @@ public class DBManager {
 	private BuildingEntityController buildingEntityController;
 	private UnitEntityController unitEntityController;
 	private MissionEntityController missionEntityController;
+	private BuildingToCreateEntityController buildingToCreateEntityController;
 	
 	public DBManager() {
 		buildingEntityController = new BuildingEntityController();
 		unitEntityController = new UnitEntityController();
 		missionEntityController = new MissionEntityController();
+		buildingToCreateEntityController = new BuildingToCreateEntityController();
 	}
 	
 	
@@ -106,6 +111,42 @@ public class DBManager {
 		}else{
 			return null;
 		}
+	}
+
+
+	public String getBuildingToCreate() {
+		List<BuildingToCreateEntity> b = buildingToCreateEntityController.findBuildingEntityEntities(1, 0);
+		if(b.size()==1){
+			return b.get(0).getName();
+		}else{
+			return null;
+		}
+	}
+
+
+	public void buildingCreated(Building b) {
+		List<BuildingToCreateEntity> bu = buildingToCreateEntityController.findBuildingEntityEntities(1, 0);
+		if(bu.size()==1){
+			if(bu.get(0).getName().equalsIgnoreCase(b.getName())){
+				try {
+					buildingToCreateEntityController.destroy(bu.get(0).getId());
+				} catch (NonexistentEntityException e) {
+					e.printStackTrace();
+				}
+			}
+		}else{
+			try {
+				throw new Exception("Error al querer crear una Building");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+
+	public Mission getMission(String missionName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

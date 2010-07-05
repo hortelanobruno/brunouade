@@ -98,10 +98,14 @@ public class BuildingEntityControllerTest {
 					}else if(a.contains("Defense:")){
 						building.setCategory(BuildingType.DEFENSE);
 						building.setTypeValue(Long.parseLong(a.replaceAll("Defense:", "").trim()));
-					}else if(a.contains("Start Cost:")){
-						building.setInitialCost(Long.parseLong(a.replaceAll("Start Cost:", "").replaceAll(",", "").replaceAll("\\$", "").trim()));
 					}else if(a.contains("Next Cost:")){
 						building.setInitialCost(Long.parseLong(a.replaceAll("More Than Previous", "").replaceAll("Next Cost:", "").replaceAll(",", "").replaceAll("\\$", "").trim()));
+					}else if(a.contains("Cost:")){
+						if(a.contains("Start Cost:")){
+							building.setInitialCost(Long.parseLong(a.replaceAll("Start Cost:", "").replaceAll(",", "").replaceAll("\\$", "").trim()));
+						}else{
+							building.setInitialCost(Long.parseLong(a.replaceAll("Cost:", "").replaceAll(",", "").replaceAll("\\$", "").trim()));
+						}
 					}else{
 						//Namejajja
 						if(building!=null){
@@ -111,6 +115,9 @@ public class BuildingEntityControllerTest {
 						building.setName(a.trim());
 					}
 				}
+			}
+			if(building!=null){
+				controller.create(building);
 			}
 			scan.close();
 		} catch (FileNotFoundException e) {

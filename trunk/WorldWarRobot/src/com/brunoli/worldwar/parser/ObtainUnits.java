@@ -77,7 +77,7 @@ public class ObtainUnits {
 				return unit;
 			}
 		}
-		System.out.println("No se encontro unit");
+		System.out.println("No se encontro unit: "+name);
 		return null;
 	}
 
