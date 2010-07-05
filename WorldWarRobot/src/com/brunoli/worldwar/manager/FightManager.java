@@ -42,6 +42,7 @@ public class FightManager {
 		EnemyProfile enemyProfile = null;
 		FightResult fightResult = null;
 		initTime = Calendar.getInstance();
+		Long moneyGained = 0L;
 		try {
 			while(seguirPeleando()){
 				if (hasEnergyToAttack(profile)) {
@@ -69,6 +70,7 @@ public class FightManager {
 								// WON
 								recargarInfoProfile(profile, pageEnemy);
 								recargoFightStats(enemyToAttack, fightResult);
+								moneyGained += fightResult.getMoney();
 								mostrarResultadoFight(profile, enemyToAttack,fightResult);
 								if (hasEnergyToAttack(profile) && sigoAtacando(enemyToAttack)) {
 									do {
@@ -82,6 +84,7 @@ public class FightManager {
 										recargarInfoProfile(profile, pageEnemy);
 										recargoFightStats(enemyToAttack,
 												fightResult);
+										moneyGained += fightResult.getMoney();
 										mostrarResultadoFight(profile, enemyToAttack,fightResult);
 									} while (fightResult.getResult().equals(
 											FightResultType.WON)
@@ -109,7 +112,7 @@ public class FightManager {
 					break;
 				}
 			}
-			System.out.println("Fin peleas");
+			System.out.println("Fin peleas. Money ganada : "+moneyGained+" .");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
