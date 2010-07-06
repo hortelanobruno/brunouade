@@ -3,6 +3,8 @@ package com.brunoli.worldwar.beans;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.brunoli.worldwar.test.RunnableAll;
+
 public class FightStats {
 
 	private Integer fightsWon = 0;
@@ -10,7 +12,7 @@ public class FightStats {
 	private Double avgMoneyGain = 0D;
 	private Long totalMoneyGain = 0L;
 	private List<Long> moneyWon;
-	private final Double MINIMO_RENTABILIDAD = 400000D;// 100mil
+	
 
 	public FightStats() {
 		moneyWon = new ArrayList<Long>();
@@ -60,7 +62,7 @@ public class FightStats {
 		if (fightsLost >= (fightsWon + 2)) {
 			return false;
 		}
-		if (avgMoneyGain >= MINIMO_RENTABILIDAD) {
+		if (avgMoneyGain >= RunnableAll.MINIMO_RENTABILIDAD) {
 			return true;
 		} else {
 			return false;
