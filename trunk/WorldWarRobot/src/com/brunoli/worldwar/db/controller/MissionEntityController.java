@@ -134,4 +134,14 @@ public class MissionEntityController {
 			em.close();
 		}
 	}
+
+	public MissionEntity findEntityByName(String missionName) {
+		EntityManager em = getEntityManager();
+		try {
+			Query q = em.createQuery("select o from MissionEntity as o where o.missionName = :name").setParameter("name", missionName);
+			return ((MissionEntity) q.getSingleResult());
+		} finally {
+			em.close();
+		}
+	}
 }

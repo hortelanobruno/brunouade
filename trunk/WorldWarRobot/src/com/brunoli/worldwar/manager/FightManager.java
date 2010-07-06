@@ -84,7 +84,9 @@ public class FightManager {
 										recargarInfoProfile(profile, pageEnemy);
 										recargoFightStats(enemyToAttack,
 												fightResult);
-										moneyGained += fightResult.getMoney();
+										if(fightResult!=null&&fightResult.getMoney()!=null){
+											moneyGained += fightResult.getMoney();
+										}
 										mostrarResultadoFight(profile, enemyToAttack,fightResult);
 									} while (fightResult.getResult().equals(
 											FightResultType.WON)

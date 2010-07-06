@@ -56,6 +56,8 @@ public class BuildingManager {
 		if(b.getInitialCost()<=profile.getMoney()){
 			return true;
 		}else{
+			System.out.println("No se pudo construir: "+b.getName()+". My money: "+profile.getMoney()+". Building cost: "+
+					b.getInitialCost()+".");
 			return false;
 		}
 	}
