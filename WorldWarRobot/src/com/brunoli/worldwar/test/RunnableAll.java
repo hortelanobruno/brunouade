@@ -76,13 +76,13 @@ public class RunnableAll implements Runnable {
 				// Leo building
 				leerBuildings(profile);
 				//mostrar profile
-				mostrarProfile(profile);
+//				mostrarProfile(profile);
 				//Primero chequeo cuantos puntos de batalla tengo,
 				//Si tengo menos del total espero hasta tener a todos.
 				if(profile.getStaminaMax()>profile.getStaminaCurrent()){
 					//Espero para tener toda la stamina. 2min x stamina
 					int dif = profile.getStaminaMax()-profile.getStaminaCurrent();
-					System.out.println("Durmiendo "+dif*2+" mins para recargar Stamina.");
+					System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Durmiendo "+dif*2+" mins para recargar Stamina.");
 					Thread.sleep(1000*60*2*dif);
 				}
 				//RECARGAR HEALTH

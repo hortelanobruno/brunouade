@@ -25,7 +25,7 @@ public class MissionManager {
 		try {
 			System.out.println("Missions....");
 			// Obtengo misiones
-			List<Mission> missions = lerrMisionesDisponibles(get);
+			List<Mission> missions = leerMisionesDisponibles(get);
 			// Obtengo la mision deseada
 			Mission mission = obtenerMissionParaHacer(profile,missions);
 			System.out.println("Energy: "+profile.getEnergyCurrent()+"/"
@@ -57,6 +57,7 @@ public class MissionManager {
 				obtainInformation.leerDatosUsuario(pageMission, profile);
 				// Actualizo las misiones
 				missions = obtainMission.leerMissions(pageMission);
+				dbManager.actualizarMissiones(missions);
 				// Obtengo la mision deseada
 				mission = obtenerMissionParaHacer(profile,missions);
 				System.out.println("Energy: "+profile.getEnergyCurrent()+"/"
@@ -69,7 +70,7 @@ public class MissionManager {
 		}
 	}
 
-	private List<Mission> lerrMisionesDisponibles(HttpGetUrl get) {
+	private List<Mission> leerMisionesDisponibles(HttpGetUrl get) {
 		// http://wwar.storm8.com/missions.php?cat=
 		// obtainMission.leerMissions(pageMission)
 		String url = "http://wwar.storm8.com/missions.php?cat=";
@@ -80,6 +81,8 @@ public class MissionManager {
 				missions = obtainMission.leerMissions(get.getUrl(url+i));
 				for(Mission m : missions){
 					if(m.getPercentCompleted()<100){
+						//aca hay que actualizar con la base unos campos
+						dbManager.actualizarMissiones(missions);
 						return missions;
 					}
 				}
