@@ -26,7 +26,14 @@ import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class RunnableAll implements Runnable {
 
-	private String urlInicio = "http://wwar.storm8.com/aindex.php?version=a1.54&udid=200145da554359fa&pf=0f86e6501f5b2c2654be9ddfd212da28&model=HTC+Dream&sv=2.1-update1";
+	public final static Double MINIMO_RENTABILIDAD = 10000D;// rentabilidad de money ganada en batallas
+	public final static Integer DIFF_POINT_MINIMA = 0;//puntos minimo de dif con el rival
+	private String urlInicioBrunoli = "http://wwar.storm8.com/aindex.php?version=a1.54&udid=200145da554359fa&pf=0f86e6501f5b2c2654be9ddfd212da28&model=HTC+Dream&sv=2.1-update1";
+	private String urlInicioPablo = "http://wwar.storm8.com/index.php?version=1.54&premium=true&udid=7194cce3b2603abc0e34362ce7746ea1b5bc7544&pf=7258609AC8B028A08EC92603B5EB8F51&model=iPhone&sv=3.1.2";
+	private String unitDefense = "Naval Tanker";
+	//private String unitDefense = "Horizon Frigate";
+	//private String unitAttack = "IAI Harop UAV";
+	//////////////////////////////////////////////////
 	private ObtainInformation obtainInformation;
 	private ObtainMission obtainMission;
 	private HttpGetUrl get;
@@ -37,6 +44,7 @@ public class RunnableAll implements Runnable {
 	private ObtainRestore obtainRestore;
 	private BuildingManager buildingManager;
 	private UnitsManager unitsManager;
+	private MissionManager mManager;
 	
 	public static void main (String[] args){
 		new RunnableAll();
@@ -59,17 +67,17 @@ public class RunnableAll implements Runnable {
 		obtainRestore = new ObtainRestore();
 		buildingManager = new BuildingManager();
 		unitsManager = new UnitsManager();
+		mManager = new MissionManager();
 		while(true){
 			get = new HttpGetUrl();
 			System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Atacando...");
 			Profile profile = null;
 			try {
-				StringBuilder page = get.getUrl(urlInicio);
+				StringBuilder page = get.getUrl(urlInicioPablo);
 				profile = new Profile();
-				profile.setStartUrl(urlInicio);
+				profile.setStartUrl(urlInicioPablo);
 				// Leo datos
 				obtainInformation.leerDatosUsuario(page, profile);
-				// Leo links
 				obtainInformation.leerLinks(page, profile);
 				// Leo units
 				leerUnits(profile);
@@ -86,14 +94,20 @@ public class RunnableAll implements Runnable {
 					Thread.sleep(1000*60*2*dif);
 				}
 				//RECARGAR HEALTH
+				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
+				obtainInformation.leerDatosUsuario(page, profile);
 				recargarHealth(profile);
+				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
+				obtainInformation.leerDatosUsuario(page, profile);
 				//INICIAR ATAQUES
 				attackAll(profile);
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Fin de los ataques.");
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Ejecutando todas las misiones.");
+				//EJECUTAMOS MISIONES
+//				FORMA VIEJA DE EJECTUAR LAS MISIONS
 //				ejecutarAllMissions(profile);
+//				//////////////////////////////////
 				page = get.getUrl(profile.getMenuUrls().get(Menus.MISSION));
-				MissionManager mManager = new MissionManager();
 				mManager.doAllMission(get, page, profile);
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Fin Ejecutando todas las misiones.");
 				// Leo datos
@@ -104,15 +118,17 @@ public class RunnableAll implements Runnable {
 					System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Sigo atacando porque tengo energia.");
 					attackAll(profile);
 				}
+				//HAGO UN DEPOSITO PARA ASEGURAR LA PLATA PARA EL RESTORE
+				depositarParaElRestore(profile);
 				//CONSTRUYENDO UNITS
 				//Primero actualizo las units
-				leerUnits(profile);
-				//Contruyo units ataque
-				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
-				unitsManager.buyUnitsAttack(get, page, profile);
+//				leerUnits(profile);
+//				//Contruyo units ataque
+//				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
+//				unitsManager.buyUnitsAttack(get, page, profile, unitAttack);
 				//Construyo units defensa
 				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
-				unitsManager.buyUnitsDefense(get, page, profile);
+				unitsManager.buyUnitsDefense(get, page, profile, unitDefense);
 				// HACIENDO BUILDINGS
 				page = get.getUrl(profile.getMenuUrls().get(Menus.BUILDINGS));
 				buildingManager.doAllBuilding(get, page, profile);
@@ -123,14 +139,32 @@ public class RunnableAll implements Runnable {
 			} catch (Exception e) {
 				System.out.println("Error en el get. " + e.getMessage());
 			}
+			get.close();
 			try {
 				int dif = profile.getStaminaMax()-profile.getStaminaCurrent();
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Durmiendo "+dif*2+" minutos.");
 				Thread.sleep(1000 * 60 * dif * 2 );
 			} catch (InterruptedException e) {
 			}
-			get.close();
 		}
+	}
+	
+	private void depositarParaElRestore(Profile profile){
+		try {
+			StringBuilder page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
+			obtainInformation.leerDatosUsuario(page, profile);
+			page = get.getUrl(profile.getMenuUrls().get(Menus.HOSPITAL));
+			RestoreValue rv = obtainRestore.leerDatos(page);
+			if(rv.getValueVault()<rv.getValueRestore()){
+				depositar(profile,get,rv.getValueRestore()-rv.getValueVault());
+				System.out.println("Se realizo el deposito para el restore.");
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	private void recargarHealth(Profile profile) {
@@ -169,7 +203,6 @@ public class RunnableAll implements Runnable {
 
 
 	private void depositar(Profile profile, HttpGetUrl get, Long depositValue) {
-		// TODO Auto-generated method stub
 		try {
 			System.out.println("Go to bank.");
 			String unitUrl = profile.getMenuUrls().get(Menus.BANK);
@@ -232,7 +265,6 @@ public class RunnableAll implements Runnable {
 			System.out.println("Actualizando units...");
 			List<Unit> units = dbManager.getUnits();
 			for (UnitType ut : linksUnits.keySet()) {
-				System.out.println("Go to " + ut.getValue());
 				page = get.getUrl(linksUnits.get(ut));
 				obtainUnits.cargarDatosUnits(page, units);
 			}
