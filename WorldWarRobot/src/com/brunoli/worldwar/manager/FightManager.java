@@ -45,17 +45,20 @@ public class FightManager {
 		initTime = Calendar.getInstance();
 		Long moneyGained = 0L;
 		try {
-			while(seguirPeleando()){
+			while (seguirPeleando()) {
+				// 1 - Voy a la pagina de FIGHT
+				pageFight = httpGet.getUrl(urlPageFight);
+				recargarInfoProfile(profile, pageFight);
 				if (hasEnergyToAttack(profile)) {
-					// 1 - Voy a la pagina de FIGHT
-					pageFight = httpGet.getUrl(urlPageFight);
 					// 2 - Obtengo lista de enemies
-					List<Enemy> newEnemies = obtainFight.leerEnemyList(pageFight);
+					List<Enemy> newEnemies = obtainFight
+							.leerEnemyList(pageFight);
 					// 3 - Elijo mejor enemy
 					Enemy enemyToAttack = elegirMejorEnemy(newEnemies);
 					if (enemyToAttack != null) {
 						// 3 - Voy al profile de un enemy
-						pageEnemy = httpGet.getUrl(enemyToAttack.getProfileUrl());
+						pageEnemy = httpGet.getUrl(enemyToAttack
+								.getProfileUrl());
 						// 4 - Leo el profile
 						enemyProfile = obtainFight.leerEnemyProfile(pageEnemy);
 						enemyToAttack.setProfile(enemyProfile);
@@ -64,58 +67,73 @@ public class FightManager {
 							System.out.println("Atacando a "
 									+ enemyToAttack.getName());
 							// 6 - Attack
-							pageEnemy = httpGet.getUrl(enemyToAttack.getProfile()
-									.getAttackUrl());
+							pageEnemy = httpGet.getUrl(enemyToAttack
+									.getProfile().getAttackUrl());
 							fightResult = obtainFight.resultFight(pageEnemy);
-							if (fightResult.getResult().equals(FightResultType.WON)) {
+							if (fightResult.getResult().equals(
+									FightResultType.WON)) {
 								// WON
 								recargarInfoProfile(profile, pageEnemy);
 								recargoFightStats(enemyToAttack, fightResult);
 								moneyGained += fightResult.getMoney();
-								mostrarResultadoFight(profile, enemyToAttack,fightResult);
-								if (hasEnergyToAttack(profile) && sigoAtacando(enemyToAttack)) {
+								mostrarResultadoFight(profile, enemyToAttack,
+										fightResult);
+								if (hasEnergyToAttack(profile)
+										&& sigoAtacando(enemyToAttack)) {
 									do {
-										System.out.println("Atacando de nuevo a "
-												+ enemyToAttack.getName());
+										System.out
+												.println("Atacando de nuevo a "
+														+ enemyToAttack
+																.getName());
 										attackAgainUrl = obtainFight
 												.obtainAttackAgainUrl(pageEnemy);
-										pageEnemy = httpGet.getUrl(attackAgainUrl);
+										pageEnemy = httpGet
+												.getUrl(attackAgainUrl);
 										fightResult = obtainFight
 												.resultFight(pageEnemy);
 										recargarInfoProfile(profile, pageEnemy);
 										recargoFightStats(enemyToAttack,
 												fightResult);
-										if(fightResult!=null&&fightResult.getMoney()!=null){
-											moneyGained += fightResult.getMoney();
+										if (fightResult != null
+												&& fightResult.getMoney() != null) {
+											moneyGained += fightResult
+													.getMoney();
 										}
-										mostrarResultadoFight(profile, enemyToAttack,fightResult);
+										mostrarResultadoFight(profile,
+												enemyToAttack, fightResult);
 									} while (fightResult.getResult().equals(
 											FightResultType.WON)
 											&& hasEnergyToAttack(profile));
-									if(fightResult.getResult().equals(FightResultType.FORCES_RETRITMENT)){
-										enemyRetired.add(enemyToAttack.getName());
+									if (fightResult.getResult().equals(
+											FightResultType.FORCES_RETRITMENT)) {
+										enemyRetired.add(enemyToAttack
+												.getName());
 									}
 								}
-							} else if (fightResult.getResult().equals(FightResultType.LOST)) {
+							} else if (fightResult.getResult().equals(
+									FightResultType.LOST)) {
 								// LOST
 								recargarInfoProfile(profile, pageEnemy);
 								recargoFightStats(enemyToAttack, fightResult);
-								mostrarResultadoFight(profile, enemyToAttack,fightResult);
+								mostrarResultadoFight(profile, enemyToAttack,
+										fightResult);
 							} else {
 								// RETRITMENT
 								enemyRetired.add(enemyToAttack.getName());
-								mostrarResultadoFight(profile, enemyToAttack,fightResult);
+								mostrarResultadoFight(profile, enemyToAttack,
+										fightResult);
 							}
-						}else{
+						} else {
 							enemyRetired.add(enemyToAttack.getName());
 						}
 					}
-				}else{
+				} else {
 					System.out.println("SE ME ACABO LA ENERGIA. FIN.");
 					break;
 				}
 			}
-			System.out.println("Fin peleas. Money ganada : "+moneyGained+" .");
+			System.out.println("Fin peleas. Money ganada : " + moneyGained
+					+ " .");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -126,30 +144,38 @@ public class FightManager {
 	private boolean seguirPeleando() {
 		Calendar aux = Calendar.getInstance();
 		long timeMax = 1000 * 60 * 5;
-		if(initTime.getTimeInMillis()+timeMax>aux.getTimeInMillis()){
+		if (initTime.getTimeInMillis() + timeMax > aux.getTimeInMillis()) {
 			return true;
-		}else{
+		} else {
 			System.out.println("Se me acabo el tiempo para pelear");
 			return false;
 		}
 	}
 
-	private void mostrarResultadoFight(Profile profile, Enemy enemy, FightResult fightResult) {
+	private void mostrarResultadoFight(Profile profile, Enemy enemy,
+			FightResult fightResult) {
 		switch (fightResult.getResult()) {
 		case WON:
-			System.out.print("Le gane a "+enemy.getName()+". Recaude "+fightResult.getMoney()+". ");
-			System.out.print("Health: "+profile.getHealthCurrent()+"/"+profile.getHealthMax()+". ");
-			System.out.println("Stamina: "+profile.getStaminaCurrent()+"/"+profile.getStaminaMax()+".");
+			System.out.print("Le gane a " + enemy.getName() + ". Recaude "
+					+ fightResult.getMoney() + ". ");
+			System.out.print("Health: " + profile.getHealthCurrent() + "/"
+					+ profile.getHealthMax() + ". ");
+			System.out.println("Stamina: " + profile.getStaminaCurrent() + "/"
+					+ profile.getStaminaMax() + ".");
 			break;
 		case LOST:
-			System.out.print("Perdi con "+enemy.getName()+". ");
-			System.out.print("Health: "+profile.getHealthCurrent()+"/"+profile.getHealthMax()+". ");
-			System.out.println("Stamina: "+profile.getStaminaCurrent()+"/"+profile.getStaminaMax()+".");
+			System.out.print("Perdi con " + enemy.getName() + ". ");
+			System.out.print("Health: " + profile.getHealthCurrent() + "/"
+					+ profile.getHealthMax() + ". ");
+			System.out.println("Stamina: " + profile.getStaminaCurrent() + "/"
+					+ profile.getStaminaMax() + ".");
 			break;
 		case FORCES_RETRITMENT:
-			System.out.print(enemy.getName()+" se retiro. ");
-			System.out.print("Health: "+profile.getHealthCurrent()+"/"+profile.getHealthMax()+". ");
-			System.out.println("Stamina: "+profile.getStaminaCurrent()+"/"+profile.getStaminaMax()+".");
+			System.out.print(enemy.getName() + " se retiro. ");
+			System.out.print("Health: " + profile.getHealthCurrent() + "/"
+					+ profile.getHealthMax() + ". ");
+			System.out.println("Stamina: " + profile.getStaminaCurrent() + "/"
+					+ profile.getStaminaMax() + ".");
 			break;
 		}
 	}
@@ -181,7 +207,9 @@ public class FightManager {
 	private boolean canAttack(Profile profile, Enemy enemyToAttack) {
 		Integer enemyDefensePoints = enemyToAttack.calcularPointDefense();
 		Integer myAttackPoints = profile.calcularPointAttack();
-		System.out.println("Checking enemy "+enemyToAttack.getName()+" can attack: MyAttackPoints: "+myAttackPoints+". EnemyDefensePoints:"+enemyDefensePoints+".");
+		System.out.println("Checking enemy " + enemyToAttack.getName()
+				+ " can attack: MyAttackPoints: " + myAttackPoints
+				+ ". EnemyDefensePoints:" + enemyDefensePoints + ".");
 		if (myAttackPoints >= (enemyDefensePoints + RunnableAll.DIFF_POINT_MINIMA)) {
 			return true;
 		}
@@ -199,7 +227,7 @@ public class FightManager {
 		Collections.sort(newEnemies, new EnemyComparator());
 		FightStats stats = null;
 		for (Enemy enemy : newEnemies) {
-			if(!enemyRetired.contains(enemy.getName())){
+			if (!enemyRetired.contains(enemy.getName())) {
 				if (!fightStats.containsKey(enemy.getName())) {
 					// NO LO TENGO ASI QUE PODRIA SER.
 					return enemy;

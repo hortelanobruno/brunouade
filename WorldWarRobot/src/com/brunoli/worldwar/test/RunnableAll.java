@@ -28,11 +28,12 @@ public class RunnableAll implements Runnable {
 
 	public final static Double MINIMO_RENTABILIDAD = 10000D;// rentabilidad de money ganada en batallas
 	public final static Integer DIFF_POINT_MINIMA = 0;//puntos minimo de dif con el rival
-	private String urlInicioBrunoli = "http://wwar.storm8.com/aindex.php?version=a1.54&udid=200145da554359fa&pf=0f86e6501f5b2c2654be9ddfd212da28&model=HTC+Dream&sv=2.1-update1";
+	//private String urlInicioBrunoli = "http://wwar.storm8.com/aindex.php?version=a1.54&udid=200145da554359fa&pf=0f86e6501f5b2c2654be9ddfd212da28&model=HTC+Dream&sv=2.1-update1";
 	private String urlInicioPablo = "http://wwar.storm8.com/index.php?version=1.54&premium=true&udid=7194cce3b2603abc0e34362ce7746ea1b5bc7544&pf=7258609AC8B028A08EC92603B5EB8F51&model=iPhone&sv=3.1.2";
 	private String unitDefense = "Naval Tanker";
 	//private String unitDefense = "Horizon Frigate";
 	//private String unitAttack = "IAI Harop UAV";
+	private String unitAttack = "Harrier Jet";
 	//////////////////////////////////////////////////
 	private ObtainInformation obtainInformation;
 	private ObtainMission obtainMission;
@@ -122,10 +123,10 @@ public class RunnableAll implements Runnable {
 				depositarParaElRestore(profile);
 				//CONSTRUYENDO UNITS
 				//Primero actualizo las units
-//				leerUnits(profile);
-//				//Contruyo units ataque
-//				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
-//				unitsManager.buyUnitsAttack(get, page, profile, unitAttack);
+				leerUnits(profile);
+				//Contruyo units ataque
+				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
+				unitsManager.buyUnitsAttack(get, page, profile, unitAttack);
 				//Construyo units defensa
 				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
 				unitsManager.buyUnitsDefense(get, page, profile, unitDefense);
