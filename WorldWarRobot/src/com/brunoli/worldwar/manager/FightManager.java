@@ -15,6 +15,7 @@ import com.brunoli.worldwar.beans.FightStats;
 import com.brunoli.worldwar.beans.Profile;
 import com.brunoli.worldwar.parser.ObtainFight;
 import com.brunoli.worldwar.parser.ObtainInformation;
+import com.brunoli.worldwar.test.RunnableAll;
 import com.brunoli.worldwar.util.FightResultType;
 import com.brunoli.worldwar.util.Menus;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
@@ -124,7 +125,7 @@ public class FightManager {
 
 	private boolean seguirPeleando() {
 		Calendar aux = Calendar.getInstance();
-		long timeMax = 1000 * 60 * 10;
+		long timeMax = 1000 * 60 * 5;
 		if(initTime.getTimeInMillis()+timeMax>aux.getTimeInMillis()){
 			return true;
 		}else{
@@ -181,7 +182,7 @@ public class FightManager {
 		Integer enemyDefensePoints = enemyToAttack.calcularPointDefense();
 		Integer myAttackPoints = profile.calcularPointAttack();
 		System.out.println("Checking enemy "+enemyToAttack.getName()+" can attack: MyAttackPoints: "+myAttackPoints+". EnemyDefensePoints:"+enemyDefensePoints+".");
-		if (myAttackPoints >= (enemyDefensePoints + Profile.DIFF_POINT_MINIMA)) {
+		if (myAttackPoints >= (enemyDefensePoints + RunnableAll.DIFF_POINT_MINIMA)) {
 			return true;
 		}
 		return false;

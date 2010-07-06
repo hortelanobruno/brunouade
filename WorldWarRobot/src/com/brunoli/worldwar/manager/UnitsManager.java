@@ -20,9 +20,8 @@ public class UnitsManager {
 		obtainInformation = new ObtainInformation();
 	}
 	
-	public void buyUnitsAttack(HttpGetUrl get, StringBuilder pageUnit, Profile profile){
+	public void buyUnitsAttack(HttpGetUrl get, StringBuilder pageUnit, Profile profile, String unitAttack){
 		try {
-			String unitAttack = "IAI Harop UAV";
 			System.out.println("Contruyendo units...");
 			obtainInformation.leerDatosUsuario(pageUnit, profile);
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
@@ -49,9 +48,8 @@ public class UnitsManager {
 		}
 	}
 	
-	public void buyUnitsDefense(HttpGetUrl get, StringBuilder pageUnit, Profile profile){
+	public void buyUnitsDefense(HttpGetUrl get, StringBuilder pageUnit, Profile profile, String unitDefense){
 		try {
-			String unitDefense = "Horizon Frigate";
 			System.out.println("Contruyendo units...");
 			obtainInformation.leerDatosUsuario(pageUnit, profile);
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
