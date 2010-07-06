@@ -6,10 +6,11 @@
 		<class>com.brunoli.worldwar.db.entity.BuildingEntity</class>
 		<class>com.brunoli.worldwar.db.entity.MissionEntity</class>
 		<class>com.brunoli.worldwar.db.entity.BuildingToCreateEntity</class>
+		<class>com.brunoli.worldwar.db.entity.BuildingIncomeToCreateEntity</class>
 		<properties>
            <property name="eclipselink.logging.level" value="SEVERE"/>
            <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>  
-           <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/worldwar"/> 
+           <property name="eclipselink.jdbc.url" value="jdbc:mysql://10.0.0.44:3306/worldwar"/> 
            <property name="eclipselink.jdbc.password" value="root"/> 
            <property name="eclipselink.jdbc.user" value="root"/> 
         </properties>
