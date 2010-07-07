@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.util.RestoreValue;
 import com.brunoli.worldwar.util.UtilsWW;
 
@@ -36,12 +37,17 @@ public class ObtainRestore {
 	}
 
 	public RestoreValue leerDatos(StringBuilder page) {
-		RestoreValue rv = new RestoreValue();
-		String a = page.toString().split("hospitalText")[1];
-		rv.setUrlRestore("http://wwar.storm8.com/hospital.php"+a.split("/hospital.php")[1].split("'")[0]);
-		rv.setValueVault(UtilsWW.parsearMoney(a.split("<img")[1].split("</")[0].split(">")[1]));
-		rv.setValueRestore(UtilsWW.parsearMoney(a.split("<img")[2].split("</")[0].split(">")[1]));
-		return rv;
+		try{
+			RestoreValue rv = new RestoreValue();
+			String a = page.toString().split("hospitalText")[1];
+			rv.setUrlRestore("http://wwar.storm8.com/hospital.php"+a.split("/hospital.php")[1].split("'")[0]);
+			rv.setValueVault(UtilsWW.parsearMoney(a.split("<img")[1].split("</")[0].split(">")[1]));
+			rv.setValueRestore(UtilsWW.parsearMoney(a.split("<img")[2].split("</")[0].split(">")[1]));
+			return rv;
+		}catch(Exception ex){
+			EventManager.getInstance().error("Error al leer datos para el restore. Pagina: "+page.toString(), ex);
+			return null;
+		}
 	}
 
 	public StringBuilder leerArchivo(String pathFile) {

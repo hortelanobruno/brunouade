@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "dtds/org/apache/log4j/xml/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+    <appender name="fileWorldWarInfo" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./log/worldwarInfo.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="fileWorldWarError" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./log/worldwarError.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="fileHttp" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./log/http.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="threshold" value="error"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <logger name="worldWarInfo">
+        <appender-ref ref="fileWorldWarInfo" />
+    </logger>
+    <logger name="worldWarError">
+        <appender-ref ref="fileWorldWarError" />
+    </logger>
+    <logger name="org.apache.http.impl.conn.SingleClientConnManager">
+        <appender-ref ref="fileHttp" />
+    </logger>
+    <logger name="org.apache.http.client.protocol.RequestAddCookies">
+        <appender-ref ref="fileHttp" />
+    </logger>
+    <logger name="org.apache.http.impl.client.DefaultHttpClient">
+        <appender-ref ref="fileHttp" />
+    </logger>
+    <logger name="org.apache.http.impl.conn.DefaultClientConnection">
+        <appender-ref ref="fileHttp" />
+    </logger>
+    <logger name="org.apache.http.wire">
+        <appender-ref ref="fileHttp" />
+    </logger>
+    <logger name="org.apache.http.headers">
+        <appender-ref ref="fileHttp" />
+    </logger>
+    <logger name="org.apache.http.client.protocol.ResponseProcessCookies">
+        <appender-ref ref="fileHttp" />
+    </logger>
+    <logger name="org.apache.http.impl.client.DefaultRedirectHandler">
+        <appender-ref ref="fileHttp" />
+    </logger>
+    <root>
+    </root>
+</log4j:configuration> 

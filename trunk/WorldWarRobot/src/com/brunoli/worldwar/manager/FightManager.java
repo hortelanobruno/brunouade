@@ -13,6 +13,7 @@ import com.brunoli.worldwar.beans.EnemyProfile;
 import com.brunoli.worldwar.beans.FightResult;
 import com.brunoli.worldwar.beans.FightStats;
 import com.brunoli.worldwar.beans.Profile;
+import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.parser.ObtainFight;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.test.RunnableAll;
@@ -64,7 +65,7 @@ public class FightManager {
 						enemyToAttack.setProfile(enemyProfile);
 						// 5 - Calculo si le puedo ganar
 						if (canAttack(profile, enemyToAttack)) {
-							System.out.println("Atacando a "
+							EventManager.getInstance().info("Atacando a "
 									+ enemyToAttack.getName());
 							// 6 - Attack
 							pageEnemy = httpGet.getUrl(enemyToAttack
@@ -81,8 +82,7 @@ public class FightManager {
 								if (hasEnergyToAttack(profile)
 										&& sigoAtacando(enemyToAttack)) {
 									do {
-										System.out
-												.println("Atacando de nuevo a "
+										EventManager.getInstance().info("Atacando de nuevo a "
 														+ enemyToAttack
 																.getName());
 										attackAgainUrl = obtainFight
@@ -128,19 +128,18 @@ public class FightManager {
 						}
 					}
 				} else {
-					System.out.print("SE ME ACABO LA ENERGIA. ");
-					System.out.print("Health: " + profile.getHealthCurrent() + "/"
+					EventManager.getInstance().info("SE ME ACABO LA ENERGIA. ");
+					EventManager.getInstance().info("Health: " + profile.getHealthCurrent() + "/"
 							+ profile.getHealthMax() + ". ");
-					System.out.println("Stamina: " + profile.getStaminaCurrent() + "/"
+					EventManager.getInstance().info("Stamina: " + profile.getStaminaCurrent() + "/"
 							+ profile.getStaminaMax() + ". FIN.");
 					break;
 				}
 			}
-			System.out.println("Fin peleas. Money ganada : " + moneyGained
+			EventManager.getInstance().info("Fin peleas. Money ganada : " + moneyGained
 					+ " .");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			EventManager.getInstance().error("Exception222. ",e);
 		}
 
 	}
@@ -151,7 +150,7 @@ public class FightManager {
 		if (initTime.getTimeInMillis() + timeMax > aux.getTimeInMillis()) {
 			return true;
 		} else {
-			System.out.println("Se me acabo el tiempo para pelear");
+			EventManager.getInstance().info("Se me acabo el tiempo para pelear");
 			return false;
 		}
 	}
@@ -160,25 +159,25 @@ public class FightManager {
 			FightResult fightResult) {
 		switch (fightResult.getResult()) {
 		case WON:
-			System.out.print("Le gane a " + enemy.getName() + ". Recaude "
+			EventManager.getInstance().info("Le gane a " + enemy.getName() + ". Recaude "
 					+ fightResult.getMoney() + ". ");
-			System.out.print("Health: " + profile.getHealthCurrent() + "/"
+			EventManager.getInstance().info("Health: " + profile.getHealthCurrent() + "/"
 					+ profile.getHealthMax() + ". ");
-			System.out.println("Stamina: " + profile.getStaminaCurrent() + "/"
+			EventManager.getInstance().info("Stamina: " + profile.getStaminaCurrent() + "/"
 					+ profile.getStaminaMax() + ".");
 			break;
 		case LOST:
-			System.out.print("Perdi con " + enemy.getName() + ". ");
-			System.out.print("Health: " + profile.getHealthCurrent() + "/"
+			EventManager.getInstance().info("Perdi con " + enemy.getName() + ". ");
+			EventManager.getInstance().info("Health: " + profile.getHealthCurrent() + "/"
 					+ profile.getHealthMax() + ". ");
-			System.out.println("Stamina: " + profile.getStaminaCurrent() + "/"
+			EventManager.getInstance().info("Stamina: " + profile.getStaminaCurrent() + "/"
 					+ profile.getStaminaMax() + ".");
 			break;
 		case FORCES_RETRITMENT:
-			System.out.print(enemy.getName() + " se retiro. ");
-			System.out.print("Health: " + profile.getHealthCurrent() + "/"
+			EventManager.getInstance().info(enemy.getName() + " se retiro. ");
+			EventManager.getInstance().info("Health: " + profile.getHealthCurrent() + "/"
 					+ profile.getHealthMax() + ". ");
-			System.out.println("Stamina: " + profile.getStaminaCurrent() + "/"
+			EventManager.getInstance().info("Stamina: " + profile.getStaminaCurrent() + "/"
 					+ profile.getStaminaMax() + ".");
 			break;
 		}
@@ -211,7 +210,7 @@ public class FightManager {
 	private boolean canAttack(Profile profile, Enemy enemyToAttack) {
 		Integer enemyDefensePoints = enemyToAttack.calcularPointDefense();
 		Integer myAttackPoints = profile.calcularPointAttack();
-		System.out.println("Checking enemy " + enemyToAttack.getName()
+		EventManager.getInstance().info("Checking enemy " + enemyToAttack.getName()
 				+ " can attack: MyAttackPoints: " + myAttackPoints
 				+ ". EnemyDefensePoints:" + enemyDefensePoints + ".");
 		if (myAttackPoints >= (enemyDefensePoints + RunnableAll.DIFF_POINT_MINIMA)) {

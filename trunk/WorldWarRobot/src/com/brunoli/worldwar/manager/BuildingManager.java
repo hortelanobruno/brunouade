@@ -5,6 +5,7 @@ import java.util.List;
 import com.brunoli.worldwar.beans.Building;
 import com.brunoli.worldwar.beans.Profile;
 import com.brunoli.worldwar.db.DBManager;
+import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.parser.ObtainBuildings;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
@@ -32,9 +33,9 @@ public class BuildingManager {
 			//Obtener building a realizar 
 			String building = dbManager.getBuildingToCreate();
 			Building b = getBuilding(building,buildings);
-			System.out.println("Contruyendo buildings...");
+			EventManager.getInstance().info("Contruyendo buildings...");
 			while(building!=null && canDoBuilding(b,profile)){
-				System.out.println("Contruyendo: "+b.getName());
+				EventManager.getInstance().info("Contruyendo: "+b.getName());
 				//Construir building
 				pageBuilding = doBuilding(b,get);
 				//Cargo datos energia
@@ -46,9 +47,9 @@ public class BuildingManager {
 				b = getBuilding(building,buildings);
 			}
 			dbManager.guardarBuildings(buildings);
-			System.out.println("Fin de contruir buildings.");
+			EventManager.getInstance().info("Fin de contruir buildings.");
 		} catch (Exception e) {
-			System.out.println("Error en el get. "+e.getMessage());
+			EventManager.getInstance().error("Error en el get. "+e.getMessage(),e);
 		}
 	}
 
@@ -56,7 +57,7 @@ public class BuildingManager {
 		if(b.getInitialCost()<=profile.getMoney()){
 			return true;
 		}else{
-			System.out.println("No se pudo construir: "+b.getName()+". My money: "+profile.getMoney()+". Building cost: "+
+			EventManager.getInstance().info("No se pudo construir: "+b.getName()+". My money: "+profile.getMoney()+". Building cost: "+
 					b.getInitialCost()+".");
 			return false;
 		}
@@ -68,7 +69,7 @@ public class BuildingManager {
 			dbManager.buildingCreated(b);
 			return ba;
 		} catch (Exception e) {
-			System.out.println("Error al contruir la building: "+b.toString()+". "+e.getMessage());
+			EventManager.getInstance().error("Error al contruir la building: "+b.toString()+". "+e.getMessage(),e);
 		}
 		return null;
 	}
