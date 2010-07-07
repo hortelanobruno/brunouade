@@ -196,6 +196,11 @@ public class ObtainFight {
 		}else if(page.toString().contains("retreating")){
 			//RETRITMENT
 			result.setResult(FightResultType.FORCES_RETRITMENT);
+		}else{
+			result.setResult(FightResultType.OTHER);
+			System.out.println("Error fight result. Grabando archivo.");
+			FileWriterWrapper fww = new FileWriterWrapper("./files/errores/errorFightResult.txt");
+			fww.write(page.toString());
 		}
 		return result;
 	}

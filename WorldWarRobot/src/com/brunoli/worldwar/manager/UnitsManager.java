@@ -22,7 +22,7 @@ public class UnitsManager {
 	
 	public void buyUnitsAttack(HttpGetUrl get, StringBuilder pageUnit, Profile profile, String unitAttack){
 		try {
-			System.out.println("Contruyendo units...");
+			System.out.println("Contruyendo units ataque...");
 			obtainInformation.leerDatosUsuario(pageUnit, profile);
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
 			//voy al tab air
@@ -41,7 +41,7 @@ public class UnitsManager {
 					break;
 				}
 			}
-			System.out.println("FIN Contruir units.");
+			System.out.println("FIN Contruir units ataque.");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -50,7 +50,7 @@ public class UnitsManager {
 	
 	public void buyUnitsDefense(HttpGetUrl get, StringBuilder pageUnit, Profile profile, String unitDefense){
 		try {
-			System.out.println("Contruyendo units...");
+			System.out.println("Contruyendo units defensa...");
 			obtainInformation.leerDatosUsuario(pageUnit, profile);
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
 			//voy al tab air
@@ -69,7 +69,7 @@ public class UnitsManager {
 					break;
 				}
 			}
-			System.out.println("FIN Contruir units.");
+			System.out.println("FIN Contruir units defensa.");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -141,6 +141,7 @@ public class RunnableAll implements Runnable {
 				System.out.println("Error en el get. " + e.getMessage());
 			}
 			get.close();
+			System.gc();
 			try {
 				int dif = profile.getStaminaMax()-profile.getStaminaCurrent();
 				System.out.println(Calendar.getInstance().getTime().toLocaleString()+" Durmiendo "+dif*2+" minutos.");
