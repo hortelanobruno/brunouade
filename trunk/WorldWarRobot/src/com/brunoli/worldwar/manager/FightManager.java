@@ -214,7 +214,7 @@ public class FightManager {
 	private boolean hasEnergyToAttack(Profile profile) {
 		if (profile.getStaminaCurrent() > 0 && profile.getHealthCurrent() > 27) {
 			return true;
-		}else if (profile.getStaminaCurrent() == 0) {
+		}else if (profile.getStaminaCurrent() == 0 && profile.getHealthCurrent() > 27) {
 			EventManager.getInstance().info("Duermo 2 min para recuperar stamina");
 			try {
 				Thread.sleep(1000 * 120);
