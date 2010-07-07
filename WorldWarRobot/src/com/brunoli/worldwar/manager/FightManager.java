@@ -128,10 +128,8 @@ public class FightManager {
 						}
 					}
 				} else {
-					EventManager.getInstance().info("SE ME ACABO LA ENERGIA. ");
-					EventManager.getInstance().info("Health: " + profile.getHealthCurrent() + "/"
-							+ profile.getHealthMax() + ". ");
-					EventManager.getInstance().info("Stamina: " + profile.getStaminaCurrent() + "/"
+					EventManager.getInstance().info("SE ME ACABO LA ENERGIA. "+"Health: " + profile.getHealthCurrent() + "/"
+							+ profile.getHealthMax() + ". "+"Stamina: " + profile.getStaminaCurrent() + "/"
 							+ profile.getStaminaMax() + ". FIN.");
 					break;
 				}
@@ -160,24 +158,18 @@ public class FightManager {
 		switch (fightResult.getResult()) {
 		case WON:
 			EventManager.getInstance().info("Le gane a " + enemy.getName() + ". Recaude "
-					+ fightResult.getMoney() + ". ");
-			EventManager.getInstance().info("Health: " + profile.getHealthCurrent() + "/"
-					+ profile.getHealthMax() + ". ");
-			EventManager.getInstance().info("Stamina: " + profile.getStaminaCurrent() + "/"
+					+ fightResult.getMoney() + ". "+"Health: " + profile.getHealthCurrent() + "/"
+					+ profile.getHealthMax() + ". "+"Stamina: " + profile.getStaminaCurrent() + "/"
 					+ profile.getStaminaMax() + ".");
 			break;
 		case LOST:
-			EventManager.getInstance().info("Perdi con " + enemy.getName() + ". ");
-			EventManager.getInstance().info("Health: " + profile.getHealthCurrent() + "/"
-					+ profile.getHealthMax() + ". ");
-			EventManager.getInstance().info("Stamina: " + profile.getStaminaCurrent() + "/"
+			EventManager.getInstance().info("Perdi con " + enemy.getName() + ". "+"Health: " + profile.getHealthCurrent() + "/"
+					+ profile.getHealthMax() + ". "+"Stamina: " + profile.getStaminaCurrent() + "/"
 					+ profile.getStaminaMax() + ".");
 			break;
 		case FORCES_RETRITMENT:
-			EventManager.getInstance().info(enemy.getName() + " se retiro. ");
-			EventManager.getInstance().info("Health: " + profile.getHealthCurrent() + "/"
-					+ profile.getHealthMax() + ". ");
-			EventManager.getInstance().info("Stamina: " + profile.getStaminaCurrent() + "/"
+			EventManager.getInstance().info(enemy.getName() + " se retiro. "+"Health: " + profile.getHealthCurrent() + "/"
+					+ profile.getHealthMax() + ". "+"Stamina: " + profile.getStaminaCurrent() + "/"
 					+ profile.getStaminaMax() + ".");
 			break;
 		}
@@ -222,6 +214,12 @@ public class FightManager {
 	private boolean hasEnergyToAttack(Profile profile) {
 		if (profile.getStaminaCurrent() > 0 && profile.getHealthCurrent() > 27) {
 			return true;
+		}else if (profile.getStaminaCurrent() == 0) {
+			EventManager.getInstance().info("Duermo 2 min para recuperar stamina");
+			try {
+				Thread.sleep(1000 * 120);
+			} catch (InterruptedException e) {
+			}
 		}
 		return false;
 	}

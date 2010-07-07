@@ -87,11 +87,11 @@ public class UnitEntityControllerTest {
 					} else if (a.contains("Defense:")) {
 						unit.setDefense(Integer.parseInt(a.replaceAll(
 								"Defense:", "").trim()));
-					} else if (a.contains("Cost:")) {
+					} else if (a.contains("Price:")) {
 						if(!a.contains("Honor")){
-							if (!a.contains("Loot")) {
+							if (a.contains("$")) {
 								unit.setPrice(Long.parseLong(a
-										.replaceAll("Cost:", "")
+										.replaceAll("Price:", "")
 										.replaceAll("\\$", "").replaceAll(",", "")
 										.trim()));
 								unit.setLootType(false);

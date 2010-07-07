@@ -35,8 +35,7 @@ public class TestDoBuildings {
 			obtainInformation.leerLinks(page, profile);
 			
 			// HACIENDO BUILDINGS
-			page = get.getUrl(profile.getMenuUrls().get(Menus.BUILDINGS));
-			buildingManager.doAllBuilding(get, page, profile);
+			buildingManager.doAllBuilding(get,profile);
 		} catch (Exception e) {
 			System.out.println("Error en el get. "+e.getMessage());
 		}
