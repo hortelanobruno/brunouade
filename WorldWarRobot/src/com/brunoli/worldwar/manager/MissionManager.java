@@ -5,6 +5,7 @@ import java.util.List;
 import com.brunoli.worldwar.beans.Mission;
 import com.brunoli.worldwar.beans.Profile;
 import com.brunoli.worldwar.db.DBManager;
+import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.parser.ObtainMission;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
@@ -23,31 +24,31 @@ public class MissionManager {
 	
 	public void doAllMission(HttpGetUrl get, StringBuilder pageMission, Profile profile){
 		try {
-			System.out.println("Missions....");
+			EventManager.getInstance().info("Missions....");
 			// Obtengo misiones
 			List<Mission> missions = leerMisionesDisponibles(get);
 			// Obtengo la mision deseada
 			Mission mission = obtenerMissionParaHacer(profile,missions);
-			System.out.println("Energy: "+profile.getEnergyCurrent()+"/"
+			EventManager.getInstance().info("Energy: "+profile.getEnergyCurrent()+"/"
 					+profile.getEnergyMax()+". Mission requiered energy: "+mission.getEnergyRequiered());
 			while(canDoMission(profile,mission)){
 				// Consumo la mision
-				System.out.println("Proceso mision: "+mission.getMissionName()+". Percent: "+mission.getPercentCompleted()+"%.");
+				EventManager.getInstance().info("Proceso mision: "+mission.getMissionName()+". Percent: "+mission.getPercentCompleted()+"%.");
 				pageMission = get.getUrl(mission.getMissionUrl());
 				//Chequeo si se hizo bien
 				// Tengo energia
 				if (obtainMission.checkDeployUnit(pageMission)) {
-					System.out.println("Tengo que deployar");
+					EventManager.getInstance().info("Tengo que deployar");
 					// Tengo que deployar units
 					String urlDeploy = obtainMission
 							.obtainUrlToDeployUnit(pageMission);
 					pageMission = get.getUrl(urlDeploy);
 					if(!obtainMission.checkDeployUnitsOK(pageMission)){
-						System.out.println("NO TENGO PLATA PARA DEPLOYEAR, ESPERAR PROXIMA RUEDA");
+						EventManager.getInstance().info("NO TENGO PLATA PARA DEPLOYEAR, ESPERAR PROXIMA RUEDA");
 						return;
 					}else{
 						// Proceso mision
-						System.out.println("Procesando mision luego de deployear.");
+						EventManager.getInstance().info("Procesando mision luego de deployear.");
 						mission = obtainMission.leerMissionHeader(pageMission);
 						pageMission = get.getUrl(mission.getMissionUrl());
 					}
@@ -60,13 +61,13 @@ public class MissionManager {
 				dbManager.actualizarMissiones(missions);
 				// Obtengo la mision deseada
 				mission = obtenerMissionParaHacer(profile,missions);
-				System.out.println("Energy: "+profile.getEnergyCurrent()+"/"
+				EventManager.getInstance().info("Energy: "+profile.getEnergyCurrent()+"/"
 						+profile.getEnergyMax()+". Mission requiered energy: "+mission.getEnergyRequiered());
 			}
-			System.out.println("Se acabo la energia.");
+			EventManager.getInstance().info("Se acabo la energia.");
 			// No tengo mas energia
 		} catch (Exception e) {
-			System.out.println("Error en el get2. " + e.getMessage());
+			EventManager.getInstance().error("Error en el get2. " + e.getMessage(),e);
 		}
 	}
 
@@ -76,7 +77,7 @@ public class MissionManager {
 		String url = "http://wwar.storm8.com/missions.php?cat=";
 		List<Mission> missions;
 		for(int i = 1 ; i < 10 ; i++){
-			System.out.println("Checking tab "+i);
+			EventManager.getInstance().info("Checking tab "+i);
 			try {
 				missions = obtainMission.leerMissions(get.getUrl(url+i));
 				for(Mission m : missions){

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.brunoli.worldwar.beans.Profile;
 import com.brunoli.worldwar.beans.Unit;
+import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.parser.ObtainUnits;
 import com.brunoli.worldwar.util.UnitType;
@@ -22,7 +23,7 @@ public class UnitsManager {
 	
 	public void buyUnitsAttack(HttpGetUrl get, StringBuilder pageUnit, Profile profile, String unitAttack){
 		try {
-			System.out.println("Contruyendo units ataque...");
+			EventManager.getInstance().info("Contruyendo units ataque...");
 			obtainInformation.leerDatosUsuario(pageUnit, profile);
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
 			//voy al tab air
@@ -37,11 +38,11 @@ public class UnitsManager {
 					unit = getMejorUnitAtaque(unitAttack,profile.getUnits());
 					obtainInformation.leerDatosUsuario(pageUnit, profile);
 				}else{
-					System.out.println("Se me acabo la plata para comprar units.");
+					EventManager.getInstance().info("Se me acabo la plata para comprar units.");
 					break;
 				}
 			}
-			System.out.println("FIN Contruir units ataque.");
+			EventManager.getInstance().info("FIN Contruir units ataque.");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -50,7 +51,7 @@ public class UnitsManager {
 	
 	public void buyUnitsDefense(HttpGetUrl get, StringBuilder pageUnit, Profile profile, String unitDefense){
 		try {
-			System.out.println("Contruyendo units defensa...");
+			EventManager.getInstance().info("Contruyendo units defensa...");
 			obtainInformation.leerDatosUsuario(pageUnit, profile);
 			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
 			//voy al tab air
@@ -59,17 +60,17 @@ public class UnitsManager {
 			int cantAbuy = profile.getAlianzeSize()*6-unit.getCantBuild();
 			for(int i=0;i<cantAbuy;i++){
 				if(profile.getMoney()>unit.getPrice()){
-					System.out.println("Contruyendo: "+unit.toString());
+					EventManager.getInstance().info("Contruyendo: "+unit.toString());
 					pageUnit = get.getUrl(unit.getUrlDeploy());
 					leerUnits(pageUnit,profile);
 					unit = getMejorUnitAtaque(unitDefense,profile.getUnits());
 					obtainInformation.leerDatosUsuario(pageUnit, profile);
 				}else{
-					System.out.println("Se me acabo la plata para comprar units.");
+					EventManager.getInstance().info("Se me acabo la plata para comprar units.");
 					break;
 				}
 			}
-			System.out.println("FIN Contruir units defensa.");
+			EventManager.getInstance().info("FIN Contruir units defensa.");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

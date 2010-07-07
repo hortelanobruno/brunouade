@@ -33,8 +33,16 @@ public class ObtainInformation {
 		mostrarDatos(datosUsuario);
 		Map<String, String> links = leerLinks(new StringBuilder(page));
 		mostrarDatos(links);
+		System.out.println("Time to gain money: "+getTimeToGainMoney(new StringBuilder(page)));
 	}
-
+	
+	public Long getTimeToGainMoney(StringBuilder page){
+		//'cashType'
+		String aux = page.toString().split("'cashType'")[1].split("</")[0].split(">")[1].trim();
+		Long time = Long.parseLong(aux.split(":")[1]) +( Long.parseLong(aux.split(":")[0]) * 60);
+		return time;
+	}
+	
 	public Map<String, String> leerLinks(StringBuilder page) {
 		Map<String, String> datos = new HashMap<String, String>();
 		// MISSION
