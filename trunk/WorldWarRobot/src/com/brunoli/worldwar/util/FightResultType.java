@@ -1,5 +1,5 @@
 package com.brunoli.worldwar.util;
 
 public enum FightResultType {
-WON,LOST,FORCES_RETRITMENT
+WON,LOST,FORCES_RETRITMENT,OTHER
 }

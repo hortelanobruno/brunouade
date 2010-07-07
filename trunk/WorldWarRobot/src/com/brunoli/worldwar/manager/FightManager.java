@@ -128,7 +128,11 @@ public class FightManager {
 						}
 					}
 				} else {
-					System.out.println("SE ME ACABO LA ENERGIA. FIN.");
+					System.out.print("SE ME ACABO LA ENERGIA. ");
+					System.out.print("Health: " + profile.getHealthCurrent() + "/"
+							+ profile.getHealthMax() + ". ");
+					System.out.println("Stamina: " + profile.getStaminaCurrent() + "/"
+							+ profile.getStaminaMax() + ". FIN.");
 					break;
 				}
 			}
