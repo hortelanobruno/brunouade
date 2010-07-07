@@ -64,8 +64,11 @@ public class ObtainUnits {
 							.split(">")[1];
 					cantBuild = a.split("ownedNum")[1].split("</")[0]
 							.split(">")[1];
-
-					cash = a.split("money.png")[1].split("</")[0].split(">")[1];
+					if(a.split("money.png").length==2){
+						cash = a.split("money.png")[1].split("</")[0].split(">")[1];
+					}else if(a.split("money.png").length==3){
+						cash = a.split("money.png")[2].split("</")[0].split(">")[1];
+					}
 					url2 = "http://wwar.storm8.com/equipment.php"
 							+ a.split("equipmentActionInner")[0]
 									.split("/equipment.php")[1].split("'")[0];

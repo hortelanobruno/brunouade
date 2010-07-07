@@ -76,17 +76,22 @@ public class MissionManager {
 		// obtainMission.leerMissions(pageMission)
 		String url = "http://wwar.storm8.com/missions.php?cat=";
 		List<Mission> missions;
+		Mission rent = null;
 		for(int i = 1 ; i < 10 ; i++){
 			EventManager.getInstance().info("Checking tab "+i);
 			try {
 				missions = obtainMission.leerMissions(get.getUrl(url+i));
+				//aca hay que actualizar con la base unos campos
+				dbManager.actualizarMissiones(missions);
 				for(Mission m : missions){
 					if(m.getPercentCompleted()<100){
-						//aca hay que actualizar con la base unos campos
-						dbManager.actualizarMissiones(missions);
+						if(rent!=null){
+							missions.add(rent);
+						}
 						return missions;
 					}
 				}
+				rent = obtenerMissionMasRentable(missions);
 			} catch (Exception e) {
 			}
 		}
@@ -105,16 +110,8 @@ public class MissionManager {
 			return false;
 		}
 	}
-
-	private Mission obtenerMissionParaHacer(Profile profile, List<Mission> missions) {
-		for (Mission mission : missions) {
-			if(mission.getPercentCompleted()<100){
-				if(profile.getAlianzeSize()>= mission.getAlianzeSizeRequiered()){
-					return mission;
-				}
-			}
-		}
-		//Busco la mision que me da mejor rentabilidad
+	
+	private Mission obtenerMissionMasRentable(List<Mission> missions){
 		Mission m = null;
 		for (Mission mission : missions) {
 			if(mission.getPercentCompleted()==100){
@@ -132,5 +129,17 @@ public class MissionManager {
 			}
 		}
 		return m;
+	}
+
+	private Mission obtenerMissionParaHacer(Profile profile, List<Mission> missions) {
+		for (Mission mission : missions) {
+			if(mission.getPercentCompleted()<100){
+				if(profile.getAlianzeSize()>= mission.getAlianzeSizeRequiered()){
+					return mission;
+				}
+			}
+		}
+		//Busco la mision que me da mejor rentabilidad
+		return obtenerMissionMasRentable(missions);
 	}
 }
