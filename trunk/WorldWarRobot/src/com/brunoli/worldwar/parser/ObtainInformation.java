@@ -2,11 +2,14 @@ package com.brunoli.worldwar.parser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 import com.brunoli.worldwar.beans.Profile;
+import com.brunoli.worldwar.util.FightResultType;
 import com.brunoli.worldwar.util.Menus;
 import com.brunoli.worldwar.util.UtilsWW;
 
@@ -14,7 +17,7 @@ public class ObtainInformation {
 
 	public static void main(String[] arg) {
 		ObtainInformation o = new ObtainInformation();
-		StringBuilder page = o.leerArchivo("./files/home.txt");
+		StringBuilder page = o.leerArchivo("./files/homeAtaques.txt");
 		if (page != null) {
 			o.parsearPagina(page);
 		} else {
@@ -28,6 +31,7 @@ public class ObtainInformation {
 
 	public void parsearPagina(StringBuilder page) {
 		// BAJO TODO A COMILLA SIMPLE
+		page = new StringBuilder(page.toString().replaceAll("\"", "'"));
 		Map<String, String> datosUsuario = leerDatosUsuario(new StringBuilder(
 				page));
 		mostrarDatos(datosUsuario);
@@ -41,6 +45,25 @@ public class ObtainInformation {
 		String aux = page.toString().split("'cashType'")[1].split("</")[0].split(">")[1].trim();
 		Long time = Long.parseLong(aux.split(":")[1]) +( Long.parseLong(aux.split(":")[0]) * 60);
 		return time;
+	}
+	
+	public List<FightResultType> leerUltimosAtaquesRecibidos(StringBuilder page){
+		//http://wwar.storm8.com/ajax/getNewsFeedStories.php?selectedTab=fight
+		int i=0;
+		List<FightResultType> results = new ArrayList<FightResultType>();
+		for(String a : page.toString().split("'newsFeedItem'")){
+			if(i>0){
+				if(a.contains("WON")){
+					//GANE
+					results.add(FightResultType.WON);
+				}else if(a.contains("LOST")){
+					//PERDI
+					results.add(FightResultType.LOST);
+				}
+			}
+			i++;
+		}
+		return results;
 	}
 	
 	public Map<String, String> leerLinks(StringBuilder page) {

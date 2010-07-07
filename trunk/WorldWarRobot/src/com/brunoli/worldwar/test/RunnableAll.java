@@ -1,6 +1,5 @@
 package com.brunoli.worldwar.test;
 
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -117,9 +116,7 @@ public class RunnableAll implements Runnable {
 				obtainInformation.leerDatosUsuario(page, profile);
 				// Chequeo si tengo energy porque pase de nivel
 				if (fightManager.canDoAttacks(profile)) {
-					System.out.println(Calendar.getInstance().getTime()
-							.toLocaleString()
-							+ " Sigo atacando porque tengo energia.");
+					EventManager.getInstance().info("Sigo atacando porque tengo energia.");
 					attackAll(profile);
 				}
 				// HAGO UN DEPOSITO PARA ASEGURAR LA PLATA PARA EL RESTORE
@@ -127,15 +124,14 @@ public class RunnableAll implements Runnable {
 				// CONSTRUYENDO UNITS
 				// Primero actualizo las units
 				leerUnits(profile);
-				// Contruyo units ataque
-				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
-				unitsManager.buyUnitsAttack(get, page, profile, unitAttack);
 				// Construyo units defensa
 				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
 				unitsManager.buyUnitsDefense(get, page, profile, unitDefense);
+				// Contruyo units ataque
+				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
+				unitsManager.buyUnitsAttack(get, page, profile, unitAttack);
 				// HACIENDO BUILDINGS
-				page = get.getUrl(profile.getMenuUrls().get(Menus.BUILDINGS));
-				buildingManager.doAllBuilding(get, page, profile);
+				buildingManager.doAllBuilding(get,profile);
 				// FIN Actualizo el profile
 				// Leo datos
 				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
@@ -161,18 +157,23 @@ public class RunnableAll implements Runnable {
 			StringBuilder page = get.getUrl(profile.getMenuUrls().get(
 					Menus.HOME));
 			obtainInformation.leerDatosUsuario(page, profile);
-			page = get.getUrl(profile.getMenuUrls().get(Menus.HOSPITAL));
-			RestoreValue rv = obtainRestore.leerDatos(page);
-			if (rv != null) {
-				if (rv.getValueVault() < rv.getValueRestore()) {
-					depositar(profile, get,
-							rv.getValueRestore() - rv.getValueVault());
+			if(profile.getHealthCurrent()!=profile.getHealthMax()){
+				page = get.getUrl(profile.getMenuUrls().get(Menus.HOSPITAL));
+				RestoreValue rv = obtainRestore.leerDatos(page);
+				if (rv != null) {
+					if (rv.getValueVault() < rv.getValueRestore()) {
+						depositar(profile, get,
+								rv.getValueRestore() - rv.getValueVault());
+						EventManager.getInstance().info(
+								"Se realizo el deposito para el restore.");
+					}
+				} else {
 					EventManager.getInstance().info(
-							"Se realizo el deposito para el restore.");
+							"No se pudo hacer el deposito para el restore.");
 				}
-			} else {
+			}else{
 				EventManager.getInstance().info(
-						"No se pudo hacer el deposito para el restore.");
+				"No se hace deposito porque estoy full of health.");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -204,10 +205,10 @@ public class RunnableAll implements Runnable {
 						EventManager.getInstance().info(
 								"Se hizo el restore health.");
 					} else {
-						EventManager.getInstance().info("No se pudo hacer el restore entonces espero para recaudar la plata.");
 						unitUrl = profile.getMenuUrls().get(Menus.HOME);
 						page = get.getUrl(unitUrl);
 						Long timeToWait = obtainInformation.getTimeToGainMoney(page);
+						EventManager.getInstance().info("No se pudo hacer el restore entonces espero ("+timeToWait+" seconds) para recaudar la plata.");
 						Thread.sleep((timeToWait + 60)*1000);
 						//Actualizo profile
 						unitUrl = profile.getMenuUrls().get(Menus.HOME);

@@ -1,8 +1,175 @@
-Military Research Lab
+Supply Depot
+Supply Depot
+Supply Depot
+Supply Depot
+Refinery
+Supply Depot
+Refinery
+Supply Depot
+Supply Depot
+Refinery
+Supply Depot
+Refinery
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Refinery
+Power Plant
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Supply Depot
+Weapons Factory
+Refinery
+Power Plant
+Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Power Plant
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Power Plant
+Refinery
+Supply Depot
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Power Plant
+Refinery
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Power Plant
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Power Plant
+Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Power Plant
+Refinery
+Supply Depot
+Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Power Plant
+Refinery
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Supply Depot
+Refinery
+Power Plant
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Power Plant
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Refinery
+Supply Depot
+Power Plant
+Weapons Factory
+Refinery
+Supply Depot
+Supply Depot
+Weapons Factory
+Refinery
+Power Plant
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Power Plant
+Weapons Factory
+Supply Depot
 Refinery
 Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Power Plant
+Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Power Plant
+Refinery
+Weapons Factory
+Supply Depot
+Supply Depot
+Refinery
+Weapons Factory
+Supply Depot
+Power Plant
+Refinery
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
+Supply Depot
+Power Plant
+Refinery
+Weapons Factory
+Supply Depot
+Refinery
+Supply Depot
+Weapons Factory
+Refinery
+Supply Depot
 Power Plant
-Oil Rig
 Supply Depot
 Refinery
 Weapons Factory
@@ -13,21 +180,17 @@ Supply Depot
 Weapons Factory
 Refinery
 Supply Depot
-Oil Rig
 Supply Depot
 Refinery
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
 Supply Depot
-Military Research Lab
 Refinery
 Supply Depot
 Weapons Factory
 Supply Depot
 Refinery
 Power Plant
-Oil Rig
 Supply Depot
 Weapons Factory
 Refinery
@@ -40,12 +203,9 @@ Supply Depot
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
 Refinery
-Military Research Lab
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Weapons Factory
@@ -55,7 +215,6 @@ Weapons Factory
 Supply Depot
 Power Plant
 Refinery
-Oil Rig
 Supply Depot
 Refinery
 Weapons Factory
@@ -63,15 +222,12 @@ Supply Depot
 Supply Depot
 Power Plant
 Refinery
-Military Research Lab
 Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Oil Rig
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Supply Depot
@@ -82,11 +238,9 @@ Refinery
 Power Plant
 Supply Depot
 Weapons Factory
-Oil Rig
 Refinery
 Supply Depot
 Supply Depot
-Military Research Lab
 Refinery
 Power Plant
 Weapons Factory
@@ -96,9 +250,7 @@ Supply Depot
 Weapons Factory
 Supply Depot
 Refinery
-Oil Rig
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Refinery
 Weapons Factory
@@ -109,8 +261,6 @@ Power Plant
 Weapons Factory
 Supply Depot
 Refinery
-Military Research Lab
-Oil Rig
 Supply Depot
 Weapons Factory
 Refinery
@@ -123,21 +273,17 @@ Supply Depot
 Refinery
 Supply Depot
 Power Plant
-Oil Rig
-Nuclear Testing Facility
 Weapons Factory
 Refinery
 Supply Depot
 Refinery
 Supply Depot
 Weapons Factory
-Military Research Lab
 Power Plant
 Supply Depot
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
 Refinery
 Supply Depot
 Power Plant
@@ -149,11 +295,8 @@ Refinery
 Supply Depot
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
 Refinery
-Oil Rig
 Supply Depot
-Military Research Lab
 Weapons Factory
 Refinery
 Supply Depot
@@ -164,7 +307,6 @@ Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Oil Rig
 Weapons Factory
 Supply Depot
 Refinery
@@ -174,12 +316,9 @@ Refinery
 Weapons Factory
 Supply Depot
 Refinery
-Military Research Lab
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Weapons Factory
-Oil Rig
 Supply Depot
 Refinery
 Supply Depot
@@ -192,21 +331,17 @@ Supply Depot
 Weapons Factory
 Supply Depot
 Refinery
-Oil Rig
 Power Plant
 Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Military Research Lab
 Refinery
 Supply Depot
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Refinery
-Oil Rig
 Supply Depot
 Weapons Factory
 Refinery
@@ -218,8 +353,6 @@ Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Oil Rig
-Military Research Lab
 Weapons Factory
 Power Plant
 Refinery
@@ -229,11 +362,9 @@ Supply Depot
 Weapons Factory
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
 Refinery
 Supply Depot
 Supply Depot
@@ -242,29 +373,24 @@ Weapons Factory
 Power Plant
 Supply Depot
 Refinery
-Military Research Lab
 Supply Depot
 Weapons Factory
 Refinery
 Supply Depot
 Power Plant
-Oil Rig
 Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
 Refinery
 Power Plant
-Nuclear Testing Facility
 Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Oil Rig
 Weapons Factory
 Supply Depot
 Refinery
-Military Research Lab
 Power Plant
 Supply Depot
 Refinery
@@ -274,7 +400,6 @@ Refinery
 Supply Depot
 Power Plant
 Weapons Factory
-Oil Rig
 Supply Depot
 Refinery
 Supply Depot
@@ -282,14 +407,11 @@ Refinery
 Weapons Factory
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Weapons Factory
-Military Research Lab
 Supply Depot
 Refinery
-Oil Rig
 Supply Depot
 Power Plant
 Weapons Factory
@@ -301,21 +423,17 @@ Weapons Factory
 Supply Depot
 Power Plant
 Refinery
-Oil Rig
 Supply Depot
 Weapons Factory
 Refinery
 Supply Depot
 Supply Depot
 Power Plant
-Military Research Lab
-Nuclear Testing Facility
 Refinery
 Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Oil Rig
 Weapons Factory
 Refinery
 Power Plant
@@ -328,22 +446,18 @@ Refinery
 Power Plant
 Supply Depot
 Weapons Factory
-Oil Rig
 Refinery
 Supply Depot
-Military Research Lab
 Supply Depot
 Weapons Factory
 Refinery
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Refinery
 Supply Depot
 Weapons Factory
 Refinery
 Supply Depot
-Oil Rig
 Power Plant
 Supply Depot
 Weapons Factory
@@ -353,16 +467,13 @@ Refinery
 Weapons Factory
 Supply Depot
 Power Plant
-Military Research Lab
 Refinery
 Supply Depot
-Oil Rig
 Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Weapons Factory
 Supply Depot
@@ -371,10 +482,8 @@ Refinery
 Weapons Factory
 Supply Depot
 Power Plant
-Oil Rig
 Refinery
 Supply Depot
-Military Research Lab
 Weapons Factory
 Refinery
 Supply Depot
@@ -384,11 +493,9 @@ Refinery
 Weapons Factory
 Supply Depot
 Refinery
-Oil Rig
 Supply Depot
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Supply Depot
@@ -397,8 +504,6 @@ Weapons Factory
 Supply Depot
 Refinery
 Power Plant
-Military Research Lab
-Oil Rig
 Supply Depot
 Weapons Factory
 Refinery
@@ -411,21 +516,17 @@ Supply Depot
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
 Refinery
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Military Research Lab
 Refinery
 Supply Depot
 Power Plant
 Weapons Factory
-Oil Rig
 Refinery
 Supply Depot
 Supply Depot
@@ -438,12 +539,9 @@ Supply Depot
 Weapons Factory
 Supply Depot
 Refinery
-Oil Rig
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Weapons Factory
-Military Research Lab
 Refinery
 Supply Depot
 Refinery
@@ -452,7 +550,6 @@ Supply Depot
 Power Plant
 Supply Depot
 Refinery
-Oil Rig
 Weapons Factory
 Supply Depot
 Refinery
@@ -463,12 +560,9 @@ Weapons Factory
 Supply Depot
 Supply Depot
 Refinery
-Military Research Lab
 Weapons Factory
 Supply Depot
-Oil Rig
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Weapons Factory
@@ -479,14 +573,12 @@ Refinery
 Power Plant
 Weapons Factory
 Supply Depot
-Oil Rig
 Refinery
 Supply Depot
 Weapons Factory
 Refinery
 Supply Depot
 Power Plant
-Military Research Lab
 Supply Depot
 Refinery
 Weapons Factory
@@ -494,8 +586,6 @@ Supply Depot
 Refinery
 Supply Depot
 Power Plant
-Oil Rig
-Nuclear Testing Facility
 Weapons Factory
 Refinery
 Supply Depot
@@ -507,8 +597,6 @@ Supply Depot
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
-Military Research Lab
 Supply Depot
 Refinery
 Power Plant
@@ -520,8 +608,6 @@ Refinery
 Supply Depot
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
-Oil Rig
 Supply Depot
 Refinery
 Supply Depot
@@ -531,11 +617,9 @@ Supply Depot
 Power Plant
 Refinery
 Supply Depot
-Military Research Lab
 Weapons Factory
 Supply Depot
 Refinery
-Oil Rig
 Supply Depot
 Weapons Factory
 Power Plant
@@ -546,14 +630,11 @@ Supply Depot
 Weapons Factory
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
-Oil Rig
 Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Military Research Lab
 Weapons Factory
 Refinery
 Supply Depot
@@ -562,7 +643,6 @@ Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Oil Rig
 Refinery
 Power Plant
 Supply Depot
@@ -573,10 +653,7 @@ Supply Depot
 Refinery
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
 Supply Depot
-Military Research Lab
-Oil Rig
 Refinery
 Supply Depot
 Weapons Factory
@@ -589,7 +666,6 @@ Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Oil Rig
 Power Plant
 Weapons Factory
 Supply Depot
@@ -597,14 +673,11 @@ Refinery
 Supply Depot
 Weapons Factory
 Refinery
-Military Research Lab
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
 Supply Depot
 Refinery
 Supply Depot
@@ -617,21 +690,17 @@ Supply Depot
 Weapons Factory
 Supply Depot
 Power Plant
-Oil Rig
 Refinery
-Military Research Lab
 Supply Depot
 Weapons Factory
 Refinery
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Weapons Factory
 Supply Depot
 Refinery
-Oil Rig
 Supply Depot
 Weapons Factory
 Refinery
@@ -641,10 +710,8 @@ Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Military Research Lab
 Refinery
 Power Plant
-Oil Rig
 Weapons Factory
 Supply Depot
 Refinery
@@ -653,25 +720,21 @@ Weapons Factory
 Supply Depot
 Refinery
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Oil Rig
 Refinery
 Supply Depot
 Power Plant
 Weapons Factory
 Supply Depot
 Refinery
-Military Research Lab
 Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
 Power Plant
-Oil Rig
 Refinery
 Supply Depot
 Weapons Factory
@@ -679,14 +742,11 @@ Supply Depot
 Refinery
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Oil Rig
-Military Research Lab
 Weapons Factory
 Power Plant
 Supply Depot
@@ -699,21 +759,17 @@ Power Plant
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
 Supply Depot
 Refinery
 Supply Depot
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
-Military Research Lab
 Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Oil Rig
 Refinery
 Power Plant
 Supply Depot
@@ -726,14 +782,11 @@ Weapons Factory
 Power Plant
 Supply Depot
 Refinery
-Oil Rig
 Supply Depot
 Weapons Factory
 Refinery
-Military Research Lab
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Weapons Factory
 Refinery
@@ -742,7 +795,6 @@ Refinery
 Supply Depot
 Weapons Factory
 Power Plant
-Oil Rig
 Refinery
 Supply Depot
 Weapons Factory
@@ -753,12 +805,9 @@ Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Military Research Lab
-Oil Rig
 Refinery
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Weapons Factory
 Supply Depot
 Refinery
@@ -767,25 +816,21 @@ Refinery
 Weapons Factory
 Supply Depot
 Power Plant
-Oil Rig
 Refinery
 Supply Depot
 Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Military Research Lab
 Power Plant
 Weapons Factory
 Refinery
 Supply Depot
 Supply Depot
 Refinery
-Oil Rig
 Weapons Factory
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Supply Depot
 Weapons Factory
@@ -795,9 +840,7 @@ Supply Depot
 Refinery
 Power Plant
 Weapons Factory
-Oil Rig
 Supply Depot
-Military Research Lab
 Refinery
 Supply Depot
 Weapons Factory
@@ -808,10 +851,8 @@ Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Oil Rig
 Refinery
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Weapons Factory
 Refinery
@@ -819,11 +860,9 @@ Supply Depot
 Supply Depot
 Weapons Factory
 Refinery
-Military Research Lab
 Power Plant
 Supply Depot
 Refinery
-Oil Rig
 Supply Depot
 Weapons Factory
 Refinery
@@ -836,12 +875,9 @@ Supply Depot
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Refinery
-Military Research Lab
 Weapons Factory
 Supply Depot
 Refinery
@@ -850,7 +886,6 @@ Power Plant
 Refinery
 Weapons Factory
 Supply Depot
-Oil Rig
 Supply Depot
 Refinery
 Weapons Factory
@@ -863,9 +898,6 @@ Weapons Factory
 Supply Depot
 Supply Depot
 Power Plant
-Oil Rig
-Military Research Lab
-Nuclear Testing Facility
 Refinery
 Weapons Factory
 Supply Depot
@@ -877,7 +909,6 @@ Power Plant
 Supply Depot
 Supply Depot
 Refinery
-Oil Rig
 Weapons Factory
 Supply Depot
 Refinery
@@ -886,13 +917,10 @@ Supply Depot
 Weapons Factory
 Refinery
 Supply Depot
-Military Research Lab
 Supply Depot
 Refinery
 Weapons Factory
 Power Plant
-Nuclear Testing Facility
-Oil Rig
 Supply Depot
 Refinery
 Supply Depot
@@ -904,12 +932,10 @@ Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
-Oil Rig
 Refinery
 Supply Depot
 Power Plant
 Weapons Factory
-Military Research Lab
 Supply Depot
 Refinery
 Supply Depot
@@ -917,9 +943,7 @@ Weapons Factory
 Refinery
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
-Oil Rig
 Supply Depot
 Weapons Factory
 Supply Depot
@@ -929,11 +953,9 @@ Power Plant
 Weapons Factory
 Refinery
 Supply Depot
-Military Research Lab
 Refinery
 Supply Depot
 Weapons Factory
-Oil Rig
 Power Plant
 Supply Depot
 Refinery
@@ -942,24 +964,20 @@ Weapons Factory
 Refinery
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Refinery
 Weapons Factory
 Supply Depot
-Oil Rig
 Supply Depot
 Refinery
 Weapons Factory
 Supply Depot
 Refinery
 Power Plant
-Military Research Lab
 Supply Depot
 Weapons Factory
 Refinery
 Supply Depot
 Supply Depot
-Oil Rig
 Refinery
 Power Plant
 Weapons Factory
@@ -970,13 +988,10 @@ Weapons Factory
 Refinery
 Supply Depot
 Power Plant
-Nuclear Testing Facility
 Supply Depot
 Refinery
-Oil Rig
 Weapons Factory
 Supply Depot
-Military Research Lab
 Refinery
 Supply Depot
 Power Plant
@@ -984,18 +999,3 @@ Weapons Factory
 Supply Depot
 Refinery
 Supply Depot
-Refinery
-Weapons Factory
-Supply Depot
-Power Plant
-Oil Rig
-Refinery
-Supply Depot
-Weapons Factory
-Supply Depot
-Refinery
-Power Plant
-Nuclear Testing Facility
-Supply Depot
-Military Research Lab
-Weapons Factory

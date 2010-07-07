@@ -32,7 +32,7 @@ public class UnitsManager {
 			int cantAbuy = profile.getAlianzeSize()*6-unit.getCantBuild();
 			for(int i=0;i<cantAbuy;i++){
 				if(profile.getMoney()>unit.getPrice()){
-					System.out.println("Contruyendo: "+unit.toString());
+					EventManager.getInstance().info("Contruyendo: "+unit.toString());
 					pageUnit = get.getUrl(unit.getUrlDeploy());
 					leerUnits(pageUnit,profile);
 					unit = getMejorUnitAtaque(unitAttack,profile.getUnits());
@@ -58,13 +58,20 @@ public class UnitsManager {
 			pageUnit = get.getUrl(linksUnits.get(UnitType.WATER));
 			Unit unit = getMejorUnitAtaque(unitDefense,profile.getUnits());
 			int cantAbuy = profile.getAlianzeSize()*6-unit.getCantBuild();
+			int cantUnit = unit.getCantBuild();
 			for(int i=0;i<cantAbuy;i++){
 				if(profile.getMoney()>unit.getPrice()){
-					EventManager.getInstance().info("Contruyendo: "+unit.toString());
+					EventManager.getInstance().info("Contruyendo: "+unit.toString()+". Unit price: "+unit.getPrice()+". Profile money: "+profile.getMoney()+".");
 					pageUnit = get.getUrl(unit.getUrlDeploy());
 					leerUnits(pageUnit,profile);
 					unit = getMejorUnitAtaque(unitDefense,profile.getUnits());
 					obtainInformation.leerDatosUsuario(pageUnit, profile);
+					if(cantUnit == unit.getCantBuild()){
+						EventManager.getInstance().info("Fin contruccion unit por iteracion invalida.");
+						break;
+					}else{
+						cantUnit = unit.getCantBuild();
+					}
 				}else{
 					EventManager.getInstance().info("Se me acabo la plata para comprar units.");
 					break;

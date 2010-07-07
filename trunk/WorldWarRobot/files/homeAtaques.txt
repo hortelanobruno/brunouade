@@ -1,0 +1,121 @@
+<div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightLoss.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="fail">LOST</span> the battle, losing <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">7,323</span> and taking 20 damage.<br/>
+       <span class="attackTime">33 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightWin.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by gtohh! You <span class="success">WON</span> the battle! You gained 1 experience and took 16 damage.<br/>
+       <span class="attackTime">35 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=6546177&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=7c97e76bda01aec9d82b553d5b88f46e48494266';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=6546177&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b52516c8e72623a91bb04e8cd1420a31219e69b2';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightWin.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="success">WON</span> the battle! You gained 1 experience and took 15 damage.<br/>
+       <span class="attackTime">54 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightLoss.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="fail">LOST</span> the battle, losing <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">3,504</span> and taking 19 damage.<br/>
+       <span class="attackTime">54 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightLoss.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="fail">LOST</span> the battle, losing <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">4,473</span> and taking 22 damage.<br/>
+       <span class="attackTime">54 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightLoss.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="fail">LOST</span> the battle, losing <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">19,818</span> and taking 21 damage.<br/>
+       <span class="attackTime">54 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightLoss.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="fail">LOST</span> the battle, losing <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">20,716</span> and taking 25 damage.<br/>
+       <span class="attackTime">54 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightLoss.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="fail">LOST</span> the battle, losing <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">28,772</span> and taking 26 damage.<br/>
+       <span class="attackTime">55 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightWin.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="success">WON</span> the battle! You gained 2 experience and took 15 damage.<br/>
+       <span class="attackTime">55 minutes ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div><div class="newsFeedItem"><table><tr><td class="newsFeedItemIcon"><img src="http://static.storm8.com/wwar/images/newsFeed/fightLoss.gif?v=306" width="30" height="30"></td><td class="newsFeedItemMsg">You were attacked by James! You <span class="fail">LOST</span> the battle, losing <span style="white-space: nowrap;"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;">859,778</span> and taking 20 damage.<br/>
+       <span class="attackTime">2 hours ago</span>
+       <br/>
+       <div class="attackOptionsSection">
+         <table><tr>
+           <td class="attackOptionView">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/profile.php?puid=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=b9ad83c64dc7f92b891c8f9c30dfc286fa1ba5e0';return false" value="View">
+           </td>
+           <td class="attackOptionAttack">
+             <input class="btnMed attackOptionBtn" type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=8088061&formNonce=975b0bc487a2b1482aba73c5fe081223d8b30d0b&h=98ce2a45c5fc45f3b2840a067249fdb062aa4406';return false" value="Attack Back">
+           </td>
+         </tr></table>
+       </div></td></tr></table></div>

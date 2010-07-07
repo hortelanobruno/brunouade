@@ -7,14 +7,17 @@ import com.brunoli.worldwar.beans.Building;
 import com.brunoli.worldwar.beans.Mission;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.controller.BuildingEntityController;
+import com.brunoli.worldwar.db.controller.BuildingIncomeToCreateEntityController;
 import com.brunoli.worldwar.db.controller.BuildingToCreateEntityController;
 import com.brunoli.worldwar.db.controller.MissionEntityController;
 import com.brunoli.worldwar.db.controller.UnitEntityController;
 import com.brunoli.worldwar.db.controller.exceptions.NonexistentEntityException;
 import com.brunoli.worldwar.db.entity.BuildingEntity;
+import com.brunoli.worldwar.db.entity.BuildingIncomeToCreateEntity;
 import com.brunoli.worldwar.db.entity.BuildingToCreateEntity;
 import com.brunoli.worldwar.db.entity.MissionEntity;
 import com.brunoli.worldwar.db.entity.UnitEntity;
+import com.brunoli.worldwar.util.BuildingType;
 
 public class DBManager {
 
@@ -22,12 +25,14 @@ public class DBManager {
 	private UnitEntityController unitEntityController;
 	private MissionEntityController missionEntityController;
 	private BuildingToCreateEntityController buildingToCreateEntityController;
+	private BuildingIncomeToCreateEntityController buildingIncomeToCreateEntityController;
 
 	public DBManager() {
 		buildingEntityController = new BuildingEntityController();
 		unitEntityController = new UnitEntityController();
 		missionEntityController = new MissionEntityController();
 		buildingToCreateEntityController = new BuildingToCreateEntityController();
+		buildingIncomeToCreateEntityController = new BuildingIncomeToCreateEntityController();
 	}
 
 	public List<Building> getBuildings() {
@@ -111,7 +116,27 @@ public class DBManager {
 		}
 	}
 
-	public String getBuildingToCreate() {
+	public String getBuildingToCreate(BuildingType buildingTypeToCreate) {
+		switch (buildingTypeToCreate) {
+		case DEFENSE:
+			return getBuildingDefenseToCreate();
+		case INCOME:
+			return getBuildingIncomeToCreate();
+		}
+		return null;
+	}
+
+	public String getBuildingIncomeToCreate() {
+		List<BuildingIncomeToCreateEntity> b = buildingIncomeToCreateEntityController
+				.findBuildingEntityEntities(1, 0);
+		if (b.size() == 1) {
+			return b.get(0).getName();
+		} else {
+			return null;
+		}
+	}
+
+	public String getBuildingDefenseToCreate() {
 		List<BuildingToCreateEntity> b = buildingToCreateEntityController
 				.findBuildingEntityEntities(1, 0);
 		if (b.size() == 1) {
