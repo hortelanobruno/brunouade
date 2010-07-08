@@ -45,7 +45,7 @@ public class ObtainRestore {
 			rv.setValueRestore(UtilsWW.parsearMoney(a.split("<img")[2].split("</")[0].split(">")[1]));
 			return rv;
 		}catch(Exception ex){
-			EventManager.getInstance().error("Error al leer datos para el restore. Pagina: "+page.toString(), ex);
+			//Si llega aca es xq estamos full of health
 			return null;
 		}
 	}
