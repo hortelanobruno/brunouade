@@ -15,6 +15,7 @@ public class MissionManager {
 	private ObtainInformation obtainInformation;
 	private ObtainMission obtainMission;
 	private DBManager dbManager;
+	private boolean moneyParaDeploy = true;
 
 	public MissionManager() {
 		obtainInformation = new ObtainInformation();
@@ -29,6 +30,7 @@ public class MissionManager {
 			List<Mission> missions = leerMisionesDisponibles(get);
 			// Obtengo la mision deseada
 			Mission mission = obtenerMissionParaHacer(profile,missions);
+			moneyParaDeploy = true;
 			EventManager.getInstance().info("Energy: "+profile.getEnergyCurrent()+"/"
 					+profile.getEnergyMax()+". Mission requiered energy: "+mission.getEnergyRequiered());
 			while(canDoMission(profile,mission)){
@@ -44,8 +46,8 @@ public class MissionManager {
 							.obtainUrlToDeployUnit(pageMission);
 					pageMission = get.getUrl(urlDeploy);
 					if(!obtainMission.checkDeployUnitsOK(pageMission)){
-						EventManager.getInstance().info("NO TENGO PLATA PARA DEPLOYEAR, ESPERAR PROXIMA RUEDA");
-						return;
+						EventManager.getInstance().info("No tengo plata para deployear, entonces busco otra mision");
+						moneyParaDeploy = false;
 					}else{
 						// Proceso mision
 						EventManager.getInstance().info("Procesando mision luego de deployear.");
@@ -133,10 +135,12 @@ public class MissionManager {
 	}
 
 	private Mission obtenerMissionParaHacer(Profile profile, List<Mission> missions) {
-		for (Mission mission : missions) {
-			if(mission.getPercentCompleted()<100){
-				if(profile.getAlianzeSize()>= mission.getAlianzeSizeRequiered()){
-					return mission;
+		if(moneyParaDeploy){
+			for (Mission mission : missions) {
+				if(mission.getPercentCompleted()<100){
+					if(profile.getAlianzeSize()>= mission.getAlianzeSizeRequiered()){
+						return mission;
+					}
 				}
 			}
 		}

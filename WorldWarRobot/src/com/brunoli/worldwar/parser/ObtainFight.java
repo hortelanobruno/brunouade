@@ -12,6 +12,7 @@ import com.brunoli.worldwar.beans.EnemyProfile;
 import com.brunoli.worldwar.beans.FightResult;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
+import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.util.FightResultType;
 import com.brunoli.worldwar.util.FileWriterWrapper;
 import com.brunoli.worldwar.util.UtilsWW;
@@ -168,7 +169,7 @@ public class ObtainFight {
 					enemy.setAlianceSize(Integer.parseInt(alianceSize));
 					enemys.add(enemy);
 				} catch (Exception ex) {
-					System.out.println("asdasd");
+					EventManager.getInstance().error("Error al leer enemy list. ", ex);
 				}
 			}
 			i++;
