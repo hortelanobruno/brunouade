@@ -104,13 +104,7 @@ public class RunnableAll implements Runnable {
 				// INICIAR ATAQUES
 				attackAll(profile);
 				EventManager.getInstance().info("Fin de los ataques.");
-				EventManager.getInstance().info(
-						"Ejecutando todas las misiones.");
-				// EJECUTAMOS MISIONES
-				page = get.getUrl(profile.getMenuUrls().get(Menus.MISSION));
-				mManager.doAllMission(get, page, profile);
-				EventManager.getInstance().info(
-						"Fin Ejecutando todas las misiones.");
+				ejecutarMisiones(profile);
 				// Leo datos
 				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
 				obtainInformation.leerDatosUsuario(page, profile);
@@ -152,6 +146,17 @@ public class RunnableAll implements Runnable {
 		}
 	}
 
+	private void ejecutarMisiones(Profile profile) throws Exception {
+		EventManager.getInstance().info(
+				"Ejecutando todas las misiones.");
+		// EJECUTAMOS MISIONES
+		StringBuilder page = get.getUrl(profile.getMenuUrls().get(Menus.MISSION));
+		obtainInformation.leerDatosUsuario(page, profile);
+		mManager.doAllMission(get, page, profile);
+		EventManager.getInstance().info(
+				"Fin Ejecutando todas las misiones.");
+	}
+
 	private void depositarParaElRestore(Profile profile) {
 		try {
 			StringBuilder page = get.getUrl(profile.getMenuUrls().get(
@@ -167,9 +172,6 @@ public class RunnableAll implements Runnable {
 						EventManager.getInstance().info(
 								"Se realizo el deposito para el restore.");
 					}
-				} else {
-					EventManager.getInstance().info(
-							"No se pudo hacer el deposito para el restore.");
 				}
 			}else{
 				EventManager.getInstance().info(
@@ -179,13 +181,11 @@ public class RunnableAll implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	private void recargarHealth(Profile profile) {
 		EventManager.getInstance().info("Go to hospital.");
 		String unitUrl = profile.getMenuUrls().get(Menus.HOSPITAL);
-		EventManager.getInstance().info("Link... " + unitUrl);
 		StringBuilder page;
 		try {
 			page = get.getUrl(unitUrl);
@@ -197,16 +197,31 @@ public class RunnableAll implements Runnable {
 							"Se hizo el restore health.");
 				} else {
 					EventManager.getInstance().info("No alcanza para el restore health. Asi que deposito.");
-					depositar(profile, get,rv.getValueRestore() - rv.getValueVault());
-					page = get.getUrl(unitUrl);
-					rv = obtainRestore.leerDatos(page);
-					if (rv.getValueVault() > rv.getValueRestore()) {
-						page = get.getUrl(rv.getUrlRestore());
-						EventManager.getInstance().info(
-								"Se hizo el restore health.");
-					} else {
+					obtainInformation.leerDatosUsuario(page, profile);
+					//Chequeo si tengo la plata para depositar
+					Double aux = (rv.getValueRestore() - rv.getValueVault()) * 1.15;
+					if(profile.getMoney()>aux.longValue()){
+						depositar(profile, get,aux.longValue());
+						page = get.getUrl(unitUrl);
+						rv = obtainRestore.leerDatos(page);
+						if(rv!=null){
+							if (rv.getValueVault() > rv.getValueRestore()) {
+								page = get.getUrl(rv.getUrlRestore());
+								EventManager.getInstance().info(
+										"Se hizo el restore health.");
+							}
+						}
+					}else {
+						EventManager.getInstance().info("No alcanza mi plata para hacer el restore asi que tengo que esperar y juntar plata.");
+						//Ejecuto misiones para ganar plata
+						ejecutarMisiones(profile);
+						//Actualizo profile
 						unitUrl = profile.getMenuUrls().get(Menus.HOME);
 						page = get.getUrl(unitUrl);
+						obtainInformation.leerDatosUsuario(page, profile);
+						//Deposito lo que tengo
+						depositar(profile, get,profile.getMoney());
+						//Espero un rato
 						Long timeToWait = obtainInformation.getTimeToGainMoney(page);
 						EventManager.getInstance().info("No se pudo hacer el restore entonces espero ("+timeToWait+" seconds) para recaudar la plata.");
 						Thread.sleep((timeToWait + 60)*1000);
@@ -219,7 +234,7 @@ public class RunnableAll implements Runnable {
 					}
 				}
 			} else {
-				EventManager.getInstance().info("No se pudo hacer el restore.");
+				EventManager.getInstance().info("Estoy full of health.");
 			}
 		} catch (Exception ex) {
 			// SI ENTRA ACA ES PORQUE NO HAY QUE RECUPERAR HEALTH
@@ -232,14 +247,11 @@ public class RunnableAll implements Runnable {
 
 	private void depositar(Profile profile, HttpGetUrl get, Long depositValue) {
 		try {
-			EventManager.getInstance().info("Go to bank.");
 			String unitUrl = profile.getMenuUrls().get(Menus.BANK);
-			EventManager.getInstance().info("Link... " + unitUrl);
 			StringBuilder page = get.getUrl(unitUrl);
-			Double aux = depositValue * 1.15;
-			EventManager.getInstance().info("Depositando " + aux.longValue());
+			EventManager.getInstance().info("Depositando " + depositValue);
 			Map<String, String> params = new HashMap<String, String>();
-			params.put("depositAmount", "" + aux.longValue());
+			params.put("depositAmount", "" + depositValue);
 			params.put("action", "Deposit");
 			params.put("sk", "1");
 			page = get.postUrl("http://wwar.storm8.com/bank.php", params);

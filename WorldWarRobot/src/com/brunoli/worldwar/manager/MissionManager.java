@@ -76,6 +76,7 @@ public class MissionManager {
 		// obtainMission.leerMissions(pageMission)
 		String url = "http://wwar.storm8.com/missions.php?cat=";
 		List<Mission> missions;
+		
 		Mission rent = null;
 		for(int i = 1 ; i < 10 ; i++){
 			EventManager.getInstance().info("Checking tab "+i);
