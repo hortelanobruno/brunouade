@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.brunoli.worldwar.beans.Building;
+import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.util.BuildingType;
 import com.brunoli.worldwar.util.UtilsWW;
 
@@ -194,7 +195,7 @@ public class ObtainBuildings {
 						buildings.add(building);
 					}
 				} catch (Exception ex) {
-					System.out.println("asdasd");
+					EventManager.getInstance().error("Error al cargar info building. ", ex);
 				}
 			}
 			i++;
