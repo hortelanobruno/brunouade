@@ -1169,7 +1169,7 @@ Price: $4,700,000
 Disband: $2,820,000
 Upkeep: $23,000
 
-IAI Harop UAV **EXPENDABLE**
+IAI Harop UAV
 Level: 44
 Attack: 135
 Defense: 0
@@ -1193,7 +1193,7 @@ Price: $8,000,000
 Disband: $4,800,000
 Upkeep: $46,000
 
-MQ-8B Fire Scout Helicopter **EXPENDABLE**
+MQ-8B Fire Scout Helicopter
 Level: 60
 Attack: 170
 Defense: 0
@@ -1209,7 +1209,7 @@ Price: $14,200,000
 Disband: $8,520,000
 Upkeep: $65,000
 
-BAE Mantis UAV **EXPENDABLE**
+BAE Mantis UAV
 Level: 70
 Attack: 180
 Defense: 0
