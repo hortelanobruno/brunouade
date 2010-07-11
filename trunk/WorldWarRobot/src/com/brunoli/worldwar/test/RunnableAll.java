@@ -64,7 +64,6 @@ public class RunnableAll implements Runnable {
 		obtainUnits = new ObtainUnits();
 		dbManager = new DBManager();
 		obtainBuildings = new ObtainBuildings();
-		fightManager = new FightManager();
 		obtainRestore = new ObtainRestore();
 		buildingManager = new BuildingManager();
 		unitsManager = new UnitsManager();
@@ -242,6 +241,7 @@ public class RunnableAll implements Runnable {
 	}
 
 	private void attackAll(Profile profile) {
+		fightManager = new FightManager();
 		fightManager.startFighting(get, profile);
 	}
 
