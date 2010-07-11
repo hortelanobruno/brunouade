@@ -10,5 +10,7 @@ public class CreateAll {
 		new UnitEntityControllerTest();
 		new MissionEntityControllerTest();
 		new BuildingEntityControllerTest();
+		new BuildingToCreateEntityControllerTest();
+		new BuildingIncomeToCreateEntityControllerTest();
 	}
 }
