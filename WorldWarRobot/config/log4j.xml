@@ -19,6 +19,15 @@
                    value="%d %p %m%n" />
         </layout>
     </appender>
+    <appender name="fileWorldWarOther" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./log/worldwarOther.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
     <appender name="fileHttp" class="org.apache.log4j.DailyRollingFileAppender">
         <param name="File" value="./log/http.log"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
@@ -34,6 +43,9 @@
     </logger>
     <logger name="worldWarError">
         <appender-ref ref="fileWorldWarError" />
+    </logger>
+    <logger name="worldWarOther">
+        <appender-ref ref="fileWorldWarOther" />
     </logger>
     <logger name="org.apache.http.impl.conn.SingleClientConnManager">
         <appender-ref ref="fileHttp" />

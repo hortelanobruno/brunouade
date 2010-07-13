@@ -13,6 +13,7 @@ public class EventManager {
 	private static EventManager manager;
 	private Log logError;
 	private Log logInfo;
+	private Log logOther;
 
 	private EventManager() {
 		try {
@@ -22,6 +23,7 @@ public class EventManager {
 		}
 		logError = LogFactory.getLog("worldWarError");
 		logInfo = LogFactory.getLog("worldWarInfo");
+		logOther = LogFactory.getLog("worldWarOther");
 	}
 
 
@@ -30,6 +32,10 @@ public class EventManager {
 			manager = new EventManager();
 		}
 		return manager;
+	}
+	
+	public void other(String msj) {
+		logOther.info(msj);
 	}
 
 	public void info(String msj) {

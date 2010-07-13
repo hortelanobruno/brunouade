@@ -21,6 +21,7 @@ import com.brunoli.worldwar.parser.ObtainUnits;
 import com.brunoli.worldwar.util.Menus;
 import com.brunoli.worldwar.util.RestoreValue;
 import com.brunoli.worldwar.util.UnitType;
+import com.brunoli.worldwar.util.UtilsWW;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class RunnableAll implements Runnable {
@@ -70,7 +71,7 @@ public class RunnableAll implements Runnable {
 		mManager = new MissionManager();
 		while (true) {
 			get = new HttpGetUrl();
-			EventManager.getInstance().info("Atacando...");
+			EventManager.getInstance().other("Iniciando proceso...");
 			Profile profile = null;
 			try {
 				StringBuilder page = get.getUrl(url);
@@ -100,6 +101,7 @@ public class RunnableAll implements Runnable {
 				recargarHealth(profile);
 				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
 				obtainInformation.leerDatosUsuario(page, profile);
+				EventManager.getInstance().other("Profile money: "+UtilsWW.toMoney(profile.getMoney())+".");
 				// INICIAR ATAQUES
 				attackAll(profile);
 				EventManager.getInstance().info("Fin de los ataques.");
@@ -107,6 +109,7 @@ public class RunnableAll implements Runnable {
 				// Leo datos
 				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
 				obtainInformation.leerDatosUsuario(page, profile);
+				EventManager.getInstance().other("Profile money: "+UtilsWW.toMoney(profile.getMoney())+".");
 				// Chequeo si tengo energy porque pase de nivel
 				if (fightManager.canDoAttacks(profile)) {
 					EventManager.getInstance().info("Sigo atacando porque tengo energia.");
@@ -135,6 +138,7 @@ public class RunnableAll implements Runnable {
 			}
 			get.close();
 			System.gc();
+			EventManager.getInstance().other("Fin proceso.");
 			try {
 				int dif = profile.getStaminaMax() - profile.getStaminaCurrent();
 				EventManager.getInstance().info(
@@ -166,10 +170,16 @@ public class RunnableAll implements Runnable {
 				RestoreValue rv = obtainRestore.leerDatos(page);
 				if (rv != null) {
 					if (rv.getValueVault() < rv.getValueRestore()) {
-						depositar(profile, get,
-								rv.getValueRestore() - rv.getValueVault());
-						EventManager.getInstance().info(
-								"Se realizo el deposito para el restore.");
+						Double aux = (rv.getValueRestore() - rv.getValueVault())*1.15;
+						if(profile.getMoney()>aux.longValue()){
+							EventManager.getInstance().info("Se realizo el deposito para el restore.");
+							EventManager.getInstance().other("Se realizo el deposito para el restore. Money: "+UtilsWW.toMoney(aux.longValue())+".");
+							depositar(profile, get,aux.longValue());
+						}else{
+							EventManager.getInstance().info("No alcanza para depositar. Deposito lo que tengo.");
+							EventManager.getInstance().other("No alcanza para depositar. Deposito lo que tengo. Money: "+UtilsWW.toMoney(profile.getMoney())+".");
+							depositar(profile, get,profile.getMoney());
+						}
 					}
 				}
 			}else{
@@ -250,6 +260,7 @@ public class RunnableAll implements Runnable {
 			String unitUrl = profile.getMenuUrls().get(Menus.BANK);
 			StringBuilder page = get.getUrl(unitUrl);
 			EventManager.getInstance().info("Depositando " + depositValue);
+			EventManager.getInstance().other("Depositando " + UtilsWW.toMoney(depositValue)+".");
 			Map<String, String> params = new HashMap<String, String>();
 			params.put("depositAmount", "" + depositValue);
 			params.put("action", "Deposit");

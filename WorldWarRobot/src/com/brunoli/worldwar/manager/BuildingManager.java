@@ -11,6 +11,7 @@ import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.util.BuildingType;
 import com.brunoli.worldwar.util.FightResultType;
 import com.brunoli.worldwar.util.Menus;
+import com.brunoli.worldwar.util.UtilsWW;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class BuildingManager {
@@ -44,6 +45,7 @@ public class BuildingManager {
 			EventManager.getInstance().info("Contruyendo buildings...");
 			while(building!=null && canDoBuilding(b,profile)){
 				EventManager.getInstance().info("Contruyendo: "+b.getName());
+				EventManager.getInstance().other("Contruyendo: "+b.getName()+". Price: "+UtilsWW.toMoney(b.getInitialCost())+".");
 				//Construir building
 				pageBuilding = doBuilding(b,get);
 				//Cargo datos energia
@@ -84,6 +86,8 @@ public class BuildingManager {
 		}else{
 			EventManager.getInstance().info("No se pudo construir: "+b.getName()+". My money: "+profile.getMoney()+". Building cost: "+
 					b.getInitialCost()+".");
+			EventManager.getInstance().other("No se pudo construir: "+b.getName()+". My money: "+UtilsWW.toMoney(profile.getMoney())+". Building cost: "+
+					UtilsWW.toMoney(b.getInitialCost())+".");
 			return false;
 		}
 	}

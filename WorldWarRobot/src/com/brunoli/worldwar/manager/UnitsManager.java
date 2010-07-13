@@ -9,6 +9,7 @@ import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.parser.ObtainUnits;
 import com.brunoli.worldwar.util.UnitType;
+import com.brunoli.worldwar.util.UtilsWW;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class UnitsManager {
@@ -32,7 +33,8 @@ public class UnitsManager {
 			int cantAbuy = profile.getAlianzeSize()*6-unit.getCantBuild();
 			for(int i=0;i<cantAbuy;i++){
 				if(profile.getMoney()>unit.getPrice()){
-					EventManager.getInstance().info("Contruyendo: "+unit.toString());
+					EventManager.getInstance().info("Contruyendo: "+unit.getName()+". Unit price: "+unit.getPrice()+". Profile money: "+profile.getMoney()+". Cant: "+unit.getCantBuild());
+					EventManager.getInstance().other("Contruyendo: "+unit.getName()+". Unit price: "+UtilsWW.toMoney(unit.getPrice())+". Profile money: "+UtilsWW.toMoney(profile.getMoney())+". Cant: "+unit.getCantBuild());
 					pageUnit = get.getUrl(unit.getUrlDeploy());
 					leerUnits(pageUnit,profile);
 					unit = getMejorUnitAtaque(unitAttack,profile.getUnits());
@@ -61,7 +63,8 @@ public class UnitsManager {
 			int cantUnit = unit.getCantBuild();
 			for(int i=0;i<cantAbuy;i++){
 				if(profile.getMoney()>unit.getPrice()){
-					EventManager.getInstance().info("Contruyendo: "+unit.toString()+". Unit price: "+unit.getPrice()+". Profile money: "+profile.getMoney()+".");
+					EventManager.getInstance().info("Contruyendo: "+unit.getName()+". Unit price: "+unit.getPrice()+". Profile money: "+profile.getMoney()+". Cant: "+unit.getCantBuild());
+					EventManager.getInstance().other("Contruyendo: "+unit.getName()+". Unit price: "+UtilsWW.toMoney(unit.getPrice())+". Profile money: "+UtilsWW.toMoney(profile.getMoney())+". Cant: "+unit.getCantBuild());
 					pageUnit = get.getUrl(unit.getUrlDeploy());
 					leerUnits(pageUnit,profile);
 					unit = getMejorUnitAtaque(unitDefense,profile.getUnits());

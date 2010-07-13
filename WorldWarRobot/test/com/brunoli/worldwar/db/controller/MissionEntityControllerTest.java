@@ -41,14 +41,6 @@ public class MissionEntityControllerTest {
 					for(String b : a.split("/n")){
 						if(j>4){
 							if(!b.isEmpty()){
-//								Fend off Enemy Attack
-//								Level: 1
-//								Allies: 1
-//								Energy: 9
-//								Units: (15) Marines (2) Frigate (2) Fighter
-//								Possible Money Gained: $750 - $2,250
-//								Possible Loot Gained: Normal Buyable Units
-//								Experience Gained: 1
 								if(b.contains("Level:")){
 									mission.setLevelRequiered(Integer.parseInt(b.replaceAll("Level:", "").replaceAll(" ", "").replaceAll("/n", "")));
 								} else
@@ -89,7 +81,6 @@ public class MissionEntityControllerTest {
 									//NAME
 									mission = new MissionEntity();
 									mission.setMissionName(b.replaceAll("/n", ""));
-									System.out.println("Name: "+mission.getMissionName());
 									mission.setTabIndex(tab);
 
 								}

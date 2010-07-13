@@ -8,6 +8,8 @@ import com.brunoli.worldwar.db.DBManager;
 import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.parser.ObtainMission;
+import com.brunoli.worldwar.util.Menus;
+import com.brunoli.worldwar.util.UtilsWW;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class MissionManager {
@@ -26,6 +28,10 @@ public class MissionManager {
 	public void doAllMission(HttpGetUrl get, StringBuilder pageMission, Profile profile){
 		try {
 			EventManager.getInstance().info("Missions....");
+			//Actualizo info profile
+			StringBuilder page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
+			obtainInformation.leerLinks(page, profile);
+			EventManager.getInstance().other("Profile antes de missiones money: "+UtilsWW.toMoney(profile.getMoney())+".");
 			// Obtengo misiones
 			List<Mission> missions = leerMisionesDisponibles(get);
 			// Obtengo la mision deseada
@@ -33,7 +39,11 @@ public class MissionManager {
 			moneyParaDeploy = true;
 			EventManager.getInstance().info("Energy: "+profile.getEnergyCurrent()+"/"
 					+profile.getEnergyMax()+". Mission requiered energy: "+mission.getEnergyRequiered());
+			int auxIt=0;
 			while(canDoMission(profile,mission)){
+				if(auxIt>8){
+					break;
+				}
 				// Consumo la mision
 				EventManager.getInstance().info("Proceso mision: "+mission.getMissionName()+". Percent: "+mission.getPercentCompleted()+"%.");
 				pageMission = get.getUrl(mission.getMissionUrl());
@@ -48,6 +58,7 @@ public class MissionManager {
 					if(!obtainMission.checkDeployUnitsOK(pageMission)){
 						EventManager.getInstance().info("No tengo plata para deployear, entonces busco otra mision");
 						moneyParaDeploy = false;
+						auxIt++;
 					}else{
 						// Proceso mision
 						EventManager.getInstance().info("Procesando mision luego de deployear.");
@@ -67,6 +78,7 @@ public class MissionManager {
 						+profile.getEnergyMax()+". Mission requiered energy: "+mission.getEnergyRequiered());
 			}
 			EventManager.getInstance().info("Se acabo la energia.");
+			EventManager.getInstance().other("Profile despues de misiones money: "+UtilsWW.toMoney(profile.getMoney())+".");
 			// No tengo mas energia
 		} catch (Exception e) {
 			EventManager.getInstance().error("Error en el get2. " + e.getMessage(),e);
@@ -144,6 +156,7 @@ public class MissionManager {
 				}
 			}
 		}
+		//PUEDE QUE NO TENGA PARA DEPLOYEAR LA MISION CON MAS RENTABILIDAD Y ENTONCES ME QUEDA ITERANDO
 		//Busco la mision que me da mejor rentabilidad
 		return obtenerMissionMasRentable(missions);
 	}
