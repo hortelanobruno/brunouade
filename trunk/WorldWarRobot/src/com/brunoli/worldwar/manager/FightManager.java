@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import com.brunoli.worldwar.beans.Enemy;
 import com.brunoli.worldwar.beans.EnemyProfile;
@@ -18,7 +19,9 @@ import com.brunoli.worldwar.parser.ObtainFight;
 import com.brunoli.worldwar.parser.ObtainInformation;
 import com.brunoli.worldwar.test.RunnableAll;
 import com.brunoli.worldwar.util.FightResultType;
+import com.brunoli.worldwar.util.FileWriterWrapper;
 import com.brunoli.worldwar.util.Menus;
+import com.brunoli.worldwar.util.UtilsWW;
 import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class FightManager {
@@ -41,6 +44,7 @@ public class FightManager {
 		String attackAgainUrl = null;
 		StringBuilder pageFight = null;
 		StringBuilder pageEnemy = null;
+		StringBuilder pageToWrite = null;
 		EnemyProfile enemyProfile = null;
 		FightResult fightResult = null;
 		initTime = Calendar.getInstance();
@@ -67,6 +71,7 @@ public class FightManager {
 						if (canAttack(profile, enemyToAttack)) {
 							EventManager.getInstance().info("Atacando a "
 									+ enemyToAttack.getName());
+							pageToWrite = pageEnemy;
 							// 6 - Attack
 							pageEnemy = httpGet.getUrl(enemyToAttack
 									.getProfile().getAttackUrl());
@@ -117,6 +122,10 @@ public class FightManager {
 								recargoFightStats(enemyToAttack, fightResult);
 								mostrarResultadoFight(profile, enemyToAttack,
 										fightResult);
+								//guardo pagina del profile con el que perdi pageToWrite
+								Random ran = new Random();
+								FileWriterWrapper fww = new FileWriterWrapper("./files/errores/errorMFightPerdida"+ran.nextInt(1000000)+".txt");
+								fww.write(pageToWrite.toString());
 							} else {
 								// RETRITMENT
 								enemyRetired.add(enemyToAttack.getName());
@@ -136,6 +145,7 @@ public class FightManager {
 			}
 			EventManager.getInstance().info("Fin peleas. Money ganada : " + moneyGained
 					+ " .");
+			EventManager.getInstance().other("Fin peleas. Money ganada: "+UtilsWW.toMoney(moneyGained)+".");
 		} catch (Exception e) {
 			EventManager.getInstance().error("Exception222. ",e);
 		}

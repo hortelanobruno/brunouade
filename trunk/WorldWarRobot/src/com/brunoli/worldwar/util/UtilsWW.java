@@ -1,5 +1,7 @@
 package com.brunoli.worldwar.util;
 
+import java.text.DecimalFormat;
+
 public class UtilsWW {
 	
 	public static void main(String[] args){
@@ -61,4 +63,10 @@ public class UtilsWW {
 //		}
 		return Long.parseLong(aux);
 	}
+	
+	public static String toMoney(Long money) {
+		DecimalFormat df = new DecimalFormat("###,###");
+		return df.format(money);
+	}
+
 }
