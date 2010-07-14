@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/> 
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/global.css?v=306"/> 
+
+                           
+<script type="text/javascript" src="http://static.storm8.com/wwar/js/global.js?v=306"></script><title>My Profile</title>
+  <script type="text/javascript">
+    var walkDOM = function walk(node, func) {
+    	  func(node);
+    	  node = node.firstChild;
+    	  while (node) {
+    		  walk(node, func);
+    		  node = node.nextSibling;
+    		}
+    };  
+    if (!window.devicePixelRatio) {
+    	var body = document.getElementsByTagName('*');
+    	walkDOM(body[0], function(n) {
+        	if (n.style) {
+        	 n.style.display = "none";
+        	}
+    	});
+    }
+  </script>
+</head>
+
+<body style="">
+<div id="overlay" class="dialogOverlay"></div>
+<div id="topBar" class="topBar"><div class="topBarBg"></div><a href="/bank.php?formNonce=b3672f87c62840bb62f89ca4f23d981863e601b2&h=a91e1e108077cae16f35f1c8c5f5314af1a55dcf"><div class="cashTopArea">
+        <span class="topBarCash"><img src="http://static.storm8.com/wwar/images/money.png?v=306" width="15" height="12" style="padding:0 2px -1px 0;"><span id="cashCurrent" style="white-space:nowrap">433,651</span></span>
+      </div>
+      <div id="cashTimerDiv" class="cashBottomArea"><span style="font-size: 11px; font-weight: normal;"><span>+<span style="white-space: nowrap;">1,000</span></span> in </span><span id="cashType" style="font-size:11px;font-weight:normal;">15:28</span></div></a><div class="levelTopArea">
+          <div class="levelBgTopArea"></div>
+          <div class="levelFrontTopArea"><a href="/profile.php?formNonce=b3672f87c62840bb62f89ca4f23d981863e601b2&h=9f12c8ec583675c2766db52a987693bdb9d6f1f5">17!</a></div>
+        </div>
+        <div class="levelBottomArea">
+        Level
+        </div><div class="levelBarTopArea">
+             <div class="levelBar" style="width:90px">
+             <div class="bgLevelBar" style="width:90px"><div id="expBar" class="frontLevelBar" style="width:49px">&nbsp;</div>
+        </div>
+              </div>
+        </div>
+        <div class="levelBarBottomArea">
+        Exp: <span id="expText">1967/2067</span>
+        </div>
+        <a href="/favor.php?"><div class="energyAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="energyCurrent" class="statEmphasis">20</span> / <span id="energyMax">370</span></div>        
+            <div id="energyTimerDiv" class="statBottomArea"><span id="energyType" style="font-size:11px;font-weight:normal;">1:37</span></div></td></tr></table></div></a>
+        <a href="/hospital.php?"><div class="healthAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="healthCurrent" class="statEmphasis">21</span> / <span id="healthMax">200</span></div>        
+            <div id="healthTimerDiv" class="statBottomArea"><span id="healthType" style="font-size:11px;font-weight:normal;">0:16</span></div></td></tr></table></div></a>
+        <a href="/favor.php?"><div class="staminaAreaContainer"><table class="statTable"><tr><td class="statTableIcon"><div></div></td>
+          <td class="statTableInBetween"></td>
+          <td class="statTableInfo">
+            <div class="statTopArea">
+            <span id="staminaCurrent" class="statEmphasis">10</span> / <span id="staminaMax">17</span></div>        
+            <div id="staminaTimerDiv" class="statBottomArea"><span id="staminaType" style="font-size:11px;font-weight:normal;">0:16</span></div></td></tr></table></div></a></div><script>
+        setTopBarTimerData({"cash":{"page":"\/bank.php?","text":"Money","timeLeft":928,"value":433651,"maxValue":999999999999,"rate":3600,"update":1000},"energy":{"page":"\/favor.php?","text":"Energy","timeLeft":97,"value":20,"maxValue":370,"rate":240,"update":10},"health":{"page":"\/hospital.php?","text":"Health","timeLeft":16,"value":21,"maxValue":200,"rate":180,"update":1},"stamina":{"page":"\/favor.php?","text":"Ammo","timeLeft":16,"value":10,"maxValue":17,"rate":120,"update":1},"experience":{"width":90,"value":1967,"previousLevelValue":1846,"nextLevelValue":2067}});      
+        createTopBarTimer();
+      </script></div><link media="only screen and (max-device-width: 480px)"rel="stylesheet" type="text/css" href="http://static.storm8.com/wwar/css/myProfile.css?v=306"/><script type="text/javascript" src="http://static.storm8.com/wwar/js/profile.js?v=306"></script>
+<style>
+a.actionButtonNew {
+  display: block; width: 86px; height: 39px;
+  font-size: 16px; font-weight: bold; text-align: center; line-height: 39px;
+  text-decoration: none; color: white; text-shadow: black -1px -1px;
+  background: url(../images/btnAttack.png);
+}
+</style>
+
+
+            <table style="margin: 1px auto 0pt;" cellspacing="0" cellpadding="0"><tr><td>
+        <div id="sectionTabs" class="sectionTabs"><ul>
+                      <li class=""><a href="/profile.php?puid=6308100&selectedTab=main&formNonce=b3672f87c62840bb62f89ca4f23d981863e601b2&h=a7235cf08d741040fa81c11f5382835a612db6a0">Info</a></li>
+                      <li class="selected"><a href="/profile.php?puid=6308100&selectedTab=comment&formNonce=b3672f87c62840bb62f89ca4f23d981863e601b2&h=7b08667f46460b2bbd097bf78b7765021a9088cc">Comments</a></li>
+                  </ul></div>
+      </td></tr></table>
+      <script>new storm8.widget.SectionTabs("sectionTabs");</script>
+      
+<div class="section">
+  <div class="headingBox">
+  <table><td class="profileLeft"><img src="http://static.storm8.com/wwar/images/races/3_60x33.png?v=306" width="60" height="33"></td><td class="profileRight"><b>Aaron</b><br /><span style="font-size: 12pt;">Level 17</span></td></table><div style="height:5px"></div>      <div class="sectionBar"></div>
+    <div class="buttonHolder">
+  <div style="height:4px"></div>          <input type="button" onclick="window.location.href='/fight.php?action=fight&rivalId=6308100&formNonce=b3672f87c62840bb62f89ca4f23d981863e601b2&h=4441c8f6ffbb4bdbc845cc132402b9ebb92bd031'"
+           class="btnMed" style="font-size: 15px;" value="Attack">
+                  <input type="button" onclick="window.location.href='/bounty.php?hitlist_id=6308100&formNonce=b3672f87c62840bb62f89ca4f23d981863e601b2&h=b390e22da8da0cb0a6eb62eecb8dc15147059493'"
+           class="btnMed" style="font-size: 15px;" value="Add to Sanctions">
+        <div style="height:4px"></div>  </div>
+  </div>
+  <div style="height: 8px"></div>
+
+  
+  <div style="height:4px"></div>
+
+   
+  		<div class="sectionContent">
+		  
+
+<form method="post" action="/profile.php?puid=6308100&selectedTab=comment&formNonce=b3672f87c62840bb62f89ca4f23d981863e601b2&h=7b08667f46460b2bbd097bf78b7765021a9088cc">
+  <textarea rows="2" name="commentText" wrap="physical" style="font-size: 17px; width:285px"></textarea>
+  <br/><input type="submit" value="Post Comment" name="action" class="btnMed btnPostComment">
+            <a href="/profile.php?puid=6308100&selectedTab=comment&action=block&formNonce=b3672f87c62840bb62f89ca4f23d981863e601b2&h=31ebe5bbaaec87dd9333b8d1a49fab1fc442c109" style="text-decoration:none; font-size:14px; font-weight:bold;position:absolute;right:12px;margin-top:10px">
+        Block      </a>
+       
+</form>
+<div style="height:20px"></div>
+  
+<div style="text-align:center;padding-top:4px">
+  </div>
+         </div>
+  </div>
+
+<br/><br/><script> window.onload = function() { window.location.href = "#&changeTab0Badge=1&setTab0Badge=1&changeApplicationBadge=1&setTab4Badge=";}</script></body></html>

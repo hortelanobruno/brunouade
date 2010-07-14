@@ -22,7 +22,7 @@ public class ObtainFight {
 
 	public static void main(String[] arg) {
 		ObtainFight o = new ObtainFight();
-		StringBuilder page = o.leerArchivo("./files/fightPeleaGanada.htm");
+		StringBuilder page = o.leerArchivo("./files/profileComment.html");
 		if (page != null) {
 			o.parsearPagina(page);
 		} else {
@@ -66,14 +66,15 @@ public class ObtainFight {
 //		enemy.setProfile(profile);
 //		mostrarProfile(profile);
 //		System.out.println("Points defense: "+enemy.calcularPointDefense());
-		
-		FightResult result = resultFight(page);
+		System.out.println("Url post comment: "+getUrlPostComment(page));
+//		FightResult result = resultFight(page);
 	}
 
 	public void mostrarProfile(EnemyProfile profile) {
 		// TODO Auto-generated method stub
 		System.out.println("Fight won: "+profile.getBattleWon());
 		System.out.println("Fight lost: "+profile.getBattleLost());
+		System.out.println("Comment tab: "+profile.getCommentTab());
 		for(Unit unit: profile.getUnits().keySet()){
 			System.out.println("Unit: "+unit.getName()+". Cant: "+profile.getUnits().get(unit));
 		}
@@ -89,6 +90,8 @@ public class ObtainFight {
 		//leo battles
 		profile.setBattleWon(Integer.parseInt(page.toString().split("class='statsCol4'")[1].split("</")[0].split(">")[1].replaceAll(" ", "").replaceAll("\\n", "")));
 		profile.setBattleLost(Integer.parseInt(page.toString().split("class='statsCol4'")[2].split("</")[0].split(">")[1].replaceAll(" ", "").replaceAll("\\n", "")));
+		profile.setCommentTab("http://wwar.storm8.com/profile.php"+
+				page.toString().split("Comments")[0].split("/profile.php")[3].split("'")[0]);
 		int i=0;
 		String url;
 		String cant;
@@ -210,6 +213,11 @@ public class ObtainFight {
 
 	public String obtainAttackAgainUrl(StringBuilder page) {
 		String url = "http://wwar.storm8.com/fight.php"+page.toString().split("'Attack Again'")[1].split("/>")[0].split("/fight.php")[1].split("'")[0];
+		return url;
+	}
+
+	public String getUrlPostComment(StringBuilder pageProfile) {
+		String url = "http://wwar.storm8.com/profile.php"+pageProfile.toString().split("<form")[1].split("<textarea")[0].split("/profile.php")[1].split("'")[0];
 		return url;
 	}
 

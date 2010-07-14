@@ -10,6 +10,7 @@ public class EnemyProfile {
 	private Map<Building, Integer> buildings;// cantidad
 	private Map<Unit, Integer> units;
 	private String attackUrl;
+	private String commentTab;
 
 	public EnemyProfile() {
 		buildings = new HashMap<Building, Integer>();
@@ -54,6 +55,14 @@ public class EnemyProfile {
 
 	public void setBattleWon(Integer battleWon) {
 		this.battleWon = battleWon;
+	}
+	
+	public String getCommentTab() {
+		return commentTab;
+	}
+	
+	public void setCommentTab(String commentTab) {
+		this.commentTab = commentTab;
 	}
 	
 }
