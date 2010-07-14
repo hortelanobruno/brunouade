@@ -1,5 +1,7 @@
 package com.brunoli.worldwar.manager;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -95,6 +97,62 @@ public class UnitsManager {
 		// IAI Harop UAV
 		for(Unit unit : units){
 			if(unit.getName().equalsIgnoreCase(unitName)){
+				return unit;
+			}
+		}
+		return null;
+	}
+
+	public void buyUnitsAttack(HttpGetUrl get, StringBuilder pageUnit,
+			Profile profile, List<String> unitsAttack) {
+		try {
+			EventManager.getInstance().info("Contruyendo units ataque...");
+			obtainInformation.leerDatosUsuario(pageUnit, profile);
+			Map<UnitType, String> linksUnits = obtainUnits.leerLinksUnits(pageUnit);
+			//voy al tab air
+			pageUnit = get.getUrl(linksUnits.get(UnitType.AIR));
+			Unit unit = getMejorUnitAtaque(unitsAttack,profile);
+			int cantUnit = getCantUnit(unitsAttack,profile);
+			int cantAbuy = profile.getAlianzeSize()*6-cantUnit;
+			for(int i=0;i<cantAbuy;i++){
+				if(profile.getMoney()>unit.getPrice()){
+					EventManager.getInstance().info("Contruyendo: "+unit.getName()+". Unit price: "+unit.getPrice()+". Profile money: "+profile.getMoney()+". Cant: "+unit.getCantBuild());
+					EventManager.getInstance().other("Contruyendo: "+unit.getName()+". Unit price: "+UtilsWW.toMoney(unit.getPrice())+". Profile money: "+UtilsWW.toMoney(profile.getMoney())+". Cant: "+unit.getCantBuild());
+					pageUnit = get.getUrl(unit.getUrlDeploy());
+					leerUnits(pageUnit,profile);
+					unit = getMejorUnitAtaque(unitsAttack,profile);
+					obtainInformation.leerDatosUsuario(pageUnit, profile);
+				}else{
+					EventManager.getInstance().info("Se me acabo la plata para comprar units.");
+					break;
+				}
+			}
+			EventManager.getInstance().info("FIN Contruir units ataque.");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private int getCantUnit(List<String> unitsAttack, Profile profile) {
+		int cant = 0;
+		Unit unit = null;
+		for(String un : unitsAttack){
+			unit = getMejorUnitAtaque(un,profile.getUnits());
+			if(unit.getCantBuild()!=null){
+				cant += unit.getCantBuild();
+			}
+		}
+		return cant;
+	}
+
+	private Unit getMejorUnitAtaque(List<String> unitsAttack, Profile profile) {
+		List<String> auxUnits = new ArrayList<String>(unitsAttack);
+		Collections.reverse(auxUnits);
+		Unit unit;
+		for(String un : auxUnits){
+			unit = getMejorUnitAtaque(un,profile.getUnits());
+			if(unit.getLevelRequiered()<profile.getLevel()){
 				return unit;
 			}
 		}

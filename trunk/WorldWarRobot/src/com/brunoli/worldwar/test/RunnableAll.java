@@ -10,6 +10,7 @@ import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
 import com.brunoli.worldwar.event.EventManager;
 import com.brunoli.worldwar.manager.BuildingManager;
+import com.brunoli.worldwar.manager.CommentManager;
 import com.brunoli.worldwar.manager.FightManager;
 import com.brunoli.worldwar.manager.MissionManager;
 import com.brunoli.worldwar.manager.UnitsManager;
@@ -31,7 +32,8 @@ public class RunnableAll implements Runnable {
 	public static Integer DIFF_POINT_MINIMA;// puntos minimo de dif con el rival
 	private String url;
 	private String unitDefense;
-	private String unitAttack;
+	private String alianzeCode;
+	private List<String> unitsAttack;
 	// ////////////////////////////////////////////////
 	private ObtainInformation obtainInformation;
 	private ObtainMission obtainMission;
@@ -44,12 +46,14 @@ public class RunnableAll implements Runnable {
 	private BuildingManager buildingManager;
 	private UnitsManager unitsManager;
 	private MissionManager mManager;
+	private CommentManager commentManager;
 
-	public RunnableAll(String url, String unitAttack, String unitDefense,
+	public RunnableAll(String alianzeCode, String url, List<String> unitsAttack,
+			String unitDefense,
 			Double MINIMO_RENTABILIDAD, Integer DIFF_POINT_MINIMA) {
-
 		this.url = url;
-		this.unitAttack = unitAttack;
+		this.alianzeCode = alianzeCode;
+		this.unitsAttack = unitsAttack;
 		this.unitDefense = unitDefense;
 		this.MINIMO_RENTABILIDAD = MINIMO_RENTABILIDAD;
 		this.DIFF_POINT_MINIMA = DIFF_POINT_MINIMA;
@@ -69,6 +73,7 @@ public class RunnableAll implements Runnable {
 		buildingManager = new BuildingManager();
 		unitsManager = new UnitsManager();
 		mManager = new MissionManager();
+		commentManager = new CommentManager();
 		while (true) {
 			get = new HttpGetUrl();
 			EventManager.getInstance().other("Iniciando proceso...");
@@ -84,6 +89,12 @@ public class RunnableAll implements Runnable {
 				leerUnits(profile);
 				// Leo building
 				leerBuildings(profile);
+				//Ejecuto missiones
+				ejecutarMisiones(profile);
+				// HAGO UN DEPOSITO PARA ASEGURAR LA PLATA PARA EL RESTORE
+				depositarParaElRestore(profile);
+				//Construir units
+				construirUnits(profile);
 				// Primero chequeo cuantos puntos de batalla tengo,
 				// Si tengo menos del total espero hasta tener a todos.
 				if (profile.getStaminaMax() > profile.getStaminaCurrent()) {
@@ -120,18 +131,15 @@ public class RunnableAll implements Runnable {
 				// CONSTRUYENDO UNITS
 				// Primero actualizo las units
 				leerUnits(profile);
-				// Construyo units defensa
-				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
-				unitsManager.buyUnitsDefense(get, page, profile, unitDefense);
-				// Contruyo units ataque
-				page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
-				unitsManager.buyUnitsAttack(get, page, profile, unitAttack);
+				construirUnits(profile);
 				// HACIENDO BUILDINGS
 				buildingManager.doAllBuilding(get,profile);
 				// FIN Actualizo el profile
 				// Leo datos
 				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
 				obtainInformation.leerDatosUsuario(page, profile);
+				//promuevo el alianze code
+				commentManager.promoteAllianzeCode(alianzeCode, get, profile);
 			} catch (Exception e) {
 				EventManager.getInstance().error(
 						"Error en el get. " + e.getMessage(), e);
@@ -146,6 +154,19 @@ public class RunnableAll implements Runnable {
 				Thread.sleep(1000 * 60 * dif * 2);
 			} catch (InterruptedException e) {
 			}
+		}
+	}
+
+	private void construirUnits(Profile profile) {
+		// Construyo units defensa
+		try{
+			StringBuilder page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
+			unitsManager.buyUnitsDefense(get, page, profile, unitDefense);
+			// Contruyo units ataque
+			page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
+			unitsManager.buyUnitsAttack(get, page, profile, unitsAttack);
+		}catch(Exception ex){
+			
 		}
 	}
 

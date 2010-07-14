@@ -7,6 +7,7 @@ import com.brunoli.worldwar.beans.Building;
 import com.brunoli.worldwar.beans.Profile;
 import com.brunoli.worldwar.beans.Unit;
 import com.brunoli.worldwar.db.DBManager;
+import com.brunoli.worldwar.manager.CommentManager;
 import com.brunoli.worldwar.manager.FightManager;
 import com.brunoli.worldwar.manager.MissionManager;
 import com.brunoli.worldwar.parser.ObtainBuildings;
@@ -55,9 +56,11 @@ public class TestCargarProfile {
 			mostrarProfile(profile);
 			//FIGHT MODE
 			//fightManager.startFighting(get,profile);
-			page = get.getUrl(profile.getMenuUrls().get(Menus.MISSION));
-			MissionManager mManager = new MissionManager();
-			mManager.doAllMission(get, page, profile);
+//			page = get.getUrl(profile.getMenuUrls().get(Menus.MISSION));
+//			MissionManager mManager = new MissionManager();
+//			mManager.doAllMission(get, page, profile);
+			CommentManager man = new CommentManager();
+			man.promoteAllianzeCode("GP4XK2", get, profile);
 		} catch (Exception e) {
 			System.out.println("Error en el get. " + e.getMessage());
 		}
