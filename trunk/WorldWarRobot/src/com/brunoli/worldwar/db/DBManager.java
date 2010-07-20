@@ -146,23 +146,48 @@ public class DBManager {
 		}
 	}
 
-	public void buildingCreated(Building b) {
-		List<BuildingToCreateEntity> bu = buildingToCreateEntityController
-				.findBuildingEntityEntities(1, 0);
-		if (bu.size() == 1) {
-			if (bu.get(0).getName().equalsIgnoreCase(b.getName())) {
+	public void buildingCreated(Building b, BuildingType buildingTypeToCreate) {
+		switch (buildingTypeToCreate) {
+		case INCOME:
+			List<BuildingIncomeToCreateEntity> bu = buildingIncomeToCreateEntityController
+					.findBuildingEntityEntities(1, 0);
+			if (bu.size() == 1) {
+				if (bu.get(0).getName().equalsIgnoreCase(b.getName())) {
+					try {
+						buildingIncomeToCreateEntityController.destroy(bu
+								.get(0).getId());
+					} catch (NonexistentEntityException e) {
+						e.printStackTrace();
+					}
+				}
+			} else {
 				try {
-					buildingToCreateEntityController.destroy(bu.get(0).getId());
-				} catch (NonexistentEntityException e) {
+					throw new Exception("Error al querer crear una Building");
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		} else {
-			try {
-				throw new Exception("Error al querer crear una Building");
-			} catch (Exception e) {
-				e.printStackTrace();
+			break;
+		case DEFENSE:
+			List<BuildingToCreateEntity> bus = buildingToCreateEntityController
+					.findBuildingEntityEntities(1, 0);
+			if (bus.size() == 1) {
+				if (bus.get(0).getName().equalsIgnoreCase(b.getName())) {
+					try {
+						buildingToCreateEntityController.destroy(bus.get(0)
+								.getId());
+					} catch (NonexistentEntityException e) {
+						e.printStackTrace();
+					}
+				}
+			} else {
+				try {
+					throw new Exception("Error al querer crear una Building");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
+			break;
 		}
 	}
 
@@ -183,6 +208,13 @@ public class DBManager {
 								+ mission.getMissionName() + ".");
 			}
 		}
+	}
+
+	public Unit updateUnit(Unit unit) {
+		UnitEntity ue = unitEntityController.findUnitEntityByName(unit
+				.getName());
+		unit.setUnitType(ue.getUnitType());
+		return unit;
 	}
 
 }

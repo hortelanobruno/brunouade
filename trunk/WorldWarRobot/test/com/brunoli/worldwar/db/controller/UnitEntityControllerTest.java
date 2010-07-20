@@ -76,9 +76,20 @@ public class UnitEntityControllerTest {
 			// Cost: $400
 			// Disband: $200
 			// Upkeep: $0
+			UnitType ut = null;
 			for (String a : page.toString().split("/n")) {
 				if (!a.isEmpty()) {
-					if (a.contains("Level:")) {
+					if(a.contains("UNITS")){
+						if(a.contains("INFANTRY")){
+							ut = UnitType.INFANTRY;
+						}else if(a.contains("GROUND")){
+							ut = UnitType.GROUND;
+						}else if(a.contains("WATER")){
+							ut = UnitType.WATER;
+						}else{
+							ut = UnitType.AIR;
+						}
+					}else if (a.contains("Level:")) {
 						unit.setLevelRequiered(Integer.parseInt(a.replaceAll(
 								"Level:", "").trim()));
 					} else if (a.contains("Attack:")) {
@@ -115,6 +126,7 @@ public class UnitEntityControllerTest {
 					} else {
 						// NAME
 						if (unit != null) {
+							unit.setUnitType(ut);
 							controller.create(unit);
 						}
 						unit = new UnitEntity();

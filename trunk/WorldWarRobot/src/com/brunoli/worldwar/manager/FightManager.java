@@ -76,61 +76,59 @@ public class FightManager {
 							pageEnemy = httpGet.getUrl(enemyToAttack
 									.getProfile().getAttackUrl());
 							fightResult = obtainFight.resultFight(pageEnemy);
-							if (fightResult.getResult().equals(
-									FightResultType.WON)) {
-								// WON
-								recargarInfoProfile(profile, pageEnemy);
-								recargoFightStats(enemyToAttack, fightResult);
-								moneyGained += fightResult.getMoney();
-								mostrarResultadoFight(profile, enemyToAttack,
-										fightResult);
-								if (hasEnergyToAttack(profile)
-										&& sigoAtacando(enemyToAttack)) {
-									do {
-										EventManager.getInstance().info("Atacando de nuevo a "
-														+ enemyToAttack
-																.getName());
-										attackAgainUrl = obtainFight
-												.obtainAttackAgainUrl(pageEnemy);
-										pageEnemy = httpGet
-												.getUrl(attackAgainUrl);
-										fightResult = obtainFight
-												.resultFight(pageEnemy);
-										recargarInfoProfile(profile, pageEnemy);
-										recargoFightStats(enemyToAttack,
-												fightResult);
-										if (fightResult != null
-												&& fightResult.getMoney() != null) {
-											moneyGained += fightResult
-													.getMoney();
+							if(fightResult!=null){
+								if (fightResult.getResult().equals(
+										FightResultType.WON)) {
+									// WON
+									recargarInfoProfile(profile, pageEnemy);
+									recargoFightStats(enemyToAttack, fightResult);
+									moneyGained += fightResult.getMoney();
+									mostrarResultadoFight(profile, enemyToAttack,
+											fightResult);
+									if (hasEnergyToAttack(profile)
+											&& sigoAtacando(enemyToAttack)) {
+										do {
+											EventManager.getInstance().info("Atacando de nuevo a "
+															+ enemyToAttack
+																	.getName());
+											attackAgainUrl = obtainFight
+													.obtainAttackAgainUrl(pageEnemy);
+											pageEnemy = httpGet
+													.getUrl(attackAgainUrl);
+											fightResult = obtainFight
+													.resultFight(pageEnemy);
+											recargarInfoProfile(profile, pageEnemy);
+											recargoFightStats(enemyToAttack,
+													fightResult);
+											if (fightResult != null
+													&& fightResult.getMoney() != null) {
+												moneyGained += fightResult
+														.getMoney();
+											}
+											mostrarResultadoFight(profile,
+													enemyToAttack, fightResult);
+										} while (fightResult.getResult().equals(
+												FightResultType.WON)
+												&& hasEnergyToAttack(profile));
+										if (fightResult.getResult().equals(
+												FightResultType.FORCES_RETRITMENT)) {
+											enemyRetired.add(enemyToAttack
+													.getName());
 										}
-										mostrarResultadoFight(profile,
-												enemyToAttack, fightResult);
-									} while (fightResult.getResult().equals(
-											FightResultType.WON)
-											&& hasEnergyToAttack(profile));
-									if (fightResult.getResult().equals(
-											FightResultType.FORCES_RETRITMENT)) {
-										enemyRetired.add(enemyToAttack
-												.getName());
 									}
+								} else if (fightResult.getResult().equals(
+										FightResultType.LOST)) {
+									// LOST
+									recargarInfoProfile(profile, pageEnemy);
+									recargoFightStats(enemyToAttack, fightResult);
+									mostrarResultadoFight(profile, enemyToAttack,
+											fightResult);
+								} else {
+									// RETRITMENT
+									enemyRetired.add(enemyToAttack.getName());
+									mostrarResultadoFight(profile, enemyToAttack,
+											fightResult);
 								}
-							} else if (fightResult.getResult().equals(
-									FightResultType.LOST)) {
-								// LOST
-								recargarInfoProfile(profile, pageEnemy);
-								recargoFightStats(enemyToAttack, fightResult);
-								mostrarResultadoFight(profile, enemyToAttack,
-										fightResult);
-								//guardo pagina del profile con el que perdi pageToWrite
-								Random ran = new Random();
-								FileWriterWrapper fww = new FileWriterWrapper("./files/errores/errorMFightPerdida"+ran.nextInt(1000000)+".txt");
-								fww.write(pageToWrite.toString());
-							} else {
-								// RETRITMENT
-								enemyRetired.add(enemyToAttack.getName());
-								mostrarResultadoFight(profile, enemyToAttack,
-										fightResult);
 							}
 						} else {
 							enemyRetired.add(enemyToAttack.getName());
@@ -211,11 +209,15 @@ public class FightManager {
 
 	private boolean canAttack(Profile profile, Enemy enemyToAttack) {
 		Integer enemyDefensePoints = enemyToAttack.calcularPointDefense();
+		Integer enemyIncomePoints = enemyToAttack.calcularPointIncome();
 		Integer myAttackPoints = profile.calcularPointAttack();
+		Integer myIncomePoints = profile.calcularPointIncome();
 		EventManager.getInstance().info("Checking enemy " + enemyToAttack.getName()
 				+ " can attack: MyAttackPoints: " + myAttackPoints
-				+ ". EnemyDefensePoints:" + enemyDefensePoints + ".");
-		if (myAttackPoints >= (enemyDefensePoints + RunnableAll.DIFF_POINT_MINIMA)) {
+				+ ". EnemyDefensePoints:" + enemyDefensePoints + ". Income points: "+enemyIncomePoints+". My income points: "+myIncomePoints+".");
+		if (myAttackPoints >= (enemyDefensePoints + RunnableAll.DIFF_POINT_MINIMA)
+				&&(enemyIncomePoints>=(myIncomePoints + RunnableAll.DIFF_INCOME_POINT_MINIMA)
+						)) {
 			return true;
 		}
 		return false;

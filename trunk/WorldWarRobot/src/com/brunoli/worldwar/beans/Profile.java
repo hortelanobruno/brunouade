@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.brunoli.worldwar.util.BuildingType;
 import com.brunoli.worldwar.util.Menus;
 
 public class Profile {
@@ -190,6 +191,18 @@ public class Profile {
 		public int compare(Unit unit1, Unit unit2) {
 			return unit1.getAttack().compareTo(unit2.getAttack());
 		}
+	}
+
+	public Integer calcularPointIncome() {
+		int points = 0;
+		for(Building b : buildings){
+			if(b.getCategory().equals(BuildingType.INCOME)){
+				if(b.getCantBuild()!=null){
+					points += b.getCantBuild()*b.getTypeValue();
+				}
+			}
+		}
+		return points;
 	}
 
 }

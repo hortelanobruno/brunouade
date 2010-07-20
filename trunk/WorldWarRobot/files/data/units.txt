@@ -1,3 +1,5 @@
+INFANTRY UNITS
+
 Minigunners
 Level: 1
 Attack: 1
@@ -317,6 +319,8 @@ Defense: 74
 Price: 50 Honor Points - Heroic Reinforcement - Common
 Disband: $660,000
 Upkeep: $0
+
+GROUND UNITS
 
 Supply Truck
 Level: 1
@@ -726,6 +730,8 @@ Price: 50 Honor Points - Heroic Reinforcement - Uncommon
 Disband: $3,810,000
 Upkeep: $0
 
+WATER UNITS
+
 Cruiser
 Level: 1
 Attack: 4
@@ -998,9 +1004,6 @@ Price: Mission Loot - Tab #8 - Demolish Enemy Base
 Disband: $9,000,000
 Upkeep: $325,000
 
-
-WATER PROMOTIONAL LOOT UNITS
-
 Sea Shadow Stealth Cruiser
 Level: 1
 Attack: 11
@@ -1080,6 +1083,8 @@ Defense: 165
 Price: 50 Honor Points - Heroic Reinforcement - Epic
 Disband: $24,000,000
 Upkeep: $0
+
+AIR UNITS
 
 Fighter
 Level: 1

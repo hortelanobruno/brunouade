@@ -148,4 +148,20 @@ public class Enemy {
 		}
 	}
 
+	public Integer calcularPointIncome() {
+		// units
+		int points = 0;
+		Integer cant = null;
+		for(Building b : profile.getBuildings()
+				.keySet()){
+			if(b.getCategory().equals(BuildingType.INCOME)){
+				cant = profile.getBuildings().get(b);
+				if(cant!=null){
+					points += cant*b.getTypeValue();
+				}
+			}
+		}
+		return points;
+	}
+
 }

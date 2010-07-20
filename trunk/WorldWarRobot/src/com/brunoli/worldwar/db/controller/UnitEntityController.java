@@ -149,4 +149,19 @@ public class UnitEntityController {
 			em.close();
 		}
 	}
+
+	public UnitEntity findUnitEntityByName(String name) {
+		EntityManager em = getEntityManager();
+		try {
+			Query q = em
+					.createQuery(
+							"select object(o) from UnitEntity as o where o.name = :name")
+					.setParameter("name", name);
+			return (UnitEntity) q.getSingleResult();
+		}catch(Exception ex){
+			return null;
+		} finally {
+			em.close();
+		}
+	}
 }

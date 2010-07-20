@@ -47,7 +47,7 @@ public class BuildingManager {
 				EventManager.getInstance().info("Contruyendo: "+b.getName());
 				EventManager.getInstance().other("Contruyendo: "+b.getName()+". Price: "+UtilsWW.toMoney(b.getInitialCost())+".");
 				//Construir building
-				pageBuilding = doBuilding(b,get);
+				pageBuilding = doBuilding(b,get,buildingTypeToCreate);
 				//Cargo datos energia
 				obtainInformation.leerDatosUsuario(pageBuilding, profile);
 				//Actualizo la informacion de las buildings
@@ -73,7 +73,7 @@ public class BuildingManager {
 				cantLost++;
 			}
 		}
-		if(cantLost>=3){
+		if(cantLost>cantWon){
 			return BuildingType.DEFENSE;
 		}else{
 			return BuildingType.INCOME;
@@ -92,10 +92,10 @@ public class BuildingManager {
 		}
 	}
 
-	private StringBuilder doBuilding(Building b, HttpGetUrl get) {
+	private StringBuilder doBuilding(Building b, HttpGetUrl get, BuildingType buildingTypeToCreate) {
 		try {
 			StringBuilder ba = get.getUrl(b.getUrlDeploy());
-			dbManager.buildingCreated(b);
+			dbManager.buildingCreated(b,buildingTypeToCreate);
 			return ba;
 		} catch (Exception e) {
 			EventManager.getInstance().error("Error al contruir la building: "+b.toString()+". "+e.getMessage(),e);
