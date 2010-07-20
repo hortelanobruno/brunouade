@@ -33,7 +33,7 @@ public class MissionManager {
 			obtainInformation.leerLinks(page, profile);
 			EventManager.getInstance().other("Profile antes de missiones money: "+UtilsWW.toMoney(profile.getMoney())+".");
 			// Obtengo misiones
-			List<Mission> missions = leerMisionesDisponibles(get);
+			List<Mission> missions = leerMisionesDisponibles(get,profile);
 			// Obtengo la mision deseada
 			Mission mission = obtenerMissionParaHacer(profile,missions);
 			moneyParaDeploy = true;
@@ -85,7 +85,7 @@ public class MissionManager {
 		}
 	}
 
-	private List<Mission> leerMisionesDisponibles(HttpGetUrl get) {
+	private List<Mission> leerMisionesDisponibles(HttpGetUrl get, Profile profile) {
 		// http://wwar.storm8.com/missions.php?cat=
 		// obtainMission.leerMissions(pageMission)
 		String url = "http://wwar.storm8.com/missions.php?cat=";
@@ -106,7 +106,7 @@ public class MissionManager {
 						return missions;
 					}
 				}
-				rent = obtenerMissionMasRentable(missions);
+				rent = obtenerMissionMasRentable(missions,profile);
 			} catch (Exception e) {
 			}
 		}
@@ -126,10 +126,10 @@ public class MissionManager {
 		}
 	}
 	
-	private Mission obtenerMissionMasRentable(List<Mission> missions){
+	private Mission obtenerMissionMasRentable(List<Mission> missions, Profile profile){
 		Mission m = null;
 		for (Mission mission : missions) {
-			if(mission.getPercentCompleted()==100){
+			if(mission.getPercentCompleted()==100&&profile.getAlianzeSize()>= mission.getAlianzeSizeRequiered()){
 				if(m!=null){
 					Integer a1 = (m.getMaxMoneyGained()-m.getMinMoneyGained())/2;
 					a1 = a1/m.getEnergyRequiered();
@@ -158,6 +158,6 @@ public class MissionManager {
 		}
 		//PUEDE QUE NO TENGA PARA DEPLOYEAR LA MISION CON MAS RENTABILIDAD Y ENTONCES ME QUEDA ITERANDO
 		//Busco la mision que me da mejor rentabilidad
-		return obtenerMissionMasRentable(missions);
+		return obtenerMissionMasRentable(missions,profile);
 	}
 }

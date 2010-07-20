@@ -27,11 +27,12 @@ import com.brunoli.worldwar.webmanager.HttpGetUrl;
 
 public class RunnableAll implements Runnable {
 
+	public static Integer DIFF_INCOME_POINT_MINIMA;
 	public static Double MINIMO_RENTABILIDAD;// rentabilidad de money ganada en
 												// batallas
 	public static Integer DIFF_POINT_MINIMA;// puntos minimo de dif con el rival
 	private String url;
-	private String unitDefense;
+	private List<String> unitsDefense;
 	private String alianzeCode;
 	private List<String> unitsAttack;
 	// ////////////////////////////////////////////////
@@ -48,19 +49,20 @@ public class RunnableAll implements Runnable {
 	private MissionManager mManager;
 	private CommentManager commentManager;
 
-	public RunnableAll(String alianzeCode, String url, List<String> unitsAttack,
-			String unitDefense,
-			Double MINIMO_RENTABILIDAD, Integer DIFF_POINT_MINIMA) {
+	public RunnableAll(String alianzeCode, String url, List<String> unitsAttack, List<String> unitsDefense, Double MINIMO_RENTABILIDAD, Integer DIFF_POINT_MINIMA,
+			Integer diffIncomePointMinima) {
 		this.url = url;
 		this.alianzeCode = alianzeCode;
 		this.unitsAttack = unitsAttack;
-		this.unitDefense = unitDefense;
+		this.unitsDefense = unitsDefense;
 		this.MINIMO_RENTABILIDAD = MINIMO_RENTABILIDAD;
 		this.DIFF_POINT_MINIMA = DIFF_POINT_MINIMA;
+		this.DIFF_INCOME_POINT_MINIMA = diffIncomePointMinima;
 
 		Thread t = new Thread(this);
 		t.run();
 	}
+
 
 	@Override
 	public void run() {
@@ -161,7 +163,7 @@ public class RunnableAll implements Runnable {
 		// Construyo units defensa
 		try{
 			StringBuilder page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
-			unitsManager.buyUnitsDefense(get, page, profile, unitDefense);
+			unitsManager.buyUnitsDefense(get, page, profile, unitsDefense);
 			// Contruyo units ataque
 			page = get.getUrl(profile.getMenuUrls().get(Menus.UNITS));
 			unitsManager.buyUnitsAttack(get, page, profile, unitsAttack);

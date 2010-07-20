@@ -99,7 +99,7 @@ public class ObtainFight {
 		Unit unit;
 		int j=0;
 		//leo units
-		for(String c : page.toString().split("class='equipmentItems'")){
+		for(String c : page.toString().split("Buildings")[0].split("class='equipmentItems'")){
 			if(i>0&&i<5){
 				j=0;
 				for(String d : c.split("<img")){
@@ -110,7 +110,7 @@ public class ObtainFight {
 							cant = d.split("<div>x")[1].split("<")[0];
 							profile.getUnits().put(unit, Integer.parseInt(cant));
 						}else{
-							//System.out.println("URL NOT FOUND FOR UNIT: "+url);
+							EventManager.getInstance().error("URL NOT FOUND FOR UNIT: "+url, null);
 						}
 					}
 					j++;
@@ -191,9 +191,9 @@ public class ObtainFight {
 				result.setMoney(UtilsWW.parsearMoney(a.split(">")[a.split(">").length-1]));
 			}catch(Exception ex){
 				System.out.println("Error al obtener la plata ganada. "+ex.getMessage());
-				FileWriterWrapper fww = new FileWriterWrapper("./files/errores/errorMonyFightGanada.txt");
-				fww.write(page.toString());
-				System.exit(0);
+				FileWriterWrapper fww = new FileWriterWrapper();
+				fww.write("./files/errores/errorMonyFightGanada.txt",page.toString());
+				return null;
 			}
 		}else if(page.toString().contains("lost")){
 			//LOST
@@ -204,8 +204,8 @@ public class ObtainFight {
 		}else{
 			result.setResult(FightResultType.OTHER);
 			System.out.println("Error fight result. Grabando archivo.");
-			FileWriterWrapper fww = new FileWriterWrapper("./files/errores/errorFightResult.txt");
-			fww.write(page.toString());
+			FileWriterWrapper fww = new FileWriterWrapper();
+			fww.write("./files/errores/errorFightResult.txt",page.toString());
 		}
 		return result;
 	}

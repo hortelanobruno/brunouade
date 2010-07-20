@@ -9,6 +9,7 @@ public class CreateAll {
 	public CreateAll() {
 		System.out.println("Cargando datos units...");
 		new UnitEntityControllerTest();
+		new CargarImgLootsUnits();
 		System.out.println("Fin cargar datos units.");
 		System.out.println("Cargando datos missions...");
 		new MissionEntityControllerTest();
