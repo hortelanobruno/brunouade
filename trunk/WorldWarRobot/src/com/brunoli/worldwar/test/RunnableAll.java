@@ -141,7 +141,7 @@ public class RunnableAll implements Runnable {
 				page = get.getUrl(profile.getMenuUrls().get(Menus.HOME));
 				obtainInformation.leerDatosUsuario(page, profile);
 				//promuevo el alianze code
-				commentManager.promoteAllianzeCode(alianzeCode, get, profile);
+//				commentManager.promoteAllianzeCode(alianzeCode, get, profile);
 			} catch (Exception e) {
 				EventManager.getInstance().error(
 						"Error en el get. " + e.getMessage(), e);
