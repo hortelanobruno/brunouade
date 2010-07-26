@@ -53,34 +53,34 @@ public class ObtainUnits {
 		int i = 0;
 		String url;
 		String url2;
-		String name;
+		String name = null;
 		String cantBuild;
 		String cash = null;
 		for (String a : page.toString().split("class='equipmentTable'")) {
 			if (i > 0) {
 				if (!a.contains("equipmentNameLocked")) {
-					url = a.split("src='")[1].split("'")[0];
-					name = a.split("'equipmentName'")[1].split("</")[0]
-							.split(">")[1];
-					cantBuild = a.split("ownedNum")[1].split("</")[0]
-							.split(">")[1];
-					if(a.split("money.png").length==2){
-						cash = a.split("money.png")[1].split("</")[0].split(">")[1];
-					}else if(a.split("money.png").length==3){
-						cash = a.split("money.png")[2].split("</")[0].split(">")[1];
-					}
-					url2 = "http://wwar.storm8.com/equipment.php"
-							+ a.split("equipmentActionInner")[0]
-									.split("/equipment.php")[1].split("'")[0];
-					cash = cash.replaceAll(" ", "").trim();
-					Unit unit = findUnit(name, units);
-					unit.setCantBuild(Integer.parseInt(cantBuild));
-					unit.setUrlImg(url);
-					unit.setUrlDeploy(url2);
 					try {
+						url = a.split("src='")[1].split("'")[0];
+						name = a.split("'equipmentName'")[1].split("</")[0]
+								.split(">")[1];
+						cantBuild = a.split("ownedNum")[1].split("</")[0]
+								.split(">")[1];
+						if(a.split("money.png").length==2){
+							cash = a.split("money.png")[1].split("</")[0].split(">")[1];
+						}else if(a.split("money.png").length==3){
+							cash = a.split("money.png")[2].split("</")[0].split(">")[1];
+						}
+						url2 = "http://wwar.storm8.com/equipment.php"
+								+ a.split("equipmentActionInner")[0]
+										.split("/equipment.php")[1].split("'")[0];
+						cash = cash.replaceAll(" ", "").trim();
+						Unit unit = findUnit(name, units);
+						unit.setCantBuild(Integer.parseInt(cantBuild));
+						unit.setUrlImg(url);
+						unit.setUrlDeploy(url2);
 						unit.setPrice(UtilsWW.parsearMoney(cash));
 					} catch (Exception ex) {
-						System.out.println("");
+						System.out.println("Error al cargar los datos de la unit: "+name+".");
 					}
 				}
 			}

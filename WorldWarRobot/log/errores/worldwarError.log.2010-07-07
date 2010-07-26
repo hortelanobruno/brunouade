@@ -1,0 +1,86 @@
+2010-07-07 22:29:06,316 ERROR Error al leer datos para el restore. Pagina: <!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN' 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv='Content-Type' content='application/xhtml+xml; charset=UTF-8'/> 
+<meta name='viewport' content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'/>
+<meta name='format-detection' content='telephone=no'/>
+<link media='only screen and (max-device-width: 480px)'rel='stylesheet' type='text/css' href='http://static.storm8.com/wwar/css/global.css?v=306'/><script type='text/javascript' src='http://static.storm8.com/wwar/js/global.js?v=306'></script><title>Restore</title>
+  <script type='text/javascript'>
+    var walkDOM = function walk(node, func) {
+    	  func(node);
+    	  node = node.firstChild;
+    	  while (node) {
+    		  walk(node, func);
+    		  node = node.nextSibling;
+    		}
+    };  
+    if (!window.devicePixelRatio) {
+    	var body = document.getElementsByTagName('*');
+    	walkDOM(body[0], function(n) {
+        	if (n.style) {
+        	 n.style.display = 'none';
+        	}
+    	});
+    }
+  </script>
+</head>
+
+<body style=''>
+<div id='overlay' class='dialogOverlay'></div>
+<div id='topBar' class='topBar'><div class='topBarBg'></div><a href='/bank.php?formNonce=424ce0a539f5ad76f0dbcdbcda17cf6721a4260b&h=d6d72c9d6cebd10fdf69bdbd2b0bd6c8f2b245ef'><div class='cashTopArea'>
+        <span class='topBarCash'><img src='http://static.storm8.com/wwar/images/money.png?v=306' width='15' height='12' style='padding:0 2px -1px 0;'><span id='cashCurrent' style='white-space:nowrap'>118,997</span></span>
+      </div>
+      <div id='cashTimerDiv' class='cashBottomArea'><span style='font-size: 11px; font-weight: normal;'><span class='upkeepCost'><span style='white-space: nowrap;'>-12,600</span></span> in </span><span id='cashType' style='font-size:11px;font-weight:normal;'>54:35</span></div></a><div class='levelTopArea'>
+          <div class='levelBgTopArea'></div>
+          <div class='levelFrontTopArea'><a href='/profile.php?formNonce=424ce0a539f5ad76f0dbcdbcda17cf6721a4260b&h=be882a33efff48621f2ae2fad8cb4e1e288c6c31'>24!</a></div>
+        </div>
+        <div class='levelBottomArea'>
+        Level
+        </div><div class='levelBarTopArea'>
+             <div class='levelBar' style='width:90px'>
+             <div class='bgLevelBar' style='width:90px'><div id='expBar' class='frontLevelBar' style='width:0px'>&nbsp;</div>
+        </div>
+              </div>
+        </div>
+        <div class='levelBarBottomArea'>
+        Exp: <span id='expText'>3555/3831</span>
+        </div>
+        <a href='/favor.php?'><div class='energyAreaContainer'><table class='statTable'><tr><td class='statTableIcon'><div></div></td>
+          <td class='statTableInBetween'></td>
+          <td class='statTableInfo'>
+            <div class='statTopArea'>
+            <span id='energyCurrent' class='statEmphasis'>490</span> / <span id='energyMax'>490</span></div>        
+            <div id='energyTimerDiv' class='statBottomArea'><span id='energyType' style='font-size:11px;font-weight:normal;'>Energy</span></div></td></tr></table></div></a>
+        <a href='/hospital.php?'><div class='healthAreaContainer'><table class='statTable'><tr><td class='statTableIcon'><div></div></td>
+          <td class='statTableInBetween'></td>
+          <td class='statTableInfo'>
+            <div class='statTopArea'>
+            <span id='healthCurrent' class='statEmphasis'>200</span> / <span id='healthMax'>200</span></div>        
+            <div id='healthTimerDiv' class='statBottomArea'><span id='healthType' style='font-size:11px;font-weight:normal;'>Health</span></div></td></tr></table></div></a>
+        <a href='/favor.php?'><div class='staminaAreaContainer'><table class='statTable'><tr><td class='statTableIcon'><div></div></td>
+          <td class='statTableInBetween'></td>
+          <td class='statTableInfo'>
+            <div class='statTopArea'>
+            <span id='staminaCurrent' class='statEmphasis'>10</span> / <span id='staminaMax'>10</span></div>        
+            <div id='staminaTimerDiv' class='statBottomArea'><span id='staminaType' style='font-size:11px;font-weight:normal;'>Ammo</span></div></td></tr></table></div></a></div><script>
+        setTopBarTimerData({'cash':{'page':'\/bank.php?','text':'Money','timeLeft':3275,'value':118997,'maxValue':999999999999,'rate':3600,'update':-12600},'energy':{'page':'\/favor.php?','text':'Energy','timeLeft':-1,'value':490,'maxValue':490,'rate':240,'update':11},'health':{'page':'\/hospital.php?','text':'Health','timeLeft':-1,'value':200,'maxValue':200,'rate':180,'update':1},'stamina':{'page':'\/favor.php?','text':'Ammo','timeLeft':-1,'value':10,'maxValue':10,'rate':120,'update':1},'experience':{'width':90,'value':3555,'previousLevelValue':3555,'nextLevelValue':3831}});      
+        createTopBarTimer();
+      </script></div><div class='messageBox infoBox'><span class='warning'>Warning!</span> You currently have a negative cashflow. If you run out of cash, your units with upkeep will automatically disband until you are out of debt.</div><link media='only screen and (max-device-width: 480px)'rel='stylesheet' type='text/css' href='http://static.storm8.com/wwar/css/hospital.css?v=306'/><div class='section'>
+<div class='sectionHeader'>
+  Restore</div>
+<div class='sectionBar'></div>
+<div class='sectionContent'>
+
+   <div class='hospitalText'>You are at full health already.</div>
+
+<!-- 'sectionContent' div -->
+</div>
+<br/><br/><script> window.onload = function() { window.location.href = '#&setTab0Badge=&changeApplicationBadge=0&setTab4Badge=24';}</script></body></html>
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at com.brunoli.worldwar.parser.ObtainRestore.leerDatos(ObtainRestore.java:43)
+	at com.brunoli.worldwar.test.RunnableAll.recargarHealth(RunnableAll.java:192)
+	at com.brunoli.worldwar.test.RunnableAll.run(RunnableAll.java:101)
+	at java.lang.Thread.run(Thread.java:619)
+	at com.brunoli.worldwar.test.RunnableAll.<init>(RunnableAll.java:57)
+	at com.brunoli.worldwar.run.RunPablo.<init>(RunPablo.java:18)
+	at com.brunoli.worldwar.run.RunPablo.main(RunPablo.java:14)

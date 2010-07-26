@@ -154,8 +154,10 @@ public class UnitsManager {
 		Unit unit;
 		for(String un : auxUnits){
 			unit = getMejorUnit(un,profile.getUnits());
-			if(unit.getLevelRequiered()<profile.getLevel()){
-				return dbManager.updateUnit(unit);
+			if(unit!=null){
+				if(unit.getLevelRequiered()<profile.getLevel()){
+					return dbManager.updateUnit(unit);
+				}
 			}
 		}
 		return null;
