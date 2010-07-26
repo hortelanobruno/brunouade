@@ -1,0 +1,2712 @@
+2010-07-07 12:26:35,295 INFO Atacando...
+2010-07-07 12:26:36,957 INFO Going to Page Units....
+2010-07-07 12:26:38,008 INFO Actualizando units...
+2010-07-07 12:26:42,566 INFO Units actualizadas.
+2010-07-07 12:26:42,566 INFO Going to Page Buildings....
+2010-07-07 12:26:43,018 INFO Actualizando buildings...
+2010-07-07 12:26:43,079 INFO Buildings actualizadas.
+2010-07-07 12:26:43,079 INFO Durmiendo 18 mins para recargar Stamina.
+2010-07-07 12:44:44,125 INFO Go to hospital.
+2010-07-07 12:44:44,126 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 12:44:44,813 INFO Se hizo el restore health.
+2010-07-07 12:44:46,600 INFO Checking enemy bpyo can attack: MyAttackPoints: 576. EnemyDefensePoints:178.
+2010-07-07 12:44:46,601 INFO Atacando a bpyo
+2010-07-07 12:44:47,298 INFO Le gane a bpyo. Recaude 19503. Health: 196/200. Stamina: 9/10.
+2010-07-07 12:44:47,298 INFO Atacando de nuevo a bpyo
+2010-07-07 12:44:47,776 INFO bpyo se retiro. Health: 196/200. Stamina: 9/10.
+2010-07-07 12:44:48,876 INFO Checking enemy Juanch&#8203;ito32 can attack: MyAttackPoints: 576. EnemyDefensePoints:516.
+2010-07-07 12:44:48,876 INFO Atacando a Juanch&#8203;ito32
+2010-07-07 12:44:49,372 INFO Le gane a Juanch&#8203;ito32. Recaude 342000. Health: 188/200. Stamina: 8/10.
+2010-07-07 12:44:49,372 INFO Atacando de nuevo a Juanch&#8203;ito32
+2010-07-07 12:44:49,856 INFO Le gane a Juanch&#8203;ito32. Recaude 226008. Health: 182/200. Stamina: 7/10.
+2010-07-07 12:44:49,857 INFO Atacando de nuevo a Juanch&#8203;ito32
+2010-07-07 12:44:50,363 INFO Le gane a Juanch&#8203;ito32. Recaude 391400. Health: 177/200. Stamina: 6/10.
+2010-07-07 12:44:50,363 INFO Atacando de nuevo a Juanch&#8203;ito32
+2010-07-07 12:44:50,837 INFO Juanch&#8203;ito32 se retiro. Health: 177/200. Stamina: 6/10.
+2010-07-07 12:44:51,504 INFO Checking enemy patrón can attack: MyAttackPoints: 576. EnemyDefensePoints:162.
+2010-07-07 12:44:51,504 INFO Atacando a patrón
+2010-07-07 12:44:51,987 INFO Le gane a patrón. Recaude 414200. Health: 174/200. Stamina: 5/10.
+2010-07-07 12:44:51,987 INFO Atacando de nuevo a patrón
+2010-07-07 12:44:52,331 INFO Le gane a patrón. Recaude 342000. Health: 167/200. Stamina: 4/10.
+2010-07-07 12:44:52,332 INFO Atacando de nuevo a patrón
+2010-07-07 12:44:52,687 INFO Le gane a patrón. Recaude 326800. Health: 163/200. Stamina: 3/10.
+2010-07-07 12:44:52,688 INFO Atacando de nuevo a patrón
+2010-07-07 12:44:53,012 INFO Le gane a patrón. Recaude 402800. Health: 160/200. Stamina: 2/10.
+2010-07-07 12:44:53,012 INFO Atacando de nuevo a patrón
+2010-07-07 12:44:53,337 INFO Le gane a patrón. Recaude 334400. Health: 147/200. Stamina: 1/10.
+2010-07-07 12:44:53,337 INFO Atacando de nuevo a patrón
+2010-07-07 12:44:53,678 INFO Le gane a patrón. Recaude 444600. Health: 139/200. Stamina: 0/10.
+2010-07-07 12:44:53,679 INFO Duermo 2 min para recuperar stamina
+2010-07-07 12:46:54,363 INFO Checking enemy MacNis&#8203;eh can attack: MyAttackPoints: 576. EnemyDefensePoints:217.
+2010-07-07 12:46:54,363 INFO Atacando a MacNis&#8203;eh
+2010-07-07 12:46:54,731 INFO Le gane a MacNis&#8203;eh. Recaude 7488. Health: 135/200. Stamina: 0/10.
+2010-07-07 12:46:54,731 INFO Duermo 2 min para recuperar stamina
+2010-07-07 12:48:55,496 INFO Checking enemy turan can attack: MyAttackPoints: 576. EnemyDefensePoints:838.
+2010-07-07 12:48:56,456 INFO Checking enemy rtrtrt&#8203;rt can attack: MyAttackPoints: 576. EnemyDefensePoints:263.
+2010-07-07 12:48:56,456 INFO Atacando a rtrtrt&#8203;rt
+2010-07-07 12:48:56,813 INFO Le gane a rtrtrt&#8203;rt. Recaude 11925. Health: 134/200. Stamina: 0/10.
+2010-07-07 12:48:56,813 INFO Duermo 2 min para recuperar stamina
+2010-07-07 12:50:56,813 INFO Se me acabo el tiempo para pelear
+2010-07-07 12:50:56,813 INFO Fin peleas. Money ganada : 3263124 .
+2010-07-07 12:50:56,814 INFO Fin de los ataques.
+2010-07-07 12:50:56,814 INFO Ejecutando todas las misiones.
+2010-07-07 12:50:57,321 INFO Missions....
+2010-07-07 12:50:57,322 INFO Checking tab 1
+2010-07-07 12:50:57,887 INFO Checking tab 2
+2010-07-07 12:50:58,427 INFO Energy: 64/490. Mission requiered energy: 33
+2010-07-07 12:50:58,427 INFO Proceso mision: Intercept Shipment. Percent: 42%.
+2010-07-07 12:50:58,997 INFO Energy: 31/490. Mission requiered energy: 33
+2010-07-07 12:50:58,997 INFO Se acabo la energia.
+2010-07-07 12:50:58,997 INFO Fin Ejecutando todas las misiones.
+2010-07-07 12:51:00,031 INFO Checking enemy majorw&#8203;oody can attack: MyAttackPoints: 576. EnemyDefensePoints:95.
+2010-07-07 12:51:00,031 INFO Atacando a majorw&#8203;oody
+2010-07-07 12:51:00,479 INFO Le gane a majorw&#8203;oody. Recaude 21003. Health: 123/200. Stamina: 0/10.
+2010-07-07 12:51:00,479 INFO Duermo 2 min para recuperar stamina
+2010-07-07 12:56:44,536 INFO Atacando...
+2010-07-07 12:56:46,274 INFO Going to Page Units....
+2010-07-07 12:56:47,384 INFO Actualizando units...
+2010-07-07 12:56:52,691 INFO Units actualizadas.
+2010-07-07 12:56:52,691 INFO Going to Page Buildings....
+2010-07-07 12:56:53,132 INFO Actualizando buildings...
+2010-07-07 12:56:53,197 INFO Buildings actualizadas.
+2010-07-07 12:56:53,197 INFO Durmiendo 16 mins para recargar Stamina.
+2010-07-07 13:12:54,380 INFO Go to hospital.
+2010-07-07 13:12:54,380 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 13:12:54,817 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 13:12:54,817 INFO Go to bank.
+2010-07-07 13:12:54,817 INFO Link... http://wwar.storm8.com/bank.php?formNonce=8cdfd172b3407ac70dcee21a91b0f02ed1f94057&h=1000e35a9ed3f1500849ed0257c0b313e765f262
+2010-07-07 13:12:55,255 INFO Depositando 122354
+2010-07-07 13:12:56,440 INFO Se hizo el restore health.
+2010-07-07 13:12:58,040 INFO Checking enemy Jason can attack: MyAttackPoints: 576. EnemyDefensePoints:808.
+2010-07-07 13:12:59,131 INFO Checking enemy stewwy&#8203;dablue&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:192.
+2010-07-07 13:12:59,131 INFO Atacando a stewwy&#8203;dablue&#8203;
+2010-07-07 13:12:59,616 INFO stewwy&#8203;dablue&#8203; se retiro. Health: 200/200. Stamina: 10/10.
+2010-07-07 13:13:00,629 INFO Checking enemy philli&#8203;eg88 can attack: MyAttackPoints: 576. EnemyDefensePoints:188.
+2010-07-07 13:13:00,630 INFO Atacando a philli&#8203;eg88
+2010-07-07 13:13:01,118 INFO Le gane a philli&#8203;eg88. Recaude 60040. Health: 195/200. Stamina: 9/10.
+2010-07-07 13:13:01,119 INFO Atacando de nuevo a philli&#8203;eg88
+2010-07-07 13:13:01,635 INFO Le gane a philli&#8203;eg88. Recaude 15810. Health: 185/200. Stamina: 8/10.
+2010-07-07 13:13:01,636 INFO Atacando de nuevo a philli&#8203;eg88
+2010-07-07 13:13:01,945 INFO philli&#8203;eg88 se retiro. Health: 185/200. Stamina: 8/10.
+2010-07-07 13:13:02,599 INFO Checking enemy bone can attack: MyAttackPoints: 576. EnemyDefensePoints:350.
+2010-07-07 13:13:02,599 INFO Atacando a bone
+2010-07-07 13:13:02,951 INFO Le gane a bone. Recaude 57887. Health: 177/200. Stamina: 7/10.
+2010-07-07 13:13:02,951 INFO Atacando de nuevo a bone
+2010-07-07 13:13:03,264 INFO bone se retiro. Health: 177/200. Stamina: 7/10.
+2010-07-07 13:13:03,939 INFO Checking enemy Lala can attack: MyAttackPoints: 576. EnemyDefensePoints:292.
+2010-07-07 13:13:03,939 INFO Atacando a Lala
+2010-07-07 13:13:04,244 INFO Lala se retiro. Health: 177/200. Stamina: 7/10.
+2010-07-07 13:13:05,059 INFO Checking enemy John can attack: MyAttackPoints: 576. EnemyDefensePoints:505.
+2010-07-07 13:13:05,060 INFO Atacando a John
+2010-07-07 13:13:05,430 INFO Le gane a John. Recaude 58504. Health: 173/200. Stamina: 6/10.
+2010-07-07 13:13:05,430 INFO Atacando de nuevo a John
+2010-07-07 13:13:05,764 INFO Le gane a John. Recaude 73318. Health: 166/200. Stamina: 5/10.
+2010-07-07 13:13:05,764 INFO Atacando de nuevo a John
+2010-07-07 13:13:06,126 INFO Perdi con John. Health: 145/200. Stamina: 4/10.
+2010-07-07 13:13:06,874 INFO Checking enemy Stein can attack: MyAttackPoints: 576. EnemyDefensePoints:3018.
+2010-07-07 13:13:07,677 INFO Checking enemy leo33 can attack: MyAttackPoints: 576. EnemyDefensePoints:73.
+2010-07-07 13:13:07,677 INFO Atacando a leo33
+2010-07-07 13:13:08,003 INFO leo33 se retiro. Health: 145/200. Stamina: 4/10.
+2010-07-07 13:13:08,739 INFO Checking enemy chode can attack: MyAttackPoints: 576. EnemyDefensePoints:384.
+2010-07-07 13:13:08,739 INFO Atacando a chode
+2010-07-07 13:13:09,129 INFO Le gane a chode. Recaude 47661. Health: 132/200. Stamina: 3/10.
+2010-07-07 13:13:09,130 INFO Atacando de nuevo a chode
+2010-07-07 13:13:09,474 INFO Le gane a chode. Recaude 76734. Health: 125/200. Stamina: 2/10.
+2010-07-07 13:13:09,474 INFO Atacando de nuevo a chode
+2010-07-07 13:13:09,821 INFO Le gane a chode. Recaude 80133. Health: 120/200. Stamina: 1/10.
+2010-07-07 13:13:09,821 INFO Atacando de nuevo a chode
+2010-07-07 13:13:10,159 INFO Le gane a chode. Recaude 43036. Health: 106/200. Stamina: 0/10.
+2010-07-07 13:13:10,160 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:15:10,918 INFO Checking enemy Matt can attack: MyAttackPoints: 576. EnemyDefensePoints:274.
+2010-07-07 13:15:10,919 INFO Atacando a Matt
+2010-07-07 13:15:11,241 INFO Le gane a Matt. Recaude 36217. Health: 95/200. Stamina: 0/10.
+2010-07-07 13:15:11,241 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:17:12,049 INFO Checking enemy dennis can attack: MyAttackPoints: 576. EnemyDefensePoints:190.
+2010-07-07 13:17:12,049 INFO Atacando a dennis
+2010-07-07 13:17:12,526 INFO Le gane a dennis. Recaude 55. Health: 90/200. Stamina: 0/10.
+2010-07-07 13:17:12,526 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:19:12,526 INFO Se me acabo el tiempo para pelear
+2010-07-07 13:19:12,526 INFO Fin peleas. Money ganada : 549395 .
+2010-07-07 13:19:12,526 INFO Fin de los ataques.
+2010-07-07 13:19:12,526 INFO Ejecutando todas las misiones.
+2010-07-07 13:19:12,988 INFO Missions....
+2010-07-07 13:19:12,988 INFO Checking tab 1
+2010-07-07 13:19:13,376 INFO Checking tab 2
+2010-07-07 13:19:13,865 INFO Energy: 101/490. Mission requiered energy: 33
+2010-07-07 13:19:13,865 INFO Proceso mision: Intercept Shipment. Percent: 48%.
+2010-07-07 13:19:14,358 INFO Energy: 78/490. Mission requiered energy: 33
+2010-07-07 13:19:14,358 INFO Proceso mision: Intercept Shipment. Percent: 54%.
+2010-07-07 13:19:14,858 INFO Energy: 45/490. Mission requiered energy: 33
+2010-07-07 13:19:14,858 INFO Proceso mision: Intercept Shipment. Percent: 60%.
+2010-07-07 13:19:15,305 INFO Energy: 12/490. Mission requiered energy: 33
+2010-07-07 13:19:15,305 INFO Se acabo la energia.
+2010-07-07 13:19:15,305 INFO Fin Ejecutando todas las misiones.
+2010-07-07 13:19:15,561 INFO Sigo atacando porque tengo energia.
+2010-07-07 13:19:16,212 INFO Checking enemy Onkel-&#8203;Rach can attack: MyAttackPoints: 576. EnemyDefensePoints:151.
+2010-07-07 13:19:16,212 INFO Atacando a Onkel-&#8203;Rach
+2010-07-07 13:19:16,511 INFO Onkel-&#8203;Rach se retiro. Health: 91/200. Stamina: 1/10.
+2010-07-07 13:19:17,297 INFO Checking enemy malmal can attack: MyAttackPoints: 576. EnemyDefensePoints:172.
+2010-07-07 13:19:17,297 INFO Atacando a malmal
+2010-07-07 13:19:17,611 INFO Le gane a malmal. Recaude 33925. Health: 78/200. Stamina: 0/10.
+2010-07-07 13:19:17,612 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:21:18,334 INFO Checking enemy Travis can attack: MyAttackPoints: 576. EnemyDefensePoints:1375.
+2010-07-07 13:21:19,055 INFO Checking enemy vggd can attack: MyAttackPoints: 576. EnemyDefensePoints:215.
+2010-07-07 13:21:19,056 INFO Atacando a vggd
+2010-07-07 13:21:19,421 INFO Le gane a vggd. Recaude 26574. Health: 69/200. Stamina: 0/10.
+2010-07-07 13:21:19,421 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:23:20,108 INFO Checking enemy gatill&#8203;o can attack: MyAttackPoints: 576. EnemyDefensePoints:246.
+2010-07-07 13:23:20,108 INFO Atacando a gatill&#8203;o
+2010-07-07 13:23:20,520 INFO Le gane a gatill&#8203;o. Recaude 0. Health: 60/200. Stamina: 0/10.
+2010-07-07 13:23:20,520 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:25:20,520 INFO Se me acabo el tiempo para pelear
+2010-07-07 13:25:20,520 INFO Fin peleas. Money ganada : 60499 .
+2010-07-07 13:25:21,049 INFO Go to bank.
+2010-07-07 13:25:21,049 INFO Link... http://wwar.storm8.com/bank.php?formNonce=8cdfd172b3407ac70dcee21a91b0f02ed1f94057&h=1000e35a9ed3f1500849ed0257c0b313e765f262
+2010-07-07 13:25:21,335 INFO Depositando 105055
+2010-07-07 13:25:21,801 INFO Se realizo el deposito para el restore.
+2010-07-07 13:25:21,801 INFO Going to Page Units....
+2010-07-07 13:25:22,156 INFO Actualizando units...
+2010-07-07 13:25:23,388 INFO Units actualizadas.
+2010-07-07 13:25:23,710 INFO Contruyendo units defensa...
+2010-07-07 13:25:23,976 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 1
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=b2917a421c43ac153231d9e3203ea9da34c31361&h=09a68b5e3754debcddcb4c90fb5f765d7a5194dd
+
+2010-07-07 13:25:24,276 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 2
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=cba8e308f937be84fda40bc538458af1596cbc64&h=911f5c4399e70730b5e09b1b41fd40b867058ca8
+
+2010-07-07 13:25:24,588 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 3
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=c763b757f2ab070ea9324e52a60288adc7c3dd01&h=619b3679cfe83b8c50dfc19450d8f5717e515f05
+
+2010-07-07 13:25:24,895 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 4
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=c763b757f2ab070ea9324e52a60288adc7c3dd01&h=619b3679cfe83b8c50dfc19450d8f5717e515f05
+
+2010-07-07 13:25:25,200 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=c763b757f2ab070ea9324e52a60288adc7c3dd01&h=619b3679cfe83b8c50dfc19450d8f5717e515f05
+
+2010-07-07 13:25:25,511 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=ea0f1be7c985408bd72338e93d0e1fca16cd0a57&h=b3a0c4066c9b3e348841c5cf51306cfe3743220f
+
+2010-07-07 13:25:25,827 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=ea0f1be7c985408bd72338e93d0e1fca16cd0a57&h=b3a0c4066c9b3e348841c5cf51306cfe3743220f
+
+2010-07-07 13:25:26,216 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=ea0f1be7c985408bd72338e93d0e1fca16cd0a57&h=b3a0c4066c9b3e348841c5cf51306cfe3743220f
+
+2010-07-07 13:25:26,500 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=51d28e79927d05a7e01e5a1e602d0028a4ccbd27&h=14ffc135abeced3130e87ebb9ad0903494428349
+
+2010-07-07 13:25:26,912 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=51d28e79927d05a7e01e5a1e602d0028a4ccbd27&h=14ffc135abeced3130e87ebb9ad0903494428349
+
+2010-07-07 13:25:27,211 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=51d28e79927d05a7e01e5a1e602d0028a4ccbd27&h=14ffc135abeced3130e87ebb9ad0903494428349
+
+2010-07-07 13:25:27,528 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=2dc61b4cf5bcbccfef61f286374cb32d093091a7&h=d6453c26638e5578127b1335be7edb8f8444e11b
+
+2010-07-07 13:25:27,860 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=2dc61b4cf5bcbccfef61f286374cb32d093091a7&h=d6453c26638e5578127b1335be7edb8f8444e11b
+
+2010-07-07 13:25:28,151 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=2dc61b4cf5bcbccfef61f286374cb32d093091a7&h=d6453c26638e5578127b1335be7edb8f8444e11b
+
+2010-07-07 13:25:28,472 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=89adf999aaeae229acbb352ddf91f1e89f7fd8d0&h=7877e8477bd7746cc7eff2464f0557845ceb009c
+
+2010-07-07 13:25:28,773 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=89adf999aaeae229acbb352ddf91f1e89f7fd8d0&h=7877e8477bd7746cc7eff2464f0557845ceb009c
+
+2010-07-07 13:25:29,070 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=89adf999aaeae229acbb352ddf91f1e89f7fd8d0&h=7877e8477bd7746cc7eff2464f0557845ceb009c
+
+2010-07-07 13:25:29,382 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=74f0529de206c29d668feefcbc9d7e8ad7d9f94b&h=70dd3a16d84bdbdd1e79dd73cc07f971f08e4f42
+
+2010-07-07 13:25:29,689 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=74f0529de206c29d668feefcbc9d7e8ad7d9f94b&h=70dd3a16d84bdbdd1e79dd73cc07f971f08e4f42
+
+2010-07-07 13:25:30,037 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=74f0529de206c29d668feefcbc9d7e8ad7d9f94b&h=70dd3a16d84bdbdd1e79dd73cc07f971f08e4f42
+
+2010-07-07 13:25:30,359 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=3e0472a93495ca103b131b7278ed6663a4f4137f&h=a2003fe9ba0aa0c6961fc5d17dc2d345fd8becbe
+
+2010-07-07 13:25:30,674 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=3e0472a93495ca103b131b7278ed6663a4f4137f&h=a2003fe9ba0aa0c6961fc5d17dc2d345fd8becbe
+
+2010-07-07 13:25:31,036 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=3e0472a93495ca103b131b7278ed6663a4f4137f&h=a2003fe9ba0aa0c6961fc5d17dc2d345fd8becbe
+
+2010-07-07 13:25:31,339 INFO FIN Contruir units defensa.
+2010-07-07 13:25:31,633 INFO Contruyendo units ataque...
+2010-07-07 13:25:31,901 INFO FIN Contruir units ataque.
+2010-07-07 13:25:32,171 INFO Contruyendo building de Defense
+2010-07-07 13:25:32,465 INFO Contruyendo buildings...
+2010-07-07 13:25:32,466 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 464085. Building cost: 850000.
+2010-07-07 13:25:32,490 INFO Fin de contruir buildings.
+2010-07-07 13:25:32,884 INFO Durmiendo 18 minutos.
+2010-07-07 13:43:32,884 INFO Atacando...
+2010-07-07 13:43:34,351 INFO Going to Page Units....
+2010-07-07 13:43:42,560 INFO Actualizando units...
+2010-07-07 13:43:52,415 INFO Units actualizadas.
+2010-07-07 13:43:52,415 INFO Going to Page Buildings....
+2010-07-07 13:43:54,712 INFO Actualizando buildings...
+2010-07-07 13:43:54,744 INFO Buildings actualizadas.
+2010-07-07 13:43:55,647 INFO Go to hospital.
+2010-07-07 13:43:55,647 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 13:43:58,562 INFO Se hizo el restore health.
+2010-07-07 13:44:03,389 INFO Checking enemy bob123&#8203;45 can attack: MyAttackPoints: 576. EnemyDefensePoints:804.
+2010-07-07 13:44:06,801 INFO Checking enemy kughm can attack: MyAttackPoints: 576. EnemyDefensePoints:227.
+2010-07-07 13:44:06,801 INFO Atacando a kughm
+2010-07-07 13:44:09,668 INFO Le gane a kughm. Recaude 0. Health: 192/200. Stamina: 9/10.
+2010-07-07 13:44:13,346 INFO Checking enemy abk pippins can attack: MyAttackPoints: 576. EnemyDefensePoints:592.
+2010-07-07 13:44:15,538 INFO Checking enemy Gen. whoop ass can attack: MyAttackPoints: 576. EnemyDefensePoints:313.
+2010-07-07 13:44:15,538 INFO Atacando a Gen. whoop ass
+2010-07-07 13:44:16,401 INFO Le gane a Gen. whoop ass. Recaude 0. Health: 183/200. Stamina: 8/10.
+2010-07-07 13:44:19,759 INFO Checking enemy jason can attack: MyAttackPoints: 576. EnemyDefensePoints:220.
+2010-07-07 13:44:19,759 INFO Atacando a jason
+2010-07-07 13:44:20,770 INFO Le gane a jason. Recaude 14212. Health: 200/200. Stamina: 10/10.
+2010-07-07 13:44:20,770 INFO Atacando de nuevo a jason
+2010-07-07 13:44:21,491 INFO jason se retiro. Health: 200/200. Stamina: 10/10.
+2010-07-07 13:44:24,563 INFO Checking enemy mr. green can attack: MyAttackPoints: 576. EnemyDefensePoints:1666.
+2010-07-07 13:44:25,793 INFO Checking enemy deee can attack: MyAttackPoints: 576. EnemyDefensePoints:454.
+2010-07-07 13:44:25,793 INFO Atacando a deee
+2010-07-07 13:44:26,622 INFO Le gane a deee. Recaude 0. Health: 188/200. Stamina: 9/10.
+2010-07-07 13:44:27,666 INFO Checking enemy west coast can attack: MyAttackPoints: 576. EnemyDefensePoints:1343.
+2010-07-07 13:44:28,790 INFO Checking enemy Carlos can attack: MyAttackPoints: 576. EnemyDefensePoints:2178.
+2010-07-07 13:44:29,779 INFO Checking enemy Dalsto&#8203;n can attack: MyAttackPoints: 576. EnemyDefensePoints:4119.
+2010-07-07 13:44:30,694 INFO Checking enemy ioNigh&#8203;tShade&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:5162.
+2010-07-07 13:44:31,382 INFO Checking enemy Mike can attack: MyAttackPoints: 576. EnemyDefensePoints:141.
+2010-07-07 13:44:31,382 INFO Atacando a Mike
+2010-07-07 13:44:31,934 INFO Le gane a Mike. Recaude 0. Health: 178/200. Stamina: 8/10.
+2010-07-07 13:44:38,836 INFO Checking enemy south can attack: MyAttackPoints: 576. EnemyDefensePoints:976.
+2010-07-07 13:44:41,134 INFO Checking enemy Flatli&#8203;ne4000&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:818.
+2010-07-07 13:44:42,535 INFO Checking enemy Metalm&#8203;ilitia&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:1178.
+2010-07-07 13:44:43,686 INFO Checking enemy E334 藻 Alpha 藻 can attack: MyAttackPoints: 576. EnemyDefensePoints:4346.
+2010-07-07 13:44:44,876 INFO Checking enemy rockja&#8203;w can attack: MyAttackPoints: 576. EnemyDefensePoints:8830.
+2010-07-07 13:44:45,956 INFO Checking enemy John can attack: MyAttackPoints: 576. EnemyDefensePoints:169.
+2010-07-07 13:44:45,956 INFO Atacando a John
+2010-07-07 13:44:46,490 INFO Le gane a John. Recaude 18764. Health: 172/200. Stamina: 7/10.
+2010-07-07 13:44:46,490 INFO Atacando de nuevo a John
+2010-07-07 13:44:47,079 INFO John se retiro. Health: 172/200. Stamina: 7/10.
+2010-07-07 13:44:47,753 INFO Checking enemy I did ur mom can attack: MyAttackPoints: 576. EnemyDefensePoints:1573.
+2010-07-07 13:44:48,584 INFO Checking enemy Hector can attack: MyAttackPoints: 576. EnemyDefensePoints:737.
+2010-07-07 13:44:58,148 INFO Checking enemy combad&#8203;o can attack: MyAttackPoints: 576. EnemyDefensePoints:283.
+2010-07-07 13:44:58,149 INFO Atacando a combad&#8203;o
+2010-07-07 13:45:00,320 INFO Le gane a combad&#8203;o. Recaude 5168. Health: 167/200. Stamina: 6/10.
+2010-07-07 13:45:01,820 INFO Checking enemy WarMon&#8203;ger™ can attack: MyAttackPoints: 576. EnemyDefensePoints:8055.
+2010-07-07 13:45:02,946 INFO Checking enemy Shane can attack: MyAttackPoints: 576. EnemyDefensePoints:131.
+2010-07-07 13:45:02,946 INFO Atacando a Shane
+2010-07-07 13:45:03,592 INFO Le gane a Shane. Recaude 4165. Health: 159/200. Stamina: 5/10.
+2010-07-07 13:45:04,696 INFO Checking enemy jlowe can attack: MyAttackPoints: 576. EnemyDefensePoints:670.
+2010-07-07 13:45:05,627 INFO Checking enemy SodaPo&#8203;P can attack: MyAttackPoints: 576. EnemyDefensePoints:135.
+2010-07-07 13:45:05,628 INFO Atacando a SodaPo&#8203;P
+2010-07-07 13:45:06,157 INFO Le gane a SodaPo&#8203;P. Recaude 60452. Health: 157/200. Stamina: 4/10.
+2010-07-07 13:45:06,157 INFO Atacando de nuevo a SodaPo&#8203;P
+2010-07-07 13:45:06,673 INFO Le gane a SodaPo&#8203;P. Recaude 12143. Health: 154/200. Stamina: 3/10.
+2010-07-07 13:45:06,673 INFO Atacando de nuevo a SodaPo&#8203;P
+2010-07-07 13:45:07,277 INFO Le gane a SodaPo&#8203;P. Recaude 30439. Health: 145/200. Stamina: 2/10.
+2010-07-07 13:45:07,277 INFO Atacando de nuevo a SodaPo&#8203;P
+2010-07-07 13:45:07,838 INFO Le gane a SodaPo&#8203;P. Recaude 12784. Health: 138/200. Stamina: 1/10.
+2010-07-07 13:45:07,838 INFO Atacando de nuevo a SodaPo&#8203;P
+2010-07-07 13:45:08,322 INFO Le gane a SodaPo&#8203;P. Recaude 10291. Health: 132/200. Stamina: 0/10.
+2010-07-07 13:45:08,323 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:47:18,406 INFO Checking enemy Big Bear can attack: MyAttackPoints: 576. EnemyDefensePoints:905.
+2010-07-07 13:47:20,062 INFO Checking enemy amnon can attack: MyAttackPoints: 576. EnemyDefensePoints:159.
+2010-07-07 13:47:20,062 INFO Atacando a amnon
+2010-07-07 13:47:20,749 INFO Le gane a amnon. Recaude 35569. Health: 125/200. Stamina: 0/10.
+2010-07-07 13:47:20,749 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:49:20,750 INFO Se me acabo el tiempo para pelear
+2010-07-07 13:49:20,750 INFO Fin peleas. Money ganada : 203987 .
+2010-07-07 13:49:20,750 INFO Fin de los ataques.
+2010-07-07 13:49:20,750 INFO Ejecutando todas las misiones.
+2010-07-07 13:49:21,665 INFO Missions....
+2010-07-07 13:49:21,665 INFO Checking tab 1
+2010-07-07 13:49:22,360 INFO Checking tab 2
+2010-07-07 13:49:23,189 INFO Energy: 490/490. Mission requiered energy: 33
+2010-07-07 13:49:23,189 INFO Proceso mision: Intercept Shipment. Percent: 66%.
+2010-07-07 13:49:23,907 INFO Energy: 457/490. Mission requiered energy: 33
+2010-07-07 13:49:23,908 INFO Proceso mision: Intercept Shipment. Percent: 72%.
+2010-07-07 13:49:24,473 INFO Energy: 424/490. Mission requiered energy: 33
+2010-07-07 13:49:24,473 INFO Proceso mision: Intercept Shipment. Percent: 78%.
+2010-07-07 13:49:25,050 INFO Energy: 391/490. Mission requiered energy: 33
+2010-07-07 13:49:25,050 INFO Proceso mision: Intercept Shipment. Percent: 84%.
+2010-07-07 13:49:25,617 INFO Energy: 358/490. Mission requiered energy: 33
+2010-07-07 13:49:25,617 INFO Proceso mision: Intercept Shipment. Percent: 90%.
+2010-07-07 13:49:26,156 INFO Energy: 325/490. Mission requiered energy: 33
+2010-07-07 13:49:26,156 INFO Proceso mision: Intercept Shipment. Percent: 96%.
+2010-07-07 13:49:26,778 INFO Energy: 292/490. Mission requiered energy: 67
+2010-07-07 13:49:26,778 INFO Proceso mision: Ship Supplies to Troops. Percent: 0%.
+2010-07-07 13:49:27,330 INFO Energy: 225/490. Mission requiered energy: 67
+2010-07-07 13:49:27,330 INFO Proceso mision: Ship Supplies to Troops. Percent: 12%.
+2010-07-07 13:49:27,900 INFO Energy: 158/490. Mission requiered energy: 67
+2010-07-07 13:49:27,900 INFO Proceso mision: Ship Supplies to Troops. Percent: 24%.
+2010-07-07 13:49:28,478 INFO Energy: 91/490. Mission requiered energy: 67
+2010-07-07 13:49:28,478 INFO Proceso mision: Ship Supplies to Troops. Percent: 36%.
+2010-07-07 13:49:29,000 INFO Energy: 24/490. Mission requiered energy: 67
+2010-07-07 13:49:29,001 INFO Se acabo la energia.
+2010-07-07 13:49:29,001 INFO Fin Ejecutando todas las misiones.
+2010-07-07 13:49:29,258 INFO Sigo atacando porque tengo energia.
+2010-07-07 13:49:29,983 INFO Checking enemy rryy can attack: MyAttackPoints: 576. EnemyDefensePoints:108.
+2010-07-07 13:49:29,983 INFO Atacando a rryy
+2010-07-07 13:49:30,331 INFO Le gane a rryy. Recaude 17566. Health: 117/200. Stamina: 0/10.
+2010-07-07 13:49:30,331 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:51:31,024 INFO Checking enemy yoshia&#8203;ki can attack: MyAttackPoints: 576. EnemyDefensePoints:5968.
+2010-07-07 13:51:31,681 INFO Checking enemy michol can attack: MyAttackPoints: 576. EnemyDefensePoints:1053.
+2010-07-07 13:51:32,473 INFO Checking enemy Thaske&#8203;n can attack: MyAttackPoints: 576. EnemyDefensePoints:736.
+2010-07-07 13:51:33,443 INFO Checking enemy paul can attack: MyAttackPoints: 576. EnemyDefensePoints:221.
+2010-07-07 13:51:33,443 INFO Atacando a paul
+2010-07-07 13:51:33,818 INFO Le gane a paul. Recaude 95427. Health: 109/200. Stamina: 0/10.
+2010-07-07 13:51:33,818 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:53:34,561 INFO Checking enemy Jeff can attack: MyAttackPoints: 576. EnemyDefensePoints:383.
+2010-07-07 13:53:34,562 INFO Atacando a Jeff
+2010-07-07 13:53:34,899 INFO Perdi con Jeff. Health: 86/200. Stamina: 0/10.
+2010-07-07 13:53:35,228 INFO Duermo 2 min para recuperar stamina
+2010-07-07 13:55:35,228 INFO SE ME ACABO LA ENERGIA. Health: 86/200. Stamina: 0/10. FIN.
+2010-07-07 13:55:35,228 INFO Fin peleas. Money ganada : 112993 .
+2010-07-07 13:55:35,757 INFO Go to bank.
+2010-07-07 13:55:35,758 INFO Link... http://wwar.storm8.com/bank.php?formNonce=0bd9d798bc4429d601a716b77af4a303e61836b0&h=7477ba2c60dbe5e9fe63a09e1557a8fb4aa77369
+2010-07-07 13:55:36,034 INFO Depositando 102515
+2010-07-07 13:55:36,969 INFO Se realizo el deposito para el restore.
+2010-07-07 13:55:36,969 INFO Going to Page Units....
+2010-07-07 13:55:37,275 INFO Actualizando units...
+2010-07-07 13:55:38,589 INFO Units actualizadas.
+2010-07-07 13:55:38,920 INFO Contruyendo units defensa...
+2010-07-07 13:55:39,189 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 5
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=e6ebc7f05ed735be782b83f3493dc724a4a0b7f2&h=448effe6ce489f892c1f4db08bb3de9f6b9ef682
+
+2010-07-07 13:55:39,517 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 6
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=d9b5c11edb1b1e97e9da85b88e92df89834473fc&h=b46586e86af68f9e994729fd98aa9c40f7aa42b6
+
+2010-07-07 13:55:39,828 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=8d650076efd57f73d27a9da40daa8781b1c8954f&h=e30bacb0985cfd1c6d157208b42ad38bf8bdcd65
+
+2010-07-07 13:55:40,135 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=8d650076efd57f73d27a9da40daa8781b1c8954f&h=e30bacb0985cfd1c6d157208b42ad38bf8bdcd65
+
+2010-07-07 13:55:40,479 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=8d650076efd57f73d27a9da40daa8781b1c8954f&h=e30bacb0985cfd1c6d157208b42ad38bf8bdcd65
+
+2010-07-07 13:55:40,800 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=7e81ed55c144b2420b0da684607c0d45b2b24e35&h=e9c684520e96b7ef9c84d5a2c1b1034e1b74ce09
+
+2010-07-07 13:55:41,124 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=7e81ed55c144b2420b0da684607c0d45b2b24e35&h=e9c684520e96b7ef9c84d5a2c1b1034e1b74ce09
+
+2010-07-07 13:55:41,420 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=7e81ed55c144b2420b0da684607c0d45b2b24e35&h=e9c684520e96b7ef9c84d5a2c1b1034e1b74ce09
+
+2010-07-07 13:55:41,790 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=eb43a950e352bbd723dce7ad6f1184b8ca2cd596&h=922984b8ba020de7f89254ddcd6e3386c162ed22
+
+2010-07-07 13:55:42,100 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=eb43a950e352bbd723dce7ad6f1184b8ca2cd596&h=922984b8ba020de7f89254ddcd6e3386c162ed22
+
+2010-07-07 13:55:42,431 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=eb43a950e352bbd723dce7ad6f1184b8ca2cd596&h=922984b8ba020de7f89254ddcd6e3386c162ed22
+
+2010-07-07 13:55:42,771 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=6da78192b86d02d827c7bfb01e2fd34ebaded7ab&h=0545a6594a13a4bb7d13c0cef64c0c9940d60385
+
+2010-07-07 13:55:43,070 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=6da78192b86d02d827c7bfb01e2fd34ebaded7ab&h=0545a6594a13a4bb7d13c0cef64c0c9940d60385
+
+2010-07-07 13:55:43,416 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=6da78192b86d02d827c7bfb01e2fd34ebaded7ab&h=0545a6594a13a4bb7d13c0cef64c0c9940d60385
+
+2010-07-07 13:55:43,759 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=1a5eb6792cd3037f8d15bfbb97a5b90ec88e935c&h=b117541e2bd1aed0372500a454816eb2fc433e0f
+
+2010-07-07 13:55:44,060 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=1a5eb6792cd3037f8d15bfbb97a5b90ec88e935c&h=b117541e2bd1aed0372500a454816eb2fc433e0f
+
+2010-07-07 13:55:44,387 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=1a5eb6792cd3037f8d15bfbb97a5b90ec88e935c&h=b117541e2bd1aed0372500a454816eb2fc433e0f
+
+2010-07-07 13:55:44,682 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=2b7a8f3ad5505bf6907f671bec672926f2b7a4c5&h=abc02431f801d12f1d821f3fe534fd6004b85384
+
+2010-07-07 13:55:44,997 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=2b7a8f3ad5505bf6907f671bec672926f2b7a4c5&h=abc02431f801d12f1d821f3fe534fd6004b85384
+
+2010-07-07 13:55:45,304 INFO FIN Contruir units defensa.
+2010-07-07 13:55:45,659 INFO Contruyendo units ataque...
+2010-07-07 13:55:45,921 INFO FIN Contruir units ataque.
+2010-07-07 13:55:46,180 INFO Contruyendo building de Defense
+2010-07-07 13:55:46,470 INFO Contruyendo buildings...
+2010-07-07 13:55:46,470 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 44810. Building cost: 850000.
+2010-07-07 13:55:46,514 INFO Fin de contruir buildings.
+2010-07-07 13:55:46,883 INFO Durmiendo 18 minutos.
+2010-07-07 14:13:46,883 INFO Atacando...
+2010-07-07 14:13:48,701 INFO Going to Page Units....
+2010-07-07 14:13:49,715 INFO Actualizando units...
+2010-07-07 14:13:51,417 INFO Units actualizadas.
+2010-07-07 14:13:51,418 INFO Going to Page Buildings....
+2010-07-07 14:13:51,865 INFO Actualizando buildings...
+2010-07-07 14:13:51,891 INFO Buildings actualizadas.
+2010-07-07 14:13:52,154 INFO Go to hospital.
+2010-07-07 14:13:52,154 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 14:13:52,390 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 14:13:52,390 INFO Go to bank.
+2010-07-07 14:13:52,390 INFO Link... http://wwar.storm8.com/bank.php?formNonce=870f7bf5d98414dbb402bca0139b226c18129b41&h=2512113793f91ebc18ecb54c015d63fb151f2539
+2010-07-07 14:13:52,658 INFO Depositando 10033
+2010-07-07 14:13:53,669 INFO Se hizo el restore health.
+2010-07-07 14:13:54,888 INFO Checking enemy Bender can attack: MyAttackPoints: 576. EnemyDefensePoints:1455.
+2010-07-07 14:13:55,854 INFO Checking enemy lukekn&#8203;ight can attack: MyAttackPoints: 576. EnemyDefensePoints:251.
+2010-07-07 14:13:55,854 INFO Atacando a lukekn&#8203;ight
+2010-07-07 14:13:56,314 INFO lukekn&#8203;ight se retiro. Health: 200/200. Stamina: 10/10.
+2010-07-07 14:13:56,988 INFO Checking enemy Trace can attack: MyAttackPoints: 576. EnemyDefensePoints:471.
+2010-07-07 14:13:56,988 INFO Atacando a Trace
+2010-07-07 14:13:57,463 INFO Le gane a Trace. Recaude 470000. Health: 187/200. Stamina: 9/10.
+2010-07-07 14:13:57,464 INFO Atacando de nuevo a Trace
+2010-07-07 14:13:57,943 INFO Perdi con Trace. Health: 168/200. Stamina: 8/10.
+2010-07-07 14:13:58,661 INFO Checking enemy Wo0kiE can attack: MyAttackPoints: 576. EnemyDefensePoints:383.
+2010-07-07 14:13:58,661 INFO Atacando a Wo0kiE
+2010-07-07 14:13:58,967 INFO Le gane a Wo0kiE. Recaude 2916. Health: 164/200. Stamina: 7/10.
+2010-07-07 14:13:59,593 INFO Checking enemy Killer&#8203;Dave can attack: MyAttackPoints: 576. EnemyDefensePoints:418.
+2010-07-07 14:13:59,593 INFO Atacando a Killer&#8203;Dave
+2010-07-07 14:14:00,021 INFO Le gane a Killer&#8203;Dave. Recaude 75831. Health: 159/200. Stamina: 6/10.
+2010-07-07 14:14:00,021 INFO Atacando de nuevo a Killer&#8203;Dave
+2010-07-07 14:14:00,350 INFO Killer&#8203;Dave se retiro. Health: 159/200. Stamina: 6/10.
+2010-07-07 14:14:01,026 INFO Checking enemy limina&#8203;tor can attack: MyAttackPoints: 576. EnemyDefensePoints:307.
+2010-07-07 14:14:01,026 INFO Atacando a limina&#8203;tor
+2010-07-07 14:14:01,354 INFO Le gane a limina&#8203;tor. Recaude 183165. Health: 150/200. Stamina: 5/10.
+2010-07-07 14:14:01,354 INFO Atacando de nuevo a limina&#8203;tor
+2010-07-07 14:14:01,712 INFO Le gane a limina&#8203;tor. Recaude 346182. Health: 138/200. Stamina: 4/10.
+2010-07-07 14:14:01,712 INFO Atacando de nuevo a limina&#8203;tor
+2010-07-07 14:14:02,076 INFO Le gane a limina&#8203;tor. Recaude 91161. Health: 135/200. Stamina: 3/10.
+2010-07-07 14:14:02,076 INFO Atacando de nuevo a limina&#8203;tor
+2010-07-07 14:14:02,406 INFO Perdi con limina&#8203;tor. Health: 118/200. Stamina: 2/10.
+2010-07-07 14:14:03,055 INFO Checking enemy johnga&#8203;lt can attack: MyAttackPoints: 576. EnemyDefensePoints:196.
+2010-07-07 14:14:03,055 INFO Atacando a johnga&#8203;lt
+2010-07-07 14:14:03,415 INFO Le gane a johnga&#8203;lt. Recaude 15828. Health: 105/200. Stamina: 1/10.
+2010-07-07 14:14:03,415 INFO Atacando de nuevo a johnga&#8203;lt
+2010-07-07 14:14:03,785 INFO Le gane a johnga&#8203;lt. Recaude 12398. Health: 91/200. Stamina: 0/10.
+2010-07-07 14:14:03,785 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:16:04,469 INFO Checking enemy kech52 can attack: MyAttackPoints: 576. EnemyDefensePoints:451.
+2010-07-07 14:16:04,469 INFO Atacando a kech52
+2010-07-07 14:16:04,797 INFO Le gane a kech52. Recaude 82435. Health: 86/200. Stamina: 0/10.
+2010-07-07 14:16:04,797 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:18:05,499 INFO Checking enemy warseb can attack: MyAttackPoints: 576. EnemyDefensePoints:754.
+2010-07-07 14:18:06,154 INFO Checking enemy James can attack: MyAttackPoints: 576. EnemyDefensePoints:770.
+2010-07-07 14:18:06,818 INFO Checking enemy tino can attack: MyAttackPoints: 576. EnemyDefensePoints:132.
+2010-07-07 14:18:06,818 INFO Atacando a tino
+2010-07-07 14:18:07,134 INFO Le gane a tino. Recaude 30519. Health: 82/200. Stamina: 0/10.
+2010-07-07 14:18:07,134 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:20:07,134 INFO Se me acabo el tiempo para pelear
+2010-07-07 14:20:07,135 INFO Fin peleas. Money ganada : 1310435 .
+2010-07-07 14:20:07,135 INFO Fin de los ataques.
+2010-07-07 14:20:07,135 INFO Ejecutando todas las misiones.
+2010-07-07 14:20:07,588 INFO Missions....
+2010-07-07 14:20:07,588 INFO Checking tab 1
+2010-07-07 14:20:07,916 INFO Checking tab 2
+2010-07-07 14:20:08,305 INFO Energy: 94/490. Mission requiered energy: 67
+2010-07-07 14:20:08,305 INFO Proceso mision: Ship Supplies to Troops. Percent: 48%.
+2010-07-07 14:20:08,688 INFO Energy: 27/490. Mission requiered energy: 67
+2010-07-07 14:20:08,688 INFO Se acabo la energia.
+2010-07-07 14:20:08,688 INFO Fin Ejecutando todas las misiones.
+2010-07-07 14:20:08,937 INFO Sigo atacando porque tengo energia.
+2010-07-07 14:20:09,596 INFO Checking enemy DWESTY can attack: MyAttackPoints: 576. EnemyDefensePoints:215.
+2010-07-07 14:20:09,596 INFO Atacando a DWESTY
+2010-07-07 14:20:09,959 INFO Le gane a DWESTY. Recaude 126750. Health: 75/200. Stamina: 0/10.
+2010-07-07 14:20:09,959 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:22:11,099 INFO Checking enemy jeff can attack: MyAttackPoints: 576. EnemyDefensePoints:115.
+2010-07-07 14:22:11,099 INFO Atacando a jeff
+2010-07-07 14:22:13,267 INFO Le gane a jeff. Recaude 434. Health: 63/200. Stamina: 0/10.
+2010-07-07 14:22:13,267 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:24:14,495 INFO Checking enemy sponge&#8203;bob can attack: MyAttackPoints: 576. EnemyDefensePoints:88.
+2010-07-07 14:24:14,495 INFO Atacando a sponge&#8203;bob
+2010-07-07 14:24:15,153 INFO Le gane a sponge&#8203;bob. Recaude 0. Health: 62/200. Stamina: 0/10.
+2010-07-07 14:24:15,153 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:26:15,154 INFO Se me acabo el tiempo para pelear
+2010-07-07 14:26:15,154 INFO Fin peleas. Money ganada : 127184 .
+2010-07-07 14:26:15,675 INFO Go to bank.
+2010-07-07 14:26:15,675 INFO Link... http://wwar.storm8.com/bank.php?formNonce=870f7bf5d98414dbb402bca0139b226c18129b41&h=2512113793f91ebc18ecb54c015d63fb151f2539
+2010-07-07 14:26:15,928 INFO Depositando 132937
+2010-07-07 14:26:16,388 INFO Se realizo el deposito para el restore.
+2010-07-07 14:26:16,388 INFO Going to Page Units....
+2010-07-07 14:26:17,017 INFO Actualizando units...
+2010-07-07 14:26:18,199 INFO Units actualizadas.
+2010-07-07 14:26:18,650 INFO Contruyendo units defensa...
+2010-07-07 14:26:18,918 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 7
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=34c996baaea0e3a11e503a66db72898dde25556d&h=bed2fa9e4d130f58d39228bc88d671c3ef6689eb
+
+2010-07-07 14:26:19,383 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 8
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=dc9ada550a351ebf1b3584f7d18443ab0c1c2b97&h=0597e370352e979aeba8b686311bfcdb496fb8a3
+
+2010-07-07 14:26:19,880 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=f4c8ecc53281dd5b4c0aa343a7c58e6777d7f70e&h=0cba2fbd2f2c2e65a92b9828b551b20adb6c9339
+
+2010-07-07 14:26:20,181 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=f4c8ecc53281dd5b4c0aa343a7c58e6777d7f70e&h=0cba2fbd2f2c2e65a92b9828b551b20adb6c9339
+
+2010-07-07 14:26:20,461 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=f4c8ecc53281dd5b4c0aa343a7c58e6777d7f70e&h=0cba2fbd2f2c2e65a92b9828b551b20adb6c9339
+
+2010-07-07 14:26:20,743 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=35757189c7e2869c42923acb0d877c3ded3b1395&h=0ccc15d26b8bae91f6b80871b1870ac1674d468b
+
+2010-07-07 14:26:21,095 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=35757189c7e2869c42923acb0d877c3ded3b1395&h=0ccc15d26b8bae91f6b80871b1870ac1674d468b
+
+2010-07-07 14:26:21,391 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=35757189c7e2869c42923acb0d877c3ded3b1395&h=0ccc15d26b8bae91f6b80871b1870ac1674d468b
+
+2010-07-07 14:26:21,688 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=35757189c7e2869c42923acb0d877c3ded3b1395&h=0ccc15d26b8bae91f6b80871b1870ac1674d468b
+
+2010-07-07 14:26:22,047 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=f87edebd9d86a64898e89a68d3cbd38b1f53d588&h=9716406de433d68d45da080a76dec7f8a08b91b8
+
+2010-07-07 14:26:22,333 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=f87edebd9d86a64898e89a68d3cbd38b1f53d588&h=9716406de433d68d45da080a76dec7f8a08b91b8
+
+2010-07-07 14:26:22,642 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=f87edebd9d86a64898e89a68d3cbd38b1f53d588&h=9716406de433d68d45da080a76dec7f8a08b91b8
+
+2010-07-07 14:26:22,962 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=71d33d86db7c70732f4ecdd3e0c3d64ef7ac9ab2&h=9e52e3f255e46b4d26f1a1bdd6c63d9e40262756
+
+2010-07-07 14:26:23,270 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=71d33d86db7c70732f4ecdd3e0c3d64ef7ac9ab2&h=9e52e3f255e46b4d26f1a1bdd6c63d9e40262756
+
+2010-07-07 14:26:23,602 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=71d33d86db7c70732f4ecdd3e0c3d64ef7ac9ab2&h=9e52e3f255e46b4d26f1a1bdd6c63d9e40262756
+
+2010-07-07 14:26:24,051 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=9bd60246487cfa5ac45728524f5fe677e7e7fc1f&h=b1ce91862e12efdba2b1f78ffd9a43cf7cef5f9c
+
+2010-07-07 14:26:24,355 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=9bd60246487cfa5ac45728524f5fe677e7e7fc1f&h=b1ce91862e12efdba2b1f78ffd9a43cf7cef5f9c
+
+2010-07-07 14:26:24,639 INFO FIN Contruir units defensa.
+2010-07-07 14:26:24,964 INFO Contruyendo units ataque...
+2010-07-07 14:26:25,258 INFO FIN Contruir units ataque.
+2010-07-07 14:26:25,503 INFO Contruyendo building de Defense
+2010-07-07 14:26:25,790 INFO Contruyendo buildings...
+2010-07-07 14:26:25,790 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 374885. Building cost: 850000.
+2010-07-07 14:26:25,810 INFO Fin de contruir buildings.
+2010-07-07 14:26:26,225 INFO Durmiendo 18 minutos.
+2010-07-07 14:48:16,150 INFO Atacando...
+2010-07-07 14:48:17,812 INFO Going to Page Units....
+2010-07-07 14:48:18,859 INFO Actualizando units...
+2010-07-07 14:48:23,852 INFO Units actualizadas.
+2010-07-07 14:48:23,852 INFO Going to Page Buildings....
+2010-07-07 14:48:24,299 INFO Actualizando buildings...
+2010-07-07 14:48:24,352 INFO Buildings actualizadas.
+2010-07-07 14:48:24,800 INFO Go to hospital.
+2010-07-07 14:48:24,800 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 14:48:25,301 INFO Se hizo el restore health.
+2010-07-07 14:48:26,677 INFO Checking enemy ggsdh can attack: MyAttackPoints: 576. EnemyDefensePoints:407.
+2010-07-07 14:48:26,678 INFO Atacando a ggsdh
+2010-07-07 14:48:27,153 INFO ggsdh se retiro. Health: 200/200. Stamina: 10/10.
+2010-07-07 14:48:28,338 INFO Checking enemy ioNigh&#8203;tShade&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:5162.
+2010-07-07 14:48:29,157 INFO Checking enemy Lauren&#8203;t. can attack: MyAttackPoints: 576. EnemyDefensePoints:160.
+2010-07-07 14:48:29,157 INFO Atacando a Lauren&#8203;t.
+2010-07-07 14:48:29,635 INFO Le gane a Lauren&#8203;t.. Recaude 409208. Health: 193/200. Stamina: 9/10.
+2010-07-07 14:48:29,635 INFO Atacando de nuevo a Lauren&#8203;t.
+2010-07-07 14:48:29,959 INFO Lauren&#8203;t. se retiro. Health: 193/200. Stamina: 9/10.
+2010-07-07 14:48:30,630 INFO Checking enemy Chäkäż&#8203;ä can attack: MyAttackPoints: 576. EnemyDefensePoints:575.
+2010-07-07 14:48:30,630 INFO Atacando a Chäkäż&#8203;ä
+2010-07-07 14:48:30,995 INFO Perdi con Chäkäż&#8203;ä. Health: 172/200. Stamina: 8/10.
+2010-07-07 14:48:31,702 INFO Checking enemy Hans N Texas can attack: MyAttackPoints: 576. EnemyDefensePoints:1218.
+2010-07-07 14:48:32,427 INFO Checking enemy sputni&#8203;k can attack: MyAttackPoints: 576. EnemyDefensePoints:266.
+2010-07-07 14:48:32,427 INFO Atacando a sputni&#8203;k
+2010-07-07 14:48:32,755 INFO Le gane a sputni&#8203;k. Recaude 16319. Health: 158/200. Stamina: 7/10.
+2010-07-07 14:48:32,755 INFO Atacando de nuevo a sputni&#8203;k
+2010-07-07 14:48:33,088 INFO Le gane a sputni&#8203;k. Recaude 63917. Health: 154/200. Stamina: 6/10.
+2010-07-07 14:48:33,088 INFO Atacando de nuevo a sputni&#8203;k
+2010-07-07 14:48:33,428 INFO Le gane a sputni&#8203;k. Recaude 26845. Health: 144/200. Stamina: 5/10.
+2010-07-07 14:48:33,428 INFO Atacando de nuevo a sputni&#8203;k
+2010-07-07 14:48:33,921 INFO Le gane a sputni&#8203;k. Recaude 32981. Health: 139/200. Stamina: 4/10.
+2010-07-07 14:48:33,922 INFO Atacando de nuevo a sputni&#8203;k
+2010-07-07 14:48:34,307 INFO Le gane a sputni&#8203;k. Recaude 14511. Health: 130/200. Stamina: 3/10.
+2010-07-07 14:48:34,307 INFO Atacando de nuevo a sputni&#8203;k
+2010-07-07 14:48:37,019 INFO Le gane a sputni&#8203;k. Recaude 18786. Health: 127/200. Stamina: 2/10.
+2010-07-07 14:48:37,019 INFO Atacando de nuevo a sputni&#8203;k
+2010-07-07 14:48:38,500 INFO Le gane a sputni&#8203;k. Recaude 11835. Health: 116/200. Stamina: 1/10.
+2010-07-07 14:48:38,501 INFO Atacando de nuevo a sputni&#8203;k
+2010-07-07 14:48:39,421 INFO Le gane a sputni&#8203;k. Recaude 6075. Health: 103/200. Stamina: 0/10.
+2010-07-07 14:48:39,421 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:50:40,632 INFO Checking enemy Metalm&#8203;ilitia&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:1178.
+2010-07-07 14:50:41,643 INFO Checking enemy Timmy can attack: MyAttackPoints: 576. EnemyDefensePoints:974.
+2010-07-07 14:50:42,696 INFO Checking enemy amnon can attack: MyAttackPoints: 576. EnemyDefensePoints:215.
+2010-07-07 14:50:42,696 INFO Atacando a amnon
+2010-07-07 14:50:43,157 INFO amnon se retiro. Health: 103/200. Stamina: 1/10.
+2010-07-07 14:50:44,158 INFO Checking enemy Kasper can attack: MyAttackPoints: 576. EnemyDefensePoints:834.
+2010-07-07 14:50:44,861 INFO Checking enemy willem can attack: MyAttackPoints: 576. EnemyDefensePoints:724.
+2010-07-07 14:50:45,615 INFO Checking enemy Grant can attack: MyAttackPoints: 576. EnemyDefensePoints:3302.
+2010-07-07 14:50:46,309 INFO Checking enemy johnga&#8203;lt can attack: MyAttackPoints: 576. EnemyDefensePoints:196.
+2010-07-07 14:50:46,309 INFO Atacando a johnga&#8203;lt
+2010-07-07 14:50:46,640 INFO Le gane a johnga&#8203;lt. Recaude 47114. Health: 96/200. Stamina: 0/10.
+2010-07-07 14:50:46,640 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:53:01,199 INFO Checking enemy Captai&#8203;n Dew Dew can attack: MyAttackPoints: 576. EnemyDefensePoints:179.
+2010-07-07 14:53:01,199 INFO Atacando a Captai&#8203;n Dew Dew
+2010-07-07 14:53:02,118 INFO Le gane a Captai&#8203;n Dew Dew. Recaude 0. Health: 80/200. Stamina: 0/10.
+2010-07-07 14:53:02,118 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:55:02,118 INFO Se me acabo el tiempo para pelear
+2010-07-07 14:55:02,119 INFO Fin peleas. Money ganada : 647591 .
+2010-07-07 14:55:02,119 INFO Fin de los ataques.
+2010-07-07 14:55:02,119 INFO Ejecutando todas las misiones.
+2010-07-07 14:55:04,950 INFO Missions....
+2010-07-07 14:55:04,950 INFO Checking tab 1
+2010-07-07 14:55:06,866 INFO Checking tab 2
+2010-07-07 14:55:07,959 INFO Energy: 108/490. Mission requiered energy: 67
+2010-07-07 14:55:07,960 INFO Proceso mision: Ship Supplies to Troops. Percent: 60%.
+2010-07-07 14:55:08,898 INFO Energy: 52/490. Mission requiered energy: 67
+2010-07-07 14:55:08,898 INFO Se acabo la energia.
+2010-07-07 14:55:08,898 INFO Fin Ejecutando todas las misiones.
+2010-07-07 14:55:09,169 INFO Sigo atacando porque tengo energia.
+2010-07-07 14:55:10,187 INFO Checking enemy 5mun8c&#8203;hie2 can attack: MyAttackPoints: 576. EnemyDefensePoints:1774.
+2010-07-07 14:55:11,999 INFO Checking enemy Bender can attack: MyAttackPoints: 576. EnemyDefensePoints:1455.
+2010-07-07 14:55:14,028 INFO Checking enemy Menace can attack: MyAttackPoints: 576. EnemyDefensePoints:228.
+2010-07-07 14:55:14,028 INFO Atacando a Menace
+2010-07-07 14:55:14,708 INFO Le gane a Menace. Recaude 22511. Health: 78/200. Stamina: 0/10.
+2010-07-07 14:55:14,708 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:57:18,482 INFO Checking enemy mike can attack: MyAttackPoints: 576. EnemyDefensePoints:574.
+2010-07-07 14:57:18,482 INFO Atacando a mike
+2010-07-07 14:57:20,180 INFO Perdi con mike. Health: 56/200. Stamina: 0/10.
+2010-07-07 14:57:21,473 INFO Duermo 2 min para recuperar stamina
+2010-07-07 14:59:21,474 INFO SE ME ACABO LA ENERGIA. Health: 56/200. Stamina: 0/10. FIN.
+2010-07-07 14:59:21,474 INFO Fin peleas. Money ganada : 22511 .
+2010-07-07 14:59:24,572 INFO Go to bank.
+2010-07-07 14:59:24,573 INFO Link... http://wwar.storm8.com/bank.php?formNonce=59edd37f2fea289328f2a4cdf4e70198dce2fdd6&h=70ecabb4a72a50fda8fe8ff2d3d62c8ef7b81dac
+2010-07-07 14:59:25,043 INFO Depositando 127662
+2010-07-07 14:59:25,704 INFO Se realizo el deposito para el restore.
+2010-07-07 14:59:25,704 INFO Going to Page Units....
+2010-07-07 14:59:29,605 INFO Actualizando units...
+2010-07-07 14:59:34,824 INFO Units actualizadas.
+2010-07-07 14:59:37,041 INFO Contruyendo units defensa...
+2010-07-07 14:59:37,963 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 9
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=813d414d482e0ae3d04aa06c7067c8ee4205b251&h=8e5914969a4c68d321e061488adb50ad5fc89bcb
+
+2010-07-07 14:59:40,004 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=78232368e567c4d7d05c4c6643f028ef13405ca0&h=100fc5318a931e661cc3c83b5928cd504141a543
+
+2010-07-07 14:59:41,289 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=b78f31f6b3e3cb23fe2c4bf2d989ff1f949b56d1&h=9de7a2f94fde8f93f3391b194f42ec80556de005
+
+2010-07-07 14:59:41,940 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=ff8cf5f21089d40317d56f934ef5c4a25fcf9d8f&h=d8dea1be19e6ca2bf5b6aa395cc0c2974c463276
+
+2010-07-07 14:59:44,180 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=b1879df1f51ad3017d60ab7140d08ed920e5554d&h=eada18d62929308c5eca391ec23cf441abf13ca5
+
+2010-07-07 14:59:45,634 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=effffeac6440c14c9f53d40633326df42d55e982&h=f0e9c38a1b796c14b5dcc11b8c679faa4807fbeb
+
+2010-07-07 14:59:46,499 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=d0a80be748f4857d9b71f8a0bc5a486b94a074cd&h=872b2ef48f6a686b7f90c8d81ef710c36d8d5612
+
+2010-07-07 14:59:48,753 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=d0a80be748f4857d9b71f8a0bc5a486b94a074cd&h=872b2ef48f6a686b7f90c8d81ef710c36d8d5612
+
+2010-07-07 14:59:50,261 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=b7eb28024e449833d78e7a93c68588d58eb739da&h=6cf7ab3cc45a747e42d64fc976206f1480e09492
+
+2010-07-07 14:59:53,269 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=f448bf29effd879592fab652e4cb20b8176cca74&h=ccd7e4f302a11128410e0a90a2ed73502f76a5cf
+
+2010-07-07 14:59:54,739 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=c363bd46d98b02a45912c5bc9ec74f886c1ba684&h=2c960f74449c6ca7eb6d1e277c46981393c05f23
+
+2010-07-07 14:59:57,563 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=960723e4f9568c545a265a366d604811c64c55b5&h=30ff5038770ab341497bd7108fb50391a8703170
+
+2010-07-07 14:59:59,037 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=5d3a0d6735d134d87246f6bf1b3f33eefefb3762&h=1c249936bba5a52578462114d6ed02e305471b88
+
+2010-07-07 15:00:08,032 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=05b93e811840e4cc68029a27b7a90716e3bddd21&h=23d80e83d24773c58180b9cd09497c73049936f6
+
+2010-07-07 15:00:10,542 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=fb1fdc6ad64989a0036386fd5f37a33ede23e628&h=155e060d23905794af2e027bb8f7e880307aab0e
+
+2010-07-07 15:00:11,825 INFO FIN Contruir units defensa.
+2010-07-07 15:00:14,452 INFO Contruyendo units ataque...
+2010-07-07 15:00:15,335 INFO FIN Contruir units ataque.
+2010-07-07 15:00:15,776 INFO Contruyendo building de Defense
+2010-07-07 15:00:16,429 INFO Contruyendo buildings...
+2010-07-07 15:00:16,429 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 209495. Building cost: 850000.
+2010-07-07 15:00:16,450 INFO Fin de contruir buildings.
+2010-07-07 15:00:18,025 INFO Durmiendo 18 minutos.
+2010-07-07 15:00:53,015 INFO Atacando...
+2010-07-07 15:00:54,900 INFO Going to Page Units....
+2010-07-07 15:00:57,326 INFO Actualizando units...
+2010-07-07 15:01:04,864 INFO Units actualizadas.
+2010-07-07 15:01:04,864 INFO Going to Page Buildings....
+2010-07-07 15:01:05,490 INFO Actualizando buildings...
+2010-07-07 15:01:05,538 INFO Buildings actualizadas.
+2010-07-07 15:01:05,538 INFO Durmiendo 16 mins para recargar Stamina.
+2010-07-07 15:06:23,115 INFO Atacando...
+2010-07-07 15:06:25,134 INFO Going to Page Units....
+2010-07-07 15:06:28,057 INFO Actualizando units...
+2010-07-07 15:06:35,288 INFO Units actualizadas.
+2010-07-07 15:06:35,288 INFO Going to Page Buildings....
+2010-07-07 15:06:36,378 INFO Actualizando buildings...
+2010-07-07 15:06:36,424 INFO Buildings actualizadas.
+2010-07-07 15:06:36,424 INFO Durmiendo 12 mins para recargar Stamina.
+2010-07-07 15:18:37,652 INFO Go to hospital.
+2010-07-07 15:18:37,652 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 15:18:38,397 INFO Se hizo el restore health.
+2010-07-07 15:18:43,340 INFO Checking enemy zack can attack: MyAttackPoints: 576. EnemyDefensePoints:284.
+2010-07-07 15:18:43,340 INFO Atacando a zack
+2010-07-07 15:18:44,887 INFO Le gane a zack. Recaude 4567. Health: 195/200. Stamina: 9/10.
+2010-07-07 15:18:47,685 INFO Checking enemy kirk can attack: MyAttackPoints: 576. EnemyDefensePoints:326.
+2010-07-07 15:18:47,685 INFO Atacando a kirk
+2010-07-07 15:18:48,417 INFO Le gane a kirk. Recaude 0. Health: 186/200. Stamina: 8/10.
+2010-07-07 15:18:49,548 INFO Checking enemy ioNigh&#8203;tShade&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:5162.
+2010-07-07 15:18:52,294 INFO Checking enemy jlowe can attack: MyAttackPoints: 576. EnemyDefensePoints:687.
+2010-07-07 15:18:53,594 INFO Checking enemy jokkva&#8203;hl can attack: MyAttackPoints: 576. EnemyDefensePoints:1428.
+2010-07-07 15:18:54,698 INFO Checking enemy Mamok can attack: MyAttackPoints: 576. EnemyDefensePoints:257.
+2010-07-07 15:18:54,698 INFO Atacando a Mamok
+2010-07-07 15:18:56,857 INFO Le gane a Mamok. Recaude 0. Health: 174/200. Stamina: 7/10.
+2010-07-07 15:18:58,584 INFO Checking enemy michol can attack: MyAttackPoints: 576. EnemyDefensePoints:1053.
+2010-07-07 15:18:59,779 INFO Checking enemy mike can attack: MyAttackPoints: 576. EnemyDefensePoints:574.
+2010-07-07 15:18:59,779 INFO Atacando a mike
+2010-07-07 15:19:01,324 INFO Perdi con mike. Health: 154/200. Stamina: 6/10.
+2010-07-07 15:19:03,202 INFO Checking enemy kate can attack: MyAttackPoints: 576. EnemyDefensePoints:409.
+2010-07-07 15:19:03,202 INFO Atacando a kate
+2010-07-07 15:19:03,918 INFO Le gane a kate. Recaude 44915. Health: 152/200. Stamina: 5/10.
+2010-07-07 15:19:03,918 INFO Atacando de nuevo a kate
+2010-07-07 15:19:04,408 INFO kate se retiro. Health: 152/200. Stamina: 5/10.
+2010-07-07 15:19:07,621 INFO Checking enemy jamie can attack: MyAttackPoints: 576. EnemyDefensePoints:263.
+2010-07-07 15:19:07,621 INFO Atacando a jamie
+2010-07-07 15:19:10,809 INFO Le gane a jamie. Recaude 1439. Health: 145/200. Stamina: 4/10.
+2010-07-07 15:19:14,958 INFO Checking enemy damian can attack: MyAttackPoints: 576. EnemyDefensePoints:344.
+2010-07-07 15:19:14,959 INFO Atacando a damian
+2010-07-07 15:19:16,507 INFO Le gane a damian. Recaude 7475. Health: 137/200. Stamina: 3/10.
+2010-07-07 15:19:18,987 INFO Checking enemy Snaken can attack: MyAttackPoints: 576. EnemyDefensePoints:569.
+2010-07-07 15:19:18,987 INFO Atacando a Snaken
+2010-07-07 15:19:20,528 INFO Perdi con Snaken. Health: 120/200. Stamina: 2/10.
+2010-07-07 15:19:21,790 INFO Checking enemy Bill can attack: MyAttackPoints: 576. EnemyDefensePoints:925.
+2010-07-07 15:19:24,693 INFO Checking enemy SrgtSq&#8203;uashEm&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:1656.
+2010-07-07 15:19:26,969 INFO Checking enemy balord&#8203;onn can attack: MyAttackPoints: 576. EnemyDefensePoints:663.
+2010-07-07 15:19:28,256 INFO Checking enemy shawn can attack: MyAttackPoints: 576. EnemyDefensePoints:659.
+2010-07-07 15:19:30,992 INFO Checking enemy the_ka&#8203;rny can attack: MyAttackPoints: 576. EnemyDefensePoints:5288.
+2010-07-07 15:19:32,260 INFO Checking enemy J-Roc can attack: MyAttackPoints: 576. EnemyDefensePoints:301.
+2010-07-07 15:19:32,260 INFO Atacando a J-Roc
+2010-07-07 15:19:34,238 INFO Le gane a J-Roc. Recaude 0. Health: 115/200. Stamina: 1/10.
+2010-07-07 15:19:36,306 INFO Checking enemy Martin can attack: MyAttackPoints: 576. EnemyDefensePoints:196.
+2010-07-07 15:19:36,306 INFO Atacando a Martin
+2010-07-07 15:19:37,013 INFO Martin se retiro. Health: 115/200. Stamina: 1/10.
+2010-07-07 15:19:40,355 INFO Checking enemy Eldaru&#8203;s can attack: MyAttackPoints: 576. EnemyDefensePoints:313.
+2010-07-07 15:19:40,356 INFO Atacando a Eldaru&#8203;s
+2010-07-07 15:19:43,305 INFO Eldaru&#8203;s se retiro. Health: 115/200. Stamina: 1/10.
+2010-07-07 15:19:47,519 INFO Checking enemy alex can attack: MyAttackPoints: 576. EnemyDefensePoints:893.
+2010-07-07 15:19:50,842 INFO Checking enemy new orleans can attack: MyAttackPoints: 576. EnemyDefensePoints:592.
+2010-07-07 15:19:54,389 INFO Checking enemy Danny Lou can attack: MyAttackPoints: 576. EnemyDefensePoints:2437.
+2010-07-07 15:19:56,699 INFO Checking enemy uncleb&#8203;52 can attack: MyAttackPoints: 576. EnemyDefensePoints:351.
+2010-07-07 15:19:56,699 INFO Atacando a uncleb&#8203;52
+2010-07-07 15:19:57,440 INFO Le gane a uncleb&#8203;52. Recaude 99646. Health: 106/200. Stamina: 0/10.
+2010-07-07 15:19:57,440 INFO Duermo 2 min para recuperar stamina
+2010-07-07 15:22:05,319 INFO Checking enemy Gael can attack: MyAttackPoints: 576. EnemyDefensePoints:857.
+2010-07-07 15:22:08,430 INFO Checking enemy Divine can attack: MyAttackPoints: 576. EnemyDefensePoints:114.
+2010-07-07 15:22:08,430 INFO Atacando a Divine
+2010-07-07 15:22:09,149 INFO Le gane a Divine. Recaude 910. Health: 94/200. Stamina: 0/10.
+2010-07-07 15:22:09,149 INFO Duermo 2 min para recuperar stamina
+2010-07-07 15:24:09,150 INFO Se me acabo el tiempo para pelear
+2010-07-07 15:24:09,150 INFO Fin peleas. Money ganada : 158952 .
+2010-07-07 15:24:09,150 INFO Fin de los ataques.
+2010-07-07 15:24:09,150 INFO Ejecutando todas las misiones.
+2010-07-07 15:24:14,830 INFO Missions....
+2010-07-07 15:24:14,831 INFO Checking tab 1
+2010-07-07 15:24:17,852 INFO Checking tab 2
+2010-07-07 15:24:21,965 INFO Energy: 129/490. Mission requiered energy: 67
+2010-07-07 15:24:21,965 INFO Proceso mision: Ship Supplies to Troops. Percent: 72%.
+2010-07-07 15:24:27,047 INFO Energy: 490/490. Mission requiered energy: 67
+2010-07-07 15:24:27,048 INFO Proceso mision: Ship Supplies to Troops. Percent: 84%.
+2010-07-07 15:24:30,677 INFO Energy: 423/490. Mission requiered energy: 67
+2010-07-07 15:24:30,677 INFO Proceso mision: Ship Supplies to Troops. Percent: 96%.
+2010-07-07 15:24:35,498 INFO Energy: 356/490. Mission requiered energy: 52
+2010-07-07 15:24:35,498 INFO Proceso mision: Shoot Down Aircraft. Percent: 0%.
+2010-07-07 15:24:40,543 INFO Energy: 304/490. Mission requiered energy: 52
+2010-07-07 15:24:40,543 INFO Proceso mision: Shoot Down Aircraft. Percent: 9%.
+2010-07-07 15:24:44,151 INFO Energy: 252/490. Mission requiered energy: 52
+2010-07-07 15:24:44,151 INFO Proceso mision: Shoot Down Aircraft. Percent: 18%.
+2010-07-07 15:24:47,609 INFO Energy: 200/490. Mission requiered energy: 52
+2010-07-07 15:24:47,610 INFO Proceso mision: Shoot Down Aircraft. Percent: 27%.
+2010-07-07 15:24:51,671 INFO Energy: 148/490. Mission requiered energy: 52
+2010-07-07 15:24:51,671 INFO Proceso mision: Shoot Down Aircraft. Percent: 36%.
+2010-07-07 15:24:55,464 INFO Energy: 96/490. Mission requiered energy: 52
+2010-07-07 15:24:55,464 INFO Proceso mision: Shoot Down Aircraft. Percent: 45%.
+2010-07-07 15:24:59,248 INFO Energy: 44/490. Mission requiered energy: 52
+2010-07-07 15:24:59,248 INFO Se acabo la energia.
+2010-07-07 15:24:59,248 INFO Fin Ejecutando todas las misiones.
+2010-07-07 15:25:00,115 INFO Sigo atacando porque tengo energia.
+2010-07-07 15:25:03,769 INFO Checking enemy Davids&#8203;on David can attack: MyAttackPoints: 576. EnemyDefensePoints:836.
+2010-07-07 15:25:07,916 INFO Checking enemy Lanny can attack: MyAttackPoints: 576. EnemyDefensePoints:308.
+2010-07-07 15:25:07,916 INFO Atacando a Lanny
+2010-07-07 15:25:11,508 INFO Le gane a Lanny. Recaude 46982. Health: 188/200. Stamina: 9/10.
+2010-07-07 15:25:11,508 INFO Atacando de nuevo a Lanny
+2010-07-07 15:25:13,096 INFO Lanny se retiro. Health: 188/200. Stamina: 9/10.
+2010-07-07 15:25:17,234 INFO Checking enemy Makony can attack: MyAttackPoints: 576. EnemyDefensePoints:356.
+2010-07-07 15:25:17,234 INFO Atacando a Makony
+2010-07-07 15:25:19,400 INFO Makony se retiro. Health: 188/200. Stamina: 9/10.
+2010-07-07 15:25:22,914 INFO Checking enemy benny can attack: MyAttackPoints: 576. EnemyDefensePoints:61.
+2010-07-07 15:25:22,914 INFO Atacando a benny
+2010-07-07 15:25:25,217 INFO benny se retiro. Health: 188/200. Stamina: 9/10.
+2010-07-07 15:25:29,755 INFO Checking enemy theopo&#8203;lis515&#8203;0 can attack: MyAttackPoints: 576. EnemyDefensePoints:202.
+2010-07-07 15:25:29,756 INFO Atacando a theopo&#8203;lis515&#8203;0
+2010-07-07 15:25:31,896 INFO Le gane a theopo&#8203;lis515&#8203;0. Recaude 32290. Health: 186/200. Stamina: 8/10.
+2010-07-07 15:25:31,896 INFO Atacando de nuevo a theopo&#8203;lis515&#8203;0
+2010-07-07 15:25:33,511 INFO Le gane a theopo&#8203;lis515&#8203;0. Recaude 43590. Health: 180/200. Stamina: 7/10.
+2010-07-07 15:25:33,511 INFO Atacando de nuevo a theopo&#8203;lis515&#8203;0
+2010-07-07 15:25:36,495 INFO Le gane a theopo&#8203;lis515&#8203;0. Recaude 68208. Health: 170/200. Stamina: 6/10.
+2010-07-07 15:25:36,495 INFO Atacando de nuevo a theopo&#8203;lis515&#8203;0
+2010-07-07 15:25:45,373 INFO Le gane a theopo&#8203;lis515&#8203;0. Recaude 46713. Health: 156/200. Stamina: 5/10.
+2010-07-07 15:25:45,373 INFO Atacando de nuevo a theopo&#8203;lis515&#8203;0
+2010-07-07 15:25:54,140 INFO Le gane a theopo&#8203;lis515&#8203;0. Recaude 64224. Health: 150/200. Stamina: 4/10.
+2010-07-07 15:25:54,141 INFO Atacando de nuevo a theopo&#8203;lis515&#8203;0
+2010-07-07 15:25:56,509 INFO Le gane a theopo&#8203;lis515&#8203;0. Recaude 67318. Health: 140/200. Stamina: 3/10.
+2010-07-07 15:25:56,509 INFO Atacando de nuevo a theopo&#8203;lis515&#8203;0
+2010-07-07 15:25:59,364 INFO Le gane a theopo&#8203;lis515&#8203;0. Recaude 39480. Health: 133/200. Stamina: 2/10.
+2010-07-07 15:25:59,364 INFO Atacando de nuevo a theopo&#8203;lis515&#8203;0
+2010-07-07 15:26:00,724 INFO theopo&#8203;lis515&#8203;0 se retiro. Health: 133/200. Stamina: 2/10.
+2010-07-07 15:26:05,756 INFO Checking enemy Andriu&#8203;s can attack: MyAttackPoints: 576. EnemyDefensePoints:1084.
+2010-07-07 15:26:09,465 INFO Checking enemy Mojo can attack: MyAttackPoints: 576. EnemyDefensePoints:1256.
+2010-07-07 15:26:13,621 INFO Checking enemy 318052&#8203;9 can attack: MyAttackPoints: 576. EnemyDefensePoints:346.
+2010-07-07 15:26:13,621 INFO Atacando a 318052&#8203;9
+2010-07-07 15:26:15,737 INFO Le gane a 318052&#8203;9. Recaude 62724. Health: 125/200. Stamina: 1/10.
+2010-07-07 15:26:15,737 INFO Atacando de nuevo a 318052&#8203;9
+2010-07-07 15:26:18,398 INFO Le gane a 318052&#8203;9. Recaude 45936. Health: 120/200. Stamina: 0/10.
+2010-07-07 15:26:18,398 INFO Duermo 2 min para recuperar stamina
+2010-07-07 15:28:23,170 INFO Checking enemy Justin can attack: MyAttackPoints: 576. EnemyDefensePoints:263.
+2010-07-07 15:28:23,170 INFO Atacando a Justin
+2010-07-07 15:28:24,576 INFO Le gane a Justin. Recaude 72. Health: 108/200. Stamina: 0/10.
+2010-07-07 15:28:24,576 INFO Duermo 2 min para recuperar stamina
+2010-07-07 15:30:24,576 INFO Se me acabo el tiempo para pelear
+2010-07-07 15:30:24,576 INFO Fin peleas. Money ganada : 517537 .
+2010-07-07 15:30:25,750 INFO Go to bank.
+2010-07-07 15:30:25,750 INFO Link... http://wwar.storm8.com/bank.php?formNonce=8682481245151948b6dcc2cc8e4aa5313651e398&h=8efdb2c21f4595612c607354d55f2eefb369d776
+2010-07-07 15:30:26,455 INFO Depositando 78229
+2010-07-07 15:30:27,340 INFO Se realizo el deposito para el restore.
+2010-07-07 15:30:27,340 INFO Going to Page Units....
+2010-07-07 15:30:29,733 INFO Actualizando units...
+2010-07-07 15:30:32,808 INFO Units actualizadas.
+2010-07-07 15:30:35,434 INFO Contruyendo units defensa...
+2010-07-07 15:40:49,924 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 10
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=4abd04c9d114171bb6a00ed4ce103d450bfa6595&h=2e61eea3d03d059d9b624956f00e230bddfdd028
+. Unit price: 2900. Profile money: 1210295.
+2010-07-07 15:45:05,733 INFO Atacando...
+2010-07-07 15:45:07,479 INFO Going to Page Units....
+2010-07-07 15:45:10,284 INFO Actualizando units...
+2010-07-07 15:45:18,323 INFO Units actualizadas.
+2010-07-07 15:45:18,324 INFO Going to Page Buildings....
+2010-07-07 15:45:19,769 INFO Actualizando buildings...
+2010-07-07 15:45:19,840 INFO Buildings actualizadas.
+2010-07-07 15:45:19,840 INFO Durmiendo 4 mins para recargar Stamina.
+2010-07-07 15:49:20,714 INFO Go to hospital.
+2010-07-07 15:49:20,714 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 15:49:20,990 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 15:49:20,990 INFO Go to bank.
+2010-07-07 15:49:20,990 INFO Link... http://wwar.storm8.com/bank.php?formNonce=0dd8ab47c21906854c726701e2d40768385d64b7&h=4e4fa15a48b8f5c091b680f4525ac98a6fc77772
+2010-07-07 15:49:21,437 INFO Depositando 84824
+2010-07-07 15:49:22,601 INFO No se pudo hacer el restore entonces espero (2056 seconds) para recaudar la plata.
+2010-07-07 15:51:58,138 INFO Atacando...
+2010-07-07 15:51:59,783 INFO Going to Page Units....
+2010-07-07 15:52:02,754 INFO Actualizando units...
+2010-07-07 15:52:12,011 INFO Units actualizadas.
+2010-07-07 15:52:12,014 INFO Going to Page Buildings....
+2010-07-07 15:52:13,044 INFO Actualizando buildings...
+2010-07-07 15:52:13,108 INFO Buildings actualizadas.
+2010-07-07 15:52:15,728 INFO Go to hospital.
+2010-07-07 15:52:15,728 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 15:52:16,157 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 15:52:16,157 INFO Go to bank.
+2010-07-07 15:52:16,157 INFO Link... http://wwar.storm8.com/bank.php?formNonce=53115d99e56dc3809178e9d5b944753c550b8035&h=b69ef7eeb1e0a153eff07a49d434ae641cfdd42d
+2010-07-07 15:52:16,597 INFO Depositando 12598
+2010-07-07 15:52:17,791 INFO Se hizo el restore health.
+2010-07-07 15:52:26,542 INFO Checking enemy silky slim can attack: MyAttackPoints: 558. EnemyDefensePoints:646.
+2010-07-07 15:52:30,488 INFO Checking enemy peter can attack: MyAttackPoints: 558. EnemyDefensePoints:146.
+2010-07-07 15:52:30,488 INFO Atacando a peter
+2010-07-07 15:52:34,347 INFO Le gane a peter. Recaude 3840. Health: 196/200. Stamina: 9/10.
+2010-07-07 15:52:38,453 INFO Checking enemy Martyn can attack: MyAttackPoints: 558. EnemyDefensePoints:468.
+2010-07-07 15:52:38,453 INFO Atacando a Martyn
+2010-07-07 15:52:43,478 INFO Le gane a Martyn. Recaude 244877. Health: 193/200. Stamina: 8/10.
+2010-07-07 15:52:43,478 INFO Atacando de nuevo a Martyn
+2010-07-07 15:52:45,307 INFO Le gane a Martyn. Recaude 404200. Health: 184/200. Stamina: 7/10.
+2010-07-07 15:52:45,307 INFO Atacando de nuevo a Martyn
+2010-07-07 15:52:47,356 INFO Perdi con Martyn. Health: 160/200. Stamina: 6/10.
+2010-07-07 15:52:50,907 INFO Checking enemy kyle can attack: MyAttackPoints: 558. EnemyDefensePoints:339.
+2010-07-07 15:52:50,907 INFO Atacando a kyle
+2010-07-07 15:52:53,889 INFO Le gane a kyle. Recaude 13207. Health: 150/200. Stamina: 5/10.
+2010-07-07 15:52:53,889 INFO Atacando de nuevo a kyle
+2010-07-07 15:52:55,395 INFO Le gane a kyle. Recaude 23446. Health: 136/200. Stamina: 4/10.
+2010-07-07 15:52:55,395 INFO Atacando de nuevo a kyle
+2010-07-07 15:52:58,212 INFO Le gane a kyle. Recaude 13084. Health: 130/200. Stamina: 3/10.
+2010-07-07 15:52:58,212 INFO Atacando de nuevo a kyle
+2010-07-07 15:52:59,723 INFO Le gane a kyle. Recaude 21435. Health: 121/200. Stamina: 2/10.
+2010-07-07 15:52:59,723 INFO Atacando de nuevo a kyle
+2010-07-07 15:53:02,385 INFO Le gane a kyle. Recaude 20753. Health: 112/200. Stamina: 1/10.
+2010-07-07 15:53:02,385 INFO Atacando de nuevo a kyle
+2010-07-07 15:53:03,893 INFO Le gane a kyle. Recaude 33206. Health: 110/200. Stamina: 0/10.
+2010-07-07 15:53:03,893 INFO Duermo 2 min para recuperar stamina
+2010-07-07 15:55:14,768 INFO Checking enemy Tinman can attack: MyAttackPoints: 558. EnemyDefensePoints:1011.
+2010-07-07 15:55:19,841 INFO Checking enemy toylet&#8203;clogge&#8203;r can attack: MyAttackPoints: 558. EnemyDefensePoints:158.
+2010-07-07 15:55:19,841 INFO Atacando a toylet&#8203;clogge&#8203;r
+2010-07-07 15:55:23,384 INFO Le gane a toylet&#8203;clogge&#8203;r. Recaude 0. Health: 108/200. Stamina: 0/10.
+2010-07-07 15:55:23,385 INFO Duermo 2 min para recuperar stamina
+2010-07-07 15:57:23,385 INFO Se me acabo el tiempo para pelear
+2010-07-07 15:57:23,385 INFO Fin peleas. Money ganada : 778048 .
+2010-07-07 15:57:23,385 INFO Fin de los ataques.
+2010-07-07 15:57:23,385 INFO Ejecutando todas las misiones.
+2010-07-07 15:57:27,300 INFO Missions....
+2010-07-07 15:57:27,300 INFO Checking tab 1
+2010-07-07 15:57:30,896 INFO Checking tab 2
+2010-07-07 15:57:34,467 INFO Energy: 121/490. Mission requiered energy: 52
+2010-07-07 15:57:34,467 INFO Proceso mision: Shoot Down Aircraft. Percent: 54%.
+2010-07-07 15:57:38,488 INFO Energy: 80/490. Mission requiered energy: 52
+2010-07-07 15:57:38,488 INFO Proceso mision: Shoot Down Aircraft. Percent: 63%.
+2010-07-07 15:57:43,223 INFO Energy: 28/490. Mission requiered energy: 52
+2010-07-07 15:57:43,223 INFO Se acabo la energia.
+2010-07-07 15:57:43,223 INFO Fin Ejecutando todas las misiones.
+2010-07-07 15:57:43,655 INFO Sigo atacando porque tengo energia.
+2010-07-07 15:57:49,055 INFO Checking enemy Genera&#8203;l Patton can attack: MyAttackPoints: 558. EnemyDefensePoints:2215.
+2010-07-07 15:58:56,916 INFO Checking enemy Chinph&#8203;at can attack: MyAttackPoints: 558. EnemyDefensePoints:102.
+2010-07-07 15:58:56,917 INFO Atacando a Chinph&#8203;at
+2010-07-07 15:59:03,888 INFO Chinph&#8203;at se retiro. Health: 109/200. Stamina: 1/10.
+2010-07-07 15:59:21,148 INFO Checking enemy riot can attack: MyAttackPoints: 558. EnemyDefensePoints:1339.
+2010-07-07 15:59:27,075 INFO Checking enemy Jrprod&#8203;igy can attack: MyAttackPoints: 558. EnemyDefensePoints:256.
+2010-07-07 15:59:27,075 INFO Atacando a Jrprod&#8203;igy
+2010-07-07 15:59:30,089 INFO Le gane a Jrprod&#8203;igy. Recaude 4367. Health: 103/200. Stamina: 1/10.
+2010-07-07 15:59:33,436 INFO Checking enemy Daniel can attack: MyAttackPoints: 558. EnemyDefensePoints:2663.
+2010-07-07 15:59:37,532 INFO Checking enemy justas can attack: MyAttackPoints: 558. EnemyDefensePoints:1175.
+2010-07-07 15:59:42,298 INFO Checking enemy Attack&#8203; me can attack: MyAttackPoints: 558. EnemyDefensePoints:10320.
+2010-07-07 15:59:55,333 INFO Checking enemy bogart can attack: MyAttackPoints: 558. EnemyDefensePoints:3825.
+2010-07-07 16:00:13,408 INFO Checking enemy 318052&#8203;9 can attack: MyAttackPoints: 558. EnemyDefensePoints:346.
+2010-07-07 16:00:13,408 INFO Atacando a 318052&#8203;9
+2010-07-07 16:00:26,371 INFO Le gane a 318052&#8203;9. Recaude 14700. Health: 94/200. Stamina: 0/10.
+2010-07-07 16:00:26,371 INFO Duermo 2 min para recuperar stamina
+2010-07-07 16:02:28,372 INFO Checking enemy Mojo can attack: MyAttackPoints: 558. EnemyDefensePoints:1256.
+2010-07-07 16:02:31,841 INFO Checking enemy george&#8203;314 can attack: MyAttackPoints: 558. EnemyDefensePoints:769.
+2010-07-07 16:02:35,945 INFO Checking enemy rodlai can attack: MyAttackPoints: 558. EnemyDefensePoints:372.
+2010-07-07 16:02:35,945 INFO Atacando a rodlai
+2010-07-07 16:02:37,395 INFO Le gane a rodlai. Recaude 2016. Health: 90/200. Stamina: 1/10.
+2010-07-07 16:02:41,318 INFO Checking enemy Genera&#8203;l Carmine can attack: MyAttackPoints: 558. EnemyDefensePoints:15210.
+2010-07-07 16:02:45,444 INFO Checking enemy Jack can attack: MyAttackPoints: 558. EnemyDefensePoints:217.
+2010-07-07 16:02:45,444 INFO Atacando a Jack
+2010-07-07 16:02:47,446 INFO Jack se retiro. Health: 90/200. Stamina: 1/10.
+2010-07-07 16:02:47,447 INFO Se me acabo el tiempo para pelear
+2010-07-07 16:02:47,447 INFO Fin peleas. Money ganada : 21083 .
+2010-07-07 16:02:48,542 INFO Go to bank.
+2010-07-07 16:02:48,542 INFO Link... http://wwar.storm8.com/bank.php?formNonce=53115d99e56dc3809178e9d5b944753c550b8035&h=b69ef7eeb1e0a153eff07a49d434ae641cfdd42d
+2010-07-07 16:02:48,984 INFO Depositando 106578
+2010-07-07 16:02:49,455 INFO Se realizo el deposito para el restore.
+2010-07-07 16:02:49,455 INFO Going to Page Units....
+2010-07-07 16:02:52,786 INFO Actualizando units...
+2010-07-07 16:02:57,287 INFO Units actualizadas.
+2010-07-07 16:02:59,849 INFO Contruyendo units defensa...
+2010-07-07 16:04:34,537 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 11
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=c2159760e3babef98902a7bbdd186ec8e7ecb106&h=6703779540f09104e61a1fef40a56c26df3284dd
+. Unit price: 490000. Profile money: 886041.
+2010-07-07 16:04:36,560 INFO Se me acabo la plata para comprar units.
+2010-07-07 16:04:36,560 INFO FIN Contruir units defensa.
+2010-07-07 16:04:39,007 INFO Contruyendo units ataque...
+2010-07-07 16:04:39,848 INFO Contruyendo: Name: Harrier Jet
+CantBuild: 22
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=035f71e5726bb1b4ff965df7013e9be58375203d&h=97bb4c58d93ea631f4ae25a6512449a614fb21a9
+
+2010-07-07 16:04:40,686 INFO Contruyendo: Name: Harrier Jet
+CantBuild: 23
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=9acca589a7b192f32f9828e4c0040215ffa941f3&h=1ce6c58d2ed3e5210e702f80a635bdc81f2a61b6
+
+2010-07-07 16:04:42,875 INFO FIN Contruir units ataque.
+2010-07-07 16:04:43,683 INFO Contruyendo building de Defense
+2010-07-07 16:04:44,506 INFO Contruyendo buildings...
+2010-07-07 16:04:44,506 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 196041. Building cost: 850000.
+2010-07-07 16:04:44,531 INFO Fin de contruir buildings.
+2010-07-07 16:04:45,079 INFO Durmiendo 16 minutos.
+2010-07-07 16:20:45,080 INFO Atacando...
+2010-07-07 16:20:46,772 INFO Going to Page Units....
+2010-07-07 16:21:14,092 INFO Actualizando units...
+2010-07-07 16:21:31,645 INFO Units actualizadas.
+2010-07-07 16:21:31,645 INFO Going to Page Buildings....
+2010-07-07 16:21:36,601 INFO Actualizando buildings...
+2010-07-07 16:21:36,630 INFO Buildings actualizadas.
+2010-07-07 16:21:41,866 INFO Go to hospital.
+2010-07-07 16:21:41,866 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 16:21:42,798 INFO Se hizo el restore health.
+2010-07-07 16:21:58,235 INFO Checking enemy fisher can attack: MyAttackPoints: 576. EnemyDefensePoints:1605.
+2010-07-07 16:22:16,463 INFO Checking enemy Mikey can attack: MyAttackPoints: 576. EnemyDefensePoints:2318.
+2010-07-07 16:22:29,780 INFO Checking enemy jjjjjj can attack: MyAttackPoints: 576. EnemyDefensePoints:399.
+2010-07-07 16:22:29,781 INFO Atacando a jjjjjj
+2010-07-07 16:22:37,181 INFO Le gane a jjjjjj. Recaude 32432. Health: 196/200. Stamina: 9/10.
+2010-07-07 16:22:37,182 INFO Atacando de nuevo a jjjjjj
+2010-07-07 16:22:46,883 INFO Le gane a jjjjjj. Recaude 86269. Health: 192/200. Stamina: 8/10.
+2010-07-07 16:22:46,884 INFO Atacando de nuevo a jjjjjj
+2010-07-07 16:22:54,438 INFO Le gane a jjjjjj. Recaude 52994. Health: 184/200. Stamina: 7/10.
+2010-07-07 16:22:54,439 INFO Atacando de nuevo a jjjjjj
+2010-07-07 16:23:01,764 INFO Le gane a jjjjjj. Recaude 47695. Health: 178/200. Stamina: 6/10.
+2010-07-07 16:23:01,764 INFO Atacando de nuevo a jjjjjj
+2010-07-07 16:23:08,142 INFO jjjjjj se retiro. Health: 178/200. Stamina: 6/10.
+2010-07-07 16:23:24,195 INFO Checking enemy Stork can attack: MyAttackPoints: 576. EnemyDefensePoints:412.
+2010-07-07 16:23:24,195 INFO Atacando a Stork
+2010-07-07 16:23:34,294 INFO Le gane a Stork. Recaude 38434. Health: 165/200. Stamina: 5/10.
+2010-07-07 16:23:34,294 INFO Atacando de nuevo a Stork
+2010-07-07 16:23:41,565 INFO Stork se retiro. Health: 165/200. Stamina: 5/10.
+2010-07-07 16:23:58,385 INFO Checking enemy bfd666 can attack: MyAttackPoints: 576. EnemyDefensePoints:1242.
+2010-07-07 16:24:14,414 INFO Checking enemy Super Mario can attack: MyAttackPoints: 576. EnemyDefensePoints:1065.
+2010-07-07 16:24:32,354 INFO Checking enemy Firehe&#8203;ad can attack: MyAttackPoints: 576. EnemyDefensePoints:1414.
+2010-07-07 16:24:44,481 INFO Checking enemy Joris can attack: MyAttackPoints: 576. EnemyDefensePoints:499.
+2010-07-07 16:24:44,482 INFO Atacando a Joris
+2010-07-07 16:24:53,551 INFO Perdi con Joris. Health: 145/200. Stamina: 5/10.
+2010-07-07 16:25:08,507 INFO Checking enemy Beans can attack: MyAttackPoints: 576. EnemyDefensePoints:485.
+2010-07-07 16:25:08,507 INFO Atacando a Beans
+2010-07-07 16:25:18,415 INFO Perdi con Beans. Health: 124/200. Stamina: 4/10.
+2010-07-07 16:25:35,952 INFO Checking enemy Nicola&#8203;s can attack: MyAttackPoints: 576. EnemyDefensePoints:225.
+2010-07-07 16:25:35,952 INFO Atacando a Nicola&#8203;s
+2010-07-07 16:25:44,800 INFO Le gane a Nicola&#8203;s. Recaude 0. Health: 116/200. Stamina: 3/10.
+2010-07-07 16:26:01,445 INFO Checking enemy Fernan&#8203;do can attack: MyAttackPoints: 576. EnemyDefensePoints:1300.
+2010-07-07 16:26:16,414 INFO Checking enemy Lanny can attack: MyAttackPoints: 576. EnemyDefensePoints:310.
+2010-07-07 16:26:16,414 INFO Atacando a Lanny
+2010-07-07 16:26:29,518 INFO Le gane a Lanny. Recaude 47781. Health: 105/200. Stamina: 2/10.
+2010-07-07 16:26:29,518 INFO Atacando de nuevo a Lanny
+2010-07-07 16:26:36,823 INFO Lanny se retiro. Health: 105/200. Stamina: 3/10.
+2010-07-07 16:26:47,962 INFO Checking enemy Kamika&#8203;ze can attack: MyAttackPoints: 576. EnemyDefensePoints:1179.
+2010-07-07 16:26:47,962 INFO Se me acabo el tiempo para pelear
+2010-07-07 16:26:47,962 INFO Fin peleas. Money ganada : 305605 .
+2010-07-07 16:26:47,962 INFO Fin de los ataques.
+2010-07-07 16:26:47,963 INFO Ejecutando todas las misiones.
+2010-07-07 16:27:02,763 INFO Missions....
+2010-07-07 16:27:02,763 INFO Checking tab 1
+2010-07-07 16:27:14,870 INFO Checking tab 2
+2010-07-07 16:27:29,007 INFO Energy: 105/490. Mission requiered energy: 52
+2010-07-07 16:27:29,007 INFO Proceso mision: Shoot Down Aircraft. Percent: 72%.
+2010-07-07 16:27:42,912 INFO Energy: 53/490. Mission requiered energy: 52
+2010-07-07 16:27:42,912 INFO Proceso mision: Shoot Down Aircraft. Percent: 81%.
+2010-07-07 16:27:56,127 INFO Energy: 1/490. Mission requiered energy: 52
+2010-07-07 16:27:56,127 INFO Se acabo la energia.
+2010-07-07 16:27:56,127 INFO Fin Ejecutando todas las misiones.
+2010-07-07 16:28:02,382 INFO Sigo atacando porque tengo energia.
+2010-07-07 16:28:15,912 INFO Checking enemy benp can attack: MyAttackPoints: 576. EnemyDefensePoints:1649.
+2010-07-07 16:28:30,840 INFO Checking enemy Arthur can attack: MyAttackPoints: 576. EnemyDefensePoints:704.
+2010-07-07 16:28:47,317 INFO Checking enemy Makony can attack: MyAttackPoints: 576. EnemyDefensePoints:356.
+2010-07-07 16:28:47,318 INFO Atacando a Makony
+2010-07-07 16:28:54,820 INFO Le gane a Makony. Recaude 7807. Health: 101/200. Stamina: 3/10.
+2010-07-07 16:29:07,581 INFO Checking enemy icesto&#8203;rm404 can attack: MyAttackPoints: 576. EnemyDefensePoints:735.
+2010-07-07 16:29:20,128 INFO Checking enemy DeHoev&#8203;e can attack: MyAttackPoints: 576. EnemyDefensePoints:485.
+2010-07-07 16:29:20,128 INFO Atacando a DeHoev&#8203;e
+2010-07-07 16:29:30,032 INFO Le gane a DeHoev&#8203;e. Recaude 498200. Health: 94/200. Stamina: 2/10.
+2010-07-07 16:29:30,032 INFO Atacando de nuevo a DeHoev&#8203;e
+2010-07-07 16:29:41,328 INFO Le gane a DeHoev&#8203;e. Recaude 545200. Health: 80/200. Stamina: 1/10.
+2010-07-07 16:29:41,328 INFO Atacando de nuevo a DeHoev&#8203;e
+2010-07-07 16:29:50,648 INFO Perdi con DeHoev&#8203;e. Health: 62/200. Stamina: 0/10.
+2010-07-07 16:29:55,014 INFO Duermo 2 min para recuperar stamina
+2010-07-07 16:31:55,014 INFO SE ME ACABO LA ENERGIA. Health: 62/200. Stamina: 0/10. FIN.
+2010-07-07 16:31:55,014 INFO Fin peleas. Money ganada : 1051207 .
+2010-07-07 16:31:58,321 INFO Go to bank.
+2010-07-07 16:31:58,321 INFO Link... http://wwar.storm8.com/bank.php?formNonce=b17bf52135e7b8444f8d2faa0bfd0268aa9886dd&h=83ff044e9f6becae96203ae72df6034e9c6aa665
+2010-07-07 16:32:00,181 INFO Depositando 127612
+2010-07-07 16:32:03,223 INFO Se realizo el deposito para el restore.
+2010-07-07 16:32:03,223 INFO Going to Page Units....
+2010-07-07 16:32:11,295 INFO Actualizando units...
+2010-07-07 16:32:30,728 INFO Units actualizadas.
+2010-07-07 16:32:40,956 INFO Contruyendo units defensa...
+2010-07-07 16:32:45,681 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 12
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=ed3f8b53b4bca3ef37c9dab3cf37fcdb832d9b58&h=e1b091c63c87d3c6c2ee5947734b216f06feb3c4
+. Unit price: 490000. Profile money: 1457962.
+2010-07-07 16:33:01,004 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 13
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=20c18fe6a1dd98fc6ff01fe58eb5d41087f8819f&h=285a3c0841d9a96c24a7b0998f208f9b5c0013af
+. Unit price: 490000. Profile money: 967962.
+2010-07-07 16:33:15,288 INFO Se me acabo la plata para comprar units.
+2010-07-07 16:33:15,288 INFO FIN Contruir units defensa.
+2010-07-07 16:33:30,763 INFO Contruyendo units ataque...
+2010-07-07 16:33:38,443 INFO FIN Contruir units ataque.
+2010-07-07 16:33:52,595 INFO Contruyendo building de Defense
+2010-07-07 16:34:11,505 INFO Contruyendo buildings...
+2010-07-07 16:34:11,506 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 477962. Building cost: 850000.
+2010-07-07 16:34:11,537 INFO Fin de contruir buildings.
+2010-07-07 16:34:16,909 INFO Durmiendo 16 minutos.
+2010-07-07 16:50:16,910 INFO Atacando...
+2010-07-07 16:50:18,377 INFO Going to Page Units....
+2010-07-07 16:50:30,604 INFO Actualizando units...
+2010-07-07 16:50:44,045 INFO Units actualizadas.
+2010-07-07 16:50:44,045 INFO Going to Page Buildings....
+2010-07-07 16:50:49,130 INFO Actualizando buildings...
+2010-07-07 16:50:49,161 INFO Buildings actualizadas.
+2010-07-07 16:50:49,822 INFO Go to hospital.
+2010-07-07 16:50:49,822 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 16:50:50,090 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 16:50:50,090 INFO Go to bank.
+2010-07-07 16:50:50,090 INFO Link... http://wwar.storm8.com/bank.php?formNonce=2c1966b6cc3956d3585aba3ab6e230f82180f0f5&h=ea1a04e192bd208805f15b2b88cacaa71c47509d
+2010-07-07 16:50:56,397 INFO Depositando 2344
+2010-07-07 16:50:59,078 INFO Se hizo el restore health.
+2010-07-07 16:51:13,295 INFO Checking enemy Cory can attack: MyAttackPoints: 576. EnemyDefensePoints:517.
+2010-07-07 16:51:13,295 INFO Atacando a Cory
+2010-07-07 16:51:23,278 INFO Perdi con Cory. Health: 177/200. Stamina: 9/10.
+2010-07-07 16:51:38,494 INFO Checking enemy lola can attack: MyAttackPoints: 576. EnemyDefensePoints:552.
+2010-07-07 16:51:38,494 INFO Atacando a lola
+2010-07-07 16:51:45,273 INFO Le gane a lola. Recaude 484100. Health: 163/200. Stamina: 8/10.
+2010-07-07 16:51:45,273 INFO Atacando de nuevo a lola
+2010-07-07 16:52:01,061 INFO Le gane a lola. Recaude 488800. Health: 154/200. Stamina: 7/10.
+2010-07-07 16:52:01,061 INFO Atacando de nuevo a lola
+2010-07-07 16:52:05,927 INFO Perdi con lola. Health: 132/200. Stamina: 6/10.
+2010-07-07 16:52:23,270 INFO Atacando...
+2010-07-07 16:52:24,821 INFO Going to Page Units....
+2010-07-07 16:52:31,092 INFO Actualizando units...
+2010-07-07 16:52:46,537 INFO Units actualizadas.
+2010-07-07 16:52:46,537 INFO Going to Page Buildings....
+2010-07-07 16:52:49,040 INFO Actualizando buildings...
+2010-07-07 16:52:49,091 INFO Buildings actualizadas.
+2010-07-07 16:52:49,091 INFO Durmiendo 8 mins para recargar Stamina.
+2010-07-07 17:00:50,454 INFO Go to hospital.
+2010-07-07 17:00:50,455 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 17:00:50,942 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 17:00:50,942 INFO Go to bank.
+2010-07-07 17:00:50,942 INFO Link... http://wwar.storm8.com/bank.php?formNonce=d42b98f952333be6a4463a39e6aee78e278915f3&h=b027f7cd23bff63c2eda07054fc76df3b436760b
+2010-07-07 17:00:57,231 INFO Depositando 63157
+2010-07-07 17:01:01,651 INFO Se hizo el restore health.
+2010-07-07 17:01:12,645 INFO Checking enemy jack can attack: MyAttackPoints: 576. EnemyDefensePoints:213.
+2010-07-07 17:01:12,645 INFO Atacando a jack
+2010-07-07 17:01:25,326 INFO Le gane a jack. Recaude 51729. Health: 194/200. Stamina: 9/10.
+2010-07-07 17:01:25,327 INFO Atacando de nuevo a jack
+2010-07-07 17:01:37,864 INFO Le gane a jack. Recaude 21330. Health: 182/200. Stamina: 8/10.
+2010-07-07 17:01:37,864 INFO Atacando de nuevo a jack
+2010-07-07 17:01:43,025 INFO jack se retiro. Health: 182/200. Stamina: 8/10.
+2010-07-07 17:01:53,495 INFO Checking enemy Chinph&#8203;at can attack: MyAttackPoints: 576. EnemyDefensePoints:102.
+2010-07-07 17:01:53,495 INFO Atacando a Chinph&#8203;at
+2010-07-07 17:01:57,995 INFO Chinph&#8203;at se retiro. Health: 182/200. Stamina: 8/10.
+2010-07-07 17:02:10,086 INFO Checking enemy Kane can attack: MyAttackPoints: 576. EnemyDefensePoints:450.
+2010-07-07 17:02:10,087 INFO Atacando a Kane
+2010-07-07 17:02:16,555 INFO Perdi con Kane. Health: 164/200. Stamina: 7/10.
+2010-07-07 17:02:28,468 INFO Checking enemy lory can attack: MyAttackPoints: 576. EnemyDefensePoints:205.
+2010-07-07 17:02:28,468 INFO Atacando a lory
+2010-07-07 17:02:35,804 INFO Le gane a lory. Recaude 0. Health: 155/200. Stamina: 6/10.
+2010-07-07 17:02:50,615 INFO Checking enemy BgCjR can attack: MyAttackPoints: 576. EnemyDefensePoints:388.
+2010-07-07 17:02:50,616 INFO Atacando a BgCjR
+2010-07-07 17:02:56,449 INFO Le gane a BgCjR. Recaude 2646. Health: 143/200. Stamina: 5/10.
+2010-07-07 17:03:10,930 INFO Checking enemy Weakli&#8203;ng can attack: MyAttackPoints: 576. EnemyDefensePoints:1444.
+2010-07-07 17:03:30,373 INFO Checking enemy woody can attack: MyAttackPoints: 576. EnemyDefensePoints:3498.
+2010-07-07 17:03:42,198 INFO Checking enemy jodot can attack: MyAttackPoints: 576. EnemyDefensePoints:536.
+2010-07-07 17:03:42,199 INFO Atacando a jodot
+2010-07-07 17:03:48,278 INFO Perdi con jodot. Health: 126/200. Stamina: 5/10.
+2010-07-07 17:03:54,900 INFO Checking enemy kipju4&#8203;4 can attack: MyAttackPoints: 576. EnemyDefensePoints:384.
+2010-07-07 17:03:54,900 INFO Atacando a kipju4&#8203;4
+2010-07-07 17:04:03,651 INFO Le gane a kipju4&#8203;4. Recaude 100067. Health: 117/200. Stamina: 4/10.
+2010-07-07 17:04:03,651 INFO Atacando de nuevo a kipju4&#8203;4
+2010-07-07 17:04:12,414 INFO Le gane a kipju4&#8203;4. Recaude 47282. Health: 108/200. Stamina: 3/10.
+2010-07-07 17:04:12,414 INFO Atacando de nuevo a kipju4&#8203;4
+2010-07-07 17:04:22,128 INFO Le gane a kipju4&#8203;4. Recaude 57369. Health: 95/200. Stamina: 2/10.
+2010-07-07 17:04:22,128 INFO Atacando de nuevo a kipju4&#8203;4
+2010-07-07 17:04:27,881 INFO kipju4&#8203;4 se retiro. Health: 95/200. Stamina: 2/10.
+2010-07-07 17:04:41,945 INFO Checking enemy samb can attack: MyAttackPoints: 576. EnemyDefensePoints:183.
+2010-07-07 17:04:41,945 INFO Atacando a samb
+2010-07-07 17:04:47,876 INFO Le gane a samb. Recaude 38277. Health: 90/200. Stamina: 1/10.
+2010-07-07 17:04:47,876 INFO Atacando de nuevo a samb
+2010-07-07 17:04:55,736 INFO Le gane a samb. Recaude 28216. Health: 77/200. Stamina: 0/10.
+2010-07-07 17:04:55,737 INFO Duermo 2 min para recuperar stamina
+2010-07-07 17:06:55,737 INFO Se me acabo el tiempo para pelear
+2010-07-07 17:06:55,737 INFO Fin peleas. Money ganada : 346916 .
+2010-07-07 17:06:55,737 INFO Fin de los ataques.
+2010-07-07 17:06:55,737 INFO Ejecutando todas las misiones.
+2010-07-07 17:06:57,647 INFO Missions....
+2010-07-07 17:06:57,648 INFO Checking tab 1
+2010-07-07 17:07:12,281 INFO Checking tab 2
+2010-07-07 17:07:37,001 INFO Energy: 111/490. Mission requiered energy: 52
+2010-07-07 17:07:37,001 INFO Proceso mision: Shoot Down Aircraft. Percent: 90%.
+2010-07-07 17:07:57,417 INFO Energy: 59/490. Mission requiered energy: 52
+2010-07-07 17:07:57,417 INFO Proceso mision: Shoot Down Aircraft. Percent: 99%.
+2010-07-07 17:08:08,709 INFO Energy: 490/490. Mission requiered energy: 50
+2010-07-07 17:08:08,709 INFO Proceso mision: Investigate Wreckage . Percent: 0%.
+2010-07-07 17:08:30,007 INFO Tengo que deployar
+2010-07-07 17:08:38,830 INFO Procesando mision luego de deployear.
+2010-07-07 17:08:50,813 INFO Energy: 440/490. Mission requiered energy: 50
+2010-07-07 17:08:50,813 INFO Proceso mision: Investigate Wreckage . Percent: 5%.
+2010-07-07 17:09:02,205 INFO Energy: 390/490. Mission requiered energy: 50
+2010-07-07 17:09:02,205 INFO Proceso mision: Investigate Wreckage . Percent: 10%.
+2010-07-07 17:09:15,787 INFO Energy: 340/490. Mission requiered energy: 50
+2010-07-07 17:09:15,787 INFO Proceso mision: Investigate Wreckage . Percent: 15%.
+2010-07-07 17:09:27,970 INFO Energy: 290/490. Mission requiered energy: 50
+2010-07-07 17:09:27,971 INFO Proceso mision: Investigate Wreckage . Percent: 20%.
+2010-07-07 17:09:43,332 INFO Energy: 240/490. Mission requiered energy: 50
+2010-07-07 17:09:43,332 INFO Proceso mision: Investigate Wreckage . Percent: 25%.
+2010-07-07 17:09:59,879 INFO Energy: 190/490. Mission requiered energy: 50
+2010-07-07 17:09:59,879 INFO Proceso mision: Investigate Wreckage . Percent: 30%.
+2010-07-07 17:10:12,561 INFO Energy: 140/490. Mission requiered energy: 50
+2010-07-07 17:10:12,561 INFO Proceso mision: Investigate Wreckage . Percent: 35%.
+2010-07-07 17:10:22,352 INFO Energy: 90/490. Mission requiered energy: 50
+2010-07-07 17:10:22,353 INFO Proceso mision: Investigate Wreckage . Percent: 40%.
+2010-07-07 17:10:37,515 INFO Energy: 40/490. Mission requiered energy: 50
+2010-07-07 17:10:37,516 INFO Se acabo la energia.
+2010-07-07 17:10:37,516 INFO Fin Ejecutando todas las misiones.
+2010-07-07 17:10:37,998 INFO Sigo atacando porque tengo energia.
+2010-07-07 17:10:51,647 INFO Checking enemy mike can attack: MyAttackPoints: 576. EnemyDefensePoints:342.
+2010-07-07 17:10:51,648 INFO Atacando a mike
+2010-07-07 17:10:59,290 INFO Le gane a mike. Recaude 14212. Health: 191/200. Stamina: 9/10.
+2010-07-07 17:10:59,290 INFO Atacando de nuevo a mike
+2010-07-07 17:11:03,825 INFO mike se retiro. Health: 191/200. Stamina: 9/10.
+2010-07-07 17:11:14,890 INFO Checking enemy wiwi can attack: MyAttackPoints: 576. EnemyDefensePoints:1417.
+2010-07-07 17:11:22,410 INFO Checking enemy Kristi&#8203;n can attack: MyAttackPoints: 576. EnemyDefensePoints:6820.
+2010-07-07 17:11:38,222 INFO Checking enemy TomBom&#8203;badil can attack: MyAttackPoints: 576. EnemyDefensePoints:399.
+2010-07-07 17:11:38,222 INFO Atacando a TomBom&#8203;badil
+2010-07-07 17:11:43,650 INFO Le gane a TomBom&#8203;badil. Recaude 34425. Health: 184/200. Stamina: 8/10.
+2010-07-07 17:11:43,650 INFO Atacando de nuevo a TomBom&#8203;badil
+2010-07-07 17:11:50,894 INFO Le gane a TomBom&#8203;badil. Recaude 27311. Health: 180/200. Stamina: 7/10.
+2010-07-07 17:11:50,894 INFO Atacando de nuevo a TomBom&#8203;badil
+2010-07-07 17:11:59,404 INFO Perdi con TomBom&#8203;badil. Health: 158/200. Stamina: 6/10.
+2010-07-07 17:12:14,632 INFO Checking enemy T Bone can attack: MyAttackPoints: 576. EnemyDefensePoints:1565.
+2010-07-07 17:12:25,721 INFO Checking enemy Tony can attack: MyAttackPoints: 576. EnemyDefensePoints:291.
+2010-07-07 17:12:25,721 INFO Atacando a Tony
+2010-07-07 17:12:34,241 INFO Le gane a Tony. Recaude 224878. Health: 147/200. Stamina: 5/10.
+2010-07-07 17:12:34,241 INFO Atacando de nuevo a Tony
+2010-07-07 17:12:42,993 INFO Le gane a Tony. Recaude 125931. Health: 134/200. Stamina: 4/10.
+2010-07-07 17:12:42,993 INFO Atacando de nuevo a Tony
+2010-07-07 17:12:50,515 INFO Le gane a Tony. Recaude 162452. Health: 129/200. Stamina: 3/10.
+2010-07-07 17:12:50,515 INFO Atacando de nuevo a Tony
+2010-07-07 17:12:55,735 INFO Tony se retiro. Health: 129/200. Stamina: 3/10.
+2010-07-07 17:13:05,856 INFO Checking enemy 6666 can attack: MyAttackPoints: 576. EnemyDefensePoints:303.
+2010-07-07 17:13:05,856 INFO Atacando a 6666
+2010-07-07 17:13:11,170 INFO Le gane a 6666. Recaude 9600. Health: 121/200. Stamina: 3/10.
+2010-07-07 17:13:19,798 INFO Checking enemy ragge can attack: MyAttackPoints: 576. EnemyDefensePoints:352.
+2010-07-07 17:13:19,799 INFO Atacando a ragge
+2010-07-07 17:13:33,324 INFO Le gane a ragge. Recaude 339615. Health: 109/200. Stamina: 2/10.
+2010-07-07 17:13:33,324 INFO Atacando de nuevo a ragge
+2010-07-07 17:13:41,063 INFO Le gane a ragge. Recaude 153958. Health: 100/200. Stamina: 1/10.
+2010-07-07 17:13:41,063 INFO Atacando de nuevo a ragge
+2010-07-07 17:13:54,371 INFO Le gane a ragge. Recaude 424926. Health: 92/200. Stamina: 0/10.
+2010-07-07 17:13:54,371 INFO Duermo 2 min para recuperar stamina
+2010-07-07 17:15:54,371 INFO Se me acabo el tiempo para pelear
+2010-07-07 17:15:54,371 INFO Fin peleas. Money ganada : 1517308 .
+2010-07-07 17:16:00,085 INFO Go to bank.
+2010-07-07 17:16:00,085 INFO Link... http://wwar.storm8.com/bank.php?formNonce=d42b98f952333be6a4463a39e6aee78e278915f3&h=b027f7cd23bff63c2eda07054fc76df3b436760b
+2010-07-07 17:16:00,762 INFO Depositando 151674
+2010-07-07 17:16:03,039 INFO Se realizo el deposito para el restore.
+2010-07-07 17:16:03,039 INFO Going to Page Units....
+2010-07-07 17:16:11,979 INFO Actualizando units...
+2010-07-07 17:16:27,037 INFO Units actualizadas.
+2010-07-07 17:16:41,718 INFO Contruyendo units defensa...
+2010-07-07 17:16:48,176 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 14
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=36fb56f2e6b064594b607d21e2ded79ea326a964&h=908c29898303033b254ff8cf2f62e4694ba947bb
+. Unit price: 490000. Profile money: 3534701.
+2010-07-07 17:16:58,101 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 15
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=bce4390ab02871580344d398e004d3f9b23f7f6e&h=9fd31e4b62949ef4b8d94446141ea6f26b7a500f
+. Unit price: 490000. Profile money: 3044701.
+2010-07-07 17:17:05,401 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 16
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=4874f73d5de836a78c900ea4c9cf3ad99d0fa0d3&h=37a80a761e72b5c20c6b71688761d1e80becdf73
+. Unit price: 490000. Profile money: 2554701.
+2010-07-07 17:17:13,700 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 17
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=82432bba0a1d00ef3c2f7ec2ad6d4edf10b14434&h=6111db0ed59869226f79e09e986467097fbc0390
+. Unit price: 490000. Profile money: 2064701.
+2010-07-07 17:17:18,544 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 18
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=8a1542e77f26be7e91bd3f8fc8913f35a31328c3&h=7338ac7af8b9abd05e8dc3d8ae484383099885fd
+. Unit price: 490000. Profile money: 1574701.
+2010-07-07 17:17:23,712 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 19
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=d1a11ed53362b811de6e12e5e70365e0f87505d3&h=7b20850df1b522dfbf0666762e908e9e0197adfd
+. Unit price: 490000. Profile money: 1084701.
+2010-07-07 17:17:29,863 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 20
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=415cdfb4f243354a7f67efdc432dc5756afb37fa&h=ac2755f753ffcca5ebcd24bab9bc7afc3ddc0b54
+. Unit price: 490000. Profile money: 594701.
+2010-07-07 17:17:37,486 INFO Se me acabo la plata para comprar units.
+2010-07-07 17:17:37,486 INFO FIN Contruir units defensa.
+2010-07-07 17:17:43,964 INFO Contruyendo units ataque...
+2010-07-07 17:17:50,630 INFO FIN Contruir units ataque.
+2010-07-07 17:17:51,277 INFO Contruyendo building de Defense
+2010-07-07 17:17:54,611 INFO Contruyendo buildings...
+2010-07-07 17:17:54,611 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 104701. Building cost: 850000.
+2010-07-07 17:17:54,639 INFO Fin de contruir buildings.
+2010-07-07 17:17:58,803 INFO Durmiendo 16 minutos.
+2010-07-07 17:33:58,803 INFO Atacando...
+2010-07-07 17:34:00,093 INFO Going to Page Units....
+2010-07-07 17:34:02,520 INFO Actualizando units...
+2010-07-07 17:34:06,901 INFO Units actualizadas.
+2010-07-07 17:34:06,901 INFO Going to Page Buildings....
+2010-07-07 17:34:08,778 INFO Actualizando buildings...
+2010-07-07 17:34:08,812 INFO Buildings actualizadas.
+2010-07-07 17:34:09,654 INFO Go to hospital.
+2010-07-07 17:34:09,654 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 17:34:10,183 INFO Se hizo el restore health.
+2010-07-07 17:34:14,935 INFO Checking enemy decini&#8203;mator can attack: MyAttackPoints: 576. EnemyDefensePoints:418.
+2010-07-07 17:34:14,935 INFO Atacando a decini&#8203;mator
+2010-07-07 17:34:18,402 INFO Le gane a decini&#8203;mator. Recaude 219640. Health: 197/200. Stamina: 9/10.
+2010-07-07 17:34:18,403 INFO Atacando de nuevo a decini&#8203;mator
+2010-07-07 17:34:21,091 INFO Le gane a decini&#8203;mator. Recaude 264582. Health: 190/200. Stamina: 8/10.
+2010-07-07 17:34:21,091 INFO Atacando de nuevo a decini&#8203;mator
+2010-07-07 17:34:23,574 INFO Le gane a decini&#8203;mator. Recaude 192851. Health: 187/200. Stamina: 7/10.
+2010-07-07 17:34:23,574 INFO Atacando de nuevo a decini&#8203;mator
+2010-07-07 17:34:24,850 INFO decini&#8203;mator se retiro. Health: 187/200. Stamina: 7/10.
+2010-07-07 17:34:27,860 INFO Checking enemy Rell can attack: MyAttackPoints: 576. EnemyDefensePoints:1239.
+2010-07-07 17:34:31,250 INFO Checking enemy Zaden can attack: MyAttackPoints: 576. EnemyDefensePoints:87.
+2010-07-07 17:34:31,250 INFO Atacando a Zaden
+2010-07-07 17:34:32,933 INFO Le gane a Zaden. Recaude 0. Health: 183/200. Stamina: 6/10.
+2010-07-07 17:34:36,355 INFO Checking enemy ragge can attack: MyAttackPoints: 576. EnemyDefensePoints:402.
+2010-07-07 17:34:36,355 INFO Atacando a ragge
+2010-07-07 17:34:37,871 INFO Le gane a ragge. Recaude 174928. Health: 170/200. Stamina: 5/10.
+2010-07-07 17:34:37,871 INFO Atacando de nuevo a ragge
+2010-07-07 17:34:40,560 INFO Le gane a ragge. Recaude 269254. Health: 162/200. Stamina: 4/10.
+2010-07-07 17:34:40,560 INFO Atacando de nuevo a ragge
+2010-07-07 17:34:42,079 INFO ragge se retiro. Health: 162/200. Stamina: 4/10.
+2010-07-07 17:34:45,498 INFO Checking enemy Broc can attack: MyAttackPoints: 576. EnemyDefensePoints:1101.
+2010-07-07 17:34:48,111 INFO Checking enemy kcrept can attack: MyAttackPoints: 576. EnemyDefensePoints:7419.
+2010-07-07 17:34:56,324 INFO Checking enemy Igor can attack: MyAttackPoints: 576. EnemyDefensePoints:693.
+2010-07-07 17:35:12,072 INFO Checking enemy Bartim&#8203;usp can attack: MyAttackPoints: 576. EnemyDefensePoints:1628.
+2010-07-07 17:35:17,641 INFO Checking enemy franki&#8203;e bush can attack: MyAttackPoints: 576. EnemyDefensePoints:959.
+2010-07-07 17:35:20,228 INFO Checking enemy Bond can attack: MyAttackPoints: 576. EnemyDefensePoints:120.
+2010-07-07 17:35:20,228 INFO Atacando a Bond
+2010-07-07 17:35:21,495 INFO Le gane a Bond. Recaude 1452. Health: 149/200. Stamina: 3/10.
+2010-07-07 17:35:24,147 INFO Checking enemy phil can attack: MyAttackPoints: 576. EnemyDefensePoints:64.
+2010-07-07 17:35:24,148 INFO Atacando a phil
+2010-07-07 17:35:26,605 INFO Le gane a phil. Recaude 3998. Health: 135/200. Stamina: 2/10.
+2010-07-07 17:35:28,846 INFO Checking enemy slim can attack: MyAttackPoints: 576. EnemyDefensePoints:1088.
+2010-07-07 17:35:32,846 INFO Checking enemy Justin can attack: MyAttackPoints: 576. EnemyDefensePoints:2104.
+2010-07-07 17:35:35,819 INFO Checking enemy theael&#8203;ix can attack: MyAttackPoints: 576. EnemyDefensePoints:199.
+2010-07-07 17:35:35,819 INFO Atacando a theael&#8203;ix
+2010-07-07 17:35:37,317 INFO Le gane a theael&#8203;ix. Recaude 133078. Health: 122/200. Stamina: 1/10.
+2010-07-07 17:35:37,317 INFO Atacando de nuevo a theael&#8203;ix
+2010-07-07 17:35:39,170 INFO theael&#8203;ix se retiro. Health: 122/200. Stamina: 1/10.
+2010-07-07 17:35:42,364 INFO Checking enemy gwr52 can attack: MyAttackPoints: 576. EnemyDefensePoints:2435.
+2010-07-07 17:35:44,763 INFO Checking enemy Kamika&#8203;ze can attack: MyAttackPoints: 576. EnemyDefensePoints:1759.
+2010-07-07 17:35:47,947 INFO Checking enemy jack mcphers&#8203;on can attack: MyAttackPoints: 576. EnemyDefensePoints:513.
+2010-07-07 17:35:47,947 INFO Atacando a jack mcphers&#8203;on
+2010-07-07 17:35:49,245 INFO Le gane a jack mcphers&#8203;on. Recaude 155387. Health: 110/200. Stamina: 0/10.
+2010-07-07 17:35:49,245 INFO Duermo 2 min para recuperar stamina
+2010-07-07 17:37:56,409 INFO Checking enemy Bryz can attack: MyAttackPoints: 576. EnemyDefensePoints:2436.
+2010-07-07 17:38:01,205 INFO Checking enemy kempha&#8203;s can attack: MyAttackPoints: 576. EnemyDefensePoints:484.
+2010-07-07 17:38:01,205 INFO Atacando a kempha&#8203;s
+2010-07-07 17:38:03,859 INFO Le gane a kempha&#8203;s. Recaude 28952. Health: 108/200. Stamina: 0/10.
+2010-07-07 17:38:03,859 INFO Duermo 2 min para recuperar stamina
+2010-07-07 17:40:03,859 INFO Se me acabo el tiempo para pelear
+2010-07-07 17:40:03,860 INFO Fin peleas. Money ganada : 1444122 .
+2010-07-07 17:40:03,860 INFO Fin de los ataques.
+2010-07-07 17:40:03,860 INFO Ejecutando todas las misiones.
+2010-07-07 17:40:07,095 INFO Missions....
+2010-07-07 17:40:07,096 INFO Checking tab 1
+2010-07-07 17:40:08,990 INFO Checking tab 2
+2010-07-07 17:40:12,046 INFO Energy: 117/490. Mission requiered energy: 50
+2010-07-07 17:40:12,046 INFO Proceso mision: Investigate Wreckage . Percent: 45%.
+2010-07-07 17:40:14,177 INFO Energy: 67/490. Mission requiered energy: 50
+2010-07-07 17:40:14,177 INFO Proceso mision: Investigate Wreckage . Percent: 50%.
+2010-07-07 17:40:17,901 INFO Energy: 17/490. Mission requiered energy: 50
+2010-07-07 17:40:17,901 INFO Se acabo la energia.
+2010-07-07 17:40:17,901 INFO Fin Ejecutando todas las misiones.
+2010-07-07 17:40:18,651 INFO Sigo atacando porque tengo energia.
+2010-07-07 17:40:20,388 INFO Checking enemy brez can attack: MyAttackPoints: 576. EnemyDefensePoints:5539.
+2010-07-07 17:40:21,885 INFO Checking enemy Janama can attack: MyAttackPoints: 576. EnemyDefensePoints:10796.
+2010-07-07 17:40:23,368 INFO Checking enemy suripi&#8203;a can attack: MyAttackPoints: 576. EnemyDefensePoints:1442.
+2010-07-07 17:40:25,690 INFO Checking enemy coug63 can attack: MyAttackPoints: 576. EnemyDefensePoints:791.
+2010-07-07 17:40:27,039 INFO Checking enemy killa can attack: MyAttackPoints: 576. EnemyDefensePoints:389.
+2010-07-07 17:40:27,039 INFO Atacando a killa
+2010-07-07 17:40:28,967 INFO Le gane a killa. Recaude 20055. Health: 101/200. Stamina: 1/10.
+2010-07-07 17:40:28,967 INFO Atacando de nuevo a killa
+2010-07-07 17:40:30,285 INFO Perdi con killa. Health: 83/200. Stamina: 0/10.
+2010-07-07 17:40:30,946 INFO Duermo 2 min para recuperar stamina
+2010-07-07 17:42:30,947 INFO SE ME ACABO LA ENERGIA. Health: 83/200. Stamina: 0/10. FIN.
+2010-07-07 17:42:30,947 INFO Fin peleas. Money ganada : 20055 .
+2010-07-07 17:42:31,489 INFO Go to bank.
+2010-07-07 17:42:31,489 INFO Link... http://wwar.storm8.com/bank.php?formNonce=cc064ff8b2131657f98762fea2323cdbf3bb110f&h=2153dbd1ab7640f31a658b0859392837aea08ad2
+2010-07-07 17:42:31,742 INFO Depositando 166835
+2010-07-07 17:42:32,214 INFO Se realizo el deposito para el restore.
+2010-07-07 17:42:32,214 INFO Going to Page Units....
+2010-07-07 17:42:33,696 INFO Actualizando units...
+2010-07-07 17:42:36,338 INFO Units actualizadas.
+2010-07-07 17:42:37,049 INFO Contruyendo units defensa...
+2010-07-07 17:42:37,324 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 21
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=0cdde6ea18fdd2a713d678d0c8ce319d05e17f71&h=4ebfa3c84a82b19c71fb9168d5df6792445ccc7a
+. Unit price: 490000. Profile money: 1414021.
+2010-07-07 17:42:37,820 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 22
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=dc93d3a7853ee79dd5ad5222a46fcfb4d4e0c1a5&h=57c333a1b28d4f8e1a33a3cf99cc8ea135bff9e4
+. Unit price: 490000. Profile money: 924021.
+2010-07-07 17:42:39,288 INFO Se me acabo la plata para comprar units.
+2010-07-07 17:42:39,288 INFO FIN Contruir units defensa.
+2010-07-07 17:42:40,566 INFO Contruyendo units ataque...
+2010-07-07 17:42:40,999 INFO Contruyendo: Name: Harrier Jet
+CantBuild: 23
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=89f1dc9373f5c16698aac2879704c140afd4bb75&h=69f74d113bc41535d41729c07b46f8bbc7c9c9cd
+
+2010-07-07 17:42:41,578 INFO FIN Contruir units ataque.
+2010-07-07 17:42:41,835 INFO Contruyendo building de Defense
+2010-07-07 17:42:42,352 INFO Contruyendo buildings...
+2010-07-07 17:42:42,352 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 334021. Building cost: 850000.
+2010-07-07 17:42:42,379 INFO Fin de contruir buildings.
+2010-07-07 17:42:42,754 INFO Durmiendo 18 minutos.
+2010-07-07 18:00:42,754 INFO Atacando...
+2010-07-07 18:00:44,764 INFO Going to Page Units....
+2010-07-07 18:00:45,800 INFO Actualizando units...
+2010-07-07 18:00:47,721 INFO Units actualizadas.
+2010-07-07 18:00:47,721 INFO Going to Page Buildings....
+2010-07-07 18:00:48,162 INFO Actualizando buildings...
+2010-07-07 18:00:48,198 INFO Buildings actualizadas.
+2010-07-07 18:00:48,466 INFO Go to hospital.
+2010-07-07 18:00:48,466 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 18:00:48,988 INFO Se hizo el restore health.
+2010-07-07 18:00:50,082 INFO Checking enemy Julio can attack: MyAttackPoints: 576. EnemyDefensePoints:3204.
+2010-07-07 18:00:51,115 INFO Checking enemy barr can attack: MyAttackPoints: 576. EnemyDefensePoints:1284.
+2010-07-07 18:00:51,927 INFO Checking enemy vegan can attack: MyAttackPoints: 576. EnemyDefensePoints:217.
+2010-07-07 18:00:51,927 INFO Atacando a vegan
+2010-07-07 18:00:52,470 INFO Le gane a vegan. Recaude 47300. Health: 193/200. Stamina: 9/10.
+2010-07-07 18:00:52,470 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:52,947 INFO Le gane a vegan. Recaude 46114. Health: 184/200. Stamina: 8/10.
+2010-07-07 18:00:52,947 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:53,435 INFO Le gane a vegan. Recaude 16886. Health: 180/200. Stamina: 7/10.
+2010-07-07 18:00:53,435 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:53,776 INFO Le gane a vegan. Recaude 12806. Health: 177/200. Stamina: 6/10.
+2010-07-07 18:00:53,776 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:54,136 INFO Le gane a vegan. Recaude 41659. Health: 170/200. Stamina: 5/10.
+2010-07-07 18:00:54,136 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:54,474 INFO Le gane a vegan. Recaude 41775. Health: 161/200. Stamina: 4/10.
+2010-07-07 18:00:54,474 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:54,828 INFO Le gane a vegan. Recaude 23033. Health: 148/200. Stamina: 3/10.
+2010-07-07 18:00:54,828 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:55,195 INFO Le gane a vegan. Recaude 7645. Health: 139/200. Stamina: 2/10.
+2010-07-07 18:00:55,195 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:55,568 INFO Le gane a vegan. Recaude 21409. Health: 126/200. Stamina: 1/10.
+2010-07-07 18:00:55,568 INFO Atacando de nuevo a vegan
+2010-07-07 18:00:55,924 INFO Le gane a vegan. Recaude 22910. Health: 120/200. Stamina: 0/10.
+2010-07-07 18:00:55,924 INFO Duermo 2 min para recuperar stamina
+2010-07-07 18:02:56,697 INFO Checking enemy Theoph&#8203;ilus99&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:1659.
+2010-07-07 18:02:57,902 INFO Checking enemy Vegard can attack: MyAttackPoints: 576. EnemyDefensePoints:1720.
+2010-07-07 18:02:58,592 INFO Checking enemy ahngo9&#8203;0 can attack: MyAttackPoints: 576. EnemyDefensePoints:5546.
+2010-07-07 18:02:59,247 INFO Checking enemy lilkgb can attack: MyAttackPoints: 576. EnemyDefensePoints:49.
+2010-07-07 18:02:59,247 INFO Atacando a lilkgb
+2010-07-07 18:02:59,666 INFO Le gane a lilkgb. Recaude 38474. Health: 118/200. Stamina: 0/10.
+2010-07-07 18:02:59,666 INFO Duermo 2 min para recuperar stamina
+2010-07-07 18:05:00,307 INFO Checking enemy ronald can attack: MyAttackPoints: 576. EnemyDefensePoints:189.
+2010-07-07 18:05:00,307 INFO Atacando a ronald
+2010-07-07 18:05:00,638 INFO Le gane a ronald. Recaude 23994. Health: 106/200. Stamina: 0/10.
+2010-07-07 18:05:00,638 INFO Duermo 2 min para recuperar stamina
+2010-07-07 18:07:00,638 INFO Se me acabo el tiempo para pelear
+2010-07-07 18:07:00,638 INFO Fin peleas. Money ganada : 344005 .
+2010-07-07 18:07:00,638 INFO Fin de los ataques.
+2010-07-07 18:07:00,638 INFO Ejecutando todas las misiones.
+2010-07-07 18:07:01,097 INFO Missions....
+2010-07-07 18:07:01,097 INFO Checking tab 1
+2010-07-07 18:07:01,572 INFO Checking tab 2
+2010-07-07 18:07:02,060 INFO Energy: 94/490. Mission requiered energy: 50
+2010-07-07 18:07:02,061 INFO Proceso mision: Investigate Wreckage . Percent: 55%.
+2010-07-07 18:07:02,600 INFO Energy: 44/490. Mission requiered energy: 50
+2010-07-07 18:07:02,600 INFO Se acabo la energia.
+2010-07-07 18:07:02,600 INFO Fin Ejecutando todas las misiones.
+2010-07-07 18:07:02,902 INFO Sigo atacando porque tengo energia.
+2010-07-07 18:07:03,577 INFO Checking enemy EPIC can attack: MyAttackPoints: 576. EnemyDefensePoints:124.
+2010-07-07 18:07:03,577 INFO Atacando a EPIC
+2010-07-07 18:07:03,917 INFO Le gane a EPIC. Recaude 10340. Health: 100/200. Stamina: 0/10.
+2010-07-07 18:07:03,917 INFO Duermo 2 min para recuperar stamina
+2010-07-07 18:09:04,628 INFO Checking enemy Stout can attack: MyAttackPoints: 576. EnemyDefensePoints:2449.
+2010-07-07 18:09:05,370 INFO Checking enemy Neil can attack: MyAttackPoints: 576. EnemyDefensePoints:577.
+2010-07-07 18:09:06,064 INFO Checking enemy mark can attack: MyAttackPoints: 576. EnemyDefensePoints:592.
+2010-07-07 18:09:06,765 INFO Checking enemy vince can attack: MyAttackPoints: 576. EnemyDefensePoints:1964.
+2010-07-07 18:09:07,517 INFO Checking enemy bennyp can attack: MyAttackPoints: 576. EnemyDefensePoints:2570.
+2010-07-07 18:09:08,259 INFO Checking enemy Payne can attack: MyAttackPoints: 576. EnemyDefensePoints:177.
+2010-07-07 18:09:08,259 INFO Atacando a Payne
+2010-07-07 18:09:08,590 INFO Le gane a Payne. Recaude 756. Health: 90/200. Stamina: 0/10.
+2010-07-07 18:09:08,590 INFO Duermo 2 min para recuperar stamina
+2010-07-07 18:11:09,311 INFO Checking enemy Genera&#8203;l Patton can attack: MyAttackPoints: 576. EnemyDefensePoints:434.
+2010-07-07 18:11:09,311 INFO Atacando a Genera&#8203;l Patton
+2010-07-07 18:11:09,680 INFO Le gane a Genera&#8203;l Patton. Recaude 34473. Health: 89/200. Stamina: 0/10.
+2010-07-07 18:11:09,680 INFO Duermo 2 min para recuperar stamina
+2010-07-07 18:13:09,680 INFO Se me acabo el tiempo para pelear
+2010-07-07 18:13:09,680 INFO Fin peleas. Money ganada : 45569 .
+2010-07-07 18:13:10,221 INFO Go to bank.
+2010-07-07 18:13:10,221 INFO Link... http://wwar.storm8.com/bank.php?formNonce=c553e5c655f77537257978d5daaa817d77c8b4f6&h=d38b42a0aebf9a6f999c8a114a7ff46149f7b01b
+2010-07-07 18:13:10,461 INFO Depositando 129787
+2010-07-07 18:13:10,928 INFO Se realizo el deposito para el restore.
+2010-07-07 18:13:10,929 INFO Going to Page Units....
+2010-07-07 18:13:11,249 INFO Actualizando units...
+2010-07-07 18:13:12,603 INFO Units actualizadas.
+2010-07-07 18:13:12,916 INFO Contruyendo units defensa...
+2010-07-07 18:13:13,186 INFO Contruyendo: Name: M80 Stiletto
+CantBuild: 23
+Attack: 15
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/109m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=109&cat=3&formNonce=22ac62724d866bd73c5b178e1df862d488f37746&h=4827749ecf96c31d01c1992258a1b0fc8e82c588
+. Unit price: 490000. Profile money: 636459.
+2010-07-07 18:13:13,516 INFO FIN Contruir units defensa.
+2010-07-07 18:13:13,809 INFO Contruyendo units ataque...
+2010-07-07 18:13:14,062 INFO Contruyendo: Name: Harrier Jet
+CantBuild: 23
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=22ac62724d866bd73c5b178e1df862d488f37746&h=2466bd56bfe0ad4a22bcb3aadc00b2c1f76b6eb5
+
+2010-07-07 18:13:14,375 INFO FIN Contruir units ataque.
+2010-07-07 18:13:14,613 INFO Contruyendo building de Defense
+2010-07-07 18:13:14,917 INFO Contruyendo buildings...
+2010-07-07 18:13:14,917 INFO No se pudo construir: Anti-Aircraft Launcher. My money: 46459. Building cost: 850000.
+2010-07-07 18:13:14,938 INFO Fin de contruir buildings.
+2010-07-07 18:13:15,356 INFO Durmiendo 18 minutos.
+2010-07-07 18:31:15,357 INFO Atacando...
+2010-07-07 18:31:17,249 INFO Going to Page Units....
+2010-07-07 18:31:18,465 INFO Actualizando units...
+2010-07-07 18:31:20,511 INFO Units actualizadas.
+2010-07-07 18:31:20,511 INFO Going to Page Buildings....
+2010-07-07 18:31:20,962 INFO Actualizando buildings...
+2010-07-07 18:31:20,990 INFO Buildings actualizadas.
+2010-07-07 18:31:21,285 INFO Go to hospital.
+2010-07-07 18:31:21,285 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 18:31:21,566 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 18:31:21,566 INFO Go to bank.
+2010-07-07 18:31:21,566 INFO Link... http://wwar.storm8.com/bank.php?formNonce=5494295f151f9a32f23404f17e5b77d57ab0fb0e&h=70508ddeaf636c63e2e1695591c17d8068f1b2c6
+2010-07-07 18:31:21,831 INFO Depositando 14246
+2010-07-07 18:31:22,819 INFO No se pudo hacer el restore entonces espero (3137 seconds) para recaudar la plata.
+2010-07-07 19:24:41,507 INFO Go to hospital.
+2010-07-07 19:24:41,507 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 19:24:41,996 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 19:24:41,996 INFO Go to bank.
+2010-07-07 19:24:41,996 INFO Link... http://wwar.storm8.com/bank.php?formNonce=5494295f151f9a32f23404f17e5b77d57ab0fb0e&h=70508ddeaf636c63e2e1695591c17d8068f1b2c6
+2010-07-07 19:24:42,454 INFO Depositando 72116
+2010-07-07 19:24:43,730 INFO No se pudo hacer el restore entonces espero (3536 seconds) para recaudar la plata.
+2010-07-07 20:24:41,163 INFO Go to hospital.
+2010-07-07 20:24:41,163 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 20:24:41,619 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 20:24:41,619 INFO Go to bank.
+2010-07-07 20:24:41,620 INFO Link... http://wwar.storm8.com/bank.php?formNonce=5494295f151f9a32f23404f17e5b77d57ab0fb0e&h=70508ddeaf636c63e2e1695591c17d8068f1b2c6
+2010-07-07 20:24:42,076 INFO Depositando 116064
+2010-07-07 20:24:43,228 INFO No se pudo hacer el restore entonces espero (3537 seconds) para recaudar la plata.
+2010-07-07 20:31:44,844 INFO Atacando...
+2010-07-07 20:31:46,457 INFO Going to Page Units....
+2010-07-07 20:31:47,518 INFO Actualizando units...
+2010-07-07 20:31:57,363 INFO Units actualizadas.
+2010-07-07 20:31:57,363 INFO Going to Page Buildings....
+2010-07-07 20:31:57,847 INFO Actualizando buildings...
+2010-07-07 20:31:57,889 INFO Buildings actualizadas.
+2010-07-07 20:31:58,205 INFO Go to hospital.
+2010-07-07 20:31:58,205 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 20:31:58,458 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 20:31:58,458 INFO Go to bank.
+2010-07-07 20:31:58,458 INFO Link... http://wwar.storm8.com/bank.php?formNonce=c993dc463e8211fbee428cbfd2658daec60512b5&h=29d30d593650ffc8c384642a0599bc1da58bc5b1
+2010-07-07 20:31:58,726 INFO Depositando 112152
+2010-07-07 20:31:59,714 INFO Se hizo el restore health.
+2010-07-07 20:32:00,891 INFO Checking enemy Vince can attack: MyAttackPoints: 576. EnemyDefensePoints:183.
+2010-07-07 20:32:00,892 INFO Atacando a Vince
+2010-07-07 20:32:01,412 INFO Le gane a Vince. Recaude 17090. Health: 186/200. Stamina: 9/10.
+2010-07-07 20:32:01,412 INFO Atacando de nuevo a Vince
+2010-07-07 20:32:01,967 INFO Le gane a Vince. Recaude 11798. Health: 200/200. Stamina: 10/10.
+2010-07-07 20:32:01,967 INFO Atacando de nuevo a Vince
+2010-07-07 20:32:02,446 INFO Le gane a Vince. Recaude 12779. Health: 186/200. Stamina: 9/10.
+2010-07-07 20:32:02,446 INFO Atacando de nuevo a Vince
+2010-07-07 20:32:02,951 INFO Le gane a Vince. Recaude 15677. Health: 184/200. Stamina: 8/10.
+2010-07-07 20:32:02,951 INFO Atacando de nuevo a Vince
+2010-07-07 20:32:03,259 INFO Vince se retiro. Health: 184/200. Stamina: 8/10.
+2010-07-07 20:32:04,094 INFO Checking enemy jay1ma&#8203;c can attack: MyAttackPoints: 576. EnemyDefensePoints:1298.
+2010-07-07 20:32:04,865 INFO Checking enemy airs can attack: MyAttackPoints: 576. EnemyDefensePoints:313.
+2010-07-07 20:32:04,865 INFO Atacando a airs
+2010-07-07 20:32:05,222 INFO Le gane a airs. Recaude 0. Health: 181/200. Stamina: 7/10.
+2010-07-07 20:32:06,012 INFO Checking enemy Genera&#8203;l Custard can attack: MyAttackPoints: 576. EnemyDefensePoints:3985.
+2010-07-07 20:32:06,683 INFO Checking enemy psicor&#8203;e can attack: MyAttackPoints: 576. EnemyDefensePoints:491.
+2010-07-07 20:32:06,683 INFO Atacando a psicor&#8203;e
+2010-07-07 20:32:07,033 INFO Perdi con psicor&#8203;e. Health: 162/200. Stamina: 6/10.
+2010-07-07 20:32:07,777 INFO Checking enemy why922&#8203;4 can attack: MyAttackPoints: 576. EnemyDefensePoints:1518.
+2010-07-07 20:32:08,435 INFO Checking enemy CCAF8M&#8203;FREEW&#8203;INS can attack: MyAttackPoints: 576. EnemyDefensePoints:75.
+2010-07-07 20:32:08,435 INFO Atacando a CCAF8M&#8203;FREEW&#8203;INS
+2010-07-07 20:32:08,886 INFO CCAF8M&#8203;FREEW&#8203;INS se retiro. Health: 162/200. Stamina: 6/10.
+2010-07-07 20:32:09,618 INFO Checking enemy math can attack: MyAttackPoints: 576. EnemyDefensePoints:543.
+2010-07-07 20:32:09,619 INFO Atacando a math
+2010-07-07 20:32:09,956 INFO Perdi con math. Health: 139/200. Stamina: 5/10.
+2010-07-07 20:32:10,624 INFO Checking enemy Benjam&#8203;in can attack: MyAttackPoints: 576. EnemyDefensePoints:14904.
+2010-07-07 20:32:11,303 INFO Checking enemy Gurkha can attack: MyAttackPoints: 576. EnemyDefensePoints:48790.
+2010-07-07 20:32:11,987 INFO Checking enemy Danny can attack: MyAttackPoints: 576. EnemyDefensePoints:289.
+2010-07-07 20:32:11,987 INFO Atacando a Danny
+2010-07-07 20:32:12,323 INFO Danny se retiro. Health: 139/200. Stamina: 5/10.
+2010-07-07 20:32:13,008 INFO Checking enemy capt crapola&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:3720.
+2010-07-07 20:32:13,766 INFO Checking enemy nipple&#8203;s can attack: MyAttackPoints: 576. EnemyDefensePoints:1783.
+2010-07-07 20:32:14,528 INFO Checking enemy tzacos can attack: MyAttackPoints: 576. EnemyDefensePoints:299.
+2010-07-07 20:32:14,529 INFO Atacando a tzacos
+2010-07-07 20:32:14,935 INFO Le gane a tzacos. Recaude 0. Health: 137/200. Stamina: 4/10.
+2010-07-07 20:32:15,654 INFO Checking enemy Nasty can attack: MyAttackPoints: 576. EnemyDefensePoints:2668.
+2010-07-07 20:32:16,375 INFO Checking enemy Bettor&#8203;un can attack: MyAttackPoints: 576. EnemyDefensePoints:228.
+2010-07-07 20:32:16,376 INFO Atacando a Bettor&#8203;un
+2010-07-07 20:32:16,711 INFO Le gane a Bettor&#8203;un. Recaude 91808. Health: 132/200. Stamina: 3/10.
+2010-07-07 20:32:16,711 INFO Atacando de nuevo a Bettor&#8203;un
+2010-07-07 20:32:17,074 INFO Le gane a Bettor&#8203;un. Recaude 35805. Health: 120/200. Stamina: 2/10.
+2010-07-07 20:32:17,074 INFO Atacando de nuevo a Bettor&#8203;un
+2010-07-07 20:32:17,419 INFO Le gane a Bettor&#8203;un. Recaude 57509. Health: 115/200. Stamina: 1/10.
+2010-07-07 20:32:17,419 INFO Atacando de nuevo a Bettor&#8203;un
+2010-07-07 20:32:17,775 INFO Le gane a Bettor&#8203;un. Recaude 20032. Health: 103/200. Stamina: 0/10.
+2010-07-07 20:32:17,775 INFO Duermo 2 min para recuperar stamina
+2010-07-07 20:34:18,488 INFO Checking enemy Juan can attack: MyAttackPoints: 576. EnemyDefensePoints:1803.
+2010-07-07 20:34:19,510 INFO Checking enemy Brando&#8203;n can attack: MyAttackPoints: 576. EnemyDefensePoints:731.
+2010-07-07 20:34:20,397 INFO Checking enemy Real funny can attack: MyAttackPoints: 576. EnemyDefensePoints:32155.
+2010-07-07 20:34:21,101 INFO Checking enemy Jaime can attack: MyAttackPoints: 576. EnemyDefensePoints:313.
+2010-07-07 20:34:21,101 INFO Atacando a Jaime
+2010-07-07 20:34:21,428 INFO Le gane a Jaime. Recaude 89575. Health: 95/200. Stamina: 0/10.
+2010-07-07 20:34:21,428 INFO Duermo 2 min para recuperar stamina
+2010-07-07 20:36:22,121 INFO Checking enemy gregor&#8203;y can attack: MyAttackPoints: 576. EnemyDefensePoints:3589.
+2010-07-07 20:36:22,877 INFO Checking enemy rockin&#8203;robin can attack: MyAttackPoints: 576. EnemyDefensePoints:129.
+2010-07-07 20:36:22,877 INFO Atacando a rockin&#8203;robin
+2010-07-07 20:36:23,238 INFO Le gane a rockin&#8203;robin. Recaude 7342. Health: 92/200. Stamina: 0/10.
+2010-07-07 20:36:23,238 INFO Duermo 2 min para recuperar stamina
+2010-07-07 20:38:23,238 INFO Se me acabo el tiempo para pelear
+2010-07-07 20:38:23,239 INFO Fin peleas. Money ganada : 359415 .
+2010-07-07 20:38:23,239 INFO Fin de los ataques.
+2010-07-07 20:38:23,239 INFO Ejecutando todas las misiones.
+2010-07-07 20:38:23,578 INFO Missions....
+2010-07-07 20:38:23,579 INFO Checking tab 1
+2010-07-07 20:38:23,984 INFO Checking tab 2
+2010-07-07 20:38:24,377 INFO Energy: 490/490. Mission requiered energy: 112
+2010-07-07 20:38:24,377 INFO Proceso mision: Prepare Army to March. Percent: 0%.
+2010-07-07 20:38:24,789 INFO Tengo que deployar
+2010-07-07 20:38:25,139 INFO Procesando mision luego de deployear.
+2010-07-07 20:38:25,663 INFO Energy: 378/490. Mission requiered energy: 112
+2010-07-07 20:38:25,663 INFO Proceso mision: Prepare Army to March. Percent: 17%.
+2010-07-07 20:38:26,126 INFO Energy: 266/490. Mission requiered energy: 112
+2010-07-07 20:38:26,126 INFO Proceso mision: Prepare Army to March. Percent: 34%.
+2010-07-07 20:38:26,498 INFO Energy: 154/490. Mission requiered energy: 112
+2010-07-07 20:38:26,498 INFO Proceso mision: Prepare Army to March. Percent: 51%.
+2010-07-07 20:38:27,747 INFO Tengo que deployar
+2010-07-07 20:38:28,127 INFO Procesando mision luego de deployear.
+2010-07-07 20:38:28,608 INFO Energy: 42/490. Mission requiered energy: 112
+2010-07-07 20:38:28,608 INFO Se acabo la energia.
+2010-07-07 20:38:28,608 INFO Fin Ejecutando todas las misiones.
+2010-07-07 20:38:28,878 INFO Sigo atacando porque tengo energia.
+2010-07-07 20:38:29,598 INFO Checking enemy 3X KRZY can attack: MyAttackPoints: 576. EnemyDefensePoints:1334.
+2010-07-07 20:38:30,341 INFO Checking enemy HKS-77 can attack: MyAttackPoints: 576. EnemyDefensePoints:271.
+2010-07-07 20:38:30,341 INFO Atacando a HKS-77
+2010-07-07 20:38:30,692 INFO Le gane a HKS-77. Recaude 1533. Health: 88/200. Stamina: 0/10.
+2010-07-07 20:38:30,692 INFO Duermo 2 min para recuperar stamina
+2010-07-07 20:40:31,402 INFO Checking enemy Da.her can attack: MyAttackPoints: 576. EnemyDefensePoints:485.
+2010-07-07 20:40:31,403 INFO Atacando a Da.her
+2010-07-07 20:40:31,824 INFO Le gane a Da.her. Recaude 23213. Health: 86/200. Stamina: 0/10.
+2010-07-07 20:40:31,824 INFO Duermo 2 min para recuperar stamina
+2010-07-07 20:42:32,527 INFO Checking enemy Island&#8203;Fox can attack: MyAttackPoints: 576. EnemyDefensePoints:3363.
+2010-07-07 20:42:33,193 INFO Checking enemy Zeelop&#8203;h can attack: MyAttackPoints: 576. EnemyDefensePoints:3047.
+2010-07-07 20:42:33,846 INFO Checking enemy Greg can attack: MyAttackPoints: 576. EnemyDefensePoints:1683.
+2010-07-07 20:42:34,521 INFO Checking enemy KraK can attack: MyAttackPoints: 576. EnemyDefensePoints:529.
+2010-07-07 20:42:34,521 INFO Atacando a KraK
+2010-07-07 20:42:34,847 INFO Perdi con KraK. Health: 69/200. Stamina: 0/10.
+2010-07-07 20:42:35,149 INFO Duermo 2 min para recuperar stamina
+2010-07-07 20:44:35,149 INFO SE ME ACABO LA ENERGIA. Health: 69/200. Stamina: 0/10. FIN.
+2010-07-07 20:44:35,149 INFO Fin peleas. Money ganada : 24746 .
+2010-07-07 20:44:35,764 INFO Go to bank.
+2010-07-07 20:44:35,765 INFO Link... http://wwar.storm8.com/bank.php?formNonce=c993dc463e8211fbee428cbfd2658daec60512b5&h=29d30d593650ffc8c384642a0599bc1da58bc5b1
+2010-07-07 20:44:36,012 INFO Depositando 165609
+2010-07-07 20:44:36,473 INFO Se realizo el deposito para el restore.
+2010-07-07 20:44:36,473 INFO Going to Page Units....
+2010-07-07 20:44:36,785 INFO Actualizando units...
+2010-07-07 20:44:38,043 INFO Units actualizadas.
+2010-07-07 20:44:38,335 INFO Contruyendo units ataque...
+2010-07-07 20:44:38,716 INFO Contruyendo: Name: Harrier Jet
+CantBuild: 22
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=f5b0fbdb16920cf5451903c40de877b078f55120&h=1be5dc6b9634bf2d0915611c628392fd20dbf91d
+
+2010-07-07 20:44:39,098 INFO Contruyendo: Name: Harrier Jet
+CantBuild: 23
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=baabcb9aa7a28e2a304979e14beb155e0f4532e5&h=41177b275b69f9a1ba9c3992b32495506948febc
+
+2010-07-07 20:44:39,435 INFO FIN Contruir units ataque.
+2010-07-07 20:44:39,687 INFO Contruyendo building de Defense
+2010-07-07 20:44:39,971 INFO Contruyendo buildings...
+2010-07-07 20:44:39,971 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:40,320 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:40,619 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:40,993 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:41,299 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:41,595 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:41,883 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:42,192 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:42,487 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:42,812 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:43,098 INFO Contruyendo: Supply Depot
+2010-07-07 20:44:43,401 INFO No se pudo construir: Supply Depot. My money: 10080. Building cost: 52500.
+2010-07-07 20:44:43,455 INFO Fin de contruir buildings.
+2010-07-07 20:44:43,813 INFO Durmiendo 18 minutos.
+2010-07-07 21:02:43,813 INFO Atacando...
+2010-07-07 21:02:45,032 INFO Going to Page Units....
+2010-07-07 21:02:46,062 INFO Actualizando units...
+2010-07-07 21:02:47,863 INFO Units actualizadas.
+2010-07-07 21:02:47,864 INFO Going to Page Buildings....
+2010-07-07 21:02:48,572 INFO Actualizando buildings...
+2010-07-07 21:02:48,615 INFO Buildings actualizadas.
+2010-07-07 21:02:48,891 INFO Go to hospital.
+2010-07-07 21:02:48,892 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 21:02:49,396 INFO Se hizo el restore health.
+2010-07-07 21:02:50,672 INFO Checking enemy sk double can attack: MyAttackPoints: 576. EnemyDefensePoints:163.
+2010-07-07 21:02:50,672 INFO Atacando a sk double
+2010-07-07 21:02:51,168 INFO Le gane a sk double. Recaude 11338. Health: 187/200. Stamina: 9/10.
+2010-07-07 21:02:51,168 INFO Atacando de nuevo a sk double
+2010-07-07 21:02:51,617 INFO sk double se retiro. Health: 187/200. Stamina: 9/10.
+2010-07-07 21:02:52,565 INFO Checking enemy Brian can attack: MyAttackPoints: 576. EnemyDefensePoints:10413.
+2010-07-07 21:02:53,283 INFO Checking enemy only chavez can attack: MyAttackPoints: 576. EnemyDefensePoints:498.
+2010-07-07 21:02:53,283 INFO Atacando a only chavez
+2010-07-07 21:02:53,775 INFO Perdi con only chavez. Health: 166/200. Stamina: 8/10.
+2010-07-07 21:02:54,470 INFO Checking enemy Free Money can attack: MyAttackPoints: 576. EnemyDefensePoints:8773.
+2010-07-07 21:02:55,569 INFO Checking enemy ughk can attack: MyAttackPoints: 576. EnemyDefensePoints:81.
+2010-07-07 21:02:55,569 INFO Atacando a ughk
+2010-07-07 21:02:55,936 INFO Le gane a ughk. Recaude 237. Health: 153/200. Stamina: 7/10.
+2010-07-07 21:02:56,672 INFO Checking enemy Jake can attack: MyAttackPoints: 576. EnemyDefensePoints:2268.
+2010-07-07 21:02:57,361 INFO Checking enemy kimbob can attack: MyAttackPoints: 576. EnemyDefensePoints:375.
+2010-07-07 21:02:57,361 INFO Atacando a kimbob
+2010-07-07 21:02:57,694 INFO Le gane a kimbob. Recaude 11433. Health: 146/200. Stamina: 6/10.
+2010-07-07 21:02:57,694 INFO Atacando de nuevo a kimbob
+2010-07-07 21:02:58,023 INFO Le gane a kimbob. Recaude 35930. Health: 141/200. Stamina: 5/10.
+2010-07-07 21:02:58,023 INFO Atacando de nuevo a kimbob
+2010-07-07 21:02:58,351 INFO Le gane a kimbob. Recaude 28525. Health: 137/200. Stamina: 4/10.
+2010-07-07 21:02:58,351 INFO Atacando de nuevo a kimbob
+2010-07-07 21:02:58,663 INFO kimbob se retiro. Health: 137/200. Stamina: 4/10.
+2010-07-07 21:02:59,265 INFO Checking enemy iiNveR&#8203;sioN can attack: MyAttackPoints: 576. EnemyDefensePoints:4767.
+2010-07-07 21:03:00,114 INFO Checking enemy Slappy can attack: MyAttackPoints: 576. EnemyDefensePoints:17520.
+2010-07-07 21:03:00,807 INFO Checking enemy Caesar can attack: MyAttackPoints: 576. EnemyDefensePoints:211.
+2010-07-07 21:03:00,807 INFO Atacando a Caesar
+2010-07-07 21:03:01,183 INFO Le gane a Caesar. Recaude 112766. Health: 133/200. Stamina: 3/10.
+2010-07-07 21:03:01,183 INFO Atacando de nuevo a Caesar
+2010-07-07 21:03:01,515 INFO Le gane a Caesar. Recaude 60562. Health: 129/200. Stamina: 2/10.
+2010-07-07 21:03:01,515 INFO Atacando de nuevo a Caesar
+2010-07-07 21:03:01,860 INFO Le gane a Caesar. Recaude 122500. Health: 126/200. Stamina: 1/10.
+2010-07-07 21:03:01,861 INFO Atacando de nuevo a Caesar
+2010-07-07 21:03:02,214 INFO Caesar se retiro. Health: 126/200. Stamina: 1/10.
+2010-07-07 21:03:02,851 INFO Checking enemy T-Time can attack: MyAttackPoints: 576. EnemyDefensePoints:2580.
+2010-07-07 21:03:03,587 INFO Checking enemy americ&#8203;an jihadi can attack: MyAttackPoints: 576. EnemyDefensePoints:1111.
+2010-07-07 21:03:04,269 INFO Checking enemy NFLico&#8203;n can attack: MyAttackPoints: 576. EnemyDefensePoints:1393.
+2010-07-07 21:03:04,924 INFO Checking enemy kunoev can attack: MyAttackPoints: 576. EnemyDefensePoints:952.
+2010-07-07 21:03:05,558 INFO Checking enemy drew39&#8203;37 can attack: MyAttackPoints: 576. EnemyDefensePoints:789.
+2010-07-07 21:03:06,189 INFO Checking enemy Sgt. Azashi&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:5160.
+2010-07-07 21:03:06,882 INFO Checking enemy Ryan can attack: MyAttackPoints: 576. EnemyDefensePoints:688.
+2010-07-07 21:03:07,588 INFO Checking enemy jaiedw&#8203;ardcul&#8203;len can attack: MyAttackPoints: 576. EnemyDefensePoints:247.
+2010-07-07 21:03:07,588 INFO Atacando a jaiedw&#8203;ardcul&#8203;len
+2010-07-07 21:03:07,946 INFO Le gane a jaiedw&#8203;ardcul&#8203;len. Recaude 5498. Health: 124/200. Stamina: 0/10.
+2010-07-07 21:03:07,946 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:05:08,655 INFO Checking enemy jenswa&#8203;ld can attack: MyAttackPoints: 576. EnemyDefensePoints:511.
+2010-07-07 21:05:08,655 INFO Atacando a jenswa&#8203;ld
+2010-07-07 21:05:08,981 INFO Le gane a jenswa&#8203;ld. Recaude 0. Health: 118/200. Stamina: 0/10.
+2010-07-07 21:05:08,982 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:07:09,684 INFO Checking enemy kennet&#8203;h can attack: MyAttackPoints: 576. EnemyDefensePoints:8383.
+2010-07-07 21:07:10,284 INFO Checking enemy Reflex&#8203;sive can attack: MyAttackPoints: 576. EnemyDefensePoints:0.
+2010-07-07 21:07:10,284 INFO Atacando a Reflex&#8203;sive
+2010-07-07 21:07:10,596 INFO Le gane a Reflex&#8203;sive. Recaude 69600. Health: 115/200. Stamina: 0/10.
+2010-07-07 21:07:10,596 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:09:10,596 INFO Se me acabo el tiempo para pelear
+2010-07-07 21:09:10,596 INFO Fin peleas. Money ganada : 458389 .
+2010-07-07 21:09:10,597 INFO Fin de los ataques.
+2010-07-07 21:09:10,597 INFO Ejecutando todas las misiones.
+2010-07-07 21:09:10,922 INFO Missions....
+2010-07-07 21:09:10,922 INFO Checking tab 1
+2010-07-07 21:09:11,268 INFO Checking tab 2
+2010-07-07 21:09:11,638 INFO Energy: 119/490. Mission requiered energy: 112
+2010-07-07 21:09:11,638 INFO Proceso mision: Prepare Army to March. Percent: 68%.
+2010-07-07 21:09:12,001 INFO Energy: 7/490. Mission requiered energy: 112
+2010-07-07 21:09:12,001 INFO Se acabo la energia.
+2010-07-07 21:09:12,001 INFO Fin Ejecutando todas las misiones.
+2010-07-07 21:09:12,275 INFO Sigo atacando porque tengo energia.
+2010-07-07 21:09:12,879 INFO Checking enemy parafo&#8203;x can attack: MyAttackPoints: 576. EnemyDefensePoints:451.
+2010-07-07 21:09:12,879 INFO Atacando a parafo&#8203;x
+2010-07-07 21:09:13,229 INFO Perdi con parafo&#8203;x. Health: 94/200. Stamina: 0/10.
+2010-07-07 21:09:13,526 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:11:13,526 INFO SE ME ACABO LA ENERGIA. Health: 94/200. Stamina: 0/10. FIN.
+2010-07-07 21:11:13,526 INFO Fin peleas. Money ganada : 0 .
+2010-07-07 21:11:14,009 INFO Go to bank.
+2010-07-07 21:11:14,009 INFO Link... http://wwar.storm8.com/bank.php?formNonce=4d8a88ca391f17a6136e253a4d7bde23ee19a76b&h=dca24328ec1e694753d7496936778ee32cf1fad5
+2010-07-07 21:11:14,267 INFO Depositando 124613
+2010-07-07 21:11:14,722 INFO Se realizo el deposito para el restore.
+2010-07-07 21:11:14,722 INFO Going to Page Units....
+2010-07-07 21:11:15,067 INFO Actualizando units...
+2010-07-07 21:11:16,760 INFO Units actualizadas.
+2010-07-07 21:11:17,053 INFO Contruyendo units ataque...
+2010-07-07 21:11:17,323 INFO Contruyendo: Name: Harrier Jet
+CantBuild: 23
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=ef39fd31b8a21b405315a87e6da8bde0143d77b0&h=6884b21e73b275f830e2e5ffd18ea8dd8cb712ac
+
+2010-07-07 21:11:17,615 INFO FIN Contruir units ataque.
+2010-07-07 21:11:17,860 INFO Contruyendo building de Defense
+2010-07-07 21:11:18,178 INFO Contruyendo buildings...
+2010-07-07 21:11:18,179 INFO Contruyendo: Supply Depot
+2010-07-07 21:11:18,462 INFO Contruyendo: Supply Depot
+2010-07-07 21:11:18,758 INFO Contruyendo: Supply Depot
+2010-07-07 21:11:19,089 INFO Contruyendo: Supply Depot
+2010-07-07 21:11:19,412 INFO No se pudo construir: Supply Depot. My money: 58357. Building cost: 62500.
+2010-07-07 21:11:19,448 INFO Fin de contruir buildings.
+2010-07-07 21:11:19,813 INFO Durmiendo 18 minutos.
+2010-07-07 21:29:19,814 INFO Atacando...
+2010-07-07 21:29:21,098 INFO Going to Page Units....
+2010-07-07 21:29:22,148 INFO Actualizando units...
+2010-07-07 21:29:23,876 INFO Units actualizadas.
+2010-07-07 21:29:23,876 INFO Going to Page Buildings....
+2010-07-07 21:29:24,335 INFO Actualizando buildings...
+2010-07-07 21:29:24,362 INFO Buildings actualizadas.
+2010-07-07 21:29:24,615 INFO Go to hospital.
+2010-07-07 21:29:24,615 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 21:29:25,150 INFO Se hizo el restore health.
+2010-07-07 21:29:26,427 INFO Checking enemy avidr1&#8203;4 can attack: MyAttackPoints: 576. EnemyDefensePoints:8765.
+2010-07-07 21:29:27,272 INFO Checking enemy bodb can attack: MyAttackPoints: 576. EnemyDefensePoints:3010.
+2010-07-07 21:29:28,094 INFO Checking enemy travis can attack: MyAttackPoints: 576. EnemyDefensePoints:2287.
+2010-07-07 21:29:28,757 INFO Checking enemy Hoschi can attack: MyAttackPoints: 576. EnemyDefensePoints:3346.
+2010-07-07 21:29:29,471 INFO Checking enemy moods can attack: MyAttackPoints: 576. EnemyDefensePoints:347.
+2010-07-07 21:29:29,471 INFO Atacando a moods
+2010-07-07 21:29:29,944 INFO Le gane a moods. Recaude 17895. Health: 187/200. Stamina: 9/10.
+2010-07-07 21:29:29,944 INFO Atacando de nuevo a moods
+2010-07-07 21:29:30,244 INFO moods se retiro. Health: 187/200. Stamina: 9/10.
+2010-07-07 21:29:30,927 INFO Checking enemy fuente&#8203;s can attack: MyAttackPoints: 576. EnemyDefensePoints:425.
+2010-07-07 21:29:30,927 INFO Atacando a fuente&#8203;s
+2010-07-07 21:29:31,277 INFO Le gane a fuente&#8203;s. Recaude 66960. Health: 177/200. Stamina: 8/10.
+2010-07-07 21:29:31,278 INFO Atacando de nuevo a fuente&#8203;s
+2010-07-07 21:29:31,618 INFO Le gane a fuente&#8203;s. Recaude 241279. Health: 165/200. Stamina: 7/10.
+2010-07-07 21:29:31,618 INFO Atacando de nuevo a fuente&#8203;s
+2010-07-07 21:29:31,971 INFO Perdi con fuente&#8203;s. Health: 142/200. Stamina: 6/10.
+2010-07-07 21:29:32,632 INFO Checking enemy Akihir&#8203;o can attack: MyAttackPoints: 576. EnemyDefensePoints:2454.
+2010-07-07 21:29:33,324 INFO Checking enemy raymon&#8203;d can attack: MyAttackPoints: 576. EnemyDefensePoints:378.
+2010-07-07 21:29:33,324 INFO Atacando a raymon&#8203;d
+2010-07-07 21:29:33,675 INFO Le gane a raymon&#8203;d. Recaude 119149. Health: 132/200. Stamina: 5/10.
+2010-07-07 21:29:33,675 INFO Atacando de nuevo a raymon&#8203;d
+2010-07-07 21:29:34,019 INFO Le gane a raymon&#8203;d. Recaude 151502. Health: 124/200. Stamina: 4/10.
+2010-07-07 21:29:34,019 INFO Atacando de nuevo a raymon&#8203;d
+2010-07-07 21:29:34,352 INFO raymon&#8203;d se retiro. Health: 124/200. Stamina: 4/10.
+2010-07-07 21:29:35,024 INFO Checking enemy joseph can attack: MyAttackPoints: 576. EnemyDefensePoints:422.
+2010-07-07 21:29:35,024 INFO Atacando a joseph
+2010-07-07 21:29:35,353 INFO Le gane a joseph. Recaude 130507. Health: 122/200. Stamina: 3/10.
+2010-07-07 21:29:35,353 INFO Atacando de nuevo a joseph
+2010-07-07 21:29:35,694 INFO Le gane a joseph. Recaude 127477. Health: 111/200. Stamina: 2/10.
+2010-07-07 21:29:35,694 INFO Atacando de nuevo a joseph
+2010-07-07 21:29:36,017 INFO joseph se retiro. Health: 111/200. Stamina: 2/10.
+2010-07-07 21:29:36,667 INFO Checking enemy Neil can attack: MyAttackPoints: 576. EnemyDefensePoints:2350.
+2010-07-07 21:29:37,330 INFO Checking enemy malmen can attack: MyAttackPoints: 576. EnemyDefensePoints:4826.
+2010-07-07 21:29:37,962 INFO Checking enemy beyaze&#8203;ldiven&#8203; can attack: MyAttackPoints: 576. EnemyDefensePoints:5331.
+2010-07-07 21:29:38,694 INFO Checking enemy Raider can attack: MyAttackPoints: 576. EnemyDefensePoints:431.
+2010-07-07 21:29:38,694 INFO Atacando a Raider
+2010-07-07 21:29:39,038 INFO Le gane a Raider. Recaude 510300. Health: 105/200. Stamina: 1/10.
+2010-07-07 21:29:39,039 INFO Atacando de nuevo a Raider
+2010-07-07 21:29:39,410 INFO Le gane a Raider. Recaude 580181. Health: 98/200. Stamina: 0/10.
+2010-07-07 21:29:39,410 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:31:53,206 INFO Checking enemy stef can attack: MyAttackPoints: 576. EnemyDefensePoints:567.
+2010-07-07 21:31:53,207 INFO Atacando a stef
+2010-07-07 21:31:56,518 INFO Le gane a stef. Recaude 90888. Health: 89/200. Stamina: 0/10.
+2010-07-07 21:31:56,518 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:33:58,678 INFO Checking enemy Xiao Hung Low can attack: MyAttackPoints: 576. EnemyDefensePoints:555.
+2010-07-07 21:33:58,678 INFO Atacando a Xiao Hung Low
+2010-07-07 21:33:59,418 INFO Perdi con Xiao Hung Low. Health: 69/200. Stamina: 0/10.
+2010-07-07 21:33:59,925 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:35:59,925 INFO SE ME ACABO LA ENERGIA. Health: 69/200. Stamina: 0/10. FIN.
+2010-07-07 21:35:59,925 INFO Fin peleas. Money ganada : 2036138 .
+2010-07-07 21:35:59,925 INFO Fin de los ataques.
+2010-07-07 21:35:59,925 INFO Ejecutando todas las misiones.
+2010-07-07 21:36:00,628 INFO Missions....
+2010-07-07 21:36:00,629 INFO Checking tab 1
+2010-07-07 21:36:01,382 INFO Checking tab 2
+2010-07-07 21:36:02,113 INFO Energy: 73/490. Mission requiered energy: 112
+2010-07-07 21:36:02,113 INFO Se acabo la energia.
+2010-07-07 21:36:02,113 INFO Fin Ejecutando todas las misiones.
+2010-07-07 21:36:02,430 INFO Sigo atacando porque tengo energia.
+2010-07-07 21:36:03,467 INFO Checking enemy Alvin can attack: MyAttackPoints: 576. EnemyDefensePoints:335.
+2010-07-07 21:36:03,467 INFO Atacando a Alvin
+2010-07-07 21:36:03,991 INFO Le gane a Alvin. Recaude 109938. Health: 56/200. Stamina: 0/10.
+2010-07-07 21:36:03,991 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:38:04,706 INFO Checking enemy Sniper can attack: MyAttackPoints: 576. EnemyDefensePoints:1057.
+2010-07-07 21:38:05,333 INFO Checking enemy cola can attack: MyAttackPoints: 576. EnemyDefensePoints:371.
+2010-07-07 21:38:05,334 INFO Atacando a cola
+2010-07-07 21:38:05,680 INFO Perdi con cola. Health: 32/200. Stamina: 0/10.
+2010-07-07 21:38:05,990 INFO Duermo 2 min para recuperar stamina
+2010-07-07 21:40:05,990 INFO SE ME ACABO LA ENERGIA. Health: 32/200. Stamina: 0/10. FIN.
+2010-07-07 21:40:05,991 INFO Fin peleas. Money ganada : 109938 .
+2010-07-07 21:40:06,493 INFO Go to bank.
+2010-07-07 21:40:06,493 INFO Link... http://wwar.storm8.com/bank.php?formNonce=215faea135828e23b0197a8595cca46427362e00&h=c787373eee1a13220175e6bbb9b6350c668ab4a6
+2010-07-07 21:40:06,745 INFO Depositando 205600
+2010-07-07 21:40:07,201 INFO Se realizo el deposito para el restore.
+2010-07-07 21:40:07,201 INFO Going to Page Units....
+2010-07-07 21:40:07,523 INFO Actualizando units...
+2010-07-07 21:40:08,754 INFO Units actualizadas.
+2010-07-07 21:40:09,094 INFO Contruyendo units ataque...
+2010-07-07 21:40:09,349 INFO FIN Contruir units ataque.
+2010-07-07 21:40:09,607 INFO Contruyendo building de Income
+2010-07-07 21:40:09,941 INFO Contruyendo buildings...
+2010-07-07 21:40:09,941 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:10,226 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:10,514 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:11,166 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:11,531 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:11,879 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:12,185 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:12,508 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:12,838 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:13,145 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:13,471 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:13,769 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:14,090 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:14,418 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:14,770 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:15,066 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:15,357 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:15,650 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:15,984 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:16,289 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:16,595 INFO Contruyendo: Supply Depot
+2010-07-07 21:40:16,934 INFO No se pudo construir: Supply Depot. My money: 106733. Building cost: 115000.
+2010-07-07 21:40:16,991 INFO Fin de contruir buildings.
+2010-07-07 21:40:17,412 INFO Durmiendo 18 minutos.
+2010-07-07 21:58:17,412 INFO Atacando...
+2010-07-07 21:58:18,663 INFO Going to Page Units....
+2010-07-07 21:58:19,710 INFO Actualizando units...
+2010-07-07 21:58:21,428 INFO Units actualizadas.
+2010-07-07 21:58:21,428 INFO Going to Page Buildings....
+2010-07-07 21:58:21,885 INFO Actualizando buildings...
+2010-07-07 21:58:21,910 INFO Buildings actualizadas.
+2010-07-07 21:58:22,159 INFO Go to hospital.
+2010-07-07 21:58:22,159 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 21:58:22,644 INFO Se hizo el restore health.
+2010-07-07 21:58:23,896 INFO Checking enemy bailey can attack: MyAttackPoints: 576. EnemyDefensePoints:1258.
+2010-07-07 21:58:24,898 INFO Checking enemy Robert can attack: MyAttackPoints: 576. EnemyDefensePoints:257.
+2010-07-07 21:58:24,898 INFO Atacando a Robert
+2010-07-07 21:58:25,378 INFO Le gane a Robert. Recaude 91479. Health: 196/200. Stamina: 9/10.
+2010-07-07 21:58:25,378 INFO Atacando de nuevo a Robert
+2010-07-07 21:58:25,850 INFO Le gane a Robert. Recaude 79298. Health: 190/200. Stamina: 8/10.
+2010-07-07 21:58:25,850 INFO Atacando de nuevo a Robert
+2010-07-07 21:58:26,339 INFO Le gane a Robert. Recaude 108542. Health: 179/200. Stamina: 7/10.
+2010-07-07 21:58:26,339 INFO Atacando de nuevo a Robert
+2010-07-07 21:58:26,819 INFO Le gane a Robert. Recaude 85333. Health: 175/200. Stamina: 6/10.
+2010-07-07 21:58:26,819 INFO Atacando de nuevo a Robert
+2010-07-07 21:58:27,306 INFO Le gane a Robert. Recaude 78703. Health: 163/200. Stamina: 5/10.
+2010-07-07 21:58:27,306 INFO Atacando de nuevo a Robert
+2010-07-07 21:58:27,655 INFO Robert se retiro. Health: 163/200. Stamina: 5/10.
+2010-07-07 21:58:28,540 INFO Checking enemy james can attack: MyAttackPoints: 576. EnemyDefensePoints:270.
+2010-07-07 21:58:28,540 INFO Atacando a james
+2010-07-07 21:58:28,864 INFO Le gane a james. Recaude 31941. Health: 160/200. Stamina: 4/10.
+2010-07-07 21:58:28,864 INFO Atacando de nuevo a james
+2010-07-07 21:58:29,160 INFO james se retiro. Health: 160/200. Stamina: 4/10.
+2010-07-07 21:58:29,834 INFO Checking enemy Henry can attack: MyAttackPoints: 576. EnemyDefensePoints:395.
+2010-07-07 21:58:29,834 INFO Atacando a Henry
+2010-07-07 21:58:30,161 INFO Le gane a Henry. Recaude 592200. Health: 149/200. Stamina: 3/10.
+2010-07-07 21:58:30,161 INFO Atacando de nuevo a Henry
+2010-07-07 21:58:30,504 INFO Le gane a Henry. Recaude 503608. Health: 147/200. Stamina: 2/10.
+2010-07-07 21:58:30,504 INFO Atacando de nuevo a Henry
+2010-07-07 21:58:30,883 INFO Le gane a Henry. Recaude 617400. Health: 143/200. Stamina: 1/10.
+2010-07-07 21:58:30,883 INFO Atacando de nuevo a Henry
+2010-07-07 21:58:31,216 INFO Le gane a Henry. Recaude 743400. Health: 133/200. Stamina: 0/10.
+2010-07-07 21:58:31,216 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:00:31,898 INFO Checking enemy okvich can attack: MyAttackPoints: 576. EnemyDefensePoints:2111.
+2010-07-07 22:00:32,540 INFO Checking enemy Lucius&#8203; Vorenus can attack: MyAttackPoints: 576. EnemyDefensePoints:12664.
+2010-07-07 22:00:33,210 INFO Checking enemy cairns can attack: MyAttackPoints: 576. EnemyDefensePoints:316.
+2010-07-07 22:00:33,210 INFO Atacando a cairns
+2010-07-07 22:00:33,529 INFO Le gane a cairns. Recaude 33685. Health: 121/200. Stamina: 0/10.
+2010-07-07 22:00:33,529 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:02:34,226 INFO Checking enemy cain20&#8203;03 can attack: MyAttackPoints: 576. EnemyDefensePoints:541.
+2010-07-07 22:02:34,226 INFO Atacando a cain20&#8203;03
+2010-07-07 22:02:34,557 INFO Le gane a cain20&#8203;03. Recaude 0. Health: 114/200. Stamina: 0/10.
+2010-07-07 22:02:34,557 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:04:34,557 INFO Se me acabo el tiempo para pelear
+2010-07-07 22:04:34,558 INFO Fin peleas. Money ganada : 2965589 .
+2010-07-07 22:04:34,558 INFO Fin de los ataques.
+2010-07-07 22:04:34,558 INFO Ejecutando todas las misiones.
+2010-07-07 22:04:35,022 INFO Missions....
+2010-07-07 22:04:35,022 INFO Checking tab 1
+2010-07-07 22:04:35,400 INFO Checking tab 2
+2010-07-07 22:04:35,879 INFO Energy: 161/490. Mission requiered energy: 112
+2010-07-07 22:04:35,879 INFO Proceso mision: Prepare Army to March. Percent: 85%.
+2010-07-07 22:04:36,378 INFO Energy: 49/490. Mission requiered energy: 50
+2010-07-07 22:04:36,378 INFO Se acabo la energia.
+2010-07-07 22:04:36,378 INFO Fin Ejecutando todas las misiones.
+2010-07-07 22:04:36,627 INFO Sigo atacando porque tengo energia.
+2010-07-07 22:04:37,290 INFO Checking enemy Camero&#8203;n can attack: MyAttackPoints: 576. EnemyDefensePoints:777.
+2010-07-07 22:04:37,964 INFO Checking enemy none of ur buis can attack: MyAttackPoints: 576. EnemyDefensePoints:231.
+2010-07-07 22:04:37,964 INFO Atacando a none of ur buis
+2010-07-07 22:04:38,361 INFO none of ur buis se retiro. Health: 115/200. Stamina: 1/10.
+2010-07-07 22:04:39,193 INFO Checking enemy IDontA&#8203;ttack can attack: MyAttackPoints: 576. EnemyDefensePoints:3651.
+2010-07-07 22:04:40,755 INFO Checking enemy ken geary can attack: MyAttackPoints: 576. EnemyDefensePoints:210.
+2010-07-07 22:04:40,755 INFO Atacando a ken geary
+2010-07-07 22:04:41,251 INFO Le gane a ken geary. Recaude 2259. Health: 101/200. Stamina: 0/10.
+2010-07-07 22:04:41,252 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:06:42,237 INFO Checking enemy gygogo can attack: MyAttackPoints: 576. EnemyDefensePoints:224.
+2010-07-07 22:06:42,237 INFO Atacando a gygogo
+2010-07-07 22:06:42,692 INFO gygogo se retiro. Health: 101/200. Stamina: 1/10.
+2010-07-07 22:06:43,668 INFO Checking enemy mikkel&#8203;back can attack: MyAttackPoints: 576. EnemyDefensePoints:3787.
+2010-07-07 22:06:44,355 INFO Checking enemy jean-p&#8203;ierre can attack: MyAttackPoints: 576. EnemyDefensePoints:1096.
+2010-07-07 22:06:45,159 INFO Checking enemy Tr٥uظl&#8203;غ can attack: MyAttackPoints: 576. EnemyDefensePoints:2766.
+2010-07-07 22:06:45,840 INFO Checking enemy Elitis&#8203;t can attack: MyAttackPoints: 576. EnemyDefensePoints:2824.
+2010-07-07 22:06:46,530 INFO Checking enemy daBeuk&#8203;er can attack: MyAttackPoints: 576. EnemyDefensePoints:3059.
+2010-07-07 22:06:47,576 INFO Checking enemy slim can attack: MyAttackPoints: 576. EnemyDefensePoints:1088.
+2010-07-07 22:06:48,242 INFO Checking enemy Jennar&#8203;al  can attack: MyAttackPoints: 576. EnemyDefensePoints:1717.
+2010-07-07 22:06:48,915 INFO Checking enemy Jaime can attack: MyAttackPoints: 576. EnemyDefensePoints:355.
+2010-07-07 22:06:48,915 INFO Atacando a Jaime
+2010-07-07 22:06:49,242 INFO Le gane a Jaime. Recaude 19550. Health: 91/200. Stamina: 0/10.
+2010-07-07 22:06:49,243 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:08:49,923 INFO Checking enemy Napson can attack: MyAttackPoints: 576. EnemyDefensePoints:333.
+2010-07-07 22:08:49,923 INFO Atacando a Napson
+2010-07-07 22:08:50,269 INFO Le gane a Napson. Recaude 10541. Health: 89/200. Stamina: 0/10.
+2010-07-07 22:08:50,269 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:10:50,269 INFO Se me acabo el tiempo para pelear
+2010-07-07 22:10:50,269 INFO Fin peleas. Money ganada : 32350 .
+2010-07-07 22:10:50,763 INFO Go to bank.
+2010-07-07 22:10:50,764 INFO Link... http://wwar.storm8.com/bank.php?formNonce=df2c5122b829a416ce04b4f15919ef0a9972b02c&h=900f9bb995cfed8f8e6e65b43efb4106f2a4b049
+2010-07-07 22:10:51,017 INFO Depositando 128430
+2010-07-07 22:10:51,478 INFO Se realizo el deposito para el restore.
+2010-07-07 22:10:51,478 INFO Going to Page Units....
+2010-07-07 22:10:51,770 INFO Actualizando units...
+2010-07-07 22:10:52,970 INFO Units actualizadas.
+2010-07-07 22:10:53,277 INFO Contruyendo units ataque...
+2010-07-07 22:10:53,521 INFO FIN Contruir units ataque.
+2010-07-07 22:10:53,767 INFO Contruyendo building de Income
+2010-07-07 22:10:54,051 INFO Contruyendo buildings...
+2010-07-07 22:10:54,052 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:54,340 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:54,639 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:55,008 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:55,307 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:55,596 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:55,876 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:56,190 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:56,527 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:56,855 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:57,182 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:57,474 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:57,816 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:58,103 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:58,401 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:58,710 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:59,038 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:59,344 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:59,688 INFO Contruyendo: Supply Depot
+2010-07-07 22:10:59,990 INFO Contruyendo: Supply Depot
+2010-07-07 22:11:00,280 INFO Contruyendo: Supply Depot
+2010-07-07 22:11:00,609 INFO No se pudo construir: Supply Depot. My money: 160484. Building cost: 167500.
+2010-07-07 22:11:00,667 INFO Fin de contruir buildings.
+2010-07-07 22:11:01,043 INFO Durmiendo 18 minutos.
+2010-07-07 22:29:01,044 INFO Atacando...
+2010-07-07 22:29:02,512 INFO Going to Page Units....
+2010-07-07 22:29:03,589 INFO Actualizando units...
+2010-07-07 22:29:05,312 INFO Units actualizadas.
+2010-07-07 22:29:05,312 INFO Going to Page Buildings....
+2010-07-07 22:29:05,779 INFO Actualizando buildings...
+2010-07-07 22:29:05,804 INFO Buildings actualizadas.
+2010-07-07 22:29:06,056 INFO Go to hospital.
+2010-07-07 22:29:06,056 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 22:29:06,318 INFO No se pudo hacer el restore.
+2010-07-07 22:29:07,607 INFO Checking enemy Boom can attack: MyAttackPoints: 576. EnemyDefensePoints:504.
+2010-07-07 22:29:07,607 INFO Atacando a Boom
+2010-07-07 22:29:08,117 INFO Le gane a Boom. Recaude 90505. Health: 173/200. Stamina: 9/10.
+2010-07-07 22:29:08,117 INFO Atacando de nuevo a Boom
+2010-07-07 22:29:08,597 INFO Le gane a Boom. Recaude 39389. Health: 163/200. Stamina: 8/10.
+2010-07-07 22:29:08,597 INFO Atacando de nuevo a Boom
+2010-07-07 22:29:09,072 INFO Boom se retiro. Health: 163/200. Stamina: 8/10.
+2010-07-07 22:29:09,722 INFO Checking enemy Caleb can attack: MyAttackPoints: 576. EnemyDefensePoints:1906.
+2010-07-07 22:29:10,384 INFO Checking enemy jedion&#8203;es can attack: MyAttackPoints: 576. EnemyDefensePoints:504.
+2010-07-07 22:29:10,384 INFO Atacando a jedion&#8203;es
+2010-07-07 22:29:10,731 INFO Le gane a jedion&#8203;es. Recaude 10469. Health: 155/200. Stamina: 7/10.
+2010-07-07 22:29:10,731 INFO Atacando de nuevo a jedion&#8203;es
+2010-07-07 22:29:11,053 INFO jedion&#8203;es se retiro. Health: 155/200. Stamina: 7/10.
+2010-07-07 22:29:11,698 INFO Checking enemy Genera&#8203;l Penner can attack: MyAttackPoints: 576. EnemyDefensePoints:136.
+2010-07-07 22:29:11,699 INFO Atacando a Genera&#8203;l Penner
+2010-07-07 22:29:12,033 INFO Le gane a Genera&#8203;l Penner. Recaude 9513. Health: 142/200. Stamina: 6/10.
+2010-07-07 22:29:12,697 INFO Checking enemy Ralph can attack: MyAttackPoints: 576. EnemyDefensePoints:2054.
+2010-07-07 22:29:13,367 INFO Checking enemy zelion can attack: MyAttackPoints: 576. EnemyDefensePoints:280.
+2010-07-07 22:29:13,367 INFO Atacando a zelion
+2010-07-07 22:29:13,739 INFO Le gane a zelion. Recaude 110. Health: 139/200. Stamina: 5/10.
+2010-07-07 22:29:14,396 INFO Checking enemy PTYB can attack: MyAttackPoints: 576. EnemyDefensePoints:3510.
+2010-07-07 22:29:15,047 INFO Checking enemy Gibbon can attack: MyAttackPoints: 576. EnemyDefensePoints:1085.
+2010-07-07 22:29:15,692 INFO Checking enemy hard nuts can attack: MyAttackPoints: 576. EnemyDefensePoints:1599.
+2010-07-07 22:29:16,398 INFO Checking enemy Gooood can attack: MyAttackPoints: 576. EnemyDefensePoints:5639.
+2010-07-07 22:29:17,068 INFO Checking enemy ggypig can attack: MyAttackPoints: 576. EnemyDefensePoints:359.
+2010-07-07 22:29:17,068 INFO Atacando a ggypig
+2010-07-07 22:29:17,402 INFO Le gane a ggypig. Recaude 0. Health: 135/200. Stamina: 4/10.
+2010-07-07 22:29:18,048 INFO Checking enemy Pewtec&#8203;h can attack: MyAttackPoints: 576. EnemyDefensePoints:10298.
+2010-07-07 22:29:18,711 INFO Checking enemy revere&#8203;nd can attack: MyAttackPoints: 576. EnemyDefensePoints:8119.
+2010-07-07 22:29:19,389 INFO Checking enemy James can attack: MyAttackPoints: 576. EnemyDefensePoints:382.
+2010-07-07 22:29:19,389 INFO Atacando a James
+2010-07-07 22:29:19,744 INFO Le gane a James. Recaude 0. Health: 130/200. Stamina: 3/10.
+2010-07-07 22:29:20,424 INFO Checking enemy The Rev can attack: MyAttackPoints: 576. EnemyDefensePoints:4600.
+2010-07-07 22:29:21,062 INFO Checking enemy Dave-o can attack: MyAttackPoints: 576. EnemyDefensePoints:297.
+2010-07-07 22:29:21,062 INFO Atacando a Dave-o
+2010-07-07 22:29:21,434 INFO Le gane a Dave-o. Recaude 2834. Health: 117/200. Stamina: 2/10.
+2010-07-07 22:29:22,147 INFO Checking enemy Linc can attack: MyAttackPoints: 576. EnemyDefensePoints:21460.
+2010-07-07 22:29:22,834 INFO Checking enemy sinkho&#8203;le can attack: MyAttackPoints: 576. EnemyDefensePoints:70.
+2010-07-07 22:29:22,834 INFO Atacando a sinkho&#8203;le
+2010-07-07 22:29:23,157 INFO Le gane a sinkho&#8203;le. Recaude 17077. Health: 104/200. Stamina: 1/10.
+2010-07-07 22:29:23,157 INFO Atacando de nuevo a sinkho&#8203;le
+2010-07-07 22:29:23,456 INFO sinkho&#8203;le se retiro. Health: 104/200. Stamina: 1/10.
+2010-07-07 22:29:25,090 INFO Checking enemy Sturn can attack: MyAttackPoints: 576. EnemyDefensePoints:302.
+2010-07-07 22:29:25,091 INFO Atacando a Sturn
+2010-07-07 22:29:25,758 INFO Le gane a Sturn. Recaude 16158. Health: 101/200. Stamina: 0/10.
+2010-07-07 22:29:25,758 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:31:26,796 INFO Checking enemy Kill'e&#8203;m can attack: MyAttackPoints: 576. EnemyDefensePoints:4124.
+2010-07-07 22:31:27,821 INFO Checking enemy Jack2a&#8203;ce can attack: MyAttackPoints: 576. EnemyDefensePoints:4443.
+2010-07-07 22:31:28,828 INFO Checking enemy keith can attack: MyAttackPoints: 576. EnemyDefensePoints:2792.
+2010-07-07 22:31:29,791 INFO Checking enemy coop can attack: MyAttackPoints: 576. EnemyDefensePoints:994.
+2010-07-07 22:31:30,505 INFO Checking enemy simon can attack: MyAttackPoints: 576. EnemyDefensePoints:156.
+2010-07-07 22:31:30,506 INFO Atacando a simon
+2010-07-07 22:31:30,989 INFO Le gane a simon. Recaude 71801. Health: 98/200. Stamina: 0/10.
+2010-07-07 22:31:30,989 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:33:31,642 INFO Checking enemy Von Rocco can attack: MyAttackPoints: 576. EnemyDefensePoints:56.
+2010-07-07 22:33:31,643 INFO Atacando a Von Rocco
+2010-07-07 22:33:31,979 INFO Le gane a Von Rocco. Recaude 19380. Health: 61/200. Stamina: 0/10.
+2010-07-07 22:33:31,979 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:35:31,979 INFO Se me acabo el tiempo para pelear
+2010-07-07 22:35:31,979 INFO Fin peleas. Money ganada : 277236 .
+2010-07-07 22:35:31,979 INFO Fin de los ataques.
+2010-07-07 22:35:31,979 INFO Ejecutando todas las misiones.
+2010-07-07 22:35:32,498 INFO Missions....
+2010-07-07 22:35:32,499 INFO Checking tab 1
+2010-07-07 22:35:33,016 INFO Checking tab 2
+2010-07-07 22:35:33,505 INFO Checking tab 3
+2010-07-07 22:35:34,016 INFO Energy: 490/490. Mission requiered energy: 60
+2010-07-07 22:35:34,016 INFO Proceso mision: Infiltrate Western Border. Percent: 0%.
+2010-07-07 22:35:34,546 INFO Tengo que deployar
+2010-07-07 22:35:35,039 INFO Procesando mision luego de deployear.
+2010-07-07 22:35:35,589 INFO Energy: 430/490. Mission requiered energy: 60
+2010-07-07 22:35:35,589 INFO Proceso mision: Infiltrate Western Border. Percent: 10%.
+2010-07-07 22:35:36,210 INFO Energy: 370/490. Mission requiered energy: 60
+2010-07-07 22:35:36,210 INFO Proceso mision: Infiltrate Western Border. Percent: 20%.
+2010-07-07 22:35:36,829 INFO Energy: 310/490. Mission requiered energy: 60
+2010-07-07 22:35:36,829 INFO Proceso mision: Infiltrate Western Border. Percent: 30%.
+2010-07-07 22:35:37,383 INFO Tengo que deployar
+2010-07-07 22:35:37,847 INFO Procesando mision luego de deployear.
+2010-07-07 22:35:38,361 INFO Energy: 250/490. Mission requiered energy: 60
+2010-07-07 22:35:38,362 INFO Proceso mision: Infiltrate Western Border. Percent: 40%.
+2010-07-07 22:35:38,893 INFO Energy: 190/490. Mission requiered energy: 60
+2010-07-07 22:35:38,893 INFO Proceso mision: Infiltrate Western Border. Percent: 50%.
+2010-07-07 22:35:39,454 INFO Energy: 130/490. Mission requiered energy: 60
+2010-07-07 22:35:39,454 INFO Proceso mision: Infiltrate Western Border. Percent: 60%.
+2010-07-07 22:35:39,971 INFO Energy: 70/490. Mission requiered energy: 60
+2010-07-07 22:35:39,972 INFO Proceso mision: Infiltrate Western Border. Percent: 70%.
+2010-07-07 22:35:40,471 INFO Energy: 10/490. Mission requiered energy: 60
+2010-07-07 22:35:40,471 INFO Se acabo la energia.
+2010-07-07 22:35:40,471 INFO Fin Ejecutando todas las misiones.
+2010-07-07 22:35:40,717 INFO Sigo atacando porque tengo energia.
+2010-07-07 22:35:41,401 INFO Checking enemy cdc219&#8203;9 can attack: MyAttackPoints: 576. EnemyDefensePoints:600.
+2010-07-07 22:35:42,013 INFO Checking enemy broken can attack: MyAttackPoints: 576. EnemyDefensePoints:5708.
+2010-07-07 22:35:42,670 INFO Checking enemy jibba can attack: MyAttackPoints: 576. EnemyDefensePoints:601.
+2010-07-07 22:35:43,426 INFO Checking enemy youRei&#8203;/3 can attack: MyAttackPoints: 576. EnemyDefensePoints:303.
+2010-07-07 22:35:43,426 INFO Atacando a youRei&#8203;/3
+2010-07-07 22:35:43,793 INFO youRei&#8203;/3 se retiro. Health: 62/200. Stamina: 1/10.
+2010-07-07 22:35:44,532 INFO Checking enemy BR13 can attack: MyAttackPoints: 576. EnemyDefensePoints:780.
+2010-07-07 22:35:45,264 INFO Checking enemy AMEE can attack: MyAttackPoints: 576. EnemyDefensePoints:2583.
+2010-07-07 22:35:45,952 INFO Checking enemy Recond&#8203;o122 can attack: MyAttackPoints: 576. EnemyDefensePoints:4205.
+2010-07-07 22:35:46,663 INFO Checking enemy ltt LT lt ltdan can attack: MyAttackPoints: 576. EnemyDefensePoints:688.
+2010-07-07 22:35:47,305 INFO Checking enemy soap can attack: MyAttackPoints: 576. EnemyDefensePoints:118.
+2010-07-07 22:35:47,305 INFO Atacando a soap
+2010-07-07 22:35:47,629 INFO Le gane a soap. Recaude 10994. Health: 54/200. Stamina: 0/10.
+2010-07-07 22:35:47,629 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:37:48,306 INFO Checking enemy MartyR can attack: MyAttackPoints: 576. EnemyDefensePoints:2071.
+2010-07-07 22:37:49,093 INFO Checking enemy brando&#8203;n can attack: MyAttackPoints: 576. EnemyDefensePoints:163.
+2010-07-07 22:37:49,093 INFO Atacando a brando&#8203;n
+2010-07-07 22:37:49,429 INFO Le gane a brando&#8203;n. Recaude 12910. Health: 42/200. Stamina: 0/10.
+2010-07-07 22:37:49,429 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:39:50,110 INFO Checking enemy tony can attack: MyAttackPoints: 576. EnemyDefensePoints:706.
+2010-07-07 22:39:50,781 INFO Checking enemy razell can attack: MyAttackPoints: 576. EnemyDefensePoints:247.
+2010-07-07 22:39:50,781 INFO Atacando a razell
+2010-07-07 22:39:51,148 INFO Le gane a razell. Recaude 30596. Health: 36/200. Stamina: 0/10.
+2010-07-07 22:39:51,148 INFO Duermo 2 min para recuperar stamina
+2010-07-07 22:41:51,148 INFO Se me acabo el tiempo para pelear
+2010-07-07 22:41:51,149 INFO Fin peleas. Money ganada : 54500 .
+2010-07-07 22:41:51,665 INFO Go to bank.
+2010-07-07 22:41:51,665 INFO Link... http://wwar.storm8.com/bank.php?formNonce=b40e1076afdff825cef4e4cd7e26fcaefaf6eaaa&h=005edf6661bfadf76763308736264de7cd0696d3
+2010-07-07 22:41:51,915 INFO Depositando 64623
+2010-07-07 22:41:52,405 INFO Se realizo el deposito para el restore.
+2010-07-07 22:41:52,405 INFO Going to Page Units....
+2010-07-07 22:41:52,707 INFO Actualizando units...
+2010-07-07 22:41:53,941 INFO Units actualizadas.
+2010-07-07 22:41:54,265 INFO Contruyendo units ataque...
+2010-07-07 22:41:54,524 INFO FIN Contruir units ataque.
+2010-07-07 22:41:54,765 INFO Contruyendo building de Income
+2010-07-07 22:41:55,080 INFO Contruyendo buildings...
+2010-07-07 22:41:55,081 INFO Contruyendo: Supply Depot
+2010-07-07 22:41:55,368 INFO Contruyendo: Supply Depot
+2010-07-07 22:41:55,678 INFO Contruyendo: Supply Depot
+2010-07-07 22:41:55,973 INFO No se pudo construir: Supply Depot. My money: 121156. Building cost: 175000.
+2010-07-07 22:41:55,999 INFO Fin de contruir buildings.
+2010-07-07 22:41:56,378 INFO Durmiendo 18 minutos.
+2010-07-07 22:59:56,378 INFO Atacando...
+2010-07-07 22:59:57,976 INFO Going to Page Units....
+2010-07-07 22:59:59,047 INFO Actualizando units...
+2010-07-07 23:00:00,825 INFO Units actualizadas.
+2010-07-07 23:00:00,825 INFO Going to Page Buildings....
+2010-07-07 23:00:01,283 INFO Actualizando buildings...
+2010-07-07 23:00:01,310 INFO Buildings actualizadas.
+2010-07-07 23:00:01,565 INFO Go to hospital.
+2010-07-07 23:00:01,565 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 23:00:02,118 INFO Se hizo el restore health.
+2010-07-07 23:00:03,372 INFO Checking enemy Emenem&#8203;s can attack: MyAttackPoints: 576. EnemyDefensePoints:11034.
+2010-07-07 23:00:04,337 INFO Checking enemy bast can attack: MyAttackPoints: 576. EnemyDefensePoints:245.
+2010-07-07 23:00:04,337 INFO Atacando a bast
+2010-07-07 23:00:04,821 INFO Le gane a bast. Recaude 107197. Health: 196/200. Stamina: 9/10.
+2010-07-07 23:00:04,821 INFO Atacando de nuevo a bast
+2010-07-07 23:00:05,126 INFO bast se retiro. Health: 196/200. Stamina: 9/10.
+2010-07-07 23:00:05,828 INFO Checking enemy Badmad&#8203;brad can attack: MyAttackPoints: 576. EnemyDefensePoints:3253.
+2010-07-07 23:00:06,514 INFO Checking enemy Little&#8203;mayne can attack: MyAttackPoints: 576. EnemyDefensePoints:5345.
+2010-07-07 23:00:07,165 INFO Checking enemy danger&#8203;duff can attack: MyAttackPoints: 576. EnemyDefensePoints:126.
+2010-07-07 23:00:07,165 INFO Atacando a danger&#8203;duff
+2010-07-07 23:00:07,507 INFO Le gane a danger&#8203;duff. Recaude 40484. Health: 191/200. Stamina: 8/10.
+2010-07-07 23:00:07,508 INFO Atacando de nuevo a danger&#8203;duff
+2010-07-07 23:00:07,846 INFO Le gane a danger&#8203;duff. Recaude 23598. Health: 177/200. Stamina: 7/10.
+2010-07-07 23:00:07,846 INFO Atacando de nuevo a danger&#8203;duff
+2010-07-07 23:00:08,203 INFO Le gane a danger&#8203;duff. Recaude 21434. Health: 167/200. Stamina: 6/10.
+2010-07-07 23:00:08,204 INFO Atacando de nuevo a danger&#8203;duff
+2010-07-07 23:00:08,570 INFO Le gane a danger&#8203;duff. Recaude 11676. Health: 154/200. Stamina: 5/10.
+2010-07-07 23:00:08,570 INFO Atacando de nuevo a danger&#8203;duff
+2010-07-07 23:00:08,878 INFO danger&#8203;duff se retiro. Health: 154/200. Stamina: 5/10.
+2010-07-07 23:00:09,535 INFO Checking enemy Progen&#8203;itus can attack: MyAttackPoints: 576. EnemyDefensePoints:7070.
+2010-07-07 23:00:10,252 INFO Checking enemy crackp&#8203;ot can attack: MyAttackPoints: 576. EnemyDefensePoints:420.
+2010-07-07 23:00:10,252 INFO Atacando a crackp&#8203;ot
+2010-07-07 23:00:10,619 INFO Perdi con crackp&#8203;ot. Health: 131/200. Stamina: 4/10.
+2010-07-07 23:00:11,308 INFO Checking enemy Genghi&#8203;s Khan can attack: MyAttackPoints: 576. EnemyDefensePoints:15510.
+2010-07-07 23:00:12,047 INFO Checking enemy Lion can attack: MyAttackPoints: 576. EnemyDefensePoints:2119.
+2010-07-07 23:00:12,732 INFO Checking enemy None can attack: MyAttackPoints: 576. EnemyDefensePoints:2329.
+2010-07-07 23:00:13,375 INFO Checking enemy beto55&#8203;9 can attack: MyAttackPoints: 576. EnemyDefensePoints:2056.
+2010-07-07 23:00:14,040 INFO Checking enemy davee can attack: MyAttackPoints: 576. EnemyDefensePoints:3075.
+2010-07-07 23:00:14,740 INFO Checking enemy Brent can attack: MyAttackPoints: 576. EnemyDefensePoints:2251.
+2010-07-07 23:00:15,472 INFO Checking enemy jordan can attack: MyAttackPoints: 576. EnemyDefensePoints:656.
+2010-07-07 23:00:16,146 INFO Checking enemy Voltro&#8203;n can attack: MyAttackPoints: 576. EnemyDefensePoints:3859.
+2010-07-07 23:00:17,434 INFO Checking enemy razell can attack: MyAttackPoints: 576. EnemyDefensePoints:257.
+2010-07-07 23:00:17,434 INFO Atacando a razell
+2010-07-07 23:00:17,814 INFO Le gane a razell. Recaude 0. Health: 123/200. Stamina: 3/10.
+2010-07-07 23:00:17,814 INFO Atacando de nuevo a razell
+2010-07-07 23:00:18,205 INFO Le gane a razell. Recaude 0. Health: 110/200. Stamina: 2/10.
+2010-07-07 23:00:18,205 INFO Atacando de nuevo a razell
+2010-07-07 23:00:18,556 INFO Le gane a razell. Recaude 0. Health: 99/200. Stamina: 1/10.
+2010-07-07 23:00:18,556 INFO Atacando de nuevo a razell
+2010-07-07 23:00:18,865 INFO razell se retiro. Health: 99/200. Stamina: 1/10.
+2010-07-07 23:00:19,510 INFO Checking enemy WallFl&#8203;ower can attack: MyAttackPoints: 576. EnemyDefensePoints:336.
+2010-07-07 23:00:19,510 INFO Atacando a WallFl&#8203;ower
+2010-07-07 23:00:19,848 INFO Le gane a WallFl&#8203;ower. Recaude 11210. Health: 93/200. Stamina: 0/10.
+2010-07-07 23:00:19,849 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:02:20,495 INFO Checking enemy rbbug can attack: MyAttackPoints: 576. EnemyDefensePoints:1848.
+2010-07-07 23:02:21,289 INFO Checking enemy bernin&#8203;g can attack: MyAttackPoints: 576. EnemyDefensePoints:534.
+2010-07-07 23:02:21,289 INFO Atacando a bernin&#8203;g
+2010-07-07 23:02:21,684 INFO Le gane a bernin&#8203;g. Recaude 271900. Health: 91/200. Stamina: 0/10.
+2010-07-07 23:02:21,684 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:04:22,373 INFO Checking enemy Cwspaz can attack: MyAttackPoints: 576. EnemyDefensePoints:4998.
+2010-07-07 23:04:23,071 INFO Checking enemy Aaron can attack: MyAttackPoints: 576. EnemyDefensePoints:2573.
+2010-07-07 23:04:23,730 INFO Checking enemy Tasak can attack: MyAttackPoints: 576. EnemyDefensePoints:9238.
+2010-07-07 23:04:24,404 INFO Checking enemy Blacks&#8203;oul can attack: MyAttackPoints: 576. EnemyDefensePoints:11270.
+2010-07-07 23:04:25,122 INFO Checking enemy Eightm&#8203;an can attack: MyAttackPoints: 576. EnemyDefensePoints:4784.
+2010-07-07 23:04:25,818 INFO Checking enemy Jesse can attack: MyAttackPoints: 576. EnemyDefensePoints:2138.
+2010-07-07 23:04:26,593 INFO Checking enemy JD79 can attack: MyAttackPoints: 576. EnemyDefensePoints:2168.
+2010-07-07 23:04:27,335 INFO Checking enemy matt can attack: MyAttackPoints: 576. EnemyDefensePoints:409.
+2010-07-07 23:04:27,335 INFO Atacando a matt
+2010-07-07 23:04:27,689 INFO Le gane a matt. Recaude 529200. Health: 79/200. Stamina: 0/10.
+2010-07-07 23:04:27,689 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:06:27,689 INFO Se me acabo el tiempo para pelear
+2010-07-07 23:06:27,689 INFO Fin peleas. Money ganada : 1016699 .
+2010-07-07 23:06:27,689 INFO Fin de los ataques.
+2010-07-07 23:06:27,689 INFO Ejecutando todas las misiones.
+2010-07-07 23:06:28,178 INFO Missions....
+2010-07-07 23:06:28,178 INFO Checking tab 1
+2010-07-07 23:06:28,576 INFO Checking tab 2
+2010-07-07 23:06:28,979 INFO Checking tab 3
+2010-07-07 23:06:29,462 INFO Energy: 87/490. Mission requiered energy: 60
+2010-07-07 23:06:29,462 INFO Proceso mision: Infiltrate Western Border. Percent: 80%.
+2010-07-07 23:06:29,960 INFO Energy: 27/490. Mission requiered energy: 60
+2010-07-07 23:06:29,960 INFO Se acabo la energia.
+2010-07-07 23:06:29,960 INFO Fin Ejecutando todas las misiones.
+2010-07-07 23:06:30,232 INFO Sigo atacando porque tengo energia.
+2010-07-07 23:06:30,968 INFO Checking enemy dark death can attack: MyAttackPoints: 576. EnemyDefensePoints:508.
+2010-07-07 23:06:30,968 INFO Atacando a dark death
+2010-07-07 23:06:31,296 INFO Le gane a dark death. Recaude 58081. Health: 74/200. Stamina: 0/10.
+2010-07-07 23:06:31,296 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:08:32,017 INFO Checking enemy tobn can attack: MyAttackPoints: 576. EnemyDefensePoints:211.
+2010-07-07 23:08:32,017 INFO Atacando a tobn
+2010-07-07 23:08:32,346 INFO Le gane a tobn. Recaude 10225. Health: 60/200. Stamina: 0/10.
+2010-07-07 23:08:32,346 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:10:33,125 INFO Checking enemy Patton can attack: MyAttackPoints: 576. EnemyDefensePoints:1346.
+2010-07-07 23:10:33,819 INFO Checking enemy john can attack: MyAttackPoints: 576. EnemyDefensePoints:401.
+2010-07-07 23:10:33,819 INFO Atacando a john
+2010-07-07 23:10:34,157 INFO Perdi con john. Health: 38/200. Stamina: 0/10.
+2010-07-07 23:10:34,487 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:12:34,487 INFO SE ME ACABO LA ENERGIA. Health: 38/200. Stamina: 0/10. FIN.
+2010-07-07 23:12:34,487 INFO Fin peleas. Money ganada : 68306 .
+2010-07-07 23:12:34,979 INFO Go to bank.
+2010-07-07 23:12:34,979 INFO Link... http://wwar.storm8.com/bank.php?formNonce=a73979546a0c1ce82d92fee688b37b4927a6bcee&h=4edb31db07ceed256d2c7c343dbd9a36eab91655
+2010-07-07 23:12:35,244 INFO Depositando 199874
+2010-07-07 23:12:35,696 INFO Se realizo el deposito para el restore.
+2010-07-07 23:12:35,696 INFO Going to Page Units....
+2010-07-07 23:12:36,004 INFO Actualizando units...
+2010-07-07 23:12:37,274 INFO Units actualizadas.
+2010-07-07 23:12:37,703 INFO Contruyendo units ataque...
+2010-07-07 23:12:37,961 INFO FIN Contruir units ataque.
+2010-07-07 23:12:38,199 INFO Contruyendo building de Income
+2010-07-07 23:12:38,515 INFO Contruyendo buildings...
+2010-07-07 23:12:38,515 INFO Contruyendo: Supply Depot
+2010-07-07 23:12:38,807 INFO Contruyendo: Supply Depot
+2010-07-07 23:12:39,111 INFO Contruyendo: Supply Depot
+2010-07-07 23:12:39,421 INFO Contruyendo: Supply Depot
+2010-07-07 23:12:39,727 INFO Contruyendo: Supply Depot
+2010-07-07 23:12:40,032 INFO No se pudo construir: Supply Depot. My money: 163721. Building cost: 187500.
+2010-07-07 23:12:40,060 INFO Fin de contruir buildings.
+2010-07-07 23:12:40,419 INFO Durmiendo 18 minutos.
+2010-07-07 23:30:40,419 INFO Atacando...
+2010-07-07 23:30:41,833 INFO Going to Page Units....
+2010-07-07 23:30:42,890 INFO Actualizando units...
+2010-07-07 23:30:44,543 INFO Units actualizadas.
+2010-07-07 23:30:44,543 INFO Going to Page Buildings....
+2010-07-07 23:30:44,989 INFO Actualizando buildings...
+2010-07-07 23:30:45,011 INFO Buildings actualizadas.
+2010-07-07 23:30:45,287 INFO Go to hospital.
+2010-07-07 23:30:45,287 INFO Link... http://wwar.storm8.com/hospital.php?
+2010-07-07 23:30:45,528 INFO No alcanza para el restore health. Asi que deposito.
+2010-07-07 23:30:45,528 INFO Go to bank.
+2010-07-07 23:30:45,529 INFO Link... http://wwar.storm8.com/bank.php?formNonce=b6d435ea2f47437635841c658854b9dc0a9b3042&h=547a999dd7ef6afe0a218cc8fa01ea4d30b326cc
+2010-07-07 23:30:45,770 INFO Depositando 11263
+2010-07-07 23:30:46,703 INFO Se hizo el restore health.
+2010-07-07 23:30:47,713 INFO Checking enemy defmon can attack: MyAttackPoints: 576. EnemyDefensePoints:36.
+2010-07-07 23:30:47,713 INFO Atacando a defmon
+2010-07-07 23:30:48,192 INFO Le gane a defmon. Recaude 61735. Health: 187/200. Stamina: 9/10.
+2010-07-07 23:30:48,192 INFO Atacando de nuevo a defmon
+2010-07-07 23:30:48,671 INFO Le gane a defmon. Recaude 28773. Health: 176/200. Stamina: 8/10.
+2010-07-07 23:30:48,671 INFO Atacando de nuevo a defmon
+2010-07-07 23:30:48,962 INFO defmon se retiro. Health: 176/200. Stamina: 8/10.
+2010-07-07 23:30:49,615 INFO Checking enemy Lady Chela can attack: MyAttackPoints: 576. EnemyDefensePoints:612.
+2010-07-07 23:30:50,282 INFO Checking enemy kristi&#8203;an can attack: MyAttackPoints: 576. EnemyDefensePoints:634.
+2010-07-07 23:30:50,920 INFO Checking enemy jjkk can attack: MyAttackPoints: 576. EnemyDefensePoints:2649.
+2010-07-07 23:30:51,597 INFO Checking enemy Land of Grapes can attack: MyAttackPoints: 576. EnemyDefensePoints:38609.
+2010-07-07 23:30:52,357 INFO Checking enemy SMJ121&#8203;74 can attack: MyAttackPoints: 576. EnemyDefensePoints:388.
+2010-07-07 23:30:52,357 INFO Atacando a SMJ121&#8203;74
+2010-07-07 23:30:52,731 INFO Le gane a SMJ121&#8203;74. Recaude 51714. Health: 162/200. Stamina: 7/10.
+2010-07-07 23:30:52,731 INFO Atacando de nuevo a SMJ121&#8203;74
+2010-07-07 23:30:53,030 INFO SMJ121&#8203;74 se retiro. Health: 162/200. Stamina: 7/10.
+2010-07-07 23:30:53,652 INFO Checking enemy ricky can attack: MyAttackPoints: 576. EnemyDefensePoints:92.
+2010-07-07 23:30:53,653 INFO Atacando a ricky
+2010-07-07 23:30:54,003 INFO Le gane a ricky. Recaude 718200. Health: 160/200. Stamina: 6/10.
+2010-07-07 23:30:54,003 INFO Atacando de nuevo a ricky
+2010-07-07 23:30:54,341 INFO Le gane a ricky. Recaude 716772. Health: 151/200. Stamina: 5/10.
+2010-07-07 23:30:54,341 INFO Atacando de nuevo a ricky
+2010-07-07 23:30:54,736 INFO Le gane a ricky. Recaude 620178. Health: 143/200. Stamina: 4/10.
+2010-07-07 23:30:54,736 INFO Atacando de nuevo a ricky
+2010-07-07 23:30:55,083 INFO Le gane a ricky. Recaude 145337. Health: 130/200. Stamina: 3/10.
+2010-07-07 23:30:55,083 INFO Atacando de nuevo a ricky
+2010-07-07 23:30:55,419 INFO Le gane a ricky. Recaude 96545. Health: 119/200. Stamina: 2/10.
+2010-07-07 23:30:55,419 INFO Atacando de nuevo a ricky
+2010-07-07 23:30:55,765 INFO Le gane a ricky. Recaude 91718. Health: 117/200. Stamina: 1/10.
+2010-07-07 23:30:55,765 INFO Atacando de nuevo a ricky
+2010-07-07 23:30:56,078 INFO Le gane a ricky. Recaude 226544. Health: 112/200. Stamina: 0/10.
+2010-07-07 23:30:56,078 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:32:56,763 INFO Checking enemy super guest can attack: MyAttackPoints: 576. EnemyDefensePoints:338.
+2010-07-07 23:32:56,763 INFO Atacando a super guest
+2010-07-07 23:32:57,126 INFO Le gane a super guest. Recaude 0. Health: 101/200. Stamina: 0/10.
+2010-07-07 23:32:57,126 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:34:57,768 INFO Checking enemy Eric can attack: MyAttackPoints: 576. EnemyDefensePoints:4932.
+2010-07-07 23:34:58,464 INFO Checking enemy Hyunda&#8203;i can attack: MyAttackPoints: 576. EnemyDefensePoints:1076.
+2010-07-07 23:34:59,155 INFO Checking enemy kitaro can attack: MyAttackPoints: 576. EnemyDefensePoints:1729.
+2010-07-07 23:34:59,859 INFO Checking enemy philip can attack: MyAttackPoints: 576. EnemyDefensePoints:1088.
+2010-07-07 23:35:00,564 INFO Checking enemy Large coke can attack: MyAttackPoints: 576. EnemyDefensePoints:11229.
+2010-07-07 23:35:01,290 INFO Checking enemy iceman can attack: MyAttackPoints: 576. EnemyDefensePoints:561.
+2010-07-07 23:35:01,290 INFO Atacando a iceman
+2010-07-07 23:35:01,614 INFO Perdi con iceman. Health: 84/200. Stamina: 0/10.
+2010-07-07 23:35:01,914 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:37:01,914 INFO SE ME ACABO LA ENERGIA. Health: 84/200. Stamina: 0/10. FIN.
+2010-07-07 23:37:01,914 INFO Fin peleas. Money ganada : 2757516 .
+2010-07-07 23:37:01,914 INFO Fin de los ataques.
+2010-07-07 23:37:01,914 INFO Ejecutando todas las misiones.
+2010-07-07 23:37:02,377 INFO Missions....
+2010-07-07 23:37:02,377 INFO Checking tab 1
+2010-07-07 23:37:02,738 INFO Checking tab 2
+2010-07-07 23:37:03,115 INFO Checking tab 3
+2010-07-07 23:37:03,573 INFO Energy: 104/490. Mission requiered energy: 60
+2010-07-07 23:37:03,573 INFO Proceso mision: Infiltrate Western Border. Percent: 90%.
+2010-07-07 23:37:04,065 INFO Energy: 55/490. Mission requiered energy: 64
+2010-07-07 23:37:04,065 INFO Se acabo la energia.
+2010-07-07 23:37:04,065 INFO Fin Ejecutando todas las misiones.
+2010-07-07 23:37:04,342 INFO Sigo atacando porque tengo energia.
+2010-07-07 23:37:05,037 INFO Checking enemy Fred can attack: MyAttackPoints: 576. EnemyDefensePoints:3791.
+2010-07-07 23:37:05,658 INFO Checking enemy Von Rocco can attack: MyAttackPoints: 576. EnemyDefensePoints:56.
+2010-07-07 23:37:05,658 INFO Atacando a Von Rocco
+2010-07-07 23:37:06,000 INFO Le gane a Von Rocco. Recaude 27333. Health: 80/200. Stamina: 0/10.
+2010-07-07 23:37:06,000 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:39:06,653 INFO Checking enemy Berus can attack: MyAttackPoints: 576. EnemyDefensePoints:491.
+2010-07-07 23:39:06,653 INFO Atacando a Berus
+2010-07-07 23:39:06,989 INFO Le gane a Berus. Recaude 310173. Health: 69/200. Stamina: 0/10.
+2010-07-07 23:39:06,989 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:41:07,887 INFO Checking enemy polsom can attack: MyAttackPoints: 576. EnemyDefensePoints:1749.
+2010-07-07 23:41:08,518 INFO Checking enemy comcin&#8203;o can attack: MyAttackPoints: 576. EnemyDefensePoints:293.
+2010-07-07 23:41:08,519 INFO Atacando a comcin&#8203;o
+2010-07-07 23:41:08,837 INFO comcin&#8203;o se retiro. Health: 70/200. Stamina: 1/10.
+2010-07-07 23:41:09,527 INFO Checking enemy Ronald can attack: MyAttackPoints: 576. EnemyDefensePoints:3397.
+2010-07-07 23:41:10,188 INFO Checking enemy delphi&#8203;an can attack: MyAttackPoints: 576. EnemyDefensePoints:4462.
+2010-07-07 23:41:10,826 INFO Checking enemy Bunk can attack: MyAttackPoints: 576. EnemyDefensePoints:9850.
+2010-07-07 23:41:11,473 INFO Checking enemy jiangj&#8203;ieshi can attack: MyAttackPoints: 576. EnemyDefensePoints:789.
+2010-07-07 23:41:12,121 INFO Checking enemy hydra9&#8203;572 can attack: MyAttackPoints: 576. EnemyDefensePoints:2187.
+2010-07-07 23:41:12,760 INFO Checking enemy Lil OSS army can attack: MyAttackPoints: 576. EnemyDefensePoints:142.
+2010-07-07 23:41:12,760 INFO Atacando a Lil OSS army
+2010-07-07 23:41:13,140 INFO Le gane a Lil OSS army. Recaude 17202. Health: 58/200. Stamina: 0/10.
+2010-07-07 23:41:13,140 INFO Duermo 2 min para recuperar stamina
+2010-07-07 23:43:13,140 INFO Se me acabo el tiempo para pelear
+2010-07-07 23:43:13,141 INFO Fin peleas. Money ganada : 354708 .
+2010-07-07 23:43:13,670 INFO Go to bank.
+2010-07-07 23:43:13,670 INFO Link... http://wwar.storm8.com/bank.php?formNonce=b6d435ea2f47437635841c658854b9dc0a9b3042&h=547a999dd7ef6afe0a218cc8fa01ea4d30b326cc
+2010-07-07 23:43:13,916 INFO Depositando 183484
+2010-07-07 23:43:14,376 INFO Se realizo el deposito para el restore.
+2010-07-07 23:43:14,376 INFO Going to Page Units....
+2010-07-07 23:43:14,711 INFO Actualizando units...
+2010-07-07 23:43:15,942 INFO Units actualizadas.
+2010-07-07 23:43:16,232 INFO Contruyendo units ataque...
+2010-07-07 23:43:16,481 INFO Contruyendo: Name: Harrier Jet
+CantBuild: 23
+Attack: 24
+URL_IMG: http://static.storm8.com/wwar/images/equipment/med/154m.png?v=1026
+URL_DEPLOY: http://wwar.storm8.com/equipment.php?action=buy&iid=154&cat=4&formNonce=8c192aa0d4821c5e141d2c915c37a197f7f12768&h=a14fdf3a93ed53983461f64bdcb6c110856097d1
+
+2010-07-07 23:43:16,787 INFO FIN Contruir units ataque.
+2010-07-07 23:43:17,044 INFO Contruyendo building de Income
+2010-07-07 23:43:17,318 INFO Contruyendo buildings...
+2010-07-07 23:43:17,318 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:17,604 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:17,898 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:18,198 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:18,496 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:18,807 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:19,095 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:19,390 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:19,791 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:20,080 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:20,370 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:20,729 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:21,056 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:21,399 INFO Contruyendo: Supply Depot
+2010-07-07 23:43:21,685 INFO No se pudo construir: Supply Depot. My money: 221976. Building cost: 222500.
+2010-07-07 23:43:21,730 INFO Fin de contruir buildings.
+2010-07-07 23:43:22,137 INFO Durmiendo 18 minutos.
