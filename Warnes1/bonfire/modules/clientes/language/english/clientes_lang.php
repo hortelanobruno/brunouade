@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['clientes_manage']			= 'Manage Clientes';
+$lang['clientes_edit']				= 'Edit';
+$lang['clientes_true']				= 'True';
+$lang['clientes_false']				= 'False';
+$lang['clientes_create']			= 'Create';
+$lang['clientes_list']				= 'List';
+$lang['clientes_new']				= 'New';
+$lang['clientes_edit_text']			= 'Edit this to suit your needs';
+$lang['clientes_no_records']			= 'There aren\'t any clientes in the system.';
+$lang['clientes_create_new']			= 'Create a new Clientes.';
+$lang['clientes_create_success']			= 'Clientes successfully created.';
+$lang['clientes_create_failure']			= 'There was a problem creating the clientes: ';
+$lang['clientes_create_new_button']			= 'Create New Clientes';
+$lang['clientes_invalid_id']			= 'Invalid Clientes ID.';
+$lang['clientes_edit_success']			= 'Clientes successfully saved.';
+$lang['clientes_edit_failure']			= 'There was a problem saving the clientes: ';
+$lang['clientes_delete_success']			= 'record(s) successfully deleted.';
+$lang['clientes_delete_failure']			= 'We could not delete the record: ';
+$lang['clientes_delete_error']			= 'You have not selected any records to delete.';
+$lang['clientes_actions']			= 'Actions';
+$lang['clientes_cancel']			= 'Cancel';
+$lang['clientes_delete_record']			= 'Delete this Clientes';
+$lang['clientes_delete_confirm']			= 'Are you sure you want to delete this clientes?';
+$lang['clientes_edit_heading']			= 'Edit Clientes';
+
+// Activities
+$lang['clientes_act_create_record']			= 'Created record with ID';
+$lang['clientes_act_edit_record']			= 'Updated record with ID';
+$lang['clientes_act_delete_record']			= 'Deleted record with ID';

@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['clientes_rubros_manage']			= 'Manage Clientes Rubros';
+$lang['clientes_rubros_edit']				= 'Edit';
+$lang['clientes_rubros_true']				= 'True';
+$lang['clientes_rubros_false']				= 'False';
+$lang['clientes_rubros_create']			= 'Create';
+$lang['clientes_rubros_list']				= 'List';
+$lang['clientes_rubros_new']				= 'New';
+$lang['clientes_rubros_edit_text']			= 'Edit this to suit your needs';
+$lang['clientes_rubros_no_records']			= 'There aren\'t any clientes_rubros in the system.';
+$lang['clientes_rubros_create_new']			= 'Create a new Clientes Rubros.';
+$lang['clientes_rubros_create_success']			= 'Clientes Rubros successfully created.';
+$lang['clientes_rubros_create_failure']			= 'There was a problem creating the clientes_rubros: ';
+$lang['clientes_rubros_create_new_button']			= 'Create New Clientes Rubros';
+$lang['clientes_rubros_invalid_id']			= 'Invalid Clientes Rubros ID.';
+$lang['clientes_rubros_edit_success']			= 'Clientes Rubros successfully saved.';
+$lang['clientes_rubros_edit_failure']			= 'There was a problem saving the clientes_rubros: ';
+$lang['clientes_rubros_delete_success']			= 'record(s) successfully deleted.';
+$lang['clientes_rubros_delete_failure']			= 'We could not delete the record: ';
+$lang['clientes_rubros_delete_error']			= 'You have not selected any records to delete.';
+$lang['clientes_rubros_actions']			= 'Actions';
+$lang['clientes_rubros_cancel']			= 'Cancel';
+$lang['clientes_rubros_delete_record']			= 'Delete this Clientes Rubros';
+$lang['clientes_rubros_delete_confirm']			= 'Are you sure you want to delete this clientes_rubros?';
+$lang['clientes_rubros_edit_heading']			= 'Edit Clientes Rubros';
+
+// Activities
+$lang['clientes_rubros_act_create_record']			= 'Created record with ID';
+$lang['clientes_rubros_act_edit_record']			= 'Updated record with ID';
+$lang['clientes_rubros_act_delete_record']			= 'Deleted record with ID';

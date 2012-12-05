@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['clientes_zonas_manage']			= 'Manage Clientes Zonas';
+$lang['clientes_zonas_edit']				= 'Edit';
+$lang['clientes_zonas_true']				= 'True';
+$lang['clientes_zonas_false']				= 'False';
+$lang['clientes_zonas_create']			= 'Create';
+$lang['clientes_zonas_list']				= 'List';
+$lang['clientes_zonas_new']				= 'New';
+$lang['clientes_zonas_edit_text']			= 'Edit this to suit your needs';
+$lang['clientes_zonas_no_records']			= 'There aren\'t any clientes_zonas in the system.';
+$lang['clientes_zonas_create_new']			= 'Create a new Clientes Zonas.';
+$lang['clientes_zonas_create_success']			= 'Clientes Zonas successfully created.';
+$lang['clientes_zonas_create_failure']			= 'There was a problem creating the clientes_zonas: ';
+$lang['clientes_zonas_create_new_button']			= 'Create New Clientes Zonas';
+$lang['clientes_zonas_invalid_id']			= 'Invalid Clientes Zonas ID.';
+$lang['clientes_zonas_edit_success']			= 'Clientes Zonas successfully saved.';
+$lang['clientes_zonas_edit_failure']			= 'There was a problem saving the clientes_zonas: ';
+$lang['clientes_zonas_delete_success']			= 'record(s) successfully deleted.';
+$lang['clientes_zonas_delete_failure']			= 'We could not delete the record: ';
+$lang['clientes_zonas_delete_error']			= 'You have not selected any records to delete.';
+$lang['clientes_zonas_actions']			= 'Actions';
+$lang['clientes_zonas_cancel']			= 'Cancel';
+$lang['clientes_zonas_delete_record']			= 'Delete this Clientes Zonas';
+$lang['clientes_zonas_delete_confirm']			= 'Are you sure you want to delete this clientes_zonas?';
+$lang['clientes_zonas_edit_heading']			= 'Edit Clientes Zonas';
+
+// Activities
+$lang['clientes_zonas_act_create_record']			= 'Created record with ID';
+$lang['clientes_zonas_act_edit_record']			= 'Updated record with ID';
+$lang['clientes_zonas_act_delete_record']			= 'Deleted record with ID';

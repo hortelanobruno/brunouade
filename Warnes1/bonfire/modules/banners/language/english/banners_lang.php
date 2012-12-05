@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['banners_manage']			= 'Manage Banners';
+$lang['banners_edit']				= 'Edit';
+$lang['banners_true']				= 'True';
+$lang['banners_false']				= 'False';
+$lang['banners_create']			= 'Create';
+$lang['banners_list']				= 'List';
+$lang['banners_new']				= 'New';
+$lang['banners_edit_text']			= 'Edit this to suit your needs';
+$lang['banners_no_records']			= 'There aren\'t any banners in the system.';
+$lang['banners_create_new']			= 'Create a new Banners.';
+$lang['banners_create_success']			= 'Banners successfully created.';
+$lang['banners_create_failure']			= 'There was a problem creating the banners: ';
+$lang['banners_create_new_button']			= 'Create New Banners';
+$lang['banners_invalid_id']			= 'Invalid Banners ID.';
+$lang['banners_edit_success']			= 'Banners successfully saved.';
+$lang['banners_edit_failure']			= 'There was a problem saving the banners: ';
+$lang['banners_delete_success']			= 'record(s) successfully deleted.';
+$lang['banners_delete_failure']			= 'We could not delete the record: ';
+$lang['banners_delete_error']			= 'You have not selected any records to delete.';
+$lang['banners_actions']			= 'Actions';
+$lang['banners_cancel']			= 'Cancel';
+$lang['banners_delete_record']			= 'Delete this Banners';
+$lang['banners_delete_confirm']			= 'Are you sure you want to delete this banners?';
+$lang['banners_edit_heading']			= 'Edit Banners';
+
+// Activities
+$lang['banners_act_create_record']			= 'Created record with ID';
+$lang['banners_act_edit_record']			= 'Updated record with ID';
+$lang['banners_act_delete_record']			= 'Deleted record with ID';

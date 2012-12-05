@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['noticias_fotos_manage']			= 'Manage Noticias Fotos';
+$lang['noticias_fotos_edit']				= 'Edit';
+$lang['noticias_fotos_true']				= 'True';
+$lang['noticias_fotos_false']				= 'False';
+$lang['noticias_fotos_create']			= 'Create';
+$lang['noticias_fotos_list']				= 'List';
+$lang['noticias_fotos_new']				= 'New';
+$lang['noticias_fotos_edit_text']			= 'Edit this to suit your needs';
+$lang['noticias_fotos_no_records']			= 'There aren\'t any noticias_fotos in the system.';
+$lang['noticias_fotos_create_new']			= 'Create a new Noticias Fotos.';
+$lang['noticias_fotos_create_success']			= 'Noticias Fotos successfully created.';
+$lang['noticias_fotos_create_failure']			= 'There was a problem creating the noticias_fotos: ';
+$lang['noticias_fotos_create_new_button']			= 'Create New Noticias Fotos';
+$lang['noticias_fotos_invalid_id']			= 'Invalid Noticias Fotos ID.';
+$lang['noticias_fotos_edit_success']			= 'Noticias Fotos successfully saved.';
+$lang['noticias_fotos_edit_failure']			= 'There was a problem saving the noticias_fotos: ';
+$lang['noticias_fotos_delete_success']			= 'record(s) successfully deleted.';
+$lang['noticias_fotos_delete_failure']			= 'We could not delete the record: ';
+$lang['noticias_fotos_delete_error']			= 'You have not selected any records to delete.';
+$lang['noticias_fotos_actions']			= 'Actions';
+$lang['noticias_fotos_cancel']			= 'Cancel';
+$lang['noticias_fotos_delete_record']			= 'Delete this Noticias Fotos';
+$lang['noticias_fotos_delete_confirm']			= 'Are you sure you want to delete this noticias_fotos?';
+$lang['noticias_fotos_edit_heading']			= 'Edit Noticias Fotos';
+
+// Activities
+$lang['noticias_fotos_act_create_record']			= 'Created record with ID';
+$lang['noticias_fotos_act_edit_record']			= 'Updated record with ID';
+$lang['noticias_fotos_act_delete_record']			= 'Deleted record with ID';
