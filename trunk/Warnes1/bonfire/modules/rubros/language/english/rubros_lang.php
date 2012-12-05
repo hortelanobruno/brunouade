@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['rubros_manage']			= 'Manage Rubros';
+$lang['rubros_edit']				= 'Edit';
+$lang['rubros_true']				= 'True';
+$lang['rubros_false']				= 'False';
+$lang['rubros_create']			= 'Create';
+$lang['rubros_list']				= 'List';
+$lang['rubros_new']				= 'New';
+$lang['rubros_edit_text']			= 'Edit this to suit your needs';
+$lang['rubros_no_records']			= 'There aren\'t any rubros in the system.';
+$lang['rubros_create_new']			= 'Create a new Rubros.';
+$lang['rubros_create_success']			= 'Rubros successfully created.';
+$lang['rubros_create_failure']			= 'There was a problem creating the rubros: ';
+$lang['rubros_create_new_button']			= 'Create New Rubros';
+$lang['rubros_invalid_id']			= 'Invalid Rubros ID.';
+$lang['rubros_edit_success']			= 'Rubros successfully saved.';
+$lang['rubros_edit_failure']			= 'There was a problem saving the rubros: ';
+$lang['rubros_delete_success']			= 'record(s) successfully deleted.';
+$lang['rubros_delete_failure']			= 'We could not delete the record: ';
+$lang['rubros_delete_error']			= 'You have not selected any records to delete.';
+$lang['rubros_actions']			= 'Actions';
+$lang['rubros_cancel']			= 'Cancel';
+$lang['rubros_delete_record']			= 'Delete this Rubros';
+$lang['rubros_delete_confirm']			= 'Are you sure you want to delete this rubros?';
+$lang['rubros_edit_heading']			= 'Edit Rubros';
+
+// Activities
+$lang['rubros_act_create_record']			= 'Created record with ID';
+$lang['rubros_act_edit_record']			= 'Updated record with ID';
+$lang['rubros_act_delete_record']			= 'Deleted record with ID';

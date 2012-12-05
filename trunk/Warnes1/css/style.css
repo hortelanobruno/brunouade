@@ -1,0 +1,734 @@
+/* 
+    Document   : style
+    Created on : Jun 18, 2012, 10:33:23 PM
+    Author     : brunoli
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+body {
+    background-color: #CCCCCC;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+
+.top {
+    width: 1010px;
+    height: 174px;
+    background-color: black;
+    margin:0 auto;
+}
+
+.top .logo {
+    float: left;
+    width: 114px;
+    height: auto;
+    margin: 22px 10px 10px 19px;
+}
+
+.top .logo  img {
+    width: 100%;
+}
+
+.top .menu {
+    float: right;
+    width: 400px;
+    height: auto;
+}
+
+.top .menu .nav {
+    margin-top: 45px;
+}
+
+.top .menu .nav a {
+    color: white;
+    font-size: 16px;
+}
+
+
+.top .menu .buttons {
+    height: auto;
+    margin-top: 42px;
+    margin-left: 81px;
+}
+
+.top .menu .buttons a {
+    margin: 5px 5px 5px 5px;
+}
+
+.top .menu .buttons img {
+    width: 40px;
+    height: 40px;
+}
+
+.colmask {
+    position:relative;	/* This fixes the IE7 overflow hidden bug */
+    clear:both;
+    /*	float:left;*/
+    margin:0 auto;
+    width:1024px;			/* width of whole page */
+    overflow:hidden;		 /*This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+    float:left;
+    width:100%;			/* width of page */
+    position:relative;
+}
+.col1,
+.col2,
+.col3,
+.col4,
+.col5,
+.col6,
+.col7,
+.col8,
+.col9{
+    float:left;
+    position:relative;
+    padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
+                                    only padding top and bottom is included here, make it whatever value you need */
+    overflow:hidden;
+}
+/* 3 Column settings */
+.threecol {
+    /*	background:#eee;		 right column background colour */
+}
+.threecol .colmid {
+    right:25%;			/* width of the right column */
+    /*	background:#fff;		 center column background colour */
+}
+.threecol .colleft {
+    right:50%;			/* width of the middle column */
+    /*	background:#f4f4f4;	 left column background colour */
+}
+.threecol .col1 {
+    width:58%;			/* width of center column content (column width minus padding on either side) */
+    left:99%;			/* 100% plus left padding of center column */
+}
+.threecol .col2 {
+    width:21%;			/* Width of left column content (column width minus padding on either side) */
+    left:18%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col3 {
+    width:15%;			/* Width of right column content (column width minus padding on either side) */
+    left:81%;			/* Please make note of the brackets here:
+                                    (100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+.threecol .col5 {
+    width:19%;			/* width of center column content (column width minus padding on either side) */
+    left:140%;			/* 100% plus left padding of center column */
+}
+.threecol .col4 {
+    width:63%;			/* Width of left column content (column width minus padding on either side) */
+    left:57%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col6 {
+    width:16%;			/* Width of right column content (column width minus padding on either side) */
+    left:78%;			/* Please make note of the brackets here:
+                                    (100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+.threecol .col7 {
+    width:69%;			/* width of center column content (column width minus padding on either side) */
+    left:90.5%;			/* 100% plus left padding of center column */
+}
+.threecol .col8 {
+    width:15%;			/* Width of left column content (column width minus padding on either side) */
+    left:6%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col9 {
+    width:15%;			/* Width of left column content (column width minus padding on either side) */
+    left:76%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.bottom {
+    width: 1010px;
+    height: 48px;
+    background-color: black;
+    margin:0 auto;
+    color: white;
+    font-size: 12px;
+}
+
+.bottom .left{
+    float: left;
+    margin: 16px 0px 0px 23px;
+}
+
+.bottom .right{
+    float: right;
+    margin: 16px 45px 0px 0px;
+}
+
+.bottom .right a{
+    color: white;
+}
+
+.rubros a{
+    color: black;
+}
+
+.zonas a{
+    color: black;
+}
+
+.marcas a{
+    color: black;
+}
+
+.bienvenida {
+    font-size: 13px;
+    color: black;
+}
+.bienvenida a{
+    color: blue;
+}
+
+.cliente{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cliente .title{
+    position:relative;
+    height:50px;
+    background-color: #666666;
+}
+.cliente .title h2{
+    position: relative; 
+    top: 32%;
+}
+.cliente .body{
+    background-image: url('/images/imagesmicrosite/fondomicrosite.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 1001px;
+/*    height: 476px;*/
+}
+
+.cliente .body table{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    color: white;
+/*    width: 600px;*/
+/*    margin-left: auto;*/
+    margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 9px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.noticia-wrapper {
+    position: relative;
+    background: none;
+    width: 310px;
+    float: left;
+    margin: 0 10px 20px 0;
+}
+
+.noticia {
+    background: white;
+    width: 300px;
+    -moz-box-shadow: 2px 2px 2px #000;
+    -webkit-box-shadow: 2px 2px 2px black;
+    box-shadow: 2px 2px 2px black;
+}
+
+.noticia-header {
+    padding-top: 10px;
+    background: white;
+    z-index: -1;
+}
+
+.noticia-titulo, .noticia-bajada {
+    padding: 20px;
+}
+
+.noticia-thumb {
+    padding: 0 20px;
+}
+
+.texto {
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.noticia-titulo, .noticia-bajada {
+    padding: 20px;
+}
+
+.noticia-categoria-holder {
+    background-color: #CC0000;
+    height: 30px;
+    z-index: -1;
+    font-size: 10px;
+}
+
+
+
+.red-ribbon {
+    position: absolute;
+    left: 263px;
+    top: 10px;
+    background: url(/images/noticias/red_ribbon.png);
+    width: 47px;
+    height: 41px;
+}
+
+.main-ribbon {
+        left: 925px;
+/*    left: 1245px;*/
+}
+
+.noticia-categoria {
+    background: white;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 47px 0 10px;
+    z-index: -1;
+}
+
+.clear {
+    clear: both;
+}
+
+.categoria {
+    font-size: 10px;
+    color: #0E0739;
+}
+
+.titulos {
+    font-size: 20px;
+    color: 
+        #09003F;
+    font-weight: bold;
+}
+
+.noticia-header-marco{
+    width: 666px;
+    height: 174px;
+    margin: 0 auto;
+}
+
+.content {
+    padding: 0 30px 20px 30px;
+    position: relative;
+}
+
+#left-col {
+    width: 666px;
+    margin: 0 auto;
+}
+
+.noticia-wrapper {
+    position: relative;
+    background: none;
+    width: 310px;
+    float: left;
+    margin: 0 10px 20px 0;
+}
+
+.interna {
+    width: 666px;
+}
+
+.noticia-content {
+    background: #E0DFDF;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#noticia-video-selector {
+    margin-bottom: 20px;
+}
+
+.MsoNormal {
+    padding: 0;
+    margin: 0;
+}
+
+#print-this {
+    text-align: right;
+    color: inherit;
+    text-decoration: underline;
+}
+
+.noticiascuadro{
+    background-image: url('/images/buscadornoticiaspic.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 192px;
+    padding-bottom: 5px;
+    /*    height: 293px;*/
+}
+
+.noticiascuadro h3 {
+    font-size: 20px;
+    margin: 0px 0 0px 0;
+    padding: 17px 70px 0px 37px;
+}
+
+.noticiascuadro ul li {
+    padding: 0 0 5px 0;
+    list-style: none;
+    font-size: 15px;
+}
+
+.noticiascuadro a {
+    color: #222;
+    text-decoration: none;
+    border-bottom: #CCC 1px solid;
+}
+
+
+/*gallery*/
+
+#fotocopete
+{
+    float:left;
+    /*font-weight:bold;*/
+
+    background: url(/images/mainpic_bg.png) repeat-x;
+    width: 549px;
+    height:30px;
+    position:absolute;
+    font-size:13px;
+    top:434;
+    padding:15px;
+    color:#FFFFFF;
+    text-align:right;
+}
+
+#fotocopetedestacado
+{
+    font-size:11px;
+    font-weight:normal;
+    color:#FFFFFF;
+    z-index:100000;
+    text-align:left;
+    margin-top:10px;
+}
+
+.noticia-imagen
+{
+    width:578px;
+    border: 1px solid #0f083a;
+}
+
+#noticia-video-selector
+{
+    margin-bottom:20px;
+}
+
+#selector-footer
+{
+    width: 580px;
+    background:#2c2c2c;
+    height:73px;
+}
+
+.selector-flecha
+{
+    height:73px;
+    float:left;
+    width:42px;
+    background:url(/images/gallery/flecha-izquierda.png) no-repeat center;
+    display:block;
+    margin-right:2px;
+}
+
+.selector-flecha:hover
+{
+    background:url(/images/gallery/flecha-izquierda-on-btn.png) no-repeat center;
+
+}
+
+.fderecha{float:right;background:url(/images/gallery/flecha-derecha-off-btn.png) no-repeat center;margin:0;}
+.fderecha:hover{background:url(/images/gallery/flecha-derecha-on-btn.png) no-repeat center;}
+
+.selector-thumb
+{
+    height: 71px;
+    background:#000000;
+    float:left;
+    border: 1px solid #0f083a;
+}
+
+.selector-thumb a
+{
+    display:block;
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    padding:0;
+    margin:0;
+}
+
+.selector-thumb a:hover, .factive
+{
+    opacity:1!important;
+    filter:alpha(opacity=100)!important; /* For IE8 and earlier */
+}
+
+
+.contacto{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+}
+
+.contacto-table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.boxCategoria{
+    background-color: #E3E1E2;
+    padding: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    font-size: 15px;
+}
+
+.boxCategoria h2{
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+}
+
+.boxAllCategory{
+    background-color: #E3E1E2;
+    padding: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.boxAllCategory h1{
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+}
+
+.border1{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    padding: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.header {
+    text-align: center;
+    padding:10px;
+}
+.content-1 {
+    float:left;
+    width:150px;
+    padding:10px;
+}
+.content-2-1 {
+    float:left;
+    width:150px;
+    padding:10px;
+}
+
+.content-2-2 {
+    float:right;
+    width:150px;
+    padding:10px;
+}
+.footer {
+    clear:both;
+    padding:10px;
+}
+
+.border2{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    padding: 10px;
+}
+
+
+/**CARRERAS***/
+
+#contentRight {
+    width: 702px;
+    color: #333;
+}
+
+#radiousTop {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    background-color: white;
+    height: 40px;
+    /*    width: 699px;*/
+    padding: 6px 0 0 0;
+}
+
+#radiousBottom {
+    /*    background: url(/images/bg_radiousbottom.jpg) no-repeat bottom white;*/
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    -moz-border-bottom-left-radius: 4px;
+    -moz-border-bottom-right-radius: 4px;
+    background-color: white;
+    width: 690px;
+    padding: 4px 6px;
+    margin-bottom: 6px;
+}
+
+#title {
+    float: left;
+}
+
+.menuTab {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0;
+    list-style: none;
+    height: 25px;
+    float: right;
+    padding-right: 16px;
+    padding-top: 7px;
+}
+
+.menuTab label {
+    font-size: 16px;
+}
+
+#filters {
+    display: block;
+    height: 45px;
+    width: 675px;
+    background: url(/images/bg_filtro.jpg) no-repeat;
+    padding: 0 2px 0 5px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+#filters label {
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    padding: 8px 4px;
+    font-size: 12px;
+}
+
+#filters select {
+    color: white;
+    border: none;
+    background-color: #51090C;
+    height: 22px;
+    width: 124px;
+    margin: 8px 4px;
+}
+
+#break {
+    background: url(/vistas/images/break.jpg) repeat-x bottom;
+    line-height: 40px;
+    margin: 0 -6px;
+    padding: 6px 12px;
+}
+
+#break h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+#tableCalendar {
+    margin-bottom: 6px;
+}
+
+#tableCalendar .bg-a {
+    font-size: 10px;
+    color: white;
+    background: black;
+    line-height: 22px;
+}
+
+#tableCalendar .bg-b {
+    background: white;
+}
+
+#tableCalendar td {
+    line-height: 14px;
+    border-bottom: #CCC solid 1px;
+}
+
+
+.infoCliente{
+    color: white;
+}
+
+.infoCliente a{
+    color: white;
+}
+
+.fotosLabel{
+    float:left;
+    padding: 10px 0px 0px 50px;
+    font-size: 20px;
+    color: white;
+}
+
+.buttonVolver{
+    clear: both;
+    float: right;
+    padding-right: 50px;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.fin{
+    clear: both;
+}

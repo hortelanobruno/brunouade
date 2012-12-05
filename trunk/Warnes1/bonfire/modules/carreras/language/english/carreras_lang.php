@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['carreras_manage']			= 'Manage Carreras';
+$lang['carreras_edit']				= 'Edit';
+$lang['carreras_true']				= 'True';
+$lang['carreras_false']				= 'False';
+$lang['carreras_create']			= 'Create';
+$lang['carreras_list']				= 'List';
+$lang['carreras_new']				= 'New';
+$lang['carreras_edit_text']			= 'Edit this to suit your needs';
+$lang['carreras_no_records']			= 'There aren\'t any carreras in the system.';
+$lang['carreras_create_new']			= 'Create a new Carreras.';
+$lang['carreras_create_success']			= 'Carreras successfully created.';
+$lang['carreras_create_failure']			= 'There was a problem creating the carreras: ';
+$lang['carreras_create_new_button']			= 'Create New Carreras';
+$lang['carreras_invalid_id']			= 'Invalid Carreras ID.';
+$lang['carreras_edit_success']			= 'Carreras successfully saved.';
+$lang['carreras_edit_failure']			= 'There was a problem saving the carreras: ';
+$lang['carreras_delete_success']			= 'record(s) successfully deleted.';
+$lang['carreras_delete_failure']			= 'We could not delete the record: ';
+$lang['carreras_delete_error']			= 'You have not selected any records to delete.';
+$lang['carreras_actions']			= 'Actions';
+$lang['carreras_cancel']			= 'Cancel';
+$lang['carreras_delete_record']			= 'Delete this Carreras';
+$lang['carreras_delete_confirm']			= 'Are you sure you want to delete this carreras?';
+$lang['carreras_edit_heading']			= 'Edit Carreras';
+
+// Activities
+$lang['carreras_act_create_record']			= 'Created record with ID';
+$lang['carreras_act_edit_record']			= 'Updated record with ID';
+$lang['carreras_act_delete_record']			= 'Deleted record with ID';

@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['clientes_marcas_manage']			= 'Manage Clientes Marcas';
+$lang['clientes_marcas_edit']				= 'Edit';
+$lang['clientes_marcas_true']				= 'True';
+$lang['clientes_marcas_false']				= 'False';
+$lang['clientes_marcas_create']			= 'Create';
+$lang['clientes_marcas_list']				= 'List';
+$lang['clientes_marcas_new']				= 'New';
+$lang['clientes_marcas_edit_text']			= 'Edit this to suit your needs';
+$lang['clientes_marcas_no_records']			= 'There aren\'t any clientes_marcas in the system.';
+$lang['clientes_marcas_create_new']			= 'Create a new Clientes Marcas.';
+$lang['clientes_marcas_create_success']			= 'Clientes Marcas successfully created.';
+$lang['clientes_marcas_create_failure']			= 'There was a problem creating the clientes_marcas: ';
+$lang['clientes_marcas_create_new_button']			= 'Create New Clientes Marcas';
+$lang['clientes_marcas_invalid_id']			= 'Invalid Clientes Marcas ID.';
+$lang['clientes_marcas_edit_success']			= 'Clientes Marcas successfully saved.';
+$lang['clientes_marcas_edit_failure']			= 'There was a problem saving the clientes_marcas: ';
+$lang['clientes_marcas_delete_success']			= 'record(s) successfully deleted.';
+$lang['clientes_marcas_delete_failure']			= 'We could not delete the record: ';
+$lang['clientes_marcas_delete_error']			= 'You have not selected any records to delete.';
+$lang['clientes_marcas_actions']			= 'Actions';
+$lang['clientes_marcas_cancel']			= 'Cancel';
+$lang['clientes_marcas_delete_record']			= 'Delete this Clientes Marcas';
+$lang['clientes_marcas_delete_confirm']			= 'Are you sure you want to delete this clientes_marcas?';
+$lang['clientes_marcas_edit_heading']			= 'Edit Clientes Marcas';
+
+// Activities
+$lang['clientes_marcas_act_create_record']			= 'Created record with ID';
+$lang['clientes_marcas_act_edit_record']			= 'Updated record with ID';
+$lang['clientes_marcas_act_delete_record']			= 'Deleted record with ID';

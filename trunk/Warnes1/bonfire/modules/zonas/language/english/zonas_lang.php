@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['zonas_manage']			= 'Manage Zonas';
+$lang['zonas_edit']				= 'Edit';
+$lang['zonas_true']				= 'True';
+$lang['zonas_false']				= 'False';
+$lang['zonas_create']			= 'Create';
+$lang['zonas_list']				= 'List';
+$lang['zonas_new']				= 'New';
+$lang['zonas_edit_text']			= 'Edit this to suit your needs';
+$lang['zonas_no_records']			= 'There aren\'t any zonas in the system.';
+$lang['zonas_create_new']			= 'Create a new Zonas.';
+$lang['zonas_create_success']			= 'Zonas successfully created.';
+$lang['zonas_create_failure']			= 'There was a problem creating the zonas: ';
+$lang['zonas_create_new_button']			= 'Create New Zonas';
+$lang['zonas_invalid_id']			= 'Invalid Zonas ID.';
+$lang['zonas_edit_success']			= 'Zonas successfully saved.';
+$lang['zonas_edit_failure']			= 'There was a problem saving the zonas: ';
+$lang['zonas_delete_success']			= 'record(s) successfully deleted.';
+$lang['zonas_delete_failure']			= 'We could not delete the record: ';
+$lang['zonas_delete_error']			= 'You have not selected any records to delete.';
+$lang['zonas_actions']			= 'Actions';
+$lang['zonas_cancel']			= 'Cancel';
+$lang['zonas_delete_record']			= 'Delete this Zonas';
+$lang['zonas_delete_confirm']			= 'Are you sure you want to delete this zonas?';
+$lang['zonas_edit_heading']			= 'Edit Zonas';
+
+// Activities
+$lang['zonas_act_create_record']			= 'Created record with ID';
+$lang['zonas_act_edit_record']			= 'Updated record with ID';
+$lang['zonas_act_delete_record']			= 'Deleted record with ID';

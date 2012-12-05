@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['fotos_manage']			= 'Manage Fotos';
+$lang['fotos_edit']				= 'Edit';
+$lang['fotos_true']				= 'True';
+$lang['fotos_false']				= 'False';
+$lang['fotos_create']			= 'Create';
+$lang['fotos_list']				= 'List';
+$lang['fotos_new']				= 'New';
+$lang['fotos_edit_text']			= 'Edit this to suit your needs';
+$lang['fotos_no_records']			= 'There aren\'t any fotos in the system.';
+$lang['fotos_create_new']			= 'Create a new Fotos.';
+$lang['fotos_create_success']			= 'Fotos successfully created.';
+$lang['fotos_create_failure']			= 'There was a problem creating the fotos: ';
+$lang['fotos_create_new_button']			= 'Create New Fotos';
+$lang['fotos_invalid_id']			= 'Invalid Fotos ID.';
+$lang['fotos_edit_success']			= 'Fotos successfully saved.';
+$lang['fotos_edit_failure']			= 'There was a problem saving the fotos: ';
+$lang['fotos_delete_success']			= 'record(s) successfully deleted.';
+$lang['fotos_delete_failure']			= 'We could not delete the record: ';
+$lang['fotos_delete_error']			= 'You have not selected any records to delete.';
+$lang['fotos_actions']			= 'Actions';
+$lang['fotos_cancel']			= 'Cancel';
+$lang['fotos_delete_record']			= 'Delete this Fotos';
+$lang['fotos_delete_confirm']			= 'Are you sure you want to delete this fotos?';
+$lang['fotos_edit_heading']			= 'Edit Fotos';
+
+// Activities
+$lang['fotos_act_create_record']			= 'Created record with ID';
+$lang['fotos_act_edit_record']			= 'Updated record with ID';
+$lang['fotos_act_delete_record']			= 'Deleted record with ID';

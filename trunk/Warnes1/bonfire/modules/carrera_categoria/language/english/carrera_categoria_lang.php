@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['carrera_categoria_manage']			= 'Manage Carrera Categoria';
+$lang['carrera_categoria_edit']				= 'Edit';
+$lang['carrera_categoria_true']				= 'True';
+$lang['carrera_categoria_false']				= 'False';
+$lang['carrera_categoria_create']			= 'Create';
+$lang['carrera_categoria_list']				= 'List';
+$lang['carrera_categoria_new']				= 'New';
+$lang['carrera_categoria_edit_text']			= 'Edit this to suit your needs';
+$lang['carrera_categoria_no_records']			= 'There aren\'t any carrera_categoria in the system.';
+$lang['carrera_categoria_create_new']			= 'Create a new Carrera Categoria.';
+$lang['carrera_categoria_create_success']			= 'Carrera Categoria successfully created.';
+$lang['carrera_categoria_create_failure']			= 'There was a problem creating the carrera_categoria: ';
+$lang['carrera_categoria_create_new_button']			= 'Create New Carrera Categoria';
+$lang['carrera_categoria_invalid_id']			= 'Invalid Carrera Categoria ID.';
+$lang['carrera_categoria_edit_success']			= 'Carrera Categoria successfully saved.';
+$lang['carrera_categoria_edit_failure']			= 'There was a problem saving the carrera_categoria: ';
+$lang['carrera_categoria_delete_success']			= 'record(s) successfully deleted.';
+$lang['carrera_categoria_delete_failure']			= 'We could not delete the record: ';
+$lang['carrera_categoria_delete_error']			= 'You have not selected any records to delete.';
+$lang['carrera_categoria_actions']			= 'Actions';
+$lang['carrera_categoria_cancel']			= 'Cancel';
+$lang['carrera_categoria_delete_record']			= 'Delete this Carrera Categoria';
+$lang['carrera_categoria_delete_confirm']			= 'Are you sure you want to delete this carrera_categoria?';
+$lang['carrera_categoria_edit_heading']			= 'Edit Carrera Categoria';
+
+// Activities
+$lang['carrera_categoria_act_create_record']			= 'Created record with ID';
+$lang['carrera_categoria_act_edit_record']			= 'Updated record with ID';
+$lang['carrera_categoria_act_delete_record']			= 'Deleted record with ID';

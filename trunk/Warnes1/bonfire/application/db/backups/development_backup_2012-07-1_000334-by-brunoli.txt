@@ -1,0 +1,1149 @@
+#
+# TABLE STRUCTURE FOR: mm_activities
+#
+
+CREATE TABLE `mm_activities` (
+  `activity_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) NOT NULL DEFAULT '0',
+  `activity` varchar(255) NOT NULL,
+  `module` varchar(255) NOT NULL,
+  `created_on` datetime NOT NULL,
+  `deleted` tinyint(12) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`activity_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (1, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-19 03:16:33', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (2, 1, 'App settings saved from: 127.0.0.1', 'core', '2012-06-19 03:17:15', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (3, 1, 'App settings saved from: 127.0.0.1', 'core', '2012-06-19 03:17:46', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (4, 1, 'App settings saved from: 127.0.0.1', 'core', '2012-06-19 03:18:08', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (5, 1, 'logged out from: 127.0.0.1', 'users', '2012-06-19 03:18:44', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (6, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-19 03:22:10', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (7, 1, 'logged in from: 190.173.242.2', 'users', '2012-06-20 21:20:44', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (8, 1, 'modified user: hortelanobruno@gmail.com', 'users', '2012-06-20 21:21:43', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (9, 1, 'App settings saved from: 190.173.242.2', 'core', '2012-06-20 21:22:27', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (10, 1, 'logged out from: 190.173.242.2', 'users', '2012-06-20 21:22:33', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (11, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-23 19:55:06', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (12, 1, 'Created Module: Rubros : 127.0.0.1', 'modulebuilder', '2012-06-23 20:06:13', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (13, 1, 'App settings saved from: 127.0.0.1', 'core', '2012-06-23 20:07:45', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (14, 1, 'App settings saved from: 127.0.0.1', 'core', '2012-06-23 20:08:19', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (15, 1, 'Created Module: Marcas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:26:47', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (16, 1, 'Created Module: Zonas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:27:51', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (17, 1, 'Created Module: Clientes : 127.0.0.1', 'modulebuilder', '2012-06-23 23:33:26', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (18, 1, 'Deleted Module: Clientes : 127.0.0.1', 'modulebuilder', '2012-06-23 23:35:38', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (19, 1, 'Deleted Module: Marcas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:35:41', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (20, 1, 'Deleted Module: Rubros : 127.0.0.1', 'modulebuilder', '2012-06-23 23:35:44', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (21, 1, 'Deleted Module: Zonas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:35:47', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (22, 1, 'Created Module: Zonas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:38:51', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (23, 1, 'Deleted Module: Zonas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:39:38', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (24, 1, 'Created Module: Rubros : 127.0.0.1', 'modulebuilder', '2012-06-23 23:40:01', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (25, 1, 'Created record with ID: 21 : 127.0.0.1', 'rubros', '2012-06-23 23:40:12', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (26, 1, 'Deleted record with ID: 21 : 127.0.0.1', 'rubros', '2012-06-23 23:40:46', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (27, 1, 'Created record with ID: 22 : 127.0.0.1', 'rubros', '2012-06-23 23:40:56', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (28, 1, 'Deleted Module: Rubros : 127.0.0.1', 'modulebuilder', '2012-06-23 23:41:15', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (29, 1, 'Created Module: Zonas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:42:32', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (30, 1, 'Created record with ID: 7 : 127.0.0.1', 'zonas', '2012-06-23 23:46:32', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (31, 1, 'Updated record with ID: 7 : 127.0.0.1', 'zonas', '2012-06-23 23:46:47', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (32, 1, 'Created record with ID: 8 : 127.0.0.1', 'zonas', '2012-06-23 23:54:15', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (33, 1, 'Created Module: Marcas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:56:29', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (34, 1, 'Deleted Module: Marcas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:57:34', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (35, 1, 'Deleted Module: Zonas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:57:40', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (36, 1, 'Created Module: Marcas : 127.0.0.1', 'modulebuilder', '2012-06-23 23:58:37', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (37, 1, 'Created record with ID: 12 : 127.0.0.1', 'marcas', '2012-06-23 23:59:50', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (38, 1, 'Updated record with ID: 12 : 127.0.0.1', 'marcas', '2012-06-23 23:59:54', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (39, 1, 'Updated record with ID: 12 : 127.0.0.1', 'marcas', '2012-06-24 00:00:07', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (40, 1, 'Created Module: Zonas : 127.0.0.1', 'modulebuilder', '2012-06-24 00:01:21', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (41, 1, 'Created Module: Rubros : 127.0.0.1', 'modulebuilder', '2012-06-24 00:02:24', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (42, 1, 'Created record with ID: 7 : 127.0.0.1', 'zonas', '2012-06-24 00:03:11', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (43, 1, 'Created record with ID: 21 : 127.0.0.1', 'rubros', '2012-06-24 00:03:20', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (44, 1, 'modified user: hortelanobruno@gmail.com', 'users', '2012-06-24 00:04:37', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (45, 1, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:04:40', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (46, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:04:59', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (47, 1, 'created a new User: Iris', 'users', '2012-06-24 00:06:14', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (48, 1, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:06:54', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (49, 2, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:07:07', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (50, 2, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:07:31', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (51, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:07:59', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (52, 1, 'deleted user: Iris', 'users', '2012-06-24 00:08:06', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (53, 1, 'created a new User: Iris', 'users', '2012-06-24 00:09:01', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (54, 1, 'modified user: Iris', 'users', '2012-06-24 00:10:34', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (55, 1, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:10:38', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (56, 3, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:10:53', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (57, 3, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:11:16', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (58, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:11:30', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (59, 1, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:12:47', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (60, 3, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:12:59', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (61, 3, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:13:26', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (62, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:13:39', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (63, 1, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:16:15', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (64, 3, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:16:28', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (65, 3, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:16:49', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (66, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:17:07', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (67, 1, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:19:01', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (68, 3, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:19:16', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (69, 3, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:19:33', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (70, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:19:43', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (71, 1, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:20:47', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (72, 3, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:21:01', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (73, 3, 'logged out from: 127.0.0.1', 'users', '2012-06-24 00:21:07', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (74, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-24 00:21:23', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (75, 1, 'Created Module: Clientes : 127.0.0.1', 'modulebuilder', '2012-06-24 00:47:09', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (76, 1, 'Created record with ID: 3 : 127.0.0.1', 'clientes', '2012-06-24 00:47:42', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (77, 1, 'Created record with ID: 4 : 127.0.0.1', 'clientes', '2012-06-24 00:49:36', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (78, 1, 'Updated record with ID: 4 : 127.0.0.1', 'clientes', '2012-06-24 00:49:58', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (79, 1, 'Created Module: Cliente Marca : 127.0.0.1', 'modulebuilder', '2012-06-24 00:53:32', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (80, 1, 'Created Module: Cliente Zona : 127.0.0.1', 'modulebuilder', '2012-06-24 01:04:00', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (81, 1, 'Deleted Module: Cliente_Zona : 127.0.0.1', 'modulebuilder', '2012-06-24 01:07:09', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (82, 1, 'Deleted Module: Cliente_Marca : 127.0.0.1', 'modulebuilder', '2012-06-24 01:07:13', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (83, 1, 'Created Module: Clientes Rubros : 127.0.0.1', 'modulebuilder', '2012-06-24 01:12:32', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (84, 1, 'Created Module: Clientes Marcas : 127.0.0.1', 'modulebuilder', '2012-06-24 01:15:10', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (85, 1, 'Created Module: Clientes Zonas : 127.0.0.1', 'modulebuilder', '2012-06-24 01:15:43', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (86, 1, 'Created record with ID: 1 : 127.0.0.1', 'clientes_marcas', '2012-06-24 01:18:30', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (87, 1, 'Updated record with ID: 1 : 127.0.0.1', 'clientes_marcas', '2012-06-24 01:18:39', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (88, 1, 'Updated record with ID: 1 : 127.0.0.1', 'clientes_marcas', '2012-06-24 01:18:47', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (89, 1, 'Updated record with ID: 1 : 127.0.0.1', 'clientes_marcas', '2012-06-24 01:19:04', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (90, 1, 'Created record with ID: 1 : 127.0.0.1', 'clientes_rubros', '2012-06-24 01:20:11', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (91, 1, 'Created record with ID: 1 : 127.0.0.1', 'clientes_zonas', '2012-06-24 01:20:18', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (92, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-29 01:47:08', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (93, 1, 'Updated record with ID: 235 : 127.0.0.1', 'marcas', '2012-06-29 02:50:04', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (94, 1, 'Created Module: Banners : 127.0.0.1', 'modulebuilder', '2012-06-29 03:34:09', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (95, 1, 'Created Module: Banners Types : 127.0.0.1', 'modulebuilder', '2012-06-29 03:39:57', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (96, 1, 'Created Module: Pages : 127.0.0.1', 'modulebuilder', '2012-06-29 03:40:24', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (97, 1, 'Created Module: Banner Page : 127.0.0.1', 'modulebuilder', '2012-06-29 03:41:04', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (98, 1, 'Created record with ID: 13 : 127.0.0.1', 'pages', '2012-06-29 03:42:45', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (99, 1, 'Created record with ID: 2 : 127.0.0.1', 'banners', '2012-06-29 03:57:44', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (100, 1, 'Created record with ID: 3 : 127.0.0.1', 'banners', '2012-06-29 04:12:03', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (101, 1, 'Created record with ID: 4 : 127.0.0.1', 'banners', '2012-06-29 04:12:59', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (102, 1, 'Created record with ID: 5 : 127.0.0.1', 'banners', '2012-06-29 04:13:51', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (103, 1, 'Created record with ID: 6 : 127.0.0.1', 'banners', '2012-06-29 04:25:46', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (104, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-29 04:29:40', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (105, 1, 'Created record with ID: 7 : 127.0.0.1', 'banners', '2012-06-29 04:30:17', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (106, 1, 'Created record with ID: 8 : 127.0.0.1', 'banners', '2012-06-29 04:49:56', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (107, 1, 'Created record with ID: 9 : 127.0.0.1', 'banners', '2012-06-29 04:52:31', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (108, 1, 'Created record with ID: 10 : 127.0.0.1', 'banners', '2012-06-29 04:55:39', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (109, 1, 'Created record with ID: 11 : 127.0.0.1', 'banners', '2012-06-29 05:03:36', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (110, 1, 'logged in from: 127.0.0.1', 'users', '2012-06-30 21:58:04', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (111, 1, 'Created Module: Noticias : 127.0.0.1', 'modulebuilder', '2012-06-30 22:03:10', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (112, 1, 'Created Module: Fotos : 127.0.0.1', 'modulebuilder', '2012-06-30 22:04:05', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (113, 1, 'Created Module: Noticias Fotos : 127.0.0.1', 'modulebuilder', '2012-06-30 22:04:55', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (114, 1, 'Deleted Module: Noticias : 127.0.0.1', 'modulebuilder', '2012-06-30 22:11:01', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (115, 1, 'Created Module: Noticias : 127.0.0.1', 'modulebuilder', '2012-06-30 22:12:05', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (116, 1, 'Created record with ID: 1 : 127.0.0.1', 'noticias', '2012-06-30 22:13:11', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (117, 1, 'Updated record with ID: 1 : 127.0.0.1', 'noticias', '2012-06-30 22:14:33', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (118, 1, 'Created record with ID: 1 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:15:25', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (119, 1, 'Updated record with ID: 1 : 127.0.0.1', 'banners', '2012-06-30 22:22:35', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (120, 1, 'Updated record with ID: 1 : 127.0.0.1', 'banners', '2012-06-30 22:24:27', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (121, 1, 'Updated record with ID: 1 : 127.0.0.1', 'banners', '2012-06-30 22:24:39', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (122, 1, 'Deleted Module: Fotos : 127.0.0.1', 'modulebuilder', '2012-06-30 22:30:52', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (123, 1, 'Created Module: Fotos : 127.0.0.1', 'modulebuilder', '2012-06-30 22:32:39', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (124, 1, 'Created record with ID: 1 : 127.0.0.1', 'fotos', '2012-06-30 22:36:20', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (125, 1, 'Updated record with ID: 1 : 127.0.0.1', 'fotos', '2012-06-30 22:37:24', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (126, 1, 'Updated record with ID: 1 : 127.0.0.1', 'fotos', '2012-06-30 22:46:06', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (127, 1, 'Updated record with ID: 1 : 127.0.0.1', 'fotos', '2012-06-30 22:47:13', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (128, 1, 'Created record with ID: 2 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:50:30', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (129, 1, 'Created record with ID: 3 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:50:35', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (130, 1, 'Created record with ID: 4 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:50:39', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (131, 1, 'Created record with ID: 5 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:50:43', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (132, 1, 'Created record with ID: 6 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:50:47', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (133, 1, 'Created record with ID: 7 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:50:53', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (134, 1, 'Created record with ID: 8 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:50:58', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (135, 1, 'Created record with ID: 9 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:51:02', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (136, 1, 'Created record with ID: 10 : 127.0.0.1', 'noticias_fotos', '2012-06-30 22:51:06', 0);
+INSERT INTO mm_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (137, 1, 'Updated record with ID: 6 : 127.0.0.1', 'fotos', '2012-06-30 22:51:24', 0);
+
+
+#
+# TABLE STRUCTURE FOR: mm_banner_page
+#
+
+CREATE TABLE `mm_banner_page` (
+  `idbanner_page` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idbanner` int(11) NOT NULL,
+  `idpage` int(11) NOT NULL,
+  `idelement` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idbanner_page`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_banner_page (`idbanner_page`, `idbanner`, `idpage`, `idelement`) VALUES (1, 1, 1, NULL);
+
+
+#
+# TABLE STRUCTURE FOR: mm_banners
+#
+
+CREATE TABLE `mm_banners` (
+  `idbanner` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  `url` varchar(45) NOT NULL,
+  `fechainicio` date NOT NULL,
+  `fechafin` date NOT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT '1',
+  `idbannertype` int(11) NOT NULL,
+  `prioridad` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idbanner`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_banners (`idbanner`, `nombre`, `url`, `fechainicio`, `fechafin`, `habilitado`, `idbannertype`, `prioridad`) VALUES (1, 'banner1', '/images/banners/muestraavisopublic2.jpg', '2012-06-28', '2012-06-28', 1, 2, 2);
+INSERT INTO mm_banners (`idbanner`, `nombre`, `url`, `fechainicio`, `fechafin`, `habilitado`, `idbannertype`, `prioridad`) VALUES (11, 'banner22', '/images/banners/muestraavisopublic3.jpg', '0001-01-01', '0001-01-01', 1, 3, 2);
+
+
+#
+# TABLE STRUCTURE FOR: mm_banners_types
+#
+
+CREATE TABLE `mm_banners_types` (
+  `idbannertype` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `description` varchar(45) NOT NULL,
+  PRIMARY KEY (`idbannertype`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_banners_types (`idbannertype`, `description`) VALUES (1, 'rectangular');
+INSERT INTO mm_banners_types (`idbannertype`, `description`) VALUES (2, 'cuadrado');
+
+
+#
+# TABLE STRUCTURE FOR: mm_carreras
+#
+
+CREATE TABLE `mm_carreras` (
+  `idcarrera` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(45) NOT NULL,
+  `descripcion` varchar(45) NOT NULL,
+  `fechacarrera` date NOT NULL,
+  `fechapublicacion` date NOT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idcarrera`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: mm_cliente_marca
+#
+
+CREATE TABLE `mm_cliente_marca` (
+  `idcliente_marca` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idcliente` int(11) NOT NULL,
+  `idmarca` int(11) NOT NULL,
+  PRIMARY KEY (`idcliente_marca`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: mm_cliente_rubro
+#
+
+CREATE TABLE `mm_cliente_rubro` (
+  `idcliente_rubro` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idcliente` int(11) NOT NULL,
+  `idrubro` int(11) NOT NULL,
+  PRIMARY KEY (`idcliente_rubro`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: mm_cliente_zona
+#
+
+CREATE TABLE `mm_cliente_zona` (
+  `idcliente_zona` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idcliente` int(11) NOT NULL,
+  `idzona` int(11) NOT NULL,
+  PRIMARY KEY (`idcliente_zona`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: mm_clientes
+#
+
+CREATE TABLE `mm_clientes` (
+  `idcliente` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) DEFAULT NULL,
+  `contacto` varchar(45) DEFAULT NULL,
+  `telefonodeltrabajo` varchar(45) DEFAULT NULL,
+  `telefonocelular` varchar(45) DEFAULT NULL,
+  `telefonoparticular` varchar(45) DEFAULT NULL,
+  `numerodefax` varchar(45) DEFAULT NULL,
+  `direccion` varchar(45) DEFAULT NULL,
+  `ciudad` varchar(45) DEFAULT NULL,
+  `provincia` varchar(45) DEFAULT NULL,
+  `codigopostal` varchar(45) DEFAULT NULL,
+  `paisregion` varchar(45) DEFAULT NULL,
+  `mail` varchar(45) DEFAULT NULL,
+  `web` varchar(45) DEFAULT NULL,
+  `observaciones` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idcliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_clientes (`idcliente`, `nombre`, `contacto`, `telefonodeltrabajo`, `telefonocelular`, `telefonoparticular`, `numerodefax`, `direccion`, `ciudad`, `provincia`, `codigopostal`, `paisregion`, `mail`, `web`, `observaciones`) VALUES (1, 'cliente1', 'contacto1', 'trabajo1', 'celular1', 'particular1', 'fax1', 'direccion1', 'ciudad1', 'provincia1', 'postal1', 'region1', 'mail1', 'web1', 'obs1');
+INSERT INTO mm_clientes (`idcliente`, `nombre`, `contacto`, `telefonodeltrabajo`, `telefonocelular`, `telefonoparticular`, `numerodefax`, `direccion`, `ciudad`, `provincia`, `codigopostal`, `paisregion`, `mail`, `web`, `observaciones`) VALUES (2, 'cliente2', 'contacto2', 'trabajo2', 'celular2', 'particular2', 'fax2', 'direccion2', 'ciudad2', 'provincia2', 'postal2', 'region2', 'mail2', 'web2', 'obs2');
+
+
+#
+# TABLE STRUCTURE FOR: mm_email_queue
+#
+
+CREATE TABLE `mm_email_queue` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `to_email` varchar(128) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `alt_message` text,
+  `max_attempts` int(11) NOT NULL DEFAULT '3',
+  `attempts` int(11) NOT NULL DEFAULT '0',
+  `success` tinyint(1) NOT NULL DEFAULT '0',
+  `date_published` datetime DEFAULT NULL,
+  `last_attempt` datetime DEFAULT NULL,
+  `date_sent` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: mm_fotos
+#
+
+CREATE TABLE `mm_fotos` (
+  `idfoto` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(500) NOT NULL,
+  `titulo` text,
+  `url` varchar(100) NOT NULL,
+  `habilitado` tinyint(1) NOT NULL,
+  `prioridad` int(11) NOT NULL,
+  PRIMARY KEY (`idfoto`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (1, 'caca', 'caca11', '/images/fotos/cabezal.jpg', 0, 2);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (2, 'foto2', 'foto2222', '/images/fotos/image.jpg', 1, 2);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (3, 'foto3', 'foto3333', '/images/fotos/image-2.jpg', 1, 2);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (4, 'foto4', 'foto4444', '/images/fotos/image-3.jpg', 1, 2);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (5, 'foto5', 'foto5555', '/images/fotos/image-4.jpg', 1, 2);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (6, 'foto6', 'foto6666', '/images/fotos/image-5.jpg', 1, 3);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (7, 'foto7', 'foto7777', '/images/fotos/image-6.jpg', 1, 2);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (8, 'foto8', 'foto8888', '/images/fotos/image-7.jpg', 1, 2);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (9, 'foto9', 'foto9999', '/images/fotos/image-8.jpg', 1, 2);
+INSERT INTO mm_fotos (`idfoto`, `nombre`, `titulo`, `url`, `habilitado`, `prioridad`) VALUES (10, 'foto10', 'foto1000', '/images/fotos/image-9.jpg', 1, 2);
+
+
+#
+# TABLE STRUCTURE FOR: mm_login_attempts
+#
+
+CREATE TABLE `mm_login_attempts` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(40) NOT NULL,
+  `login` varchar(50) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: mm_marcas
+#
+
+CREATE TABLE `mm_marcas` (
+  `idmarca` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(45) NOT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT '1',
+  `prioridad` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idmarca`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (12, 'ALFA ROMEO', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (13, 'ASIA', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (14, 'AUDI', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (15, 'BMW', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (16, 'CATERPILLAR', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (17, 'CHERY', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (18, 'CHEVROLET', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (19, 'CHRYSLER', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (20, 'CITRÖEN', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (21, 'DAEWOO', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (22, 'DAIHATSU', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (23, 'DATSUN', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (24, 'DODGE', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (25, 'FIAT', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (26, 'FORD', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (27, 'HONDA', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (28, 'HYUNDAI', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (29, 'ISUZU', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (30, 'IVECO', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (31, 'JAGUAR', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (32, 'JEEP', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (33, 'KIA', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (34, 'LADA', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (35, 'LAND ROVER', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (36, 'MAZDA', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (37, 'MERCEDES BENZ', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (38, 'MG', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (39, 'MINI', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (40, 'MITSUBISHI', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (41, 'NEW DODGE', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (42, 'NISSAN', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (43, 'PEUGEOT', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (44, 'RENAULT', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (45, 'ROVER', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (46, 'SEAT', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (47, 'SUBARU', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (48, 'SUZUKI', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (49, 'TATA', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (50, 'TOYOTA', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (51, 'VOLKSWAGEN', 1, 2);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (52, 'VOLVO', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (53, 'VOLVO CAMIÓN', 1, 1);
+INSERT INTO mm_marcas (`idmarca`, `descripcion`, `habilitado`, `prioridad`) VALUES (54, 'VOLVO PENTA', 1, 1);
+
+
+#
+# TABLE STRUCTURE FOR: mm_noticias
+#
+
+CREATE TABLE `mm_noticias` (
+  `idnoticia` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `titulo` text NOT NULL,
+  `epigrafe` text NOT NULL,
+  `descripcion` text NOT NULL,
+  `fechanoticia` date NOT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idnoticia`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_noticias (`idnoticia`, `titulo`, `epigrafe`, `descripcion`, `fechanoticia`, `habilitado`) VALUES (1, 'Apareció el Spin en Brasil', 'General Motors lanzó oficialmente este nuevo vehículo multipropósito que reemplaza a Meriva y Zafira, y que a la Argentina llegará hacia fin de año. Viene para cinco o siete pasajeros.', '<p></p><p class=\"MsoNormal\"><span style=\"font-family: Arial;\">En una nota anterior de nuestros corresponsales en Brasil les habíamos mostrado unos renders de lo que imaginábamos podría llegar a ser el Chevrolet Spin, un vehículo eminentemente familar. Unos meses después ya podemos ver imágenes oficiales,&nbsp; porque General Motors ya lo presentó en ese país.</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">&nbsp;</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">El Spin es un “vehículo multipropósito” (MPV), según clasificación oficial, con doble configuración de butacas, porque albergará a cinco personas o, con una tercera fila de asientos, a siete pasajeros. De ahí que su nombre en código del proyecto haya sido PM7.</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">&nbsp;</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">Está fabricado en la planta paulista de San Caetano del Sur sobre la plataforma Gamma II, la misma del Cobalt y del futuro Enjoy, producto que competirá en el segmento dominado por el Ford Ecosport. Es un producto enteramente desarrollado en Brasil por el equipo de Diseño liderado por Carlos Barba y probado en cuatro continentes.</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">&nbsp;</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">Dadas sus características, esta novedad reemplazará al mismo tiempo a dos productos, Meriva y Zafira, en una estrategia de conquistar el gusto de públicos similares.</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">&nbsp;</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">El Spin, que a la Argentina estará llegando hacia fin de año, está propulsado por el conocido 1.8 naftero de cuatro cilindros en línea y ocho válvulas que entrega 106 caballos de potencia. Tiene un torque de 16 kgm con una curva bien amplia: el 90 por ciento está entre 2.500 y 4.700 r.p.m. </span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">&nbsp;</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">Esa planta impulsora está adosada a dos opciones de transmisión. Una es manual de cinco marchas y la otra es la automática de seis ya incorporada en productos anteriores, como el Cruze y el Sonic.</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">&nbsp;</span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">General Motors Brasil informa que viene con dos niveles de equipamiento (LT y LTZ), y de serie incorpora ABS con EBD, doble airbag y alzacristales eléctricos, entre otros elementos. El tope de gama será la opción de siete plazas, que obviamente tiene un espacio de carga reducido. Un dato de color y curioso es que acepta como máximo un total de 23 configuraciones diferentes de asientos. </span></p>\r\n                        <p class=\"MsoNormal\"><span style=\"font-family: Arial;\">&nbsp;</span></p><p></p>', '2010-01-01', 0);
+
+
+#
+# TABLE STRUCTURE FOR: mm_noticias_fotos
+#
+
+CREATE TABLE `mm_noticias_fotos` (
+  `idnoticias_fotos` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idnoticias` int(11) NOT NULL,
+  `idfoto` int(11) NOT NULL,
+  PRIMARY KEY (`idnoticias_fotos`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (1, 1, 1);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (2, 1, 2);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (3, 1, 3);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (4, 1, 4);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (5, 1, 5);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (6, 1, 6);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (7, 1, 7);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (8, 1, 8);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (9, 1, 9);
+INSERT INTO mm_noticias_fotos (`idnoticias_fotos`, `idnoticias`, `idfoto`) VALUES (10, 1, 10);
+
+
+#
+# TABLE STRUCTURE FOR: mm_pages
+#
+
+CREATE TABLE `mm_pages` (
+  `idpage` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `description` varchar(45) NOT NULL,
+  PRIMARY KEY (`idpage`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (1, 'home');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (2, 'rubros');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (3, 'marcas');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (4, 'zonas');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (5, 'rubro');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (6, 'marca');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (7, 'zona');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (8, 'cliente');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (9, 'noticias');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (10, 'noticia');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (11, 'carreras');
+INSERT INTO mm_pages (`idpage`, `description`) VALUES (12, 'carrera');
+
+
+#
+# TABLE STRUCTURE FOR: mm_permissions
+#
+
+CREATE TABLE `mm_permissions` (
+  `permission_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `description` varchar(100) NOT NULL,
+  `status` enum('active','inactive','deleted') DEFAULT 'active',
+  PRIMARY KEY (`permission_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (1, 'Site.Signin.Allow', 'Allow users to login to the site', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (2, 'Site.Content.View', 'Allow users to view the Content Context', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (3, 'Site.Reports.View', 'Allow users to view the Reports Context', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (4, 'Site.Settings.View', 'Allow users to view the Settings Context', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (5, 'Site.Developer.View', 'Allow users to view the Developer Context', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (6, 'Bonfire.Roles.Manage', 'Allow users to manage the user Roles', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (7, 'Bonfire.Users.Manage', 'Allow users to manage the site Users', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (8, 'Bonfire.Users.View', 'Allow users access to the User Settings', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (9, 'Bonfire.Users.Add', 'Allow users to add new Users', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (10, 'Bonfire.Database.Manage', 'Allow users to manage the Database settings', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (11, 'Bonfire.Emailer.Manage', 'Allow users to manage the Emailer settings', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (12, 'Bonfire.Logs.View', 'Allow users access to the Log details', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (13, 'Bonfire.Logs.Manage', 'Allow users to manage the Log files', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (14, 'Bonfire.Emailer.View', 'Allow users access to the Emailer settings', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (15, 'Site.Signin.Offline', 'Allow users to login to the site when the site is offline', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (16, 'Bonfire.Permissions.View', 'Allow access to view the Permissions menu unders Settings Context', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (17, 'Bonfire.Permissions.Manage', 'Allow access to manage the Permissions in the system', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (18, 'Bonfire.Roles.Delete', 'Allow users to delete user Roles', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (19, 'Bonfire.Modules.Add', 'Allow creation of modules with the builder.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (20, 'Bonfire.Modules.Delete', 'Allow deletion of modules.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (21, 'Permissions.Administrator.Manage', 'To manage the access control permissions for the Administrator role.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (22, 'Permissions.Editor.Manage', 'To manage the access control permissions for the Editor role.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (24, 'Permissions.User.Manage', 'To manage the access control permissions for the User role.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (25, 'Permissions.Developer.Manage', 'To manage the access control permissions for the Developer role.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (27, 'Activities.Own.View', 'To view the users own activity logs', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (28, 'Activities.Own.Delete', 'To delete the users own activity logs', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (29, 'Activities.User.View', 'To view the user activity logs', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (30, 'Activities.User.Delete', 'To delete the user activity logs, except own', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (31, 'Activities.Module.View', 'To view the module activity logs', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (32, 'Activities.Module.Delete', 'To delete the module activity logs', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (33, 'Activities.Date.View', 'To view the users own activity logs', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (34, 'Activities.Date.Delete', 'To delete the dated activity logs', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (35, 'Bonfire.UI.Manage', 'Manage the Bonfire UI settings', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (36, 'Bonfire.Settings.View', 'To view the site settings page.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (37, 'Bonfire.Settings.Manage', 'To manage the site settings.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (38, 'Bonfire.Activities.View', 'To view the Activities menu.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (39, 'Bonfire.Database.View', 'To view the Database menu.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (40, 'Bonfire.Migrations.View', 'To view the Migrations menu.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (41, 'Bonfire.Modulebuilder.View', 'To view the Modulebuilder menu.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (42, 'Bonfire.Roles.View', 'To view the Roles menu.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (43, 'Bonfire.Sysinfo.View', 'To view the System Information page.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (44, 'Bonfire.Translate.Manage', 'To manage the Language Translation.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (45, 'Bonfire.Translate.View', 'To view the Language Translate menu.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (46, 'Bonfire.UI.View', 'To view the UI/Keyboard Shortcut menu.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (47, 'Bonfire.Update.Manage', 'To manage the Bonfire Update.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (48, 'Bonfire.Update.View', 'To view the Developer Update menu.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (49, 'Bonfire.Profiler.View', 'To view the Console Profiler Bar.', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (94, 'Marcas.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (95, 'Marcas.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (96, 'Marcas.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (97, 'Marcas.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (98, 'Zonas.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (99, 'Zonas.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (100, 'Zonas.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (101, 'Zonas.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (102, 'Rubros.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (103, 'Rubros.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (104, 'Rubros.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (105, 'Rubros.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (106, 'Clientes.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (107, 'Clientes.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (108, 'Clientes.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (109, 'Clientes.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (118, 'Clientes_Rubros.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (119, 'Clientes_Rubros.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (120, 'Clientes_Rubros.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (121, 'Clientes_Rubros.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (122, 'Clientes_Marcas.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (123, 'Clientes_Marcas.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (124, 'Clientes_Marcas.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (125, 'Clientes_Marcas.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (126, 'Clientes_Zonas.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (127, 'Clientes_Zonas.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (128, 'Clientes_Zonas.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (129, 'Clientes_Zonas.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (130, 'Banners.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (131, 'Banners.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (132, 'Banners.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (133, 'Banners.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (134, 'Banners_Types.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (135, 'Banners_Types.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (136, 'Banners_Types.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (137, 'Banners_Types.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (138, 'Pages.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (139, 'Pages.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (140, 'Pages.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (141, 'Pages.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (142, 'Banner_Page.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (143, 'Banner_Page.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (144, 'Banner_Page.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (145, 'Banner_Page.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (154, 'Noticias_Fotos.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (155, 'Noticias_Fotos.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (156, 'Noticias_Fotos.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (157, 'Noticias_Fotos.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (158, 'Noticias.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (159, 'Noticias.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (160, 'Noticias.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (161, 'Noticias.Content.Delete', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (162, 'Fotos.Content.View', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (163, 'Fotos.Content.Create', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (164, 'Fotos.Content.Edit', '', 'active');
+INSERT INTO mm_permissions (`permission_id`, `name`, `description`, `status`) VALUES (165, 'Fotos.Content.Delete', '', 'active');
+
+
+#
+# TABLE STRUCTURE FOR: mm_role_permissions
+#
+
+CREATE TABLE `mm_role_permissions` (
+  `role_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  PRIMARY KEY (`role_id`,`permission_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 1);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 2);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 3);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 4);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 5);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 6);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 7);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 8);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 9);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 10);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 11);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 12);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 13);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 14);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 15);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 16);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 17);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 18);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 19);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 20);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 21);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 22);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 24);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 25);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 27);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 28);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 29);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 30);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 31);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 32);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 33);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 34);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 35);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 36);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 37);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 38);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 39);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 40);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 41);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 42);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 43);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 44);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 45);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 46);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 47);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 48);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 49);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 94);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 95);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 96);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 97);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 98);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 99);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 100);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 101);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 102);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 103);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 104);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 105);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 106);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 107);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 108);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 109);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 118);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 119);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 120);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 121);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 122);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 123);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 124);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 125);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 126);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 127);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 128);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 129);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 130);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 131);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 132);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 133);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 134);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 135);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 136);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 137);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 138);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 139);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 140);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 141);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 142);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 143);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 144);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 145);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 154);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 155);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 156);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 157);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 158);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 159);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 160);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 161);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 162);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 163);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 164);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (1, 165);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 1);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 2);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 94);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 95);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 96);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 97);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 98);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 99);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 100);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 101);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 102);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 103);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 104);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (2, 105);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (4, 1);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 1);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 2);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 3);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 4);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 5);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 6);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 7);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 8);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 9);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 10);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 11);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 12);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 13);
+INSERT INTO mm_role_permissions (`role_id`, `permission_id`) VALUES (6, 49);
+
+
+#
+# TABLE STRUCTURE FOR: mm_roles
+#
+
+CREATE TABLE `mm_roles` (
+  `role_id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(60) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `default` tinyint(1) NOT NULL DEFAULT '0',
+  `can_delete` tinyint(1) NOT NULL DEFAULT '1',
+  `login_destination` varchar(255) NOT NULL DEFAULT '/',
+  `deleted` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_roles (`role_id`, `role_name`, `description`, `default`, `can_delete`, `login_destination`, `deleted`) VALUES (1, 'Administrator', 'Has full control over every aspect of the site.', 0, 0, '', 0);
+INSERT INTO mm_roles (`role_id`, `role_name`, `description`, `default`, `can_delete`, `login_destination`, `deleted`) VALUES (2, 'Editor', 'Can handle day-to-day management, but does not have full power.', 0, 1, '', 0);
+INSERT INTO mm_roles (`role_id`, `role_name`, `description`, `default`, `can_delete`, `login_destination`, `deleted`) VALUES (4, 'User', 'This is the default user with access to login.', 1, 0, '', 0);
+INSERT INTO mm_roles (`role_id`, `role_name`, `description`, `default`, `can_delete`, `login_destination`, `deleted`) VALUES (6, 'Developer', 'Developers typically are the only ones that can access the developer tools. Otherwise identical to Administrators, at least until the site is handed off.', 0, 1, '', 0);
+
+
+#
+# TABLE STRUCTURE FOR: mm_rubros
+#
+
+CREATE TABLE `mm_rubros` (
+  `idrubro` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(45) NOT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT '1',
+  `prioridad` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idrubro`)
+) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (21, 'ABRAZADERAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (22, 'ACCESORIOS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (23, 'ACCESORIOS 4X4', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (24, 'ACCESORIOS UNIVERSALES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (25, 'ACOPLADOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (26, 'AIRBAGS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (27, 'AIRE ACONDICIONADO', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (28, 'ALARMAS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (29, 'ALINEADORAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (30, 'ALZA CRISTALES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (31, 'AMORTIGUADORES', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (32, 'ÁRBOLES DE LEVA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (33, 'AROS DE PISTÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (34, 'ARRANQUES Y ALTERNADORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (35, 'ARTÍCULOS DE GOMA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (36, 'AUDIO', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (37, 'AUTOPARTES', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (38, 'AUTOPARTES CARROCERÍA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (39, 'AUTOS DE COLECCIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (40, 'BALANCEADORAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (41, 'BATERÍAS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (42, 'BIELAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (43, 'BLINDAJE DE CRISTALES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (44, 'BOCINAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (45, 'BOMBAS ALIMENTADORAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (46, 'BOMBAS DE ACEITE', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (47, 'BOMBAS DE AGUA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (48, 'BOMBAS DE NAFTA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (49, 'BOMBAS INYECTORAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (50, 'BUJÍAS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (51, 'BUJÍAS INCANDESCENTES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (52, 'BURLETES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (53, 'BUTACAS Y ASIENTOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (54, 'CAJAS AUTOMÁTICAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (55, 'CAJAS DE DIRECCIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (56, 'CAJAS DE DIRECCIÓN MECÁNICAS E HIDRÁULICAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (57, 'CAJAS DE VELOCIDAD', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (58, 'CALEFACCIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (59, 'CAÑERÍAS FLEXIBLES Y RÍGIDAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (60, 'CARBURACIÓN Y AFINACIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (61, 'CARBURADORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (62, 'CARDANES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (63, 'CENTRALIZADORES DE PUERTAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (64, 'CERRAJERÍA', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (65, 'CHAPA Y PINTURA', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (66, 'CHAPERÍO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (67, 'CIGÜEÑALES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (68, 'CINTURONES DE SEGURIDAD', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (69, 'CINTURONES DE SEGURIDAD PARA PERROS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (70, 'COBERTORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (71, 'COLUMNAS DE DIRECCIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (72, 'COMMON RAIL', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (73, 'COMPRESORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (74, 'COMPUTADORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (75, 'CONEXIONES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (76, 'CONJUNTOS DE DIRECCIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (77, 'CONJUNTOS DE MOTOR', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (78, 'CONVERTIDORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (79, 'CORONAS DE ARRANQUE', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (80, 'CORREAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (81, 'COSMÉTICA DEL AUTOMOTOR', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (82, 'CREMALLERAS MECÁNICAS E HIDRÁULICAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (83, 'CRISTALES Y ÓPTICAS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (84, 'CRUCETAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (85, 'CUBIERTAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (86, 'CUBRECARTER', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (87, 'CUBRECOCHES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (88, 'CUBRETROMPAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (89, 'DESENGRASANTES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (90, 'DIFERENCIALES', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (91, 'DIRECCIONES HIDRÁULICAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (92, 'DISTRIBUIDOR DE AUTOPARTES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (93, 'EJES TRASEROS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (94, 'ELÁSTICOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (95, 'ELECTRICIDAD', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (96, 'ELECTROVENTILADORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (97, 'ELEVADORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (98, 'EMBRAGUES', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (99, 'ENCENDIDO', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (100, 'EQUIPAMIENTOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (101, 'EQUIPAMIENTOS PARA TALLERES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (102, 'EQUIPOS PARA LUBRICACIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (103, 'ESCOBILLAS LIMPIAPARABRISAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (104, 'ESPEJOS FAROS OPTICAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (105, 'ESTRIBOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (106, 'FERRETERÍA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (107, 'FERRETERÍA INDUSTRIAL', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (108, 'FILTROS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (109, 'FRAGANCIAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (110, 'FRENOS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (111, 'FRENOS A AIRE', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (112, 'FRENOS ABS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (113, 'FUNDAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (114, 'GNC', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (115, 'GRABADO DE CRISTALES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (116, 'HERRAMIENTAS ESPECIALES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (117, 'HERRAMIENTAS PARA REFRIGERACIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (118, 'HOMOCINÉTICAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (119, 'INSERTOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (120, 'INSTRUMENTAL', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (121, 'INYECCIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (122, 'INYECCIÓN ELECTRÓNICA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (123, 'INYECTORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (124, 'JUNTAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (125, 'JUNTAS HOMOCINÉTICAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (126, 'KIT PARA TRAILER', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (127, 'LÁMPARAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (128, 'LIMPIAMANOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (129, 'LLANTAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (130, 'LONAS MARINERAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (131, 'LUBRICANTES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (132, 'LUBRICENTRO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (133, 'LUCES DE XENON', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (134, 'MANGUERAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (135, 'MÁQUINAS Y HERRAMIENTAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (136, 'MAZAS DE COMPETICIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (137, 'MAZAS DE RUEDA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (138, 'MECÁNICA INTEGRAL', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (139, 'MOTORES', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (140, 'MOTORES DIESEL', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (141, 'NEUMÁTICOS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (142, 'ÓPTICAS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (143, 'ÓPTICAS Y FAROS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (144, 'OXÍGENO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (145, 'PARABRISAS', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (146, 'PARAGOLPES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (147, 'PARASOLES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (148, 'PARTES DE CARROCERÍA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (149, 'PARTES PARA MOTOR', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (150, 'PASTILLAS Y DISCOS DE FRENO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (151, 'POLARIZADO', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (152, 'POLEAS VISCOSAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (153, 'PRECINTOS INOXIDABLES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (154, 'PRECINTOS PLÁSTICOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (155, 'RADIADORES', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (156, 'RECTIFICACIÓN DE MOTORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (157, 'RECTIFICACIÓN DE TAPAS DE CILINDRO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (158, 'REFORMA PALIER FLOTANTE', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (159, 'RELLENOS DE ASIENTOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (160, 'REPARACIÓN AMORTIGUADORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (161, 'REPARACIÓN DE COMPUTADORAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (162, 'REPARACIÓN DE ROSCAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (163, 'REPUESTOS CAJAS AUTOMÁTICAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (164, 'REPUESTOS CAMIONES LÍNEA PESADA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (165, 'REPUESTOS DE COMPETICIÓN', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (166, 'REPUESTOS DE INYECCIÓN DIESEL', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (167, 'REPUESTOS MAQUINARIAS VIALES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (168, 'REPUESTOS MERCEDES BENZ', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (169, 'REPUESTOS MOTORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (170, 'REPUESTOS MOTORES DIESEL', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (171, 'REPUESTOS Y ACCESORIOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (172, 'RESORTES A GAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (173, 'RESPUESTOS AMERICANOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (174, 'RETENES Y RODAMIENTOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (175, 'RODAMIENTOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (176, 'ROSCAS ZAFADAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (177, 'RUEDAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (178, 'SEMIEJES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (179, 'SOPORTES DE MOTOR', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (180, 'SUSPENSIÓN', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (181, 'TALLER MECÁNICO ESPECIALIZADO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (182, 'TAPAS DE CILINDRO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (183, 'TAPICERÍA DEL AUTOMOTOR', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (184, 'TAPICERÍA ORIGINAL', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (185, 'TAPIZADOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (186, 'TECHOS ELÉCTRICOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (187, 'TELAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (188, 'TENSORES DE CORREAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (189, 'TRATAMIENTO ACRÍLICO PARA PINTURA', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (190, 'TREN DELANTERO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (191, 'TREN DELANTERO Y TRASERO', 1, 2);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (192, 'TUNING', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (193, 'TURBOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (194, 'TURBOS SOBREALIMENTADORES', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (195, 'VENTANAS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (196, 'VIDRIADO', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (197, 'VOLANTES DEPORTIVOS', 1, 1);
+INSERT INTO mm_rubros (`idrubro`, `descripcion`, `habilitado`, `prioridad`) VALUES (198, 'VOLANTES ORIGINALES', 1, 1);
+
+
+#
+# TABLE STRUCTURE FOR: mm_schema_version
+#
+
+CREATE TABLE `mm_schema_version` (
+  `type` varchar(40) NOT NULL,
+  `version` int(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('app_', 0);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('banners_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('banners_types_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('banner_page_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('clientes_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('clientes_marcas_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('clientes_rubros_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('clientes_zonas_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('core', 30);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('fotos_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('marcas_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('noticias_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('noticias_fotos_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('pages_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('rubros_', 1);
+INSERT INTO mm_schema_version (`type`, `version`) VALUES ('zonas_', 1);
+
+
+#
+# TABLE STRUCTURE FOR: mm_sessions
+#
+
+CREATE TABLE `mm_sessions` (
+  `session_id` varchar(40) NOT NULL DEFAULT '0',
+  `ip_address` varchar(16) NOT NULL DEFAULT '0',
+  `user_agent` varchar(120) NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_data` text,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: mm_settings
+#
+
+CREATE TABLE `mm_settings` (
+  `name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `module` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`name`),
+  UNIQUE KEY `unique - name` (`name`),
+  KEY `index - name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.allow_name_change', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.allow_register', 'core', '0');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.allow_remember', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.do_login_redirect', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.login_type', 'core', 'email');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.name_change_frequency', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.name_change_limit', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.password_force_mixed_case', 'core', '0');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.password_force_numbers', 'core', '0');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.password_force_symbols', 'core', '0');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.password_min_length', 'core', '8');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.password_show_labels', 'core', '0');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.remember_length', 'core', '1814400');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.use_extended_profile', 'core', '0');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.use_usernames', 'core', '0');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('auth.user_activation_method', 'core', '0');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('form_save', 'core.ui', 'ctrl+s/⌘+s');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('goto_content', 'core.ui', 'alt+c');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('mailpath', 'email', '/usr/sbin/sendmail');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('mailtype', 'email', 'text');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('protocol', 'email', 'mail');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('sender_email', 'email', 'hortelanobruno@gmail.com');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('site.languages', 'core', 'a:1:{i:0;s:7:\"english\";}');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('site.list_limit', 'core', '25');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('site.show_front_profiler', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('site.show_profiler', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('site.status', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('site.system_email', 'core', 'hortelanobruno@gmail.com');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('site.title', 'core', 'Mundo Motorizado');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('smtp_host', 'email', '');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('smtp_pass', 'email', '');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('smtp_port', 'email', '');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('smtp_timeout', 'email', '');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('smtp_user', 'email', '');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('updates.bleeding_edge', 'core', '1');
+INSERT INTO mm_settings (`name`, `module`, `value`) VALUES ('updates.do_check', 'core', '1');
+
+
+#
+# TABLE STRUCTURE FOR: mm_user_cookies
+#
+
+CREATE TABLE `mm_user_cookies` (
+  `user_id` bigint(20) NOT NULL,
+  `token` varchar(128) NOT NULL,
+  `created_on` datetime NOT NULL,
+  KEY `token` (`token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: mm_user_meta
+#
+
+CREATE TABLE `mm_user_meta` (
+  `meta_id` int(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(20) unsigned NOT NULL DEFAULT '0',
+  `meta_key` varchar(255) NOT NULL DEFAULT '',
+  `meta_value` text,
+  PRIMARY KEY (`meta_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (1, 1, 'state', 'SC');
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (2, 1, 'country', 'AR');
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (3, 1, 'type', 'small');
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (4, 2, 'state', 'SC');
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (5, 2, 'country', 'BS');
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (6, 2, 'type', 'small');
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (7, 3, 'state', 'SC');
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (8, 3, 'country', 'US');
+INSERT INTO mm_user_meta (`meta_id`, `user_id`, `meta_key`, `meta_value`) VALUES (9, 3, 'type', 'small');
+
+
+#
+# TABLE STRUCTURE FOR: mm_users
+#
+
+CREATE TABLE `mm_users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) NOT NULL DEFAULT '4',
+  `email` varchar(120) NOT NULL,
+  `username` varchar(30) NOT NULL DEFAULT '',
+  `password_hash` varchar(40) NOT NULL,
+  `reset_hash` varchar(40) DEFAULT NULL,
+  `salt` varchar(7) NOT NULL,
+  `last_login` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `last_ip` varchar(40) NOT NULL DEFAULT '',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `banned` tinyint(1) NOT NULL DEFAULT '0',
+  `ban_message` varchar(255) DEFAULT NULL,
+  `reset_by` int(10) DEFAULT NULL,
+  `display_name` varchar(255) DEFAULT '',
+  `display_name_changed` date DEFAULT NULL,
+  `timezone` char(4) NOT NULL DEFAULT 'UM6',
+  `language` varchar(20) NOT NULL DEFAULT 'english',
+  `active` tinyint(1) NOT NULL DEFAULT '0',
+  `activate_hash` varchar(40) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_users (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES (1, 1, 'hortelanobruno@gmail.com', 'hortelanobruno', 'a79c8283229f6701946971bc9841fe1d8e56b07c', NULL, 'mxr3ew9', '2012-06-30 21:58:04', '127.0.0.1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, '', NULL, 'UM3', 'english', 1, '');
+INSERT INTO mm_users (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES (3, 2, 'iriscarfi@gmail.com', 'iriscarfi', '40650c4be9cea87ed2bfd0c15272d06b2979375e', NULL, 'YYgz1sE', '2012-06-24 00:21:00', '127.0.0.1', '2012-06-24 00:09:01', 0, 0, NULL, NULL, 'Iris', NULL, 'UM3', 'english', 1, '');
+
+
+#
+# TABLE STRUCTURE FOR: mm_zonas
+#
+
+CREATE TABLE `mm_zonas` (
+  `idzona` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(45) NOT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT '1',
+  `prioridad` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idzona`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (7, 'Agronomia', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (8, 'Almagro', 1, 2);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (9, 'Balvanera', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (10, 'Barracas', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (11, 'Belgrano', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (12, 'Boedo', 1, 2);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (13, 'Caballito', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (14, 'Chacarita', 1, 2);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (15, 'Coghlan', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (16, 'Colegiales', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (17, 'Constitución', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (18, 'Flores', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (19, 'Floresta', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (20, 'La Boca', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (21, 'La Paternal', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (22, 'Liniers', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (23, 'Mataderos', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (24, 'Monte Castro', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (25, 'Montserrat', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (26, 'Nueva Pompeya', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (27, 'Nuñez', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (28, 'Palermo', 1, 2);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (29, 'Parque Avellaneda', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (30, 'Parque Chacabuco', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (31, 'Parque Chas', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (32, 'Parque Patricios', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (33, 'Puerto Madero', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (34, 'Recoleta', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (35, 'Retiro', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (36, 'Saavedra', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (37, 'San Cristóbal', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (38, 'San Nicolás', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (39, 'San Telmo', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (40, 'Vélez Sarsfield', 1, 2);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (41, 'Versalles', 1, 2);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (42, 'Villa Crespo', 1, 2);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (43, 'Villa del Parque', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (44, 'Villa Devoto', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (45, 'Villa General Mitre', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (46, 'Villa Lugano', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (47, 'Villa Luro', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (48, 'Villa Ortúzar', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (49, 'Villa Pueyrredón', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (50, 'Villa Real', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (51, 'Villa Riachuelo', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (52, 'Villa Santa Rita', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (53, 'Villa Soldati', 1, 1);
+INSERT INTO mm_zonas (`idzona`, `descripcion`, `habilitado`, `prioridad`) VALUES (54, 'Villa Urquiza', 1, 1);
+
+

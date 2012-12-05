@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['banner_page_manage']			= 'Manage Banner Page';
+$lang['banner_page_edit']				= 'Edit';
+$lang['banner_page_true']				= 'True';
+$lang['banner_page_false']				= 'False';
+$lang['banner_page_create']			= 'Create';
+$lang['banner_page_list']				= 'List';
+$lang['banner_page_new']				= 'New';
+$lang['banner_page_edit_text']			= 'Edit this to suit your needs';
+$lang['banner_page_no_records']			= 'There aren\'t any banner_page in the system.';
+$lang['banner_page_create_new']			= 'Create a new Banner Page.';
+$lang['banner_page_create_success']			= 'Banner Page successfully created.';
+$lang['banner_page_create_failure']			= 'There was a problem creating the banner_page: ';
+$lang['banner_page_create_new_button']			= 'Create New Banner Page';
+$lang['banner_page_invalid_id']			= 'Invalid Banner Page ID.';
+$lang['banner_page_edit_success']			= 'Banner Page successfully saved.';
+$lang['banner_page_edit_failure']			= 'There was a problem saving the banner_page: ';
+$lang['banner_page_delete_success']			= 'record(s) successfully deleted.';
+$lang['banner_page_delete_failure']			= 'We could not delete the record: ';
+$lang['banner_page_delete_error']			= 'You have not selected any records to delete.';
+$lang['banner_page_actions']			= 'Actions';
+$lang['banner_page_cancel']			= 'Cancel';
+$lang['banner_page_delete_record']			= 'Delete this Banner Page';
+$lang['banner_page_delete_confirm']			= 'Are you sure you want to delete this banner_page?';
+$lang['banner_page_edit_heading']			= 'Edit Banner Page';
+
+// Activities
+$lang['banner_page_act_create_record']			= 'Created record with ID';
+$lang['banner_page_act_edit_record']			= 'Updated record with ID';
+$lang['banner_page_act_delete_record']			= 'Deleted record with ID';
