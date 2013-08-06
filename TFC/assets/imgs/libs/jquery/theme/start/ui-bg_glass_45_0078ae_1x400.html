@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">  <head>
+    <!-- google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:700,900' rel='stylesheet' type='text/css'>
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script src="/js/swfobject_modified.js" type="text/javascript"></script>
+
+	<!-- per uso offline -->
+	<!--<link href="/css/jquery-ui-1.8.13.custom.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="/js/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui-1.8.13.custom.min.js"></script>
+	-->
+	<script type="text/javascript" src="/js/utils.js"></script>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><title>A.S.D. Arend</title><link href="/css/defaultPageView.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/css/toolkit.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/css/common.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/css/querybox.css" media="screen" rel="stylesheet" type="text/css" /><style type="text/css">
+<!--
+    @import "http://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dijit/themes/claro/claro.css";
+    @import "/js/dojo/dojo/resources/dojo.css";
+-->
+</style>
+<script type="text/javascript">
+//<![CDATA[
+    var djConfig = {"modulePaths":{"dojo":"http:\/\/ajax.googleapis.com\/ajax\/libs\/dojo\/1.6.1\/dojo","dijit":"http:\/\/ajax.googleapis.com\/ajax\/libs\/dojo\/1.6.1\/dijit","dojox":"http:\/\/ajax.googleapis.com\/ajax\/libs\/dojo\/1.6.1\/dojox"},"locale":"it"};
+//]]>
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.6.1/dojo/dojo.xd.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+dojo.require("dijit.dijit");
+    dojo.require("dojo.parser");
+//]]>
+
+</script>	
+	<script type="text/javascript">
+		dojo.addOnLoad(function() {
+		// [stc] workaround: se non includiamo (programmaticamente) alcun oggetto dojo nel controller,
+		// zend non chiama la dojo.parser.parse(), che serve a mostrare gli elementi dojo style.
+		// qui in admin ci serve di richiamarla, perché creiamo il layout con dojo.
+		// se zend ha già chiamato la parse(), non dobbiamo richiamarla (dà errori js), altrimenti
+		// è necessario chiamarla per disegnare il layout
+		if( dijit.registry && dijit.registry.length == 0 )
+		    dojo.parser.parse();
+
+		//var queryBox  = new marumushi.widget.QueryBox("/ajax/search/?q=","search");
+		//queryBox.defaultMessage = 'Cerca...';
+		//queryBox.noResultsMessage = 'Nessun risultato per ';
+	    });
+	</script>
+	<script src="/js/marumushi.widget.querybox.js" language="javascript"></script>
+    </head>
+    <body class="claro">
+
+		<div style="display: none" id="hideAll">&nbsp;</div>
+	<script type="text/javascript">
+	    document.getElementById("hideAll").style.display = "block";
+	    window.onload = function() 
+	    { document.getElementById("hideAll").style.display = "none"; }
+	</script>
+    
+
+  <div class="wrapper" id="content_wrapper_index">
+	
+	
+	<div class="wrapper">
+    	<!--header-->
+
+		<div id="header">
+			<div id="logo" class="fleft"><a href="/"><img alt="" src="/imgs/commons/logo.png"></a></div>
+            <!--menu sponsor-->
+            <div id="menu_sponsor">
+            	<ul>
+                	<li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>	
+            </div>
+
+				<script type="text/javascript">
+					dojo.addOnLoad(function() {
+					// [stc] workaround: se non includiamo (programmaticamente) alcun oggetto dojo nel controller,
+					// zend non chiama la dojo.parser.parse(), che serve a mostrare gli elementi dojo style.
+					// qui in admin ci serve di richiamarla, perché creiamo il layout con dojo.
+					// se zend ha già chiamato la parse(), non dobbiamo richiamarla (dà errori js), altrimenti
+					// è necessario chiamarla per disegnare il layout
+						if( dijit.registry && dijit.registry.length == 0 )
+							dojo.parser.parse();
+
+						var queryBox  = new marumushi.widget.QueryBox("/ajax/search/?q=","search");
+						queryBox.defaultMessage = 'Cerca...';
+						queryBox.noResultsMessage = 'Nessun risultato per ';
+					});
+				</script>
+				<script src="/js/marumushi.widget.querybox.js" language="javascript"></script>
+				<div id="search" class="fright" style="margin-top:-20px"></div>
+				<div class="fright"><a href="/default/availability" class="btn_prenota_small"></a></div>
+                
+                <div class="fleft sponsor mt5 ml20">
+                	<a class="sponsor-5 fleft mr20" title="" target="_blank" href="http://www.facebook.com/pages/SIX-pub-grill/168188073271964">SIX pub & grill</a>
+                	<a class="sponsor-6 fleft mr20" title="" target="_blank" href="https://www.facebook.com/Gonow.Napoli?fref=ts">Gonow fashion lab</a>
+                    <a class="sponsor-7 fleft mr20" title="" target="_blank" href="https://www.facebook.com/pages/Al-Bamb%C3%B9/280568278710276?fref=ts">Al Bambù</a>
+                    <a class="sponsor-3 fleft mr20" title="" target="_blank" href="http://www.sportland.milano.it/">Sportland</a>
+                    <a class="sponsor-8 fleft mr20" title="" target="_blank" href="https://www.facebook.com/pages/MDM-Medical-Division-Management-srl/230793023698125?fref=ts">MDM</a>
+                </div>
+                
+
+            <!--end menu sponsor-->
+            <!--menu-->
+            <div>
+				<ul id="menu" class="fleft lato lato900">
+																<li>
+							<a href="/" >Home</a>
+																				</li>
+											<li>
+							<a href="/default/page/index/id/1" >Chi siamo</a>
+																						<ul>
+																			<li><a href="/default/page/index/id/17" >Mission</a></li>
+																			<li><a href="/default/page/index/id/18" >Staff</a></li>
+																			<li><a href="/default/page/index/id/50" >Crew</a></li>
+																	</ul>
+													</li>
+											<li>
+							<a href="http://www.dailymotion.com/f100001251791394#video=xzchs4" target="_blank">Stadio</a>
+																				</li>
+											<li>
+							<a href="/default/page/index/id/78" >Arend Training</a>
+																				</li>
+											<li>
+							<a href="/default/facilities" >Strutture</a>
+																				</li>
+											<li>
+							<a href="/default/page/index/id/22" >Servizi</a>
+																				</li>
+											<li>
+							<a href="#" >Sponsor</a>
+																						<ul>
+																			<li><a href="/default/page/index/id/20" >Partner</a></li>
+																			<li><a href="/default/page/index/id/21" >Arend Card</a></li>
+																	</ul>
+													</li>
+											<li>
+							<a href="/default/page/index/id/2" >Contatti</a>
+																				</li>
+									</ul>
+			</div>
+            <!--end menu-->
+            <!--social-->
+            <div class="fright icosocial">
+            	<a href="http://www.facebook.com/ARENDASD" target="_blank" title="facebook" class="social-fb fleft mr5">Link a Facebook</a>
+                <a href="https://twitter.com/OfficialArend" target="_blank" title="twitter" class="social-twitter fleft mr5">Link a Twitter</a>
+                <a href="http://www.youtube.com/user/ARENDSPORT" target="_blank" title="youtube" class="social-youtube fleft">Link al canale Youtube</a>
+            </div> 
+            <div class="clearfix"></div>
+		</div><!--end header-->
+	</div>
+    
+    <!--menu torneo-->
+    <div id="menu-torneo">
+    	<div class="menu-torneo-sx"></div>
+		<div class="menu-torneo-center">
+	        <ul>
+									<div class="scudetto"><img height="30" src="/uploads/pages_2d5f74974a92c68008605371d23ef378.png"/></div><li class="mr20"><a href="/default/tournament/view/id/38">CoppaCalciotto</a></li>
+									<div class="scudetto"><img height="30" src="/uploads/pages_c8c01b2fda0e0705affe90458b86478b.png"/></div><li class="mr20"><a href="/default/tournament/view/id/37">Europa Challenge</a></li>
+									<div class="scudetto"><img height="30" src="/uploads/pages_36ec360629ccb7c0033847237c96a1f9.png"/></div><li class="mr20"><a href="/default/tournament/view/id/36">Pineta Cup</a></li>
+									<div class="scudetto"><img height="30" src="/uploads/pages_c7cda981b1191d6fc39480949028c130.png"/></div><li class="mr20"><a href="/default/tournament/view/id/28">TorneoCalciotto</a></li>
+									<div class="scudetto"><img height="30" src="/uploads/pages_6a7704665d07978123d4c9f151c65a0d.png"/></div><li class="mr20"><a href="/default/tournament/view/id/30">UniConfederationLeague</a></li>
+				                <div class="fright">
+                	<li class="last"><a href="/default/tournament">Altre competizioni</a></li>
+                </div>
+					
+           	</ul>
+        </div> 
+        <span class="menu-torneo-dx"></span>
+    </div>
+    <!--end menu torneo-->
+    
+    <!--LOGIN-->
+    <div class="wrapper">
+    	<div id="loginbar_wrapper" class="fleft w550">
+		    
+<div id="login">   
+<script type="text/javascript">	dojo.require("dijit.form.Form");
+	dojo.require("dijit.form.ValidationTextBox");
+	dojo.require("dijit.form.Button");
+</script>			<script type="text/javascript">
+				dojo.addOnLoad(function(){
+					var email = dijit.byId("emaillogin");
+					var pwd = dijit.byId("passwordlogin");
+					dojo.attr(email.textbox, "autocomplete", "on");
+					dojo.connect(email, 'onFocus', function(){
+					if(email.value == 'Email')
+						email.setValue('');
+					});
+					dojo.connect(email, 'onBlur', function(){
+					if(email.value == '')
+						email.setValue('Email');
+					});
+
+					dojo.connect(pwd, 'onFocus', function(){
+					if(pwd.value == 'password')
+						pwd.setValue('');
+					});
+					dojo.connect(pwd, 'onBlur', function(){
+					if(pwd.value == '')
+						pwd.setValue('password');
+					});
+				});
+			</script>
+		<div class="nowrap">
+			<div dojoType="dijit.form.Form" id="formLogin" jsId="formLogin" encType="multipart/form-data" action="/default/login" method="post">
+				<input type="text" class="shadow2" id="emaillogin" name="email" required="true" value="Email" style="vertical-align:top; width: 109px; height: 23px; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; margin-right:6px; " dojoType="dijit.form.ValidationTextBox" />
+				<input type="password" class="shadow2" id="passwordlogin" name="password" required="true" value="password" style="vertical-align:top; width: 109px; height: 23px; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; margin-right:6px;" dojoType="dijit.form.ValidationTextBox" />
+				<button type="submit" class="shadow2" name="submitButton" value="Submit" busyLabel="Richiesta in corso..." style="background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #cfcfcf) ); background:-moz-linear-gradient( center top, #ededed 5%, #cfcfcf 100% ); 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#cfcfcf'); background-color:#ededed; -moz-border-radius:3px; webkit-border-radius:3px; border-radius:3px; border:1px solid #bbb; display:inline-block; color:#333333; font-family:arial; font-size:13px;
+	font-weight:bold; padding:3px 12px; text-decoration:none; cursor:pointer;">
+					Login
+				</button>
+			</div>
+
+			
+		</div>
+		
+		<div class="fleft ml10">
+			<a href="/default/register" style="color:#1A1A1A; font-weight:bold; display:block; margin-top:8px;">Registrati</a>
+		</div>
+		
+		<div class="fleft ml10">
+			<a href="/default/password" id="recoveryp" style="color:#1A1A1A; font-weight:bold; display:block; margin-top:8px;">Recupera password</a>
+		</div></div>		    		</div>
+
+		<div class="w450 fleft tr bgwhite">
+				<img class="mr20 mt5" src="/imgs/commons/asi-60.jpg" />
+				<img class="mr20 mt5" src="/imgs/commons/CONI-60.jpg" />
+				<img class="mr10 mt5" src="/imgs/commons/opes-60.gif" />
+		    </div>
+    </div>
+    <!--end LOGIN-->
+     
+    <div class="wrapper bgwhite">
+
+	    <div id="content">
+				<div class="tc mt50 mb50">
+		<img src="/imgs/commons/icons/32/error.png" alt="Errore" class="vm mr20" />
+		<span class="b f14">Si è verificato un errore imprevisto. Ci scusiamo per il disagio.
+		 </span><br /><br />
+		<div class="mt10">
+			<a href="#" onclick="history.back();return false;" class="button">Torna indietro</a> oppure
+			<a href="/" class="button">Torna alla pagina principale</a>
+		</div>
+	</div>
+	
+	    </div>
+		</div>
+	</div> <!-- #wrapper -->
+	
+    <div class="clearfix"></div>
+	<!--footer-->
+	<div id="footer">
+    <div class="wrapper">
+			<div class="wp40 fleft">
+				<p>
+					© 2012 Arend <span class="grey">|</span> A.S.D. Arend <span class="grey">|</span> CF/PI 06701851211					<a href="mailto:&#97;&#115;&#100;&#97;&#114;&#101;&#110;&#100;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#105;&#116;" class="link-footer ml10">&#97;&#115;&#100;&#97;&#114;&#101;&#110;&#100;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#105;&#116;</a>
+        </p>
+				<p>Powered by <a style="color:#0C77DA" href="http://manager.sportilia.com/">Sportilia MANAGER</a></p>
+      </div>
+      <div class="wp60 fright">  
+        <ul id="footer_links" class="fright">
+					<li class="first"><a href="/">Home</a></li>
+					<li><a href="/default/page/index/1">Chi siamo</a></li>
+          <li><a href="/default/events">Programmazione</a></li>
+          <li><a href="/default/facilities">Strutture</a></li>
+          <li><a href="/default/page/index/1">Servizi</a></li>
+          <li><a href="/default/page/index/16">Sponsor</a></li>
+          <li><a href="/default/videogallery">Media</a></li>
+          <li class="last"><a href="/default/page/index/2">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="fright mt10">
+				<a href="http://www.facebook.com/ARENDASD" target="_blank" title="facebook" class="social-fb fleft mr5">Link a Facebook</a>
+        <a href="/" target="_blank" title="twitter" class="social-twitter fleft mr5">Link a Twitter</a>
+        <a href="http://www.youtube.com/user/ARENDSPORT" target="_blank" title="youtube" class="social-youtube fleft">Link al canale Youtube</a>
+      </div> 
+		</div>
+  </div>
+	<!--end footer-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".player-name").each(function(){
+				$(this).html($(this).html().toLowerCase());
+			});
+
+		});
+	</script>
+		<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-26232562-1']);
+	  _gaq.push(['_setDomainName', 'asdarend.it']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+    </body>
+</html>
