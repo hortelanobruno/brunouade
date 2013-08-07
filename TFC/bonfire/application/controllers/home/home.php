@@ -1,4 +1,7 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 /**
  * Bonfire
@@ -13,7 +16,6 @@
  * @since     Version 1.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -28,22 +30,27 @@
  * @link       http://guides.cibonfire.com/helpers/file_helpers.html
  *
  */
-class Home extends Front_Controller
-{
+class Home extends Front_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('noticias_model');
+    }
 
-	/**
-	 * Displays the homepage of the Bonfire app
-	 *
-	 * @return void
-	 */
-	public function index()
-	{
-//		Template::render();
-            $this->load->view('home/index');
-	}//end index()
+    /**
+     * Displays the homepage of the Bonfire app
+     *
+     * @return void
+     */
+    public function index() {
+        $data['news'] = $this->noticias_model->get_last_10_news();
+        $this->load->view('home/partes/header');
+        $this->load->view('home/home/index');
+        $this->load->view('home/partes/footer');
+    }
 
-	//--------------------------------------------------------------------
+//end index()
+    //--------------------------------------------------------------------
+}
 
-
-}//end class
+//end class

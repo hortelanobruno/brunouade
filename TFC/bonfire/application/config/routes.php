@@ -39,6 +39,24 @@
 */
 
 $route['default_controller'] = "home";
+
+$route['contacto'] = 'contacto';
+$route['equipo/(:any)'] = 'equipo/view/$1';
+$route['equipos'] = 'equipo';
+$route['inscripciones'] = 'inscripciones';
+$route['noticia/(:any)'] = 'noticia/view/$1';
+$route['noticias'] = 'noticia';
+$route['sedes'] = 'sede';
+$route['torneo/(:any)'] = 'torneo/view/$1';
+$route['torneo/(:any)/fixture'] = 'torneo/fixture/$1';
+$route['torneo/(:any)/goleadores'] = 'torneo/goleadores/$1';
+$route['torneo/(:any)/partido/(:any)'] = 'torneo/partido/$1,$2';
+$route['torneo/(:any)/reglamento'] = 'torneo/reglamento/$1';
+$route['torneo/(:any)/sanciones'] = 'torneo/sanciones/$1';
+$route['torneo/(:any)/tablaPosiciones'] = 'torneo/tablaPosiciones/$1';
+$route['torneo/(:any)/vallaMenosVencida'] = 'torneo/vallaMenosVencida/$1';
+$route['torneos'] = 'torneo';
+
 $route['404_override'] = '';
 
 // Authorization
