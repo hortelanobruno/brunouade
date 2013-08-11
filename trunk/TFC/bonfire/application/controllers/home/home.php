@@ -35,6 +35,7 @@ class Home extends Front_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('noticias_model');
+        $this->load->model('torneos_model');
     }
 
     /**
@@ -43,10 +44,11 @@ class Home extends Front_Controller {
      * @return void
      */
     public function index() {
+        $data['torneos'] = $this->torneos_model->get_last_4_torneos();
         $data['news'] = $this->noticias_model->get_last_10_news();
-        $this->load->view('home/partes/header');
-        $this->load->view('home/home/index');
-        $this->load->view('home/partes/footer');
+        $this->load->view('home/partes/header',$data);
+        $this->load->view('home/home/index',$data);
+        $this->load->view('home/partes/footer',$data);
     }
 
 //end index()
