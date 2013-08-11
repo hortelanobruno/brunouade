@@ -4,32 +4,24 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>TFC</title>
         
-        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="assets/js/swfobject_modified.js"></script>
-        <script type="text/javascript" src="assets/js/utils.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/assets/js/swfobject_modified.js"></script>
+        <script type="text/javascript" src="/assets/js/utils.js"></script>
         
-        <link href="assets/css/defaultPageView.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="assets/css/toolkit.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="assets/css/common.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/defaultPageView.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/toolkit.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/common.css" media="screen" rel="stylesheet" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Lato:700,900' rel='stylesheet' type='text/css'/>
-        <link href="assets/css/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <link href="/assets/css/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
     </head>
     <body class="claro">
-
         <div style="display: none" id="hideAll">&nbsp;</div>
-        <script type="text/javascript">
-            document.getElementById("hideAll").style.display = "block";
-            window.onload = function()
-            {
-                document.getElementById("hideAll").style.display = "none";
-            }
-        </script>
         <div class="wrapper" id="content_wrapper_index">
             <div class="wrapper">
                 <!--header-->
                 <div id="header">
-                    <div id="logo" class="fleft"><a href="index.html"><img alt="" src="assets/imgs/commons/logo.png" /></a></div>
+                    <div id="logo" class="fleft"><a href="index.html"><img alt="" src="/assets/imgs/commons/logo.png" /></a></div>
                     <!--menu sponsor-->
                     <div id="menu_sponsor">
                         <ul>
@@ -93,9 +85,9 @@
                 <div class="menu-torneo-sx"></div>
                 <div class="menu-torneo-center">
                     <ul>
-                        <div class="scudetto"><img height="30" src="assets/uploads/pages_2d5f74974a92c68008605371d23ef378.png"/></div><li class="mr20"><a href="assets/default/tournament/view/id/38">Liga A clausura  2013</a></li>
-                        <div class="scudetto"><img height="30" src="assets/uploads/pages_c8c01b2fda0e0705affe90458b86478b.png"/></div><li class="mr20"><a href="assets/default/tournament/view/id/37">Liga B clausura  2013</a></li>
-                        <div class="scudetto"><img height="30" src="assets/uploads/pages_36ec360629ccb7c0033847237c96a1f9.png"/></div><li class="mr20"><a href="assets/default/tournament/view/id/36">Liga C clausura  2013</a></li>
+                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_2d5f74974a92c68008605371d23ef378.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/38">Liga A clausura  2013</a></li>
+                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_c8c01b2fda0e0705affe90458b86478b.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/37">Liga B clausura  2013</a></li>
+                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_36ec360629ccb7c0033847237c96a1f9.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/36">Liga C clausura  2013</a></li>
                     </ul>
                 </div> 
                 <span class="menu-torneo-dx"></span>

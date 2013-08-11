@@ -42,6 +42,12 @@ class Torneo extends Front_Controller {
         $this->load->view('home/torneo/index');
         $this->load->view('home/partes/footer');
     }
+    
+    public function view($idtorneo) {
+        $this->load->view('home/partes/header');
+        $this->load->view('home/torneo/view');
+        $this->load->view('home/partes/footer');
+    }
 
 //end index()
     //--------------------------------------------------------------------
