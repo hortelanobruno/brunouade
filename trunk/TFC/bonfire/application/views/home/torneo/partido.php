@@ -165,7 +165,7 @@ Sede Sazo<br />
 						<td>
 							<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/604.html"><span class="player-name">Bavero Davide</span></a> 									 
@@ -178,7 +178,7 @@ Sede Sazo<br />
 						<td>
 							<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/1255.html"><span class="player-name">Carrella Fabrizio</span></a> 									 
@@ -192,7 +192,7 @@ Sede Sazo<br />
 						<td>
 							<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/3124.html"><span class="player-name">Caruso Alessandro</span></a> 									 
@@ -206,7 +206,7 @@ Sede Sazo<br />
 						<td>
 							<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/595.html"><span class="player-name">Giame Salvio</span></a> 									 
@@ -219,7 +219,7 @@ Sede Sazo<br />
 						<td>
 							<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/816.html"><span class="player-name">Laviano Luigi</span></a> 									 
@@ -232,7 +232,7 @@ Sede Sazo<br />
 						<td>
 							<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/1657.html"><span class="player-name">Rachiglio Giuseppe</span></a> 									 
@@ -245,7 +245,7 @@ Sede Sazo<br />
 						<td>
 							<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/882.html"><span class="player-name">Re Vincenzo</span></a> 									 
@@ -258,7 +258,7 @@ Sede Sazo<br />
 						<td>
 							<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/600.html"><span class="player-name">Sorrentino Mario</span></a> 									 
@@ -276,7 +276,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/3007.html"><span class="player-name">Casolare Luigi</span></a> 									 
@@ -289,7 +289,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/2996.html"><span class="player-name">Cuomo Vincenzo</span></a> 									 
@@ -303,7 +303,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/3000.html"><span class="player-name">Manzo Antonio</span></a> 									 
@@ -316,7 +316,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/2997.html"><span class="player-name">Marino Alessandro</span></a> <br /><img src="imgs/commons/icons/ico-giocatore.png" alt="*" title="Miglior giocatore" width="20" class="mr5 mt5" style="margin-left: -2px;" />																										
@@ -328,7 +328,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/2998.html"><span class="player-name">Mele Vincenzo</span></a> 									 
@@ -341,7 +341,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/3006.html"><span class="player-name">Pellini Pietro</span></a> 									 
@@ -354,7 +354,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/3001.html"><span class="player-name">Rotello Salvatore</span></a> 									 
@@ -367,7 +367,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/3113.html"><span class="player-name">Salerno Gennaro</span></a> 									 
@@ -380,7 +380,7 @@ Sede Sazo<br />
 						<td>
                         	<div class="pl5 pr5">
 								<div class="fleft w120 tc">
-									<img style="max-width:100px; max-height:100px" src="imgs/user/defaultUser.png" />
+									<img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
 								</div>
 								<div class="fleft f14 wp70">
 									<a href="../../../user/index/id/3004.html"><span class="player-name">Varietà Matteo</span></a> 									 

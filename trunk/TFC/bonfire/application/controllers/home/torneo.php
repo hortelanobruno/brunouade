@@ -35,6 +35,7 @@ class Torneo extends Front_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('torneos_model');
+        $this->load->model('equipos_model');
     }
     /**
      * Displays the homepage of the Bonfire app
@@ -52,6 +53,14 @@ class Torneo extends Front_Controller {
     public function view($idtorneo) {
         $data['torneos'] = $this->torneos_model->get_last_4_torneos();
         $data['torneo'] = $this->torneos_model->get_torneo($idtorneo);
+        $data['equipos'] = $this->equipos_model->get_equipos_from_torneo($idtorneo);
+        $data['tablaPosiciones'] = $this->torneos_model->get_tabla_from_torneo($idtorneo);
+        $data['goleadores'] = $this->torneos_model->get_goleadores_from_torneo($idtorneo);
+        $data['vallaMenosVencida'] = $this->torneos_model->get_vallaMenosVencida_from_torneo($idtorneo);
+        $data['tarjetas'] = $this->torneos_model->get_tarjetas_from_torneo($idtorneo);
+        $data['fixture'] = null;
+        
+        
         $this->load->view('home/partes/header',$data);
         $this->load->view('home/torneo/view',$data);
         $this->load->view('home/partes/footer',$data);
