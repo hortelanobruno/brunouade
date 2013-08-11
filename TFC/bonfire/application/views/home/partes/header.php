@@ -52,9 +52,12 @@
                             <li>
                                 <a href="" >Torneos</a>
                                 <ul>
-                                    <li><a href="" >Futbol 7</a></li>
-                                    <li><a href="" >Futbol 5</a></li>
-                                    <li><a href="" >Torneos anteriors</a></li>
+<!--                                    <li><a href="" >Futbol 7</a></li>
+                                    <li><a href="" >Futbol 5</a></li>-->
+                        <?php foreach ($torneos as $torneo): ?>
+                            <li><a href="/torneo/<?php echo $torneo['id'] ?>" ><?php echo $torneo['nombre'] ?></a></li>
+                        <?php endforeach ?>
+                                    <li><a href="/torneos" >Torneos anteriors</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -85,9 +88,12 @@
                 <div class="menu-torneo-sx"></div>
                 <div class="menu-torneo-center">
                     <ul>
-                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_2d5f74974a92c68008605371d23ef378.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/38">Liga A clausura  2013</a></li>
+                        <?php foreach ($torneos as $torneo): ?>
+                            <div class="scudetto"><img height="30" src="<?php echo $torneo['logo_chico'] ?>"/></div><li class="mr20"><a href="/torneo/<?php echo $torneo['id'] ?>"><?php echo $torneo['nombre'] ?></a></li>
+                        <?php endforeach ?>
+<!--                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_2d5f74974a92c68008605371d23ef378.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/38">Liga A clausura  2013</a></li>
                         <div class="scudetto"><img height="30" src="/assets/uploads/pages_c8c01b2fda0e0705affe90458b86478b.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/37">Liga B clausura  2013</a></li>
-                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_36ec360629ccb7c0033847237c96a1f9.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/36">Liga C clausura  2013</a></li>
+                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_36ec360629ccb7c0033847237c96a1f9.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/36">Liga C clausura  2013</a></li>-->
                     </ul>
                 </div> 
                 <span class="menu-torneo-dx"></span>

@@ -32,21 +32,29 @@ if (!defined('BASEPATH'))
  */
 class Torneo extends Front_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('torneos_model');
+    }
     /**
      * Displays the homepage of the Bonfire app
      *
      * @return void
      */
     public function index() {
-        $this->load->view('home/partes/header');
-        $this->load->view('home/torneo/index');
-        $this->load->view('home/partes/footer');
+        $data['torneos'] = $this->torneos_model->get_last_4_torneos();
+        $data['torneos_all'] = $this->torneos_model->get_all_torneos();
+        $this->load->view('home/partes/header',$data);
+        $this->load->view('home/torneo/index',$data);
+        $this->load->view('home/partes/footer',$data);
     }
     
     public function view($idtorneo) {
-        $this->load->view('home/partes/header');
-        $this->load->view('home/torneo/view');
-        $this->load->view('home/partes/footer');
+        $data['torneos'] = $this->torneos_model->get_last_4_torneos();
+        $data['torneo'] = $this->torneos_model->get_torneo($idtorneo);
+        $this->load->view('home/partes/header',$data);
+        $this->load->view('home/torneo/view',$data);
+        $this->load->view('home/partes/footer',$data);
     }
 
 //end index()
