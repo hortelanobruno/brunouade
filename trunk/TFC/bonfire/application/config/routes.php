@@ -40,22 +40,22 @@
 
 $route['default_controller'] = "home";
 
-$route['contacto'] = 'contacto';
-$route['equipo/(:any)'] = 'equipo/view/$1';
-$route['equipos'] = 'equipo';
-$route['inscripciones'] = 'inscripciones';
-$route['noticia/(:any)'] = 'noticia/view/$1';
-$route['noticias'] = 'noticia';
-$route['sedes'] = 'sede';
-$route['torneo/(:any)'] = 'torneo/view/$1';
-$route['torneo/(:any)/fixture'] = 'torneo/fixture/$1';
-$route['torneo/(:any)/goleadores'] = 'torneo/goleadores/$1';
-$route['torneo/(:any)/partido/(:any)'] = 'torneo/partido/$1,$2';
-$route['torneo/(:any)/reglamento'] = 'torneo/reglamento/$1';
-$route['torneo/(:any)/sanciones'] = 'torneo/sanciones/$1';
-$route['torneo/(:any)/tablaPosiciones'] = 'torneo/tablaPosiciones/$1';
-$route['torneo/(:any)/vallaMenosVencida'] = 'torneo/vallaMenosVencida/$1';
-$route['torneos'] = 'torneo';
+$route['contacto'] = 'home/contacto';
+$route['equipo/(:any)'] = 'home/equipo/view/$1';
+$route['equipos'] = 'home/equipo';
+$route['inscripciones'] = 'home/inscripciones';
+$route['noticia/(:any)'] = 'home/noticia/view/$1';
+$route['noticias'] = 'home/noticia';
+$route['sedes'] = 'home/sede';
+$route['torneo/(:any)'] = 'home/torneo/view/$1';
+$route['torneo/(:any)/fixture'] = 'home/torneo/fixture/$1';
+$route['torneo/(:any)/goleadores'] = 'home/torneo/goleadores/$1';
+$route['torneo/(:any)/partido/(:any)'] = 'home/torneo/partido/$1,$2';
+$route['torneo/(:any)/reglamento'] = 'home/torneo/reglamento/$1';
+$route['torneo/(:any)/sanciones'] = 'home/torneo/sanciones/$1';
+$route['torneo/(:any)/tablaPosiciones'] = 'home/torneo/tablaPosiciones/$1';
+$route['torneo/(:any)/vallaMenosVencida'] = 'home/torneo/vallaMenosVencida/$1';
+$route['torneos'] = 'home/torneo';
 
 $route['404_override'] = '';
 
