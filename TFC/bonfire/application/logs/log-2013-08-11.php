@@ -811,3 +811,10 @@ ERROR - 2013-08-11 21:36:48 --> Severity: Notice  --> Undefined variable: valla 
 ERROR - 2013-08-11 21:36:48 --> Severity: Notice  --> Undefined variable: valla C:\Users\Brunoli\Documents\NetBeansProjects\TFC\bonfire\application\views\home\torneo\partes\sanciones.php 16
 ERROR - 2013-08-11 21:36:48 --> Severity: Notice  --> Undefined variable: valla C:\Users\Brunoli\Documents\NetBeansProjects\TFC\bonfire\application\views\home\torneo\partes\sanciones.php 17
 ERROR - 2013-08-11 21:38:54 --> Severity: Notice  --> Undefined variable: fixture C:\Users\Brunoli\Documents\NetBeansProjects\TFC\bonfire\application\views\home\torneo\partes\fixture.php 188
+ERROR - 2013-08-11 22:03:46 --> 404 Page Not Found --> 
+ERROR - 2013-08-11 22:03:53 --> Query error: Unknown column 'index.html' in 'where clause'
+ERROR - 2013-08-11 22:03:56 --> 404 Page Not Found --> 
+ERROR - 2013-08-11 22:03:57 --> 404 Page Not Found --> 
+ERROR - 2013-08-11 22:08:12 --> 404 Page Not Found --> equipo/view
+ERROR - 2013-08-11 22:08:15 --> 404 Page Not Found --> equipo/view
+ERROR - 2013-08-11 22:17:22 --> Query error: Unknown column 'index.html' in 'where clause'
