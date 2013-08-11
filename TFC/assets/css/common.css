@@ -32,7 +32,7 @@ body {
 	background-color:#FFFFFF;
 	line-height: 1.5em;
 	color: #2a2828;
-	background: url('../imgs/commons/background.jpg') repeat-x #6cb7d4;
+	background: url('/assets/imgs/commons/background.jpg') repeat-x #6cb7d4;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
 	line-height:1.5em;
@@ -132,7 +132,7 @@ a:hover {
 	height: 100%;
 }
 .bg-grigio {
-	background: url('../imgs/commons/bg-gray.png') repeat-y;
+	background: url('/assets/imgs/commons/bg-gray.png') repeat-y;
 }
 #left_column {
 	/* width: 230px;*/
@@ -182,14 +182,14 @@ a:hover {
 }
 #enter{
 	width:422px;
-	background: url('../imgs/commons/bg-accedi.png') no-repeat;
+	background: url('/assets/imgs/commons/bg-accedi.png') no-repeat;
 	position: absolute;
 	top:0px;
 	right:0px;
 	height:48px;
 }
 a.accedi_fb {
-	background: url('../imgs/commons/enter-fb.html') no-repeat;
+	background: url('/assets/imgs/commons/enter-fb.html') no-repeat;
 	height:29px;
 	width:172px;
 	text-indent:-10000px;
@@ -200,7 +200,7 @@ a:hover.accedi_fb {
 	background-position: 0 -30px;
 }
 a.accedi_sportilia {
-	background: url('../imgs/commons/enter-sportilia.html') no-repeat;
+	background: url('/assets/imgs/commons/enter-sportilia.html') no-repeat;
 	height:29px;
 	width:203px;
 	text-indent:-10000px;
@@ -267,21 +267,21 @@ a:hover.accedi_sportilia {
 a.social-fb {
 	width:30px;
 	height:30px;
-	background: url('../imgs/commons/social_fb.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/social_fb.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
 a.social-twitter {
 	width:30px;
 	height:30px;
-	background: url('../imgs/commons/social_twitter.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/social_twitter.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
 a.social-youtube {
 	width:30px;
 	height:30px;
-	background: url('../imgs/commons/social_youtube.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/social_youtube.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
@@ -291,42 +291,42 @@ a:hover.social-fb, a:hover.social-twitter, a:hover.social-youtube {
 a.sponsor-1 {
 	width:35px;
 	height:36px;
-	background: url('../imgs/commons/sponsor/viaggi.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/sponsor/viaggi.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
 a.sponsor-2 {
 	width:88px;
 	height:36px;
-	background: url('../imgs/commons/sponsor/enjoy.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/sponsor/enjoy.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
 a.sponsor-3 {
 	width:161px;
 	height:36px;
-	background: url('../imgs/commons/sponsor/sportland.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/sponsor/sportland.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
 a.sponsor-4 {
 	width:72px;
 	height:36px;
-	background: url('../imgs/commons/sponsor/peperina.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/sponsor/peperina.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
 a.sponsor-5 {
 	width:79px;
 	height:36px;
-	background: url('../imgs/commons/sponsor/six.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/sponsor/six.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
 a.sponsor-6 {
 	width:104px;
 	height:36px;
-	background: url('../imgs/commons/sponsor/gonow.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/sponsor/gonow.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
@@ -334,14 +334,14 @@ a.sponsor-6 {
 a.sponsor-7 {
 	width:66px;
 	height:36px;
-	background: url('../imgs/commons/sponsor/albambu.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/sponsor/albambu.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
 a.sponsor-8 {
 	width:90px;
 	height:36px;
-	background: url('../imgs/commons/sponsor/mdm.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/sponsor/mdm.png') no-repeat 0px 0px;
 	display:block;
 	text-indent:-10000px;
 }
@@ -466,11 +466,11 @@ html[xmlns] #menu {
 	float:left;
 	height:50px;
 	width:22px;
-	background: url('../imgs/commons/menu-torneo-sx.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/menu-torneo-sx.png') no-repeat 0px 0px;
 	margin:0 auto;
 }
 .menu-torneo-center {
-	background: url('../imgs/commons/bg-menubottom.png') repeat-x 0px 0px;
+	background: url('/assets/imgs/commons/bg-menubottom.png') repeat-x 0px 0px;
 	float:left;
 	height:50px;
 	width:996px;
@@ -479,7 +479,7 @@ html[xmlns] #menu {
 	float:left;
 	height:50px;
 	width:22px;
-	background: url('../imgs/commons/menu-torneo-dx.png') no-repeat 0px 0px;
+	background: url('/assets/imgs/commons/menu-torneo-dx.png') no-repeat 0px 0px;
 	margin:0 auto;
 }
 #menu-torneo ul {
@@ -639,7 +639,7 @@ html[xmlns] #menu {
     background-attachment: scroll;
     background-clip: border-box;
     background-color: transparent;
-    background-image: url(../imgs/default/home/arrow.png);
+    background-image: url(/assets/imgs/default/home/arrow.png);
     background-origin: padding-box;
     background-repeat: no-repeat;
     background-size: auto auto;
@@ -748,7 +748,7 @@ html[xmlns] #menu {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	background-image:url(../imgs/default/home/news_titolo.html);
+	background-image:url(/assets/imgs/default/home/news_titolo.html);
 	background-repeat:no-repeat;
 	height:52px;
 }
@@ -803,7 +803,7 @@ p.descrizione{
 	border:#000 1px solid;
 }
 .video {
-	background-image: url(../imgs/default/home/channel_bg.html);
+	background-image: url(/assets/imgs/default/home/channel_bg.html);
 	background-repeat:no-repeat;
 	width:278px;
 	height:181px;
@@ -900,7 +900,7 @@ ul#footer_links li.last {
 #messenger-close a {
 	height: 17px;
 	width: 17px;
-	background: url(../imgs/commons/close_button.png) no-repeat scroll 0 0 transparent;
+	background: url(/assets/imgs/commons/close_button.png) no-repeat scroll 0 0 transparent;
 	position: absolute;
 	text-indent: -9999px;
 	right: 8px;
@@ -908,7 +908,7 @@ ul#footer_links li.last {
 }
 
 #messenger-close a:hover {
-	background: url(../imgs/commons/close_button.png) no-repeat scroll 0 -17px transparent;
+	background: url(/assets/imgs/commons/close_button.png) no-repeat scroll 0 -17px transparent;
 }
 
 /* == tabella == */
@@ -1346,7 +1346,7 @@ width:500px;
 }
 
 a.backhome {
-	background-image:url(../imgs/commons/arrow-back.png);
+	background-image:url(/assets/imgs/commons/arrow-back.png);
 	background-repeat:no-repeat;
 	background-position:10px 6px;
 	background-color:#57adce;
@@ -1375,29 +1375,29 @@ a:hover.backhome {
 .label-sport span { font-size: 11px; display: block; float: left; height: 17px; padding:2px 5px 0px 5px; text-shadow: 1px 1px 2px rgba(150, 150, 150, 1); color:#FFF; font-weight:bold; font-style:normal; letter-spacing:0.4px; }
 .label-sport b { display: block; float: left; width: 3px; height: 19px; }
 
-.label-sport-3 em{ background: url(../imgs/commons/label/1-sx.png) no-repeat; }
-.label-sport-3 span{ background: url(../imgs/commons/label/1-center.png) repeat-x; }
-.label-sport-3 b{	background: url(../imgs/commons/label/1-dx.png) no-repeat; }
+.label-sport-3 em{ background: url(/assets/imgs/commons/label/1-sx.png) no-repeat; }
+.label-sport-3 span{ background: url(/assets/imgs/commons/label/1-center.png) repeat-x; }
+.label-sport-3 b{	background: url(/assets/imgs/commons/label/1-dx.png) no-repeat; }
 
-.label-sport-5 em{ background: url(../imgs/commons/label/2-sx.png) no-repeat; }
-.label-sport-5 span{ background: url(../imgs/commons/label/2-center.png) repeat-x; }
-.label-sport-5 b{	background: url(../imgs/commons/label/2-dx.png) no-repeat; }
+.label-sport-5 em{ background: url(/assets/imgs/commons/label/2-sx.png) no-repeat; }
+.label-sport-5 span{ background: url(/assets/imgs/commons/label/2-center.png) repeat-x; }
+.label-sport-5 b{	background: url(/assets/imgs/commons/label/2-dx.png) no-repeat; }
 
-.label-sport-7 em{ background: url(../imgs/commons/label/3-sx.png) no-repeat; }
-.label-sport-7 span{ background: url(../imgs/commons/label/3-center.png) repeat-x; }
-.label-sport-7 b{	background: url(../imgs/commons/label/3-dx.png) no-repeat; }
+.label-sport-7 em{ background: url(/assets/imgs/commons/label/3-sx.png) no-repeat; }
+.label-sport-7 span{ background: url(/assets/imgs/commons/label/3-center.png) repeat-x; }
+.label-sport-7 b{	background: url(/assets/imgs/commons/label/3-dx.png) no-repeat; }
 
-.label-sport-3-f em{ background: url(../imgs/commons/label/4-sx.png) no-repeat; }
-.label-sport-3-f span{ background: url(../imgs/commons/label/4-center.png) repeat-x; }
-.label-sport-3-f b{	background: url(../imgs/commons/label/4-dx.png) no-repeat; }
+.label-sport-3-f em{ background: url(/assets/imgs/commons/label/4-sx.png) no-repeat; }
+.label-sport-3-f span{ background: url(/assets/imgs/commons/label/4-center.png) repeat-x; }
+.label-sport-3-f b{	background: url(/assets/imgs/commons/label/4-dx.png) no-repeat; }
 
-.label-sport-5-f em{ background: url(../imgs/commons/label/5-sx.png) no-repeat; }
-.label-sport-5-f span{ background: url(../imgs/commons/label/5-center.png) repeat-x; }
-.label-sport-5-f b{	background: url(../imgs/commons/label/5-dx.png) no-repeat; }
+.label-sport-5-f em{ background: url(/assets/imgs/commons/label/5-sx.png) no-repeat; }
+.label-sport-5-f span{ background: url(/assets/imgs/commons/label/5-center.png) repeat-x; }
+.label-sport-5-f b{	background: url(/assets/imgs/commons/label/5-dx.png) no-repeat; }
 
-.label-sport-7-f em{ background: url(../imgs/commons/label/6-sx.png) no-repeat; }
-.label-sport-7-f span{ background: url(../imgs/commons/label/6-center.png) repeat-x; }
-.label-sport-7-f b{	background: url(../imgs/commons/label/6-dx.png) no-repeat; }
+.label-sport-7-f em{ background: url(/assets/imgs/commons/label/6-sx.png) no-repeat; }
+.label-sport-7-f span{ background: url(/assets/imgs/commons/label/6-center.png) repeat-x; }
+.label-sport-7-f b{	background: url(/assets/imgs/commons/label/6-dx.png) no-repeat; }
 
 a.button, a.button_disabled {
 	background-color:#57adce;
@@ -1442,34 +1442,34 @@ a:hover.button {
 	font-weight: bold;
 }
 a.btn_prenota {
-	background:url(../imgs/default/home/btn_prenota.png) no-repeat center top;
+	background:url(/assets/imgs/default/home/btn_prenota.png) no-repeat center top;
 	width:210px;
 	height:119px;
 	display:block;
 }
 a:hover.btn_prenota {
-	background:url(../imgs/default/home/btn_prenota.png) no-repeat center -119px;
+	background:url(/assets/imgs/default/home/btn_prenota.png) no-repeat center -119px;
 }
 
 a.btn_prenota_small {
-	background:url(../imgs/default/home/btn_prenota_small.png) no-repeat center top;
+	background:url(/assets/imgs/default/home/btn_prenota_small.png) no-repeat center top;
 	width:160px;
 	height:36px;
 	display:block;
 	margin: 3px 10px 2px 0px;
 }
 a:hover.btn_prenota_small {
-	background:url(../imgs/default/home/btn_prenota_small.png) no-repeat center -36px;
+	background:url(/assets/imgs/default/home/btn_prenota_small.png) no-repeat center -36px;
 }
 
 a.btn_video {
-	background:url(../imgs/default/home/btn_video.png) no-repeat center top;
+	background:url(/assets/imgs/default/home/btn_video.png) no-repeat center top;
 	width:210px;
 	height:119px;
 	display:block;
 }
 a:hover.btn_video {
-	background:url(../imgs/default/home/btn_video.png) no-repeat center -119px;
+	background:url(/assets/imgs/default/home/btn_video.png) no-repeat center -119px;
 }
 a:hover.black {
 	text-decoration:underline;

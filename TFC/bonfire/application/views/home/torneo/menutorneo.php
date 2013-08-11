@@ -52,16 +52,30 @@
         </ul>
     </div>
     <div id="tabs-0" class="clearfix tournament-home">
-        <fieldset class="fleft w700">
-            <label>Informacion general</label>
-            <table class="uiGrid mvm" cellspacing="0" cellpadding="0">
-                <tbody>
-                    <tr>
-                        <td class="vTop"><?php echo $torneo['informaciongeneral'] ?></td>
-                    </tr>
-                </tbody>
-            </table>							</fieldset>
-
-        <div class="clearfix"></div>
-    </div>	
+        <?php $this->load->view('home/torneo/partes/informaciongeneral'); ?>
+    </div>
+    <div id="tabs-1" class="clearfix tournament-home">
+        <?php $this->load->view('home/torneo/partes/noticias'); ?>
+    </div>
+    <div id="tabs-2" class="clearfix tournament-home">
+        <?php $this->load->view('home/torneo/partes/reglamento'); ?>
+    </div>
+    <div id="tabs-3" class="clearfix tournament-home">
+        <?php $this->load->view('home/torneo/partes/equipos'); ?>
+    </div>
+    <div id="tabs-4" class="clearfix tournament-home">
+        <?php $this->load->view('home/torneo/partes/fixture'); ?>
+    </div>
+    <div id="tabs-5" class="clearfix tournament-home">
+        <?php $this->load->view('home/torneo/partes/tablaPosiciones'); ?>
+    </div>
+    <div id="tabs-6" class="clearfix tournament-home">
+        <?php $this->load->view('home/torneo/partes/goleadores'); ?>
+    </div>
+    <div id="tabs-7" class="clearfix tournament-home">
+        <?php $this->load->view('home/torneo/partes/vallaMenosVencida'); ?>
+    </div>
+    <div id="tabs-8" class="clearfix tournament-home">
+        <?php $this->load->view('home/torneo/partes/sanciones'); ?>
+    </div>
 </div>
