@@ -61,21 +61,21 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="" target="_blank">Fotos</a>
+                                <a href="http://www.facebook.com/TfCdelsur/photos_stream" target="_blank">Fotos</a>
                             </li>
                             <li>
-                                <a href="" >Sedes</a>
+                                <a href="/sedes" >Sedes</a>
                             </li>
 
                             <li>
-                                <a href="" >Contactos</a>
+                                <a href="/contacto" >Contactos</a>
                             </li>
                         </ul>
                     </div>
                     <!--end menu-->
                     <!--social-->
                     <div class="fright icosocial">
-                        <a href="" target="_blank" title="facebook" class="social-fb fleft mr5">Link a Facebook</a>
+                        <a href="http://www.facebook.com/TfCdelsur" target="_blank" title="facebook" class="social-fb fleft mr5">Link a Facebook</a>
                         <a href="" target="_blank" title="twitter" class="social-twitter fleft mr5">Link a Twitter</a>
                         <a href="" target="_blank" title="youtube" class="social-youtube fleft">Link al canal de Youtube</a>
                     </div> 

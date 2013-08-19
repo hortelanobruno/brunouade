@@ -53,6 +53,7 @@ class Torneo extends Front_Controller {
     public function view($idtorneo) {
         $data['torneos'] = $this->torneos_model->get_last_4_torneos();
         $data['torneo'] = $this->torneos_model->get_torneo($idtorneo);
+        $data['reglamento'] = $this->torneos_model->get_reglamento_from_torneo($idtorneo);
         $data['equipos'] = $this->equipos_model->get_equipos_from_torneo($idtorneo);
         $data['tablaPosiciones'] = $this->torneos_model->get_tabla_from_torneo($idtorneo);
         $data['goleadores'] = $this->torneos_model->get_goleadores_from_torneo($idtorneo);
