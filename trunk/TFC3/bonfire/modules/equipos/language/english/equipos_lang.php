@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['equipos_manage']			= 'Manage Equipos';
+$lang['equipos_edit']				= 'Edit';
+$lang['equipos_true']				= 'True';
+$lang['equipos_false']				= 'False';
+$lang['equipos_create']			= 'Create';
+$lang['equipos_list']				= 'List';
+$lang['equipos_new']				= 'New';
+$lang['equipos_edit_text']			= 'Edit this to suit your needs';
+$lang['equipos_no_records']			= 'There aren\'t any equipos in the system.';
+$lang['equipos_create_new']			= 'Create a new Equipos.';
+$lang['equipos_create_success']			= 'Equipos successfully created.';
+$lang['equipos_create_failure']			= 'There was a problem creating the equipos: ';
+$lang['equipos_create_new_button']			= 'Create New Equipos';
+$lang['equipos_invalid_id']			= 'Invalid Equipos ID.';
+$lang['equipos_edit_success']			= 'Equipos successfully saved.';
+$lang['equipos_edit_failure']			= 'There was a problem saving the equipos: ';
+$lang['equipos_delete_success']			= 'record(s) successfully deleted.';
+$lang['equipos_delete_failure']			= 'We could not delete the record: ';
+$lang['equipos_delete_error']			= 'You have not selected any records to delete.';
+$lang['equipos_actions']			= 'Actions';
+$lang['equipos_cancel']			= 'Cancel';
+$lang['equipos_delete_record']			= 'Delete this Equipos';
+$lang['equipos_delete_confirm']			= 'Are you sure you want to delete this equipos?';
+$lang['equipos_edit_heading']			= 'Edit Equipos';
+
+// Activities
+$lang['equipos_act_create_record']			= 'Created record with ID';
+$lang['equipos_act_edit_record']			= 'Updated record with ID';
+$lang['equipos_act_delete_record']			= 'Deleted record with ID';
