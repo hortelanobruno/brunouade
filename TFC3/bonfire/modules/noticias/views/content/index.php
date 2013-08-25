@@ -35,7 +35,7 @@
                         <?php endif; ?>
 
                         <?php if ($this->auth->has_permission('Noticias.Content.Edit')) : ?>
-                            <td><?php echo anchor(SITE_AREA . '/content/noticias/edit/' . $record->idnoticias, '<i class="icon-pencil">&nbsp;</i>' . e(getTorneo($torneos,$record->idtorneo))) ?></td>
+                            <td><?php echo anchor(SITE_AREA . '/content/noticias/edit/' . $record->idnoticias, '<i class="icon-pencil">&nbsp;</i>' . getTorneo($torneos,$record->idtorneo)) ?></td>
                         <?php else: ?>
                             <td><?php e(getTorneo($torneos,$record->idtorneo)) ?></td>
                         <?php endif; ?>
