@@ -41,7 +41,7 @@
 				<?php endif; ?>
 			
 				<td><?php e($record->titulo) ?></td>
-				<td><?php e($record->contenido) ?></td>
+				<td><?php //e($record->contenido) ?></td>
 				<td><?php e($record->fecha) ?></td>
 				</tr>
 			<?php endforeach; ?>
