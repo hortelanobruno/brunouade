@@ -22,3 +22,9 @@ ERROR - 2013-08-25 15:45:59 --> 404 Page Not Found -->
 ERROR - 2013-08-25 15:45:59 --> 404 Page Not Found --> 
 ERROR - 2013-08-25 15:46:06 --> 404 Page Not Found --> 
 ERROR - 2013-08-25 15:46:06 --> 404 Page Not Found --> 
+ERROR - 2013-08-25 21:20:24 --> Severity: Notice  --> Undefined variable: torneos C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\noticias\views\content\index.php 61
+ERROR - 2013-08-25 21:20:24 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\noticias\views\content\index.php 61
+ERROR - 2013-08-25 21:20:24 --> Severity: Notice  --> Undefined variable: torneos C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\noticias\views\content\index.php 61
+ERROR - 2013-08-25 21:20:24 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\noticias\views\content\index.php 61
+ERROR - 2013-08-25 21:25:24 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\noticias\views\content\index.php 63
+ERROR - 2013-08-25 21:25:24 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\noticias\views\content\index.php 63
