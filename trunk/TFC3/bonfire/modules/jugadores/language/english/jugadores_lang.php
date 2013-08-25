@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['jugadores_manage']			= 'Manage Jugadores';
+$lang['jugadores_edit']				= 'Edit';
+$lang['jugadores_true']				= 'True';
+$lang['jugadores_false']				= 'False';
+$lang['jugadores_create']			= 'Create';
+$lang['jugadores_list']				= 'List';
+$lang['jugadores_new']				= 'New';
+$lang['jugadores_edit_text']			= 'Edit this to suit your needs';
+$lang['jugadores_no_records']			= 'There aren\'t any jugadores in the system.';
+$lang['jugadores_create_new']			= 'Create a new Jugadores.';
+$lang['jugadores_create_success']			= 'Jugadores successfully created.';
+$lang['jugadores_create_failure']			= 'There was a problem creating the jugadores: ';
+$lang['jugadores_create_new_button']			= 'Create New Jugadores';
+$lang['jugadores_invalid_id']			= 'Invalid Jugadores ID.';
+$lang['jugadores_edit_success']			= 'Jugadores successfully saved.';
+$lang['jugadores_edit_failure']			= 'There was a problem saving the jugadores: ';
+$lang['jugadores_delete_success']			= 'record(s) successfully deleted.';
+$lang['jugadores_delete_failure']			= 'We could not delete the record: ';
+$lang['jugadores_delete_error']			= 'You have not selected any records to delete.';
+$lang['jugadores_actions']			= 'Actions';
+$lang['jugadores_cancel']			= 'Cancel';
+$lang['jugadores_delete_record']			= 'Delete this Jugadores';
+$lang['jugadores_delete_confirm']			= 'Are you sure you want to delete this jugadores?';
+$lang['jugadores_edit_heading']			= 'Edit Jugadores';
+
+// Activities
+$lang['jugadores_act_create_record']			= 'Created record with ID';
+$lang['jugadores_act_edit_record']			= 'Updated record with ID';
+$lang['jugadores_act_delete_record']			= 'Deleted record with ID';
