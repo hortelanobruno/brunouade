@@ -42,3 +42,5 @@ ERROR - 2013-08-25 22:19:22 --> Severity: Warning  --> mkdir() [<a href='functio
 ERROR - 2013-08-25 22:25:10 --> Query error: Incorrect integer value: '' for column 'idequipo' at row 1
 ERROR - 2013-08-25 22:25:42 --> Query error: Incorrect integer value: '' for column 'cantidad_tarjetas_amarillas' at row 1
 ERROR - 2013-08-25 22:29:52 --> Query error: Unknown table 'eq'
+ERROR - 2013-08-25 22:45:19 --> 404 Page Not Found --> 
+ERROR - 2013-08-25 22:45:20 --> 404 Page Not Found --> 
