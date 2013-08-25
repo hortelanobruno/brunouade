@@ -16,35 +16,35 @@ $id = isset($noticias['idnoticias']) ? $noticias['idnoticias'] : '';
     <h3>Noticias</h3>
 <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
     <fieldset>
-        <div class="control-group <?php echo form_error('idtorneo') ? 'error' : ''; ?>">
-            <?php echo form_label('Idtorneo', 'idtorneo', array('class' => "control-label") ); ?>
+        <div class="control-group <?php echo form_error('noticias_idtorneo') ? 'error' : ''; ?>">
+            <?php echo form_label('Idtorneo', 'noticias_idtorneo', array('class' => "control-label") ); ?>
             <div class="controls">
 
-               <input id="idtorneo" type="text" name="idtorneo" maxlength="11" value="<?php echo set_value('idtorneo', isset($noticias['idtorneo']) ? $noticias['idtorneo'] : ''); ?>"  />
-               <span class="help-inline"><?php echo form_error('idtorneo'); ?></span>
+               <input id="noticias_idtorneo" type="text" name="noticias_idtorneo" maxlength="11" value="<?php echo set_value('noticias_idtorneo', isset($noticias['idtorneo']) ? $noticias['idtorneo'] : ''); ?>"  />
+               <span class="help-inline"><?php echo form_error('noticias_idtorneo'); ?></span>
             </div>
 
-        </div>        <div class="control-group <?php echo form_error('titulo') ? 'error' : ''; ?>">
-            <?php echo form_label('Titulo', 'titulo', array('class' => "control-label") ); ?>
+        </div>        <div class="control-group <?php echo form_error('noticias_titulo') ? 'error' : ''; ?>">
+            <?php echo form_label('Titulo', 'noticias_titulo', array('class' => "control-label") ); ?>
             <div class="controls">
 
-               <input id="titulo" type="text" name="titulo" maxlength="200" value="<?php echo set_value('titulo', isset($noticias['titulo']) ? $noticias['titulo'] : ''); ?>"  />
+               <input id="noticias_titulo" type="text" name="noticias_titulo" maxlength="200" value="<?php echo set_value('noticias_titulo', isset($noticias['titulo']) ? $noticias['titulo'] : ''); ?>"  />
                <span class="help-inline"><?php echo form_error('titulo'); ?></span>
             </div>
 
-        </div>        <div class="control-group <?php echo form_error('contenido') ? 'error' : ''; ?>">
-            <?php echo form_label('Contenido', 'contenido', array('class' => "control-label") ); ?>
+        </div>        <div class="control-group <?php echo form_error('noticias_contenido') ? 'error' : ''; ?>">
+            <?php echo form_label('Contenido', 'noticias_contenido', array('class' => "control-label") ); ?>
             <div class="controls">
-                <?php echo form_textarea( array( 'name' => 'contenido', 'id' => 'contenido', 'rows' => '5', 'cols' => '80', 'value' => set_value('contenido', isset($noticias['contenido']) ? $noticias['contenido'] : '') ) )?>
-                <span class="help-inline"><?php echo form_error('contenido'); ?></span>
+                <?php echo form_textarea( array( 'name' => 'noticias_contenido', 'id' => 'noticias_contenido', 'rows' => '5', 'cols' => '80', 'value' => set_value('noticias_contenido', isset($noticias['contenido']) ? $noticias['contenido'] : '') ) )?>
+                <span class="help-inline"><?php echo form_error('noticias_contenido'); ?></span>
             </div>
 
-        </div>        <div class="control-group <?php echo form_error('fecha') ? 'error' : ''; ?>">
-            <?php echo form_label('Fecha', 'fecha', array('class' => "control-label") ); ?>
+        </div>        <div class="control-group <?php echo form_error('noticias_fecha') ? 'error' : ''; ?>">
+            <?php echo form_label('Fecha', 'noticias_fecha', array('class' => "control-label") ); ?>
             <div class="controls">
 
-               <input id="fecha" type="text" name="fecha" maxlength="200" value="<?php echo set_value('fecha', isset($noticias['fecha']) ? $noticias['fecha'] : ''); ?>"  />
-               <span class="help-inline"><?php echo form_error('fecha'); ?></span>
+               <input id="noticias_fecha" type="text" name="noticias_fecha" maxlength="200" value="<?php echo set_value('noticias_fecha', isset($noticias['fecha']) ? $noticias['fecha'] : ''); ?>"  />
+               <span class="help-inline"><?php echo form_error('noticias_fecha'); ?></span>
             </div>
 
         </div>
