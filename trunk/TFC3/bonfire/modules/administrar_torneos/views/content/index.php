@@ -13,8 +13,8 @@
 					<th>Logo Chico</th>
 					<th>Logo Grande</th>
 					<!--<th>Cantidad Tarjetas Amarillas</th>-->
-					<th>Cantidad Fechas</th>
-					<th>Cantidad Partidos</th>
+					<!--<th>Cantidad Fechas</th>-->
+					<!--<th>Cantidad Partidos</th>-->
 					<th>Cantidad Equipos</th>
 					<!--<th>Cantidad Tarjetas Rojas</th>-->
 					<!--<th>Cantidad Goles</th>-->
@@ -25,9 +25,9 @@
 					<!--<th>Reglamento</th>-->
 					<th>Ida Y Vuelta Grupo</th>
 					<th>Ida Y Vuelta Llave</th>
-					<th>Group Size</th>
-					<th>Cant Pass To Llave</th>
-					<th>Cant Fases</th>
+					<th>Cantidad de equipos en el grupo</th>
+					<th>Cantidad equipos que pasan a la llave</th>
+					<!--<th>Cant Fases</th>-->
 				</tr>
 			</thead>
 			<?php if (isset($records) && is_array($records) && count($records)) : ?>
@@ -60,8 +60,8 @@
                                 <td><img src="<?php e($record->logo_chico) ?>" /></td>
 				<td><img src="<?php e($record->logo_grande) ?>" /></td>
 				<!--<td><!?php e($record->cantidad_tarjetas_amarillas) ?></td>-->
-				<td><?php e($record->cantidad_fechas) ?></td>
-				<td><?php e($record->cantidad_partidos) ?></td>
+				<!--<td><?php e($record->cantidad_fechas) ?></td>-->
+				<!--<td><?php e($record->cantidad_partidos) ?></td>-->
 				<td><?php e($record->cantidad_equipos) ?></td>
 				<!--<td><!?php e($record->cantidad_tarjetas_rojas) ?></td>-->
 				<!--<td><!?php e($record->cantidad_goles) ?></td>-->
@@ -74,7 +74,7 @@
 				<td><?php e($record->ida_y_vuelta_llave) ?></td>
 				<td><?php e($record->group_size) ?></td>
 				<td><?php e($record->cant_pass_to_llave) ?></td>
-				<td><?php e($record->cant_fases) ?></td>
+				<!--<td><?php e($record->cant_fases) ?></td>-->
 				</tr>
 			<?php endforeach; ?>
 			<?php else: ?>
