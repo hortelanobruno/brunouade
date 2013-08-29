@@ -13,6 +13,7 @@ class content extends Admin_Controller {
 
         $this->auth->restrict('Administrar_Torneos.Content.View');
         $this->load->model('administrar_torneos_model', null, true);
+        $this->load->model('equipos_model', null, true);
         $this->lang->load('administrar_torneos');
 
         Assets::add_js(Template::theme_url('js/editors/ckeditor/ckeditor.js'));
@@ -40,6 +41,7 @@ class content extends Admin_Controller {
                 $result = FALSE;
                 foreach ($checked as $pid) {
                     $result = $this->administrar_torneos_model->delete($pid);
+                    $this->equipos_model->delete_equipos_de_torneo($pid);
                 }
 
                 if ($result) {
@@ -82,6 +84,7 @@ class content extends Admin_Controller {
         }
         Assets::add_module_js('administrar_torneos', 'administrar_torneos.js');
 
+        Template::set('equipos', $this->equipos_model->get_all_equipos());
         Template::set('toolbar_title', lang('administrar_torneos_create') . ' Administrar Torneos');
         Template::render();
     }
@@ -187,6 +190,7 @@ class content extends Admin_Controller {
         // make sure we only pass in the fields we want
 
         $data = array();
+
         $data['nombre'] = $this->input->post('administrar_torneos_nombre');
         $data['categoria'] = intval($this->input->post('administrar_torneos_categoria'));
         $data['logo_chico'] = $this->input->post('administrar_torneos_logo_chico');
@@ -215,6 +219,10 @@ class content extends Admin_Controller {
                 $return = $id;
             } else {
                 $return = FALSE;
+            }
+
+            foreach ($_POST["equipoelegidos"] as $equipo) {
+                $this->equipos_model->agregar_equipo_a_torneo($id,$equipo);
             }
         } else if ($type == 'update') {
             $return = $this->administrar_torneos_model->update($id, $data);
