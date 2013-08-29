@@ -125,7 +125,27 @@ $id = isset($administrar_torneos['id']) ? $administrar_torneos['id'] : '';
                 </div>  
             </div>
             <div id="tabs-2">
-
+                <div style="display: block">
+                    <div style="display: inline-block">
+                        <select id="equipoelegidos" name="equipoelegidos[]" multiple size="20" onchange="goToPage('equipos')">
+                            <?php if (isset($equipos)) { ?>
+                                <?php foreach ($equipos as $equipo): ?>
+                                    <option value="<?php echo $equipo['id'] ?>"><?php echo $equipo['nombre'] ?></option>
+                                <?php endforeach ?>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div style="display: inline-block">
+                        <div id="mensajeEquiposSeleccionados">
+                            Cantidad de equipos seleccionados: 0
+                        </div>
+                    </div>
+                    <script>
+                            function goToPage(id) {
+                                $('#mensajeEquiposSeleccionados').html('Cantidad de equipos seleccionados: ' + $('#equipoelegidos option:selected').length);
+                            }
+                    </script>
+                </div>
             </div>
             <div id="tabs-3">
                 <div class="control-group <?php echo form_error('administrar_torneos_informaciongeneral') ? 'error' : ''; ?>">
