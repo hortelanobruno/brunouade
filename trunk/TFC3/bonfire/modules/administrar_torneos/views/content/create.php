@@ -16,12 +16,12 @@ $id = isset($administrar_torneos['id']) ? $administrar_torneos['id'] : '';
     <h3>Administrar Torneos</h3>
     <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
     <fieldset>
-
         <div id="tabsbsbs">
             <ul>
                 <li><a href="#tabs-1">Informacion general</a></li>
                 <li><a href="#tabs-2">Equipos</a></li>
-                <li><a href="#tabs-3">Otros datos</a></li>
+                <li><a href="#tabs-3">Fixture</a></li>
+                <li><a href="#tabs-4">Otros datos</a></li>
             </ul>
             <div id="tabs-1">
                 <div class="control-group <?php echo form_error('administrar_torneos_nombre') ? 'error' : ''; ?>">
@@ -148,6 +148,16 @@ $id = isset($administrar_torneos['id']) ? $administrar_torneos['id'] : '';
                 </div>
             </div>
             <div id="tabs-3">
+                <input type="button" value="Sortear Fixture" onclick="sortearFixture()">
+                <br/>
+                <div>
+                    Fixture:
+                    <div id="fixtureresult">
+
+                    </div>
+                </div>
+            </div>
+            <div id="tabs-4">
                 <div class="control-group <?php echo form_error('administrar_torneos_informaciongeneral') ? 'error' : ''; ?>">
                     <?php echo form_label('Informaciongeneral', 'administrar_torneos_informaciongeneral', array('class' => "control-label")); ?>
                     <div class="controls">
@@ -214,18 +224,6 @@ $id = isset($administrar_torneos['id']) ? $administrar_torneos['id'] : '';
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="form-actions">
             <br/>
             <input type="submit" name="save" class="btn btn-primary" value="Create Administrar Torneos" />
@@ -234,6 +232,4 @@ $id = isset($administrar_torneos['id']) ? $administrar_torneos['id'] : '';
         </div>
     </fieldset>
     <?php echo form_close(); ?>
-
-
 </div>

@@ -39,4 +39,11 @@ class Equipos_model extends CI_Model {
         $this->db->query("DELETE FROM tfc_equipos_torneo where idtorneo=" . $idtorneo);
     }
 
+    public function actualizar_equipos_en_torneo($idtorneo, $equipos) {
+        $this->delete_equipos_de_torneo($idtorneo);
+        foreach ($equipos as $equipo) {
+            $this->agregar_equipo_a_torneo($idtorneo, $equipo);
+        }
+    }
+
 }
