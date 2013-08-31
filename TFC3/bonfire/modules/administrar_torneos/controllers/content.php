@@ -52,10 +52,25 @@ class content extends Admin_Controller {
             }
         }
 
-        $records = $this->administrar_torneos_model->find_all();
+        $data = array();
+        $data['tiposdetorneos'] = $this->input->post('tiposdetorneos');
+        //Filtro segun tipo        
+        if ($data['tiposdetorneos'] == 'Abiertos') {
+            $records = $this->administrar_torneos_model->find_all_by('archivado', false);
+            Template::set('tipostorneosselected', $data['tiposdetorneos']);
+        } else if ($data['tiposdetorneos'] == 'Cerrados') {
+            $records = $this->administrar_torneos_model->find_all_by('archivado', true);
+            Template::set('tipostorneosselected', $data['tiposdetorneos']);
+        } else if ($data['tiposdetorneos'] == 'Todos') {
+            $records = $this->administrar_torneos_model->find_all();
+            Template::set('tipostorneosselected', $data['tiposdetorneos']);
+        } else {
+            $records = $this->administrar_torneos_model->find_all_by('archivado', false);
+        }
+        //FIN
 
         Template::set('records', $records);
-        Template::set('toolbar_title', 'Manage Administrar Torneos');
+        Template::set('toolbar_title', 'Manage ' . $data['tiposdetorneos'] . ' Administrar Torneos');
         Template::render();
     }
 
@@ -134,6 +149,8 @@ class content extends Admin_Controller {
         Template::set('administrar_torneos', $this->administrar_torneos_model->find($id));
         Assets::add_module_js('administrar_torneos', 'administrar_torneos.js');
 
+        Template::set('equipos', $this->equipos_model->get_all_equipos());
+        Template::set('equiposseleccionados', $this->equipos_model->get_equipos_from_torneo($id));
         Template::set('toolbar_title', lang('administrar_torneos_edit') . ' Administrar Torneos');
         Template::render();
     }
@@ -169,11 +186,11 @@ class content extends Admin_Controller {
         $this->form_validation->set_rules('administrar_torneos_cantidad_tarjetas_amarillas', 'Cantidad Tarjetas Amarillas', 'max_length[11]');
         $this->form_validation->set_rules('administrar_torneos_cantidad_fechas', 'Cantidad Fechas', 'max_length[11]');
         $this->form_validation->set_rules('administrar_torneos_cantidad_partidos', 'Cantidad Partidos', 'max_length[11]');
-        $this->form_validation->set_rules('administrar_torneos_cantidad_equipos', 'Cantidad Equipos', 'required|max_length[11]');
+        $this->form_validation->set_rules('administrar_torneos_cantidad_equipos', 'Cantidad Equipos', 'max_length[11]');
         $this->form_validation->set_rules('administrar_torneos_cantidad_tarjetas_rojas', 'Cantidad Tarjetas Rojas', 'max_length[11]');
         $this->form_validation->set_rules('administrar_torneos_cantidad_goles', 'Cantidad Goles', 'max_length[11]');
-        $this->form_validation->set_rules('administrar_torneos_cantidad_equipos_ascienden', 'Cantidad Equipos Ascienden', 'required|max_length[11]');
-        $this->form_validation->set_rules('administrar_torneos_cantidad_equipos_descienden', 'Cantidad Equipos Descienden', 'required|max_length[11]');
+        $this->form_validation->set_rules('administrar_torneos_cantidad_equipos_ascienden', 'Cantidad Equipos Ascienden', 'max_length[11]');
+        $this->form_validation->set_rules('administrar_torneos_cantidad_equipos_descienden', 'Cantidad Equipos Descienden', 'max_length[11]');
         $this->form_validation->set_rules('administrar_torneos_archivado', 'Archivado', 'max_length[1]');
         $this->form_validation->set_rules('administrar_torneos_informaciongeneral', 'Informaciongeneral', '');
         $this->form_validation->set_rules('administrar_torneos_reglamento', 'Reglamento', '');
@@ -222,10 +239,11 @@ class content extends Admin_Controller {
             }
 
             foreach ($_POST["equipoelegidos"] as $equipo) {
-                $this->equipos_model->agregar_equipo_a_torneo($id,$equipo);
+                $this->equipos_model->agregar_equipo_a_torneo($id, $equipo);
             }
         } else if ($type == 'update') {
             $return = $this->administrar_torneos_model->update($id, $data);
+            $this->equipos_model->actualizar_equipos_en_torneo($id, $_POST["equipoelegidos"]);
         }
 
         return $return;
