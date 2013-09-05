@@ -152,9 +152,10 @@ $id = isset($administrar_torneos['id']) ? $administrar_torneos['id'] : '';
                 <br/>
                 <div>
                     Fixture:
-                    <div id="fixtureresult">
-
-                    </div>
+                    <table id="tableFixture">
+                    </table>
+                    <input type="hidden" id="fixtureresult" name="fixtureresult" value="" />
+                    <input type="hidden" id="fixtureordenequipos" name="fixtureordenequipos" value="" />
                 </div>
             </div>
             <div id="tabs-4">
