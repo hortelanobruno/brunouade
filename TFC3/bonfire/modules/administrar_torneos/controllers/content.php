@@ -14,6 +14,7 @@ class content extends Admin_Controller {
         $this->auth->restrict('Administrar_Torneos.Content.View');
         $this->load->model('administrar_torneos_model', null, true);
         $this->load->model('equipos_model', null, true);
+        $this->load->model('partidos_model', null, true);
         $this->lang->load('administrar_torneos');
 
         Assets::add_js(Template::theme_url('js/editors/ckeditor/ckeditor.js'));
@@ -42,6 +43,7 @@ class content extends Admin_Controller {
                 foreach ($checked as $pid) {
                     $result = $this->administrar_torneos_model->delete($pid);
                     $this->equipos_model->delete_equipos_de_torneo($pid);
+                    $this->partidos_model->delete_partidos_de_torneo($pid);
                 }
 
                 if ($result) {
@@ -209,6 +211,9 @@ class content extends Admin_Controller {
         $data = array();
 
         $data['nombre'] = $this->input->post('administrar_torneos_nombre');
+        $fixturepartidos = $this->input->post('fixtureresult');
+        $fixtureordenequipos = $this->input->post('fixtureordenequipos');
+
         $data['categoria'] = intval($this->input->post('administrar_torneos_categoria'));
         $data['logo_chico'] = $this->input->post('administrar_torneos_logo_chico');
         $data['logo_grande'] = $this->input->post('administrar_torneos_logo_grande');
@@ -241,6 +246,7 @@ class content extends Admin_Controller {
             foreach ($_POST["equipoelegidos"] as $equipo) {
                 $this->equipos_model->agregar_equipo_a_torneo($id, $equipo);
             }
+            $this->partidos_model->save_fixture($id,$fixturepartidos, $fixtureordenequipos);
         } else if ($type == 'update') {
             $return = $this->administrar_torneos_model->update($id, $data);
             $this->equipos_model->actualizar_equipos_en_torneo($id, $_POST["equipoelegidos"]);
