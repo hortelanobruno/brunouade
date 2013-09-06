@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['administrar_partidos_manage']			= 'Manage Administrar Partidos';
+$lang['administrar_partidos_edit']				= 'Edit';
+$lang['administrar_partidos_true']				= 'True';
+$lang['administrar_partidos_false']				= 'False';
+$lang['administrar_partidos_create']			= 'Create';
+$lang['administrar_partidos_list']				= 'List';
+$lang['administrar_partidos_new']				= 'New';
+$lang['administrar_partidos_edit_text']			= 'Edit this to suit your needs';
+$lang['administrar_partidos_no_records']			= 'There aren\'t any administrar_partidos in the system.';
+$lang['administrar_partidos_create_new']			= 'Create a new Administrar Partidos.';
+$lang['administrar_partidos_create_success']			= 'Administrar Partidos successfully created.';
+$lang['administrar_partidos_create_failure']			= 'There was a problem creating the administrar_partidos: ';
+$lang['administrar_partidos_create_new_button']			= 'Create New Administrar Partidos';
+$lang['administrar_partidos_invalid_id']			= 'Invalid Administrar Partidos ID.';
+$lang['administrar_partidos_edit_success']			= 'Administrar Partidos successfully saved.';
+$lang['administrar_partidos_edit_failure']			= 'There was a problem saving the administrar_partidos: ';
+$lang['administrar_partidos_delete_success']			= 'record(s) successfully deleted.';
+$lang['administrar_partidos_delete_failure']			= 'We could not delete the record: ';
+$lang['administrar_partidos_delete_error']			= 'You have not selected any records to delete.';
+$lang['administrar_partidos_actions']			= 'Actions';
+$lang['administrar_partidos_cancel']			= 'Cancel';
+$lang['administrar_partidos_delete_record']			= 'Delete this Administrar Partidos';
+$lang['administrar_partidos_delete_confirm']			= 'Are you sure you want to delete this administrar_partidos?';
+$lang['administrar_partidos_edit_heading']			= 'Edit Administrar Partidos';
+
+// Activities
+$lang['administrar_partidos_act_create_record']			= 'Created record with ID';
+$lang['administrar_partidos_act_edit_record']			= 'Updated record with ID';
+$lang['administrar_partidos_act_delete_record']			= 'Deleted record with ID';

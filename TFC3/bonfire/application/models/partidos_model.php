@@ -39,8 +39,21 @@ class Partidos_model extends CI_Model {
     }
 
     public function delete_partidos_de_torneo($idtorneo) {
-//        $this->db->query("DELETE FROM tfc_estadisticas_partido where idpartido in (SELECT id FROM tfc_partido WHERE idtorneo=" . $idtorneo . ")");
+        $this->db->query("DELETE FROM tfc_estadisticas_partido where idpartido in (SELECT id FROM tfc_partido WHERE idtorneo=" . $idtorneo . ")");
         $this->db->query("DELETE FROM tfc_partido where idtorneo=" . $idtorneo);
+    }
+    
+    public function delete_estadisticas_partido($idpartido) {
+        $this->db->query("DELETE FROM tfc_estadisticas_partido where idpartido =" . $idpartido);
+    }
+
+    public function save_estadisticas_partido($idpartido, $idequipo, $idjugador, $action, $cantidad) {
+        $this->db->query("INSERT INTO tfc_estadisticas_partido (idpartido,idequipo,idjugador,accion,cantidad) values (" . $idpartido . "," . $idequipo . "," . $idjugador . "," . $action . "," . $cantidad . ");");
+    }
+    
+    public function get_estadisticas_partido($idpartido){
+        $query = $this->db->query("SELECT * FROM tfc_estadisticas_partido WHERE idpartido = ".$idpartido);
+        return $query->result_array();
     }
 
 }
