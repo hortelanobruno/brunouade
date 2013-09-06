@@ -176,3 +176,24 @@ function shuffle(o) { //v1.0
         ;
     return o;
 }
+
+
+function changeTorneo() {
+    document.getElementById("refasync").value = 'yes';
+    document.getElementById("formcreatepart").submit();
+}
+
+function calculateGoles(element, elementresult) {
+    var count = 0;
+    $("input[name='" + element + "\\[\\]']").each(function() {
+        var val = $(this).val();
+        if (val != null && val != '') {
+            count += parseInt(val) || 0;
+        }
+    });
+    $('#' + elementresult).val(count);
+}
+
+function changeTorneoAdmPartidos(){
+    document.getElementById("formtorneo").submit();
+}

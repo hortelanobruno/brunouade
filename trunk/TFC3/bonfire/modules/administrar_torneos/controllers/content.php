@@ -72,7 +72,7 @@ class content extends Admin_Controller {
         //FIN
 
         Template::set('records', $records);
-        Template::set('toolbar_title', 'Manage ' . $data['tiposdetorneos'] . ' Administrar Torneos');
+        Template::set('toolbar_title', 'Manage Administrar Torneos');
         Template::render();
     }
 
