@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['administracion_tabla_posiciones_manage']			= 'Manage Administracion Tabla Posiciones';
+$lang['administracion_tabla_posiciones_edit']				= 'Edit';
+$lang['administracion_tabla_posiciones_true']				= 'True';
+$lang['administracion_tabla_posiciones_false']				= 'False';
+$lang['administracion_tabla_posiciones_create']			= 'Create';
+$lang['administracion_tabla_posiciones_list']				= 'List';
+$lang['administracion_tabla_posiciones_new']				= 'New';
+$lang['administracion_tabla_posiciones_edit_text']			= 'Edit this to suit your needs';
+$lang['administracion_tabla_posiciones_no_records']			= 'There aren\'t any administracion_tabla_posiciones in the system.';
+$lang['administracion_tabla_posiciones_create_new']			= 'Create a new Administracion Tabla Posiciones.';
+$lang['administracion_tabla_posiciones_create_success']			= 'Administracion Tabla Posiciones successfully created.';
+$lang['administracion_tabla_posiciones_create_failure']			= 'There was a problem creating the administracion_tabla_posiciones: ';
+$lang['administracion_tabla_posiciones_create_new_button']			= 'Create New Administracion Tabla Posiciones';
+$lang['administracion_tabla_posiciones_invalid_id']			= 'Invalid Administracion Tabla Posiciones ID.';
+$lang['administracion_tabla_posiciones_edit_success']			= 'Administracion Tabla Posiciones successfully saved.';
+$lang['administracion_tabla_posiciones_edit_failure']			= 'There was a problem saving the administracion_tabla_posiciones: ';
+$lang['administracion_tabla_posiciones_delete_success']			= 'record(s) successfully deleted.';
+$lang['administracion_tabla_posiciones_delete_failure']			= 'We could not delete the record: ';
+$lang['administracion_tabla_posiciones_delete_error']			= 'You have not selected any records to delete.';
+$lang['administracion_tabla_posiciones_actions']			= 'Actions';
+$lang['administracion_tabla_posiciones_cancel']			= 'Cancel';
+$lang['administracion_tabla_posiciones_delete_record']			= 'Delete this Administracion Tabla Posiciones';
+$lang['administracion_tabla_posiciones_delete_confirm']			= 'Are you sure you want to delete this administracion_tabla_posiciones?';
+$lang['administracion_tabla_posiciones_edit_heading']			= 'Edit Administracion Tabla Posiciones';
+
+// Activities
+$lang['administracion_tabla_posiciones_act_create_record']			= 'Created record with ID';
+$lang['administracion_tabla_posiciones_act_edit_record']			= 'Updated record with ID';
+$lang['administracion_tabla_posiciones_act_delete_record']			= 'Deleted record with ID';
