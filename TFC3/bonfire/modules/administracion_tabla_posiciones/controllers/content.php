@@ -88,7 +88,7 @@ class content extends Admin_Controller {
 
         Template::set('records', $records);
         Template::set('torneos', $torneos);
-        Template::set('toolbar_title', 'Manage Administracion Tabla Posiciones');
+        Template::set('toolbar_title', 'Manage Administrar Tabla Posiciones');
         Template::render();
     }
 

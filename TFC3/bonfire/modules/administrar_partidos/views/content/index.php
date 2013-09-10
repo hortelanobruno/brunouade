@@ -13,11 +13,11 @@
                 <?php endif; ?>
             <?php endforeach ?>
         </select>
-        Ronda
-        <?php if (isset($rondas)) { ?>
-            <select id="ronda" name="ronda" onchange="return changeTorneoAdmPartidos()">
-                <?php for ($i = 1; $i <= $rondas; $i++): ?>
-                    <?php if ($i == $rondaselected) : ?>
+        Fechas
+        <?php if (isset($fechas)) { ?>
+            <select id="fecha" name="fecha" onchange="return changeTorneoAdmPartidos()">
+                <?php for ($i = 1; $i <= $fechas; $i++): ?>
+                    <?php if ($i == $fechaselected) : ?>
                         <option value="<?php echo $i ?>" selected><?php echo $i ?></option>
                     <?php else : ?>
                         <option value="<?php echo $i ?>"><?php echo $i ?></option>
@@ -37,8 +37,8 @@
                 <?php endif; ?>
 
                 <th>Fecha</th>
-                <th>Torneo</th>
-                <th>Fase/Ronda</th>
+                <!--<th>Torneo</th>-->
+                <!--<th>Fase/Ronda</th>-->
                 <th>Equipo 1</th>
                 <th>Equipo 2</th>
                 <th>Goles Equipo 1</th>
@@ -73,10 +73,10 @@
                             <td><?php e($record->fecha) ?></td>
                         <?php endif; ?>
 
-                        <td><?php e($record->idtorneo) ?></td>
-                        <td><?php e($record->idfase) ?></td>
-                        <td><?php e($record->idequipo1) ?></td>
-                        <td><?php e($record->idequipo2) ?></td>
+                        <!--<td><!?php e($record->idtorneo) ?></td>-->
+                        <!--<td><!?php e($record->idfase) ?></td>-->
+                        <td><?php e(getEquipo($equipos,$record->idequipo1)) ?></td>
+                        <td><?php e(getEquipo($equipos,$record->idequipo2)) ?></td>
                         <td><?php e($record->goles_equipo1) ?></td>
                         <td><?php e($record->goles_equipo2) ?></td>
                         <!--<td><?php e($record->fecha_torneo) ?></td>-->
@@ -92,3 +92,17 @@
     </table>
     <?php echo form_close(); ?>
 </div>
+
+<?php
+
+function getEquipo($equipo,$idequipo) {
+    if (isset($equipo)) {
+        foreach ($equipo as $equipo) {
+            if ($equipo['id'] === $idequipo)
+                return $equipo['nombre'];
+        }
+    }else {
+        return $idequipo;
+    }
+}
+?>
