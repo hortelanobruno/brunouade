@@ -140,11 +140,14 @@ function sortearFixture() {
         //rounds tiene el fixture y ghost tiene si el numero mas grande es partido libre
 
         var ronda;
+        var cant_fechas = 0;
+        var cant_partidos = 0;
         $('#tableFixture').empty();
         for (var i = 0; i < rounds.length; i++) {
             var tr = document.createElement('tr');
             var td = document.createElement('td');
-            $(td).html("Ronda " + (i + 1));
+            cant_fechas++;
+            $(td).html("Ronda " + (cant_fechas));
             tr.appendChild(td);
             $('#tableFixture').append(tr);
             ronda = rounds[i];
@@ -154,11 +157,49 @@ function sortearFixture() {
                 $(td).html("Partido: " + ronda[j].toString());
                 tr.appendChild(td);
                 $('#tableFixture').append(tr);
+                cant_partidos++;
+            }
+            if (ghost) {
+                cant_partidos--;
+            }
+        }
+
+        var indice_ronda;
+        var indice_partido;
+        if ($('#administrar_torneos_ida_y_vuelta_grupo').is(':checked')) {
+            for (var i = (rounds.length - 1); i >= 0; i--) {
+                var tr = document.createElement('tr');
+                var td = document.createElement('td');
+                indice_ronda = cant_fechas;
+                rounds2[indice_ronda] = new Array();
+                cant_fechas++;
+                $(td).html("Ronda " + (cant_fechas));
+                tr.appendChild(td);
+                $('#tableFixture').append(tr);
+                ronda = rounds[i];
+                indice_partido = 0;
+                for (var j = (ronda.length - 1); j >= 0; j--) {
+                    var tr = document.createElement('tr');
+                    var td = document.createElement('td');
+                    var nuevo_partido = flip(ronda[j].toString());
+                    $(td).html("Partido: " + nuevo_partido);
+                    tr.appendChild(td);
+                    $('#tableFixture').append(tr);
+                    cant_partidos++;
+                    rounds2[indice_ronda][indice_partido] = flip(rounds2[i][j].toString());
+                    indice_partido++;
+                }
+                if (ghost) {
+                    cant_partidos--;
+                }
             }
         }
 
         $('#fixtureresult').val(rounds2.toString());
         $('#fixtureordenequipos').val(result.toString());
+        $('#administrar_torneos_cant_fases').val(1);
+        $('#administrar_torneos_cantidad_fechas').val(cant_fechas);
+        $('#administrar_torneos_cantidad_partidos').val(cant_partidos);
     }
 }
 
@@ -178,7 +219,8 @@ function shuffle(o) { //v1.0
 }
 
 
-function changeTorneo() {
+function changeTorneo($event) {
+    document.getElementById("eventfrom").value = $event;
     document.getElementById("refasync").value = 'yes';
     document.getElementById("formcreatepart").submit();
 }
@@ -194,6 +236,6 @@ function calculateGoles(element, elementresult) {
     $('#' + elementresult).val(count);
 }
 
-function changeTorneoAdmPartidos(){
+function changeTorneoAdmPartidos() {
     document.getElementById("formtorneo").submit();
 }

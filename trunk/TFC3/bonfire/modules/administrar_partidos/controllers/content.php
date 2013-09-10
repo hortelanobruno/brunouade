@@ -61,21 +61,21 @@ class content extends Admin_Controller {
         if ($data['torneo'] == null) {
             $data['torneo'] = $torneos[0]['id'];
         }
-        $data['ronda'] = $this->input->post('ronda');
+        $data['fecha'] = $this->input->post('fecha');
         //Filtro segun tipo        
         if ($data['torneo'] != null) {
             Template::set('torneoselected', $data['torneo']);
             $torneodata = $this->torneos_model->get_torneo($data['torneo']);
-            Template::set('rondas', $torneodata['cant_fases']);
+            Template::set('fechas', $torneodata['cantidad_fechas']);
 
-            if ($data['ronda'] != null) {
-                Template::set('rondaselected', $data['ronda']);
-                $records = $this->administrar_partidos_model->find_all_by(array('idtorneo' => $data['torneo'], 'idfase' => $data['ronda']));
+            if ($data['fecha'] != null) {
+                Template::set('fechaselected', $data['fecha']);
+                $records = $this->administrar_partidos_model->find_all_by(array('idtorneo' => $data['torneo'], 'fecha_torneo' => $data['fecha']));
             } else {
-                $records = $this->administrar_partidos_model->find_all_by('idtorneo', $data['torneo']);
+                $records = $this->administrar_partidos_model->find_all_by(array('idtorneo' => $data['torneo'], 'fecha_torneo' => 1));
             }
         } else {
-            $records = $this->administrar_partidos_model->find_all();
+//            $records = $this->administrar_partidos_model->find_all();
         }
 
 //        $records = $this->administrar_partidos_model->find_all();
@@ -84,6 +84,7 @@ class content extends Admin_Controller {
 
         Template::set('records', $records);
         Template::set('torneos', $torneos);
+        Template::set('equipos', $this->equipos_model->get_equipos_from_torneo($data['torneo']));
         Template::set('toolbar_title', 'Manage Administrar Partidos');
         Template::render();
     }
@@ -113,45 +114,89 @@ class content extends Admin_Controller {
             }
         } else {
             $data = array();
-            $data['torneoelegido'] = $this->input->post('administrar_partidos_idtorneo');
-            if ($data['torneoelegido'] == NULL) {
-                $data['torneoelegido'] = $torneos[0]['id'];
-            }
-            $data['faseelegido'] = $this->input->post('administrar_partidos_idfase');
-            $data['equipo1'] = $this->input->post('administrar_partidos_idequipo1');
-            if ($data['equipo1'] == NULL) {
-                $arr = (array) $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']);
-                $data['equipo1'] = $arr[0]['id'];
-            }
-            $data['equipo2'] = $this->input->post('administrar_partidos_idequipo2');
-            if ($data['equipo2'] == NULL) {
-                $arr = (array) $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']);
-                $data['equipo2'] = $arr[1]['id'];
-            }
 
-            $administrar_partidos = array();
+            if ($this->input->post('eventfrom') == 'change_torneo') {
+                $data['torneoelegido'] = $this->input->post('administrar_partidos_idtorneo');
+                $data['fechaelegido'] = $this->input->post('administrar_partidos_fecha_torneo');
+                $administrar_partidos = array();
 
-
-            //Filtro segun tipo        
-            if ($data['torneoelegido'] != NULL) {
                 $torneodata = $this->torneos_model->get_torneo($data['torneoelegido']);
-                $administrar_partidos['idfase'] = $torneodata['cant_fases'];
-
+                $administrar_partidos['fechas_torneo'] = $torneodata['cantidad_fechas'];
                 Template::set('torneodata', $torneodata);
                 Template::set('torneoselected', $data['torneoelegido']);
                 Template::set('administrar_partidos', $administrar_partidos);
-
                 Template::set('equipos', $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']));
-            }
 
-            if ($data['equipo1'] != NULL) {
+                $arr = (array) $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']);
+                $data['equipo1'] = $arr[0]['id'];
                 Template::set('jugadores1', $this->equipos_model->get_jugadores_from_equipo($data['equipo1']));
                 Template::set('equipo1selected', $data['equipo1']);
-            }
 
-            if ($data['equipo2'] != NULL) {
+                $arr = (array) $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']);
+                $data['equipo2'] = $arr[1]['id'];
                 Template::set('jugadores2', $this->equipos_model->get_jugadores_from_equipo($data['equipo2']));
                 Template::set('equipo2selected', $data['equipo2']);
+            } else if ($this->input->post('eventfrom') == 'change_equipo') {
+                $data['torneoelegido'] = $this->input->post('administrar_partidos_idtorneo');
+                $data['fechaelegido'] = $this->input->post('administrar_partidos_fecha_torneo');
+                $administrar_partidos = array();
+
+                $torneodata = $this->torneos_model->get_torneo($data['torneoelegido']);
+                $administrar_partidos['fechas_torneo'] = $torneodata['cantidad_fechas'];
+                Template::set('torneodata', $torneodata);
+                Template::set('torneoselected', $data['torneoelegido']);
+                Template::set('administrar_partidos', $administrar_partidos);
+                Template::set('equipos', $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']));
+                
+                $data['equipo1'] = $this->input->post('administrar_partidos_idequipo1');
+                Template::set('jugadores1', $this->equipos_model->get_jugadores_from_equipo($data['equipo1']));
+                Template::set('equipo1selected', $data['equipo1']);
+
+                $data['equipo2'] = $this->input->post('administrar_partidos_idequipo2');
+                Template::set('jugadores2', $this->equipos_model->get_jugadores_from_equipo($data['equipo2']));
+                Template::set('equipo2selected', $data['equipo2']);
+            } else {
+                $data['torneoelegido'] = $this->input->post('administrar_partidos_idtorneo');
+                if ($data['torneoelegido'] == NULL) {
+                    $data['torneoelegido'] = $torneos[0]['id'];
+                }
+                $data['fechaelegido'] = $this->input->post('administrar_partidos_fecha_torneo');
+
+                $administrar_partidos = array();
+
+
+                //Filtro segun tipo        
+                if ($data['torneoelegido'] != NULL) {
+                    $torneodata = $this->torneos_model->get_torneo($data['torneoelegido']);
+                    $administrar_partidos['fechas_torneo'] = $torneodata['cantidad_fechas'];
+
+                    Template::set('torneodata', $torneodata);
+                    Template::set('torneoselected', $data['torneoelegido']);
+                    Template::set('administrar_partidos', $administrar_partidos);
+
+                    Template::set('equipos', $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']));
+                }
+
+                $data['equipo1'] = $this->input->post('administrar_partidos_idequipo1');
+                if ($data['equipo1'] == NULL) {
+                    $arr = (array) $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']);
+                    $data['equipo1'] = $arr[0]['id'];
+                }
+                $data['equipo2'] = $this->input->post('administrar_partidos_idequipo2');
+                if ($data['equipo2'] == NULL) {
+                    $arr = (array) $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']);
+                    $data['equipo2'] = $arr[1]['id'];
+                }
+
+                if ($data['equipo1'] != NULL) {
+                    Template::set('jugadores1', $this->equipos_model->get_jugadores_from_equipo($data['equipo1']));
+                    Template::set('equipo1selected', $data['equipo1']);
+                }
+
+                if ($data['equipo2'] != NULL) {
+                    Template::set('jugadores2', $this->equipos_model->get_jugadores_from_equipo($data['equipo2']));
+                    Template::set('equipo2selected', $data['equipo2']);
+                }
             }
         }
 
@@ -209,7 +254,7 @@ class content extends Admin_Controller {
         //Filtro segun tipo        
         $data = array();
         $data['torneoelegido'] = $partido->idtorneo;
-        $data['faseelegido'] = $partido->idfase;
+        $data['fechaelegido'] = $partido->fecha_torneo;
         $data['equipo1'] = $partido->idequipo1;
         $data['equipo2'] = $partido->idequipo2;
 
@@ -224,8 +269,8 @@ class content extends Admin_Controller {
             Template::set('equipos', $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']));
         }
 
-        if ($data['faseelegido'] != NULL) {
-            Template::set('faseselected', $data['faseelegido']);
+        if ($data['fechaelegido'] != NULL) {
+            Template::set('fechaselected', $data['fechaelegido']);
         }
 
         if ($data['equipo1'] != NULL) {

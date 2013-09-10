@@ -21,7 +21,7 @@
             <div class="wrapper">
                 <!--header-->
                 <div id="header">
-                    <div id="logo" class="fleft"><a href="index.html"><img alt="" src="/assets/imgs/commons/logo.png" /></a></div>
+                    <div id="logo" class="fleft"><a href="/"><img alt="" src="/assets/imgs/commons/logo.png" /></a></div>
                     <!--menu sponsor-->
                     <div id="menu_sponsor">
                         <ul>

@@ -246,7 +246,7 @@ class content extends Admin_Controller {
             foreach ($_POST["equipoelegidos"] as $equipo) {
                 $this->equipos_model->agregar_equipo_a_torneo($id, $equipo);
             }
-            $this->partidos_model->save_fixture($id,$fixturepartidos, $fixtureordenequipos);
+            $this->partidos_model->save_fixture($id,$fixturepartidos, $fixtureordenequipos, $data);
         } else if ($type == 'update') {
             $return = $this->administrar_torneos_model->update($id, $data);
             $this->equipos_model->actualizar_equipos_en_torneo($id, $_POST["equipoelegidos"]);

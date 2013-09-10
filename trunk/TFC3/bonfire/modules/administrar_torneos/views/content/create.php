@@ -143,6 +143,8 @@ $id = isset($administrar_torneos['id']) ? $administrar_torneos['id'] : '';
                     <script>
                             function goToPage(id) {
                                 $('#mensajeEquiposSeleccionados').html('Cantidad de equipos seleccionados: ' + $('#equipoelegidos option:selected').length);
+                                
+                                $('#administrar_torneos_cantidad_equipos').val($('#equipoelegidos option:selected').length);
                             }
                     </script>
                 </div>

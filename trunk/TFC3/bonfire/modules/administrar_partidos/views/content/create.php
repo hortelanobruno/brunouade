@@ -28,7 +28,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                         <div class="controls">
                             <!--<input id="administrar_partidos_idtorneo" type="text" name="administrar_partidos_idtorneo" maxlength="11" value="<!?php echo set_value('administrar_partidos_idtorneo', isset($administrar_partidos['idtorneo']) ? $administrar_partidos['idtorneo'] : ''); ?>"  />-->
                             <?php if (isset($torneos)) { ?>
-                                <select id="administrar_partidos_idtorneo" name="administrar_partidos_idtorneo" onchange="return changeTorneo()">
+                                <select id="administrar_partidos_idtorneo" name="administrar_partidos_idtorneo" onchange="return changeTorneo('change_torneo')">
                                     <?php foreach ($torneos as $torneo): ?>
                                         <?php if ($torneo['id'] === $torneoselected) : ?>
                                             <option value="<?php echo $torneo['id'] ?>" selected><?php echo $torneo['nombre'] ?></option>
@@ -39,25 +39,34 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                                 </select>
                             <?php } ?>
                             <input type="hidden" id="refasync" name="refasync" value="no"/>
+                            <input type="hidden" id="eventfrom" name="eventfrom" value=""/>
                             <span class="help-inline"><?php echo form_error('administrar_partidos_idtorneo'); ?></span>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="control-group <?php echo form_error('administrar_partidos_idfase') ? 'error' : ''; ?>">
-                        <?php echo form_label('Fase/Ronda', 'administrar_partidos_idfase', array('class' => "control-label")); ?>
-                        <div class="controls">
-                            <!--<input id="administrar_partidos_idfase" type="text" name="administrar_partidos_idfase" maxlength="11" value="<!?php echo set_value('administrar_partidos_idfase', isset($administrar_partidos['idfase']) ? $administrar_partidos['idfase'] : ''); ?>"  />-->
+                    <!--                    <div class="control-group <!?php echo form_error('administrar_partidos_idfase') ? 'error' : ''; ?>">
+                                            <!?php echo form_label('Fecha', 'administrar_partidos_idfase', array('class' => "control-label")); ?>
+                                            <div class="controls">
+                                                <input id="administrar_partidos_idfase" type="text" name="administrar_partidos_idfase" maxlength="11" value="<!?php echo set_value('administrar_partidos_idfase', isset($administrar_partidos['idfase']) ? $administrar_partidos['idfase'] : ''); ?>"  />
+                                                <span class="help-inline"><!?php echo form_error('administrar_partidos_idfase'); ?></span>
+                                            </div>
+                                        </div>-->
 
-                            <?php if (isset($administrar_partidos['idfase'])) { ?>
-                                <select id="administrar_partidos_idfase" name="administrar_partidos_idfase">
-                                    <?php for ($i = 1; $i <= $administrar_partidos['idfase']; $i++): ?>
+                    <div class="control-group <?php echo form_error('administrar_partidos_fecha_torneo') ? 'error' : ''; ?>">
+                        <?php echo form_label('Fecha', 'administrar_partidos_fecha_torneo', array('class' => "control-label")); ?>
+                        <div class="controls">
+                            <!--<input id="administrar_partidos_fecha_torneo" type="text" name="administrar_partidos_fecha_torneo" maxlength="11" value="<!?php echo set_value('administrar_partidos_fecha_torneo', isset($administrar_partidos['fecha_torneo']) ? $administrar_partidos['fecha_torneo'] : ''); ?>"  />-->
+
+                            <?php if (isset($administrar_partidos['fechas_torneo'])) { ?>
+                                <select id="administrar_partidos_fecha_torneo" name="administrar_partidos_fecha_torneo">
+                                    <?php for ($i = 1; $i <= $administrar_partidos['fechas_torneo']; $i++): ?>
                                         <option value="<?php echo $i ?>"><?php echo $i ?></option>
                                     <?php endfor ?>
                                 </select>
                             <?php } ?>
 
-                            <span class="help-inline"><?php echo form_error('administrar_partidos_idfase'); ?></span>
+                            <span class="help-inline"><?php echo form_error('administrar_partidos_fecha_torneo'); ?></span>
                         </div>
                     </div>
                 </td>
@@ -80,7 +89,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                         <div class="controls">
                             <!--<input id="administrar_partidos_idequipo1" type="text" name="administrar_partidos_idequipo1" maxlength="11" value="<!?php echo set_value('administrar_partidos_idequipo1', isset($administrar_partidos['idequipo1']) ? $administrar_partidos['idequipo1'] : ''); ?>"  />-->
                             <?php if (isset($equipos)) { ?>
-                                <select id="administrar_partidos_idequipo1" name="administrar_partidos_idequipo1" onchange="return changeTorneo()">
+                                <select id="administrar_partidos_idequipo1" name="administrar_partidos_idequipo1" onchange="return changeTorneo('change_equipo')">
                                     <?php foreach ($equipos as $equipo): ?>
                                         <?php if ($equipo['id'] === $equipo1selected) : ?>
                                             <option value="<?php echo $equipo['id'] ?>" selected><?php echo $equipo['nombre'] ?></option>
@@ -100,7 +109,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                         <div class="controls">
                             <!--<input id="administrar_partidos_idequipo2" type="text" name="administrar_partidos_idequipo2" maxlength="11" value="<!?php echo set_value('administrar_partidos_idequipo2', isset($administrar_partidos['idequipo2']) ? $administrar_partidos['idequipo2'] : ''); ?>"  />-->
                             <?php if (isset($equipos)) { ?>
-                                <select id="administrar_partidos_idequipo2" name="administrar_partidos_idequipo2" onchange="return changeTorneo()">
+                                <select id="administrar_partidos_idequipo2" name="administrar_partidos_idequipo2" onchange="return changeTorneo('change_equipo')">
                                     <?php foreach ($equipos as $equipo): ?>
                                         <?php if ($equipo['id'] === $equipo2selected) : ?>
                                             <option value="<?php echo $equipo['id'] ?>" selected><?php echo $equipo['nombre'] ?></option>
@@ -208,16 +217,6 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                 </td>
             </tr>
         </table>
-
-
-
-        <!--        <div class="control-group <!?php echo form_error('administrar_partidos_fecha_torneo') ? 'error' : ''; ?>">
-                    <!?php echo form_label('Fecha Torneo', 'administrar_partidos_fecha_torneo', array('class' => "control-label")); ?>
-                    <div class="controls">
-                        <input id="administrar_partidos_fecha_torneo" type="text" name="administrar_partidos_fecha_torneo" maxlength="11" value="<!?php echo set_value('administrar_partidos_fecha_torneo', isset($administrar_partidos['fecha_torneo']) ? $administrar_partidos['fecha_torneo'] : ''); ?>"  />
-                        <span class="help-inline"><!?php echo form_error('administrar_partidos_fecha_torneo'); ?></span>
-                    </div>
-                </div>        -->
         <div class="control-group <?php echo form_error('administrar_partidos_jugado') ? 'error' : ''; ?>">
             <?php echo form_label('Terminado', 'administrar_partidos_jugado', array('class' => "control-label")); ?>
             <div class="controls">

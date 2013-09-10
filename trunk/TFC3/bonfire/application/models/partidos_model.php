@@ -6,23 +6,27 @@ class Partidos_model extends CI_Model {
         $this->load->database();
     }
 
-    public function save_fixture($idtorneo, $fixturepartidos, $fixtureordenequipos) {
+    public function save_fixture($idtorneo, $fixturepartidos, $fixtureordenequipos, $data) {
         if ($fixturepartidos != '') {
             $equipos = explode(",", $fixtureordenequipos);
-            $equipos_legth = count($equipos) / 2;
-            if ($equipos_legth % 2 == 0) {
-                $rondas = $equipos_legth - 1;
-                $cant_partidos = $equipos_legth / 2;
-            } else {
-                $rondas = $equipos_legth;
-                $cant_partidos = ($equipos_legth - 1) / 2;
-            }
-
+//            $equipos_legth = count($equipos) / 2;
+//            if ($equipos_legth % 2 == 0) {
+//                $rondas = $equipos_legth - 1;
+//                $cant_partidos_en_fecha = $equipos_legth / 2;
+//            } else {
+//                $rondas = $equipos_legth;
+//                $cant_partidos_en_fecha = ($equipos_legth - 1) / 2;
+//            }
+            $equipos_legth = $data['cantidad_equipos'];
+            $rondas = $data['cantidad_fechas'];
+            $cant_partidos_en_fecha = $data['cantidad_partidos'] / $data['cantidad_fechas'];
+            $cant_fechas = $data['cantidad_fechas'];
 
             $partidos = explode(",", $fixturepartidos);
 
             $numpartido = 1;
-            echo "aca: rondas: " . $rondas . ' cant_partidos: ' . $cant_partidos . " equipos: " . $equipos_legth;
+            $indice_fecha = 1;
+            echo "aca: rondas: " . $rondas . ' cant_partidos: ' . $cant_partidos_en_fecha . " equipos: " . $equipos_legth;
             foreach ($partidos as $partido) {
                 echo "entro..\n";
                 echo "partido: " . $partido . "\n";
@@ -30,10 +34,11 @@ class Partidos_model extends CI_Model {
                     echo "nono\n";
                 } else {
                     $equipos = explode(" vs ", $partido);
-                    $this->db->query("INSERT INTO tfc_partido (idtorneo,idfase,idequipo1,idequipo2,fecha_torneo) values (" . $idtorneo . "," . $numpartido . "," . $equipos[0] . "," . $equipos[1] . "," . $numpartido . ");");
+                    $this->db->query("INSERT INTO tfc_partido (idtorneo,idfase,idequipo1,idequipo2,fecha_torneo) values (" . $idtorneo . "," . $numpartido . "," . $equipos[0] . "," . $equipos[1] . "," . $indice_fecha . ");");
                     $numpartido++;
-                    if ($numpartido == ($cant_partidos + 1)) {
+                    if ($numpartido == ($cant_partidos_en_fecha + 1)) {
                         $numpartido = 1;
+                        $indice_fecha++;
                     }
                 }
             }
