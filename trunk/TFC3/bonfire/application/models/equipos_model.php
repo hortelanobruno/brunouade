@@ -31,8 +31,10 @@ class Equipos_model extends CI_Model {
         return $query->row_array();
     }
 
-    public function agregar_equipo_a_torneo($idtorneo, $idequipo) {
-        $this->db->query("INSERT INTO tfc_equipos_torneo values(" . $idtorneo . "," . $idequipo . ",false);");
+    public function agregar_equipos_a_torneo($idtorneo, $equipos) {
+        foreach ($equipos as $equipo) {
+            $this->db->query("INSERT INTO tfc_equipos_torneo values(" . $idtorneo . "," . $idequipo . ",false);");
+        }
     }
 
     public function delete_equipos_de_torneo($idtorneo) {

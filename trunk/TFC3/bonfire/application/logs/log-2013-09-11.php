@@ -299,3 +299,6 @@ ERROR - 2013-09-11 01:44:27 --> Severity: Notice  --> Undefined variable: fechas
 ERROR - 2013-09-11 01:44:27 --> Severity: Notice  --> Undefined variable: fechaselected C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\administrar_partidos\views\content\index.php 20
 ERROR - 2013-09-11 01:44:27 --> Severity: Notice  --> Undefined variable: fechaselected C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\administrar_partidos\views\content\index.php 20
 ERROR - 2013-09-11 01:44:27 --> Severity: Notice  --> Undefined variable: fechaselected C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\administrar_partidos\views\content\index.php 20
+ERROR - 2013-09-11 13:50:53 --> Query error: Table 'tfc_dev.tfc_torneo_reglamento' doesn't exist
+ERROR - 2013-09-11 13:51:42 --> Query error: Table 'tfc_dev.tfc_torneo_reglamento' doesn't exist
+ERROR - 2013-09-11 13:56:26 --> Query error: Table 'tfc_dev.tfc_torneo_reglamento' doesn't exist
