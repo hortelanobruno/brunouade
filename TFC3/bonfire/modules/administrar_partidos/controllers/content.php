@@ -45,7 +45,9 @@ class content extends Admin_Controller {
                 $result = FALSE;
                 foreach ($checked as $pid) {
                     $result = $this->administrar_partidos_model->delete($pid);
-                    $this->partidos_model->delete_estadisticas_partido($pid);
+                    $data_old = $this->administrar_partidos_model->find($pid);
+                    $this->partidos_model->actualizar_data_delete_partido($pid,$data_old);
+                    
                 }
 
                 if ($result) {
@@ -346,6 +348,7 @@ class content extends Admin_Controller {
         $data['jugado'] = $this->input->post('administrar_partidos_jugado');
 
         if ($type == 'insert') {
+            //Creacion de partido
             $id = $this->administrar_partidos_model->insert($data);
 
             if (is_numeric($id)) {
@@ -353,56 +356,17 @@ class content extends Admin_Controller {
             } else {
                 $return = FALSE;
             }
-
-            for ($i = 0; $i < count($_POST["jugador1id"]); $i++) {
-                if ($_POST["jugador1goles"][$i] != '' && intval($_POST["jugador1goles"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo1'], $_POST["jugador1id"][$i], 1, $_POST["jugador1goles"][$i]);
-                }
-                if ($_POST["jugador1tarjetaamarilla"][$i] != '' && intval($_POST["jugador1tarjetaamarilla"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo1'], $_POST["jugador1id"][$i], 2, $_POST["jugador1tarjetaamarilla"][$i]);
-                }
-                if ($_POST["jugador1tarjetaroja"][$i] != '' && intval($_POST["jugador1tarjetaroja"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo1'], $_POST["jugador1id"][$i], 3, $_POST["jugador1tarjetaroja"][$i]);
-                }
-            }
-            for ($i = 0; $i < count($_POST["jugador2id"]); $i++) {
-                if ($_POST["jugador2goles"][$i] != '' && intval($_POST["jugador2goles"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo2'], $_POST["jugador2id"][$i], 1, $_POST["jugador2goles"][$i]);
-                }
-                if ($_POST["jugador2tarjetaamarilla"][$i] != '' && intval($_POST["jugador2tarjetaamarilla"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo2'], $_POST["jugador2id"][$i], 2, $_POST["jugador2tarjetaamarilla"][$i]);
-                }
-                if ($_POST["jugador2tarjetaroja"][$i] != '' && intval($_POST["jugador2tarjetaroja"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo2'], $_POST["jugador2id"][$i], 3, $_POST["jugador2tarjetaroja"][$i]);
-                }
-            }
+            
+            $this->partidos_model->actualizar_data_creacion_partido($data,$_POST["jugador1id"],$_POST["jugador1goles"],$_POST["jugador1tarjetaamarilla"],
+                    $_POST["jugador1tarjetaroja"],$_POST["jugador2id"],$_POST["jugador2goles"],$_POST["jugador2tarjetaamarilla"],
+                    $_POST["jugador2tarjetaroja"]);
         } else if ($type == 'update') {
+            $data_old = $this->administrar_partidos_model->find($id);
             $return = $this->administrar_partidos_model->update($id, $data);
-
-            $this->partidos_model->delete_estadisticas_partido($id);
-
-            for ($i = 0; $i < count($_POST["jugador1id"]); $i++) {
-                if ($_POST["jugador1goles"][$i] != '' && intval($_POST["jugador1goles"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo1'], $_POST["jugador1id"][$i], 1, $_POST["jugador1goles"][$i]);
-                }
-                if ($_POST["jugador1tarjetaamarilla"][$i] != '' && intval($_POST["jugador1tarjetaamarilla"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo1'], $_POST["jugador1id"][$i], 2, $_POST["jugador1tarjetaamarilla"][$i]);
-                }
-                if ($_POST["jugador1tarjetaroja"][$i] != '' && intval($_POST["jugador1tarjetaroja"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo1'], $_POST["jugador1id"][$i], 3, $_POST["jugador1tarjetaroja"][$i]);
-                }
-            }
-            for ($i = 0; $i < count($_POST["jugador2id"]); $i++) {
-                if ($_POST["jugador2goles"][$i] != '' && intval($_POST["jugador2goles"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo2'], $_POST["jugador2id"][$i], 1, $_POST["jugador2goles"][$i]);
-                }
-                if ($_POST["jugador2tarjetaamarilla"][$i] != '' && intval($_POST["jugador2tarjetaamarilla"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo2'], $_POST["jugador2id"][$i], 2, $_POST["jugador2tarjetaamarilla"][$i]);
-                }
-                if ($_POST["jugador2tarjetaroja"][$i] != '' && intval($_POST["jugador2tarjetaroja"][$i]) > 0) {
-                    $this->partidos_model->save_estadisticas_partido($id, $data['idequipo2'], $_POST["jugador2id"][$i], 3, $_POST["jugador2tarjetaroja"][$i]);
-                }
-            }
+            
+            $this->partidos_model->actualizar_data_actualizacion_partido($id,$data,$data_old,$_POST["jugador1id"],$_POST["jugador1goles"],$_POST["jugador1tarjetaamarilla"],
+                    $_POST["jugador1tarjetaroja"],$_POST["jugador2id"],$_POST["jugador2goles"],$_POST["jugador2tarjetaamarilla"],
+                    $_POST["jugador2tarjetaroja"]);
         }
 
         return $return;
