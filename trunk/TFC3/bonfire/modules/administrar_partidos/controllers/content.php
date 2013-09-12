@@ -339,13 +339,14 @@ class content extends Admin_Controller {
         $data = array();
         $data['fecha'] = $this->input->post('administrar_partidos_fecha') ? $this->input->post('administrar_partidos_fecha') : '0000-00-00 00:00:00';
         $data['idtorneo'] = intval($this->input->post('administrar_partidos_idtorneo'));
-        $data['idfase'] = intval($this->input->post('administrar_partidos_idfase'));
+//        $data['idfase'] = intval($this->input->post('administrar_partidos_idfase'));
         $data['idequipo1'] = intval($this->input->post('administrar_partidos_idequipo1'));
         $data['idequipo2'] = intval($this->input->post('administrar_partidos_idequipo2'));
         $data['goles_equipo1'] = intval($this->input->post('administrar_partidos_goles_equipo1'));
         $data['goles_equipo2'] = intval($this->input->post('administrar_partidos_goles_equipo2'));
         $data['fecha_torneo'] = intval($this->input->post('administrar_partidos_fecha_torneo'));
         $data['jugado'] = $this->input->post('administrar_partidos_jugado');
+        $data['idfase'] = $this->torneos_model->get_fase_torneo($data);
 
         if ($type == 'insert') {
             //Creacion de partido
@@ -357,7 +358,7 @@ class content extends Admin_Controller {
                 $return = FALSE;
             }
             
-            $this->partidos_model->actualizar_data_creacion_partido($data,$_POST["jugador1id"],$_POST["jugador1goles"],$_POST["jugador1tarjetaamarilla"],
+            $this->partidos_model->actualizar_data_creacion_partido($id,$data,$_POST["jugador1id"],$_POST["jugador1goles"],$_POST["jugador1tarjetaamarilla"],
                     $_POST["jugador1tarjetaroja"],$_POST["jugador2id"],$_POST["jugador2goles"],$_POST["jugador2tarjetaamarilla"],
                     $_POST["jugador2tarjetaroja"]);
         } else if ($type == 'update') {

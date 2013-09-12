@@ -81,4 +81,22 @@ class Torneos_model extends CI_Model {
         $this->db->query("DELETE FROM tfc_estadisticas_jugador_por_torneo where idtorneo=" . $idtorneo);
     }
 
+    public function create_tabla_posiciones($idtorneo, $fixtureordenequipos, $data) {
+        //Creacion tabla posiciones torneo de categoria: grupo
+        if ($data['categoria'] == 1) {
+            $equipos = explode(",", $fixtureordenequipos); //odds = id
+            for ($i = 0; $i < count($equipos); $i++) {
+                $this->db->query("INSERT INTO tfc_torneo_tabla_posiciones values (" . $idtorneo . ",1," . $equipos[$i] . ",0,0,0,0,0,0,0);");
+                $i++;
+            }
+        }
+    }
+
+    public function get_fase_torneo($data) {
+        $torneo = $this->get_torneo($data['idtorneo']);
+        if ($torneo['categoria'] == 1) {
+            return 1;
+        }
+    }
+
 }
