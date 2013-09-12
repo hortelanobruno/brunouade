@@ -248,6 +248,7 @@ class content extends Admin_Controller {
 
             $this->equipos_model->agregar_equipos_a_torneo($id, $_POST["equipoelegidos"]);
             $this->partidos_model->save_fixture($id,$fixturepartidos, $fixtureordenequipos, $data);
+            $this->torneos_model->create_tabla_posiciones($id, $fixtureordenequipos, $data);
         } else if ($type == 'update') {
             //Modificacion de torneo
             $return = $this->administrar_torneos_model->update($id, $data);
