@@ -45,7 +45,8 @@ class content extends Admin_Controller {
                     $result = $this->administrar_torneos_model->delete($pid);
                     $this->equipos_model->delete_equipos_de_torneo($pid);
                     $this->partidos_model->delete_partidos_de_torneo($pid);
-                    $this->torneos_model->delete_estadisticas_de_torneo($pid);                    
+                    $this->torneos_model->delete_estadisticas_de_torneo($pid);
+                    $this->torneos_model->delete_tabla_posiciones($pid);                    
                 }
 
                 if ($result) {

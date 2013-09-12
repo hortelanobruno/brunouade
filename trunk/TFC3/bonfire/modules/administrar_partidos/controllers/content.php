@@ -44,10 +44,9 @@ class content extends Admin_Controller {
             if (is_array($checked) && count($checked)) {
                 $result = FALSE;
                 foreach ($checked as $pid) {
+                    $data_old = $this->partidos_model->get_partido($pid);
                     $result = $this->administrar_partidos_model->delete($pid);
-                    $data_old = $this->administrar_partidos_model->find($pid);
-                    $this->partidos_model->actualizar_data_delete_partido($pid,$data_old);
-                    
+                    $this->partidos_model->actualizar_data_delete_partido($pid,$data_old);   
                 }
 
                 if ($result) {
@@ -362,7 +361,7 @@ class content extends Admin_Controller {
                     $_POST["jugador1tarjetaroja"],$_POST["jugador2id"],$_POST["jugador2goles"],$_POST["jugador2tarjetaamarilla"],
                     $_POST["jugador2tarjetaroja"]);
         } else if ($type == 'update') {
-            $data_old = $this->administrar_partidos_model->find($id);
+            $data_old = $this->partidos_model->get_partido($id);
             $return = $this->administrar_partidos_model->update($id, $data);
             
             $this->partidos_model->actualizar_data_actualizacion_partido($id,$data,$data_old,$_POST["jugador1id"],$_POST["jugador1goles"],$_POST["jugador1tarjetaamarilla"],

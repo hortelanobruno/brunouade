@@ -30,6 +30,11 @@ class Torneos_model extends CI_Model {
     public function delete_from_tabla_posiciones($id, $idfase, $idequipo) {
         $this->db->query("DELETE FROM tfc_torneo_tabla_posiciones where idtorneo =" . $id . " and idfase=" . $idfase . " and idequipo=" . $idequipo);
     }
+    
+    public function delete_tabla_posiciones($idtorneo) {
+        $this->db->query("DELETE FROM tfc_torneo_tabla_posiciones where idtorneo =" . $idtorneo);
+    }
+    
 
     public function update_tabla_posiciones($id, $idfase, $idequipo, $data) {
         $this->db->query("UPDATE tfc_torneo_tabla_posiciones set puntos=" . $data['puntos'] . ",partidos_jugados=" . $data['partidos_jugados'] . ",partidos_ganados=" . $data['partidos_ganados'] . ",partidos_empatados=" . $data['partidos_empatados'] . ",partidos_perdidos=" . $data['partidos_perdidos'] . ",goles_a_favor=" . $data['goles_a_favor'] . ",goles_en_contra=" . $data['goles_en_contra'] . " where idtorneo =" . $id . " and idfase=" . $idfase . " and idequipo=" . $idequipo);
