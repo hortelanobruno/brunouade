@@ -165,7 +165,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                                                 <input type="hidden" id="jugador1id" name="jugador1id[]" style="width: 30px" value="<?php echo $jugador['id'] ?>" />
                                             </td>
                                             <td style="width: 60px">
-                                                <input type="text" id="jugador1goles" name="jugador1goles[]" style="width: 30px" oninput="calculateGoles('jugador1goles','administrar_partidos_goles_equipo1')" />
+                                                <input type="text" id="jugador1goles" name="jugador1goles[]" style="width: 30px" oninput="calculateGoles('jugador1goles','administrar_partidos_goles_equipo1','equipo1golesencontra')" />
                                             </td>
                                             <td style="width: 60px">
                                                 <input type="text" id="jugador1tarjetaamarilla" name="jugador1tarjetaamarilla[]" style="width: 30px" />
@@ -200,7 +200,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                                                 <input type="hidden" id="jugador2id" name="jugador2id[]" style="width: 30px" value="<?php echo $jugador['id'] ?>" />
                                             </td>
                                             <td style="width: 60px">
-                                                <input type="text" id="jugador2goles" name="jugador2goles[]" style="width: 30px" oninput="calculateGoles('jugador2goles','administrar_partidos_goles_equipo2')" />
+                                                <input type="text" id="jugador2goles" name="jugador2goles[]" style="width: 30px" oninput="calculateGoles('jugador2goles','administrar_partidos_goles_equipo2','equipo2golesencontra')" />
                                             </td>
                                             <td style="width: 60px">
                                                 <input type="text" id="jugador2tarjetaamarilla" name="jugador2tarjetaamarilla[]" style="width: 30px" />
@@ -214,6 +214,24 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                             </tbody>
                         </table>
                     </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 50px;">
+                    <div class="control-group">
+                        <label class="control-label">Goles en contra</label>
+                        <div class="controls">
+                            <input type="text" id="equipo1golesencontra" name="equipo1golesencontra" style="width: 30px" oninput="calculateGoles('jugador1goles','administrar_partidos_goles_equipo1','equipo1golesencontra')" />
+                        </div>
+                    </div> 
+                </td>
+                <td>
+                    <div class="control-group">
+                        <label class="control-label">Goles en contra</label>
+                        <div class="controls">
+                            <input type="text" id="equipo2golesencontra" name="equipo2golesencontra" style="width: 30px" oninput="calculateGoles('jugador2goles','administrar_partidos_goles_equipo2','equipo2golesencontra')" />
+                        </div>
+                    </div> 
                 </td>
             </tr>
         </table>

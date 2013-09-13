@@ -225,7 +225,7 @@ function changeTorneo($event) {
     document.getElementById("formcreatepart").submit();
 }
 
-function calculateGoles(element, elementresult) {
+function calculateGoles(element, elementresult, elementencontra) {
     var count = 0;
     $("input[name='" + element + "\\[\\]']").each(function() {
         var val = $(this).val();
@@ -233,6 +233,10 @@ function calculateGoles(element, elementresult) {
             count += parseInt(val) || 0;
         }
     });
+    var val = $("#" + elementencontra).val();
+    if (val != null && val != '') {
+        count -= parseInt(val) || 0;
+    }
     $('#' + elementresult).val(count);
 }
 
