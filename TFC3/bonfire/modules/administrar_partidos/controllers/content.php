@@ -46,7 +46,7 @@ class content extends Admin_Controller {
                 foreach ($checked as $pid) {
                     $data_old = $this->partidos_model->get_partido($pid);
                     $result = $this->administrar_partidos_model->delete($pid);
-                    $this->partidos_model->actualizar_data_delete_partido($pid,$data_old);   
+                    $this->partidos_model->actualizar_data_delete_partido($pid, $data_old);
                 }
 
                 if ($result) {
@@ -148,7 +148,7 @@ class content extends Admin_Controller {
                 Template::set('torneoselected', $data['torneoelegido']);
                 Template::set('administrar_partidos', $administrar_partidos);
                 Template::set('equipos', $this->equipos_model->get_equipos_from_torneo($data['torneoelegido']));
-                
+
                 $data['equipo1'] = $this->input->post('administrar_partidos_idequipo1');
                 Template::set('jugadores1', $this->equipos_model->get_jugadores_from_equipo($data['equipo1']));
                 Template::set('equipo1selected', $data['equipo1']);
@@ -277,11 +277,13 @@ class content extends Admin_Controller {
         if ($data['equipo1'] != NULL) {
             Template::set('jugadores1', $this->equipos_model->get_jugadores_from_equipo($data['equipo1']));
             Template::set('equipo1selected', $data['equipo1']);
+            Template::set('equipo1golesencontra', $this->partidos_model->get_estadistica_goles_en_contra($id, $data['equipo1']));
         }
 
         if ($data['equipo2'] != NULL) {
             Template::set('jugadores2', $this->equipos_model->get_jugadores_from_equipo($data['equipo2']));
             Template::set('equipo2selected', $data['equipo2']);
+            Template::set('equipo2golesencontra', $this->partidos_model->get_estadistica_goles_en_contra($id, $data['equipo2']));
         }
 
         Template::set('estadisticaspartido', $this->partidos_model->get_estadisticas_partido($id));
@@ -356,17 +358,13 @@ class content extends Admin_Controller {
             } else {
                 $return = FALSE;
             }
-            
-            $this->partidos_model->actualizar_data_creacion_partido($id,$data,$_POST["jugador1id"],$_POST["jugador1goles"],$_POST["jugador1tarjetaamarilla"],
-                    $_POST["jugador1tarjetaroja"],$_POST["jugador2id"],$_POST["jugador2goles"],$_POST["jugador2tarjetaamarilla"],
-                    $_POST["jugador2tarjetaroja"]);
+
+            $this->partidos_model->actualizar_data_creacion_partido($id, $data, $_POST["jugador1id"], $_POST["jugador1goles"], $_POST["jugador1tarjetaamarilla"], $_POST["jugador1tarjetaroja"], $_POST["jugador2id"], $_POST["jugador2goles"], $_POST["jugador2tarjetaamarilla"], $_POST["jugador2tarjetaroja"], $_POST["equipo1golesencontra"], $_POST["equipo2golesencontra"]);
         } else if ($type == 'update') {
             $data_old = $this->partidos_model->get_partido($id);
             $return = $this->administrar_partidos_model->update($id, $data);
-            
-            $this->partidos_model->actualizar_data_actualizacion_partido($id,$data,$data_old,$_POST["jugador1id"],$_POST["jugador1goles"],$_POST["jugador1tarjetaamarilla"],
-                    $_POST["jugador1tarjetaroja"],$_POST["jugador2id"],$_POST["jugador2goles"],$_POST["jugador2tarjetaamarilla"],
-                    $_POST["jugador2tarjetaroja"]);
+
+            $this->partidos_model->actualizar_data_actualizacion_partido($id, $data, $data_old, $_POST["jugador1id"], $_POST["jugador1goles"], $_POST["jugador1tarjetaamarilla"], $_POST["jugador1tarjetaroja"], $_POST["jugador2id"], $_POST["jugador2goles"], $_POST["jugador2tarjetaamarilla"], $_POST["jugador2tarjetaroja"], $_POST["equipo1golesencontra"], $_POST["equipo2golesencontra"]);
         }
 
         return $return;
