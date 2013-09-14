@@ -27,7 +27,7 @@ class Equipos_model extends CI_Model {
     }
 
     public function get_delegado_from_equipo($idequipo) {
-        $query = $this->db->query("SELECT * FROM tfc_jugador where delegado=true and idequipo=" . $idequipo);
+        $query = $this->db->query("SELECT * FROM tfc_jugador where delegado=1 and idequipo=" . $idequipo);
         return $query->row_array();
     }
 

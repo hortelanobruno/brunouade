@@ -68,7 +68,7 @@ class Torneos_model extends CI_Model {
     }
 
     public function get_next_5_matchs($idequipo) {
-        $query = $this->db->query("SELECT * FROM tfc_partido WHERE (idequipo1=" . $idequipo . " or idequipo2=" . $idequipo . ") and jugado=false order by fecha asc limit 5");
+        $query = $this->db->query("SELECT * FROM tfc_partido WHERE (idequipo1=" . $idequipo . " or idequipo2=" . $idequipo . ") and (jugado=0 or jugado is null) order by id,fecha asc limit 5");
         return $query->result_array();
     }
 

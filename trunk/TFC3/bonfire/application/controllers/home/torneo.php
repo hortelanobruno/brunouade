@@ -37,6 +37,7 @@ class Torneo extends Front_Controller {
         $this->load->model('torneos_model');
         $this->load->model('equipos_model');
         $this->load->model('partidos_model');
+        $this->load->model('sedes_model');
     }
 
     /**
@@ -61,6 +62,7 @@ class Torneo extends Front_Controller {
         $data['vallaMenosVencida'] = $this->torneos_model->get_vallaMenosVencida_from_torneo($idtorneo);
         $data['tarjetas'] = $this->torneos_model->get_tarjetas_from_torneo($idtorneo);
         $data['fixture'] = $this->partidos_model->get_fixture($idtorneo);
+        $data['sedes'] = $this->sedes_model->get_sedes();
         $data['fechaelegida'] = 1;
 
 
@@ -77,8 +79,11 @@ class Torneo extends Front_Controller {
         $data['estadisticas_partido'] = $this->partidos_model->get_estadisticas_partido($idpartido);
         $data['jugadores_equipo1'] = $this->equipos_model->get_jugadores_from_equipo($data['partido']['idequipo1']);
         $data['jugadores_equipo2'] = $this->equipos_model->get_jugadores_from_equipo($data['partido']['idequipo2']);
-        
-        
+
+        if (isset($data['partido']['idsede'])) {
+            $data['sede'] = $this->sedes_model->get_sede($data['partido']['idsede']);
+        }
+
 
 
         $this->load->view('home/partes/header', $data);

@@ -34,7 +34,7 @@
                             </div>
                             <div class="player-name pb25">
                                 <div class="w200 fleft"><b>Delegado</b></div>
-                                <div class="w200 fleft"><?php echo $delegado['nombre_completo'] ?></div>
+                                <div class="w200 fleft"><?php echo getDelegado($delegado) ?></div>
                             </div>
                             <br />
                             <br />
@@ -84,19 +84,20 @@
                             } else {
                                 ?>
                                 <?php foreach ($partidos as $partido): ?>               
-                                    <div class="fleft pt10">
-                                        <a href="../../../view/tournament/id/1.html" class="b black"><?php echo $jugador['torneo_nombre'] ?></a>
-                                    </div>
+<!--                                    <div class="fleft pt10">
+                                        
+                                    </div>-->
                                     <br clear="all" />
                                     <div class="wp100 pt5">
-                                        <div class="fleft w300">
-                                            <a href="../../../match/view/id/61.html"><?php echo $jugador['equipo1_nombre'] ?> - <?php echo $jugador['equipo2_nombre'] ?></a>
+                                        <div class="fleft w450">
+                                            <a href="/torneo/<?php echo $partido['idtorneo'] ?>" class="b black"><?php echo getTorneo($torneos_all,$partido['idtorneo']) ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/torneo/<?php echo $partido['idtorneo'] ?>/partido/<?php echo $partido['id'] ?>"><?php echo getEquipo($equipos,$partido['idequipo1']) ?> - <?php echo getEquipo($equipos,$partido['idequipo2']) ?></a>
                                         </div>
-                                        <div class="w80 fright"><?php echo $jugador['fecha'] ?></div>
+                                        <br/>
+                                        <div class="w200 fleft">Fecha: <?php echo getFecha($partido['fecha']) ?></div>
                                     </div>    
                                 <?php endforeach ?>
                             <?php } ?>
-
+                                    <br clear="all" /><br clear="all" />
                             <div class="border_light_bottom_dotted pt20"></div>
                         </div>
                     </div>
@@ -139,3 +140,45 @@
 </div> <!-- #wrapper -->
 
 <div class="clearfix"></div>
+
+<?
+
+function getDelegado($delegado){
+    if(!empty($delegado)){
+        return $delegado['nombre_completo'];
+    }else{
+        return "No hay delegado";
+    }
+}
+
+function getEquipo($equipo, $idequipo) {
+    if (isset($equipo)) {
+        foreach ($equipo as $equipo) {
+            if ($equipo['id'] === $idequipo)
+                return $equipo['nombre'];
+        }
+    }else {
+        return $idequipo;
+    }
+}
+
+function getTorneo($torneos_all,$idtorneo){
+    if (isset($torneos_all)) {
+        foreach ($torneos_all as $torneo) {
+            if ($torneo['id'] === $idtorneo)
+                return $torneo['nombre'];
+        }
+    }else {
+        return $idtorneo;
+    }
+}
+
+function getFecha($fecha){
+    if(!empty($fecha)){
+        return $fecha;
+    }else{
+        return "No disponible";
+    }
+}
+
+?>

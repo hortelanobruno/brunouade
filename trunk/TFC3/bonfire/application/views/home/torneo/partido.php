@@ -7,7 +7,7 @@
             <div id="pageView-title">
                 <?php echo $torneo['nombre'] ?></div>
             <span class="b i f16"></span><br />
-            <?php echo $partido['fecha'] ?> / Sede Sazo<br />
+            <?php echo (isset($partido['fecha']) ? $partido['fecha'] : 'Fecha no disponible') ?> / <?php echo (isset($sede) ? $sede['nombre'] : 'Sede no disponible') ?><br />
             <br />
             <table class="w950 mauto border_lightest bggray">
                 <tr>

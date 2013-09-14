@@ -29,6 +29,8 @@ class content extends Admin_Controller {
       Displays a list of form data.
      */
     public function index() {
+        
+        $equipos = $this->equipos_model->get_all_equipos();
 
         // Deleting anything?
         if ($this->input->post_key_exists('delete')) {
@@ -48,10 +50,21 @@ class content extends Admin_Controller {
             }
         }
 
-        $records = $this->jugadores_model->find_all();
+//        $records = $this->jugadores_model->find_all();
+        $data = array();
+        $data['equipo'] = $this->input->post('equipo');
+        if ($data['equipo'] == null) {
+            $data['equipo'] = $equipos[0]['id'];
+        }
+        
+        if ($data['equipo'] != null) {
+            Template::set('equiposelected', $data['equipo']);
+            
+            $records = $this->jugadores_model->find_all_by(array('idequipo' => $data['equipo']));
+        }
 
         Template::set('records', $records);
-        Template::set('equipos', $this->equipos_model->get_all_equipos());
+        Template::set('equipos', $equipos);
         Template::set('toolbar_title', 'Manage Jugadores');
         Template::render();
     }
