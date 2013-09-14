@@ -47,14 +47,14 @@ $route['inscripciones'] = 'home/inscripciones';
 $route['noticia/(:any)'] = 'home/noticia/view/$1';
 $route['noticias'] = 'home/noticia';
 $route['sedes'] = 'home/sede';
-$route['torneo/(:any)'] = 'home/torneo/view/$1';
 $route['torneo/(:any)/fixture'] = 'home/torneo/fixture/$1';
 $route['torneo/(:any)/goleadores'] = 'home/torneo/goleadores/$1';
-$route['torneo/(:any)/partido/(:any)'] = 'home/torneo/partido/$1,$2';
+$route['torneo/(:any)/partido/(:any)'] = 'home/torneo/partido/$1/$2';
 $route['torneo/(:any)/reglamento'] = 'home/torneo/reglamento/$1';
 $route['torneo/(:any)/sanciones'] = 'home/torneo/sanciones/$1';
 $route['torneo/(:any)/tablaPosiciones'] = 'home/torneo/tablaPosiciones/$1';
 $route['torneo/(:any)/vallaMenosVencida'] = 'home/torneo/vallaMenosVencida/$1';
+$route['torneo/(:any)'] = 'home/torneo/view/$1';
 $route['torneos'] = 'home/torneo';
 
 $route['404_override'] = '';

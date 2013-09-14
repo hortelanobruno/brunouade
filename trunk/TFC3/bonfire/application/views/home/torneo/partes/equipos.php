@@ -2,7 +2,6 @@
     <caption class="f24 b mb20">Equipos</caption>
     <tbody>
         <?php foreach ($equipos as $equipo): ?>
-
             <tr><td colspan="3"><span class="b i"></span></td></tr>
             <tr class="">
                 <td><a class="nowrap f14" href="/equipo/<?php echo $equipo['id'] ?>"><?php echo $equipo['nombre'] ?></a></td>

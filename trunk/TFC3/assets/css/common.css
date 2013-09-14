@@ -22,7 +22,7 @@ caption, tbody, tfoot, thead, tr, th, td {
 	font-style: inherit;
 	font-size: 100%;
 	font-family: inherit;
-	vertical-align: baseline;
+	/*vertical-align: baseline;*/
 }
 /* remember to define focus styles! */
 :focus {
@@ -32,7 +32,8 @@ body {
 	background-color:#FFFFFF;
 	line-height: 1.5em;
 	color: #2a2828;
-	background: url('/assets/imgs/commons/background.jpg') repeat-x #6cb7d4;
+	/*background: url('/assets/imgs/commons/background.jpg') repeat-x #6cb7d4;*/
+        background: url('/assets/imgs/commons/background.jpg') repeat-x #20B626;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
 	line-height:1.5em;
