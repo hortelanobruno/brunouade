@@ -54,10 +54,12 @@ class Equipo extends Front_Controller {
 
     public function view($idequipo) {
         $data['torneos'] = $this->torneos_model->get_last_4_torneos();
+        $data['torneos_all'] = $this->torneos_model->get_all_torneos();
         $data['equipo'] = $this->equipos_model->get_equipo($idequipo);
         $data['delegado'] = $this->equipos_model->get_delegado_from_equipo($idequipo);
         $data['jugadores'] = $this->equipos_model->get_jugadores_from_equipo($idequipo);
         $data['partidos'] = $this->torneos_model->get_next_5_matchs($idequipo);
+        $data['equipos'] = $this->equipos_model->get_all_equipos();
         $data['historial_torneos'] = $this->torneos_model->get_historial_torneos($idequipo);
         $this->load->view('home/partes/header', $data);
         $this->load->view('home/equipo/view', $data);

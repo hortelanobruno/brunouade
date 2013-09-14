@@ -16,6 +16,7 @@ class content extends Admin_Controller {
         $this->load->model('torneos_model', null, true);
         $this->load->model('partidos_model', null, true);
         $this->load->model('equipos_model', null, true);
+        $this->load->model('sedes_model', null, true);
         $this->lang->load('administrar_partidos');
 
         Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
@@ -75,17 +76,14 @@ class content extends Admin_Controller {
             } else {
                 $records = $this->administrar_partidos_model->find_all_by(array('idtorneo' => $data['torneo'], 'fecha_torneo' => 1));
             }
-        } else {
-//            $records = $this->administrar_partidos_model->find_all();
         }
-
-//        $records = $this->administrar_partidos_model->find_all();
 
 
 
         Template::set('records', $records);
         Template::set('torneos', $torneos);
         Template::set('equipos', $this->equipos_model->get_equipos_from_torneo($data['torneo']));
+        Template::set('sedes', $this->sedes_model->get_sedes());
         Template::set('toolbar_title', 'Manage Administrar Partidos');
         Template::render();
     }
@@ -204,6 +202,7 @@ class content extends Admin_Controller {
         Assets::add_module_js('administrar_partidos', 'administrar_partidos.js');
 
         Template::set('torneos', $torneos);
+        Template::set('sedes', $this->sedes_model->get_sedes());
         Template::set('toolbar_title', lang('administrar_partidos_create') . ' Administrar Partidos');
         Template::render();
     }
@@ -260,7 +259,6 @@ class content extends Admin_Controller {
         $data['equipo2'] = $partido->idequipo2;
 
 
-
         if ($data['torneoelegido'] != NULL) {
             $torneodata = $this->torneos_model->get_torneo($data['torneoelegido']);
 
@@ -293,6 +291,7 @@ class content extends Admin_Controller {
         Assets::add_module_js('administrar_partidos', 'administrar_partidos.js');
 
         Template::set('torneos', $this->torneos_model->get_all_torneos());
+        Template::set('sedes', $this->sedes_model->get_sedes());
         Template::set('toolbar_title', lang('administrar_partidos_edit') . ' Administrar Partidos');
         Template::render();
     }
@@ -346,6 +345,7 @@ class content extends Admin_Controller {
         $data['goles_equipo1'] = intval($this->input->post('administrar_partidos_goles_equipo1'));
         $data['goles_equipo2'] = intval($this->input->post('administrar_partidos_goles_equipo2'));
         $data['fecha_torneo'] = intval($this->input->post('administrar_partidos_fecha_torneo'));
+        $data['idsede'] = intval($this->input->post('administrar_partidos_idsede'));
         $data['jugado'] = $this->input->post('administrar_partidos_jugado');
         $data['idfase'] = $this->torneos_model->get_fase_torneo($data);
 

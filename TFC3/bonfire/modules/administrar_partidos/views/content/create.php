@@ -72,12 +72,27 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td>
                     <div class="control-group <?php echo form_error('administrar_partidos_fecha') ? 'error' : ''; ?>">
                         <?php echo form_label('Fecha', 'administrar_partidos_fecha', array('class' => "control-label")); ?>
                         <div class="controls">
                             <input id="administrar_partidos_fecha" type="text" name="administrar_partidos_fecha" maxlength="1" value="<?php echo set_value('administrar_partidos_fecha', isset($administrar_partidos['fecha']) ? $administrar_partidos['fecha'] : ''); ?>"  />
                             <span class="help-inline"><?php echo form_error('administrar_partidos_fecha'); ?></span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="control-group <?php echo form_error('administrar_partidos_idsede') ? 'error' : ''; ?>">
+                        <?php echo form_label('Fecha', 'administrar_partidos_idsede', array('class' => "control-label")); ?>
+                        <div class="controls">
+                            <?php if (isset($sedes)) { ?>
+                                <select id="administrar_partidos_idsede" name="administrar_partidos_idsede">
+                                    <?php foreach ($sedes as $sede): ?>
+                                        <option value="<?php echo $sede['idsede'] ?>"><?php echo $sede['nombre'] ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            <?php } ?>
+                            <span class="help-inline"><?php echo form_error('administrar_partidos_idsede'); ?></span>
                         </div>
                     </div>
                 </td>

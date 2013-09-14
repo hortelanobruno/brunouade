@@ -44,6 +44,7 @@
                 <th>Goles Equipo 1</th>
                 <th>Goles Equipo 2</th>
                 <!--<th>Fecha Torneo</th>-->
+                <th>Sede</th>
                 <th>Terminado</th>
             </tr>
         </thead>
@@ -73,13 +74,14 @@
                             <td><?php e($record->fecha) ?></td>
                         <?php endif; ?>
 
-                        <!--<td><!?php e($record->idtorneo) ?></td>-->
-                        <!--<td><!?php e($record->idfase) ?></td>-->
-                        <td><?php e(getEquipo($equipos,$record->idequipo1)) ?></td>
-                        <td><?php e(getEquipo($equipos,$record->idequipo2)) ?></td>
+                                                <!--<td><!?php e($record->idtorneo) ?></td>-->
+                                                <!--<td><!?php e($record->idfase) ?></td>-->
+                        <td><?php e(getEquipo($equipos, $record->idequipo1)) ?></td>
+                        <td><?php e(getEquipo($equipos, $record->idequipo2)) ?></td>
                         <td><?php e($record->goles_equipo1) ?></td>
                         <td><?php e($record->goles_equipo2) ?></td>
                         <!--<td><?php e($record->fecha_torneo) ?></td>-->
+                        <td><?php e(getSede($sedes,$record->idsede)) ?></td>
                         <td><?php e($record->jugado) ?></td>
                     </tr>
                 <?php endforeach; ?>
@@ -95,7 +97,7 @@
 
 <?php
 
-function getEquipo($equipo,$idequipo) {
+function getEquipo($equipo, $idequipo) {
     if (isset($equipo)) {
         foreach ($equipo as $equipo) {
             if ($equipo['id'] === $idequipo)
@@ -103,6 +105,17 @@ function getEquipo($equipo,$idequipo) {
         }
     }else {
         return $idequipo;
+    }
+}
+
+function getSede($sedes, $idsede) {
+    if (isset($sedes)) {
+        foreach ($sedes as $sede) {
+            if ($sede['idsede'] === $idsede)
+                return $sede['nombre'];
+        }
+    }else {
+        return $idsede;
     }
 }
 ?>
