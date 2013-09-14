@@ -36,7 +36,9 @@ class Torneo extends Front_Controller {
         parent::__construct();
         $this->load->model('torneos_model');
         $this->load->model('equipos_model');
+        $this->load->model('partidos_model');
     }
+
     /**
      * Displays the homepage of the Bonfire app
      *
@@ -45,26 +47,43 @@ class Torneo extends Front_Controller {
     public function index() {
         $data['torneos'] = $this->torneos_model->get_last_4_torneos();
         $data['torneos_all'] = $this->torneos_model->get_all_torneos();
-        $this->load->view('home/partes/header',$data);
-        $this->load->view('home/torneo/index',$data);
-        $this->load->view('home/partes/footer',$data);
+        $this->load->view('home/partes/header', $data);
+        $this->load->view('home/torneo/index', $data);
+        $this->load->view('home/partes/footer', $data);
     }
-    
+
     public function view($idtorneo) {
         $data['torneos'] = $this->torneos_model->get_last_4_torneos();
         $data['torneo'] = $this->torneos_model->get_torneo($idtorneo);
-        $data['reglamento'] = $this->torneos_model->get_reglamento_from_torneo($idtorneo);
         $data['equipos'] = $this->equipos_model->get_equipos_from_torneo($idtorneo);
         $data['tablaPosiciones'] = $this->torneos_model->get_tabla_from_torneo($idtorneo);
         $data['goleadores'] = $this->torneos_model->get_goleadores_from_torneo($idtorneo);
         $data['vallaMenosVencida'] = $this->torneos_model->get_vallaMenosVencida_from_torneo($idtorneo);
         $data['tarjetas'] = $this->torneos_model->get_tarjetas_from_torneo($idtorneo);
-        $data['fixture'] = null;
+        $data['fixture'] = $this->partidos_model->get_fixture($idtorneo);
+        $data['fechaelegida'] = 1;
+
+
+        $this->load->view('home/partes/header', $data);
+        $this->load->view('home/torneo/view', $data);
+        $this->load->view('home/partes/footer', $data);
+    }
+
+    public function partido($idtorneo, $idpartido) {
+        $data['torneos'] = $this->torneos_model->get_last_4_torneos();
+        $data['torneo'] = $this->torneos_model->get_torneo($idtorneo);
+        $data['equipos'] = $this->equipos_model->get_equipos_from_torneo($idtorneo);
+        $data['partido'] = $this->partidos_model->get_partido($idpartido);
+        $data['estadisticas_partido'] = $this->partidos_model->get_estadisticas_partido($idpartido);
+        $data['jugadores_equipo1'] = $this->equipos_model->get_jugadores_from_equipo($data['partido']['idequipo1']);
+        $data['jugadores_equipo2'] = $this->equipos_model->get_jugadores_from_equipo($data['partido']['idequipo2']);
         
         
-        $this->load->view('home/partes/header',$data);
-        $this->load->view('home/torneo/view',$data);
-        $this->load->view('home/partes/footer',$data);
+
+
+        $this->load->view('home/partes/header', $data);
+        $this->load->view('home/torneo/partido', $data);
+        $this->load->view('home/partes/footer', $data);
     }
 
 //end index()

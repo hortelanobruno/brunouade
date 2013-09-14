@@ -5,6 +5,11 @@ class Partidos_model extends CI_Model {
     public function __construct() {
         $this->load->database();
     }
+    
+    public function get_fixture($idtorneo){
+        $query = $this->db->query("SELECT * FROM tfc_partido WHERE idtorneo = " . $idtorneo);
+        return $query->result_array();
+    }
 
     public function save_fixture($idtorneo, $fixturepartidos, $fixtureordenequipos, $data) {
         if ($fixturepartidos != '') {
