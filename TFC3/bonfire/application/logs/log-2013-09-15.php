@@ -304,3 +304,4 @@ ERROR - 2013-09-15 01:27:35 --> Severity: Notice  --> Undefined variable: fechas
 ERROR - 2013-09-15 01:27:35 --> Severity: Notice  --> Undefined variable: fechaselected C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\administrar_partidos\views\content\index.php 20
 ERROR - 2013-09-15 01:39:55 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
 ERROR - 2013-09-15 01:40:37 --> Severity: Notice  --> Undefined variable: sede C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\application\views\home\torneo\partido.php 10
+ERROR - 2013-09-15 17:05:18 --> 404 Page Not Found --> 
