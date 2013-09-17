@@ -145,6 +145,7 @@ $id = isset($administrar_torneos['id']) ? $administrar_torneos['id'] : '';
                                 $('#mensajeEquiposSeleccionados').html('Cantidad de equipos seleccionados: ' + $('#equipoelegidos option:selected').length);
                                 
                                 $('#administrar_torneos_cantidad_equipos').val($('#equipoelegidos option:selected').length);
+                                cargarEquipos();
                             }
                     </script>
                 </div>

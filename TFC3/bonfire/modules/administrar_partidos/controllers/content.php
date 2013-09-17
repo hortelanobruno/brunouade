@@ -226,6 +226,7 @@ class content extends Admin_Controller {
 
         $partido = $this->administrar_partidos_model->find($id);
 
+
         if ($this->input->post_key_exists('save')) {
             $this->auth->restrict('Administrar_Partidos.Content.Edit');
 
@@ -371,4 +372,25 @@ class content extends Admin_Controller {
     }
 
     //--------------------------------------------------------------------
+
+    public function reporte() {
+        $data = array();
+        $id = $this->uri->segment(5);
+        $partido = $this->administrar_partidos_model->find($id);
+        $torneodata = $this->torneos_model->get_torneo($partido->idtorneo);
+        $data['torneo'] = $torneodata['nombre'];
+        $data['fecha'] = $partido->fecha;
+
+        $equipo1 = $this->equipos_model->get_equipo($partido->idequipo1);
+        $equipo2 = $this->equipos_model->get_equipo($partido->idequipo2);
+        $data['equipo1'] = $equipo1['nombre'];
+        $data['equipo2'] = $equipo2['nombre'];
+        $data['delegadoequipo1'] = $this->equipos_model->get_delegado_from_equipo($partido->idequipo1);
+        $data['delegadoequipo2'] = $this->equipos_model->get_delegado_from_equipo($partido->idequipo2);
+        $data['jugadoresequipo1'] = $this->equipos_model->get_jugadores_from_equipo($partido->idequipo1);
+        $data['jugadoresequipo2'] = $this->equipos_model->get_jugadores_from_equipo($partido->idequipo2);
+
+        $this->load->view('content/reporte', $data);
+    }
+
 }

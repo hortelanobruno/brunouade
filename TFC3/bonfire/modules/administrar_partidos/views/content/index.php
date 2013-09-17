@@ -46,6 +46,7 @@
                 <!--<th>Fecha Torneo</th>-->
                 <th>Sede</th>
                 <th>Terminado</th>
+                <th>RegerarReporte</th>
             </tr>
         </thead>
         <?php if (isset($records) && is_array($records) && count($records)) : ?>
@@ -74,15 +75,16 @@
                             <td><?php e($record->fecha) ?></td>
                         <?php endif; ?>
 
-                                                <!--<td><!?php e($record->idtorneo) ?></td>-->
-                                                <!--<td><!?php e($record->idfase) ?></td>-->
+                                                        <!--<td><!?php e($record->idtorneo) ?></td>-->
+                                                        <!--<td><!?php e($record->idfase) ?></td>-->
                         <td><?php e(getEquipo($equipos, $record->idequipo1)) ?></td>
                         <td><?php e(getEquipo($equipos, $record->idequipo2)) ?></td>
                         <td><?php e($record->goles_equipo1) ?></td>
                         <td><?php e($record->goles_equipo2) ?></td>
                         <!--<td><?php e($record->fecha_torneo) ?></td>-->
-                        <td><?php e(getSede($sedes,$record->idsede)) ?></td>
+                        <td><?php e(getSede($sedes, $record->idsede)) ?></td>
                         <td><?php e($record->jugado) ?></td>
+                        <td><?php echo anchor(SITE_AREA . '/content/administrar_partidos/reporte/' . $record->id, '<i>&nbsp;</i>Reporte', 'target="_blank"') ?></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

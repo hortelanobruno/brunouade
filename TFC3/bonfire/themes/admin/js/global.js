@@ -35,6 +35,24 @@ function changeTiposTorneos() {
     document.getElementById("formtiposdetorneos").submit();
 }
 
+function cargarEquipos(){
+    var e = document.getElementById("equipoelegidos");
+    var options = e && e.options;
+    var opt;
+    var result = [];
+    for (var i = 0, iLen = options.length; i < iLen; i++) {
+        opt = options[i];
+
+        if (opt.selected) {
+            var data = new Array();
+            data[0] = opt.value;
+            data[1] = opt.text;
+            result.push(data);
+        }
+    }
+    $('#fixtureordenequipos').val(result.toString());
+}
+
 
 function sortearFixture() {
     //Obtengo equipos elegidos
