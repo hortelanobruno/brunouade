@@ -22,3 +22,7 @@ ERROR - 2013-09-18 14:31:27 --> Severity: Warning  --> mysql_pconnect() [<a href
 ERROR - 2013-09-18 14:31:27 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: No connection could be made because the target machine actively refused it.
  C:\Documents and Settings\bruno\My Documents\NetBeansProjects\TFC3\bonfire\codeigniter\database\drivers\mysql\mysql_driver.php 91
 ERROR - 2013-09-18 14:31:27 --> Unable to connect to the database
+ERROR - 2013-09-18 14:56:01 --> Query error: Table 'tfc_dev3.tfc_sede' doesn't exist
+ERROR - 2013-09-18 15:00:10 --> 404 Page Not Found --> 
+ERROR - 2013-09-18 15:04:15 --> Query error: Table 'tfc_dev3.tfc_sede' doesn't exist
+ERROR - 2013-09-18 15:04:23 --> Query error: Table 'tfc_dev3.tfc_sede' doesn't exist
