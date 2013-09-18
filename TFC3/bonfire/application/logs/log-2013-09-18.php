@@ -14,3 +14,11 @@ ERROR - 2013-09-18 00:30:45 --> Severity: Notice  --> Undefined variable: fechas
 ERROR - 2013-09-18 00:56:59 --> 404 Page Not Found --> 
 ERROR - 2013-09-18 00:57:25 --> 404 Page Not Found --> 
 ERROR - 2013-09-18 00:57:27 --> 404 Page Not Found --> 
+ERROR - 2013-09-18 14:31:26 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: [2002] No connection could be made because the target machine actively  (trying to connect via tcp://localhost:3306) C:\Documents and Settings\bruno\My Documents\NetBeansProjects\TFC3\bonfire\codeigniter\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2013-09-18 14:31:26 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: No connection could be made because the target machine actively refused it.
+ C:\Documents and Settings\bruno\My Documents\NetBeansProjects\TFC3\bonfire\codeigniter\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2013-09-18 14:31:26 --> Unable to connect to the database
+ERROR - 2013-09-18 14:31:27 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: [2002] No connection could be made because the target machine actively  (trying to connect via tcp://localhost:3306) C:\Documents and Settings\bruno\My Documents\NetBeansProjects\TFC3\bonfire\codeigniter\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2013-09-18 14:31:27 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: No connection could be made because the target machine actively refused it.
+ C:\Documents and Settings\bruno\My Documents\NetBeansProjects\TFC3\bonfire\codeigniter\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2013-09-18 14:31:27 --> Unable to connect to the database
