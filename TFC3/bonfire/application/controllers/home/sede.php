@@ -36,6 +36,7 @@ class Sede extends Front_Controller {
         parent::__construct();
         $this->load->model('torneos_model');
         $this->load->model('equipos_model');
+        $this->load->model('sedes_model');
     }
 
     /**
@@ -45,6 +46,8 @@ class Sede extends Front_Controller {
      */
     public function index() {
         $data['torneos'] = $this->torneos_model->get_last_4_torneos();
+        $data['sedes'] = $this->sedes_model->get_sedes();
+        
         $this->load->view('home/partes/header', $data);
         $this->load->view('home/sede/index', $data);
         $this->load->view('home/partes/footer', $data);

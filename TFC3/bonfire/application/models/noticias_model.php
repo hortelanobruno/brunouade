@@ -11,4 +11,9 @@ class Noticias_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_noticia($idnoticia) {
+        $query = $this->db->query("SELECT * FROM tfc_noticias where idnoticias = " . $idnoticia);
+        return $query->row_array();
+    }
+
 }

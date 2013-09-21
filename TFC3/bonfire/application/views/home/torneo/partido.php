@@ -38,47 +38,81 @@
                     <td class="vt wp50">
                         <table class="wp100 zebra table-p10">
                             <?php foreach ($jugadores_equipo1 as $jugador): ?>
+                                <?php if (hasEstadistica($estadisticas_partido, $partido['idequipo1'], $jugador['id'], $jugadores_equipo1)) { ?>
+                                    <tr>
+                                        <td>
+                                            <div class="pl5 pr5">
+                                                <div class="fleft w120 tc">
+                                                    <img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
+                                                </div>
+                                                <div class="fleft f14 wp70">
+                                                    <a href=""><span class="player-name"><?php echo $jugador['nombre_completo'] ?></span></a> 									 
+                                                    <br />
+                                                    <?php echo printStats($estadisticas_partido, $partido['idequipo1'], $jugador['id'], $jugadores_equipo1) ?>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            <?php endforeach ?>
+                            <?php if (hasGolesEnContra($estadisticas_partido, $partido['idequipo1'], $jugador['id'], $jugadores_equipo1)) { ?>
                                 <tr>
                                     <td>
                                         <div class="pl5 pr5">
                                             <div class="fleft w120 tc">
-                                                <img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
+
                                             </div>
                                             <div class="fleft f14 wp70">
-                                                <a href=""><span class="player-name"><?php echo $jugador['nombre_completo'] ?></span></a> 									 
+                                                <a href=""><span class="player-name">Goles en contra:</span></a> 									 
                                                 <br />
-                                                <?php echo printStats($estadisticas_partido, $partido['idequipo1'], $jugador['id'], $jugadores_equipo1) ?>
+                                                <?php echo getGolesEnContra($estadisticas_partido, $partido['idequipo1'], $jugador['id'], $jugadores_equipo1) ?>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                            <?php endforeach ?>
+                            <?php } ?>
                         </table>
                     </td>
                     <td class="vt wp50">
                         <table class="wp100 zebra table-p10">
                             <?php foreach ($jugadores_equipo2 as $jugador): ?>
+                                <?php if (hasEstadistica($estadisticas_partido, $partido['idequipo2'], $jugador['id'], $jugadores_equipo2)) { ?>
+                                    <tr>
+                                        <td>
+                                            <div class="pl5 pr5">
+                                                <div class="fleft w120 tc">
+                                                    <img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
+                                                </div>
+                                                <div class="fleft f14 wp70">
+                                                    <a href=""><span class="player-name"><?php echo $jugador['nombre_completo'] ?></span></a> 									 
+                                                    <br />
+                                                    <?php echo printStats($estadisticas_partido, $partido['idequipo2'], $jugador['id'], $jugadores_equipo2) ?>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            <?php endforeach ?>
+                            <?php if (hasGolesEnContra($estadisticas_partido, $partido['idequipo2'], $jugador['id'], $jugadores_equipo2)) { ?>
                                 <tr>
                                     <td>
                                         <div class="pl5 pr5">
                                             <div class="fleft w120 tc">
-                                                <img style="max-width:100px; max-height:100px" src="/assets/imgs/user/defaultUser.png" />
+
                                             </div>
                                             <div class="fleft f14 wp70">
-                                                <a href=""><span class="player-name"><?php echo $jugador['nombre_completo'] ?></span></a> 									 
+                                                <a href=""><span class="player-name">Goles en contra:</span></a> 									 
                                                 <br />
-                                                <?php echo printStats($estadisticas_partido, $partido['idequipo2'], $jugador['id'], $jugadores_equipo2) ?>
+                                                <?php echo getGolesEnContra($estadisticas_partido, $partido['idequipo2'], $jugador['id'], $jugadores_equipo2) ?>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                            <?php endforeach ?>
+                            <?php } ?>
                         </table>
                     </td>
                 </tr>
             </table>
-
-
         </div>
     </div>
 </div>
@@ -145,5 +179,60 @@ function printStats($estadisticas_partido, $idequipo, $idjugador, $jugadores) {
         }
     }
     return $result;
+}
+
+function hasEstadistica($estadisticas_partido, $idequipo, $idjugador, $jugadores) {
+    //Es delegado
+    foreach ($jugadores as $jugador) {
+        if ($jugador['id'] == $idjugador && $jugador['delegado'] == 1) {
+            return true;
+        }
+    }
+
+    //Cargo estadisticas
+    foreach ($estadisticas_partido as $estadistica) {
+        if ($estadistica['idequipo'] == $idequipo && $estadistica['idjugador'] == $idjugador) {
+            if ($estadistica['cantidad'] > 1) {
+                return true;
+            }
+            if ($estadistica['accion'] == 1) {
+                //gol
+                return true;
+            } else if ($estadistica['accion'] == 2) {
+                //amarilla
+                return true;
+            } else if ($estadistica['accion'] == 3) {
+                //roja
+                return true;
+            } else if ($estadistica['accion'] == 4) {
+                //en contra
+//                $result = $result . "<img src='/assets/imgs/commons/ico-rosso.png' alt='R' title='Espulso' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
+            }
+        }
+    }
+    return false;
+}
+
+function hasGolesEnContra($estadisticas_partido, $idequipo, $idjugador, $jugadores) {
+    foreach ($estadisticas_partido as $estadistica) {
+        if ($estadistica['idequipo'] == $idequipo) {
+            if ($estadistica['accion'] == 4) {
+                //en contra
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function getGolesEnContra($estadisticas_partido, $idequipo, $idjugador, $jugadores) {
+    foreach ($estadisticas_partido as $estadistica) {
+        if ($estadistica['idequipo'] == $idequipo) {
+            if ($estadistica['accion'] == 4) {
+                //en contra
+                return $estadistica['cantidad'];
+            }
+        }
+    }
 }
 ?>
