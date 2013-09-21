@@ -79,7 +79,7 @@ $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 //$pdf->SetSubject('TCPDF Tutorial');
 //$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 // set default header data
-$pdf->SetHeaderData('', '', 'Torneo: ' . $torneo, 'Partido: ' . $equipo1 . ' vs ' . $equipo2 . '     Fecha: ' . $fecha);
+$pdf->SetHeaderData('', '', 'Torneo: ' . $torneo.'.    Sede: '.$sede['nombre'], 'Partido: ' . $equipo1 . ' vs ' . $equipo2 . '     Fecha: ' . $fecha);
 
 // set header and footer fonts
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', 14));

@@ -380,6 +380,7 @@ class content extends Admin_Controller {
         $torneodata = $this->torneos_model->get_torneo($partido->idtorneo);
         $data['torneo'] = $torneodata['nombre'];
         $data['fecha'] = $partido->fecha;
+        $data['sede'] = $this->sedes_model->get_sede($partido->idsede);
 
         $equipo1 = $this->equipos_model->get_equipo($partido->idequipo1);
         $equipo2 = $this->equipos_model->get_equipo($partido->idequipo2);

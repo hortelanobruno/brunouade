@@ -65,7 +65,6 @@ class Torneo extends Front_Controller {
         $data['sedes'] = $this->sedes_model->get_sedes();
         $data['fechaelegida'] = 1;
 
-
         $this->load->view('home/partes/header', $data);
         $this->load->view('home/torneo/view', $data);
         $this->load->view('home/partes/footer', $data);
@@ -83,8 +82,6 @@ class Torneo extends Front_Controller {
         if (isset($data['partido']['idsede'])) {
             $data['sede'] = $this->sedes_model->get_sede($data['partido']['idsede']);
         }
-
-
 
         $this->load->view('home/partes/header', $data);
         $this->load->view('home/torneo/partido', $data);

@@ -193,40 +193,17 @@
                     <div id="left_column" class="fleft pr25 pt20"> 
                         <div id="news" class="fleft">
                             <div class="f20 lato lato900 border_light_bottom mb20 pb5">Ultimas noticias</div>
-                            <div class="news-item">
-                                <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
-                                <div class="fleft wp94">
-                                    <div class="titolo"><a href="">TITULO1</a></div>
-                                    <div class="descrizione"><p><strong><em>MENSAJE1</em></strong></p> </div>
-                                    <div style="clear:both;"></div>
-                                </div>
-                            </div>
-                            <div class="news-item">
-                                <div class="w30 mr10 fleft"><img src="assets/uploads/pages_6a7704665d07978123d4c9f151c65a0d.png" width="26" /></div>
-                                <div class="fleft wp94">
-                                    <div class="titolo"><a href="">TITULO2</a></div>
-                                    <div class="descrizione"><p><em>MENSAJE2</em></p> </div>
-                                    <div style="clear:both;"></div>
-                                </div>
-                            </div>
-                            <div class="news-item">
-                                <div class="w30 mr10 fleft"><img src="assets/uploads/pages_8f456623f3dba14e3cf6569487dbdab6.png" width="26" /></div>
-                                <div class="fleft wp94">
-                                    <div class="titolo"><a href="">TITULO3</a></div>
-                                    <div class="descrizione"><p><strong></strong>MENSAJE3</p>
+                            <?php foreach ($news as $noticia): ?>
+                                <div class="news-item">
+                                    <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
+                                    <div class="fleft wp94">
+                                        <div class="titolo"><a href="/noticia/<?php echo $noticia['idnoticias'] ?>"><?php echo $noticia['titulo'] ?></a></div>
+                                        <div class="descrizione"><p><?php echo $noticia['fecha'] ?></p>
+                                        </div>
+                                        <div style="clear:both;"></div>
                                     </div>
-                                    <div style="clear:both;"></div>
                                 </div>
-                            </div>
-                            <div class="news-item">
-                                <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
-                                <div class="fleft wp94">
-                                    <div class="titolo"><a href="">TITULO4</a></div>
-                                    <div class="descrizione"><p>MENSAJE4</p>
-                                    </div>
-                                    <div style="clear:both;"></div>
-                                </div>
-                            </div>
+                            <?php endforeach ?>
                         </div>
                     </div> 
 

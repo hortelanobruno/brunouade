@@ -3,17 +3,60 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>TFC</title>
-        
         <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/assets/js/swfobject_modified.js"></script>
         <script type="text/javascript" src="/assets/js/utils.js"></script>
-        
+
         <link href="/assets/css/defaultPageView.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/assets/css/toolkit.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/assets/css/common.css" media="screen" rel="stylesheet" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Lato:700,900' rel='stylesheet' type='text/css'/>
         <link href="/assets/css/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+        <style>
+            html, body, #map-canvas {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+        </style>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script><style>
+            html, body, #map-canvas {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+        </style>
+        <script>
+            function initialize() {
+                var mapOptions = {
+                    zoom: 14,
+                    center: new google.maps.LatLng(-34.705388, -58.350627),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(document.getElementById('map-canvas'),
+                        mapOptions);
+
+                var image = '/assets/imgs/commons/icons/16/star_on.png';
+                var myLatLng = new google.maps.LatLng(-34.710291, -58.349816);
+                var beachMarker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    icon: image
+                });
+                var image = '/assets/imgs/commons/icons/16/star_on.png';
+                var myLatLng = new google.maps.LatLng(-34.694397, -58.349249);
+                var beachMarker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    icon: image
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>
     </head>
     <body class="claro">
         <div style="display: none" id="hideAll">&nbsp;</div>
@@ -52,11 +95,11 @@
                             <li>
                                 <a href="" >Torneos</a>
                                 <ul>
-<!--                                    <li><a href="" >Futbol 7</a></li>
-                                    <li><a href="" >Futbol 5</a></li>-->
-                        <?php foreach ($torneos as $torneo): ?>
-                            <li><a href="/torneo/<?php echo $torneo['id'] ?>" ><?php echo $torneo['nombre'] ?></a></li>
-                        <?php endforeach ?>
+                                    <!--                                    <li><a href="" >Futbol 7</a></li>
+                                                                        <li><a href="" >Futbol 5</a></li>-->
+                                    <?php foreach ($torneos as $torneo): ?>
+                                        <li><a href="/torneo/<?php echo $torneo['id'] ?>" ><?php echo $torneo['nombre'] ?></a></li>
+                                    <?php endforeach ?>
                                     <li><a href="/torneos" >Torneos anteriors</a></li>
                                 </ul>
                             </li>
@@ -92,8 +135,8 @@
                             <div class="scudetto"><img height="30" src="<?php echo $torneo['logo_chico'] ?>"/></div><li class="mr20"><a href="/torneo/<?php echo $torneo['id'] ?>"><?php echo $torneo['nombre'] ?></a></li>
                         <?php endforeach ?>
 <!--                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_2d5f74974a92c68008605371d23ef378.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/38">Liga A clausura  2013</a></li>
-                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_c8c01b2fda0e0705affe90458b86478b.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/37">Liga B clausura  2013</a></li>
-                        <div class="scudetto"><img height="30" src="/assets/uploads/pages_36ec360629ccb7c0033847237c96a1f9.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/36">Liga C clausura  2013</a></li>-->
+<div class="scudetto"><img height="30" src="/assets/uploads/pages_c8c01b2fda0e0705affe90458b86478b.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/37">Liga B clausura  2013</a></li>
+<div class="scudetto"><img height="30" src="/assets/uploads/pages_36ec360629ccb7c0033847237c96a1f9.png"/></div><li class="mr20"><a href="/assets/default/tournament/view/id/36">Liga C clausura  2013</a></li>-->
                     </ul>
                 </div> 
                 <span class="menu-torneo-dx"></span>

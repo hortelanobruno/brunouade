@@ -8,6 +8,6 @@
                 <td rowspan="4" class="nowrap wp10"></td>
             </tr>
             <tr id="tr_1470"><td colspan="4"><div id="iframe_1470"></div></td></tr>
-                <?php endforeach ?>
+        <?php endforeach ?>
     </tbody>
 </table>

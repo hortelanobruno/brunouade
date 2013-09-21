@@ -33,7 +33,9 @@
 <!-- scripts generici -->
 <script>
     $(document).ready(function() {
-        $("#tabs").tabs();
+        $("#tabs").tabs({
+            selected: <?php echo getSelectedTab(isset($noticia)); ?>
+        });
     });
 </script>
 <!-- scripts -->
@@ -79,3 +81,12 @@
         <?php $this->load->view('home/torneo/partes/sanciones'); ?>
     </div>
 </div>
+<?php
+
+function getSelectedTab($issetnoticia) {
+    if($issetnoticia){
+        return 1;
+    }
+    return 0;
+}
+?>
