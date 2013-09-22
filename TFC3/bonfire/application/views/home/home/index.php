@@ -174,11 +174,11 @@
                 <div class="pr" style="min-height: 280px">
                     <div id="slider_1" class="fleft">
                         <ul>
-                            <li><img src="assets/uploads/slider_39a6f5b52f459a10f82cd1488fe74aff.jpg" /></li>
-                            <li><img src="assets/uploads/slider_7cf0feb9f4fd56fc2f60be44f749bd74.jpg" /></li>
-                            <li><img src="assets/uploads/slider_706771c3abe79be0c53c0417e9a22405.jpg" /></li>
-                            <li><img src="assets/uploads/slider_db2530a9b7d9061145790c50219ca549.jpg" /></li>
-                            <li><img src="assets/uploads/slider_0a664c5470100063863dcbef3268f15c.jpg" /></li>
+                            <li><img src="assets/photos/test.jpg" /></li>
+                            <li><img src="assets/photos/foto2.jpg" /></li>
+                            <li><img src="assets/photos/foto3.jpg" /></li>
+                            <li><img src="assets/photos/foto4.jpg" /></li>
+                            <li><img src="assets/photos/foto5.jpg" /></li>
                         </ul>
                     </div>
                     <!--<div class="descrip-text fright w258"><p id="anistate_1"></div>-->
@@ -192,22 +192,24 @@
                     <!-- #left column -->
                     <div id="left_column" class="fleft pr25 pt20"> 
                         <div id="news" class="fleft">
-                            <div class="f20 lato lato900 border_light_bottom mb20 pb5">Ultimas noticias</div>
-                            <?php foreach ($news as $noticia): ?>
-                                <div class="news-item">
-                                    <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
-                                    <div class="fleft wp94">
-                                        <div class="titolo"><a href="/noticia/<?php echo $noticia['idnoticias'] ?>"><?php echo $noticia['titulo'] ?></a></div>
-                                        <div class="descrizione"><p><?php echo $noticia['fecha'] ?></p>
-                                        </div>
-                                        <div style="clear:both;"></div>
-                                    </div>
-                                </div>
-                            <?php endforeach ?>
+
                         </div>
                     </div> 
-
                     <!-- #center column -->
+                    <div id="center_column" class="fleft mr25 pt20">
+                        <div class="f20 lato lato900 border_light_bottom mb20 pb5">Ultimas noticias</div>
+                        <?php foreach ($news as $noticia): ?>
+                            <div class="news-item">
+                                <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
+                                <div class="fleft wp94">
+                                    <div class="titolo"><a href="/noticia/<?php echo $noticia['idnoticias'] ?>"><?php echo $noticia['titulo'] ?></a></div>
+                                    <div class="descrizione"><p><?php echo $noticia['fecha'] ?></p>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
                 </div>
 
 
@@ -215,8 +217,6 @@
                 <!-- #right column -->
                 <div id="right_column" class="fleft ml25 pt20">
                     <a href="/contacto" target=""><img src="/assets/imgs/commons/8-1348243968.jpg" border="0" style="width: 211px;"></a>
-                    <!--<a href="default/availability.html" class="btn_prenota mb20"></a>-->
-                    <!--<iframe class="mb20" width="210" height="119" frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/x29GEUjAlTk?autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;rel=0"></iframe>-->
                     <iframe class="mb20 mt20" width="210" height="119" src="//www.youtube.com/embed/kezYcCaVCdM?autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;rel=0" frameborder="0" allowfullscreen></iframe>
                     <div id="news" class="fleft">
                         <div class="f20 lato lato900 border_light_bottom mb20 pb5">Proxima partida</div>
@@ -229,6 +229,16 @@
                         </div>
                         <div style="clear:both;"></div>
                     </div>
+                    <a class="twitter-timeline" href="https://twitter.com/tfcdelsur" data-widget-id="381917573798830080">Tweets por @tfcdelsur</a>
+                    <script>!function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + "://platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");</script>
                 </div>
             </div>
 
