@@ -93,10 +93,10 @@
 
                     <div class="grid_8">
                         <h1 style="font-size:12px; color:#666666; border-bottom:1px solid #666666; text-align:left; margin-top:30px;">Consultas</h1>
-                        <h1 style="font-size:14px; color:#666666; font-weight:bold; text-align:left;">Alejandro Cozzi</h1>
-                        <p><img src="http://www.edebafutbol.com.ar/static/images/celphone.png" border="0">&nbsp;15-6652-6820</p>
-                        <p><img src="http://www.edebafutbol.com.ar/static/images/phone.png" border="0">&nbsp;4761-8598</p>
-                        <p><img src="http://www.edebafutbol.com.ar/static/images/email.png" border="0">&nbsp;<a href="mailto:aleco@edebafutbol.com.ar" style="color:#666666; text-decoration:none;">aleco@edebafutbol.com.ar</a></p>
+                        <h1 style="font-size:14px; color:#666666; font-weight:bold; text-align:left;">Gabriel Recchia</h1>
+                        <p><img src="http://www.edebafutbol.com.ar/static/images/celphone.png" border="0">&nbsp;15-3361-8755</p>
+<!--                        <p><img src="http://www.edebafutbol.com.ar/static/images/phone.png" border="0">&nbsp;4761-8598</p>-->
+                        <p><img src="http://www.edebafutbol.com.ar/static/images/email.png" border="0">&nbsp;<a href="mailto:info@tfcdelsur.com.ar" style="color:#666666; text-decoration:none;">info@tfcdelsur.com.ar</a></p>
                     </div>
 
                 </div>

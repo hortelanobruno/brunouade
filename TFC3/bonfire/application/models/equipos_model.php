@@ -22,7 +22,7 @@ class Equipos_model extends CI_Model {
     }
 
     public function get_jugadores_from_equipo($idequipo) {
-        $query = $this->db->query("SELECT * FROM tfc_jugador where idequipo=" . $idequipo);
+        $query = $this->db->query("SELECT * FROM tfc_jugador where idequipo=" . $idequipo." order by nombre_completo asc");
         return $query->result_array();
     }
 

@@ -19,7 +19,7 @@
                 <div class="fright mt10">
                     <a href="http://www.facebook.com/TfCdelsur" target="_blank" title="facebook" class="social-fb fleft mr5">Link a Facebook</a>
                     <a href="" target="_blank" title="twitter" class="social-twitter fleft mr5">Link a Twitter</a>
-                    <a href="" target="_blank" title="youtube" class="social-youtube fleft">Link al canal de Youtube</a>
+                    <a href="http://www.youtube.com/user/TFCdelsur?feature=watch" target="_blank" title="youtube" class="social-youtube fleft">Link al canal de Youtube</a>
                 </div> 
             </div>
         </div>
