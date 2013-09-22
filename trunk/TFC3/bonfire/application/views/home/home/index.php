@@ -214,8 +214,10 @@
 
                 <!-- #right column -->
                 <div id="right_column" class="fleft ml25 pt20">
-                    <a href="default/availability.html" class="btn_prenota mb20"></a>
-                    <iframe class="mb20" width="210" height="119" frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/x29GEUjAlTk?autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;rel=0"></iframe>
+                    <a href="/contacto" target=""><img src="/assets/imgs/commons/8-1348243968.jpg" border="0" style="width: 211px;"></a>
+                    <!--<a href="default/availability.html" class="btn_prenota mb20"></a>-->
+                    <!--<iframe class="mb20" width="210" height="119" frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/x29GEUjAlTk?autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;rel=0"></iframe>-->
+                    <iframe class="mb20 mt20" width="210" height="119" src="//www.youtube.com/embed/kezYcCaVCdM?autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;rel=0" frameborder="0" allowfullscreen></iframe>
                     <div id="news" class="fleft">
                         <div class="f20 lato lato900 border_light_bottom mb20 pb5">Proxima partida</div>
                         <div class="news-item clearfix mb10">
@@ -226,18 +228,6 @@
                             </div>
                         </div>
                         <div style="clear:both;"></div>
-                        <!--                                    <div>
-                                                                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/OfficialArend" data-widget-id="265814157817942016">Tweets di @OfficialArend</a>
-                                                                <script>!function(d, s, id) {
-                                                                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                                                                        if (!d.getElementById(id)) {
-                                                                            js = d.createElement(s);
-                                                                            js.id = id;
-                                                                            js.src = p + "://platform.twitter.com/widgets.js";
-                                                                            fjs.parentNode.insertBefore(js, fjs);
-                                                                        }
-                                                                    }(document, "script", "twitter-wjs");</script>
-                                                            </div>-->
                     </div>
                 </div>
             </div>

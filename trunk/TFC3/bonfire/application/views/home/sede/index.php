@@ -17,7 +17,7 @@
                 </tbody>
             </table>
             <div style="height:600px;" class="pt20 pb20">
-                
+
                 <div id="map-canvas">
 
 
@@ -27,3 +27,4 @@
     </div>
 
     <div class="clearfix"></div>
+</div>

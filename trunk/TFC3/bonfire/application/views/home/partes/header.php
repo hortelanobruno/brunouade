@@ -31,26 +31,28 @@
         <script>
             function initialize() {
                 var mapOptions = {
-                    zoom: 14,
-                    center: new google.maps.LatLng(-34.705388, -58.350627),
+                    zoom: 15,
+                    center: new google.maps.LatLng(-34.700000, -58.340000),
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
                 var map = new google.maps.Map(document.getElementById('map-canvas'),
                         mapOptions);
 
                 var image = '/assets/imgs/commons/icons/16/star_on.png';
-                var myLatLng = new google.maps.LatLng(-34.710291, -58.349816);
+                var myLatLng = new google.maps.LatLng(-34.700219,-58.330389);
                 var beachMarker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
-                    icon: image
+                    icon: image,
+                    title: 'Catedral I'
                 });
                 var image = '/assets/imgs/commons/icons/16/star_on.png';
-                var myLatLng = new google.maps.LatLng(-34.694397, -58.349249);
+                var myLatLng = new google.maps.LatLng(-34.694397,-58.349272);
                 var beachMarker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
-                    icon: image
+                    icon: image,
+                    title: 'Catedral II'
                 });
             }
 
@@ -76,12 +78,12 @@
                         </ul>	
                     </div>
 
-                    <div class="fleft sponsor mt5 ml20">
-                        <a class="sponsor-5 fleft mr20" title="" target="_blank" href="">SPONSOR 1</a>
+                    <div class="fleft sponsor mt5 ml20" style="height: 36px;width: 600px;">
+<!--                        <a class="sponsor-5 fleft mr20" title="" target="_blank" href="">SPONSOR 1</a>
                         <a class="sponsor-6 fleft mr20" title="" target="_blank" href="">SPONSOR 2</a>
                         <a class="sponsor-7 fleft mr20" title="" target="_blank" href="">SPONSOR 3</a>
                         <a class="sponsor-3 fleft mr20" title="" target="_blank" href="">SPONSOR 4</a>
-                        <a class="sponsor-8 fleft mr20" title="" target="_blank" href="">SPONSOR 5</a>
+                        <a class="sponsor-8 fleft mr20" title="" target="_blank" href="">SPONSOR 5</a>-->
                     </div>
 
 
@@ -120,7 +122,7 @@
                     <div class="fright icosocial">
                         <a href="http://www.facebook.com/TfCdelsur" target="_blank" title="facebook" class="social-fb fleft mr5">Link a Facebook</a>
                         <a href="" target="_blank" title="twitter" class="social-twitter fleft mr5">Link a Twitter</a>
-                        <a href="" target="_blank" title="youtube" class="social-youtube fleft">Link al canal de Youtube</a>
+                        <a href="http://www.youtube.com/user/TFCdelsur?feature=watch" target="_blank" title="youtube" class="social-youtube fleft">Link al canal de Youtube</a>
                     </div> 
                     <div class="clearfix"></div>
                 </div>
