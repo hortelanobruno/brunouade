@@ -1,0 +1,16 @@
+datatec tfc
+
+panel admin:
+usuario: gabrielrecchia@hotmail.com
+password: cyclops
+
+ftp
+host: wi191562.ferozo.com
+usuario: brunoli
+password: Andaz1512
+
+
+mysql
+usuario:wi191562_brunoli
+password: Brunoli123
+database: wi191562_tfc_dev3
