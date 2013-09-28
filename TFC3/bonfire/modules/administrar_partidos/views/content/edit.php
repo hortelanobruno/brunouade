@@ -135,6 +135,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                             <thead>
                                 <tr>
                                     <td>Juagador</td>
+                                    <td>Arq</td>
                                     <td>Goles</td>
                                     <td>Amarillas</td>
                                     <td>Rojas</td>
@@ -148,8 +149,11 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                                                 <?php echo $jugador['nombre_completo'] ?>
                                                 <input type="hidden" id="jugador1id" name="jugador1id[]" style="width: 30px" value="<?php echo $jugador['id'] ?>" />
                                             </td>
+                                            <td style="width: 30px">
+                                                <input type="radio" id="equipo1arquero" name="equipo1arquero" value="<?php echo $jugador['id'] ?>" <?php echo isArquero($estadisticaspartido, $jugador['id'], 5) ?> />
+                                            </td>
                                             <td style="width: 60px">
-                                                <input type="text" id="jugador1goles" name="jugador1goles[]" style="width: 30px" oninput="calculateGoles('jugador1goles','administrar_partidos_goles_equipo1','equipo1golesencontra')" value="<?php echo getEstadistica($estadisticaspartido, $jugador['id'], 1) ?>" />
+                                                <input type="text" id="jugador1goles" name="jugador1goles[]" style="width: 30px" oninput="calculateGoles('jugador1goles','administrar_partidos_goles_equipo1','equipo2golesencontra')" value="<?php echo getEstadistica($estadisticaspartido, $jugador['id'], 1) ?>" />
                                             </td>
                                             <td style="width: 60px">
                                                 <input type="text" id="jugador1tarjetaamarilla" name="jugador1tarjetaamarilla[]" style="width: 30px" value="<?php echo getEstadistica($estadisticaspartido, $jugador['id'], 2) ?>" />
@@ -170,6 +174,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                             <thead>
                                 <tr>
                                     <td>Juagador</td>
+                                    <td>Arq</td>
                                     <td>Goles</td>
                                     <td>Amarillas</td>
                                     <td>Rojas</td>
@@ -183,8 +188,11 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                                                 <?php echo $jugador['nombre_completo'] ?>
                                                 <input type="hidden" id="jugador2id" name="jugador2id[]" style="width: 30px" value="<?php echo $jugador['id'] ?>" />
                                             </td>
+                                            <td style="width: 30px">
+                                                <input type="radio" id="equipo2arquero" name="equipo2arquero" value="<?php echo $jugador['id'] ?>" <?php echo isArquero($estadisticaspartido, $jugador['id'], 5) ?> />
+                                            </td>
                                             <td style="width: 60px">
-                                                <input type="text" id="jugador2goles" name="jugador2goles[]" style="width: 30px" oninput="calculateGoles('jugador2goles','administrar_partidos_goles_equipo2','equipo2golesencontra')" value="<?php echo getEstadistica($estadisticaspartido, $jugador['id'], 1) ?>" />
+                                                <input type="text" id="jugador2goles" name="jugador2goles[]" style="width: 30px" oninput="calculateGoles('jugador2goles','administrar_partidos_goles_equipo2','equipo1golesencontra')" value="<?php echo getEstadistica($estadisticaspartido, $jugador['id'], 1) ?>" />
                                             </td>
                                             <td style="width: 60px">
                                                 <input type="text" id="jugador2tarjetaamarilla" name="jugador2tarjetaamarilla[]" style="width: 30px" value="<?php echo getEstadistica($estadisticaspartido, $jugador['id'], 2) ?>" />
@@ -205,7 +213,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                     <div class="control-group">
                         <label class="control-label">Goles en contra</label>
                         <div class="controls">
-                            <input type="text" id="equipo1golesencontra" name="equipo1golesencontra" style="width: 30px" oninput="calculateGoles('jugador1goles','administrar_partidos_goles_equipo1','equipo1golesencontra')" value="<?php echo $equipo1golesencontra ?>" />
+                            <input type="text" id="equipo1golesencontra" name="equipo1golesencontra" style="width: 30px" oninput="calculateGoles('jugador2goles','administrar_partidos_goles_equipo2','equipo1golesencontra')" value="<?php echo $equipo1golesencontra ?>" />
                         </div>
                     </div> 
                 </td>
@@ -213,7 +221,7 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                     <div class="control-group">
                         <label class="control-label">Goles en contra</label>
                         <div class="controls">
-                            <input type="text" id="equipo2golesencontra" name="equipo2golesencontra" style="width: 30px" oninput="calculateGoles('jugador2goles','administrar_partidos_goles_equipo2','equipo2golesencontra')" value="<?php echo $equipo2golesencontra ?>" />
+                            <input type="text" id="equipo2golesencontra" name="equipo2golesencontra" style="width: 30px" oninput="calculateGoles('jugador1goles','administrar_partidos_goles_equipo1','equipo2golesencontra')" value="<?php echo $equipo2golesencontra ?>" />
                         </div>
                     </div> 
                 </td>
@@ -288,6 +296,15 @@ function getEstadistica($estadisticaspartido, $idjugador, $accion) {
     foreach ($estadisticaspartido as $est) {
         if ($est['idjugador'] == $idjugador && $est['accion'] == $accion) {
             return $est['cantidad'];
+        }
+    }
+    return "";
+}
+
+function isArquero($estadisticaspartido, $idjugador, $accion) {
+    foreach ($estadisticaspartido as $est) {
+        if ($est['idjugador'] == $idjugador && $est['accion'] == $accion) {
+            return "checked";
         }
     }
     return "";

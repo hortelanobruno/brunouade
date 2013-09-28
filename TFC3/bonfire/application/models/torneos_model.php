@@ -54,7 +54,7 @@ class Torneos_model extends CI_Model {
             FROM tfc_estadisticas_jugador_por_torneo et 
             join tfc_equipo eq on et.idequipo=eq.id 
             join tfc_jugador ju on et.idjugador=ju.id 
-            where et.idtorneo=" . $idtorneo . " and et.cantidad_partidos_jugados>0 order by et.cantidad_goles_en_contra desc, et.cantidad_partidos_jugados desc;");
+            where et.idtorneo=" . $idtorneo . " and et.cantidad_partidos_jugados>0 and et.cantidad_goles_en_contra>0 order by et.cantidad_goles_en_contra desc, et.cantidad_partidos_jugados desc;");
         return $query->result_array();
     }
 

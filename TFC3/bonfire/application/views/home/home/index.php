@@ -192,7 +192,11 @@
                     <!-- #left column -->
                     <div id="left_column" class="fleft pr25 pt20"> 
                         <div id="news" class="fleft">
-
+                            <a href="http://www.facebook.com/pages/Rock-and-Cuts/253117344781216" target="blank"><img src="/assets/imgs/sponsors/pelu.jpg" border="0" style="width: 211px;"></a>
+                            <a href="http://www.heladeriaselpiave.com/home.html" target="blank"><img src="/assets/imgs/sponsors/el_piave.jpg" border="0" style="width: 211px;"></a>
+                            <a href="http://www.facebook.com/pages/Carita-De-Angel/321124464661501" target="blank"><img src="/assets/imgs/sponsors/carita_de_angel.jpg" border="0" style="width: 211px;"></a>
+                            <a href="http://www.facebook.com/complejo.catedral?fref=ts" target="blank"><img src="/assets/imgs/sponsors/la_catedral.jpg" border="0" style="width: 211px;"></a>
+                            <a href="http://www.todopasaremeras.com.ar/" target="blank"><img src="/assets/imgs/sponsors/todo_pasa.jpg" border="0" style="width: 211px;"></a>
                         </div>
                     </div> 
                     <!-- #center column -->
