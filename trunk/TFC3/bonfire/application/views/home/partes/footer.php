@@ -10,10 +10,10 @@
                 <div class="wp60 fright">  
                     <ul id="footer_links" class="fright">
                         <li class="first"><a href="/">Home</a></li>
-                        <li><a href="">Torneos</a></li>
-                        <li><a href="">Fotos</a></li>
-                        <li><a href="">Sedes</a></li>
-                        <li class="last"><a href="">Contactos</a></li>
+                        <li><a href="/torneos">Torneos</a></li>
+                        <li><a href="http://www.facebook.com/TfCdelsur/photos_stream" target="_blank">Fotos</a></li>
+                        <li><a href="/sedes">Sedes</a></li>
+                        <li class="last"><a href="/contacto">Contactos</a></li>
                     </ul>
                 </div>
                 <div class="fright mt10">

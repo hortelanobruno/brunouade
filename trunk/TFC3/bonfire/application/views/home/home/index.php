@@ -174,7 +174,7 @@
                 <div class="pr" style="min-height: 280px">
                     <div id="slider_1" class="fleft">
                         <ul>
-                            <li><img src="assets/photos/test.jpg" /></li>
+                            <li><img src="assets/photos/foto1.jpg" /></li>
                             <li><img src="assets/photos/foto2.jpg" /></li>
                             <li><img src="assets/photos/foto3.jpg" /></li>
                             <li><img src="assets/photos/foto4.jpg" /></li>
