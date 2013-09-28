@@ -253,7 +253,7 @@ function calculateGoles(element, elementresult, elementencontra) {
     });
     var val = $("#" + elementencontra).val();
     if (val != null && val != '') {
-        count -= parseInt(val) || 0;
+        count += parseInt(val) || 0;
     }
     $('#' + elementresult).val(count);
 }

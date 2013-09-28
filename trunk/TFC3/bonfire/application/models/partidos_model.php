@@ -5,8 +5,8 @@ class Partidos_model extends CI_Model {
     public function __construct() {
         $this->load->database();
     }
-    
-    public function get_fixture($idtorneo){
+
+    public function get_fixture($idtorneo) {
         $query = $this->db->query("SELECT * FROM tfc_partido WHERE idtorneo = " . $idtorneo);
         return $query->result_array();
     }
@@ -56,7 +56,7 @@ class Partidos_model extends CI_Model {
         $this->db->query("INSERT INTO tfc_estadisticas_partido (idpartido,idequipo,idjugador,accion,cantidad) values (" . $idpartido . "," . $idequipo . "," . $idjugador . "," . $action . "," . $cantidad . ");");
     }
 
-    public function save_estadisticas_partido($idpartido, $partido, $jugadorid, $jugadorgoles, $jugadortarjetaamarilla, $jugadortarjetaroja, $equiposelected, $equipogolesencontra) {
+    public function save_estadisticas_partido($idpartido, $partido, $jugadorid, $jugadorgoles, $jugadortarjetaamarilla, $jugadortarjetaroja, $equiposelected, $equipogolesencontra, $equipoarquero) {
         for ($i = 0; $i < count($jugadorid); $i++) {
             if ($jugadorgoles[$i] != '' && intval($jugadorgoles[$i]) > 0) {
                 $this->save_estadistica_partido($idpartido, $partido[$equiposelected], $jugadorid[$i], 1, $jugadorgoles[$i]);
@@ -74,19 +74,29 @@ class Partidos_model extends CI_Model {
                 $jugadortarjetaroja[$i] = 0;
             }
         }
+        //goles en contra
         if ($equipogolesencontra != '' && intval($equipogolesencontra) > 0) {
             $this->save_estadistica_partido($idpartido, $partido[$equiposelected], 0, 4, $equipogolesencontra);
         } else {
             $equipogolesencontra = 0;
+        }
+
+        //arquero, goles en contra
+        if ($equipoarquero != '' && intval($equipoarquero) > 0) {
+            if (strpos($equiposelected, '1') !== false) {
+                $this->save_estadistica_partido($idpartido, $partido[$equiposelected], intval($equipoarquero), 5, $partido['goles_equipo2']);
+            } else {
+                $this->save_estadistica_partido($idpartido, $partido[$equiposelected], intval($equipoarquero), 5, $partido['goles_equipo1']);
+            }
         }
     }
 
     public function get_estadistica_goles_en_contra($idpartido, $idequipo) {
         $query = $this->db->query("SELECT cantidad FROM tfc_estadisticas_partido WHERE idpartido = " . $idpartido . " and idequipo = " . $idequipo . " and accion = 4");
         $row = $query->row_array();
-        if(empty ($row)){
+        if (empty($row)) {
             return 0;
-        }else{
+        } else {
             return $row['cantidad'];
         }
     }
@@ -101,24 +111,32 @@ class Partidos_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function actualizar_data_creacion_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1golesencontra, $equipo2golesencontra) {
+    public function actualizar_data_creacion_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1golesencontra, $equipo2golesencontra, $equipo1arquero, $equipo2arquero) {
         //Cargar tabla estadistica partido
-        $this->save_estadisticas_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, 'idequipo1', $equipo1golesencontra);
-        $this->save_estadisticas_partido($idpartido, $partido, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, 'idequipo2', $equipo2golesencontra);
+        $this->save_estadisticas_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, 'idequipo1', $equipo1golesencontra, $equipo1arquero);
+        $this->save_estadisticas_partido($idpartido, $partido, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, 'idequipo2', $equipo2golesencontra, $equipo2arquero);
 
         //Computar partido
-        $this->computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja);
+        $this->computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1arquero, $equipo2arquero);
     }
 
-    public function computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja) {
+    public function computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1arquero, $equipo2arquero) {
         //Si el partido se marca como jugado se hace lo siguiente
         if (intval($partido['jugado']) == 1) {
             //Cargar tabla estadisticas jugador por torneo
             for ($i = 0; $i < count($jugador1id); $i++) {
-                $this->db->query("INSERT INTO tfc_estadisticas_jugador_por_torneo values (" . $partido['idtorneo'] . "," . $partido['idequipo1'] . "," . $jugador1id[$i] . "," . $this->parseStats($jugador1goles[$i]) . "," . $this->parseStats($jugador1tarjetaamarilla[$i]) . "," . $this->parseStats($jugador1tarjetaroja[$i]) . ",1,0) ON DUPLICATE KEY UPDATE cantidad_goles=cantidad_goles+" . $this->parseStats($jugador1goles[$i]) . ",cantidad_tarjetas_amarillas=cantidad_tarjetas_amarillas+" . $this->parseStats($jugador1tarjetaamarilla[$i]) . ",cantidad_tarjetas_rojas=cantidad_tarjetas_rojas+" . $this->parseStats($jugador1tarjetaroja[$i]) . ",cantidad_partidos_jugados=cantidad_partidos_jugados+1;");
+                if ($jugador1id[$i] == $equipo1arquero) {
+                    $this->db->query("INSERT INTO tfc_estadisticas_jugador_por_torneo values (" . $partido['idtorneo'] . "," . $partido['idequipo1'] . "," . $jugador1id[$i] . "," . $this->parseStats($jugador1goles[$i]) . "," . $this->parseStats($jugador1tarjetaamarilla[$i]) . "," . $this->parseStats($jugador1tarjetaroja[$i]) . "," . $this->jugo($jugador1id[$i], $jugador1goles[$i], $jugador1tarjetaamarilla[$i], $jugador1tarjetaroja[$i], $equipo1arquero) . "," . $partido['goles_equipo2'] . ") ON DUPLICATE KEY UPDATE cantidad_goles=cantidad_goles+" . $this->parseStats($jugador1goles[$i]) . ",cantidad_tarjetas_amarillas=cantidad_tarjetas_amarillas+" . $this->parseStats($jugador1tarjetaamarilla[$i]) . ",cantidad_tarjetas_rojas=cantidad_tarjetas_rojas+" . $this->parseStats($jugador1tarjetaroja[$i]) . ",cantidad_partidos_jugados=cantidad_partidos_jugados+" . $this->jugo($jugador1id[$i], $jugador1goles[$i], $jugador1tarjetaamarilla[$i], $jugador1tarjetaroja[$i], $equipo1arquero) . ",cantidad_goles_en_contra=cantidad_goles_en_contra+" . $partido['goles_equipo2'] . ";");
+                } else {
+                    $this->db->query("INSERT INTO tfc_estadisticas_jugador_por_torneo values (" . $partido['idtorneo'] . "," . $partido['idequipo1'] . "," . $jugador1id[$i] . "," . $this->parseStats($jugador1goles[$i]) . "," . $this->parseStats($jugador1tarjetaamarilla[$i]) . "," . $this->parseStats($jugador1tarjetaroja[$i]) . "," . $this->jugo($jugador1id[$i], $jugador1goles[$i], $jugador1tarjetaamarilla[$i], $jugador1tarjetaroja[$i], $equipo1arquero) . ",0) ON DUPLICATE KEY UPDATE cantidad_goles=cantidad_goles+" . $this->parseStats($jugador1goles[$i]) . ",cantidad_tarjetas_amarillas=cantidad_tarjetas_amarillas+" . $this->parseStats($jugador1tarjetaamarilla[$i]) . ",cantidad_tarjetas_rojas=cantidad_tarjetas_rojas+" . $this->parseStats($jugador1tarjetaroja[$i]) . ",cantidad_partidos_jugados=cantidad_partidos_jugados+" . $this->jugo($jugador1id[$i], $jugador1goles[$i], $jugador1tarjetaamarilla[$i], $jugador1tarjetaroja[$i], $equipo1arquero) . ";");
+                }
             }
             for ($i = 0; $i < count($jugador2id); $i++) {
-                $this->db->query("INSERT INTO tfc_estadisticas_jugador_por_torneo values (" . $partido['idtorneo'] . "," . $partido['idequipo2'] . "," . $jugador2id[$i] . "," . $this->parseStats($jugador2goles[$i]) . "," . $this->parseStats($jugador2tarjetaamarilla[$i]) . "," . $this->parseStats($jugador2tarjetaroja[$i]) . ",1,0) ON DUPLICATE KEY UPDATE cantidad_goles=cantidad_goles+" . $this->parseStats($jugador2goles[$i]) . ",cantidad_tarjetas_amarillas=cantidad_tarjetas_amarillas+" . $this->parseStats($jugador2tarjetaamarilla[$i]) . ",cantidad_tarjetas_rojas=cantidad_tarjetas_rojas+" . $this->parseStats($jugador2tarjetaroja[$i]) . ",cantidad_partidos_jugados=cantidad_partidos_jugados+1;");
+                if ($jugador2id[$i] == $equipo2arquero) {
+                    $this->db->query("INSERT INTO tfc_estadisticas_jugador_por_torneo values (" . $partido['idtorneo'] . "," . $partido['idequipo2'] . "," . $jugador2id[$i] . "," . $this->parseStats($jugador2goles[$i]) . "," . $this->parseStats($jugador2tarjetaamarilla[$i]) . "," . $this->parseStats($jugador2tarjetaroja[$i]) . "," . $this->jugo($jugador2id[$i], $jugador2goles[$i], $jugador2tarjetaamarilla[$i], $jugador2tarjetaroja[$i], $equipo2arquero) . "," . $partido['goles_equipo1'] . ") ON DUPLICATE KEY UPDATE cantidad_goles=cantidad_goles+" . $this->parseStats($jugador2goles[$i]) . ",cantidad_tarjetas_amarillas=cantidad_tarjetas_amarillas+" . $this->parseStats($jugador2tarjetaamarilla[$i]) . ",cantidad_tarjetas_rojas=cantidad_tarjetas_rojas+" . $this->parseStats($jugador2tarjetaroja[$i]) . ",cantidad_partidos_jugados=cantidad_partidos_jugados+" . $this->jugo($jugador2id[$i], $jugador2goles[$i], $jugador2tarjetaamarilla[$i], $jugador2tarjetaroja[$i], $equipo2arquero) . ",cantidad_goles_en_contra=cantidad_goles_en_contra+" . $partido['goles_equipo1'] . ";");
+                } else {
+                    $this->db->query("INSERT INTO tfc_estadisticas_jugador_por_torneo values (" . $partido['idtorneo'] . "," . $partido['idequipo2'] . "," . $jugador2id[$i] . "," . $this->parseStats($jugador2goles[$i]) . "," . $this->parseStats($jugador2tarjetaamarilla[$i]) . "," . $this->parseStats($jugador2tarjetaroja[$i]) . "," . $this->jugo($jugador2id[$i], $jugador2goles[$i], $jugador2tarjetaamarilla[$i], $jugador2tarjetaroja[$i], $equipo2arquero) . ",0) ON DUPLICATE KEY UPDATE cantidad_goles=cantidad_goles+" . $this->parseStats($jugador2goles[$i]) . ",cantidad_tarjetas_amarillas=cantidad_tarjetas_amarillas+" . $this->parseStats($jugador2tarjetaamarilla[$i]) . ",cantidad_tarjetas_rojas=cantidad_tarjetas_rojas+" . $this->parseStats($jugador2tarjetaroja[$i]) . ",cantidad_partidos_jugados=cantidad_partidos_jugados+" . $this->jugo($jugador2id[$i], $jugador2goles[$i], $jugador2tarjetaamarilla[$i], $jugador2tarjetaroja[$i], $equipo2arquero) . ";");
+                }
             }
             //Cargar tabla posiciones
             $this->actualizar_tabla_posiciones($partido);
@@ -137,14 +155,19 @@ class Partidos_model extends CI_Model {
         }
     }
 
+    private function jugo($jugadorid, $jugadorgoles, $jugadortarjetaamarilla, $jugadortarjetaroja, $equipoarquero) {
+        if ($jugadorid == $equipoarquero) {
+            return 1;
+        }
+        return 0;
+    }
+
     public function descomputar_partido($idpartido, $partido_old) {
         //Si el partido se marca como jugado se hace lo siguiente
         if (intval($partido_old['jugado']) == 1) {
             $estadisticas = $this->get_estadisticas_partido($idpartido);
             //Descomputar estadistica jugador por torneo
             //Saco partidos jugados
-            $this->db->query("UPDATE tfc_estadisticas_jugador_por_torneo set cantidad_partidos_jugados=cantidad_partidos_jugados-1 where idtorneo =" . $partido_old['idtorneo'] . " and  idequipo=" . $partido_old['idequipo1']);
-            $this->db->query("UPDATE tfc_estadisticas_jugador_por_torneo set cantidad_partidos_jugados=cantidad_partidos_jugados-1 where idtorneo =" . $partido_old['idtorneo'] . " and  idequipo=" . $partido_old['idequipo2']);
             foreach ($estadisticas as $estadistica) {
                 $this->descomputar_estadistica_jugador_torneo($partido_old['idtorneo'], $estadistica['idequipo'], $estadistica['idjugador'], $estadistica['accion'], $estadistica['cantidad']);
             }
@@ -155,11 +178,17 @@ class Partidos_model extends CI_Model {
 
     public function descomputar_estadistica_jugador_torneo($idtorneo, $idequipo, $idjugador, $accion, $cantidad) {
         if (intval($accion) == 1) {
+            //goles
             $this->db->query("UPDATE tfc_estadisticas_jugador_por_torneo set cantidad_goles=cantidad_goles-" . $cantidad . " where idtorneo =" . $idtorneo . " and  idequipo=" . $idequipo . " and idjugador = " . $idjugador);
         } else if (intval($accion) == 2) {
+            //amarillas
             $this->db->query("UPDATE tfc_estadisticas_jugador_por_torneo set cantidad_tarjetas_amarillas=cantidad_tarjetas_amarillas-" . $cantidad . " where idtorneo =" . $idtorneo . " and  idequipo=" . $idequipo . " and idjugador = " . $idjugador);
         } else if (intval($accion) == 3) {
+            //rojas
             $this->db->query("UPDATE tfc_estadisticas_jugador_por_torneo set cantidad_tarjetas_rojas=cantidad_tarjetas_rojas-" . $cantidad . " where idtorneo =" . $idtorneo . " and  idequipo=" . $idequipo . " and idjugador = " . $idjugador);
+        } else if (intval($accion) == 5) {
+            //goles en contra de arqueros
+            $this->db->query("UPDATE tfc_estadisticas_jugador_por_torneo set cantidad_partidos_jugados=cantidad_partidos_jugados-1,cantidad_goles_en_contra=cantidad_goles_en_contra-" . $cantidad . " where idtorneo =" . $idtorneo . " and  idequipo=" . $idequipo . " and idjugador = " . $idjugador);
         }
     }
 
@@ -199,16 +228,16 @@ class Partidos_model extends CI_Model {
         }
     }
 
-    public function actualizar_data_actualizacion_partido($idpartido, $partido, $partido_old, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1golesencontra, $equipo2golesencontra) {
+    public function actualizar_data_actualizacion_partido($idpartido, $partido, $partido_old, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1golesencontra, $equipo2golesencontra, $equipo1arquero, $equipo2arquero) {
         //Descomputar partido
         $this->descomputar_partido($idpartido, $partido_old);
         //Remover tabla estadistica partido
         $this->partidos_model->delete_estadisticas_partido($idpartido);
         //Cargar tabla estadistica partido
-        $this->save_estadisticas_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, 'idequipo1', $equipo1golesencontra);
-        $this->save_estadisticas_partido($idpartido, $partido, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, 'idequipo2', $equipo2golesencontra);
+        $this->save_estadisticas_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, 'idequipo1', $equipo1golesencontra, $equipo1arquero);
+        $this->save_estadisticas_partido($idpartido, $partido, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, 'idequipo2', $equipo2golesencontra, $equipo2arquero);
         //Computar partido
-        $this->computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja);
+        $this->computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1arquero, $equipo2arquero);
     }
 
     public function actualizar_data_delete_partido($idpartido, $partido_old) {

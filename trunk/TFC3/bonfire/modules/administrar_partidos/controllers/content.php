@@ -350,6 +350,17 @@ class content extends Admin_Controller {
         $data['jugado'] = $this->input->post('administrar_partidos_jugado');
         $data['idfase'] = $this->torneos_model->get_fase_torneo($data);
 
+        if (isset($_POST["equipo1arquero"])) {
+            $equipo1arquero = $_POST["equipo1arquero"];
+        } else {
+            $equipo1arquero = 0;
+        }
+        if (isset($_POST["equipo2arquero"])) {
+            $equipo2arquero = $_POST["equipo2arquero"];
+        } else {
+            $equipo2arquero = 0;
+        }
+
         if ($type == 'insert') {
             //Creacion de partido
             $id = $this->administrar_partidos_model->insert($data);
@@ -360,12 +371,12 @@ class content extends Admin_Controller {
                 $return = FALSE;
             }
 
-            $this->partidos_model->actualizar_data_creacion_partido($id, $data, $_POST["jugador1id"], $_POST["jugador1goles"], $_POST["jugador1tarjetaamarilla"], $_POST["jugador1tarjetaroja"], $_POST["jugador2id"], $_POST["jugador2goles"], $_POST["jugador2tarjetaamarilla"], $_POST["jugador2tarjetaroja"], $_POST["equipo1golesencontra"], $_POST["equipo2golesencontra"]);
+            $this->partidos_model->actualizar_data_creacion_partido($id, $data, $_POST["jugador1id"], $_POST["jugador1goles"], $_POST["jugador1tarjetaamarilla"], $_POST["jugador1tarjetaroja"], $_POST["jugador2id"], $_POST["jugador2goles"], $_POST["jugador2tarjetaamarilla"], $_POST["jugador2tarjetaroja"], $_POST["equipo1golesencontra"], $_POST["equipo2golesencontra"], $equipo1arquero, $equipo2arquero);
         } else if ($type == 'update') {
             $data_old = $this->partidos_model->get_partido($id);
             $return = $this->administrar_partidos_model->update($id, $data);
 
-            $this->partidos_model->actualizar_data_actualizacion_partido($id, $data, $data_old, $_POST["jugador1id"], $_POST["jugador1goles"], $_POST["jugador1tarjetaamarilla"], $_POST["jugador1tarjetaroja"], $_POST["jugador2id"], $_POST["jugador2goles"], $_POST["jugador2tarjetaamarilla"], $_POST["jugador2tarjetaroja"], $_POST["equipo1golesencontra"], $_POST["equipo2golesencontra"]);
+            $this->partidos_model->actualizar_data_actualizacion_partido($id, $data, $data_old, $_POST["jugador1id"], $_POST["jugador1goles"], $_POST["jugador1tarjetaamarilla"], $_POST["jugador1tarjetaroja"], $_POST["jugador2id"], $_POST["jugador2goles"], $_POST["jugador2tarjetaamarilla"], $_POST["jugador2tarjetaroja"], $_POST["equipo1golesencontra"], $_POST["equipo2golesencontra"], $equipo1arquero, $equipo2arquero);
         }
 
         return $return;
