@@ -29,7 +29,7 @@ class content extends Admin_Controller {
       Displays a list of form data.
      */
     public function index() {
-        
+
         $equipos = $this->equipos_model->get_all_equipos();
 
         // Deleting anything?
@@ -56,11 +56,16 @@ class content extends Admin_Controller {
         if ($data['equipo'] == null) {
             $data['equipo'] = $equipos[0]['id'];
         }
-        
+
         if ($data['equipo'] != null) {
             Template::set('equiposelected', $data['equipo']);
-            
+
             $records = $this->jugadores_model->find_all_by(array('idequipo' => $data['equipo']));
+        }
+
+        $data['importjugadores'] = $this->input->post('importcontent');
+        if ($data['importjugadores'] != null) {
+            Template::set('resultimport', $this->equipos_model->importJugadores($data['importjugadores']));
         }
 
         Template::set('records', $records);
@@ -215,4 +220,5 @@ class content extends Admin_Controller {
     }
 
     //--------------------------------------------------------------------
+
 }
