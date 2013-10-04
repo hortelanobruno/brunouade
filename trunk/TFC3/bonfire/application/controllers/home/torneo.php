@@ -38,6 +38,7 @@ class Torneo extends Front_Controller {
         $this->load->model('equipos_model');
         $this->load->model('partidos_model');
         $this->load->model('sedes_model');
+        $this->load->model('noticias_model');
     }
 
     /**
@@ -63,6 +64,8 @@ class Torneo extends Front_Controller {
         $data['tarjetas'] = $this->torneos_model->get_tarjetas_from_torneo($idtorneo);
         $data['fixture'] = $this->partidos_model->get_fixture($idtorneo);
         $data['sedes'] = $this->sedes_model->get_sedes();
+        $data['noticias'] = $this->noticias_model->get_noticias_by_torneo($idtorneo);
+        
         $data['fechaelegida'] = 1;
 
         $this->load->view('home/partes/header', $data);
