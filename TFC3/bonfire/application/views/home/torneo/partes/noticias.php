@@ -15,6 +15,14 @@
         </div>
     <?php } else { ?>
         <label>Noticias</label>
+        <?php if (isset($noticias)) { ?>
+            <?php foreach ($noticias as $noti): ?>
+                <div class="news-item">
+                    <div class="data"><?php echo $noti['fecha'] ?></div>
+                    <div class="titolo"><a href="/noticia/<?php echo $noti['idnoticias'] ?>"><p><strong><em><?php echo $noti['titulo'] ?></em></strong></p></a></div>
+                </div>
+            <?php endforeach ?>
+        <?php } ?>
     <?php } ?>
 
 
