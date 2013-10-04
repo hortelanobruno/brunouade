@@ -35,7 +35,7 @@ function changeTiposTorneos() {
     document.getElementById("formtiposdetorneos").submit();
 }
 
-function cargarEquipos(){
+function cargarEquipos() {
     var e = document.getElementById("equipoelegidos");
     var options = e && e.options;
     var opt;
@@ -260,4 +260,9 @@ function calculateGoles(element, elementresult, elementencontra) {
 
 function changeTorneoAdmPartidos() {
     document.getElementById("formtorneo").submit();
+}
+
+
+function showImportJugadores() {
+    $('#importarJugadoresBox').toggle();
 }
