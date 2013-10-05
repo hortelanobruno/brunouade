@@ -91,7 +91,7 @@
                     reader.onerror = function() {
                         console.log('Error reading file');
                     }       // error message    
-                    reader.readAsText(files[0])                                             // start reading the text, async
+                    reader.readAsText(files[0],'ISO-8859-1')                                             // start reading the text, async
                 }
 
                 /* dump the file data to the console */
