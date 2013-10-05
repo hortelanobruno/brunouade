@@ -6,7 +6,7 @@
             <?php foreach ($tablaPosiciones as $posicion): ?>
 
                 <tr><td>
-                        <a href="/equipo/<?php echo $posicion['idequipo'] ?>"><img width="30" class="mr5" src="/assets/uploads/logo_22400862950730ef653a4eedf7437bda.png"><?php echo $posicion['nombre'] ?></a>
+                        <a href="/equipo/<?php echo $posicion['idequipo'] ?>"><img width="30" class="mr5" src="/assets/imgs/default/team/defaultTeamLogo.png"><?php echo $posicion['nombre'] ?></a>
                     </td>
                     <td><?php echo $posicion['puntos'] ?></td>
                     <td><?php echo $posicion['partidos_jugados'] ?></td>

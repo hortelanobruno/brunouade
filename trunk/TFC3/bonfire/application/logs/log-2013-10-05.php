@@ -37,3 +37,8 @@ ERROR - 2013-10-05 16:26:23 --> Severity: Notice  --> Undefined variable: fechas
 ERROR - 2013-10-05 16:26:23 --> Severity: Notice  --> Undefined variable: fechaselected C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\administrar_partidos\views\content\index.php 20
 ERROR - 2013-10-05 16:26:23 --> Severity: Notice  --> Undefined variable: fechaselected C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\administrar_partidos\views\content\index.php 20
 ERROR - 2013-10-05 16:26:23 --> Severity: Notice  --> Undefined variable: fechaselected C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\modules\administrar_partidos\views\content\index.php 20
+ERROR - 2013-10-05 16:34:07 --> 404 Page Not Found --> 
+ERROR - 2013-10-05 16:34:08 --> 404 Page Not Found --> 
+ERROR - 2013-10-05 16:34:09 --> 404 Page Not Found --> 
+ERROR - 2013-10-05 16:44:19 --> Severity: Notice  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
+ C:\Users\Brunoli\Documents\NetBeansProjects\TFC3\bonfire\codeigniter\database\drivers\mysql\mysql_driver.php 91

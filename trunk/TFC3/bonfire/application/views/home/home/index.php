@@ -204,7 +204,7 @@
                         <div class="f20 lato lato900 border_light_bottom mb20 pb5">Ultimas noticias</div>
                         <?php foreach ($news as $noticia): ?>
                             <div class="news-item">
-                                <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
+                                <!--<div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>-->
                                 <div class="fleft wp94">
                                     <div class="titolo"><a href="/noticia/<?php echo $noticia['idnoticias'] ?>"><?php echo $noticia['titulo'] ?></a></div>
                                     <div class="descrizione"><p><?php echo $noticia['fecha'] ?></p>
