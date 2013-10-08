@@ -11,9 +11,11 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($vallaMenosVencida as $valla): ?>
+        <?php 
+        $i=0;
+        foreach ($vallaMenosVencida as $valla): ?>
             <tr>
-                <td class="tr"><div class="index b">1°</div></td>
+                <td class="tr"><div class="index b"><?php echo ++$i ?>°</div></td>
                 <td class="name"><a href=""><img class="vm" src="/assets/imgs/user/defaultUser.png" height="25"> <?php echo $valla['nombre_completo'] ?></a> <a href="/equipo/<?php echo $valla['idequipo'] ?>"><span class="gray"><?php echo $valla['nombre'] ?></span></a></td>
                 <td class="score"><?php echo $valla['cantidad_goles_en_contra'] ?></td>
                 <td class="score"><?php echo $valla['cantidad_partidos_jugados'] ?></td>
@@ -43,7 +45,7 @@
 <?php
 
 function calcularPromedio($cantidad_goles_en_contra, $cantidad_partidos_jugados) {
-    return $cantidad_goles_en_contra / $cantidad_partidos_jugados;
+    return number_format($cantidad_goles_en_contra / $cantidad_partidos_jugados, 2, '.', ',');
 }
 
 function calcularPartidosPorEquipo($cantidad_partidos_jugados, $idequipo, $tablaPosiciones) {
@@ -58,7 +60,7 @@ function calcularPartidosPorEquipo($cantidad_partidos_jugados, $idequipo, $tabla
 function calcularPorcentaje($cantidad_partidos_jugados, $idequipo, $tablaPosiciones) {
     foreach ($tablaPosiciones as $posicion) {
         if ($posicion['idequipo'] == $idequipo) {
-            return $cantidad_partidos_jugados / $posicion['partidos_jugados'] ;
+            return number_format($cantidad_partidos_jugados / $posicion['partidos_jugados'], 2, '.', ',');
         }
     }
     return 1;
