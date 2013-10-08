@@ -7,9 +7,11 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($goleadores as $goleador): ?>
+        <?php 
+        $i=0;
+        foreach ($goleadores as $goleador): ?>
             <tr>
-                <td class="tr"><div class="index b">1°</div></td>
+                <td class="tr"><div class="index b"><?php echo ++$i ?>°</div></td>
                 <td class="name"><a href=""><img class="vm" src="/assets/imgs/user/defaultUser.png" height="25"> <?php echo $goleador['nombre_completo'] ?></a> <a href="/equipo/<?php echo $goleador['idequipo'] ?>"><span class="gray"><?php echo $goleador['nombre'] ?></span></a></td>
                 <td class="score">Goles: <?php echo $goleador['cantidad_goles'] ?></td>
             </tr>
