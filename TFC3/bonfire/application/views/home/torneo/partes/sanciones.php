@@ -9,9 +9,11 @@
     </thead>
     <tbody>
         
-        <?php foreach ($tarjetas as $tarjeta): ?>
+        <?php 
+        $i=0;
+        foreach ($tarjetas as $tarjeta): ?>
             <tr>
-                <td class="tr"><div class="index b">1°</div></td>
+                <td class="tr"><div class="index b"><?php echo ++$i ?>°</div></td>
                 <td class="name"><a href=""><img class="vm" src="/assets/imgs/user/defaultUser.png" height="25"> <?php echo $tarjeta['nombre_completo'] ?></a> <a href="/equipo/<?php echo $tarjeta['idequipo'] ?>"><span class="gray"><?php echo $tarjeta['nombre'] ?></span></a></td>
                 <td class="score"><?php echo $tarjeta['cantidad_tarjetas_rojas'] ?></td>
                 <td class="score"><?php echo $tarjeta['cantidad_tarjetas_amarillas'] ?></td>
