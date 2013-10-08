@@ -330,6 +330,9 @@ class content extends Admin_Controller {
         $this->form_validation->set_rules('administrar_partidos_goles_equipo2', 'Goles Equipo2', 'max_length[11]');
         $this->form_validation->set_rules('administrar_partidos_fecha_torneo', 'Fecha Torneo', 'max_length[11]');
         $this->form_validation->set_rules('administrar_partidos_jugado', 'Jugado', 'max_length[1]');
+        $this->form_validation->set_rules('equipo1arquero', 'Arquero', 'required');
+        $this->form_validation->set_rules('equipo2arquero', 'Arquero', 'required');
+        
 
         if ($this->form_validation->run() === FALSE) {
             return FALSE;

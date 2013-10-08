@@ -50,11 +50,11 @@ class Torneos_model extends CI_Model {
     }
 
     public function get_vallaMenosVencida_from_torneo($idtorneo) {
-        $query = $this->db->query("SELECT et.idequipo,et.idjugador,et.cantidad_partidos_jugados,et.cantidad_goles_en_contra,eq.nombre,ju.nombre_completo 
+        $query = $this->db->query("SELECT et.idequipo,et.idjugador,et.cantidad_partidos_jugados,et.cantidad_goles_en_contra,eq.nombre,ju.nombre_completo, et.cantidad_goles_en_contra/et.cantidad_partidos_jugados as prom
             FROM tfc_estadisticas_jugador_por_torneo et 
             join tfc_equipo eq on et.idequipo=eq.id 
             join tfc_jugador ju on et.idjugador=ju.id 
-            where et.idtorneo=" . $idtorneo . " and et.cantidad_partidos_jugados>0 and et.cantidad_goles_en_contra>0 order by et.cantidad_goles_en_contra desc, et.cantidad_partidos_jugados desc;");
+            where et.idtorneo=" . $idtorneo . " and et.cantidad_partidos_jugados>0 and et.cantidad_goles_en_contra>0 order by prom asc;");
         return $query->result_array();
     }
 

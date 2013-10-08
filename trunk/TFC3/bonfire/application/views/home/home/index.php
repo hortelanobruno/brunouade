@@ -222,7 +222,7 @@
                 <div id="right_column" class="fleft ml25 pt20">
                     <a href="/contacto" target=""><img src="/assets/imgs/commons/8-1348243968.jpg" border="0" style="width: 211px;"></a>
                     <iframe class="mb20 mt20" width="210" height="119" src="//www.youtube.com/embed/kezYcCaVCdM?autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;rel=0" frameborder="0" allowfullscreen></iframe>
-                    <div id="news" class="fleft">
+<!--                    <div id="news" class="fleft">
                         <div class="f20 lato lato900 border_light_bottom mb20 pb5">Proxima partida</div>
                         <div class="news-item clearfix mb10">
                             <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
@@ -232,7 +232,7 @@
                             </div>
                         </div>
                         <div style="clear:both;"></div>
-                    </div>
+                    </div>-->
                     <a class="twitter-timeline" href="https://twitter.com/tfcdelsur" data-widget-id="381917573798830080">Tweets por @tfcdelsur</a>
                     <script>!function(d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';

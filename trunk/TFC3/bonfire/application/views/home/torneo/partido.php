@@ -160,21 +160,23 @@ function printStats($estadisticas_partido, $idequipo, $idjugador, $jugadores) {
     //Cargo estadisticas
     foreach ($estadisticas_partido as $estadistica) {
         if ($estadistica['idequipo'] == $idequipo && $estadistica['idjugador'] == $idjugador) {
-            if ($estadistica['cantidad'] > 1) {
-                $result = $result . $estadistica['cantidad'] . "x";
-            }
-            if ($estadistica['accion'] == 1) {
-                //gol
-                $result = $result . "<img src='/assets/imgs/commons/ico-goal.png' alt='G' title='Gol' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
-            } else if ($estadistica['accion'] == 2) {
-                //amarilla
-                $result = $result . "<img src='/assets/imgs/commons/ico-giallo.png' alt='A' title='Amarilla' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
-            } else if ($estadistica['accion'] == 3) {
-                //roja
-                $result = $result . "<img src='/assets/imgs/commons/ico-rosso.png' alt='R' title='Roja' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
-            } else if ($estadistica['accion'] == 4) {
-                //en contra
+            if (($estadistica['accion'] == 1) || ($estadistica['accion'] == 2) || ($estadistica['accion'] == 3)) {
+                if ($estadistica['cantidad'] > 1) {
+                    $result = $result . $estadistica['cantidad'] . "x";
+                }
+                if ($estadistica['accion'] == 1) {
+                    //gol
+                    $result = $result . "<img src='/assets/imgs/commons/ico-goal.png' alt='G' title='Gol' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
+                } else if ($estadistica['accion'] == 2) {
+                    //amarilla
+                    $result = $result . "<img src='/assets/imgs/commons/ico-giallo.png' alt='A' title='Amarilla' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
+                } else if ($estadistica['accion'] == 3) {
+                    //roja
+                    $result = $result . "<img src='/assets/imgs/commons/ico-rosso.png' alt='R' title='Roja' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
+                } else if ($estadistica['accion'] == 4) {
+                    //en contra
 //                $result = $result . "<img src='/assets/imgs/commons/ico-rosso.png' alt='R' title='Espulso' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
+                }
             }
         }
     }
@@ -192,9 +194,6 @@ function hasEstadistica($estadisticas_partido, $idequipo, $idjugador, $jugadores
     //Cargo estadisticas
     foreach ($estadisticas_partido as $estadistica) {
         if ($estadistica['idequipo'] == $idequipo && $estadistica['idjugador'] == $idjugador) {
-            if ($estadistica['cantidad'] > 1) {
-                return true;
-            }
             if ($estadistica['accion'] == 1) {
                 //gol
                 return true;
@@ -207,6 +206,11 @@ function hasEstadistica($estadisticas_partido, $idequipo, $idjugador, $jugadores
             } else if ($estadistica['accion'] == 4) {
                 //en contra
 //                $result = $result . "<img src='/assets/imgs/commons/ico-rosso.png' alt='R' title='Espulso' width='20' class='mr5 mt5' style='margin-left: -2px;'>";
+            } else if ($estadistica['accion'] == 5) {
+                return false;
+            }
+            if ($estadistica['cantidad'] > 1) {
+                return true;
             }
         }
     }
