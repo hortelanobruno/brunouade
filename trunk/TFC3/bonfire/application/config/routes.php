@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "home";
 
+$route['contacto/sendmail'] = 'home/contacto/sendmail';
 $route['contacto'] = 'home/contacto';
 $route['equipo/(:any)'] = 'home/equipo/view/$1';
 $route['equipos'] = 'home/equipo';

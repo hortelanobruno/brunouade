@@ -71,8 +71,7 @@ function sortearFixture() {
         }
     }
 
-    //shuffle
-    result = shuffle(result);
+
 
     //Obtengo categoria: 1 grupo 2 llave 3 grupo y llave
     var e = document.getElementById("administrar_torneos_categoria");
@@ -81,6 +80,10 @@ function sortearFixture() {
 
     if (categoria == 1) {
         //liga
+
+        //shuffle
+        result = shuffle(result);
+
         var teams = result.length;
         var ghost = false;
         if (teams % 2 === 1) {
@@ -218,6 +221,44 @@ function sortearFixture() {
         $('#administrar_torneos_cant_fases').val(1);
         $('#administrar_torneos_cantidad_fechas').val(cant_fechas);
         $('#administrar_torneos_cantidad_partidos').val(cant_partidos);
+    } else if (categoria == 2) {
+        //copa
+        $('#tableFixture').empty();
+
+        var sizeLlaves = calcularTamanioLlave(result.length);
+        var cantFechas = calcularCantFechasLlave(sizeLlaves);
+
+
+        for (var i = 0; i < sizeLlaves; i++) {
+            if (i % 2 == 0) {
+                var tr = document.createElement('tr');
+                var td = document.createElement('td');
+                $(td).html("Partido " + ((i/2)+1));
+                tr.appendChild(td);
+                $('#tableFixture').append(tr);
+            }
+            var tr = document.createElement('tr');
+            var td = document.createElement('td');
+            var select = document.createElement('select');
+            $(select).change(changeEquipoCopa);
+            $(select).attr("id", "equipocopa" + (i + 1));
+            $(select).attr("name", "equipocopa");
+            var option = document.createElement('option');
+            $(option).html("-----");
+            $(option).val(-1);
+            select.appendChild(option);
+            for (var j = 0; j < result.length; j++) {
+                var option = document.createElement('option');
+                select.appendChild(option);
+                $(option).html(result[j][1]);
+                $(option).val(result[j][0]);
+            }
+            td.appendChild(select);
+            tr.appendChild(td);
+            $('#tableFixture').append(tr)
+        }
+        
+        $('#administrar_torneos_cantidad_fechas').val(cantFechas);
     }
 }
 
@@ -265,4 +306,59 @@ function changeTorneoAdmPartidos() {
 
 function showImportJugadores() {
     $('#importarJugadoresBox').toggle();
+}
+
+function changeEquipoCopa() {
+    var selected = [];
+    var element = $(this);
+    $('[name="equipocopa"]').each(function() {
+        if (selected.indexOf($(this).val()) > parseInt(-1)) {
+            //Eligio 2 veces
+            $(element)[0].selectedIndex = 0;
+        } else {
+            if ($(this).val() > -1) {
+                selected.push($(this).val());
+            }
+        }
+    });
+}
+
+function calcularTamanioLlave(cantEquipos) {
+    if (cantEquipos <= 2) {
+        return 2;
+    } else if (cantEquipos <= 4) {
+        return 4;
+    } else if (cantEquipos <= 8) {
+        return 8;
+    } else if (cantEquipos <= 16) {
+        return 16;
+    } else if (cantEquipos <= 32) {
+        return 32;
+    } else if (cantEquipos <= 64) {
+        return 64;
+    } else if (cantEquipos <= 128) {
+        return 128;
+    } else if (cantEquipos <= 256) {
+        return 256;
+    }
+}
+
+function calcularCantFechasLlave(sizeLlaves){
+    if (cantEquipos == 2) {
+        return 1;
+    } else if (cantEquipos == 4) {
+        return 2;
+    } else if (cantEquipos == 8) {
+        return 3;
+    } else if (cantEquipos == 16) {
+        return 4;
+    } else if (cantEquipos == 32) {
+        return 5;
+    } else if (cantEquipos == 64) {
+        return 6;
+    } else if (cantEquipos == 128) {
+        return 7;
+    } else if (cantEquipos == 256) {
+        return 8;
+    }
 }

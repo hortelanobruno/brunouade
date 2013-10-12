@@ -80,14 +80,17 @@
                         <div style="font-size:12px; margin-top:5px;"><p></p></div>
 
                         <div id="message_contacto"></div>
-                        <form class="enviar_contactos" name="enviar_contacto" method="post">
+                        <form class="enviar_contactos" name="enviar_contacto" id="enviar_contacto" action="/contacto/sendmail" method="post">
                             <label>Nombre y apellido:</label><input type="text" name="nombre"><br clear="all"><br clear="all">
                             <label>E-mail:</label><input type="text" name="email"><br clear="all"><br clear="all">
                             <label>Teléfono:</label><input type="text" name="telefono"><br clear="all"><br clear="all">
                             <label>Equipo:</label><input type="text" name="equipo"><br clear="all"><br clear="all">
-                            <label>Contacto:</label><textarea name="contacto"></textarea><br clear="all"><br clear="all">
-                            <label>&nbsp;</label><img id="enviar_contacto" src="http://www.edebafutbol.com.ar/static/images/btn_enviar.jpg" border="0" style="margin-top:10px;" class="pointer">
+                            <label>Consulta:</label><textarea name="consulta"></textarea><br clear="all"><br clear="all">
+                            <label>&nbsp;</label><img onclick="submitContacto()" id="enviar_contacto" src="http://www.edebafutbol.com.ar/static/images/btn_enviar.jpg" border="0" style="margin-top:10px;" class="pointer">
                             <input type="hidden" name="action" value="enviar_contacto"><br clear="all"><br clear="all">
+                            <?php if (isset($enviado)) { 
+                                echo $enviado;
+                            } ?>
                         </form>
                     </div>
 
