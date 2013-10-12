@@ -71,3 +71,7 @@ function seleccionarFecha(element, fecha) {
     $('.tabla_fecha').hide();
     $('.fecha_' + fecha).show();
 }
+
+function submitContacto(){
+    document.getElementById("enviar_contacto").submit();
+}
