@@ -279,8 +279,8 @@ function shuffle(o) { //v1.0
 
 
 function changeTorneo($event) {
-    document.getElementById("eventfrom").value = $event;
-    document.getElementById("refasync").value = 'yes';
+//    document.getElementById("eventfrom").value = $event;
+//    document.getElementById("refasync").value = 'yes';
     document.getElementById("formcreatepart").submit();
 }
 
@@ -321,6 +321,12 @@ function changeEquipoCopa() {
             }
         }
     });
+    //Guardo data en input
+    var result = [];
+    $('[name="equipocopa"]').each(function() {
+        result.push($(this).val());
+    });
+    $('#fixtureordenequipos').val(result.toString());
 }
 
 function calcularTamanioLlave(cantEquipos) {
@@ -343,22 +349,22 @@ function calcularTamanioLlave(cantEquipos) {
     }
 }
 
-function calcularCantFechasLlave(sizeLlaves){
-    if (cantEquipos == 2) {
+function calcularCantFechasLlave(cantEquipos){
+    if (cantEquipos === 2) {
         return 1;
-    } else if (cantEquipos == 4) {
+    } else if (cantEquipos === 4) {
         return 2;
-    } else if (cantEquipos == 8) {
+    } else if (cantEquipos === 8) {
         return 3;
-    } else if (cantEquipos == 16) {
+    } else if (cantEquipos === 16) {
         return 4;
-    } else if (cantEquipos == 32) {
+    } else if (cantEquipos === 32) {
         return 5;
-    } else if (cantEquipos == 64) {
+    } else if (cantEquipos === 64) {
         return 6;
-    } else if (cantEquipos == 128) {
+    } else if (cantEquipos === 128) {
         return 7;
-    } else if (cantEquipos == 256) {
+    } else if (cantEquipos === 256) {
         return 8;
     }
 }

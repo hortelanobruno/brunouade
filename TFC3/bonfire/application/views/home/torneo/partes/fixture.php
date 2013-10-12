@@ -29,14 +29,24 @@
 
             <div class="fechas" style="margin-left:12px; font-size:12px;"><span style="float:left; margin:5px 0px; ">Fechas :</span>
                 <ul style="float:left; list-style:none; margin:5px 0px;" id="192">
+                    <?php if ($torneo['categoria'] == 1) { ?>
+                        <?php for ($i = 1; $i <= $torneo['cantidad_fechas']; $i++): ?>
+                            <?php if ($fechaelegida == $i) { ?>
+                                <li style="float:left; margin:0px 5px;" class="fechas_menu pointer fecha_activa" onclick="seleccionarFecha($(this),<?php echo $i ?>)"><?php echo $i ?></li>
+                            <?php } else { ?>
+                                <li style="float:left; margin:0px 5px;" class="fechas_menu pointer" onclick="seleccionarFecha($(this),<?php echo $i ?>)"><?php echo $i ?></li>
+                            <?php } ?>
+                        <?php endfor ?>
+                    <?php } else if ($torneo['categoria'] == 2){ ?>
+                        <?php for ($i = 1; $i <= $torneo['cantidad_fechas']; $i++): ?>
+                            <?php if ($fechaelegida == $i) { ?>
+                                <li style="float:left; margin:0px 5px;" class="fechas_menu pointer fecha_activa" onclick="seleccionarFecha($(this),<?php echo $i ?>)"><?php echo printFechaCopa($i,$torneo['cantidad_fechas']) ?></li>
+                            <?php } else { ?>
+                                <li style="float:left; margin:0px 5px;" class="fechas_menu pointer" onclick="seleccionarFecha($(this),<?php echo $i ?>)"><?php echo printFechaCopa($i,$torneo['cantidad_fechas']) ?></li>
+                            <?php } ?>
+                        <?php endfor ?>
+                    <?php } ?>
 
-                    <?php for ($i = 1; $i <= $torneo['cantidad_fechas']; $i++): ?>
-                        <?php if ($fechaelegida == $i) { ?>
-                            <li style="float:left; margin:0px 5px;" class="fechas_menu pointer fecha_activa" onclick="seleccionarFecha($(this),<?php echo $i ?>)"><?php echo $i ?></li>
-                        <?php } else { ?>
-                            <li style="float:left; margin:0px 5px;" class="fechas_menu pointer" onclick="seleccionarFecha($(this),<?php echo $i ?>)"><?php echo $i ?></li>
-                        <?php } ?>
-                    <?php endfor ?>
                 </ul>
             </div>
             <br clear="all">
@@ -94,45 +104,45 @@
 
                 <?php endforeach ?>
 
-                                                                                                                    <!--                <tbody class="fecha_8_192 partidos_192" style="display: table-row-group;">
-                                                                                                                        <tr style="height:30px; background-color:;" align="center">
-                                                                                                                            <td>
-                                                                                                                            </td><td align="left">
-                                                                                                                                <a href="
-                                                                                                                                   http://www.edebafutbol.com.ar/equipo/48/DE-LA-GORRA" class="lg">DE LA GORRA</a>
-                                                                                                                            </td>
-                                                                                                                            <td>
-                                                                                                                            </td><td><strong>0</strong></td>
-                                                                                                                            <td><strong>0</strong></td>
-                                                                                                                            <td>
-                                                                                                                            </td><td align="left">
-                                                                                                                                <a href="http://www.edebafutbol.com.ar/equipo/167/ROSSONERO" class="lg">ROSSONERO</a>
-                                                                                                                            </td>
-                                                                                                                            <td></td>
-                                                                                                                            <td></td>
-                                                                                                                            <td>Por jugar</td>
-                                                                                                                        </tr>
-                                                                                                                    </tbody>
+                                                                                                                        <!--                <tbody class="fecha_8_192 partidos_192" style="display: table-row-group;">
+                                                                                                                            <tr style="height:30px; background-color:;" align="center">
+                                                                                                                                <td>
+                                                                                                                                </td><td align="left">
+                                                                                                                                    <a href="
+                                                                                                                                       http://www.edebafutbol.com.ar/equipo/48/DE-LA-GORRA" class="lg">DE LA GORRA</a>
+                                                                                                                                </td>
+                                                                                                                                <td>
+                                                                                                                                </td><td><strong>0</strong></td>
+                                                                                                                                <td><strong>0</strong></td>
+                                                                                                                                <td>
+                                                                                                                                </td><td align="left">
+                                                                                                                                    <a href="http://www.edebafutbol.com.ar/equipo/167/ROSSONERO" class="lg">ROSSONERO</a>
+                                                                                                                                </td>
+                                                                                                                                <td></td>
+                                                                                                                                <td></td>
+                                                                                                                                <td>Por jugar</td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
 
-                                                                                                                    <tbody class="fecha_9_192 partidos_192" style="display: none;">
-                                                                                                                        <tr style="height:30px; background-color:#FFF;" align="center">
-                                                                                                                            <td>
-                                                                                                                            </td><td align="left">
-                                                                                                                                <a href="
-                                                                                                                                   http://www.edebafutbol.com.ar/equipo/76/HELPY" class="lg">HELPY</a>
-                                                                                                                            </td>
-                                                                                                                            <td>
-                                                                                                                            </td><td><strong>0</strong></td>
-                                                                                                                            <td><strong>0</strong></td>
-                                                                                                                            <td>
-                                                                                                                            </td><td align="left">
-                                                                                                                                <a href="http://www.edebafutbol.com.ar/equipo/54/LA-MAQUINA-F.C" class="lg">LA MAQUINA F.C.</a>
-                                                                                                                            </td>
-                                                                                                                            <td></td>
-                                                                                                                            <td></td>
-                                                                                                                            <td>Por jugar</td>
-                                                                                                                        </tr>
-                                                                                                                    </tbody>-->
+                                                                                                                        <tbody class="fecha_9_192 partidos_192" style="display: none;">
+                                                                                                                            <tr style="height:30px; background-color:#FFF;" align="center">
+                                                                                                                                <td>
+                                                                                                                                </td><td align="left">
+                                                                                                                                    <a href="
+                                                                                                                                       http://www.edebafutbol.com.ar/equipo/76/HELPY" class="lg">HELPY</a>
+                                                                                                                                </td>
+                                                                                                                                <td>
+                                                                                                                                </td><td><strong>0</strong></td>
+                                                                                                                                <td><strong>0</strong></td>
+                                                                                                                                <td>
+                                                                                                                                </td><td align="left">
+                                                                                                                                    <a href="http://www.edebafutbol.com.ar/equipo/54/LA-MAQUINA-F.C" class="lg">LA MAQUINA F.C.</a>
+                                                                                                                                </td>
+                                                                                                                                <td></td>
+                                                                                                                                <td></td>
+                                                                                                                                <td>Por jugar</td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>-->
 
             </table>
         </div>
@@ -175,6 +185,98 @@ function getSede($sedes, $idsede) {
         }
     }else {
         return $idsede;
+    }
+}
+
+function printFechaCopa($i,$cant_fechas){
+    if($cant_fechas==1){
+        if($i==1){
+            return 'Final';
+        }
+    } else if($cant_fechas==2){
+        if($i==2){
+            return 'Final';
+        } else if($i==1){
+            return 'Semifinal';
+        }
+    } else if($cant_fechas==3){
+        if($i==3){
+            return 'Final';
+        }else if($i==2){
+            return 'Semifinal';
+        } else if($i==1){
+            return 'Cuartos';
+        }
+    } else if($cant_fechas==4){
+        if($i==4){
+            return 'Final';
+        }else if($i==3){
+            return 'Semifinal';
+        } else if($i==2){
+            return 'Cuartos';
+        } else if($i==1){
+            return 'Octavos';
+        }
+    } else if($cant_fechas==5){
+        if($i==5){
+            return 'Final';
+        }else if($i==4){
+            return 'Semifinal';
+        } else if($i==3){
+            return 'Cuartos';
+        } else if($i==2){
+            return 'Octavos';
+        } else if($i==1){
+            return '16 avos';
+        }
+    } else if($cant_fechas==6){
+        if($i==6){
+            return 'Final';
+        }else if($i==5){
+            return 'Semifinal';
+        } else if($i==4){
+            return 'Cuartos';
+        } else if($i==3){
+            return 'Octavos';
+        } else if($i==2){
+            return '16 avos';
+        } else if($i==1){
+            return '32 avos';
+        }
+    } else if($cant_fechas==7){
+        if($i==7){
+            return 'Final';
+        }else if($i==6){
+            return 'Semifinal';
+        } else if($i==5){
+            return 'Cuartos';
+        } else if($i==4){
+            return 'Octavos';
+        } else if($i==3){
+            return '16 avos';
+        } else if($i==2){
+            return '32 avos';
+        } else if($i==1){
+            return '64 avos';
+        }
+    } else if($cant_fechas==8){
+        if($i==8){
+            return 'Final';
+        }else if($i==7){
+            return 'Semifinal';
+        } else if($i==6){
+            return 'Cuartos';
+        } else if($i==5){
+            return 'Octavos';
+        } else if($i==4){
+            return '16 avos';
+        } else if($i==3){
+            return '32 avos';
+        } else if($i==2){
+            return '64 avos';
+        } else if($i==1){
+            return '128 avos';
+        }
     }
 }
 ?>

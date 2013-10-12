@@ -5,17 +5,17 @@
         echo form_open($this->uri->uri_string(), $attributes);
         ?>
         <select id="tiposdetorneos" name="tiposdetorneos" onchange="return changeTiposTorneos()">
-            <?php if ($tipostorneosselected === 'Abiertos') : ?>
+            <?php if (isset($tipostorneosselected) && $tipostorneosselected === 'Abiertos') : ?>
                 <option value="Abiertos" selected>Abiertos</option>
             <?php else : ?>
                 <option value="Abiertos">Abiertos</option>
             <?php endif; ?>
-            <?php if ($tipostorneosselected === 'Cerrados') : ?>
+            <?php if (isset($tipostorneosselected) && $tipostorneosselected === 'Cerrados') : ?>
                 <option value="Cerrados" selected>Cerrados</option>
             <?php else : ?>
                 <option value="Cerrados">Cerrados</option>
             <?php endif; ?>
-            <?php if ($tipostorneosselected === 'Todos') : ?>
+            <?php if (isset($tipostorneosselected) && $tipostorneosselected === 'Todos') : ?>
                 <option value="Todos" selected>Todos</option>
             <?php else : ?>
                 <option value="Todos">Todos</option>

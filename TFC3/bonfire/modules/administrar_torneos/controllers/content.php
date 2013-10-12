@@ -214,8 +214,7 @@ class content extends Admin_Controller {
         $data = array();
 
         $data['nombre'] = $this->input->post('administrar_torneos_nombre');
-        $fixturepartidos = $this->input->post('fixtureresult');
-        $fixtureordenequipos = $this->input->post('fixtureordenequipos');
+        
 
         $data['categoria'] = intval($this->input->post('administrar_torneos_categoria'));
         $data['logo_chico'] = $this->input->post('administrar_torneos_logo_chico');
@@ -248,8 +247,22 @@ class content extends Admin_Controller {
             }
 
             $this->equipos_model->agregar_equipos_a_torneo($id, $_POST["equipoelegidos"]);
-            $this->partidos_model->save_fixture($id,$fixturepartidos, $fixtureordenequipos, $data);
-            $this->torneos_model->create_tabla_posiciones($id, $fixtureordenequipos, $data);
+            
+            if ($data['categoria'] == 1){
+                //Group
+                $fixturepartidos = $this->input->post('fixtureresult');
+                $fixtureordenequipos = $this->input->post('fixtureordenequipos');
+        
+                $this->partidos_model->save_fixture($id,$fixturepartidos, $fixtureordenequipos, $data);
+                $this->torneos_model->create_tabla_posiciones($id, $fixtureordenequipos, $data);
+            } else if ($data['categoria'] == 2){
+                //Llave
+                
+                $fixtureordenequipos = $this->input->post('fixtureordenequipos');
+                $this->partidos_model->save_fixture_copa($id,$fixtureordenequipos, $data);
+            }
+            
+            
         } else if ($type == 'update') {
             //Modificacion de torneo
             $return = $this->administrar_torneos_model->update($id, $data);

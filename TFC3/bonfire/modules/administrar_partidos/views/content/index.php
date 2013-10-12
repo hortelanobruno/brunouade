@@ -17,7 +17,7 @@
         <?php if (isset($fechas)) { ?>
             <select id="fecha" name="fecha" onchange="return changeTorneoAdmPartidos()">
                 <?php for ($i = 1; $i <= $fechas; $i++): ?>
-                    <?php if ($i == $fechaselected) : ?>
+                    <?php if (isset($fechaselected) && $i == $fechaselected) : ?>
                         <option value="<?php echo $i ?>" selected><?php echo $i ?></option>
                     <?php else : ?>
                         <option value="<?php echo $i ?>"><?php echo $i ?></option>
