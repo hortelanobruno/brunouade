@@ -10,6 +10,18 @@ class Partidos_model extends CI_Model {
         $query = $this->db->query("SELECT * FROM tfc_partido WHERE idtorneo = " . $idtorneo);
         return $query->result_array();
     }
+    
+    public function save_fixture_copa($idtorneo,$equiposorden, $data){
+        $equipos = explode(",", $equiposorden);
+        $numpartido = 1;
+        for($i=0 ; $i < count($equipos); $i++){
+            $equipo1 = $equipos[$i];
+            $i++;
+            $equipo2 = $equipos[$i];
+            $this->db->query("INSERT INTO tfc_partido (idtorneo,idfase,idequipo1,idequipo2,fecha_torneo) values (" . $idtorneo . "," . $numpartido . "," . $equipo1 . "," . $equipo2 . ",1);");
+            $numpartido++;
+        }
+    }
 
     public function save_fixture($idtorneo, $fixturepartidos, $fixtureordenequipos, $data) {
         if ($fixturepartidos != '') {

@@ -17,7 +17,7 @@
         <?php if (isset($rondas)) { ?>
             <select id="ronda" name="ronda" onchange="return changeTorneoAdmPartidos()">
                 <?php for ($i = 1; $i <= $rondas; $i++): ?>
-                    <?php if ($i == $rondaselected) : ?>
+                    <?php if (isset($rondaselected) && $i == $rondaselected) : ?>
                         <option value="<?php echo $i ?>" selected><?php echo $i ?></option>
                     <?php else : ?>
                         <option value="<?php echo $i ?>"><?php echo $i ?></option>

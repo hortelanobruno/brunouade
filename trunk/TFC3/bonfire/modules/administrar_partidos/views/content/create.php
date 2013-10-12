@@ -79,6 +79,11 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                             <!--<input id="administrar_partidos_idequipo1" type="text" name="administrar_partidos_idequipo1" maxlength="11" value="<!?php echo set_value('administrar_partidos_idequipo1', isset($administrar_partidos['idequipo1']) ? $administrar_partidos['idequipo1'] : ''); ?>"  />-->
                             <?php if (isset($equipos)) { ?>
                                 <select id="administrar_partidos_idequipo1" name="administrar_partidos_idequipo1" onchange="return changeTorneo('change_equipo')">
+                                    <?php if (-1 === $equipo1selected) : ?>
+                                        <option value="-1" selected>Nadie</option>
+                                    <?php else : ?>
+                                        <option value="-1">Nadie</option>
+                                    <?php endif; ?>
                                     <?php foreach ($equipos as $equipo): ?>
                                         <?php if ($equipo['id'] === $equipo1selected) : ?>
                                             <option value="<?php echo $equipo['id'] ?>" selected><?php echo $equipo['nombre'] ?></option>
@@ -99,6 +104,11 @@ $id = isset($administrar_partidos['id']) ? $administrar_partidos['id'] : '';
                             <!--<input id="administrar_partidos_idequipo2" type="text" name="administrar_partidos_idequipo2" maxlength="11" value="<!?php echo set_value('administrar_partidos_idequipo2', isset($administrar_partidos['idequipo2']) ? $administrar_partidos['idequipo2'] : ''); ?>"  />-->
                             <?php if (isset($equipos)) { ?>
                                 <select id="administrar_partidos_idequipo2" name="administrar_partidos_idequipo2" onchange="return changeTorneo('change_equipo')">
+                                    <?php if (-1 === $equipo2selected) : ?>
+                                        <option value="-1" selected>Nadie</option>
+                                    <?php else : ?>
+                                        <option value="-1">Nadie</option>
+                                    <?php endif; ?>
                                     <?php foreach ($equipos as $equipo): ?>
                                         <?php if ($equipo['id'] === $equipo2selected) : ?>
                                             <option value="<?php echo $equipo['id'] ?>" selected><?php echo $equipo['nombre'] ?></option>
