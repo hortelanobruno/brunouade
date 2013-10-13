@@ -10,11 +10,11 @@ class Partidos_model extends CI_Model {
         $query = $this->db->query("SELECT * FROM tfc_partido WHERE idtorneo = " . $idtorneo);
         return $query->result_array();
     }
-    
-    public function save_fixture_copa($idtorneo,$equiposorden, $data){
+
+    public function save_fixture_copa($idtorneo, $equiposorden, $data) {
         $equipos = explode(",", $equiposorden);
         $numpartido = 1;
-        for($i=0 ; $i < count($equipos); $i++){
+        for ($i = 0; $i < count($equipos); $i++) {
             $equipo1 = $equipos[$i];
             $i++;
             $equipo2 = $equipos[$i];
@@ -69,36 +69,38 @@ class Partidos_model extends CI_Model {
     }
 
     public function save_estadisticas_partido($idpartido, $partido, $jugadorid, $jugadorgoles, $jugadortarjetaamarilla, $jugadortarjetaroja, $equiposelected, $equipogolesencontra, $equipoarquero) {
-        for ($i = 0; $i < count($jugadorid); $i++) {
-            if ($jugadorgoles[$i] != '' && intval($jugadorgoles[$i]) > 0) {
-                $this->save_estadistica_partido($idpartido, $partido[$equiposelected], $jugadorid[$i], 1, $jugadorgoles[$i]);
-            } else {
-                $jugadorgoles[$i] = 0;
+        if ($partido[$equiposelected] > 0) {
+            for ($i = 0; $i < count($jugadorid); $i++) {
+                if ($jugadorgoles[$i] != '' && intval($jugadorgoles[$i]) > 0) {
+                    $this->save_estadistica_partido($idpartido, $partido[$equiposelected], $jugadorid[$i], 1, $jugadorgoles[$i]);
+                } else {
+                    $jugadorgoles[$i] = 0;
+                }
+                if ($jugadortarjetaamarilla[$i] != '' && intval($jugadortarjetaamarilla[$i]) > 0) {
+                    $this->save_estadistica_partido($idpartido, $partido[$equiposelected], $jugadorid[$i], 2, $jugadortarjetaamarilla[$i]);
+                } else {
+                    $jugadortarjetaamarilla[$i] = 0;
+                }
+                if ($jugadortarjetaroja[$i] != '' && intval($jugadortarjetaroja[$i]) > 0) {
+                    $this->save_estadistica_partido($idpartido, $partido[$equiposelected], $jugadorid[$i], 3, $jugadortarjetaroja[$i]);
+                } else {
+                    $jugadortarjetaroja[$i] = 0;
+                }
             }
-            if ($jugadortarjetaamarilla[$i] != '' && intval($jugadortarjetaamarilla[$i]) > 0) {
-                $this->save_estadistica_partido($idpartido, $partido[$equiposelected], $jugadorid[$i], 2, $jugadortarjetaamarilla[$i]);
+            //goles en contra
+            if ($equipogolesencontra != '' && intval($equipogolesencontra) > 0) {
+                $this->save_estadistica_partido($idpartido, $partido[$equiposelected], 0, 4, $equipogolesencontra);
             } else {
-                $jugadortarjetaamarilla[$i] = 0;
+                $equipogolesencontra = 0;
             }
-            if ($jugadortarjetaroja[$i] != '' && intval($jugadortarjetaroja[$i]) > 0) {
-                $this->save_estadistica_partido($idpartido, $partido[$equiposelected], $jugadorid[$i], 3, $jugadortarjetaroja[$i]);
-            } else {
-                $jugadortarjetaroja[$i] = 0;
-            }
-        }
-        //goles en contra
-        if ($equipogolesencontra != '' && intval($equipogolesencontra) > 0) {
-            $this->save_estadistica_partido($idpartido, $partido[$equiposelected], 0, 4, $equipogolesencontra);
-        } else {
-            $equipogolesencontra = 0;
-        }
 
-        //arquero, goles en contra
-        if ($equipoarquero != '' && intval($equipoarquero) > 0) {
-            if (strpos($equiposelected, '1') !== false) {
-                $this->save_estadistica_partido($idpartido, $partido[$equiposelected], intval($equipoarquero), 5, $partido['goles_equipo2']);
-            } else {
-                $this->save_estadistica_partido($idpartido, $partido[$equiposelected], intval($equipoarquero), 5, $partido['goles_equipo1']);
+            //arquero, goles en contra
+            if ($equipoarquero != '' && intval($equipoarquero) > 0) {
+                if (strpos($equiposelected, '1') !== false) {
+                    $this->save_estadistica_partido($idpartido, $partido[$equiposelected], intval($equipoarquero), 5, $partido['goles_equipo2']);
+                } else {
+                    $this->save_estadistica_partido($idpartido, $partido[$equiposelected], intval($equipoarquero), 5, $partido['goles_equipo1']);
+                }
             }
         }
     }
@@ -124,12 +126,14 @@ class Partidos_model extends CI_Model {
     }
 
     public function actualizar_data_creacion_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1golesencontra, $equipo2golesencontra, $equipo1arquero, $equipo2arquero) {
-        //Cargar tabla estadistica partido
-        $this->save_estadisticas_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, 'idequipo1', $equipo1golesencontra, $equipo1arquero);
-        $this->save_estadisticas_partido($idpartido, $partido, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, 'idequipo2', $equipo2golesencontra, $equipo2arquero);
+        if ($partido['idequipo1'] > 0 && $partido['idequipo2'] > 0) {
+            //Cargar tabla estadistica partido
+            $this->save_estadisticas_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, 'idequipo1', $equipo1golesencontra, $equipo1arquero);
+            $this->save_estadisticas_partido($idpartido, $partido, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, 'idequipo2', $equipo2golesencontra, $equipo2arquero);
 
-        //Computar partido
-        $this->computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1arquero, $equipo2arquero);
+            //Computar partido
+            $this->computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1arquero, $equipo2arquero);
+        }
     }
 
     public function computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1arquero, $equipo2arquero) {
@@ -151,8 +155,24 @@ class Partidos_model extends CI_Model {
                 }
             }
             //Cargar tabla posiciones
-            $this->actualizar_tabla_posiciones($partido);
+            if ($this->is_torneo_liga($partido['idtorneo'])) {
+                $this->actualizar_tabla_posiciones($partido);
+            }
             //Cargar tabla equipo
+        }
+    }
+
+    private function is_torneo_liga($idtorneo) {
+        $query = $this->db->query("SELECT categoria FROM tfc_torneo WHERE id = " . $idtorneo);
+        $row = $query->row_array();
+        if (empty($row)) {
+            return false;
+        } else {
+            if ($row['categoria'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
@@ -184,7 +204,9 @@ class Partidos_model extends CI_Model {
                 $this->descomputar_estadistica_jugador_torneo($partido_old['idtorneo'], $estadistica['idequipo'], $estadistica['idjugador'], $estadistica['accion'], $estadistica['cantidad']);
             }
             //Cargar tabla posiciones
-            $this->desactualizar_tabla_posiciones($partido_old);
+            if ($this->is_torneo_liga($partido_old['idtorneo'])) {
+                $this->desactualizar_tabla_posiciones($partido_old);
+            }
         }
     }
 
@@ -241,15 +263,19 @@ class Partidos_model extends CI_Model {
     }
 
     public function actualizar_data_actualizacion_partido($idpartido, $partido, $partido_old, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1golesencontra, $equipo2golesencontra, $equipo1arquero, $equipo2arquero) {
-        //Descomputar partido
-        $this->descomputar_partido($idpartido, $partido_old);
-        //Remover tabla estadistica partido
-        $this->partidos_model->delete_estadisticas_partido($idpartido);
-        //Cargar tabla estadistica partido
-        $this->save_estadisticas_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, 'idequipo1', $equipo1golesencontra, $equipo1arquero);
-        $this->save_estadisticas_partido($idpartido, $partido, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, 'idequipo2', $equipo2golesencontra, $equipo2arquero);
-        //Computar partido
-        $this->computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1arquero, $equipo2arquero);
+        if ($partido_old['idequipo1'] > 0 && $partido_old['idequipo2'] > 0) {
+            //Descomputar partido
+            $this->descomputar_partido($idpartido, $partido_old);
+            //Remover tabla estadistica partido
+            $this->partidos_model->delete_estadisticas_partido($idpartido);
+        }
+        if ($partido['idequipo1'] > 0 && $partido['idequipo2'] > 0) {
+            //Cargar tabla estadistica partido
+            $this->save_estadisticas_partido($idpartido, $partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, 'idequipo1', $equipo1golesencontra, $equipo1arquero);
+            $this->save_estadisticas_partido($idpartido, $partido, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, 'idequipo2', $equipo2golesencontra, $equipo2arquero);
+            //Computar partido
+            $this->computar_partido($partido, $jugador1id, $jugador1goles, $jugador1tarjetaamarilla, $jugador1tarjetaroja, $jugador2id, $jugador2goles, $jugador2tarjetaamarilla, $jugador2tarjetaroja, $equipo1arquero, $equipo2arquero);
+        }
     }
 
     public function actualizar_data_delete_partido($idpartido, $partido_old) {

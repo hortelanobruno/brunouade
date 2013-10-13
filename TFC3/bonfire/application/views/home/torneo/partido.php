@@ -7,7 +7,7 @@
             <div id="pageView-title">
                 <?php echo $torneo['nombre'] ?></div>
             <span class="b i f16"></span><br />
-            <?php echo (isset($partido['fecha']) ? $partido['fecha'] : 'Fecha no disponible') ?> / <?php echo (isset($sede) ? $sede['nombre'] : 'Sede no disponible') ?><br />
+            <?php echo getFecha($partido['fecha']) ?> / <?php echo (isset($sede) ? $sede['nombre'] : 'Sede no disponible') ?><br />
             <br />
             <table class="w950 mauto border_lightest bggray">
                 <tr>
@@ -237,6 +237,14 @@ function getGolesEnContra($estadisticas_partido, $idequipo, $idjugador, $jugador
                 return $estadistica['cantidad'];
             }
         }
+    }
+}
+
+function getFecha($fecha){
+    if(!empty($fecha)&& ($fecha != '0000-00-00 00:00:00')){
+        return $fecha;
+    }else{
+        return "Fecha no definida";
     }
 }
 ?>

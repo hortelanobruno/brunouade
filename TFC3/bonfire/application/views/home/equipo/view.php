@@ -174,10 +174,10 @@ function getTorneo($torneos_all,$idtorneo){
 }
 
 function getFecha($fecha){
-    if(!empty($fecha)){
+    if(!empty($fecha)&& ($fecha != '0000-00-00 00:00:00')){
         return $fecha;
     }else{
-        return "No disponible";
+        return "No definida";
     }
 }
 

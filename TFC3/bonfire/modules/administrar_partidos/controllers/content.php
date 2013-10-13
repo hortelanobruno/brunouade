@@ -330,9 +330,12 @@ class content extends Admin_Controller {
         $this->form_validation->set_rules('administrar_partidos_goles_equipo2', 'Goles Equipo2', 'max_length[11]');
         $this->form_validation->set_rules('administrar_partidos_fecha_torneo', 'Fecha Torneo', 'max_length[11]');
         $this->form_validation->set_rules('administrar_partidos_jugado', 'Jugado', 'max_length[1]');
-        $this->form_validation->set_rules('equipo1arquero', 'Arquero', 'required');
-        $this->form_validation->set_rules('equipo2arquero', 'Arquero', 'required');
         
+        
+        if($this->input->post('administrar_partidos_jugado') && intval($this->input->post('administrar_partidos_idequipo1'))>0&&intval($this->input->post('administrar_partidos_idequipo2'))>0){
+            $this->form_validation->set_rules('equipo1arquero', 'Arquero', 'required');
+            $this->form_validation->set_rules('equipo2arquero', 'Arquero', 'required');
+        }
 
         if ($this->form_validation->run() === FALSE) {
             return FALSE;
@@ -353,6 +356,7 @@ class content extends Admin_Controller {
         $data['jugado'] = $this->input->post('administrar_partidos_jugado');
         $data['idfase'] = $this->torneos_model->get_fase_torneo($data);
 
+        //Data extra
         if (isset($_POST["equipo1arquero"])) {
             $equipo1arquero = $_POST["equipo1arquero"];
         } else {
@@ -363,7 +367,56 @@ class content extends Admin_Controller {
         } else {
             $equipo2arquero = 0;
         }
-
+        if (isset($_POST["jugador1id"])) {
+            $jugador1id = $_POST["jugador1id"];
+        } else {
+            $jugador1id = array();
+        }
+        if (isset($_POST["jugador1goles"])) {
+            $jugador1goles = $_POST["jugador1goles"];
+        } else {
+            $jugador1goles = array();
+        }
+        if (isset($_POST["jugador1tarjetaamarilla"])) {
+            $jugador1tarjetaamarilla = $_POST["jugador1tarjetaamarilla"];
+        } else {
+            $jugador1tarjetaamarilla = array();
+        }
+        if (isset($_POST["jugador1tarjetaroja"])) {
+            $jugador1tarjetaroja = $_POST["jugador1tarjetaroja"];
+        } else {
+            $jugador1tarjetaroja = array();
+        }
+        if (isset($_POST["jugador2id"])) {
+            $jugador2id = $_POST["jugador2id"];
+        } else {
+            $jugador2id = array();
+        }
+        if (isset($_POST["jugador2goles"])) {
+            $jugador2goles = $_POST["jugador2goles"];
+        } else {
+            $jugador2goles = array();
+        }
+        if (isset($_POST["jugador2tarjetaamarilla"])) {
+            $jugador2tarjetaamarilla = $_POST["jugador2tarjetaamarilla"];
+        } else {
+            $jugador2tarjetaamarilla = array();
+        }
+        if (isset($_POST["jugador2tarjetaroja"])) {
+            $jugador2tarjetaroja = $_POST["jugador2tarjetaroja"];
+        } else {
+            $jugador2tarjetaroja = array();
+        }
+        if (isset($_POST["equipo1golesencontra"])) {
+            $equipo1golesencontra = $_POST["equipo1golesencontra"];
+        } else {
+            $equipo1golesencontra = 0;
+        }
+        if (isset($_POST["equipo2golesencontra"])) {
+            $equipo2golesencontra = $_POST["equipo2golesencontra"];
+        } else {
+            $equipo2golesencontra = 0;
+        }
         if ($type == 'insert') {
             //Creacion de partido
             $id = $this->administrar_partidos_model->insert($data);
@@ -374,12 +427,12 @@ class content extends Admin_Controller {
                 $return = FALSE;
             }
 
-            $this->partidos_model->actualizar_data_creacion_partido($id, $data, $_POST["jugador1id"], $_POST["jugador1goles"], $_POST["jugador1tarjetaamarilla"], $_POST["jugador1tarjetaroja"], $_POST["jugador2id"], $_POST["jugador2goles"], $_POST["jugador2tarjetaamarilla"], $_POST["jugador2tarjetaroja"], $_POST["equipo1golesencontra"], $_POST["equipo2golesencontra"], $equipo1arquero, $equipo2arquero);
+            $this->partidos_model->actualizar_data_creacion_partido($id, $data,$jugador1id,$jugador1goles,$jugador1tarjetaamarilla,$jugador1tarjetaroja,$jugador2id,$jugador2goles,$jugador2tarjetaamarilla,$jugador2tarjetaroja,$equipo1golesencontra,$equipo2golesencontra, $equipo1arquero, $equipo2arquero);
         } else if ($type == 'update') {
             $data_old = $this->partidos_model->get_partido($id);
             $return = $this->administrar_partidos_model->update($id, $data);
 
-            $this->partidos_model->actualizar_data_actualizacion_partido($id, $data, $data_old, $_POST["jugador1id"], $_POST["jugador1goles"], $_POST["jugador1tarjetaamarilla"], $_POST["jugador1tarjetaroja"], $_POST["jugador2id"], $_POST["jugador2goles"], $_POST["jugador2tarjetaamarilla"], $_POST["jugador2tarjetaroja"], $_POST["equipo1golesencontra"], $_POST["equipo2golesencontra"], $equipo1arquero, $equipo2arquero);
+            $this->partidos_model->actualizar_data_actualizacion_partido($id, $data, $data_old, $jugador1id,$jugador1goles,$jugador1tarjetaamarilla,$jugador1tarjetaroja,$jugador2id,$jugador2goles,$jugador2tarjetaamarilla,$jugador2tarjetaroja,$equipo1golesencontra,$equipo2golesencontra, $equipo1arquero, $equipo2arquero);
         }
 
         return $return;
