@@ -21,10 +21,10 @@ public class MeterOutEventsC extends PYCConsumerImplementation {
 	protected void processEvent(PYCEvent event) {
 		if(event instanceof EnableNotificationSubscriberConsumptionEvent){
 			EnableNotificationSubscriberConsumptionEvent enableNotification = (EnableNotificationSubscriberConsumptionEvent) event;
-//			manager.eventStartSession(enableNotification.getDs());
+			manager.enableNotificationSubscriberConsumption(enableNotification.getSubscriberId(),enableNotification.getSessionId());
 		}else if(event instanceof DisableNotificationSubscriberConsumptionEvent){
 			DisableNotificationSubscriberConsumptionEvent disableNotification = (DisableNotificationSubscriberConsumptionEvent) event;
-//			manager.eventStopSession(stopEvent.getSessionId());
+			manager.disableNotificationSubscriberConsumption(disableNotification.getSubscriberId(),disableNotification.getSessionId());
 		}
 	}
 

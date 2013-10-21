@@ -18,7 +18,7 @@ public class MeterManager {
 		// 1) Cargarlo en el countersAdministrator
 		countersAdministrator.addEventStartSession(ds);
 		// 2) Notificarle al collector si corresponde
-		
+
 	}
 
 	public void eventStopSession(String sessionId) {
@@ -26,6 +26,16 @@ public class MeterManager {
 		// 1) Cargarlo en el countersAdministrator
 		countersAdministrator.addEventStopSession(sessionId);
 		// 2) Notificarle al collector si corresponde
+	}
+
+	public void enableNotificationSubscriberConsumption(String subscriberId, String sessionId) {
+		// Notificar al collector
+		meterModule.getCollectorFacade().enableNotificationSubscriberConsumption(subscriberId, sessionId);
+	}
+
+	public void disableNotificationSubscriberConsumption(String subscriberId, String sessionId) {
+		// Notificar al collector
+		meterModule.getCollectorFacade().disableNotificationSubscriberConsumption(subscriberId, sessionId);
 	}
 
 }
