@@ -12,11 +12,11 @@ public class MeterFacade {
 	}
 
 	public void startSession(DynamicSession ds) {
-		meterModule.getEventsPC().startSession(ds);
+		meterModule.getInEventsPC().startSession(ds);
 	}
 
 	public void stopSession(String sessionId) {
-		meterModule.getEventsPC().stopSession(sessionId);
+		meterModule.getInEventsPC().stopSession(sessionId);
 	}
 
 	public void pauseSession(String sessionId) {
