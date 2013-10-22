@@ -22,7 +22,7 @@ public class AccountingInEventsC extends PYCConsumerImplementation {
 		if (event != null) {
 			if(event instanceof NotifyPeriodicCountersEvent){
 				NotifyPeriodicCountersEvent notifyPeriodicCounters = (NotifyPeriodicCountersEvent) event;
-				accountingManager.notifyPeriodicCounters(notifyPeriodicCounters.getMapServicesCounters(),notifyPeriodicCounters.getMapSubscribersCounters(),notifyPeriodicCounters.getTotal_active_subscribers());
+				accountingManager.notifyPeriodicCounters(notifyPeriodicCounters.getMapSubscribersCounters());
 			}else if(event instanceof QuotaVolumeUpdatesEvent){
 				QuotaVolumeUpdatesEvent quotaVolumeUpdates = (QuotaVolumeUpdatesEvent) event;
 				accountingManager.quotaVolumeUpdates(quotaVolumeUpdates.getConsumptions());

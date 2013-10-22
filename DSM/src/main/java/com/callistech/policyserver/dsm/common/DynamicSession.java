@@ -220,8 +220,8 @@ public class DynamicSession implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DynamicSession [sessionId=" + sessionId + ", subscriberId=" + subscriberId + ", serviceId=" + serviceId + ", startTime=" + startTime + ", stopTime=" + stopTime + ", pauseTime=" + pauseTime + ", resumeTime=" + resumeTime + ", tc_upVolume=" + tc_upVolume + ", tc_downVolume=" + tc_downVolume + ", tc_bothVolume=" + tc_bothVolume + ", tc_time=" + tc_time + ", ul_upVolume=" + ul_upVolume + ", ul_downVolume=" + ul_downVolume + ", ul_bothVolume=" + ul_bothVolume + ", ul_time=" + ul_time
-				+ ", state=" + state + ", countingType=" + countingType + "]";
+		return "DynamicSession [sessionId=" + sessionId + ", subscriberId=" + subscriberId + ", serviceId=" + serviceId + ", startTime=" + startTime + ", stopTime=" + stopTime + ", pauseTime=" + pauseTime + ", resumeTime=" + resumeTime + ", tc_upVolume=" + tc_upVolume + ", tc_downVolume="
+				+ tc_downVolume + ", tc_bothVolume=" + tc_bothVolume + ", tc_time=" + tc_time + ", ul_upVolume=" + ul_upVolume + ", ul_downVolume=" + ul_downVolume + ", ul_bothVolume=" + ul_bothVolume + ", ul_time=" + ul_time + ", state=" + state + ", countingType=" + countingType + "]";
 	}
 
 }

@@ -29,7 +29,7 @@ public class MeterOutEventsC extends PYCConsumerImplementation {
 			manager.dispachDisableNotificationSubscriberConsumption(disableNotification.getSubscriberId(), disableNotification.getSessionId());
 		} else if (event instanceof CallbackSendCountersPeriodicsEvent) {
 			CallbackSendCountersPeriodicsEvent callbackSendCountersPeriodicsEvent = (CallbackSendCountersPeriodicsEvent) event;
-			manager.dispachSendPeriodicCounters(callbackSendCountersPeriodicsEvent.getTotal_active_subscribers(), callbackSendCountersPeriodicsEvent.getMapSubscribersCounters(), callbackSendCountersPeriodicsEvent.getMapServicesCounters());
+			manager.dispachSendPeriodicCounters(callbackSendCountersPeriodicsEvent.getMapSubscribersCounters());
 		} else if (event instanceof SendQuotaVolumeUpdatesEvent){
 			SendQuotaVolumeUpdatesEvent quotaVolumeUpdates = (SendQuotaVolumeUpdatesEvent) event;
 			manager.dispachSendQuotaVolumeUpdates(quotaVolumeUpdates.getConsumptions());

@@ -1,8 +1,6 @@
 package com.callistech.policyserver.dsm.common.counters;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import com.callistech.policyserver.dsm.common.QuotaVolume;
 
@@ -12,8 +10,8 @@ public class ServiceCounter implements Serializable {
 	private Long up_volume = 0L;
 	private Long down_volume = 0L;
 	private Long time = 0L;
-	private Set<String> active_subscribers = new HashSet<String>();
-	private Set<String> concurrent_sessions = new HashSet<String>();
+	private Integer active_subscribers = 0;
+	private Integer concurrent_sessions = 0;
 
 	public ServiceCounter() {
 		// TODO Auto-generated constructor stub
@@ -51,33 +49,45 @@ public class ServiceCounter implements Serializable {
 		this.time = time;
 	}
 
-	public Set<String> getActive_subscribers() {
+	public Integer getActive_subscribers() {
 		return active_subscribers;
 	}
 
-	public void setActive_subscribers(Set<String> active_subscribers) {
+	public void setActive_subscribers(Integer active_subscribers) {
 		this.active_subscribers = active_subscribers;
 	}
 
-	public Set<String> getConcurrent_sessions() {
+	public Integer getConcurrent_sessions() {
 		return concurrent_sessions;
 	}
 
-	public void setConcurrent_sessions(Set<String> concurrent_sessions) {
+	public void setConcurrent_sessions(Integer concurrent_sessions) {
 		this.concurrent_sessions = concurrent_sessions;
 	}
 
-	public void updateVolumeCounter(String subscriberId, String sessionId, QuotaVolume qv) {
+	public void updateVolumeCounter(QuotaVolume qv) {
 		up_volume += qv.getUp();
 		down_volume += qv.getDown();
-		active_subscribers.add(subscriberId);
-		concurrent_sessions.add(sessionId);
 	}
 
-	public void updateTimeCounter(String subscriberId, String sessionId, int time2) {
+	public void updateTimeCounter(int time2) {
 		time += time2;
-		active_subscribers.add(subscriberId);
-		concurrent_sessions.add(sessionId);
+	}
+
+	public void increateActiveSubscribers() {
+		active_subscribers++;
+	}
+
+	public void increaseConcurrentSessions() {
+		concurrent_sessions++;
+	}
+
+	public void updateCounters(Long down_volume2, Long up_volume2, Long time2, Integer sessions) {
+		up_volume += up_volume2;
+		down_volume += down_volume2;
+		time += time2;
+		active_subscribers++;
+		concurrent_sessions += sessions;
 	}
 
 }

@@ -1,7 +1,6 @@
 package com.callistech.policyserver.dsm.session;
 
 import java.util.List;
-import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 
@@ -17,7 +16,6 @@ public class SessionFacade implements Runnable {
 	private int index = 1;
 	private Logger logger = Logger.getLogger(getClass());
 	private MeterFacade facade;
-	private TreeSet<String> sessiones = new TreeSet<String>();
 
 	public SessionFacade(MeterFacade facade) {
 		this.facade = facade;
@@ -39,37 +37,37 @@ public class SessionFacade implements Runnable {
 
 	@Override
 	public void run() {
-		while (true) {
-			logger.info("Start simulation start/stop.");
-			for (int i = 0; i < session_amount; i++) {
-				// Creando session
-				DynamicSession ds;
-				if (i % 2 == 0) {
-					ds = generateSessionVolume();
-				} else {
-					ds = generateSessionTime();
-				}
-				// System.out.println("Generando Session: " + ds);
-				facade.startSession(ds);
-
-				// Borrando session
-//				if (i % 20 == 0) {
-//					int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
-//					facade.stopSession(generateSessionId("" + ul, serviceId));
-//				}
-
-				try {
-					Thread.sleep(1);
-				} catch (InterruptedException e) {
-				}
+		// while (true) {
+		logger.info("Start simulation start/stop.");
+		for (int i = 0; i < session_amount; i++) {
+			// Creando session
+			DynamicSession ds;
+			if (i % 2 == 0) {
+				ds = generateSessionVolume();
+			} else {
+				ds = generateSessionTime();
 			}
-			logger.info("Fin simulation start/stop.");
-			logger.info("Sleeping 10 min.");
+			// System.out.println("Generando Session: " + ds);
+			facade.startSession(ds);
+
+			// Borrando session
+			// if (i % 20 == 0) {
+			// int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
+			// facade.stopSession(generateSessionId("" + ul, serviceId));
+			// }
+
 			try {
-				Thread.sleep(10 * 60 * 1000);
+				Thread.sleep(1);
 			} catch (InterruptedException e) {
 			}
 		}
+		logger.info("Fin simulation start/stop.");
+		// logger.info("Sleeping 10 min.");
+		// try {
+		// Thread.sleep(10 * 60 * 1000);
+		// } catch (InterruptedException e) {
+		// }
+		// }
 	}
 
 	public DynamicSession generateSessionVolume() {
@@ -77,10 +75,9 @@ public class SessionFacade implements Runnable {
 		ds.setSubscriberId("" + index);
 		ds.setServiceId(serviceId);
 		ds.setSessionId(generateSessionId(ds.getSubscriberId(), ds.getServiceId()));
-		sessiones.add(ds.getSessionId());
 		ds.setStartTime(System.currentTimeMillis());
 
-		long ul = 2000000 + (long) (Math.random() * ((3000000 - 2000000) + 1));
+		long ul = 5000000 + (long) (Math.random() * ((10000000 - 5000000) + 1));
 
 		ds.setUl_downVolume(ul);
 		ds.setState(DSState.ACTIVATED);
@@ -94,10 +91,9 @@ public class SessionFacade implements Runnable {
 		ds.setSubscriberId("" + index);
 		ds.setServiceId(serviceId);
 		ds.setSessionId(generateSessionId(ds.getSubscriberId(), ds.getServiceId()));
-		sessiones.add(ds.getSessionId());
 		ds.setStartTime(System.currentTimeMillis());
 
-		long ul = 20 + (long) (Math.random() * ((30 - 20) + 1));
+		long ul = 120 + (long) (Math.random() * ((180 - 120) + 1));
 
 		ds.setUl_time(ul);
 		ds.setState(DSState.ACTIVATED);

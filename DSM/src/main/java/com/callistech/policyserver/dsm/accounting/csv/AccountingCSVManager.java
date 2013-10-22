@@ -1,7 +1,6 @@
 package com.callistech.policyserver.dsm.accounting.csv;
 
 import java.util.Calendar;
-import java.util.Set;
 
 import org.apache.commons.collections.FastTreeMap;
 import org.apache.log4j.Logger;
@@ -20,7 +19,7 @@ public class AccountingCSVManager {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void generatePeriodicDSRInCSV(FastTreeMap mapServicesCounters, FastTreeMap mapSubscribersCounters, Set<String> total_active_subscribers) {
+	public void generatePeriodicDSRInCSV(FastTreeMap mapServicesCounters, FastTreeMap mapSubscribersCounters, int total_active_subscribers) {
 		// Genero DSR Subscriber
 		String subscriberId;
 		String timestamp = Calendar.getInstance().getTime().toString();
@@ -32,7 +31,7 @@ public class AccountingCSVManager {
 
 			for (Integer dsId : subscriberCounter.getDynamicServices().keySet()) {
 				subscriberServiceCounter = subscriberCounter.getDynamicServices().get(dsId);
-				printDSR_Subscriber(timestamp, subscriberId, dsId, subscriberServiceCounter.getUp_volume(), subscriberServiceCounter.getDown_volume(), subscriberServiceCounter.getTime(), subscriberServiceCounter.getSessions().size());
+				printDSR_Subscriber(timestamp, subscriberId, dsId, subscriberServiceCounter.getUp_volume(), subscriberServiceCounter.getDown_volume(), subscriberServiceCounter.getTime(), subscriberServiceCounter.getSessions());
 			}
 		}
 
@@ -43,7 +42,7 @@ public class AccountingCSVManager {
 			dsId = (Integer) obj;
 			serviceCounter = (ServiceCounter) mapServicesCounters.get(obj);
 
-			printDSR_Service(timestamp, dsId, serviceCounter.getUp_volume(), serviceCounter.getDown_volume(), serviceCounter.getTime(), serviceCounter.getActive_subscribers().size(), total_active_subscribers.size(), serviceCounter.getConcurrent_sessions().size());
+			printDSR_Service(timestamp, dsId, serviceCounter.getUp_volume(), serviceCounter.getDown_volume(), serviceCounter.getTime(), serviceCounter.getActive_subscribers(), total_active_subscribers, serviceCounter.getConcurrent_sessions());
 		}
 	}
 
@@ -87,21 +86,21 @@ public class AccountingCSVManager {
 
 	public void startSession(DynamicSession ds) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void stopSession(DynamicSession ds) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void pauseSession(DynamicSession ds) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void resumeSession(DynamicSession ds) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

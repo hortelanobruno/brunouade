@@ -1,8 +1,6 @@
 package com.callistech.policyserver.dsm.common.counters;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import com.callistech.policyserver.dsm.common.QuotaVolume;
 
@@ -11,7 +9,7 @@ public class SubscriberServiceCounter implements Serializable {
 	private Long up_volume = 0L;
 	private Long down_volume = 0L;
 	private Long time = 0L;
-	private Set<String> sessions = new HashSet<String>();
+	private Integer sessions = 0;
 
 	public SubscriberServiceCounter() {
 		// TODO Auto-generated constructor stub
@@ -41,23 +39,32 @@ public class SubscriberServiceCounter implements Serializable {
 		this.time = time;
 	}
 
-	public Set<String> getSessions() {
+	public Integer getSessions() {
 		return sessions;
 	}
 
-	public void setSessions(Set<String> sessions) {
+	public void setSessions(Integer sessions) {
 		this.sessions = sessions;
 	}
 
-	public void updateVolumeCounter(String sessionId, QuotaVolume qv) {
+	public void updateVolumeCounter(QuotaVolume qv) {
 		up_volume += qv.getUp();
 		down_volume += qv.getDown();
-		sessions.add(sessionId);
 	}
 
-	public void updateTimeCounter(String sessionId, int time2) {
+	public void updateTimeCounter(int time2) {
 		time += time2;
-		sessions.add(sessionId);
+	}
+
+	public void increaseSessions() {
+		sessions++;
+	}
+
+	public void resetCounters() {
+		up_volume = 0L;
+		down_volume = 0L;
+		time = 0L;
+		sessions = 0;
 	}
 
 }

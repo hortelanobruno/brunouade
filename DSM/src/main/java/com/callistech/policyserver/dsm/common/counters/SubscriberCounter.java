@@ -31,7 +31,7 @@ public class SubscriberCounter implements Serializable {
 		this.dynamicServices = dynamicServices;
 	}
 
-	public void updateVolumeCounter(Integer serviceId, String sessionId, QuotaVolume qv) {
+	public void updateVolumeCounter(Integer serviceId, QuotaVolume qv) {
 		SubscriberServiceCounter subscriberServiceCounter = null;
 		if (dynamicServices.containsKey(serviceId)) {
 			subscriberServiceCounter = dynamicServices.get(serviceId);
@@ -39,10 +39,10 @@ public class SubscriberCounter implements Serializable {
 			subscriberServiceCounter = new SubscriberServiceCounter();
 			dynamicServices.put(serviceId, subscriberServiceCounter);
 		}
-		subscriberServiceCounter.updateVolumeCounter(sessionId, qv);
+		subscriberServiceCounter.updateVolumeCounter(qv);
 	}
 
-	public void updateTimeCounter(Integer serviceId, String sessionId, int time) {
+	public void updateTimeCounter(Integer serviceId, int time) {
 		SubscriberServiceCounter subscriberServiceCounter = null;
 		if (dynamicServices.containsKey(serviceId)) {
 			subscriberServiceCounter = dynamicServices.get(serviceId);
@@ -50,7 +50,18 @@ public class SubscriberCounter implements Serializable {
 			subscriberServiceCounter = new SubscriberServiceCounter();
 			dynamicServices.put(serviceId, subscriberServiceCounter);
 		}
-		subscriberServiceCounter.updateTimeCounter(sessionId, time);
+		subscriberServiceCounter.updateTimeCounter(time);
+	}
+
+	public void increaseSessionCounter(Integer serviceId) {
+		SubscriberServiceCounter subscriberServiceCounter = null;
+		if (dynamicServices.containsKey(serviceId)) {
+			subscriberServiceCounter = dynamicServices.get(serviceId);
+		} else {
+			subscriberServiceCounter = new SubscriberServiceCounter();
+			dynamicServices.put(serviceId, subscriberServiceCounter);
+		}
+		subscriberServiceCounter.increaseSessions();
 	}
 
 }

@@ -1,14 +1,12 @@
 package com.callistech.policyserver.dsm.accounting.db;
 
-import java.util.Set;
-
 import org.apache.commons.collections.FastTreeMap;
 
 import com.callistech.policyserver.dsm.common.DynamicSession;
 
 public class AccountingDBManager {
 
-	public void generatePeriodicDSRInDBReport(FastTreeMap mapServicesCounters, FastTreeMap mapSubscribersCounters, Set<String> total_active_subscribers) {
+	public void generatePeriodicDSRInDBReport(FastTreeMap mapServicesCounters, FastTreeMap mapSubscribersCounters, int total_active_subscribers) {
 		// TODO Auto-generated method stub
 		
 	}

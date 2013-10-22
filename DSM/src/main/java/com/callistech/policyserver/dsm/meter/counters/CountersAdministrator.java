@@ -85,13 +85,13 @@ public class CountersAdministrator {
 		resetAndSendPeriodicCounters = true;
 	}
 
-	public Boolean getResetAndSendPeriodicCounters() {
+	public Boolean getSendAndResetPeriodicCounters() {
 		return resetAndSendPeriodicCounters;
 	}
 
-	public void sendPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
+	public void sendPeriodicCounters(FastTreeMap mapSubscribersCounters) {
 		// TODO Auto-generated method stub
-		meterManager.callbackSendPeriodicCounters(total_active_subscribers, mapSubscribersCounters, mapServicesCounters);
+		meterManager.callbackSendPeriodicCounters(mapSubscribersCounters);
 		resetAndSendPeriodicCounters = false;
 	}
 

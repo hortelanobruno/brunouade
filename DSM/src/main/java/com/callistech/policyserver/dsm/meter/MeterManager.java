@@ -52,9 +52,9 @@ public class MeterManager {
 		countersAdministrator.updateConsumptions(consumptions);
 	}
 
-	public void callbackSendPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
+	public void callbackSendPeriodicCounters(FastTreeMap mapSubscribersCounters) {
 		// Cargo evento de salida con los contadores periodicos
-		meterModule.getOutEventsPC().callbackSendPeriodicCounters(total_active_subscribers, mapSubscribersCounters, mapServicesCounters);
+		meterModule.getOutEventsPC().callbackSendPeriodicCounters(mapSubscribersCounters);
 	}
 
 	public void sendQuotaVolumeUpdates(FastTreeMap consumptions) {
@@ -97,13 +97,11 @@ public class MeterManager {
 	/**
 	 * Este metodo notifica al Accounting Module de los contadores de las sesiones
 	 * 
-	 * @param total_active_subscribers
 	 * @param mapSubscribersCounters
-	 * @param mapServicesCounters
 	 */
-	public void dispachSendPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
+	public void dispachSendPeriodicCounters(FastTreeMap mapSubscribersCounters) {
 		// Notifico al Accounting module de los contadores periodicos
-		meterModule.getAccountingFacade().notifyPeriodicCounters(total_active_subscribers, mapSubscribersCounters, mapServicesCounters);
+		meterModule.getAccountingFacade().notifyPeriodicCounters(mapSubscribersCounters);
 	}
 
 	/**
