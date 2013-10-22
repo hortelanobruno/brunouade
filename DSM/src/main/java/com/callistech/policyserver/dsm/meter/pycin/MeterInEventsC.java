@@ -29,9 +29,8 @@ public class MeterInEventsC extends PYCConsumerImplementation {
 				StopSessionEvent stopEvent = (StopSessionEvent) event;
 				manager.eventStopSession(stopEvent.getSubscriberId(), stopEvent.getSessionId());
 			} else if (event instanceof SendCountersPeriodicsEvent) {
-				SendCountersPeriodicsEvent counters = (SendCountersPeriodicsEvent) event;
 				manager.eventSendCountersPeriodics();
-			} else if(event instanceof SubscriberConsumptionEvent){
+			} else if (event instanceof SubscriberConsumptionEvent) {
 				SubscriberConsumptionEvent consumptions = (SubscriberConsumptionEvent) event;
 				manager.eventSubscriberConsumption(consumptions.getConsumptions());
 			}

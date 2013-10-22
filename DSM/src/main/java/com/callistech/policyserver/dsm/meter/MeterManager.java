@@ -48,13 +48,18 @@ public class MeterManager {
 	}
 
 	public void eventSubscriberConsumption(FastTreeMap consumptions) {
-		//Llego evento con consumptions
+		// Llego evento con consumptions
 		countersAdministrator.updateConsumptions(consumptions);
 	}
 
 	public void callbackSendPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
 		// Cargo evento de salida con los contadores periodicos
 		meterModule.getOutEventsPC().callbackSendPeriodicCounters(total_active_subscribers, mapSubscribersCounters, mapServicesCounters);
+	}
+
+	public void sendQuotaVolumeUpdates(FastTreeMap consumptions) {
+		// Cargo evento de salida con los updates de quota
+		meterModule.getOutEventsPC().sendQuotaVolumeUpdates(consumptions);
 	}
 
 	/**
@@ -99,6 +104,16 @@ public class MeterManager {
 	public void dispachSendPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
 		// Notifico al Accounting module de los contadores periodicos
 		meterModule.getAccountingFacade().notifyPeriodicCounters(total_active_subscribers, mapSubscribersCounters, mapServicesCounters);
+	}
+
+	/**
+	 * Este metodo notifica al Accounting Module los updates de quota
+	 * 
+	 * @param consumptions
+	 */
+	public void dispachSendQuotaVolumeUpdates(FastTreeMap consumptions) {
+		// Notifico al Accounting los updates de cuota
+		meterModule.getAccountingFacade().quotaVolumeUpdates(consumptions);
 	}
 
 }

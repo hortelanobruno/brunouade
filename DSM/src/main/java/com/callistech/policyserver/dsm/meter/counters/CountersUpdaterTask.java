@@ -153,6 +153,8 @@ public class CountersUpdaterTask implements Runnable {
 					}
 				}
 			}
+			// Envio contadores al Accounting module
+			countersAdministrator.sendQuotaVolumeUpdates(consumptions);
 		}
 	}
 
