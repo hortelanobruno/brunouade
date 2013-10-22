@@ -7,17 +7,17 @@ public class PYCProducerImplementation implements Runnable {
 
 	private PYCProducerConsumerImplementation producerConsumer;
 	private Queue<PYCEvent> queue;
-	private Logger logger = Logger.getLogger(getClass());
-	private Logger loggerRate = Logger.getLogger(getClass() + "-rate");
+	private Logger logger = null;
 	private Boolean running = Boolean.TRUE;
 	private final int INTERVAL_CALCULING_RATE = 1000000000 * 1;// seconds
 	private final int INTERVAL_RECALCULING_CONSUMERS = 10;// seconds
 	private final int QUEUE_SIZE = 10000;
 	private final int QUEUE_THRESHOLD = 8000;
 
-	public PYCProducerImplementation(PYCProducerConsumerImplementation producerConsumer, Queue<PYCEvent> queue) {
+	public PYCProducerImplementation(PYCProducerConsumerImplementation producerConsumer, Queue<PYCEvent> queue, String loggerRate) {
 		this.producerConsumer = producerConsumer;
 		this.queue = queue;
+		logger = Logger.getLogger(loggerRate);
 	}
 
 	public void produce(PYCEvent event) {
@@ -61,7 +61,7 @@ public class PYCProducerImplementation implements Runnable {
 			}
 			lastSize = queue.size();
 			lastRate = count;
-			loggerRate.debug("Rate: " + count + ". Peak: " + countPeak + ". Queue size: " + lastSize);
+			logger.debug("Rate: " + count + ". Peak: " + countPeak + ". Queue size: " + lastSize);
 			count = 0;
 			startPeriod = System.nanoTime();
 			count2++;

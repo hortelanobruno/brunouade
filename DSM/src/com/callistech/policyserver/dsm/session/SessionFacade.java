@@ -1,23 +1,36 @@
-package com.callistech.policyserver.dsm.test;
+package com.callistech.policyserver.dsm.session;
 
+import java.util.List;
 import java.util.TreeSet;
+
+import org.apache.log4j.Logger;
 
 import com.callistech.policyserver.dsm.common.CountingType;
 import com.callistech.policyserver.dsm.common.DSState;
 import com.callistech.policyserver.dsm.common.DynamicSession;
+import com.callistech.policyserver.dsm.meter.MeterFacade;
 
-public class TaskGeneratorStartStopSession implements Runnable {
+public class SessionFacade implements Runnable {
 
 	private int session_amount = 1000000;
-	private TestMeterManager core;
-	private TaskUpdateAndCheckConsumptionsSimulator check;
 	private final int serviceId = 1;
 	private int index = 1;
+	private Logger logger = Logger.getLogger(getClass());
+	private MeterFacade facade;
 	private TreeSet<String> sessiones = new TreeSet<String>();
 
-	public TaskGeneratorStartStopSession(TestMeterManager core, TaskUpdateAndCheckConsumptionsSimulator check) {
-		this.core = core;
-		this.check = check;
+	public SessionFacade(MeterFacade facade) {
+		this.facade = facade;
+	}
+
+	public void sessionsDepleteds(List<DynamicSession> forDeleteDueToDeplete) {
+		try {
+			for (DynamicSession dynamicSession : forDeleteDueToDeplete) {
+				logger.info("Session depleted: " + dynamicSession.toString());
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	@Override
@@ -31,12 +44,12 @@ public class TaskGeneratorStartStopSession implements Runnable {
 				ds = generateSessionTime();
 			}
 			// System.out.println("Generando Session: " + ds);
-			check.addSession(ds);
+			facade.startSession(ds);
 
 			// Borrando session
 			if (i % 20 == 0) {
 				int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
-				check.removeSession(generateSessionId("" + ul, serviceId));
+				facade.stopSession(generateSessionId("" + ul, serviceId));
 			}
 
 			try {

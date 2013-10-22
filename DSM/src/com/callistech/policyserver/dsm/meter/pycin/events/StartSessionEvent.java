@@ -21,8 +21,7 @@ public class StartSessionEvent implements PYCEvent {
 
 	@Override
 	public String toStringBeauty() {
-		// TODO Auto-generated method stub
-		return null;
+		return "StartSessionEvent: ds: " + ds + ".";
 	}
 
 }

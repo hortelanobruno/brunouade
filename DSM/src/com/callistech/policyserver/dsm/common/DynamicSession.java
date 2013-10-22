@@ -163,7 +163,7 @@ public class DynamicSession implements Serializable {
 		this.state = state;
 	}
 
-	public void countTime(long timestamp) {
+	public int countTime(long timestamp) {
 		if (countingType.equals(CountingType.TIME)) {
 			if (this.timestamp == null) {
 				this.timestamp = startTime;
@@ -171,8 +171,10 @@ public class DynamicSession implements Serializable {
 			if (timestamp > (this.timestamp + (1000 * 60))) {
 				tc_time++;
 				this.timestamp = timestamp;
+				return 1;
 			}
 		}
+		return 0;
 	}
 
 	public void countingVolume(long down, long up) {

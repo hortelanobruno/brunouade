@@ -19,10 +19,10 @@ public abstract class PYCProducerConsumerImplementation {
 	private Queue<PYCEvent> queue = new ConcurrentLinkedQueue<PYCEvent>();
 	private PYCProducerImplementation producer;
 
-	public PYCProducerConsumerImplementation() {
+	public PYCProducerConsumerImplementation(String loggerRate) {
 		try {
 			threadPool = Executors.newCachedThreadPool();
-			producer = new PYCProducerImplementation(this, queue);
+			producer = new PYCProducerImplementation(this, queue, loggerRate);
 		} catch (Exception ex) {
 			logger.error("ERROR en ManagerRDRProducerConsumer.", ex);
 		}

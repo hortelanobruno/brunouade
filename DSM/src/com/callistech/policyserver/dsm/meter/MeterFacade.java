@@ -1,7 +1,8 @@
 package com.callistech.policyserver.dsm.meter;
 
+import org.apache.commons.collections.FastTreeMap;
+
 import com.callistech.policyserver.dsm.common.DynamicSession;
-import com.callistech.policyserver.dsm.meter.pycin.events.StartSessionEvent;
 
 public class MeterFacade {
 
@@ -27,7 +28,11 @@ public class MeterFacade {
 
 	}
 
-	public void getCountersPeriodics() {
+	public void sendCountersPeriodics() {
+		meterModule.getInEventsPC().sendCountersPeriodics();
+	}
 
+	public void subscribersConsumptionsNotifications(FastTreeMap consumptions) {
+		meterModule.getInEventsPC().subscribersConsumptionsNotifications(consumptions);
 	}
 }
