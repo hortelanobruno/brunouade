@@ -10,6 +10,7 @@ import com.callistech.policyserver.dsm.meter.MeterModule;
 import com.callistech.policyserver.dsm.meter.pycout.event.CallbackSendCountersPeriodicsEvent;
 import com.callistech.policyserver.dsm.meter.pycout.event.DisableNotificationSubscriberConsumptionEvent;
 import com.callistech.policyserver.dsm.meter.pycout.event.EnableNotificationSubscriberConsumptionEvent;
+import com.callistech.policyserver.dsm.meter.pycout.event.SendQuotaVolumeUpdatesEvent;
 
 public class MeterOutEventsPC extends PYCProducerConsumerImplementation {
 
@@ -44,6 +45,12 @@ public class MeterOutEventsPC extends PYCProducerConsumerImplementation {
 		event.setMapServicesCounters(mapServicesCounters);
 		event.setMapSubscribersCounters(mapSubscribersCounters);
 		event.setTotal_active_subscribers(total_active_subscribers);
+		super.addEvent(event);
+	}
+
+	public void sendQuotaVolumeUpdates(FastTreeMap consumptions) {
+		SendQuotaVolumeUpdatesEvent event = new SendQuotaVolumeUpdatesEvent();
+		event.setConsumptions(consumptions);
 		super.addEvent(event);
 	}
 }

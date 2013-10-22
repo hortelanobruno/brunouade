@@ -8,6 +8,7 @@ import com.callistech.policyserver.dsm.meter.MeterManager;
 import com.callistech.policyserver.dsm.meter.pycout.event.CallbackSendCountersPeriodicsEvent;
 import com.callistech.policyserver.dsm.meter.pycout.event.DisableNotificationSubscriberConsumptionEvent;
 import com.callistech.policyserver.dsm.meter.pycout.event.EnableNotificationSubscriberConsumptionEvent;
+import com.callistech.policyserver.dsm.meter.pycout.event.SendQuotaVolumeUpdatesEvent;
 
 public class MeterOutEventsC extends PYCConsumerImplementation {
 
@@ -29,6 +30,9 @@ public class MeterOutEventsC extends PYCConsumerImplementation {
 		} else if (event instanceof CallbackSendCountersPeriodicsEvent) {
 			CallbackSendCountersPeriodicsEvent callbackSendCountersPeriodicsEvent = (CallbackSendCountersPeriodicsEvent) event;
 			manager.dispachSendPeriodicCounters(callbackSendCountersPeriodicsEvent.getTotal_active_subscribers(), callbackSendCountersPeriodicsEvent.getMapSubscribersCounters(), callbackSendCountersPeriodicsEvent.getMapServicesCounters());
+		} else if (event instanceof SendQuotaVolumeUpdatesEvent){
+			SendQuotaVolumeUpdatesEvent quotaVolumeUpdates = (SendQuotaVolumeUpdatesEvent) event;
+			manager.dispachSendQuotaVolumeUpdates(quotaVolumeUpdates.getConsumptions());
 		}
 	}
 

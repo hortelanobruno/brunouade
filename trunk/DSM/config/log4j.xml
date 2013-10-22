@@ -14,6 +14,7 @@
 			<param name="ConversionPattern" value="%d %p %m%n" />
 		</layout>
 	</appender>
+
 	<appender name="fileMeter" class="org.apache.log4j.DailyRollingFileAppender">
 		<param name="File" value="../log/dsm.meter.log" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
@@ -94,8 +95,42 @@
 			<param name="ConversionPattern" value="%d %p %m%n" />
 		</layout>
 	</appender>
-	<appender name="fileAccountingFacade" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="../log/dsm.accountingfacade.log" />
+
+
+	<appender name="fileAccounting" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingTasks" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.tasks.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingIn" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.in.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingInRate" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.in.rate.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingInConsumer" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.in.consumer.log" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 		<param name="Append" value="true" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -157,8 +192,26 @@
 	<logger name="com.callistech.policyserver.dsm.meter.counters.CountersUpdaterTask">
 		<appender-ref ref="fileMeterCounters" />
 	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.AccountingModule">
+		<appender-ref ref="fileAccounting" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.AccountingManager">
+		<appender-ref ref="fileAccounting" />
+	</logger>
 	<logger name="com.callistech.policyserver.dsm.accounting.AccountingFacade">
-		<appender-ref ref="fileAccountingFacade" />
+		<appender-ref ref="fileAccounting" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.task.GetPeriodicCountersTask">
+		<appender-ref ref="fileAccountingTasks" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.pycin.AccountingInEventsPC">
+		<appender-ref ref="fileAccountingIn" />
+	</logger>
+	<logger name="accountingInRateLog">
+		<appender-ref ref="fileAccountingInRate" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.pycin.AccountingInEventsC">
+		<appender-ref ref="fileAccountingInConsumer" />
 	</logger>
 	<logger name="fileAccountingServicesCSVLog">
 		<appender-ref ref="fileAccountingServicesCSV" />

@@ -35,25 +35,34 @@ public class SessionFacade implements Runnable {
 
 	@Override
 	public void run() {
-		for (int i = 0; i < session_amount; i++) {
-			// Creando session
-			DynamicSession ds;
-			if (i % 2 == 0) {
-				ds = generateSessionVolume();
-			} else {
-				ds = generateSessionTime();
-			}
-			// System.out.println("Generando Session: " + ds);
-			facade.startSession(ds);
+		while (true) {
+			logger.info("Start simulation start/stop.");
+			for (int i = 0; i < session_amount; i++) {
+				// Creando session
+				DynamicSession ds;
+				if (i % 2 == 0) {
+					ds = generateSessionVolume();
+				} else {
+					ds = generateSessionTime();
+				}
+				// System.out.println("Generando Session: " + ds);
+				facade.startSession(ds);
 
-			// Borrando session
-			if (i % 20 == 0) {
-				int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
-				facade.stopSession(generateSessionId("" + ul, serviceId));
-			}
+				// Borrando session
+				if (i % 20 == 0) {
+					int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
+					facade.stopSession(generateSessionId("" + ul, serviceId));
+				}
 
+				try {
+					Thread.sleep(1);
+				} catch (InterruptedException e) {
+				}
+			}
+			logger.info("Fin simulation start/stop.");
+			logger.info("Sleeping 10 min.");
 			try {
-				Thread.sleep(1);
+				Thread.sleep(10 * 60 * 1000);
 			} catch (InterruptedException e) {
 			}
 		}

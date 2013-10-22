@@ -20,7 +20,7 @@ public class CountersAdministrator {
 	private ExecutorService poolThreand = Executors.newCachedThreadPool();
 	private CountersUpdaterTask updaterTask = new CountersUpdaterTask(this);
 	private CountersQuotaContainer quotaContainer = new CountersQuotaContainer();
-	//Gilada para procesar periodicamente
+	// Gilada para procesar periodicamente
 	private Queue<DynamicSession> sessionesToAdd = new ConcurrentLinkedQueue<DynamicSession>();
 	private Queue<String> sessionesToRemove = new ConcurrentLinkedQueue<String>();
 	private Boolean resetAndSendPeriodicCounters = false;
@@ -91,11 +91,16 @@ public class CountersAdministrator {
 
 	public void sendPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
 		// TODO Auto-generated method stub
-		meterManager.callbackSendPeriodicCounters(total_active_subscribers,mapSubscribersCounters,mapServicesCounters);
+		meterManager.callbackSendPeriodicCounters(total_active_subscribers, mapSubscribersCounters, mapServicesCounters);
 		resetAndSendPeriodicCounters = false;
 	}
 
 	public void updateConsumptions(FastTreeMap newConsumptions) {
 		quotaContainer.updateConsumptions(newConsumptions);
 	}
+
+	public void sendQuotaVolumeUpdates(FastTreeMap consumptions) {
+		meterManager.sendQuotaVolumeUpdates(consumptions);
+	}
+
 }
