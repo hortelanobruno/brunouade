@@ -23,6 +23,10 @@ public class SessionFacade implements Runnable {
 		this.facade = facade;
 	}
 
+	public SessionFacade(SessionModule sessionModule) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void sessionsDepleteds(List<DynamicSession> forDeleteDueToDeplete) {
 		try {
 			for (DynamicSession dynamicSession : forDeleteDueToDeplete) {
@@ -49,10 +53,10 @@ public class SessionFacade implements Runnable {
 				facade.startSession(ds);
 
 				// Borrando session
-				if (i % 20 == 0) {
-					int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
-					facade.stopSession(generateSessionId("" + ul, serviceId));
-				}
+//				if (i % 20 == 0) {
+//					int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
+//					facade.stopSession(generateSessionId("" + ul, serviceId));
+//				}
 
 				try {
 					Thread.sleep(1);
@@ -76,7 +80,7 @@ public class SessionFacade implements Runnable {
 		sessiones.add(ds.getSessionId());
 		ds.setStartTime(System.currentTimeMillis());
 
-		long ul = 2000 + (long) (Math.random() * ((10000 - 2000) + 1));
+		long ul = 2000000 + (long) (Math.random() * ((3000000 - 2000000) + 1));
 
 		ds.setUl_downVolume(ul);
 		ds.setState(DSState.ACTIVATED);
@@ -93,7 +97,7 @@ public class SessionFacade implements Runnable {
 		sessiones.add(ds.getSessionId());
 		ds.setStartTime(System.currentTimeMillis());
 
-		long ul = 2 + (long) (Math.random() * ((10 - 2) + 1));
+		long ul = 20 + (long) (Math.random() * ((30 - 20) + 1));
 
 		ds.setUl_time(ul);
 		ds.setState(DSState.ACTIVATED);
