@@ -4,10 +4,19 @@ import com.callistech.policyserver.common.pyc.PYCEvent;
 
 public class StopSessionEvent implements PYCEvent {
 
+	private String subscriberId;
 	private String sessionId;
 
 	public StopSessionEvent(String sessionId) {
 		this.sessionId = sessionId;
+	}
+
+	public String getSubscriberId() {
+		return subscriberId;
+	}
+
+	public void setSubscriberId(String subscriberId) {
+		this.subscriberId = subscriberId;
 	}
 
 	public String getSessionId() {
@@ -20,8 +29,7 @@ public class StopSessionEvent implements PYCEvent {
 
 	@Override
 	public String toStringBeauty() {
-		// TODO Auto-generated method stub
-		return null;
+		return "StopSessionEvent: subscriberId: " + subscriberId + ". sessionId: " + sessionId + ".";
 	}
 
 }

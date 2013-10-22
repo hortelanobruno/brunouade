@@ -5,26 +5,30 @@ import java.util.Queue;
 import com.callistech.policyserver.common.pyc.PYCConsumerImplementation;
 import com.callistech.policyserver.common.pyc.PYCEvent;
 import com.callistech.policyserver.dsm.meter.MeterManager;
+import com.callistech.policyserver.dsm.meter.pycout.event.CallbackSendCountersPeriodicsEvent;
 import com.callistech.policyserver.dsm.meter.pycout.event.DisableNotificationSubscriberConsumptionEvent;
 import com.callistech.policyserver.dsm.meter.pycout.event.EnableNotificationSubscriberConsumptionEvent;
 
 public class MeterOutEventsC extends PYCConsumerImplementation {
 
-	private MeterManager  manager;
-	
-	public MeterOutEventsC(Queue<PYCEvent> queue, MeterManager  manager) {
+	private MeterManager manager;
+
+	public MeterOutEventsC(Queue<PYCEvent> queue, MeterManager manager) {
 		super(queue);
-		this.manager=manager;
+		this.manager = manager;
 	}
 
 	@Override
 	protected void processEvent(PYCEvent event) {
-		if(event instanceof EnableNotificationSubscriberConsumptionEvent){
+		if (event instanceof EnableNotificationSubscriberConsumptionEvent) {
 			EnableNotificationSubscriberConsumptionEvent enableNotification = (EnableNotificationSubscriberConsumptionEvent) event;
-			manager.enableNotificationSubscriberConsumption(enableNotification.getSubscriberId(),enableNotification.getSessionId());
-		}else if(event instanceof DisableNotificationSubscriberConsumptionEvent){
+			manager.dispachEnableNotificationSubscriberConsumption(enableNotification.getSubscriberId(), enableNotification.getSessionId());
+		} else if (event instanceof DisableNotificationSubscriberConsumptionEvent) {
 			DisableNotificationSubscriberConsumptionEvent disableNotification = (DisableNotificationSubscriberConsumptionEvent) event;
-			manager.disableNotificationSubscriberConsumption(disableNotification.getSubscriberId(),disableNotification.getSessionId());
+			manager.dispachDisableNotificationSubscriberConsumption(disableNotification.getSubscriberId(), disableNotification.getSessionId());
+		} else if (event instanceof CallbackSendCountersPeriodicsEvent) {
+			CallbackSendCountersPeriodicsEvent callbackSendCountersPeriodicsEvent = (CallbackSendCountersPeriodicsEvent) event;
+			manager.dispachSendPeriodicCounters(callbackSendCountersPeriodicsEvent.getTotal_active_subscribers(), callbackSendCountersPeriodicsEvent.getMapSubscribersCounters(), callbackSendCountersPeriodicsEvent.getMapServicesCounters());
 		}
 	}
 

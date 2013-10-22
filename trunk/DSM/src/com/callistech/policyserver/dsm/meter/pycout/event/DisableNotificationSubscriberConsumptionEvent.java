@@ -29,7 +29,6 @@ public class DisableNotificationSubscriberConsumptionEvent implements PYCEvent {
 
 	@Override
 	public String toStringBeauty() {
-		// TODO Auto-generated method stub
-		return null;
+		return "DisableNotificationSubscriberConsumptionEvent: subscriberId: " + subscriberId + ". sessionId: " + sessionId + ".";
 	}
 }
