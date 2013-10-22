@@ -169,4 +169,5 @@
 	<root>
 		<priority value="debug" />
 	</root>
+	
 </log4j:configuration>
