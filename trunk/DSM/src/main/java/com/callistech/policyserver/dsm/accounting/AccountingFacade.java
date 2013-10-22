@@ -1,7 +1,5 @@
 package com.callistech.policyserver.dsm.accounting;
 
-import java.util.Set;
-
 import org.apache.commons.collections.FastTreeMap;
 
 public class AccountingFacade {
@@ -12,8 +10,8 @@ public class AccountingFacade {
 		this.accountingModule = accountingModule;
 	}
 
-	public void notifyPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
-		accountingModule.getAccountingInEventsPC().notifyPeriodicCounters(total_active_subscribers, mapSubscribersCounters, mapServicesCounters);
+	public void notifyPeriodicCounters(FastTreeMap mapSubscribersCounters) {
+		accountingModule.getAccountingInEventsPC().notifyPeriodicCounters(mapSubscribersCounters);
 	}
 
 	public void quotaVolumeUpdates(FastTreeMap consumptions) {

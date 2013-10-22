@@ -1,7 +1,5 @@
 package com.callistech.policyserver.dsm.meter.pycout;
 
-import java.util.Set;
-
 import org.apache.commons.collections.FastTreeMap;
 
 import com.callistech.policyserver.common.pyc.PYCConsumerImplementation;
@@ -40,11 +38,9 @@ public class MeterOutEventsPC extends PYCProducerConsumerImplementation {
 		super.addEvent(event);
 	}
 
-	public void callbackSendPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
+	public void callbackSendPeriodicCounters(FastTreeMap mapSubscribersCounters) {
 		CallbackSendCountersPeriodicsEvent event = new CallbackSendCountersPeriodicsEvent();
-		event.setMapServicesCounters(mapServicesCounters);
 		event.setMapSubscribersCounters(mapSubscribersCounters);
-		event.setTotal_active_subscribers(total_active_subscribers);
 		super.addEvent(event);
 	}
 

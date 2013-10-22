@@ -14,8 +14,6 @@ public class CollectorFacade implements Runnable {
 	private Logger logger = Logger.getLogger(getClass());
 	private FastTreeMap consumptions = new FastTreeMap();
 	private Queue<String> sessionesVolume = new ConcurrentLinkedQueue<String>();
-	// private Queue<String> sessionesToAdd = new ConcurrentLinkedQueue<String>();
-	// private Queue<String> sessionesToRemove = new ConcurrentLinkedQueue<String>();
 	private MeterFacade meterFacade;
 
 	public CollectorFacade(MeterFacade meterFacade) {

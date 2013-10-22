@@ -1,25 +1,18 @@
 package com.callistech.policyserver.dsm.meter.counters;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.commons.collections.FastTreeMap;
 import org.apache.log4j.Logger;
 
 import com.callistech.policyserver.dsm.common.DynamicSession;
 import com.callistech.policyserver.dsm.common.QuotaVolume;
-import com.callistech.policyserver.dsm.common.counters.ServiceCounter;
 import com.callistech.policyserver.dsm.common.counters.SubscriberCounter;
 
 public class CountersUpdaterTask implements Runnable {
 
-	// Data mapa periodicos
-	private Set<String> total_active_subscribers = new HashSet<String>();
-	private FastTreeMap mapSubscribersCounters = new FastTreeMap();
-	private FastTreeMap mapServicesCounters = new FastTreeMap();
-	// Fin data periodica
+	private FastTreeMap mapSubscribersCounters = new FastTreeMap();// Contador periodico
 	private Logger logger = Logger.getLogger(getClass());
 	private CountersAdministrator countersAdministrator;
 	private boolean started = false;
@@ -89,9 +82,8 @@ public class CountersUpdaterTask implements Runnable {
 					}
 					// Check reset and send counters
 					logger.info("h");
-					if (countersAdministrator.getResetAndSendPeriodicCounters()) {
-						countersAdministrator.sendPeriodicCounters(total_active_subscribers, mapSubscribersCounters, mapServicesCounters);
-						resetPeriodicCounters();
+					if (countersAdministrator.getSendAndResetPeriodicCounters()) {
+						generateSendAndResetPeriodicCounters();
 					}
 				}
 				logger.info("i");
@@ -112,12 +104,6 @@ public class CountersUpdaterTask implements Runnable {
 		} catch (Exception ex) {
 			logger.error("ERROR en CountersUpdaterTask run.", ex);
 		}
-	}
-
-	private void resetPeriodicCounters() {
-		total_active_subscribers = new HashSet<String>();
-		mapSubscribersCounters = new FastTreeMap();
-		mapServicesCounters = new FastTreeMap();
 	}
 
 	private void updateAndCheckTime() {
@@ -158,56 +144,6 @@ public class CountersUpdaterTask implements Runnable {
 		}
 	}
 
-	private void updateVolumeCountersServicesAndSubscribers(DynamicSession ds, QuotaVolume qv) {
-		// Actualizo contadores de servicio
-		ServiceCounter serviceCounter = null;
-		if (!mapServicesCounters.containsKey(ds.getServiceId())) {
-			serviceCounter = new ServiceCounter();
-			serviceCounter.setDsId(ds.getServiceId());
-			mapServicesCounters.put(ds.getServiceId(), serviceCounter);
-		} else {
-			serviceCounter = (ServiceCounter) mapServicesCounters.get(ds.getServiceId());
-		}
-		serviceCounter.updateVolumeCounter(ds.getSubscriberId(), ds.getSessionId(), qv);
-		// Actualizo total active subscribers
-		total_active_subscribers.add(ds.getSubscriberId());
-		// Actualizo contadores de subscriber
-		SubscriberCounter subscriberCounter = null;
-		if (!mapSubscribersCounters.containsKey(ds.getSubscriberId())) {
-			subscriberCounter = new SubscriberCounter();
-			subscriberCounter.setSubscriberId(ds.getSubscriberId());
-			mapSubscribersCounters.put(ds.getSubscriberId(), subscriberCounter);
-		} else {
-			subscriberCounter = (SubscriberCounter) mapSubscribersCounters.get(ds.getSubscriberId());
-		}
-		subscriberCounter.updateVolumeCounter(ds.getServiceId(), ds.getSessionId(), qv);
-	}
-
-	private void updateTimeCountersServicesAndSubscribers(DynamicSession ds, int time) {
-		// Actualizo contadores de servicio
-		ServiceCounter serviceCounter = null;
-		if (!mapServicesCounters.containsKey(ds.getServiceId())) {
-			serviceCounter = new ServiceCounter();
-			serviceCounter.setDsId(ds.getServiceId());
-			mapServicesCounters.put(ds.getServiceId(), serviceCounter);
-		} else {
-			serviceCounter = (ServiceCounter) mapServicesCounters.get(ds.getServiceId());
-		}
-		serviceCounter.updateTimeCounter(ds.getSubscriberId(), ds.getSessionId(), time);
-		// Actualizo total active subscribers
-		total_active_subscribers.add(ds.getSubscriberId());
-		// Actualizo contadores de subscriber
-		SubscriberCounter subscriberCounter = null;
-		if (!mapSubscribersCounters.containsKey(ds.getSubscriberId())) {
-			subscriberCounter = new SubscriberCounter();
-			subscriberCounter.setSubscriberId(ds.getSubscriberId());
-			mapSubscribersCounters.put(ds.getSubscriberId(), subscriberCounter);
-		} else {
-			subscriberCounter = (SubscriberCounter) mapSubscribersCounters.get(ds.getSubscriberId());
-		}
-		subscriberCounter.updateTimeCounter(ds.getServiceId(), ds.getSessionId(), time);
-	}
-
 	public int depleteSessions() {
 		int aux = 0;
 		for (DynamicSession ds : forDeleteDueToDeplete) {
@@ -241,9 +177,66 @@ public class CountersUpdaterTask implements Runnable {
 	private boolean addSession(DynamicSession ds) {
 		if (!countersAdministrator.getMapSesionesCounters().containsKey(ds.getSessionId())) {
 			countersAdministrator.getMapSesionesCounters().put(ds.getSessionId(), ds);
+			increaseSessionCountersServicesAndSubscribers(ds.getSubscriberId(), ds.getServiceId());
 			return true;
 		}
 		return false;
+	}
+
+	private void generateSendAndResetPeriodicCounters() {
+		// Envio
+		countersAdministrator.sendPeriodicCounters(mapSubscribersCounters);
+		// Reseteo
+		mapSubscribersCounters = new FastTreeMap();
+		// Cargo
+		recargoSubscribersCounters();
+	}
+
+	private void recargoSubscribersCounters() {
+		DynamicSession ds;
+		for (Object obj : countersAdministrator.getMapSesionesCounters().values()) {
+			ds = (DynamicSession) obj;
+			increaseSessionCountersServicesAndSubscribers(ds.getSubscriberId(), ds.getServiceId());
+		}
+	}
+
+	private void increaseSessionCountersServicesAndSubscribers(String subscriberId, Integer dsId) {
+		// Actualizo contadores de subscriber
+		SubscriberCounter subscriberCounter = null;
+		if (!mapSubscribersCounters.containsKey(subscriberId)) {
+			subscriberCounter = new SubscriberCounter();
+			subscriberCounter.setSubscriberId(subscriberId);
+			mapSubscribersCounters.put(subscriberId, subscriberCounter);
+		} else {
+			subscriberCounter = (SubscriberCounter) mapSubscribersCounters.get(subscriberId);
+		}
+		subscriberCounter.increaseSessionCounter(dsId);
+	}
+
+	private void updateVolumeCountersServicesAndSubscribers(DynamicSession ds, QuotaVolume qv) {
+		// Actualizo contadores de subscriber
+		SubscriberCounter subscriberCounter = null;
+		if (!mapSubscribersCounters.containsKey(ds.getSubscriberId())) {
+			subscriberCounter = new SubscriberCounter();
+			subscriberCounter.setSubscriberId(ds.getSubscriberId());
+			mapSubscribersCounters.put(ds.getSubscriberId(), subscriberCounter);
+		} else {
+			subscriberCounter = (SubscriberCounter) mapSubscribersCounters.get(ds.getSubscriberId());
+		}
+		subscriberCounter.updateVolumeCounter(ds.getServiceId(), qv);
+	}
+
+	private void updateTimeCountersServicesAndSubscribers(DynamicSession ds, int time) {
+		// Actualizo contadores de subscriber
+		SubscriberCounter subscriberCounter = null;
+		if (!mapSubscribersCounters.containsKey(ds.getSubscriberId())) {
+			subscriberCounter = new SubscriberCounter();
+			subscriberCounter.setSubscriberId(ds.getSubscriberId());
+			mapSubscribersCounters.put(ds.getSubscriberId(), subscriberCounter);
+		} else {
+			subscriberCounter = (SubscriberCounter) mapSubscribersCounters.get(ds.getSubscriberId());
+		}
+		subscriberCounter.updateTimeCounter(ds.getServiceId(), time);
 	}
 
 }

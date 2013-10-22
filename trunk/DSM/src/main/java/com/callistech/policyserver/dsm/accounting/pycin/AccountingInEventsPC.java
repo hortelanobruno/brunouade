@@ -1,7 +1,5 @@
 package com.callistech.policyserver.dsm.accounting.pycin;
 
-import java.util.Set;
-
 import org.apache.commons.collections.FastTreeMap;
 
 import com.callistech.policyserver.common.pyc.PYCConsumerImplementation;
@@ -25,11 +23,9 @@ public class AccountingInEventsPC extends PYCProducerConsumerImplementation {
 		return consumer;
 	}
 
-	public void notifyPeriodicCounters(Set<String> total_active_subscribers, FastTreeMap mapSubscribersCounters, FastTreeMap mapServicesCounters) {
+	public void notifyPeriodicCounters(FastTreeMap mapSubscribersCounters) {
 		NotifyPeriodicCountersEvent event = new NotifyPeriodicCountersEvent();
-		event.setMapServicesCounters(mapServicesCounters);
 		event.setMapSubscribersCounters(mapSubscribersCounters);
-		event.setTotal_active_subscribers(total_active_subscribers);
 		super.addEvent(event);
 	}
 
