@@ -24,14 +24,14 @@ public class MeterOutEventsPC extends PYCProducerConsumerImplementation {
 		return consumer;
 	}
 
-	public void enableNotificationSubscriberConsumption(String subscriberId, String sessionId) {
+	public void enableNotificationSubscriberConsumption(String subscriberId, Integer integer) {
 		EnableNotificationSubscriberConsumptionEvent event = new EnableNotificationSubscriberConsumptionEvent();
-		event.setSessionId(sessionId);
+		event.setSessionId(integer);
 		event.setSubscriberId(subscriberId);
 		super.addEvent(event);
 	}
 
-	public void disableNotificationSubscriberConsumption(String subscriberId, String sessionId) {
+	public void disableNotificationSubscriberConsumption(String subscriberId, Integer sessionId) {
 		DisableNotificationSubscriberConsumptionEvent event = new DisableNotificationSubscriberConsumptionEvent();
 		event.setSessionId(sessionId);
 		event.setSubscriberId(subscriberId);

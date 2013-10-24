@@ -2,9 +2,9 @@ package com.callistech.policyserver.dsm.test;
 
 import java.util.TreeSet;
 
-import com.callistech.policyserver.dsm.common.CountingType;
 import com.callistech.policyserver.dsm.common.DSState;
 import com.callistech.policyserver.dsm.common.DynamicSession;
+import com.callistech.policyserver.dsm.common.MatchCriteria;
 
 public class TaskGeneratorStartStopSession implements Runnable {
 
@@ -13,7 +13,7 @@ public class TaskGeneratorStartStopSession implements Runnable {
 	private TaskUpdateAndCheckConsumptionsSimulator check;
 	private final int serviceId = 1;
 	private int index = 1;
-	private TreeSet<String> sessiones = new TreeSet<String>();
+	private TreeSet<Integer> sessiones = new TreeSet<Integer>();
 
 	public TaskGeneratorStartStopSession(TestMeterManager core, TaskUpdateAndCheckConsumptionsSimulator check) {
 		this.core = core;
@@ -36,7 +36,7 @@ public class TaskGeneratorStartStopSession implements Runnable {
 			// Borrando session
 			if (i % 20 == 0) {
 				int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
-				check.removeSession(generateSessionId("" + ul, serviceId));
+				check.removeSession(i);
 			}
 
 			try {
@@ -50,15 +50,16 @@ public class TaskGeneratorStartStopSession implements Runnable {
 		DynamicSession ds = new DynamicSession();
 		ds.setSubscriberId("" + index);
 		ds.setServiceId(serviceId);
-		ds.setSessionId(generateSessionId(ds.getSubscriberId(), ds.getServiceId()));
+		ds.setSessionId(index);
 		sessiones.add(ds.getSessionId());
 		ds.setStartTime(System.currentTimeMillis());
 
 		long ul = 2000 + (long) (Math.random() * ((10000 - 2000) + 1));
 
 		ds.setUl_downVolume(ul);
-		ds.setState(DSState.ACTIVATED);
-		ds.setCountingType(CountingType.DOWN);
+		ds.setActive(true);
+		ds.setMatchCriteria(MatchCriteria.MATCH_ALL);
+		ds.setDownVolumeLimitEnabled(true);
 		index++;
 		return ds;
 	}
@@ -67,21 +68,18 @@ public class TaskGeneratorStartStopSession implements Runnable {
 		DynamicSession ds = new DynamicSession();
 		ds.setSubscriberId("" + index);
 		ds.setServiceId(serviceId);
-		ds.setSessionId(generateSessionId(ds.getSubscriberId(), ds.getServiceId()));
+		ds.setSessionId(index);
 		sessiones.add(ds.getSessionId());
 		ds.setStartTime(System.currentTimeMillis());
 
 		long ul = 2 + (long) (Math.random() * ((10 - 2) + 1));
 
 		ds.setUl_time(ul);
-		ds.setState(DSState.ACTIVATED);
-		ds.setCountingType(CountingType.TIME);
+		ds.setActive(true);
+		ds.setMatchCriteria(MatchCriteria.MATCH_ALL);
+		ds.setTimeLimitEnabled(true);
 		index++;
 		return ds;
-	}
-
-	private String generateSessionId(String sessionId, Integer serviceId) {
-		return sessionId + "," + serviceId;
 	}
 
 }

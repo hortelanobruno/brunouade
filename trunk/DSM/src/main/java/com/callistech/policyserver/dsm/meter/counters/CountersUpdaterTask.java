@@ -16,7 +16,7 @@ public class CountersUpdaterTask implements Runnable {
 	private Logger logger = Logger.getLogger(getClass());
 	private CountersAdministrator countersAdministrator;
 	private boolean started = false;
-	private List<String> forDeleteDueToExternal = new ArrayList<String>();
+	private List<Integer> forDeleteDueToExternal = new ArrayList<Integer>();
 	private List<DynamicSession> forDeleteDueToDeplete = new ArrayList<DynamicSession>();
 
 	public CountersUpdaterTask(CountersAdministrator countersAdministrator) {
@@ -35,7 +35,7 @@ public class CountersUpdaterTask implements Runnable {
 	public void run() {
 		try {
 			DynamicSession ds;
-			String sesion;
+			Integer sesionId;
 			logger.info("CountersUpdaterTask started.");
 			while (started) {
 				long spentTime = System.currentTimeMillis();
@@ -54,9 +54,9 @@ public class CountersUpdaterTask implements Runnable {
 				}
 				logger.info("b");
 				while (!countersAdministrator.getSessionesToRemove().isEmpty()) {
-					sesion = countersAdministrator.getSessionesToRemove().poll();
-					if (sesion != null) {
-						if (removeSession(sesion)) {
+					sesionId = countersAdministrator.getSessionesToRemove().poll();
+					if (sesionId != null) {
+						if (removeSession(sesionId)) {
 							amountDeleteSessions++;
 						}
 					}
@@ -158,7 +158,7 @@ public class CountersUpdaterTask implements Runnable {
 	}
 
 	private void deleteSessionsExtenallydeleted() {
-		for (String sessionId : forDeleteDueToExternal) {
+		for (Integer sessionId : forDeleteDueToExternal) {
 			if (countersAdministrator.getMapSesionesCounters().containsKey(sessionId)) {
 				countersAdministrator.getMapSesionesCounters().remove(sessionId);
 			}
@@ -166,9 +166,9 @@ public class CountersUpdaterTask implements Runnable {
 		forDeleteDueToExternal.clear();
 	}
 
-	private boolean removeSession(String sesion) {
-		if (countersAdministrator.getMapSesionesCounters().containsKey(sesion)) {
-			forDeleteDueToExternal.add(sesion);
+	private boolean removeSession(Integer sessionId) {
+		if (countersAdministrator.getMapSesionesCounters().containsKey(sessionId)) {
+			forDeleteDueToExternal.add(sessionId);
 			return true;
 		}
 		return false;

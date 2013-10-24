@@ -5,10 +5,10 @@ import com.callistech.policyserver.common.pyc.PYCEvent;
 public class StopSessionEvent implements PYCEvent {
 
 	private String subscriberId;
-	private String sessionId;
+	private Integer sessionId;
 
-	public StopSessionEvent(String sessionId) {
-		this.sessionId = sessionId;
+	public StopSessionEvent(Integer sessionId2) {
+		this.sessionId = sessionId2;
 	}
 
 	public String getSubscriberId() {
@@ -19,11 +19,11 @@ public class StopSessionEvent implements PYCEvent {
 		this.subscriberId = subscriberId;
 	}
 
-	public String getSessionId() {
+	public Integer getSessionId() {
 		return sessionId;
 	}
 
-	public void setSessionId(String sessionId) {
+	public void setSessionId(Integer sessionId) {
 		this.sessionId = sessionId;
 	}
 

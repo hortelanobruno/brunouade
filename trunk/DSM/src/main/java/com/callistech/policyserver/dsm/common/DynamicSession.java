@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class DynamicSession implements Serializable {
 
-	private String sessionId;
+	private Integer sessionId;
 	private String subscriberId;
 	private Integer serviceId;
 	private Long startTime;
@@ -19,27 +19,22 @@ public class DynamicSession implements Serializable {
 	private Long ul_downVolume = 0L;
 	private Long ul_bothVolume = 0L;
 	private Long ul_time = 0L;
-	private DSState state;
-	private CountingType countingType;
+	private boolean active = false;
+	private MatchCriteria matchCriteria;
+	private boolean timeLimitEnabled = false;
+	private boolean upVolumeLimitEnabled = false;
+	private boolean downVolumeLimitEnabled = false;
 	private Long timestamp;
 
 	public DynamicSession() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CountingType getCountingType() {
-		return countingType;
-	}
-
-	public void setCountingType(CountingType countingType) {
-		this.countingType = countingType;
-	}
-
-	public String getSessionId() {
+	public Integer getSessionId() {
 		return sessionId;
 	}
 
-	public void setSessionId(String sessionId) {
+	public void setSessionId(Integer sessionId) {
 		this.sessionId = sessionId;
 	}
 
@@ -155,16 +150,56 @@ public class DynamicSession implements Serializable {
 		this.ul_time = ul_time;
 	}
 
-	public DSState getState() {
-		return state;
+	public MatchCriteria getMatchCriteria() {
+		return matchCriteria;
 	}
 
-	public void setState(DSState state) {
-		this.state = state;
+	public void setMatchCriteria(MatchCriteria matchCriteria) {
+		this.matchCriteria = matchCriteria;
+	}
+
+	public boolean isTimeLimitEnabled() {
+		return timeLimitEnabled;
+	}
+
+	public void setTimeLimitEnabled(boolean timeLimitEnabled) {
+		this.timeLimitEnabled = timeLimitEnabled;
+	}
+
+	public boolean isUpVolumeLimitEnabled() {
+		return upVolumeLimitEnabled;
+	}
+
+	public void setUpVolumeLimitEnabled(boolean upVolumeLimitEnabled) {
+		this.upVolumeLimitEnabled = upVolumeLimitEnabled;
+	}
+
+	public boolean isDownVolumeLimitEnabled() {
+		return downVolumeLimitEnabled;
+	}
+
+	public void setDownVolumeLimitEnabled(boolean downVolumeLimitEnabled) {
+		this.downVolumeLimitEnabled = downVolumeLimitEnabled;
+	}
+
+	public Long getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Long timestamp) {
+		this.timestamp = timestamp;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 	public int countTime(long timestamp) {
-		if (countingType.equals(CountingType.TIME)) {
+		if (timeLimitEnabled) {
 			if (this.timestamp == null) {
 				this.timestamp = startTime;
 			}
@@ -178,50 +213,65 @@ public class DynamicSession implements Serializable {
 	}
 
 	public void countingVolume(long down, long up) {
-		switch (countingType) {
-		case BOTH:
+		if (downVolumeLimitEnabled) {
 			this.tc_downVolume += down;
+		}
+		if (upVolumeLimitEnabled) {
 			this.tc_upVolume += up;
-			break;
-		case DOWN:
-			this.tc_downVolume += down;
-			break;
-		case UP:
-			this.tc_upVolume += up;
-			break;
 		}
 	}
 
 	public boolean isDepleted() {
-		switch (countingType) {
-		case BOTH:
-			if ((tc_downVolume >= ul_downVolume) && (tc_upVolume >= ul_upVolume)) {
-				return true;
+		switch (matchCriteria) {
+		case MATCH_ALL:
+			if (downVolumeLimitEnabled) {
+				if (tc_downVolume < ul_downVolume) {
+					return false;
+				}
 			}
-			break;
-		case DOWN:
-			if (tc_downVolume >= ul_downVolume) {
-				return true;
+			if (upVolumeLimitEnabled) {
+				if (tc_upVolume < ul_upVolume) {
+					return false;
+				}
 			}
-			break;
-		case UP:
-			if (tc_upVolume >= ul_upVolume) {
-				return true;
+			if (timeLimitEnabled) {
+				if (tc_time < ul_time) {
+					return false;
+				}
 			}
-			break;
-		case TIME:
-			if (tc_time >= ul_time) {
-				return true;
+			return true;
+		case MATCH_ANY:
+			if (downVolumeLimitEnabled) {
+				if (tc_downVolume >= ul_downVolume) {
+					return true;
+				}
+			}
+			if (upVolumeLimitEnabled) {
+				if (tc_upVolume >= ul_upVolume) {
+					return true;
+				}
+			}
+			if (timeLimitEnabled) {
+				if (tc_time >= ul_time) {
+					return true;
+				}
 			}
 			break;
 		}
 		return false;
 	}
 
+	public void setLimits(Limits limits) {
+		setUl_bothVolume(limits.getVolumeBoth());
+		setUl_downVolume(limits.getVolumeDownstream());
+		setUl_upVolume(limits.getVolumeUpstream());
+		setUl_time(limits.getDuration());
+	}
+
 	@Override
 	public String toString() {
-		return "DynamicSession [sessionId=" + sessionId + ", subscriberId=" + subscriberId + ", serviceId=" + serviceId + ", startTime=" + startTime + ", stopTime=" + stopTime + ", pauseTime=" + pauseTime + ", resumeTime=" + resumeTime + ", tc_upVolume=" + tc_upVolume + ", tc_downVolume="
-				+ tc_downVolume + ", tc_bothVolume=" + tc_bothVolume + ", tc_time=" + tc_time + ", ul_upVolume=" + ul_upVolume + ", ul_downVolume=" + ul_downVolume + ", ul_bothVolume=" + ul_bothVolume + ", ul_time=" + ul_time + ", state=" + state + ", countingType=" + countingType + "]";
+		return "DynamicSession [sessionId=" + sessionId + ", subscriberId=" + subscriberId + ", serviceId=" + serviceId + ", startTime=" + startTime + ", stopTime=" + stopTime + ", pauseTime=" + pauseTime + ", resumeTime=" + resumeTime + ", tc_upVolume=" + tc_upVolume + ", tc_downVolume=" + tc_downVolume + ", tc_bothVolume=" + tc_bothVolume + ", tc_time=" + tc_time + ", ul_upVolume=" + ul_upVolume + ", ul_downVolume=" + ul_downVolume + ", ul_bothVolume=" + ul_bothVolume + ", ul_time=" + ul_time
+				+ ", active=" + active + ", matchCriteria=" + matchCriteria + ", timeLimitEnabled=" + timeLimitEnabled + ", upVolumeLimitEnabled=" + upVolumeLimitEnabled + ", downVolumeLimitEnabled=" + downVolumeLimitEnabled + ", timestamp=" + timestamp + "]";
 	}
 
 }

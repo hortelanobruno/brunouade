@@ -2,10 +2,10 @@ package com.callistech.policyserver.dsm.meter.counters;
 
 import java.util.List;
 import java.util.Queue;
-import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 import org.apache.commons.collections.FastTreeMap;
 import org.apache.log4j.Logger;
 
@@ -22,7 +22,7 @@ public class CountersAdministrator {
 	private CountersQuotaContainer quotaContainer = new CountersQuotaContainer();
 	// Gilada para procesar periodicamente
 	private Queue<DynamicSession> sessionesToAdd = new ConcurrentLinkedQueue<DynamicSession>();
-	private Queue<String> sessionesToRemove = new ConcurrentLinkedQueue<String>();
+	private Queue<Integer> sessionesToRemove = new ConcurrentLinkedQueue<Integer>();
 	private Boolean resetAndSendPeriodicCounters = false;
 
 	public CountersAdministrator(MeterManager meterManager) {
@@ -42,7 +42,7 @@ public class CountersAdministrator {
 		return sessionesToAdd;
 	}
 
-	public Queue<String> getSessionesToRemove() {
+	public Queue<Integer> getSessionesToRemove() {
 		return sessionesToRemove;
 	}
 
@@ -68,7 +68,7 @@ public class CountersAdministrator {
 	 * 
 	 * @param sessionId
 	 */
-	public void addEventStopSession(String sessionId) {
+	public void addEventStopSession(Integer sessionId) {
 		sessionesToRemove.add(sessionId);
 	}
 

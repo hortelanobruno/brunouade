@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 
 import com.callistech.policyserver.dsm.accounting.pycin.AccountingInEventsPC;
 import com.callistech.policyserver.dsm.meter.MeterFacade;
+import com.callistech.policyserver.dsm.session.managers.DBManager;
 
 public class AccountingModule {
 
@@ -47,5 +48,9 @@ public class AccountingModule {
 
 	public MeterFacade getMeterFacade() {
 		return meterFacade;
+	}
+
+	public void setDBManager(DBManager dbManager) {
+		this.accountingManager.setDBManager(dbManager);
 	}
 }

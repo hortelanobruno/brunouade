@@ -13,18 +13,18 @@ public class CollectorFacade implements Runnable {
 
 	private Logger logger = Logger.getLogger(getClass());
 	private FastTreeMap consumptions = new FastTreeMap();
-	private Queue<String> sessionesVolume = new ConcurrentLinkedQueue<String>();
+	private Queue<Integer> sessionesVolume = new ConcurrentLinkedQueue<Integer>();
 	private MeterFacade meterFacade;
 
 	public CollectorFacade(MeterFacade meterFacade) {
 		this.meterFacade = meterFacade;
 	}
 
-	public void enableNotificationSubscriberConsumption(String subscriberId, String sessionId) {
+	public void enableNotificationSubscriberConsumption(String subscriberId, Integer sessionId) {
 		sessionesVolume.add(sessionId);
 	}
 
-	public void disableNotificationSubscriberConsumption(String subscriberId, String sessionId) {
+	public void disableNotificationSubscriberConsumption(String subscriberId, Integer sessionId) {
 		sessionesVolume.remove(sessionId);
 	}
 
@@ -38,16 +38,16 @@ public class CollectorFacade implements Runnable {
 				QuotaVolume quota = null;
 
 				// Cargo y remuevo
-				String sesion;
+				Integer sesionId;
 				logger.info("1 " + sessionesVolume.size());
 
 				for (Object obj : sessionesVolume) {
-					sesion = (String) obj;
-					if (consumptions.containsKey(sesion)) {
-						quota = (QuotaVolume) consumptions.get(sesion);
+					sesionId = (Integer) obj;
+					if (consumptions.containsKey(sesionId)) {
+						quota = (QuotaVolume) consumptions.get(sesionId);
 					} else {
 						quota = new QuotaVolume();
-						consumptions.put(sesion, quota);
+						consumptions.put(sesionId, quota);
 					}
 
 					long u = 100 + (long) (Math.random() * ((1000 - 100) + 1));
@@ -68,7 +68,6 @@ public class CollectorFacade implements Runnable {
 					} else {
 						Thread.sleep((aux - tardo));
 					}
-
 				} catch (Exception ex) {
 				}
 			}

@@ -1,7 +1,6 @@
 package com.callistech.policyserver.dsm.meter;
 
 import java.util.List;
-import java.util.Set;
 
 import org.apache.commons.collections.FastTreeMap;
 
@@ -34,7 +33,7 @@ public class MeterManager {
 		meterModule.getOutEventsPC().enableNotificationSubscriberConsumption(ds.getSubscriberId(), ds.getSessionId());
 	}
 
-	public void eventStopSession(String subscriberId, String sessionId) {
+	public void eventStopSession(String subscriberId, Integer sessionId) {
 		// Aca hay que hacer todos los pasos:
 		// 1) Cargarlo en el countersAdministrator
 		countersAdministrator.addEventStopSession(sessionId);
@@ -68,7 +67,7 @@ public class MeterManager {
 	 * @param subscriberId
 	 * @param sessionId
 	 */
-	public void dispachEnableNotificationSubscriberConsumption(String subscriberId, String sessionId) {
+	public void dispachEnableNotificationSubscriberConsumption(String subscriberId, Integer sessionId) {
 		// Notificar al collector
 		meterModule.getCollectorFacade().enableNotificationSubscriberConsumption(subscriberId, sessionId);
 	}
@@ -79,7 +78,7 @@ public class MeterManager {
 	 * @param subscriberId
 	 * @param sessionId
 	 */
-	public void dispachDisableNotificationSubscriberConsumption(String subscriberId, String sessionId) {
+	public void dispachDisableNotificationSubscriberConsumption(String subscriberId, Integer sessionId) {
 		// Notificar al collector
 		meterModule.getCollectorFacade().disableNotificationSubscriberConsumption(subscriberId, sessionId);
 	}

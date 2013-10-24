@@ -17,7 +17,7 @@ public class TaskUpdateAndCheckConsumptionsSimulator implements Runnable {
 	private TaskCuotaVolumeCoumsumptionSimulator cuotaSimulator;
 	private FastTreeMap mapSesiones = new FastTreeMap();
 	private Queue<DynamicSession> sessionesToAdd = new ConcurrentLinkedQueue<DynamicSession>();
-	private Queue<String> sessionesToRemove = new ConcurrentLinkedQueue<String>();
+	private Queue<Integer> sessionesToRemove = new ConcurrentLinkedQueue<Integer>();
 
 	public TaskUpdateAndCheckConsumptionsSimulator(TestMeterManager core, TaskCuotaVolumeCoumsumptionSimulator cuotaSimulator) {
 		this.core = core;
@@ -26,16 +26,16 @@ public class TaskUpdateAndCheckConsumptionsSimulator implements Runnable {
 
 	@Override
 	public void run() {
-		List<String> forDeplete = new ArrayList<String>();
+		List<Integer> forDeplete = new ArrayList<Integer>();
 		System.out.println(Calendar.getInstance().getTime() + ": Chequeando tiempo y volumen.");
 		while (true) {
 			// System.out.println(Calendar.getInstance().getTime() + ": Chequeando...");
 			long spentTime = System.currentTimeMillis();
 			// Me fijo las nuevas y las que tengo que borrar
 			DynamicSession ds;
-			String sesion;
+			Integer sesion;
 			// System.out.println("a");
-			int amountNewSessions=0;
+			int amountNewSessions = 0;
 			for (Object obj : sessionesToAdd) {
 				ds = (DynamicSession) obj;
 				if (!mapSesiones.containsKey(ds.getSessionId())) {
@@ -45,9 +45,9 @@ public class TaskUpdateAndCheckConsumptionsSimulator implements Runnable {
 			}
 			sessionesToAdd.clear();
 			// System.out.println("b");
-			int amountDeleteSessions=0;
+			int amountDeleteSessions = 0;
 			for (Object obj : sessionesToRemove) {
-				sesion = (String) obj;
+				sesion = (Integer) obj;
 				if (mapSesiones.containsKey(sesion)) {
 					forDeplete.add(sesion);
 					amountDeleteSessions++;
@@ -63,12 +63,12 @@ public class TaskUpdateAndCheckConsumptionsSimulator implements Runnable {
 			updateAndCheckVolume(forDeplete);
 			// Notify depleteds
 			// System.out.println("e");
-			int resultDeplete=0;
+			int resultDeplete = 0;
 			if (!forDeplete.isEmpty()) {
-				resultDeplete=notifyDepleted(forDeplete);
+				resultDeplete = notifyDepleted(forDeplete);
 				forDeplete.clear();
 			}
-			System.out.println(Calendar.getInstance().getTime() + ": Sesiones activas : " + mapSesiones.size()+". Sesiones nuevas: "+amountNewSessions+". Sesiones borradas externamente: "+amountDeleteSessions+". Sesiones depleteadas: "+(resultDeplete-amountDeleteSessions)+".");
+			System.out.println(Calendar.getInstance().getTime() + ": Sesiones activas : " + mapSesiones.size() + ". Sesiones nuevas: " + amountNewSessions + ". Sesiones borradas externamente: " + amountDeleteSessions + ". Sesiones depleteadas: " + (resultDeplete - amountDeleteSessions) + ".");
 			// System.out.println(Calendar.getInstance().getTime() + ": Termino chequeo.");
 			if (mapSesiones.isEmpty()) {
 				break;
@@ -87,7 +87,7 @@ public class TaskUpdateAndCheckConsumptionsSimulator implements Runnable {
 		System.out.println(Calendar.getInstance().getTime() + ": Termino thread TaskUpdateAndCheckConsumptionsSimulator.");
 	}
 
-	private void updateAndCheckVolume(List<String> forDeplete) {
+	private void updateAndCheckVolume(List<Integer> forDeplete) {
 		FastTreeMap consumptions = cuotaSimulator.getAndResetConsumptions();
 		String sesion;
 		QuotaVolume qv;
@@ -105,7 +105,7 @@ public class TaskUpdateAndCheckConsumptionsSimulator implements Runnable {
 		}
 	}
 
-	private void updateAndCheckTime(List<String> forDeplete) {
+	private void updateAndCheckTime(List<Integer> forDeplete) {
 		DynamicSession ds;
 		long timestamp = System.currentTimeMillis();
 		for (Object obj : mapSesiones.values()) {
@@ -117,10 +117,10 @@ public class TaskUpdateAndCheckConsumptionsSimulator implements Runnable {
 		}
 	}
 
-	public int notifyDepleted(List<String> forDeplete) {
+	public int notifyDepleted(List<Integer> forDeplete) {
 		DynamicSession ds;
-		int aux=0;
-		for (String sessionId : forDeplete) {
+		int aux = 0;
+		for (Integer sessionId : forDeplete) {
 			ds = (DynamicSession) mapSesiones.get(sessionId);
 			mapSesiones.remove(sessionId);
 			aux++;
@@ -132,7 +132,7 @@ public class TaskUpdateAndCheckConsumptionsSimulator implements Runnable {
 		sessionesToAdd.add(ds);
 	}
 
-	public void removeSession(String sessionId) {
+	public void removeSession(Integer sessionId) {
 		sessionesToRemove.add(sessionId);
 	}
 

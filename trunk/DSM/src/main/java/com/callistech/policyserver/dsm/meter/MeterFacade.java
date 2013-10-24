@@ -3,6 +3,7 @@ package com.callistech.policyserver.dsm.meter;
 import org.apache.commons.collections.FastTreeMap;
 
 import com.callistech.policyserver.dsm.common.DynamicSession;
+import com.callistech.policyserver.psm.entities.vo.gui.af.bod.service.BoDServiceAFVO;
 
 public class MeterFacade {
 
@@ -12,11 +13,11 @@ public class MeterFacade {
 		this.meterModule = meterModule;
 	}
 
-	public void startSession(DynamicSession ds) {
-		meterModule.getInEventsPC().startSession(ds);
+	public void startSession(BoDServiceAFVO boDServiceAFVO, DynamicSession ds) {
+		meterModule.getInEventsPC().startSession(boDServiceAFVO, ds);
 	}
 
-	public void stopSession(String sessionId) {
+	public void stopSession(Integer sessionId) {
 		meterModule.getInEventsPC().stopSession(sessionId);
 	}
 

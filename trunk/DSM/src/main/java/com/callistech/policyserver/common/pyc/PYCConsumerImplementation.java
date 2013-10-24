@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 
 public abstract class PYCConsumerImplementation implements Runnable {
 
-	private Logger logger = Logger.getLogger(getClass());
+	protected Logger logger = Logger.getLogger(getClass());
 	private Queue<PYCEvent> queue;
 	private Boolean continueConsuming = Boolean.TRUE;
 

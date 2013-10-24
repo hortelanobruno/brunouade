@@ -11,6 +11,7 @@ import com.callistech.policyserver.dsm.meter.pycin.events.SendCountersPeriodicsE
 import com.callistech.policyserver.dsm.meter.pycin.events.StartSessionEvent;
 import com.callistech.policyserver.dsm.meter.pycin.events.StopSessionEvent;
 import com.callistech.policyserver.dsm.meter.pycin.events.SubscriberConsumptionEvent;
+import com.callistech.policyserver.psm.entities.vo.gui.af.bod.service.BoDServiceAFVO;
 
 public class MeterInEventsPC extends PYCProducerConsumerImplementation {
 
@@ -27,12 +28,12 @@ public class MeterInEventsPC extends PYCProducerConsumerImplementation {
 		return consumer;
 	}
 
-	public void startSession(DynamicSession ds) {
-		StartSessionEvent event = new StartSessionEvent(ds);
+	public void startSession(BoDServiceAFVO boDServiceAFVO, DynamicSession ds) {
+		StartSessionEvent event = new StartSessionEvent(boDServiceAFVO, ds);
 		super.addEvent(event);
 	}
 
-	public void stopSession(String sessionId) {
+	public void stopSession(Integer sessionId) {
 		StopSessionEvent event = new StopSessionEvent(sessionId);
 		super.addEvent(event);
 	}
