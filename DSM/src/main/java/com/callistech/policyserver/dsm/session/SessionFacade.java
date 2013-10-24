@@ -2,108 +2,37 @@ package com.callistech.policyserver.dsm.session;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
-import com.callistech.policyserver.dsm.common.CountingType;
-import com.callistech.policyserver.dsm.common.DSState;
 import com.callistech.policyserver.dsm.common.DynamicSession;
-import com.callistech.policyserver.dsm.meter.MeterFacade;
 
-public class SessionFacade implements Runnable {
+public class SessionFacade {
 
-	private int session_amount = 1000000;
-	private final int serviceId = 1;
-	private int index = 1;
-	private Logger logger = Logger.getLogger(getClass());
-	private MeterFacade facade;
-
-	public SessionFacade(MeterFacade facade) {
-		this.facade = facade;
-	}
+	private SessionModule sessionModule;
 
 	public SessionFacade(SessionModule sessionModule) {
-		// TODO Auto-generated constructor stub
+		this.sessionModule = sessionModule;
+	}
+
+	public void startSessionB(String subscriberId, String dsd) {
+		// llama
+		// return sessionModule.getSessionInEventsPC().readResponse();
+		sessionModule.getSessionManager().eventStartSession(subscriberId, dsd);
+	}
+
+	public void startSessionNB(String subscriberId, String dsd) {
+		sessionModule.getSessionInEventsPC().startSession(subscriberId, dsd);
+	}
+
+	public void stopSessionB(String subscriberId, String dsd) {
+		sessionModule.getSessionManager().eventStopSession(subscriberId, dsd);
+	}
+
+	public void stopSessionNB(String subscriberId, String dsd) {
+		sessionModule.getSessionInEventsPC().stopSession(subscriberId, dsd);
 	}
 
 	public void sessionsDepleteds(List<DynamicSession> forDeleteDueToDeplete) {
-		try {
-			for (DynamicSession dynamicSession : forDeleteDueToDeplete) {
-				logger.info("Session depleted: " + dynamicSession.toString());
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+		// TODO Auto-generated method stub
 
-	@Override
-	public void run() {
-		// while (true) {
-		logger.info("Start simulation start/stop.");
-		for (int i = 0; i < session_amount; i++) {
-			// Creando session
-			DynamicSession ds;
-			if (i % 2 == 0) {
-				ds = generateSessionVolume();
-			} else {
-				ds = generateSessionTime();
-			}
-			// System.out.println("Generando Session: " + ds);
-			facade.startSession(ds);
-
-			// Borrando session
-			// if (i % 20 == 0) {
-			// int ul = (int) (Math.random() * (((i - 1) - 0) + 1));
-			// facade.stopSession(generateSessionId("" + ul, serviceId));
-			// }
-
-			try {
-				Thread.sleep(1);
-			} catch (InterruptedException e) {
-			}
-		}
-		logger.info("Fin simulation start/stop.");
-		// logger.info("Sleeping 10 min.");
-		// try {
-		// Thread.sleep(10 * 60 * 1000);
-		// } catch (InterruptedException e) {
-		// }
-		// }
-	}
-
-	public DynamicSession generateSessionVolume() {
-		DynamicSession ds = new DynamicSession();
-		ds.setSubscriberId("" + index);
-		ds.setServiceId(serviceId);
-		ds.setSessionId(generateSessionId(ds.getSubscriberId(), ds.getServiceId()));
-		ds.setStartTime(System.currentTimeMillis());
-
-		long ul = 5000000 + (long) (Math.random() * ((10000000 - 5000000) + 1));
-
-		ds.setUl_downVolume(ul);
-		ds.setState(DSState.ACTIVATED);
-		ds.setCountingType(CountingType.DOWN);
-		index++;
-		return ds;
-	}
-
-	public DynamicSession generateSessionTime() {
-		DynamicSession ds = new DynamicSession();
-		ds.setSubscriberId("" + index);
-		ds.setServiceId(serviceId);
-		ds.setSessionId(generateSessionId(ds.getSubscriberId(), ds.getServiceId()));
-		ds.setStartTime(System.currentTimeMillis());
-
-		long ul = 120 + (long) (Math.random() * ((180 - 120) + 1));
-
-		ds.setUl_time(ul);
-		ds.setState(DSState.ACTIVATED);
-		ds.setCountingType(CountingType.TIME);
-		index++;
-		return ds;
-	}
-
-	private String generateSessionId(String sessionId, Integer serviceId) {
-		return sessionId + "," + serviceId;
 	}
 
 }

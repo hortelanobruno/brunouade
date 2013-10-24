@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} - %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileCore" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="fileMeter" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.meter.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileMeterIn" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.meter.in.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileMeterInRate" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.meter.in.rate.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileMeterInConsumer" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.meter.in.consumer.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileMeterOut" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.meter.out.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileMeterOutRate" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.meter.out.rate.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileMeterOutConsumer" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.meter.out.consumer.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileMeterCounters" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.meter.counters.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+
+
+	<appender name="fileAccounting" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingTasks" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.tasks.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingIn" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.in.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingInRate" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.in.rate.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingInConsumer" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.in.consumer.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingServicesCSV" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.services.csv" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+	<appender name="fileAccountingSubscribersCSV" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.accounting.subscribers.csv" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="fileSession" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.session.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileSessionIn" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.session.in.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileSessionInRate" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.session.in.rate.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileSessionInConsumer" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.session.in.consumer.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileSessionOut" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.session.out.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileSessionOutRate" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.session.out.rate.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileSessionOutConsumer" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.session.out.consumer.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="fileDSMDB" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.db.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileCollectorFacade" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.collectorfacade.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p %m%n" />
+		</layout>
+	</appender>
+	<appender name="fileWSFacade" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="../log/dsm.wsfacade.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.callistech.policyserver.dsm.core.DSMCore">
+		<appender-ref ref="fileCore" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.MeterModule">
+		<appender-ref ref="fileMeter" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.MeterManager">
+		<appender-ref ref="fileMeter" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.MeterFacade">
+		<appender-ref ref="fileMeter" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.pycin.MeterInEventsPC">
+		<appender-ref ref="fileMeterIn" />
+	</logger>
+	<logger name="meterInRateLog">
+		<appender-ref ref="fileMeterInRate" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.pycin.MeterInEventsC">
+		<appender-ref ref="fileMeterInConsumer" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.pycout.MeterOutEventsPC">
+		<appender-ref ref="fileMeterOut" />
+	</logger>
+	<logger name="meterOutRateLoge">
+		<appender-ref ref="fileMeterOutRate" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.pycout.MeterOutEventsC">
+		<appender-ref ref="fileMeterOutConsumer" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.external.CollectorFacade">
+		<appender-ref ref="fileCollectorFacade" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.meter.counters.CountersUpdaterTask">
+		<appender-ref ref="fileMeterCounters" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.AccountingModule">
+		<appender-ref ref="fileAccounting" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.AccountingManager">
+		<appender-ref ref="fileAccounting" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.AccountingFacade">
+		<appender-ref ref="fileAccounting" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.task.GetPeriodicCountersTask">
+		<appender-ref ref="fileAccountingTasks" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.pycin.AccountingInEventsPC">
+		<appender-ref ref="fileAccountingIn" />
+	</logger>
+	<logger name="accountingInRateLog">
+		<appender-ref ref="fileAccountingInRate" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.accounting.pycin.AccountingInEventsC">
+		<appender-ref ref="fileAccountingInConsumer" />
+	</logger>
+	<logger name="fileAccountingServicesCSVLog">
+		<appender-ref ref="fileAccountingServicesCSV" />
+	</logger>
+	<logger name="fileAccountingSubscribersCSVLog">
+		<appender-ref ref="fileAccountingSubscribersCSV" />
+	</logger>
+
+	<logger name="com.callistech.policyserver.dsm.session.SessionModule">
+		<appender-ref ref="fileSession" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.session.SessionManager">
+		<appender-ref ref="fileSession" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.session.SessionFacade">
+		<appender-ref ref="fileSession" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.session.pycin.SessionInEventsPC">
+		<appender-ref ref="fileSessionIn" />
+	</logger>
+	<logger name="sessionInRateLog">
+		<appender-ref ref="fileSessionInRate" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.session.pycin.SessionInEventsC">
+		<appender-ref ref="fileSessionInConsumer" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.session.pycout.SessionOutEventsPC">
+		<appender-ref ref="fileSessionOut" />
+	</logger>
+	<logger name="sessionOutRateLoge">
+		<appender-ref ref="fileSessionOutRate" />
+	</logger>
+	<logger name="com.callistech.policyserver.dsm.session.pycout.SessionOutEventsC">
+		<appender-ref ref="fileSessionOutConsumer" />
+	</logger>
+
+	<logger name="com.callistech.policyserver.dsm.session.managers.DBManager">
+		<appender-ref ref="fileDSMDB" />
+	</logger>
+
+	<logger name="com.callistech.policyserver.dsm.session.external.WSFacade">
+		<appender-ref ref="fileWSFacade" />
+	</logger>
+
+	<root>
+		<priority value="debug" />
+	</root>
+</log4j:configuration>

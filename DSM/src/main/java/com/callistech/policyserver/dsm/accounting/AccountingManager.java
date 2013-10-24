@@ -16,6 +16,8 @@ import com.callistech.policyserver.dsm.common.DynamicSession;
 import com.callistech.policyserver.dsm.common.counters.ServiceCounter;
 import com.callistech.policyserver.dsm.common.counters.SubscriberCounter;
 import com.callistech.policyserver.dsm.common.counters.SubscriberServiceCounter;
+import com.callistech.policyserver.dsm.common.subscriber.SubscriberDS;
+import com.callistech.policyserver.dsm.session.managers.DBManager;
 
 public class AccountingManager {
 
@@ -32,6 +34,10 @@ public class AccountingManager {
 		this.accountingModule = accountingModule;
 		accountingCSVManager = new AccountingCSVManager();
 		accountingDBManager = new AccountingDBManager();
+	}
+
+	public void setDBManager(DBManager dbManager) {
+		this.accountingDBManager.setDBManager(dbManager);
 	}
 
 	public void start() {
@@ -106,33 +112,55 @@ public class AccountingManager {
 	}
 
 	public void quotaVolumeUpdates(FastTreeMap consumptions) {
-		logger.info("Receiving quota volume updates...");
-		accountingDBManager.quotaVolumeUpdates(consumptions);
-		logger.info("Quota volume updates recieved.");
+		try {
+			logger.info("Receiving quota volume updates...");
+			accountingDBManager.quotaVolumeUpdates(consumptions);
+			logger.info("Quota volume updates recieved.");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
-	public void startSession(DynamicSession ds) {
-		logger.info("Receiving startSession. ds: " + ds + "...");
-		accountingCSVManager.startSession(ds);
-		accountingDBManager.startSession(ds);
+	public void startSession(SubscriberDS subscriberDS, DynamicSession ds) {
+		try {
+			logger.info("Receiving startSession. ds: " + ds + "...");
+			accountingCSVManager.startSession(ds);
+			accountingDBManager.startSession(ds);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
-	public void stopSession(DynamicSession ds) {
-		logger.info("Receiving stopSession. ds: " + ds + "...");
-		accountingCSVManager.stopSession(ds);
-		accountingDBManager.stopSession(ds);
+	public void stopSession(SubscriberDS subscriberDS, Integer sessionId, Long stopTime) {
+		try {
+			logger.info("Receiving stopSession. sessionId: " + sessionId + "...");
+			DynamicSession ds = accountingDBManager.getDynamicSession(sessionId);
+			ds.setStopTime(stopTime);
+			accountingCSVManager.stopSession(ds);
+			accountingDBManager.stopSession(ds);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	public void pauseSession(DynamicSession ds) {
-		logger.info("Receiving pauseSession. ds: " + ds + "...");
-		accountingCSVManager.pauseSession(ds);
-		accountingDBManager.pauseSession(ds);
+		try {
+			logger.info("Receiving pauseSession. ds: " + ds + "...");
+			accountingCSVManager.pauseSession(ds);
+			accountingDBManager.pauseSession(ds);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	public void resumeSession(DynamicSession ds) {
-		logger.info("Receiving resumeSession. ds: " + ds + "...");
-		accountingCSVManager.resumeSession(ds);
-		accountingDBManager.resumeSession(ds);
+		try {
+			logger.info("Receiving resumeSession. ds: " + ds + "...");
+			accountingCSVManager.resumeSession(ds);
+			accountingDBManager.resumeSession(ds);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 }

@@ -10,9 +10,9 @@ import com.callistech.policyserver.dsm.common.QuotaVolume;
 public class TaskCuotaVolumeCoumsumptionSimulator implements Runnable {
 
 	private FastTreeMap consumptions = null;
-	private TreeSet<String> sessionesVolume = new TreeSet<String>();
-	private TreeSet<String> sessionesToAdd = new TreeSet<String>();
-	private TreeSet<String> sessionesToRemove = new TreeSet<String>();
+	private TreeSet<Integer> sessionesVolume = new TreeSet<Integer>();
+	private TreeSet<Integer> sessionesToAdd = new TreeSet<Integer>();
+	private TreeSet<Integer> sessionesToRemove = new TreeSet<Integer>();
 	private boolean procesando = false;
 
 	public TaskCuotaVolumeCoumsumptionSimulator(TestMeterManager testCountingInMemoryCuotaTimeAndVolume) {
@@ -35,25 +35,25 @@ public class TaskCuotaVolumeCoumsumptionSimulator implements Runnable {
 			QuotaVolume quota = null;
 			// System.out.println("1");
 			// Cargo y remuevo
-			String sesion;
+			Integer sessionId;
 			for (Object obj : sessionesToAdd) {
 				// for (int i = 0; i < 500000; i++) {
 				// sesion = "" + (2000000 + i);
-				sesion = (String) obj;
-				if (!sessionesVolume.contains(sesion)) {
-					sessionesVolume.add(sesion);
+				sessionId = (Integer) obj;
+				if (!sessionesVolume.contains(sessionId)) {
+					sessionesVolume.add(sessionId);
 					quota = new QuotaVolume();
-					consumptions.put(sesion, quota);
+					consumptions.put(sessionId, quota);
 				}
 			}
 			sessionesToAdd.clear();
 			// System.out.println("2");
 			for (Object obj : sessionesToRemove) {
-				sesion = (String) obj;
-				if (sessionesVolume.contains(sesion)) {
-					sessionesVolume.remove(sesion);
-					if (consumptions.containsKey(sesion)) {
-						consumptions.remove(sesion);
+				sessionId = (Integer) obj;
+				if (sessionesVolume.contains(sessionId)) {
+					sessionesVolume.remove(sessionId);
+					if (consumptions.containsKey(sessionId)) {
+						consumptions.remove(sessionId);
 					}
 				}
 			}
@@ -61,12 +61,12 @@ public class TaskCuotaVolumeCoumsumptionSimulator implements Runnable {
 			// System.out.println("3");
 
 			for (Object obj : sessionesVolume) {
-				sesion = (String) obj;
-				if (consumptions.containsKey(sesion)) {
-					quota = (QuotaVolume) consumptions.get(sesion);
+				sessionId = (Integer) obj;
+				if (consumptions.containsKey(sessionId)) {
+					quota = (QuotaVolume) consumptions.get(sessionId);
 				} else {
 					quota = new QuotaVolume();
-					consumptions.put(sesion, quota);
+					consumptions.put(sessionId, quota);
 				}
 
 				long u = 100 + (long) (Math.random() * ((1000 - 100) + 1));
@@ -120,7 +120,7 @@ public class TaskCuotaVolumeCoumsumptionSimulator implements Runnable {
 		sessionesToRemove.add(ds.getSessionId());
 	}
 
-	public void remove(String sessionId) {
+	public void remove(Integer sessionId) {
 		sessionesToRemove.add(sessionId);
 	}
 

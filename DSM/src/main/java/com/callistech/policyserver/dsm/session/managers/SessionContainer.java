@@ -1,18 +1,31 @@
 package com.callistech.policyserver.dsm.session.managers;
 
-import com.callistech.policyserver.dsm.common.DynamicService;
-import com.callistech.policyserver.dsm.common.subscriber.SubscriberDS;
+import java.util.concurrent.ConcurrentHashMap;
+
+import com.callistech.policyserver.dsm.common.DynamicSessionKey;
 
 public class SessionContainer {
 
-	public boolean existSession(String subscriberId, Integer dsId) {
-		// TODO Auto-generated method stub
-		return false;
+	private ConcurrentHashMap<DynamicSessionKey, Integer> sessions = new ConcurrentHashMap<DynamicSessionKey, Integer>();
+
+	public SessionContainer() {
+
 	}
 
-	public void updateSessionDueToStartSession(SubscriberDS subscriberDS, DynamicService dynamicService) {
-		// TODO Auto-generated method stub
-		
+	public boolean existSession(DynamicSessionKey key) {
+		return sessions.contains(key);
+	}
+
+	public void updateSessionDueToStopSessionExternally(DynamicSessionKey key) {
+		sessions.remove(key);
+	}
+
+	public void updateSessionDueToStartSession(DynamicSessionKey key, Integer sessionId) {
+		sessions.put(key, sessionId);
+	}
+
+	public Integer getSessionId(DynamicSessionKey key) {
+		return sessions.get(key);
 	}
 
 }
