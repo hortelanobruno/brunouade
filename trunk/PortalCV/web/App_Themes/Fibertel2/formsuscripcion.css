@@ -1,0 +1,173 @@
+/*form contact*/
+.seccion_formsuscripcion .section {
+	width:100%;
+}
+.seccion_formsuscripcion .section .descripcion{
+	background-image:none;
+}
+.seccion_formsuscripcion .section h2{
+	background-image:url(fdo_tit_contactenos.png);
+	width:100%;
+}
+.formsuscripcion{		
+	padding-top:15px;
+	margin-bottom:15px;
+	clear:left;
+	width:100%;		
+	position:relative;
+}
+.formsuscripcion .boxViewForm,
+.formsuscripcion .boxThanks{		
+	margin-left:35px;	
+	width:918px;
+}
+.formsuscripcion .boxViewForm:after{content:'.';display:block;clear:both;height:0;visibility:hidden;}
+
+.formsuscripcion .introduccion{
+	color:#797360;
+	font-size:16px;
+	font-weight:bold;
+	line-height:1.2em;
+	padding:0 31px 10px 31px;
+	margin:0 auto;	
+}
+.formsuscripcion .group{	
+	padding:15px 10px 12px 45px;	
+	margin-top:11px;
+	margin-bottom:11px;
+	background-image:url(raya_gris.png);
+	background-position:center top;
+	background-repeat:no-repeat;
+	clear:left;
+	
+}
+.formsuscripcion .group:after{content:'.';display:block;clear:both;height:0;visibility:hidden;}
+
+.formsuscripcion .subgroup{	
+	float:left;
+	width:450px;
+}
+.formsuscripcion .line{
+	padding-top:8px;
+	padding-bottom:8px;
+	clear:left;
+}
+.formsuscripcion input[type='text']
+,.formsuscripcion input[type='textarea']
+,.formsuscripcion .Suscripcion_Txt_Consulta{
+	background-color:#F1F0EC;
+	border:1px solid #AEAEAE;
+	margin-right:5px;
+	padding:2px 0px;
+	font-size:12px;	
+}
+.Suscripcion_Txt_Consulta{	
+	vertical-align:top;
+}
+.formsuscripcion .line label{
+	display:block;
+	float:left;
+	font-size:12px;
+	padding-right:5px;
+	width:80px;
+}
+.formsuscripcion .botones{
+	margin-left:187px;
+}
+.formsuscripcion .botones input{
+	margin:0 5px;
+}
+
+.formsuscripcion .txtchico{
+	font-size:11px;
+}
+
+.formsuscripcion .img{margin:11px;}
+
+.formsuscripcion .ChkDiaContacto label
+,.formsuscripcion .ChkHorario label {
+	display:block;
+	width:50px;
+}
+.formsuscripcion .checkgroup {
+	text-align:center;
+	
+}
+.formsuscripcion .ChkDiaContacto 
+,.formsuscripcion .ChkHorario {
+	width:150px;
+}
+.formsuscripcion .boxleft label.title {
+	display:block;
+	padding-bottom:5px;
+	padding-left:12px;
+}
+.formsuscripcion .nobackground{
+	background-image:none;
+	margin-top:10px;
+	margin-left:85px;
+}
+.formsuscripcion .error{
+	margin-left:-20px;
+	position:absolute;
+}
+.formsuscripcion .textoejemplo{
+	font-size:12px;
+}
+/**/
+.formsuscripcion_Lbl_Nombre
+,.formsuscripcion_Lbl_NroCliente{
+	float:left;
+	width:128px;
+	display:inline-block;
+}
+.formsuscripcion_Lbl_Apellido{	
+	display:inline-block;	
+	width:128px;
+}
+.formsuscripcion_Lbl_Telefono{
+	float:left;
+	width:128px;
+	display:inline-block;
+}
+.formsuscripcion_Lbl_OtroTelefono{	
+	width:128px;
+	float:left;
+}
+.formsuscripcion_DdlProvincia{
+	background-color:#F1F0EC;
+	border:1px solid #AEAEAE;
+}
+.Suscripcion_Ddl_Provincia{
+	background-color:#F1F0EC;
+	border:1px solid #AEAEAE;
+}
+.Suscripcion_Ddl_FullWidth{
+	background-color:#F1F0EC;
+	border:1px solid #AEAEAE;
+	font-size:12px;
+}
+.formsuscripcion_Lbl_Email{	
+	float:left;
+	width:128px;
+	display:inline-block;
+}
+/**/
+.Img_Tooltip{
+	/*background-image:url(btn_signo_pregunta.png);		*/
+	display:inline-block;
+	height:19px;
+	width:29px;
+	vertical-align:middle;
+}
+.thanks{
+	background-image:url(raya_gris.png);
+	background-position:center bottom;
+	background-repeat:no-repeat;
+	padding-bottom:15px;
+}
+
+.formsuscripcion  .highlightSubscripcion-Gracias .introduccion{
+	margin-left:-15px;
+	margin-right:-15px;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://10.200.170.3:6969/webServiceApplicationFunction?WSDL" uri="wsdl/10.200.170.3_6969/webServiceApplicationFunction.wsdl"/>
+    <system systemId="http://10.200.170.3:6969/webServiceApplicationFunction?xsd=1" uri="wsdl/10.200.170.3_6969/webServiceApplicationFunction.xsd_1.xsd"/>
+    <system systemId="http://10.200.170.3:6979/webServiceSPR?WSDL" uri="wsdl/10.200.170.3_6979/webServiceSPR.wsdl"/>
+    <system systemId="http://10.200.170.3:6979/webServiceSPR?xsd=1" uri="wsdl/10.200.170.3_6979/webServiceSPR.xsd_1.xsd"/>
+    <system systemId="http://10.0.0.39:6969/webServiceApplicationFunction?WSDL" uri="wsdl/10.0.0.39_6969/webServiceApplicationFunction.wsdl"/>
+    <system systemId="http://10.0.0.39:6969/webServiceApplicationFunction?xsd=1" uri="wsdl/10.0.0.39_6969/webServiceApplicationFunction.xsd_1.xsd"/>
+    <system systemId="http://10.0.0.39:6979/webServiceSPR?" uri="wsdl/10.0.0.39_6979/webServiceSPR.xml"/>
+    <system systemId="http://10.0.0.39:6979/webServiceSPR?WSDL" uri="wsdl/10.0.0.39_6979/webServiceSPR.wsdl"/>
+    <system systemId="http://10.0.0.39:6979/webServiceSPR?xsd=1" uri="wsdl/10.0.0.39_6979/webServiceSPR.xsd_1.xsd"/>
+</catalog>

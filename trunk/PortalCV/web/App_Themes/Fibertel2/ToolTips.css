@@ -1,0 +1,11 @@
+
+/*tooltpis*/
+.tipsdiv{border:solid 1px #49538E;width:250px;background-color:#FFFFFF;font-size:11px;}
+.tip-title{padding:5px 15px;}
+.Feeds{margin-right:10px;margin-bottom:10px;}
+#feedTodos .Feeds{vertical-align:middle;}
+
+
+/*registracion*/
+.MasterPagePopup2 .tipsdiv{width:270px;}
+.MasterPagePopup2 .tip-title{padding:5px 10px;}

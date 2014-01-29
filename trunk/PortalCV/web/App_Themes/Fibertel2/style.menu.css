@@ -1,0 +1,54 @@
+
+.MenuSuperior{width:100%;float:right;height:17px;}
+.MenuSuperior ul{float:right;}
+.MenuSuperior li{
+	float:left;
+	list-style-type:none;
+	margin:0px 5px;
+	padding-right:7px;
+	background-image:url(punto_menu.png);
+	background-position:right 9px;
+	background-repeat:no-repeat;
+}
+.MenuSuperior li a{font-size:11px;color:#353535;font-weight:bold;text-decoration:none;}
+.MenuSuperior li a:hover{text-decoration:none;}
+.MenuSuperior li.last{border-right:none;background-image:none;}
+
+
+.MenuBar{float:left;width:600px;margin-top:7px;display:none;}
+.MenuBar ul{}
+.MenuBar li
+{
+	float:left;
+	list-style-type:none;
+	background-image:url(buller_menubar.png);
+	background-repeat:no-repeat;
+	background-position:right;
+	padding-right:15px;
+}
+.MenuBar li.last{background-image:none;}
+.MenuBar li a{color:#FBF0BA;text-decoration:none;}
+.MenuBar li a:hover{}
+
+.MenuHeader{
+	/*float:left;
+	width:600px;
+	margin-top:32px;*/
+	bottom:7px;
+	left:190px;
+	position:absolute;
+	width:618px;
+}
+
+.MenuInferior{clear:left;float:left;}
+.MenuInferior ul{margin-top:5px;}
+.MenuInferior li
+{
+	float:left;
+	list-style-type:none;
+	background-image:url(bullet_menu_inferior.png);
+	background-repeat:no-repeat;
+	background-position:left center;
+	padding-left:15px;
+}
+.MenuInferior li a{color:#A7A7A7;text-decoration:none;}

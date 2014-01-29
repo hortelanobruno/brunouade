@@ -1,0 +1,108 @@
+.mvc{
+	background-color:#ffffff;	
+	font-family: Arial;
+	color: #8A8A8A;    
+    font-size: 13px;
+    line-height: 1.5em;
+}
+
+.FormRegistrationMvc  h2
+{
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0;
+    color:#DDDDDD;
+    font-weight:bold;}
+
+/*registracion*/
+.FormRegistrationMvc 
+{
+    background-color: #FFFFFF;
+    padding-top: 2px;
+    position: relative;    
+    width: 570px;
+    z-index: 0;
+} 
+    
+.FormRegistrationMvc .group {
+    clear: left;
+    margin-bottom: 0;
+    margin-top: 11px;
+    padding: 15px 10px 12px 45px;
+   
+}
+.FormRegistrationMvc .group:after{content:'.';display:block;clear:both;height:0;visibility:hidden;}
+
+.FormRegistrationMvc .editor-label{float:left;width:150px;clear:left; margin:7px 0;}
+.FormRegistrationMvc .editor-field{float:left; margin:7px 0;}
+.FormRegistrationMvc .label-extra{width:200px;}
+
+.FormRegistrationMvc input[type="text"].txtPhonePrefix
+{
+    width:40px;
+    float:left;}
+.FormRegistrationMvc input[type="text"].txtPhone4digits
+{
+    width:40px;}
+    
+.FormRegistrationMvc input[type="text"].txtPhone
+{
+    width:110px;
+    margin-left:4px;}  
+    
+ .FormRegistrationMvc .txtej
+ {
+     font-size:11px;}
+ 
+.FormRegistrationMvc input[type="text"].phonetxtareacode
+,.FormRegistrationMvc .txtdocumenttype
+{
+    width:50px;}
+.FormRegistrationMvc input[type="password"].txtpassword    
+,.FormRegistrationMvc input[type="text"].txtaltura
+{
+    width:70px;}
+    
+.FormRegistrationMvc input[type="text"].txtdocumentnumber
+, .FormRegistrationMvc input[type="text"].phonenumber{
+        width:194px;}
+        
+.FormRegistrationMvc input[type="text"]
+, .FormRegistrationMvc input[type="password"] 
+, .FormRegistrationMvc select
+, .FormRegistrationMvc textarea 
+{
+    background-color: #E8E8E8;
+    border: 1px solid #CCCCCC;
+    color: #797360; 
+    width: 250px;    
+}
+
+.FormRegistrationMvc .txtconditions{
+    height: 70px; 
+    margin-top: 10px;
+    width: 500px;}
+    
+.FormRegistrationMvc .radioconditions
+{
+    margin:7px 0 0 150px;    
+    width: 150px;}
+
+.FormRegistrationMvc .txtejemplo    
+{
+    font-size:12px;
+    }
+    
+/*boton proximo*/
+.FormRegistrationMvc .button p
+{
+    margin:0;}    
+.FormRegistrationMvc .bt_next{
+     background-image: url("boton_siguiente.png");
+     display: block;
+     width:83px;
+     height:35px;
+     border:none;
+     background-color:transparent;
+     cursor:pointer;  
+    }

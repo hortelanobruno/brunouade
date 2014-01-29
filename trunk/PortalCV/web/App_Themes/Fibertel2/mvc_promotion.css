@@ -1,0 +1,86 @@
+img{border:0}
+
+.mvc{
+	background-color:#ffffff;	
+	font-family: Arial;
+	color: #8A8A8A;    
+    font-size: 13px;
+    line-height: 1.5em;
+}
+
+
+/*promocion*/
+.FormPromocionMvc 
+{
+    background-color: #FFFFFF;
+    padding-top: 2px;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+} 
+    
+.FormPromocionMvc .group {
+    clear: left;
+    margin-bottom: 0;
+    margin-top: 11px;
+    padding: 15px 10px 12px 45px;
+    width: 900px;
+}
+.FormPromocionMvc .group:after{content:'.';display:block;clear:both;height:0;visibility:hidden;}
+
+.FormPromocionMvc .subgroup
+{
+    float: left;
+    width: 450px;}
+   
+.FormPromocionMvc .editor-label{float:left;width:80px;clear:left; margin:7px 0;}
+.FormPromocionMvc .editor-field{float:left; margin:7px 0;}
+
+.FormPromocionMvc input[type="text"].txtPhonePrefix
+{
+    width:40px;
+    float:left;}
+    
+.FormPromocionMvc input[type="text"].txtPhone
+{
+    width:110px;
+    margin-left:4px;}  
+    
+ .FormPromocionMvc .txtej
+ {
+     font-size:11px;}
+ 
+
+.FormPromocionMvc input[type="text"]
+, .FormPromocionMvc input[type="password"] 
+, .FormPromocionMvc select
+, .FormPromocionMvc textarea {
+    background-color: #F1F0EC;
+    border: 1px solid #AEAEAE;
+    color: #797360;   
+    width: 250px;
+    font-family: arial;
+    font-size: 13px;
+}
+
+/*boton proximo*/
+.FormPromocionMvc .button 
+{
+    text-align:right;
+    margin-right:20px;
+    }
+    
+.FormPromocionMvc .bt_next{
+     background-image: url("enviar.png");
+     display: block;
+     width:91px;
+     height:52px;
+     border:none;
+     background-color:transparent;
+     cursor:pointer;
+     margin:0 0 0 auto;
+    }
+    
+    .CallejeroSeleccion th {
+    background-color: #065494;
+    }

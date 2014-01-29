@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6 in JDK 6. --><xs:schema xmlns:tns="http://server.webservice.integration.af.policyserver.callistech.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://server.webservice.integration.af.policyserver.callistech.com/">
+
+<xs:element name="dynamicSessionQuery" type="tns:dynamicSessionQuery"></xs:element>
+
+<xs:element name="dynamicSessionQueryDynamicServiceDescriptor" type="tns:dynamicSessionQueryDynamicServiceDescriptor"></xs:element>
+
+<xs:element name="dynamicSessionQueryDynamicServiceDescriptorResponse" type="tns:dynamicSessionQueryDynamicServiceDescriptorResponse"></xs:element>
+
+<xs:element name="dynamicSessionQueryHistory" type="tns:dynamicSessionQueryHistory"></xs:element>
+
+<xs:element name="dynamicSessionQueryHistoryDynamicServiceDescriptor" type="tns:dynamicSessionQueryHistoryDynamicServiceDescriptor"></xs:element>
+
+<xs:element name="dynamicSessionQueryHistoryDynamicServiceDescriptorResponse" type="tns:dynamicSessionQueryHistoryDynamicServiceDescriptorResponse"></xs:element>
+
+<xs:element name="dynamicSessionQueryHistoryResponse" type="tns:dynamicSessionQueryHistoryResponse"></xs:element>
+
+<xs:element name="dynamicSessionQueryResponse" type="tns:dynamicSessionQueryResponse"></xs:element>
+
+<xs:element name="pauseSession" type="tns:pauseSession"></xs:element>
+
+<xs:element name="pauseSessionDynamicServiceDescriptor" type="tns:pauseSessionDynamicServiceDescriptor"></xs:element>
+
+<xs:element name="pauseSessionDynamicServiceDescriptorResponse" type="tns:pauseSessionDynamicServiceDescriptorResponse"></xs:element>
+
+<xs:element name="pauseSessionResponse" type="tns:pauseSessionResponse"></xs:element>
+
+<xs:element name="resumeSession" type="tns:resumeSession"></xs:element>
+
+<xs:element name="resumeSessionDynamicServiceDescriptor" type="tns:resumeSessionDynamicServiceDescriptor"></xs:element>
+
+<xs:element name="resumeSessionDynamicServiceDescriptorResponse" type="tns:resumeSessionDynamicServiceDescriptorResponse"></xs:element>
+
+<xs:element name="resumeSessionResponse" type="tns:resumeSessionResponse"></xs:element>
+
+<xs:element name="startSession" type="tns:startSession"></xs:element>
+
+<xs:element name="startSessionDynamicServiceDescriptor" type="tns:startSessionDynamicServiceDescriptor"></xs:element>
+
+<xs:element name="startSessionDynamicServiceDescriptorResponse" type="tns:startSessionDynamicServiceDescriptorResponse"></xs:element>
+
+<xs:element name="startSessionForBoDService" type="tns:startSessionForBoDService"></xs:element>
+
+<xs:element name="startSessionForBoDServiceResponse" type="tns:startSessionForBoDServiceResponse"></xs:element>
+
+<xs:element name="startSessionForCmtsId" type="tns:startSessionForCmtsId"></xs:element>
+
+<xs:element name="startSessionForCmtsIdResponse" type="tns:startSessionForCmtsIdResponse"></xs:element>
+
+<xs:element name="startSessionResponse" type="tns:startSessionResponse"></xs:element>
+
+<xs:element name="stopSession" type="tns:stopSession"></xs:element>
+
+<xs:element name="stopSessionDynamicServiceDescriptor" type="tns:stopSessionDynamicServiceDescriptor"></xs:element>
+
+<xs:element name="stopSessionDynamicServiceDescriptorResponse" type="tns:stopSessionDynamicServiceDescriptorResponse"></xs:element>
+
+<xs:element name="stopSessionForBoDService" type="tns:stopSessionForBoDService"></xs:element>
+
+<xs:element name="stopSessionForBoDServiceResponse" type="tns:stopSessionForBoDServiceResponse"></xs:element>
+
+<xs:element name="stopSessionForCmtsId" type="tns:stopSessionForCmtsId"></xs:element>
+
+<xs:element name="stopSessionForCmtsIdResponse" type="tns:stopSessionForCmtsIdResponse"></xs:element>
+
+<xs:element name="stopSessionResponse" type="tns:stopSessionResponse"></xs:element>
+
+<xs:complexType name="stopSessionForCmtsId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg9" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg10" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopSessionForCmtsIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="responseDynamicServiceOperation">
+<xs:sequence>
+<xs:element name="dynamicServiceDescriptor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="errorCode" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="response" type="xs:anyType" minOccurs="0"></xs:element>
+<xs:element name="subscriberId" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSessionQuery">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSessionQueryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperationQuery" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="responseDynamicServiceOperationQuery">
+<xs:sequence>
+<xs:element name="dynamicServiceDescriptor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="errorCode" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="response" type="tns:dynamicSubscriberWs" minOccurs="0"></xs:element>
+<xs:element name="subscriberId" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSubscriberWs">
+<xs:sequence>
+<xs:element name="serviceActivation" type="tns:dynamicServiceActivationWs" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="subscriberId" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceActivationWs">
+<xs:sequence>
+<xs:element name="serviceId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="sessionActivation" type="tns:dynamicServiceSessionActivationWs" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceSessionActivationWs">
+<xs:sequence>
+<xs:element name="activate" type="xs:boolean" minOccurs="0"></xs:element>
+<xs:element name="activateDate" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="policyLocation" type="tns:dynamicPolicyCombinationWs" minOccurs="0"></xs:element>
+<xs:element name="serviceUsageCounters" type="tns:dynamicServiceUsageCounterWs" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="serviceUsageLimits" type="tns:dynamicServiceUsageLimitsWs" minOccurs="0"></xs:element>
+<xs:element name="sessionId" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicPolicyCombinationWs">
+<xs:sequence>
+<xs:element name="cmtsId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="policyDomainId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="scabbPolicyId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="sceId" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="siteId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="technologyPolicyId" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceUsageCounterWs">
+<xs:sequence>
+<xs:element name="serviceUsageCounterId" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceUsageLimitsWs">
+<xs:sequence>
+<xs:element name="bothStreamVolume" type="tns:dynamicServiceCounterWs" minOccurs="0"></xs:element>
+<xs:element name="countingTimeType" type="tns:countingTimeTypeVO" minOccurs="0"></xs:element>
+<xs:element name="downStreamVolume" type="tns:dynamicServiceCounterWs" minOccurs="0"></xs:element>
+<xs:element name="time" type="tns:dynamicServiceCounterWs" minOccurs="0"></xs:element>
+<xs:element name="upStreamVolume" type="tns:dynamicServiceCounterWs" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceCounterWs">
+<xs:sequence>
+<xs:element name="percentValue" type="xs:float" minOccurs="0"></xs:element>
+<xs:element name="remainingValue" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="totalValue" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startSessionForCmtsId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="tns:countingTimeTypeVO" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg9" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg10" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg11" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg12" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg13" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg14" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg15" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg16" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg17" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startSessionForCmtsIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pauseSessionDynamicServiceDescriptor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="tns:propertiesWs" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="propertiesWs">
+<xs:sequence>
+<xs:element name="properties">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="key" minOccurs="0" type="xs:string"></xs:element>
+<xs:element name="value" minOccurs="0" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pauseSessionDynamicServiceDescriptorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startSessionDynamicServiceDescriptor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="tns:propertiesWs" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startSessionDynamicServiceDescriptorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopSessionDynamicServiceDescriptor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="tns:propertiesWs" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopSessionDynamicServiceDescriptorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSessionQueryDynamicServiceDescriptor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSessionQueryDynamicServiceDescriptorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperationQuery" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSessionQueryHistoryDynamicServiceDescriptor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:dateTime" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSessionQueryHistoryDynamicServiceDescriptorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperationQueryHistory" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="responseDynamicServiceOperationQueryHistory">
+<xs:sequence>
+<xs:element name="dynamicServiceDescriptor" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="errorCode" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="response" type="tns:dynamicSubscriberWsHistory" minOccurs="0"></xs:element>
+<xs:element name="subscriberId" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSubscriberWsHistory">
+<xs:sequence>
+<xs:element name="serviceActivation" type="tns:dynamicServiceActivationWsHistory" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="subscriberId" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceActivationWsHistory">
+<xs:sequence>
+<xs:element name="serviceId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="sessionActivation" type="tns:dynamicServiceSessionActivationWsHistory" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceSessionActivationWsHistory">
+<xs:sequence>
+<xs:element name="activate" type="xs:boolean" minOccurs="0"></xs:element>
+<xs:element name="activateDate" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="deActivateDate" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="policyLocation" type="tns:dynamicPolicyCombinationWsHistory" minOccurs="0"></xs:element>
+<xs:element name="serviceUsageLimits" type="tns:dynamicServiceUsageLimitsWsHistory" minOccurs="0"></xs:element>
+<xs:element name="sessionId" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicPolicyCombinationWsHistory">
+<xs:sequence>
+<xs:element name="policyDomainId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="scabbPolicyId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="siteId" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="technologyPolicyId" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceUsageLimitsWsHistory">
+<xs:sequence>
+<xs:element name="bothStreamVolume" type="tns:dynamicServiceCounterWsHistory" minOccurs="0"></xs:element>
+<xs:element name="countingTimeType" type="tns:countingTimeTypeVO" minOccurs="0"></xs:element>
+<xs:element name="downStreamVolume" type="tns:dynamicServiceCounterWsHistory" minOccurs="0"></xs:element>
+<xs:element name="time" type="tns:dynamicServiceCounterWsHistory" minOccurs="0"></xs:element>
+<xs:element name="upStreamVolume" type="tns:dynamicServiceCounterWsHistory" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicServiceCounterWsHistory">
+<xs:sequence>
+<xs:element name="percentValue" type="xs:float" minOccurs="0"></xs:element>
+<xs:element name="remainingValue" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="totalValue" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resumeSessionDynamicServiceDescriptor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="tns:propertiesWs" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resumeSessionDynamicServiceDescriptorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopSession">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg9" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg10" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg11" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg12" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopSessionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pauseSession">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg9" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg10" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg11" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg12" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pauseSessionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resumeSession">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg9" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg10" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg11" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg12" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resumeSessionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopSessionForBoDService">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg9" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stopSessionForBoDServiceResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startSessionForBoDService">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="tns:countingTimeTypeVO" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg9" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg10" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg11" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg12" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg13" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg14" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg15" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg16" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startSessionForBoDServiceResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSessionQueryHistory">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:dateTime" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dynamicSessionQueryHistoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperationQueryHistory" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startSession">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg2" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg3" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg4" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg5" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg6" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg7" type="tns:countingTimeTypeVO" minOccurs="0"></xs:element>
+<xs:element name="arg8" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg9" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg10" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg11" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg12" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg13" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg14" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg15" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="arg16" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg17" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="arg18" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="startSessionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:responseDynamicServiceOperation" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="countingTimeTypeVO">
+<xs:restriction base="xs:string">
+<xs:enumeration value="absolute"></xs:enumeration>
+<xs:enumeration value="activity"></xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

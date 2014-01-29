@@ -1,0 +1,246 @@
+.suscripcion_callejero .section h1
+,.seccion_formsuscripcion .section h1
+{
+	background:url(fdo_tit_ancho_completo.png);
+	width:943px;
+	height:27px;
+}
+.suscripcion_callejero .section .descripcion{
+	background-image:none;
+}
+.suscripcion_callejero .formsuscripcion {
+	height:602px;
+	padding-bottom:20px;
+}
+.suscripcion_callejero .formsuscripcion .lnkBtnDisponibilidad
+{
+	background-image:url('consultadedisponibilidad.png');
+	background-repeat:no-repeat;
+	width:205px;
+	height:34px;
+	border:none;
+	background-color:transparent;
+	cursor:pointer;
+}
+
+.suscripcion_callejero .Suscripcion_Ddl_Provincia  {
+	margin-right:7px;
+}
+#PnlCallejeroSeleccion_Box .CallejeroSeleccionDiv .CallejeroSeleccion td a
+,#PnlCallejeroSeleccion_Box .CallejeroSeleccionDiv .CallejeroSeleccion td a:link
+,#PnlCallejeroSeleccion_Box .CallejeroSeleccionDiv .CallejeroSeleccion td a:visited
+{
+    display:block;
+}
+#PnlCallejeroSeleccion_Box .CallejeroSeleccionDiv .CallejeroSeleccion td a:hover
+{
+    text-decoration:none;
+}
+#PnlCallejeroSeleccion_Box.callejeroOpcional .CallejeroSeleccionDiv
+    {
+        background:white;
+        min-height:160px;
+        width:90%;
+    }
+#PnlCallejeroSeleccion_Box.callejeroOpcional .CallejeroSeleccion
+    {
+        width:100%;
+    }
+#PnlCallejeroSeleccion_Box.callejeroOpcional .CallejeroSeleccion th
+    {
+        background-color:#065494;
+        text-align:center;
+        color:White;
+        padding:5px 2px;
+    }
+#PnlCallejeroSeleccion_Box.callejeroOpcional .CallejeroSeleccion td
+    {
+        background-color:#DCDCDC;
+        text-align:left;
+        padding:5px 2px;
+    }
+#PnlCallejeroSeleccion_Box .CallejeroSeleccionDiv .CallejeroSeleccion tr:hover td
+{
+    background-color:#C3CDDF;
+}
+
+#PnlCallejeroSeleccion_Form.callejeroOpcional .ConsultaDisponibilidad
+{
+    width:200px;
+    margin:50px auto;
+    position:relative;
+}
+
+#PnlCallejeroSeleccion_Form.callejeroOpcional .line
+{
+    margin-left:50px;
+    
+}
+.suscripcion_callejero_opc .leyenda
+,.suscripcion_callejero_cha .leyenda
+,.suscrip_callej_cha_no_cli .leyenda
+,.suscrip_callej_op_2pasos .leyenda {
+    color: #797360;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin: 0 auto;
+    padding:0 45px 10px;
+}
+.suscrip_callej_op_2pasos .ConsultaDisponibilidad
+{
+	right:auto;
+	top:auto;
+	float: left;
+    margin-left: 85px;
+    margin-top: 15px;
+    position: relative;
+}
+.suscripcion_callejero_opc .section h1
+,.suscripcion_callejero_cha .section h1
+,.suscrip_callej_cha_no_cli .section h1
+,.suscrip_callej_op_2pasos .section h1
+{
+	background:url('linea.png');
+	width:974px;
+	height:24px;
+	padding:0px;
+	background-repeat:no-repeat;
+}
+.suscripcion_callejero_opc .section h1 span
+,.suscripcion_callejero_cha .section h1 span
+,.suscrip_callej_cha_no_cli .section h1 span
+,.suscrip_callej_op_2pasos .section h1 span
+{
+    display:none;
+}
+.suscripcion_callejero_opc .highlightCondicionesComerciales
+,.suscripcion_callejero_cha .highlightCondicionesComerciales
+,.suscrip_callej_cha_no_cli .highlightCondicionesComerciales
+,.suscrip_callej_op_2pasos .highlightCondicionesComerciales
+{
+    margin-left:0px;
+    width:auto;
+}
+.suscripcion_callejero_opc .highlightCondicionesComerciales .volanta
+,.suscripcion_callejero_cha .highlightCondicionesComerciales .volanta
+,.suscrip_callej_cha_no_cli .highlightCondicionesComerciales .volanta
+,.suscrip_callej_op_2pasos .highlightCondicionesComerciales .volanta
+,.suscripcion_callejero_opc .highlightCondicionesComerciales .titulo
+,.suscripcion_callejero_cha .highlightCondicionesComerciales .titulo
+,.suscrip_callej_cha_no_cli .highlightCondicionesComerciales .titulo
+,.suscrip_callej_op_2pasos .highlightCondicionesComerciales .titulo
+,.suscripcion_callejero_opc .highlightCondicionesComerciales .objectsattach
+,.suscripcion_callejero_cha .highlightCondicionesComerciales .objectsattach
+,.suscrip_callej_cha_no_cli .highlightCondicionesComerciales .objectsattach
+,.suscrip_callej_op_2pasos .highlightCondicionesComerciales .objectsattach
+{
+    display:none;
+}
+.suscripcion_callejero_opc .highlightCondicionesComerciales .copete
+,.suscripcion_callejero_cha .highlightCondicionesComerciales .copete
+,.suscrip_callej_cha_no_cli .highlightCondicionesComerciales .copete
+,.suscrip_callej_op_2pasos .highlightCondicionesComerciales .copete
+{
+    padding-left:0px;
+}
+.suscripcion_callejero_opc .group.nobackground
+,.suscripcion_callejero_cha .group.nobackground
+,.suscrip_callej_cha_no_cli .group.nobackground
+,.suscrip_callej_op_2pasos .group.nobackground
+{
+    padding-bottom:0px;
+}
+.suscripcion_callejero_opc .highlightBannerTop 
+,.suscripcion_callejero_cha .highlightBannerTop
+,.suscrip_callej_cha_no_cli .highlightBannerTop
+,.suscrip_callej_op_2pasos .highlightBannerTop 
+{
+    float:none;
+    width:939px;
+    margin:0 auto;
+}
+.suscripcion_callejero_opc .highlightBannerTop .item
+,.suscripcion_callejero_cha .highlightBannerTop .item
+,.suscrip_callej_cha_no_cli .highlightBannerTop .item
+,.suscrip_callej_op_2pasos .highlightBannerTop .item
+{
+    padding-left:0px;
+}
+.suscripcion_callejero_opc .boxright
+,.suscripcion_callejero_cha .boxright
+,.suscrip_callej_cha_no_cli .boxright
+,.suscrip_callej_op_2pasos .boxright
+{
+    float:right;
+    margin-right:40px;
+    margin-top:25px;
+    width:91px;
+}
+.suscripcion_callejero_opc .boxleft
+,.suscripcion_callejero_cha .boxleft
+,.suscrip_callej_cha_no_cli .boxleft
+,.suscrip_callej_op_2pasos .boxleft
+{
+    float:left;
+    /*background-image:url('telchat.jpg');*/
+    width:270px;
+    height:76px;
+    position:relative;
+}
+.suscripcion_callejero_opc .boxleft .accesoLinkChat
+,.suscripcion_callejero_cha .boxleft .accesoLinkChat
+,.suscrip_callej_cha_no_cli .boxleft .accesoLinkChat
+,.suscrip_callej_op_2pasos .boxleft .accesoLinkChat
+{
+    cursor:pointer;
+    width:120px;
+    height:35px;
+    position:absolute;
+    bottom:12px;
+    right:8px;
+}
+#divChat
+{
+    background-image:url('sos_cvYft.jpg');
+    width:501px;
+    height:453px;
+    position:relative;
+}
+#divChat .botonNO
+,#divChat .botonSI
+{
+    position:absolute;
+    width:210px;
+    height:80px;
+    display:block;
+    top:175px;
+    left:140px;
+}
+#divChat .botonSI
+{
+    top:280px;
+}
+.divTB_window_formChat #TB_title{
+	background-color:transparent;
+	height:19px;
+}
+/*cerrar*/
+.divTB_window_formChat #TB_closeAjaxWindow{
+	padding:0px 10px 0px 0px;
+	height:19px;
+}
+.divTB_window_formChat #TB_closeWindowButton{}
+.divTB_window_formChat #TB_closeWindowButton {
+	background-image:url(cruz.png);
+	background-repeat:no-repeat;
+	cursor:position;
+	display:block;
+	width:10px;
+	height:9px;
+	padding-right:5px;
+	margin-top:10px;
+}
+.divTB_window_formChat #TB_closeWindowButton span{
+	display:none;
+}

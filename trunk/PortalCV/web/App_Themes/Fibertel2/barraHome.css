@@ -1,0 +1,17 @@
+.highlightbannersflash  .epigrafe{
+	background-color:#EBF3F6;
+	bottom:0;
+	left:0;
+	color:white;
+	font-size:20px;
+	position:absolute;
+	font-family: myriad, verdana;
+	width:100%;
+}
+.highlightbannersflash  .epigrafe span{
+	display:block;
+	padding-bottom:12px;
+	padding-top:12px;
+	padding-left:20px;
+	padding-right:20px;
+}

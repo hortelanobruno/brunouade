@@ -1,0 +1,103 @@
+.MasterPagePopupGrisado {
+	background-image:none;
+	background-color:#FFFFFF;
+}
+.MasterPagePopupGrisado .body{
+	background-image:none;	
+	width:100%;
+	position:relative;
+	margin:0 auto; 
+}
+.MasterPagePopupGrisado .copete{
+	background-image:none;
+	padding:15px;
+}
+.MasterPagePopupGrisado h3{	
+	font-size:16px;
+	font-weight:bold;
+	color:#000000;
+	padding:0;
+	margin:7px 20px;
+}
+
+/*div attach*/
+.MasterPagePopupGrisado .divattach{
+	text-align:center;
+}
+/*boton imprimir*/
+.MasterPagePopupGrisado .botones{
+	position:absolute;	
+	top:2px;
+	right:14px;	
+	height:18px;	
+	padding-top:5px;
+	position:absolute;
+	text-align:center;
+	width:83px;	
+}
+.MasterPagePopupGrisado .botones .bt_print{
+	background-image:url(boton_imprimir_popup.png);
+	background-repeat:no-repeat;
+	width:83px;
+	height:36px;
+	cursor:pointer;	
+	display:block;
+	text-align:center;
+	margin:0 auto;
+	text-decoration:none;
+}
+
+.MasterPagePopupGrisado .botones span{
+	display:none;
+}
+
+/*estructuras*/
+.MasterPagePopupGrisado .SStructureAnchoCompleto{
+	margin:0;
+	width:100%;
+}
+.MasterPagePopupGrisado .SStructureAnchoCompleto .titulo{
+	background-image:url(fdo_titulo_popupgrisado.png);
+	background-repeat:no-repeat;	
+	width:100%;
+	margin:5px 0px;
+	height:50px;
+}
+.MasterPagePopupGrisado .SStructureAnchoCompleto .PnlMensaje h1{
+	padding:0px 5px 0px 20px;
+	color:#49538E;
+	font-size:16px;		
+	font-weight:normal;
+	line-height:2.5em;	
+	text-transform:uppercase;
+}
+.MasterPagePopupGrisado .SStructureAnchoCompleto .descripcion{
+	padding:10px 15px;
+}
+
+.MasterPagePopupGrisado .SStructureDescripcionBarra .descripcion {
+	float:none;	
+	padding-top:4px;
+}
+
+/*mensaje*/
+.MasterPagePopupGrisado .PnlMensaje .titulo{
+	background-image:url(fdo_titulo_popupgrisado.png);
+	background-repeat:no-repeat;	
+	width:100%;
+	margin:5px 0px;
+	height:50px;
+	}
+	
+.MasterPagePopupGrisado .PnlMensaje h1{
+	padding:0px 5px 0px 20px;
+	color:#49538E;
+	font-size:16px;		
+	font-weight:normal;
+	line-height:2.5em;	
+	text-transform:uppercase;
+}
+
+.MasterPagePopupGrisado .PnlMensaje p{
+	padding:15px 20px;
+}

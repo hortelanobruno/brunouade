@@ -1,0 +1,14 @@
+#!/bin/bash
+>admin.error.log
+>admin.log
+>default.log
+>portal.error.log
+>portal.log
+>portal.login.log
+>portal.profiling.log
+>radiusServer.log
+>reportes.log
+>server.log
+>stats.clicks.log
+>stats.radius.log
+>radiusServer.events.log

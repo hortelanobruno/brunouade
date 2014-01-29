@@ -1,0 +1,23 @@
+/home default:/home.jsp
+/connectCV default:http://www.cablevisionfibertel.com.ar/handler/oauth.ashx?LoginId=1258&ClientId=
+/connectNOCV default:/WEB-INF/view/cliente_no_mail.jsp
+/registernocv valid-internet:/WEB-INF/view/cliente_no_mail_gracias.jsp valid-no-internet:/confirmation invalid:/WEB-INF/view/cliente_no_mail.jsp other:home.jsp
+/confirmation valid-internet:/loginNOCV valid-no-internet:/loginNOCV invalid:index other:home.jsp
+/loginCV valid:/loginCV2 other:home.jsp
+/loginCV2 valid:/WEB-INF/view/cliente_login_successful.jsp other:home.jsp
+/loginNOCV valid:/WEB-INF/view/cliente_login_successful.jsp other:home.jsp
+/loginNOCVFacebook internet:https://www.facebook.com/dialog/oauth?client_id=CLIENT_ID.... no-internet:/login_success_facebook_nocv
+/loginNOCVGoogle internet:PAGINA DE GOOGLE LOCA no-internet:/login_success_google_nocv
+/loginNOCVTwitter internet:PAGINA DE TWITTWER LOCA no-internet:/login_success_twitter_nocv
+/login_success_facebook_nocv valid:/loginNOCV other:home.jsp
+/login_success_google_nocv valid:/loginNOCV other:home.jsp
+/oauth2callback valid:/loginNOCV other:home.jsp
+/login_success_twitter_nocv valid:/loginNOCV other:home.jsp
+/condiciones default:/condiciones.jsp
+/autoLogin default:/WEB-INF/view/cliente_login_successful.jsp other:home.jsp
+/autoLoginNOCV default:/WEB-INF/view/homeNoClientAuth.jsp
+/validateUserAuth default:home.jsp
+/logoff default:home.jsp
+
+HttpSession session = request.getSession();
+            PortalcvHomeresource homeResource = loginSessionBean.getPortalLayout((Integer) session.getAttribute("HOMEID"), "/connectCV", "default");

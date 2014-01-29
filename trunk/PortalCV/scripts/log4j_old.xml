@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%c] %-5p - %m%n" />
+        </layout>
+    </appender>
+    <appender name="reportesLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/reportes.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="statsRadiusLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/stats.radius.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="statsClicksLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/stats.clicks.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="radiusServerLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/radiusServer.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="radiusServerEventsLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/radiusServer.events.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="defaultLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/default.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/portal.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalProfilingLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/portal.profiling.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalLoginLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/portal.login.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalErrorLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/portal.error.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalAdminLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/admin.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalAdminErrorLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../logs/admin.error.log"/>
+        <param name="threshold" value="debug" />
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <logger name="portalAdminError">
+        <appender-ref ref="portalAdminErrorLog" />
+    </logger>
+    <logger name="portalAdmin">
+        <appender-ref ref="portalAdminLog" />
+    </logger>
+    <logger name="portalError">
+        <appender-ref ref="portalErrorLog" />
+    </logger>
+    <logger name="portal">
+        <appender-ref ref="portalLog" />
+    </logger>
+    <logger name="portalProfiling">
+        <appender-ref ref="portalProfilingLog" />
+    </logger>
+    <logger name="portalLogin">
+        <appender-ref ref="portalLoginLog" />
+    </logger>
+    <logger name="radiusServer">
+        <appender-ref ref="radiusServerLog" />
+    </logger>
+    <logger name="radiusServerEvents">
+        <appender-ref ref="radiusServerEventsLog" />
+    </logger>
+    <logger name="reportes">
+        <appender-ref ref="reportesLog" />
+    </logger>
+    <logger name="stats-radius">
+        <appender-ref ref="statsRadiusLog" />
+    </logger>
+    <logger name="stats-clicks">
+        <appender-ref ref="statsClicksLog" />
+    </logger>
+    <root>
+        <priority value="debug" />
+        <appender-ref ref="defaultLog" />
+    </root>
+</log4j:configuration> 

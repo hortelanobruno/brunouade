@@ -1,0 +1,70 @@
+.seccion_anchocompleto {
+    min-height:450px;
+}
+.seccion_anchocompleto .section {   
+	font-size:13px;
+	margin:0;
+}
+.seccion_anchocompleto .section .descripcion {
+	padding:0;
+	width:auto;
+	background-image:none;
+}
+.seccion_anchocompleto .section h1{
+	padding-left:16px;
+}
+.seccion_anchocompleto .section h1 {
+	background-image:url(fdo_tit_ancho_completo.png);
+	width:960px;
+	height:29px;
+	color:#49538E;
+	padding-left:16px;
+	margin-left:15px;
+}
+.seccion_anchocompleto .section h3{
+	color:#3940AB;
+	padding-left:16px;
+}
+
+/*ancho completo sin barra de titulo*/
+.seccion_anchocompleto_sbt{
+    min-height:450px;
+}
+.seccion_anchocompleto_sbt .section {   
+	font-size:13px;
+	margin:0;
+}
+.seccion_anchocompleto_sbt .section .descripcion {
+	padding:0;
+	width:auto;
+	background-image:none;
+}
+.seccion_anchocompleto_sbt .section h1{
+    display:none;
+    }
+
+/*ancho completo con titulo vacio*/
+.seccion_anchocompleto_st{
+    min-height:450px;
+}
+.seccion_anchocompleto_st .section {   
+	font-size:13px;
+	margin:0;
+}
+.seccion_anchocompleto_st .section .descripcion {
+	padding:0;
+	width:auto;
+	background-image:none;
+}
+.seccion_anchocompleto_st .section h1{
+    background-image:url(fdo_tit_ancho_completo.png);
+	width:960px;
+	height:29px;
+	color:#49538E;
+	padding-left:16px;
+	margin-left:15px;
+	padding-left:16px;
+    }
+.seccion_anchocompleto_st .section h1 span{
+    display:none;
+    }

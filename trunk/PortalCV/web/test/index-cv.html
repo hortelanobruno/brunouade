@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript">
+            function agree(){ 
+                if (!document.form1.check.checked){
+                    alert("Debés aceptar los Términos y Condiciones");
+                    return false; 
+                }  else{
+                    window.open("cliente_no_mail.html","_self");
+                }
+            }
+            function agree2(){ 
+                if (!document.form1.check.checked){
+                    alert("Debés aceptar los Términos y Condiciones");
+                    return false; 
+                }  else{
+                    window.open("cliente_si.html","_self");
+                }
+            }
+        </script> 
+        <title>Fibertel Zone</title>
+        <style type="text/css">
+            body {
+                background-color: #ebebeb;
+                margin-left: 30px;
+                margin-top: 30px;
+                margin-right: 30px;
+                margin-bottom: 30px;
+            }
+            #form1 {
+                font-family: Omnes;
+            }
+            map:hover {
+                cursor:pointer;
+            } 
+            #mapa
+            {
+                cursor: pointer;
+                position: absolute;
+                right: 235px;
+                top: 275px;
+                width: 147px;
+                height: 141px;
+            }
+            #mapa2
+            {
+                cursor: pointer;
+                position: absolute;
+                left: 236px;
+                top: 275px;
+                width: 147px;
+                height: 141px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <table width="859" border="0" align="center" cellpadding="10" cellspacing="0">
+            <tr>
+                <td bgcolor="#FFFFFF"><img src="img/HOME.png" width="859" height="484" border="0" usemap="#Map" /></td>
+            </tr>
+        </table>
+        <br/>
+        <form id="form1" name="form1" method="post" action="" style="text-align:center">
+            <strong><span id="form1">
+                    <input type="checkbox" name="check" id="check" />
+                    <label for="check"></label>
+                    Acepto los <a href="http://fibertel.com.ar/ContentPopup.aspx?id=1190" target="_blank">términos y condiciones</a></span></strong>
+        </form>
+        <map name="Map" id="Map">
+            <area shape="rect" coords="45,256,173,326" onclick="agree()"  />
+            <area shape="rect" coords="689,259,821,324" onclick="agree2()"  />
+        </map>
+        <div id='mapa'>
+        </div>
+        <div id='mapa2'>
+        </div>
+    </body>
+</html>

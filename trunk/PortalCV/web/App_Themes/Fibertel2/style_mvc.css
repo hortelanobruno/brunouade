@@ -1,0 +1,99 @@
+.mvc {
+	background-color:#ffffff;	
+	font-family: Arial;
+	color: #8A8A8A;    
+    font-size: 13px;
+    line-height: 1.5em;
+}
+
+
+/*proyect registration*/
+.mvc .ProjectRegistration 
+{
+    width:580px;
+    margin:0 auto;}
+ 
+.mvc .ProjectRegistration h1{
+    background-image: url("img/fondo_tit_login3.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: #49538E;
+    font-size: 16px;
+    height: 40px;
+    margin: 0 0 5px;
+    padding: 0;    
+    }
+    
+    
+.mvc .ProjectRegistration h1 span {
+    background-image: url("img/fondo_tit_login.png");
+    background-position: left top;
+    background-repeat: repeat-x;
+    display: block;
+    line-height: 2.1em;
+    margin-right: 16px;
+    padding-left: 15px;
+    }
+
+/*form*/    
+
+.mvc .ProjectRegistration ul 
+{
+    list-style:none;
+    clear:left;
+    }
+.mvc .ProjectRegistration li 
+{
+    height:30px;}   
+
+.mvc .ProjectRegistration li label {
+    float: left;
+    width: 170px;    
+}
+.mvc .ProjectRegistration li .comment
+{
+    font-size:11px;}
+
+/*inputs*/
+.mvc .ProjectRegistration input[type="text"].txtPhonePrefix
+{
+    width:50px; margin-right:5px;}
+
+.mvc .ProjectRegistration input[type="text"].txtPhone
+{
+    width:190px; margin-right:5px;}
+    
+.mvc .ProjectRegistration input[type="text"].txtDoc
+{
+    width:160px; margin-left:5px;}
+    
+.mvc .ProjectRegistration input[type="text"]
+, .mvc .ProjectRegistration input[type="password"] 
+, .mvc .ProjectRegistration select
+, .mvc .ProjectRegistration textarea {
+    background-color: #E8E8E8;
+    border: 1px solid #CCCCCC;
+    color: #797360;   
+    width: 250px;
+    float:left;
+}
+
+
+/*boton*/
+
+.mvc .ProjectRegistration  .buttons
+{
+    text-align:center;
+    margin-top:15px;}
+    
+.mvc .ProjectRegistration .bt_next
+{
+    background-image:url(img/boton_siguiente.png);
+    background-repeat:no-repeat;
+    border:none;
+    display: block;
+    width:83px;
+    height:25px;
+    cursor:pointer;
+    background-color:transparent;
+    }

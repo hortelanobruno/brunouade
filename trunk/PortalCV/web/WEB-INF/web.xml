@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>http://fbzauth.fibertel.com.ar</param-value>
+        <!--        <param-value>http://192.168.3.39</param-value>-->
+        <!--        <param-value>http://192.168.3.2</param-value>-->
+        <!--        <param-value>http://192.168.3.210</param-value>-->
+        <!--            <param-value>http://localhost</param-value>           -->
+        <!--<param-value>http://10.0.0.6</param-value>-->
+        <!--<param-value>http://10.0.0.25</param-value>-->
+    </context-param>
+    <context-param>
+        <param-name>radiusip</param-name>
+        <param-value>10.0.0.1</param-value>
+        <!--        <param-value>10.0.0.7</param-value>-->
+        <!--        <param-value>192.168.3.1</param-value>-->
+    </context-param>
+    <session-config>
+        <session-timeout>600</session-timeout>
+    </session-config>
+    <jsp-config>
+        <jsp-property-group>
+            <description>header and footer settings</description>
+            <url-pattern>/index.jsp</url-pattern>
+            <url-pattern>/WEB-INF/view/*</url-pattern>
+            <url-pattern>/WEB-INF/jspf/error/*</url-pattern>
+        </jsp-property-group>
+    </jsp-config>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/jspf/error/403.jspf</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/jspf/error/404.jspf</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/WEB-INF/jspf/error/500.jspf</location>
+    </error-page>
+<!--    <welcome-file-list>
+        <welcome-file>inicio</welcome-file>
+    </welcome-file-list>-->
+</web-app>

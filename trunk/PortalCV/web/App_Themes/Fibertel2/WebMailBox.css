@@ -1,0 +1,87 @@
+.WebMailBox
+{
+	width:300px;
+	border:2px solid #AAAAAA;
+	position:absolute;
+	right:30px;
+	top:53px;
+	background-color:white;
+	z-index:3;
+	text-align:left;	
+	color:#6A6A6A;
+	font-family:arial;
+	font-size:11px;
+}
+.WebMailArrow
+{
+	width:21px;
+	height:18px;
+	background-image:url(WebMailBox_triangulo_popup.png);
+	position:absolute;
+	top:-18px;
+	right:123px;
+}
+.WebMailTitle
+{
+	background:url(WebMailBox_linea_separadora_popup.png) no-repeat bottom center;
+	font-family:arial;
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+	padding-left:24px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.WebMailLogin
+{
+	padding-top:12px;
+}
+.WebMailLogin label
+{
+padding-left:24px;
+width:110px;
+float:left;
+}
+.WebMailLogin input[type=text]
+,.WebMailLogin input[type=password]
+{
+	border:1px solid #D1D0CC;
+	background-color:#F1F0EC;
+	margin-bottom:5px;
+	width:143px;
+}
+.WebMailLogin br
+{
+	clear:left;
+}
+.WebMailLoginButton
+{
+	text-align:right;
+	padding-right:18px;
+	background:url(WebMailBox_linea_separadora_popup.png) no-repeat bottom center;
+	padding-top:4px;
+	padding-bottom:0px;
+}
+.WebMailCloseButton{
+	position:absolute;
+	right:12px;
+	top:14px;
+}
+.WebMail_BtnLogin{
+	margin-right:5px;
+}
+
+.WebMailPasswordRecovery
+{
+	text-align:center;
+	padding-top:5px;
+	padding-bottom:3px;
+}
+.WebMailSucursalVirtual
+{
+	text-align:center;
+	padding-left:10px;
+	padding-right:10px;
+	line-height:1.1em;
+	padding-bottom:10px;
+}

@@ -1,0 +1,158 @@
+/*form contact*/
+.formcontact{		
+	padding-top:15px;
+	margin-bottom:15px;
+	clear:left;
+	width:100%;		
+}
+.formcontact .boxViewForm,
+.formcontact .boxThanks{		
+	margin-left:35px;	
+	width:918px;
+}
+.formcontact .boxViewForm:after{content:'.';display:block;clear:both;height:0;visibility:hidden;}
+
+.formcontact h3{ 	
+	background-image:url(fdo_tit_form_contactenos.png);
+	background-repeat:no-repeat;	
+	text-transform:uppercase;
+	font-weight:normal;
+	font-size:13px;	
+	padding-top:10px;
+	color:#797360;
+}
+
+.formcontact .introduccion{
+
+	color:#797360;
+	font-size:16px;
+	font-weight:bold;
+	line-height:1.2em;
+	margin-bottom:0;
+	padding-bottom:10px;
+	padding-left:15px;
+	padding-right:15px;
+}
+.formcontact .group{	
+	padding:15px 10px 12px 15px;	
+	margin-top:11px;
+	background-image:url(raya_gris.png);
+	background-position:center top;
+	background-repeat:no-repeat;
+	
+}
+.formcontact .line{
+	padding-top:8px;
+	clear:left;
+}
+.formcontact input[type='text']{
+	background-color:#F1F0EC;
+	border:1px solid #AEAEAE;
+	margin-right:5px;
+	padding:4px 0px;
+	font-size:12px;
+}
+
+.Contact_Txt_Consulta{
+	background-color:#F1F0EC;
+	border:1px solid #AEAEAE;
+	width:286px;
+	vertical-align:top;
+	font-size:12px !important;
+}
+.formcontact .line label{
+	font-size:12px;
+	padding-right:5px;	
+}
+.formcontact .botones{
+	margin-left:187px;
+}
+.formcontact .botones input{
+	margin:0 5px;
+}
+
+.formcontact .txtchico{
+	font-size:11px;
+}
+
+.formcontact .img{margin:11px;}
+
+.formcontact .ChkHorario label {
+	display:block;
+	width:50px;
+}
+.formcontact .checkgroup {
+	text-align:center;
+	
+}
+.formcontact .ChkDiaContacto {
+	width:131px;
+}
+.formcontact .ChkDiaContacto  label{
+	clear:left;
+	display:block;
+}
+.formcontact .ChkHorario {
+	width:150px;
+}
+.formcontact .boxleft label.title {
+	display:block;
+	padding-bottom:5px;
+	padding-left:12px;
+}
+.formcontact .nobackground{
+	background-image:none;
+	margin-top:10px;
+}
+.formcontact .error{
+	margin-left:-20px;
+	position:absolute;
+}
+.formcontact .textoejemplo{
+	font-size:12px;
+}
+/**/
+.Contact_Lbl_Nombre
+,.Contact_Lbl_NroCliente{
+	float:left;
+	width:128px;
+	display:inline-block;
+}
+.Contact_Lbl_Apellido{	
+	display:inline-block;	
+	width:128px;
+}
+.Contact_Lbl_Telefono{
+	float:left;
+	width:128px;
+	display:inline-block;
+}
+.Contact_Lbl_OtroTelefono{	
+	width:128px;
+	float:left;
+}
+.Contact_DdlProvincia{
+	background-color:#F1F0EC;
+	border:1px solid #AEAEAE;
+}
+
+.Contact_Lbl_Email{	
+	float:left;
+	width:128px;
+	display:inline-block;
+}
+
+/**/
+.Img_Tooltip{
+	/*background-image:url(btn_signo_pregunta.png);		*/
+	display:inline-block;
+	height:19px;
+	width:29px;
+	vertical-align:middle;
+}
+.thanks{
+	background-image:url(raya_gris.png);
+	background-position:center bottom;
+	background-repeat:no-repeat;
+	padding-bottom:15px;
+}
