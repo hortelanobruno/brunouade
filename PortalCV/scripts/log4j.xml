@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="reportesLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/reportes.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="statsRadiusCoALog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/stats.radius.coa.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="statsRadiusAccountingLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/stats.radius.accounting.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="statsClicksLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/stats.clicks.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="radiusServerLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/radiusServer.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="radiusServerEventsLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/radiusServer.accounting.events.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="radiusCoAEventsLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/radiusServer.coa.events.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="defaultLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/default.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/portal.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalProfilingLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/portal.profiling.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalLoginLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/portal.login.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalErrorLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/portal.error.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalAdminLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/admin.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="portalAdminErrorLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/admin.error.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <appender name="wlcAutologinMDBLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/portal.wlcautologinmdb.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="threshold" value="debug" />
+        <param name="MaxBackupIndex" value="4"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %p %m%n" />
+        </layout>
+    </appender>
+    <logger name="portalAdminError">
+        <appender-ref ref="portalAdminErrorLog" />
+    </logger>
+    <logger name="portalAdmin">
+        <appender-ref ref="portalAdminLog" />
+    </logger>
+    <logger name="portalError">
+        <appender-ref ref="portalErrorLog" />
+    </logger>
+    <logger name="portal">
+        <appender-ref ref="portalLog" />
+    </logger>
+    <logger name="portalProfiling">
+        <appender-ref ref="portalProfilingLog" />
+    </logger>
+    <logger name="portalLogin">
+        <appender-ref ref="portalLoginLog" />
+    </logger>
+    <logger name="radiusServer">
+        <appender-ref ref="radiusServerLog" />
+    </logger>
+    <logger name="radiusServerEvents">
+        <appender-ref ref="radiusServerEventsLog" />
+    </logger>
+    <logger name="radiusCoAEvents">
+        <appender-ref ref="radiusCoAEventsLog" />
+    </logger>
+    <logger name="reportes">
+        <appender-ref ref="reportesLog" />
+    </logger>
+    <logger name="stats-radius-coa">
+        <appender-ref ref="statsRadiusCoALog" />
+    </logger>
+    <logger name="stats-radius-accounting">
+        <appender-ref ref="statsRadiusAccountingLog" />
+    </logger>
+    <logger name="stats-clicks">
+        <appender-ref ref="statsClicksLog" />
+    </logger>
+    <logger name="wlcAutologinMDB">
+        <appender-ref ref="wlcAutologinMDBLog" />
+    </logger>
+    <root>
+        <priority value="debug" />
+        <appender-ref ref="defaultLog" />
+    </root>
+</log4j:configuration> 

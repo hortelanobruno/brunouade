@@ -1,0 +1,164 @@
+drop procedure if exists accounting_start_insert;
+
+delimiter //
+
+create procedure accounting_start_insert (
+	acct_session_id varchar(32),
+	acct_unique_session_id varchar(32), 
+	user_name varchar(64), 
+	rrealm varchar(64),
+	nas_ip_address varchar(15),
+	nas_port varchar(15), 
+	nas_port_type varchar(32),
+	start_time datetime,
+	acct_authentic varchar(32),
+	connect_info varchar(50),
+	called_station_id varchar(50),
+	callint_station_id varchar(50), 
+	service_type varchar(32),
+	framed_protocol varchar(32),
+	framed_ip_address varchar(15), 
+	acct_delay_time int(12),
+	x_ascend_session_srv_key varchar(10), 
+	cisco_avpair varchar(200),
+	cisco_service_info varchar(60),
+	cisco_control_info varchar(60))
+begin
+declare user_agent varchar(200) default NULL;
+declare login_type varchar(45) default NULL;
+declare deviceIN varchar(45) default NULL;
+declare osIN varchar(45) default NULL;
+declare os_versionIN varchar(45) default NULL;
+declare browserIN varchar(45) default NULL;
+declare browser_versionIN varchar(45) default NULL;
+
+
+#select useragent, logintype, device, os, os_version, browser, browser_version into user_agent, login_type, deviceIN, osIN, os_versionIN, browserIN, browser_versionIN from portalcv_userdata where email=user_name and ipaddress=framed_ip_address order by creationdate desc limit 1;
+#delete from portalcv_userdata where email=user_name and ipaddress=framed_ip_address;
+
+#INSERT INTO radacct (acctsessionid,    acctuniqueid, username, realm, nasipaddress,     nasportid, 
+#	nasporttype,      acctstarttime,    acctstoptime, 
+#	acctsessiontime,  acctauthentic,    connectinfo_start, 
+#	connectinfo_stop, acctinputoctets,  acctoutputoctets, 
+#	calledstationid,  callingstationid, acctterminatecause, 
+#	servicetype,      framedprotocol,   framedipaddress, 
+#	acctstartdelay,   acctstopdelay,    xascendsessionsvrkey, 
+#	ciscoavpair, ciscoserviceinfo, ciscocontrolinfo,
+#	logintype, useragent, device, os, os_version, browser, browser_version ) 
+#VALUES 
+#	(acct_session_Id, acct_unique_session_id, 
+#	user_name, rrealm, nas_ip_address, nas_port, 
+#	nas_port_type, start_time, NULL, 
+#	'0', acct_authentic, connect_info, 
+#	'', '0', '0', 
+#	called_station_id, callint_station_id, '', 
+#	service_type, framed_protocol, framed_ip_address, 
+#	acct_delay_time, '0', x_ascend_session_srv_key, 
+#	cisco_avpair, 
+#	cisco_service_info, 
+#	cisco_control_info,
+#	login_type, user_agent, deviceIN, osIN, os_versionIN, browserIN, browser_versionIN );
+
+end//
+
+delimiter ;
+
+drop procedure if exists accounting_start_update;
+delimiter //
+create procedure accounting_start_update (
+	acct_session_Id varchar(32), 
+	user_name varchar(64), 
+	nas_ip_address varchar(15),
+	start_time datetime, 
+	connect_info varchar(50),
+	framed_ip_address varchar(15), 
+	acct_delay_time int(12), 
+	cisco_avpair varchar(200),
+	cisco_service_info varchar(60),
+	cisco_control_info varchar(60) )
+begin
+declare user_agent varchar(200) default NULL;
+declare login_type varchar(45) default NULL;
+declare deviceIN varchar(45) default NULL;
+declare osIN varchar(45) default NULL;
+declare os_versionIN varchar(45) default NULL;
+declare browserIN varchar(45) default NULL;
+declare browser_versionIN varchar(45) default NULL;
+
+
+#select useragent, logintype, device, os, os_version, browser, browser_version into user_agent, login_type, deviceIN, osIN, os_versionIN, browserIN, browser_versionIN from portalcv_userdata where email=user_name and ipaddress=framed_ip_address order by creationdate desc limit 1;
+#delete from portalcv_userdata where email=user_name and ipaddress=framed_ip_address;
+
+
+
+#UPDATE radacct SET 
+#	acctstarttime     = start_time, 
+#	acctstartdelay    = acct_delay_time, 
+#	connectinfo_start = connect_info, 
+#	FramedIPAddress	= famed_ip_address,
+#	ciscoavpair         = cisco_avpair, 
+#	ciscoserviceinfo    = cisco_service_info, 
+#	ciscocontrolinfo    = cisco_control_info,
+#	logintype 	    = login_type,
+#	useragent	    = user_agent,
+#	device		    = deviceIN,
+#	os		    = osIN,
+#	os_version	    = os_versionIN,
+#	browser		    = browserIN,
+#	browser_version	    = browser_versionIN
+# WHERE acctsessionid  = acct_session_Id 
+#	AND username         = user_name 
+#	AND nasipaddress     = nas_ip_address;
+
+end//
+delimiter ;
+
+
+
+drop procedure if exists accounting_interim_update;
+delimiter //
+create procedure accounting_interim_update ( Framed_IP_Address 	varchar(15), Acct_Session_Time 	int(12), Acct_Input_Octets bigint(20), Acct_Output_Octets bigint(20), Cisco_AVPair varchar(200), Cisco_Service_Info varchar(60), Cisco_Control_Info varchar(60), Acct_Session_Id varchar(32), User_Name varchar(64), NAS_IP_Address varchar(15))
+begin
+
+declare outIncrement bigint(20) default 0;
+declare inIncrement bigint(20) default 0;
+declare acct_period int(12) default 0;
+declare min_traffic_upstream bigint(20) default 10000;
+declare min_traffic_downstream bigint(20) default 10000;
+
+select minTrafficUpstream, minTrafficDownstream, acctPeriod into min_traffic_upstream, min_traffic_downstream, acct_period from portalcv_acct_bw_config;
+	
+select if(Acct_Output_Octets - AcctOutputOctets > min_traffic_downstream, Acct_Output_Octets - acctoutputoctets, 0),
+       if(Acct_Input_Octets - AcctInputOctets > min_traffic_upstream, Acct_Input_Octets - acctinputoctets,0) into outincrement, inincrement from radacct where acctsessionid = Acct_Session_Id AND username = User_Name AND nasipaddress = NAS_IP_Address;
+
+UPDATE radacct SET activeoutputoctets = activeoutputoctets + outincrement, activeinputoctets = activeinputoctets +inIncrement, activeinputtime = if( activeinputoctets > 0, activeinputtime + acct_period, activeinputtime), activeoutputtime = if( activeoutputoctets > 0, activeoutputtime + acct_period, activeoutputtime), framedipaddress = Framed_IP_Address, acctsessiontime = Acct_Session_Time, acctinputoctets = Acct_Input_Octets, acctoutputoctets = Acct_Output_Octets , ciscoavpair = Cisco_AVPair, ciscocontrolinfo = Cisco_Control_Info WHERE acctsessionid = Acct_Session_Id AND username = User_Name AND nasipaddress = NAS_IP_Address and ciscoserviceinfo = Cisco_Service_Info;
+
+end//
+delimiter ;
+
+
+
+drop procedure if exists accounting_interim_insert;
+delimiter //
+create procedure accounting_interim_insert (Acct_Session_Id varchar(32), Acct_Unique_Session_Id varchar(32), User_Name varchar(64), Realm varchar(64), NAS_IP_Address varchar(15), NAS_Port varchar(15), NAS_Port_Type varchar(32), start_time datetime, Acct_Session_Time int(12),
+Acct_Delay_Time int(12), Acct_Authentic varchar(32), Acct_Input_Octets bigint(20), Acct_Output_Octets bigint(20), Called_Station_Id varchar(50), Calling_Station_Id varchar(50), Service_Type varchar(32), Framed_Protocol varchar(32), Framed_IP_Address varchar(32), X_Ascend_Session_Svr_Key varchar(10), Cisco_AVPair varchar(200), Cisco_Service_Info varchar(60), Cisco_Control_Info varchar(60) )
+
+begin
+
+declare outIncrement bigint(20) default 0;
+declare inIncrement bigint(20) default 0;
+declare acct_period int(12) default 60;
+declare min_traffic_upstream bigint(20) default 10000;
+declare min_traffic_downstream bigint(20) default 10000;
+
+select minTrafficUpstream, minTrafficDownstream, acctPeriod into min_traffic_upstream, min_traffic_downstream, acct_period from portalcv_acct_bw_config;
+	
+select if(Acct_Output_Octets > min_traffic_downstream, Acct_Output_Octets, 0),
+       if(Acct_Input_Octets > min_traffic_upstream, Acct_Input_Octets, 0) into outincrement, inincrement;
+
+
+INSERT INTO radacct (acctsessionid, acctuniqueid, username, realm, nasipaddress, nasportid, nasporttype, acctstarttime, acctsessiontime, acctauthentic, connectinfo_start, acctinputoctets, acctoutputoctets, calledstationid,   callingstationid, servicetype,      framedprotocol, framedipaddress, acctstartdelay, xascendsessionsvrkey, ciscoavpair, ciscoserviceinfo, ciscocontrolinfo, activeoutputoctets, activeinputoctets, activeinputtime, activeoutputtime ) VALUES (Acct_Session_Id, Acct_Unique_Session_Id, User_Name, Realm, NAS_IP_Address, NAS_Port, NAS_Port_Type, DATE_SUB(start_time, INTERVAL (Acct_Session_Time + Acct_Delay_Time) SECOND), Acct_Session_Time, Acct_Authentic, '', Acct_Input_Octets, Acct_Output_Octets, Called_Station_Id, Calling_Station_Id, Service_Type, Framed_Protocol, Framed_IP_Address, '0', X_Ascend_Session_Svr_Key, Cisco_AVPair, Cisco_Service_Info, Cisco_Control_Info, outincrement, inIncrement, if(outIncrement > 0, Acct_Session_Time,0), if(inIncrement > 0, Acct_Session_Time,0) );
+
+end//
+delimiter ;
+

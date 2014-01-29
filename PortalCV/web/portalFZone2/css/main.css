@@ -1,0 +1,88 @@
+html { height: 100%; }
+body{ background-image: url('../img/pattern_fondoclaro_chico.png'); min-height: 100%; }
+body.premium { background-image: url(../img/pattern_fondooscuro_chico.png); }
+
+a { color: #33ccff; }
+a:hover { color: #000; }
+
+.vertical_middle_web { }
+
+.row-home { padding-top: 30px; }
+
+.titulo { padding: 15px 0px; }
+.titulo-login-fibertel { padding: 15px 0px; }
+
+.column-logo { }
+.logo { max-width: 140px;padding-bottom: 15px; }
+
+#buttons_social { text-align: center; }
+.buttons a { display: block; margin-bottom: 0px; }
+.buttons img { width: 85%; max-width: 330px; }
+button { background: none; border: 0; box-shadow: none; }
+button:hover { background: none; }
+input, input[type="text"], input[type="email"],input[type="password"] { max-width: 75% !important; max-width: 330px !important; margin: 10px auto !important; }
+.buttons_black img { width: 85%; max-width: 330px; }
+
+.row-condiciones { padding-top: 20px; }
+.row-video { padding-top: 20px; padding-bottom: 20px; }
+.row-video-video { padding-bottom: 50px; }
+.textarea-full { height: 250px !important; }
+
+.tel { width: 130px !important; }
+
+.btn_next_div { text-align: center; }
+.btn_next img { max-width: 290px; }
+
+.footer { background-image: url(../img/banda_dibujos_min.png); background-position: top; background-repeat: repeat-x; text-align: center; width: 100%; margin-top: 40px; }
+.footer img { width: 140px;  }
+
+video, .video_flash { width: 90% !important; height: 30% !important; }
+.video_flash { width: 90% !important; min-height: 30%; }
+
+@media (min-width: 769px) {
+    
+    /*body{ background-image: url('../img/pattern_fondoclaro.png'); min-height: 100%; }
+    body.premium { background-image: url(../img/pattern_fondooscuro.png); }*/
+    
+    .row-home { padding-top: 80px; }
+    
+    .titulo { padding: 100px 0px; }
+    .titulo-login-fibertel { padding: 80px 0px; }
+    .row-form-fibertel { padding-top: 40px; }
+    
+    .logo { max-width: 240px;padding-bottom: 15px; margin-bottom: 25px;  }
+    
+    .row-video { padding-top: 50px; padding-bottom: 40px; }
+    .row-video-video { padding-bottom: 40px; }
+    
+    video, .video_flash { width: 90%; height: 450px !important; }
+    .video_flash { width: 90%; min-height: 450px; }
+    
+    #buttons_social { text-align: left; }
+    .buttons img { max-width: 360px; }
+    .buttons_black a { display: block; margin-bottom: 20px; }
+    input { max-width: 370px; }
+    .buttons_black img { max-width: 380px; }
+    
+    .btn_next_div { text-align: right; }
+    .btn_next img { max-width: 300px; }
+    
+    .tel { width: 200px !important; margin-right: 100px; }
+    
+    .textarea-full { height: 400px !important; }
+    
+    .footer { background-image: url(../img/banda_dibujos.png); background-position: top;  background-repeat: repeat-x; text-align: center; width: 100%; }
+    .footer img { width: auto;  }
+}
+
+@media (min-width: 361px) and (max-width: 801px) {
+    .titulo { padding: 15px 0px; }
+    .titulo-login-fibertel { padding: 15px 0px; }
+    
+    .logo { max-width: 160px;padding-bottom: 15px; }
+    
+    input, input[type="text"], input[type="email"],input[type="password"] { max-width: 70%; max-width: 330px; margin: 10px auto !important; }
+    .buttons_black img { width: 80%; max-width: 380px; }
+    
+    .footer { background-image: url(../img/banda_dibujos_min.png); background-position: top;  background-repeat: repeat-x; text-align: center; width: 100%; }
+}

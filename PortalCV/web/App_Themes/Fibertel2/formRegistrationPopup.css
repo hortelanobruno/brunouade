@@ -1,0 +1,291 @@
+﻿	
+/*labels*/	
+.MasterPagePopup2 label{}
+	
+.MasterPagePopup2 span{}
+
+.MasterPagePopup2 .Pnl_Registracion .Lbl_Paso 
+{
+	font-weight:bold;
+	padding-right:15px;
+	}
+
+.MasterPagePopup2 .Pnl_Registracion .Lbl_Sos_Cliente
+{
+	color:#999999;
+	}
+	
+.MasterPagePopup2  .Pnl_Registracion .Img_Tooltip
+{
+	vertical-align:text-top;	
+	float:right;	
+	}
+
+/*input*/
+.MasterPagePopup2 .Pnl_Registracion input[type="radio"]
+{	margin:3px 4px;
+	}
+.MasterPagePopup2 .Pnl_Registracion input[type="text"]
+, .MasterPagePopup2 .Pnl_Registracion input[type="password"]
+{
+	border:solid 1px #cccccc;
+	background-color:#E8E8E8;
+	margin:0px 0px 10px 0px;
+	color:#797360;
+	width:250px;
+	}
+.MasterPagePopup2 .Pnl_Registracion .Rbl_Es_Cliente
+{
+	margin:10px 0 5px;
+	}
+.MasterPagePopup2 .Pnl_Registracion select
+{
+	border:solid 1px #cccccc;
+	background-color:#E8E8E8;
+	margin:0px 0px 10px 0px;
+	color:#797360;
+	width:253px;
+	}
+.MasterPagePopup2 .Pnl_Registracion textarea
+{
+	border:solid 1px #cccccc;
+	background-color:#E8E8E8;
+	margin:0px 0px 10px 0px;
+	color:#797360;
+	width:250px;
+	}
+	
+/*botones*/
+.MasterPagePopup2 .Pnl_Registracion input[type="image"]
+{	
+	display:block;
+	margin:15px;
+	background-color:Transparent;
+	}
+	
+.MasterPagePopup2 .Pnl_Registracion .Btn_Siguiente{}
+	
+/*Pnl_ViewSosCliente*/
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewSosCliente
+{
+	width:500px;
+	margin-left:15px;
+	}
+	
+	
+/*Pnl_ViewClienteDatosPersonales*/
+.MasterPagePopup2  .Pnl_Registracion .Pnl_ViewClienteDatosPersonales 
+{
+	width:500px;
+	margin-left:15px;
+	}
+
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewClienteDatosPersonales label
+{
+	width:150px;
+	float:left;
+	margin-bottom:15px;	
+	}
+	
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewClienteDatosPersonales br
+{
+	margin-bottom:20px;
+	}
+	
+.MasterPagePopup2  .Pnl_Registracion .Pnl_ViewClienteDatosPersonales span 
+{
+	font-weight:bold;
+	}	
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewClienteDatosPersonales .Txt_ClienteDatosPersonales_Telefono 
+{
+	width:40px;
+	margin-left:5px;
+	}
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewClienteDatosPersonales .Txt_ClienteDatosPersonales_Altura
+{
+	width:70px;
+	}
+.MasterPagePopup2 .Pnl_Registracion .Txt_Terminos_Condiciones
+{
+	height:70px;
+	width:500px;
+	margin-top:10px;
+	margin-left:15px;
+	}
+.MasterPagePopup2 .Pnl_Registracion .Rbl_Terminos_Condiciones
+{
+	margin-left:180px;
+	}
+.MasterPagePopup2 .Pnl_Registracion .Txt_ClienteDatosPersonales_CodigoSeguridad
+{
+	width:70px;
+	}
+.MasterPagePopup2 .Pnl_Registracion .Lbl_Terminos_Condiciones
+{
+	margin-left:15px;
+	}
+
+
+/*Pnl_ViewClienteRegistracion*/
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewClienteRegistracion 
+{
+	width:470px;
+	margin-left:15px;
+	}
+	
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewClienteRegistracion label
+{
+	width:150px;
+	float:left;
+	margin-bottom:15px;	
+	}
+
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewClienteRegistracion .Txt_ViewClienteRegistracion_Contrasena
+,.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewClienteRegistracion .Txt_ViewClienteRegistracion_ConfirmarContrasena
+{
+	width:70px;
+	}
+
+/*ViewGracias*/
+.MasterPagePopup2 .Pnl_Registracion .Lbl_ViewGracias
+{
+	font-weight:bold;
+	padding-right:15px;
+	}
+.MasterPagePopup2 .Pnl_Registracion .Img_ViewGracias_Tilde
+,.MasterPagePopup2 .Pnl_Registracion .Img_ViewGracias_info
+{
+	vertical-align:middle;
+	}
+.MasterPagePopup2 .Pnl_Registracion .Lbl_ViewGracias_Mensaje 
+{
+	margin-left:15px;
+	display:block;
+	}
+.MasterPagePopup2 .Btn_Finalizar{}
+
+/*Pnl_ViewAnonimoDatosPersonales*/
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoDatosPersonales 
+{
+	width:535px;
+	margin-left:15px;
+	}
+	
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoDatosPersonales label
+{
+	width:150px;
+	float:left;
+	margin-bottom:15px;		
+	}
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoDatosPersonales .Txt_ViewAnonimoDatosPersonales_Altura
+, .MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoDatosPersonales .Txt_ViewAnonimoDatosPersonales_Localidad
+,.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoDatosPersonales .Txt_ViewAnonimoDatosPersonales_Provincia
+,.MasterPagePopup2  .Pnl_Registracion .Pnl_ViewAnonimoDatosPersonales .Txt_ViewAnonimoDatosPersonales_Telefono
+{
+	width:70px;
+	}
+
+/*Pnl_ViewAnonimoRegistracion*/
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoRegistracion 
+{
+	width:500px;
+	margin-left:15px;
+	}
+	
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoRegistracion label
+{
+	width:150px;
+	float:left;
+	margin-bottom:15px;		
+	}
+.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoRegistracion .Txt_ViewAnonimoRegistracion_Contrasena
+,.MasterPagePopup2 .Pnl_Registracion .Pnl_ViewAnonimoRegistracion .Txt_ViewAnonimoRegistracion_ConfirmarContrasena
+{
+	width:70px;
+	}
+
+.MasterPagePopup2 .Pnl_Registracion select.Ddl_ViewAnonimoPersonales_Tipo_Documento
+,.MasterPagePopup2 .Pnl_Registracion select.Ddl_ViewClienteRegistracion_Tipo_Documento
+{
+    width:88px;
+}
+.MasterPagePopup2 .Pnl_Registracion input.Txt_ViewAnonimoPersonales_Nro_Documento
+,.MasterPagePopup2 .Pnl_Registracion input.Txt_ViewClienteRegistracion_Nro_Documento
+{
+    width:160px;
+}
+
+.MasterPagePopup2 .Pnl_Registracion .ValidationSummary{
+	padding-bottom:15px;
+}
+
+.MasterPagePopup2 .Pnl_Registracion .RadCaptcha 
+,.MasterPagePopup2 .Pnl_Registracion .RadCaptcha div
+{display:inline;}
+.MasterPagePopup2 .Pnl_Registracion .RadCaptcha 
+{
+position:relative;
+top:-1.2em;
+}
+
+
+/*Mi Cuenta*/
+	
+.MasterPagePopup2 .Pnl_MiCuenta  .Img_Tooltip
+{
+	vertical-align:text-top;	
+	float:right;	
+	}
+.MasterPagePopup2 .Pnl_MiCuenta  .group{
+	margin-left:15px;
+}	
+.MasterPagePopup2 .Pnl_MiCuenta  input[type="radio"]
+{	margin:3px 4px;
+	}
+.MasterPagePopup2 .Pnl_MiCuenta  input[type="text"]
+, .MasterPagePopup2 .Pnl_MiCuenta  input[type="password"]
+{
+	border:solid 1px #cccccc;
+	background-color:#E8E8E8;
+	margin:0px 0px 10px 0px;
+	color:#797360;
+	width:250px;
+	}
+.MasterPagePopup2 .Pnl_MiCuenta  select,
+.MasterPagePopup2 .Pnl_MiCuenta  textarea
+{
+	border:solid 1px #cccccc;
+	background-color:#E8E8E8;
+	margin:0px 0px 10px -5px;
+	color:#797360;
+	width:250px;
+	}
+.MasterPagePopup2 .Pnl_MiCuenta  label
+{
+	width:150px;
+	float:left;
+	margin-bottom:15px;	
+	}
+	
+.MasterPagePopup2 .Pnl_MiCuenta  br
+{
+	margin-bottom:20px;
+	}
+	
+.MasterPagePopup2 .Pnl_MiCuenta  span 
+{
+	font-weight:bold;
+	}	
+.MasterPagePopup2 .Pnl_MiCuenta  input.Btn_Save	
+{
+	margin-top:5px;
+	margin-left:150px;
+}
+
+/*RadCaptcha*/
+.RadCaptcha  label{
+	margin-right:3px;	
+}
+.RadCaptcha  img{
+	margin:0 0 0 3px;	
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        -->
+<project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-webServiceApplicationFunction" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/webServiceApplicationFunction"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/webServiceApplicationFunction" destdir="${build.generated.dir}/jax-wsCache/webServiceApplicationFunction" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/webServiceApplicationFunction/wsdl/10.0.0.39_6969/webServiceApplicationFunction.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://10.0.0.39:6969/webServiceApplicationFunction?WSDL" xnocompile="true" xendorsed="true" package="policyserver.ws.af">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/webServiceApplicationFunction/wsdl/10.0.0.39_6969/webServiceApplicationFunction.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/webServiceApplicationFunction"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/webServiceApplicationFunction">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-webServiceApplicationFunction" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/policyserver/ws/af"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/webServiceApplicationFunction"/>
+    </target>
+    <target name="wsimport-client-webServiceSPR_" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/webServiceSPR_"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/webServiceSPR_" destdir="${build.generated.dir}/jax-wsCache/webServiceSPR_" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/webServiceSPR_/wsdl/10.0.0.39_6979/webServiceSPR.wsdl" catalog="catalog.xml" extension="true" verbose="true" wsdlLocation="http://10.0.0.39:6979/webServiceSPR?" xnocompile="true" xendorsed="true" package="policyserver.ws.spr">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/webServiceSPR_/wsdl/10.0.0.39_6979/webServiceSPR.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/webServiceSPR_"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/webServiceSPR_">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-webServiceSPR_" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/policyserver/ws/spr"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/webServiceSPR_"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-webServiceApplicationFunction, wsimport-client-webServiceSPR_"/>
+</project>

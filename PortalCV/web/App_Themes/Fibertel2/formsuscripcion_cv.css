@@ -1,0 +1,18 @@
+/*form suscripcion de cv*/
+.seccion_suscripcion_cv_c  .section {
+	width:100%;
+}
+.seccion_suscripcion_cv_c .section .descripcion{
+	background-image:none;
+}
+.seccion_suscripcion_cv_c .section h1{
+	background-image:url(fdo_tit_contactenos.png);
+	width:100%;
+}
+.seccion_suscripcion_cv_c{		
+	padding-top:15px;
+	margin-bottom:15px;
+	clear:left;
+	width:100%;		
+	position:relative;
+}

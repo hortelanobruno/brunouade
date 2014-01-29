@@ -1,0 +1,18 @@
+//lab callis
+client_id = "dff208089e77416aa93972d9c7918ab2";
+secret_id = "bbf60cd3ff8d400f87023f03143f7b9b";
+
+//cablevision
+client_id = "9D46CFD6-8693-4DD9-97E9-AD9528E82C0E";
+secret_id = "72E6D0D7-FF2C-4B18-82EB-43BDB45D5E28";
+
+//Query lista de sessiones
+select username,FramedIPAddress,AcctStartTime,AcctStopTime,useragent,logintype from radacct where useragent is not null and ciscoserviceinfo = '' order by AcctStartTime desc limit 100;
+
+
+// Query check WLCACCT multiples rows
+select count(*) as cant,IPCPE from portalcv_wlcaccounting where acctStop is null group by IPCPE having cant>1;
+
+
+// Cargar base de emails de Fibertel. NOTA: hacer dos2unix
+LOAD DATA INFILE '/opt/soft/MailsTotalSin@Fib.txt' IGNORE INTO TABLE portalcv_fibertelusers (email); 

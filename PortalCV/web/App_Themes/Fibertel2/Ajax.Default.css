@@ -1,0 +1,32 @@
+/* Telerik RadAjaxLoadingPanel Default Skin */
+.RadAjax div.raColor 
+{
+	z-index:4;
+}
+
+.RadAjax_Default div.raDiv
+{
+	position:absolute;
+	height:590px;
+}
+
+.RadAjax_Default .raDiv
+{
+	background-image:url('Ajax/loading.gif');
+}
+
+.RadAjax_Default .raColor
+{
+	background-color:#fff;
+}
+
+.RadAjax_Default .raTransp
+{
+	opacity:0.6;
+	-moz-opacity:0.6;
+	filter:alpha(opacity=60);
+}
+
+.RadAjax div.raDiv {
+	z-index:4;
+}

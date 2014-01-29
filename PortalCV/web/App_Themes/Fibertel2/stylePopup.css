@@ -1,0 +1,126 @@
+.MasterPagePopup {
+	background-image:none;
+	background-color:#FFFFFF;
+}
+.MasterPagePopup .ContentPopup .box{
+	background-image:none;	
+	width:480px;
+	position:relative;
+	margin:0 auto;
+}
+.MasterPagePopup .ContentPopup .box .header{
+	background-image:url(head_popup.png);
+	border-top: solid 17px #DAD9D9;
+	width:480px;
+	height:73px;
+}
+.MasterPagePopup .ContentPopup h1{
+	padding:0px 5px 0px 20px;
+	color:#49538E;
+	font-size:16px;
+}
+.MasterPagePopup .ContentPopup  .titulo{
+	background-image:url(barra_titulo_popup.png);
+	background-repeat:no-repeat;
+	width:100%;
+	margin:5px 0px;
+	height:50px;
+}
+.MasterPagePopup .ContentPopup .copete{
+	background-image:none;
+	padding:0px;
+}
+.MasterPagePopup .ContentPopup  .box .content {
+	position:relative;
+	width:432px;
+	margin:0 auto;
+}
+.MasterPagePopup .ContentPopup  .SStructureDescripcionBarra .descripcion {
+	float:none;	
+	padding-top:4px;
+}
+.MasterPagePopup .ContentPopup  .botones{
+	position:absolute;	
+	top:2px;
+	right:14px;	
+	height:18px;	
+	padding-top:95px;
+	position:absolute;
+	text-align:center;
+	width:83px;	
+}
+.MasterPagePopup  .ContentPopup  .botones .bt_print{
+	background-image:url(boton_imprimir_popup.png);
+	background-repeat:no-repeat;
+	width:83px;
+	height:36px;
+	cursor:pointer;	
+	display:block;
+	text-align:center;
+	margin:0 auto;
+	text-decoration:none;
+}
+
+.MasterPagePopup .ContentPopup  .botones span{
+	display:none;
+}
+
+.MasterPagePopup .ContentPopup  h3{	
+	font-size:16px;
+	font-weight:bold;
+	color:#000000;
+	padding:0;
+	margin:7px 20px;
+}
+.MasterPagePopup .ContentPopup  .SStructureAnchoCompleto{
+	margin:0;
+	width:100%;
+}
+
+/*tabla grilla*/
+.MasterPagePopup .ContentPopup  table{	
+	width:432px;
+	font-size:13px;
+	color:#797360;
+	background-image:url(fondo_gris_grilla.png);
+	background-repeat:no-repeat;
+	background-position:top;
+}
+.MasterPagePopup .ContentPopup  table th{	
+	padding:0 15px;
+}
+.MasterPagePopup .ContentPopup  table td{
+	padding:0 15px;
+}
+.MasterPagePopup .ContentPopup  table thead tr{	
+	height:42px;
+}
+.MasterPagePopup .ContentPopup  table tbody tr{	
+	background-image:url(lineas_grilla.png);
+	background-repeat:no-repeat;
+	background-position:bottom;
+	height:29px;
+}
+.MasterPagePopup .ContentPopup  table td.nrosintonia
+,.MasterPagePopup .ContentPopup  table th.frecuencia{
+	text-align:center;
+}
+
+/*BasesyCondiciones*/
+.MasterPagePopup .ContentPopup .box_BasesyCondicinesProductos{
+	margin:0 auto;
+	text-align:left;
+	width:854px;
+}
+.MasterPagePopup .ContentPopup .box_BasesyCondicinesProductos .header{
+	background-image:url(head_popup_bases.png);
+	border-top: solid 17px #DAD9D9;
+	width:854px;
+	height:94px;
+}
+.MasterPagePopup .ContentPopup .box_BasesyCondicinesProductos .titulo
+,.MasterPagePopup .ContentPopup .box_BasesyCondicinesProductos .titulo{display:none;}
+
+.MasterPagePopup .ContentPopup .box_BasesyCondicinesProductos .descripcion{
+	margin:20px 42px 15px 48px;
+}

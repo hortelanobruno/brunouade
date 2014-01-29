@@ -1,0 +1,41 @@
+*html .section h2{	
+	padding:0px;
+	padding-left:15px; 	
+	margin:0px;	
+	width:760px;
+}
+
+*html .bandaderecha{	
+	height:785px;	
+	float:right;
+}
+
+*html .highlightA2{	
+	margin-left:12px;
+	width:769px;
+}
+
+*html .seccion_formsuscripcion .section {	
+	margin-left:7px;	
+}
+*html .formsuscripcion {
+	margin-right:7px;
+}
+*html .seccion_formsuscripcion .section  .metadescription h3{
+	font-size:14px;
+}
+
+/*.MenuHeader li 
+{
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=crop, src='/images/buller_menuheader.png');
+}*/
+
+*html .center .content{	
+	margin:0 0 0 7px;	
+}
+*html .bandaderecha{	
+	margin:0 7px 0 auto;
+}
+
+*+html .PnlUbicacion .bt_CerrarLoginPanel{bottom:51px;}

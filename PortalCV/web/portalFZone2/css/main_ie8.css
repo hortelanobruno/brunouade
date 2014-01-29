@@ -1,0 +1,31 @@
+.row-home { padding-top: 80px; }
+    
+    .titulo { padding: 100px 0px; }
+    .titulo-login-fibertel { padding: 80px 0px; }
+    .row-form-fibertel { padding-top: 40px; }
+    
+    .logo { max-width: 240px;padding-bottom: 15px; margin-bottom: 25px;  }
+    
+    .row-video { padding-top: 50px; padding-bottom: 40px; }
+    .row-video-video { padding-bottom: 40px; }
+    
+    video, .video_flash { width: 90%; height: 450px !important; }
+    .video_flash { width: 90%; min-height: 450px !important; }
+    
+    #buttons_social { text-align: left; }
+    .buttons img { width: auto; max-width: 360px; }
+    .buttons_black a { display: block; margin-bottom: 20px; }
+    input { max-width: 370px; }
+    .buttons_black img { width: auto; max-width: 380px; }
+    
+    .column-logo, .column-buttons { width: 50%; }
+    
+    .btn_next_div { text-align: right; }
+    .btn_next img { max-width: 300px; }
+    
+    .tel { width: 200px !important; margin-right: 100px; }
+    
+    .textarea-full { height: 400px !important; }
+    
+    .footer { background-image: url(../img/banda_dibujos.png); background-position: top;  background-repeat: repeat-x; text-align: center; width: 100%; }
+    .footer img { width: auto;  }
