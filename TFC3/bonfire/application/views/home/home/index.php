@@ -234,7 +234,7 @@
                         vertical-align: middle;
                         height: 25px;
                     }
-                    
+
                     .uiListado .texto a {
                         text-decoration: none;
                         color: black;
@@ -261,10 +261,14 @@
                 <div class="pr" style="min-height: 280px">
                     <div id="slider_1" class="fleft">
                         <ul>
+                            <li><img src="assets/photos/foto0.jpg" /></li>
+                            <li><img src="assets/photos/eldioni.jpg" /></li>
                             <li><img src="assets/photos/foto1.jpg" /></li>
-                            <li><img src="assets/photos/foto2.jpg" /></li>
+                            <li><img src="assets/photos/lavaderometro.jpg" /></li>
                             <li><img src="assets/photos/foto3.jpg" /></li>
+                            <li><img src="assets/photos/alegym.jpg" /></li>
                             <li><img src="assets/photos/foto4.jpg" /></li>
+                            <li><img src="assets/photos/shutup.jpg" /></li>
                             <li><img src="assets/photos/foto5.jpg" /></li>
                         </ul>
                     </div>
@@ -379,19 +383,19 @@
                 <div id="right_column" class="fleft ml25 pt20">
                     <a href="/contacto" target=""><img src="/assets/imgs/commons/8-1348243968.jpg" border="0" style="width: 211px;"></a>
                     <iframe class="mb20 mt20" width="210" height="119" src="//www.youtube.com/embed/kezYcCaVCdM?autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;rel=0" frameborder="0" allowfullscreen></iframe>
-<!--                    <div id="news" class="fleft">
-                        <div class="f20 lato lato900 border_light_bottom mb20 pb5">Proximas partidas</div>
-
-                        <!?php foreach ($proximos_partidos as $partida): ?>
-                            <div class="news-item clearfix mb10">
-                                <div class="fleft w170">
-                                    <div class="titolo"><a href="/torneo/<!?php echo $partida['idtorneo'] ?>/partido/<!?php echo $partida['id'] ?>"><!?php echo $partida['equipo1'] ?> - <!?php echo $partida['equipo2'] ?></a></div>
-                                    <div class="descrizione"><!?php echo $partida['fecha'] ?></div>
-                                </div>
-                            </div>
-                        <!?php endforeach ?>
-                        <div style="clear:both;"></div>
-                    </div>-->
+                    <!--                    <div id="news" class="fleft">
+                                            <div class="f20 lato lato900 border_light_bottom mb20 pb5">Proximas partidas</div>
+                    
+                                            <!?php foreach ($proximos_partidos as $partida): ?>
+                                                <div class="news-item clearfix mb10">
+                                                    <div class="fleft w170">
+                                                        <div class="titolo"><a href="/torneo/<!?php echo $partida['idtorneo'] ?>/partido/<!?php echo $partida['id'] ?>"><!?php echo $partida['equipo1'] ?> - <!?php echo $partida['equipo2'] ?></a></div>
+                                                        <div class="descrizione"><!?php echo $partida['fecha'] ?></div>
+                                                    </div>
+                                                </div>
+                                            <!?php endforeach ?>
+                                            <div style="clear:both;"></div>
+                                        </div>-->
                     <a class="twitter-timeline" href="https://twitter.com/tfcdelsur" data-widget-id="381917573798830080">Tweets por @tfcdelsur</a>
                     <script>!function(d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
