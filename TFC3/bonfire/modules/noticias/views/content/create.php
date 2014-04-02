@@ -45,7 +45,19 @@ $id = isset($noticias['idnoticias']) ? $noticias['idnoticias'] : '';
                 <span class="help-inline"><?php echo form_error('titulo'); ?></span>
             </div>
 
-        </div>        <div class="control-group <?php echo form_error('noticias_contenido') ? 'error' : ''; ?>">
+        </div>
+        
+        <div class="control-group <?php echo form_error('noticias_subtitulo') ? 'error' : ''; ?>">
+            <?php echo form_label('Subtitulo', 'noticias_subtitulo', array('class' => "control-label")); ?>
+            <div class="controls">
+
+                <input id="noticias_subtitulo" type="text" name="noticias_subtitulo" maxlength="200" value="<?php echo set_value('noticias_subtitulo', isset($noticias['subtitulo']) ? $noticias['subtitulo'] : ''); ?>"  />
+                <span class="help-inline"><?php echo form_error('subtitulo'); ?></span>
+            </div>
+        </div>
+
+
+        <div class="control-group <?php echo form_error('noticias_contenido') ? 'error' : ''; ?>">
             <?php echo form_label('Contenido', 'noticias_contenido', array('class' => "control-label")); ?>
             <div class="controls">
                 <?php echo form_textarea(array('name' => 'noticias_contenido', 'id' => 'noticias_contenido', 'rows' => '5', 'cols' => '80', 'value' => set_value('noticias_contenido', isset($noticias['contenido']) ? $noticias['contenido'] : ''))) ?>
@@ -60,6 +72,15 @@ $id = isset($noticias['idnoticias']) ? $noticias['idnoticias'] : '';
                 <span class="help-inline"><?php echo form_error('noticias_fecha'); ?></span>
             </div>
 
+        </div>
+        
+        <div class="control-group <?php echo form_error('noticias_foto_portada') ? 'error' : ''; ?>">
+            <?php echo form_label('Foto Portada', 'noticias_foto_portada', array('class' => "control-label")); ?>
+            <div class="controls">
+
+                <input id="noticias_foto_portada" type="text" name="noticias_foto_portada" maxlength="200" value="<?php echo set_value('noticias_foto_portada', isset($noticias['foto_portada']) ? $noticias['foto_portada'] : ''); ?>"  />
+                <span class="help-inline"><?php echo form_error('foto_portada'); ?></span>
+            </div>
         </div>
 
 

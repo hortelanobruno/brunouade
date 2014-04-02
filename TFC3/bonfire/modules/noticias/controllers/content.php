@@ -167,8 +167,10 @@ class content extends Admin_Controller {
 
         $this->form_validation->set_rules('noticias_idtorneo', 'Idtorneo', 'max_length[11]');
         $this->form_validation->set_rules('noticias_titulo', 'Titulo', 'max_length[200]');
+        $this->form_validation->set_rules('noticias_subtitulo', 'Subtitulo', 'max_length[500]');
         $this->form_validation->set_rules('noticias_contenido', 'Contenido', '');
         $this->form_validation->set_rules('noticias_fecha', 'Fecha', 'max_length[200]');
+        $this->form_validation->set_rules('noticias_foto_portada', 'Foto Portada', 'max_length[200]');
 
         if ($this->form_validation->run() === FALSE) {
             return FALSE;
@@ -179,8 +181,10 @@ class content extends Admin_Controller {
         $data = array();
         $data['idtorneo'] = $this->input->post('noticias_idtorneo');
         $data['titulo'] = $this->input->post('noticias_titulo');
+        $data['subtitulo'] = $this->input->post('noticias_subtitulo');
         $data['contenido'] = $this->input->post('noticias_contenido');
         $data['fecha'] = $this->input->post('noticias_fecha') ? $this->input->post('noticias_fecha') : '0000-00-00 00:00:00';
+        $data['foto_portada'] = $this->input->post('noticias_foto_portada');
 
         if ($type == 'insert') {
             $id = $this->noticias_model->insert($data);
