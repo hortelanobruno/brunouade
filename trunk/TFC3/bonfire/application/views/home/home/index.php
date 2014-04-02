@@ -169,6 +169,51 @@
                     }
                     #controls_1 li.current a{	background: none repeat scroll 0 0 #009EDE;	}
 
+                    /*Noticias preview*/
+
+                    .uiPubPreview {
+                        position: relative;
+                        width: 370px;
+                        padding-bottom: 5px;
+                        margin-top: 5px;
+                    }
+
+                    .uiPubPreview div.antetitulo {
+                        margin-top: 5px;
+                        color: #999;
+                        font-size: 1em;
+                        font-family: Helvetica, Sans-Serif;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+
+                    .uiPubPreview .titular {
+                        margin-bottom: 5px;
+                        margin-top: 5px;
+                        font-family: Arial, Helvetica, Sans-serif;
+                        font-size: 19px;
+                        font-weight: bold;
+                        line-height: 22px;
+                    }
+
+                    .uiPubPreview a {
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    .uiPubPreview div.entradilla {
+                        margin-top: 5px;
+                    }
+
+                    .uiPubPreview span.fecha {
+                        position: relative;
+                        top: 3px;
+                        color: #000;
+                        font-size: 11px;
+                        font-weight: bold;
+                    }
+
+
                 </style>
 
                 <div class="pr" style="min-height: 280px">
@@ -203,14 +248,32 @@
                     <div id="center_column" class="fleft mr25 pt20">
                         <div class="f20 lato lato900 border_light_bottom mb20 pb5">Ultimas noticias</div>
                         <?php foreach ($news as $noticia): ?>
-                            <div class="news-item">
-                                <!--<div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>-->
-                                <div class="fleft wp94">
-                                    <div class="titolo"><a href="/noticia/<?php echo $noticia['idnoticias'] ?>"><?php echo $noticia['titulo'] ?></a></div>
-                                    <div class="descrizione"><p><?php echo $noticia['fecha'] ?></p>
-                                    </div>
-                                    <div style="clear:both;"></div>
+                                 <!-- <div class="news-item">
+                                        <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
+                                        <div class="fleft wp94">
+                                            <div class="titolo"><a href="/noticia/<!?php echo $noticia['idnoticias'] ?>"><!?php echo $noticia['titulo'] ?></a></div>
+                                            <div class="descrizione"><p><!?php echo $noticia['fecha'] ?></p>
+                                            </div>
+                                            <div style="clear:both;"></div>
+                                        </div>
+                                    </div>-->
+
+                            <div  class="uiPubPreview" style="padding-bottom:6px;margin-bottom:6px;border-bottom:solid 1px #ddd;">
+                                <div>
+                                    <a href="/noticia/<?php echo $noticia['idnoticias'] ?>"><img class="imagen" title="<?php echo $noticia['titulo'] ?>" alt="<?php echo $noticia['titulo'] ?>" src="/assets/noticias/portada/<?php echo $noticia['foto_portada'] ?>" style="height:120px;width:370px;border-width:0px;border:0px;"></a>
+                                    <br>
                                 </div>
+                                <div class="antetitulo">
+                                    <span><?php e(getTorneo($torneos_all,$noticia['idtorneo'])) ?></span>                                                                                
+                                </div> 
+                                <a class="titular" href="/noticia/<?php echo $noticia['idnoticias'] ?>"><?php echo $noticia['titulo'] ?></a>                                            
+                                <div class="entradilla">
+                                    <span><?php echo $noticia['subtitulo'] ?></span>                                                                            
+                                </div>      
+                                <div>
+                                    <span class="fecha"><?php echo $noticia['fecha'] ?></span>
+                                </div>           
+                                <br>   
                             </div>
                         <?php endforeach ?>
                     </div>
@@ -255,3 +318,18 @@
 </div>
 </div>
 </div> <!-- #wrapper -->
+
+<?php
+
+function getTorneo($torneos,$idtorneo) {
+    if (isset($torneos)) {
+        foreach ($torneos as $torneo) {
+            if ($torneo['id'] === $idtorneo)
+                return $torneo['nombre'];
+        }
+        return "None";
+    }else {
+        return $idtorneo;
+    }
+}
+?>
