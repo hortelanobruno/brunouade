@@ -133,13 +133,14 @@ a:hover {
     height: 100%;
 }
 .bg-grigio {
-    background: url('/assets/imgs/commons/bg-gray.png') repeat-y;
+/*    background: url('/assets/imgs/commons/bg-gray.png') repeat-y;*/
+    background: url('/assets/imgs/commons/bg-gray-right-side.png') repeat-y;
 }
 #left_column {
-    width: 230px;
+    width: 0px;
 }
 #center_column {
-    width:435px;	
+    width:665px;	
 }
 #right_column {
     width: 210px;

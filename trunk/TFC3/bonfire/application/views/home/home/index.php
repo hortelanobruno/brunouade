@@ -214,6 +214,48 @@
                     }
 
 
+                    /*Proxima partidas*/
+                    .uiListado {
+                        width: 100%;
+                    }
+
+                    .uiListado .cabecera, .uiListado .cabecera a {
+                        color: #000;
+                        height: 25px;
+                        border: none;
+                        font-weight: bold;
+                        text-decoration: none;
+                        background-color: #e5e5e5;
+                        font-family: Arial;
+                        text-transform: uppercase;
+                    }
+
+                    .uiListado .texto {
+                        vertical-align: middle;
+                        height: 25px;
+                    }
+                    
+                    .uiListado .texto a {
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    .uiListado td {
+                        padding: 0px 2px 0px 2px;
+                        border-bottom: solid 1px;
+                        border-top: solid 0px;
+                        border-left: solid 0px;
+                        border-right: solid 0px;
+                        border-color: #dedede;
+                        vertical-align: middle;
+                    }
+
+                    .uiListado .alternate {
+                        border-top: solid 1px #dedede;
+                        border-bottom: solid 1px #dedede;
+                        background-color: #f7f7f7;
+                    }
+
                 </style>
 
                 <div class="pr" style="min-height: 280px">
@@ -236,27 +278,79 @@
                 <div class="sfondo-grigio">
                     <!-- #left column -->
                     <div id="left_column" class="fleft pr25 pt20"> 
-                        <div id="news" class="fleft">
-                            <a href="http://www.facebook.com/pages/Rock-and-Cuts/253117344781216" target="blank"><img src="/assets/imgs/sponsors/pelu.jpg" border="0" style="width: 211px;"></a>
-                            <a href="http://www.heladeriaselpiave.com/home.html" target="blank"><img src="/assets/imgs/sponsors/el_piave.jpg" border="0" style="width: 211px;"></a>
-                            <a href="http://www.facebook.com/pages/Carita-De-Angel/321124464661501" target="blank"><img src="/assets/imgs/sponsors/carita_de_angel.jpg" border="0" style="width: 211px;"></a>
-                            <a href="http://www.facebook.com/complejo.catedral?fref=ts" target="blank"><img src="/assets/imgs/sponsors/la_catedral.jpg" border="0" style="width: 211px;"></a>
-                            <a href="http://www.todopasaremeras.com.ar/" target="blank"><img src="/assets/imgs/sponsors/todo_pasa.jpg" border="0" style="width: 211px;"></a>
-                        </div>
+                        <!--                        <div id="news" class="fleft">
+                                                    <a href="http://www.facebook.com/pages/Rock-and-Cuts/253117344781216" target="blank"><img src="/assets/imgs/sponsors/pelu.jpg" border="0" style="width: 211px;"></a>
+                                                    <a href="http://www.heladeriaselpiave.com/home.html" target="blank"><img src="/assets/imgs/sponsors/el_piave.jpg" border="0" style="width: 211px;"></a>
+                                                    <a href="http://www.facebook.com/pages/Carita-De-Angel/321124464661501" target="blank"><img src="/assets/imgs/sponsors/carita_de_angel.jpg" border="0" style="width: 211px;"></a>
+                                                    <a href="http://www.facebook.com/complejo.catedral?fref=ts" target="blank"><img src="/assets/imgs/sponsors/la_catedral.jpg" border="0" style="width: 211px;"></a>
+                                                    <a href="http://www.todopasaremeras.com.ar/" target="blank"><img src="/assets/imgs/sponsors/todo_pasa.jpg" border="0" style="width: 211px;"></a>
+                                                </div>-->
                     </div> 
                     <!-- #center column -->
                     <div id="center_column" class="fleft mr25 pt20">
+                        <div class="uiListado">
+                            <div class="f20 lato lato900 border_light_bottom mb20 pb5">Proximas partidas</div>
+                            <div>
+                                <table class="uiListado" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+                                    <tbody>
+                                        <tr>
+                                            <th class="cabecera" align="center" scope="col">Fecha</th>
+                                            <th class="cabecera" align="center" scope="col">Hora</th>
+                                            <th class="cabecera" align="center" scope="col">Sede</th>
+                                            <th class="cabecera" align="right" scope="col">Local</th>
+                                            <th class="cabecera" scope="col">&nbsp;</th>
+                                            <th class="cabecera" align="left" scope="col">Visitante</th>
+                                            <th class="cabecera" scope="col">Ficha</th>
+                                        </tr>
+                                        <?php
+                                        $i = 0;
+                                        foreach ($proximos_partidos as $partida):
+                                            if ($i == 0) {
+                                                echo "<tr>";
+                                                $i = 1;
+                                            } else {
+                                                echo "<tr class='alternate'>";
+                                                $i = 0;
+                                            }
+                                            ?>
+                                        <td class="texto registro" align="center" style="width:70px;">   
+                                            <span><?php echo getDia($partida['fecha']) ?></span>
+                                        </td><td class="texto registro " align="center" style="width:35px;">   
+                                            <span><?php echo getHora($partida['fecha']) ?></span>
+                                        </td><td class="texto registro" align="center" style="width:60px;">   
+                                            <span title="<?php echo getSede($sedes, $partida['idsede']) ?>"><?php echo getSede($sedes, $partida['idsede']) ?></span>                                                                        
+                                        </td><td class="texto registro" align="right">   
+                                            <a title="<?php echo $partida['equipo1'] ?>"><?php echo $partida['equipo1'] ?></a>
+                                        </td><td class="registro" align="center">
+                                            -
+                                        </td><td class="texto registro">   
+                                            <a title="<?php echo $partida['equipo1'] ?>"><?php echo $partida['equipo1'] ?></a>
+                                        </td><td class="registro" align="center" style="width:20px;">                                        
+                                            <a title="Información del partido" href="/torneo/<?php echo $partida['idtorneo'] ?>/partido/<?php echo $partida['id'] ?>"><img src="/assets/imgs/commons/16soccerball_small.png" style="border-width:0px;"></a>
+                                        </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+
+
+
+
                         <div class="f20 lato lato900 border_light_bottom mb20 pb5">Ultimas noticias</div>
                         <?php foreach ($news as $noticia): ?>
-                                 <!-- <div class="news-item">
-                                        <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
-                                        <div class="fleft wp94">
-                                            <div class="titolo"><a href="/noticia/<!?php echo $noticia['idnoticias'] ?>"><!?php echo $noticia['titulo'] ?></a></div>
-                                            <div class="descrizione"><p><!?php echo $noticia['fecha'] ?></p>
-                                            </div>
-                                            <div style="clear:both;"></div>
-                                        </div>
-                                    </div>-->
+                            <!-- <div class="news-item">
+                                   <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>
+                                   <div class="fleft wp94">
+                                       <div class="titolo"><a href="/noticia/<!?php echo $noticia['idnoticias'] ?>"><!?php echo $noticia['titulo'] ?></a></div>
+                                       <div class="descrizione"><p><!?php echo $noticia['fecha'] ?></p>
+                                       </div>
+                                       <div style="clear:both;"></div>
+                                   </div>
+                               </div>-->
 
                             <div  class="uiPubPreview" style="padding-bottom:6px;margin-bottom:6px;border-bottom:solid 1px #ddd;">
                                 <div>
@@ -264,7 +358,7 @@
                                     <br>
                                 </div>
                                 <div class="antetitulo">
-                                    <span><?php e(getTorneo($torneos_all,$noticia['idtorneo'])) ?></span>                                                                                
+                                    <span><?php e(getTorneo($torneos_all, $noticia['idtorneo'])) ?></span>                                                                                
                                 </div> 
                                 <a class="titular" href="/noticia/<?php echo $noticia['idnoticias'] ?>"><?php echo $noticia['titulo'] ?></a>                                            
                                 <div class="entradilla">
@@ -285,20 +379,19 @@
                 <div id="right_column" class="fleft ml25 pt20">
                     <a href="/contacto" target=""><img src="/assets/imgs/commons/8-1348243968.jpg" border="0" style="width: 211px;"></a>
                     <iframe class="mb20 mt20" width="210" height="119" src="//www.youtube.com/embed/kezYcCaVCdM?autohide=1&amp;showinfo=0&amp;wmode=transparent&amp;rel=0" frameborder="0" allowfullscreen></iframe>
-                    <div id="news" class="fleft">
+<!--                    <div id="news" class="fleft">
                         <div class="f20 lato lato900 border_light_bottom mb20 pb5">Proximas partidas</div>
 
-                        <?php foreach ($proximos_partidos as $partida): ?>
+                        <!?php foreach ($proximos_partidos as $partida): ?>
                             <div class="news-item clearfix mb10">
-    <!--                            <div class="w30 mr10 fleft"><img src="assets/uploads/pages_c7cda981b1191d6fc39480949028c130.png" width="26" /></div>-->
                                 <div class="fleft w170">
-                                    <div class="titolo"><a href="/torneo/<?php echo $partida['idtorneo'] ?>/partido/<?php echo $partida['id'] ?>"><?php echo $partida['equipo1'] ?> - <?php echo $partida['equipo2'] ?></a></div>
-                                    <div class="descrizione"><?php echo $partida['fecha'] ?></div>
+                                    <div class="titolo"><a href="/torneo/<!?php echo $partida['idtorneo'] ?>/partido/<!?php echo $partida['id'] ?>"><!?php echo $partida['equipo1'] ?> - <!?php echo $partida['equipo2'] ?></a></div>
+                                    <div class="descrizione"><!?php echo $partida['fecha'] ?></div>
                                 </div>
                             </div>
-                        <?php endforeach ?>
+                        <!?php endforeach ?>
                         <div style="clear:both;"></div>
-                    </div>
+                    </div>-->
                     <a class="twitter-timeline" href="https://twitter.com/tfcdelsur" data-widget-id="381917573798830080">Tweets por @tfcdelsur</a>
                     <script>!function(d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -321,7 +414,7 @@
 
 <?php
 
-function getTorneo($torneos,$idtorneo) {
+function getTorneo($torneos, $idtorneo) {
     if (isset($torneos)) {
         foreach ($torneos as $torneo) {
             if ($torneo['id'] === $idtorneo)
@@ -330,6 +423,36 @@ function getTorneo($torneos,$idtorneo) {
         return "None";
     }else {
         return $idtorneo;
+    }
+}
+
+function getSede($sedes, $idsede) {
+    if (isset($sedes)) {
+        foreach ($sedes as $sede) {
+            if ($sede['idsede'] === $idsede)
+                return $sede['nombre'];
+        }
+        return "None";
+    }else {
+        return $idsede;
+    }
+}
+
+function getDia($fecha) {
+    if (isset($fecha)) {
+        $pieces = explode(" ", $fecha);
+        return $pieces[0];
+    } else {
+        return "N/A";
+    }
+}
+
+function getHora($fecha) {
+    if (isset($fecha)) {
+        $pieces = explode(" ", $fecha);
+        return $pieces[1];
+    } else {
+        return "N/A";
     }
 }
 ?>

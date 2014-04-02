@@ -107,7 +107,7 @@ class Torneos_model extends CI_Model {
     public function get_proximos_partidos($cant){
         //SELECT id,fecha,idtorneo,idequipo1,idequipo2 FROM wi191562_tfc.tfc_partido where jugado=0 and fecha <> '0000-00-00 00:00:00' and fecha between DATE(now()) and DATE_ADD(now(),INTERVAL 7 DAY) order by fecha;
         //SELECT par.id,par.fecha,eq1.nombre as equipo1,eq2.nombre as equipo2 FROM wi191562_tfc.tfc_partido par join wi191562_tfc.tfc_equipo eq1 on par.idequipo1=eq1.id join wi191562_tfc.tfc_equipo eq2 on par.idequipo2=eq2.id where par.jugado=0 and par.fecha <> '0000-00-00 00:00:00' and par.fecha between DATE(now()) and DATE_ADD(now(),INTERVAL 7 DAY) order by par.fecha;
-        $query = $this->db->query("SELECT par.id,par.idtorneo,par.fecha,eq1.nombre as equipo1,eq2.nombre as equipo2 FROM tfc_partido par join tfc_equipo eq1 on par.idequipo1=eq1.id join tfc_equipo eq2 on par.idequipo2=eq2.id where par.jugado=0 and par.fecha <> '0000-00-00 00:00:00' and par.fecha between DATE(now()) and DATE_ADD(now(),INTERVAL 7 DAY) order by par.fecha");
+        $query = $this->db->query("SELECT par.id,par.idtorneo,par.fecha,eq1.nombre as equipo1,eq2.nombre as equipo2, par.idsede FROM tfc_partido par join tfc_equipo eq1 on par.idequipo1=eq1.id join tfc_equipo eq2 on par.idequipo2=eq2.id where par.jugado=0 and par.fecha <> '0000-00-00 00:00:00' and par.fecha between DATE(now()) and DATE_ADD(now(),INTERVAL 7 DAY) order by par.fecha");
         return $query->result_array();
     }
 
