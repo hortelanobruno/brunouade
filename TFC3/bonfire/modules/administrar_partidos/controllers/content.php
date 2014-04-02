@@ -333,8 +333,9 @@ class content extends Admin_Controller {
         
         
         if($this->input->post('administrar_partidos_jugado') && intval($this->input->post('administrar_partidos_idequipo1'))>0&&intval($this->input->post('administrar_partidos_idequipo2'))>0){
-            $this->form_validation->set_rules('equipo1arquero', 'Arquero', 'required');
-            $this->form_validation->set_rules('equipo2arquero', 'Arquero', 'required');
+            //Reglas de validacion de arqueros deshabilitada debido a que sacamos la tabla de valla menos vencida
+//            $this->form_validation->set_rules('equipo1arquero', 'Arquero', 'required');
+//            $this->form_validation->set_rules('equipo2arquero', 'Arquero', 'required');
         }
 
         if ($this->form_validation->run() === FALSE) {
@@ -357,18 +358,21 @@ class content extends Admin_Controller {
         $data['idfase'] = $this->torneos_model->get_fase_torneo($data);
 
         //Data extra
-        if (isset($_POST["equipo1arquero"])) {
-            $equipo1arquero = $_POST["equipo1arquero"];
-        } else {
-            $equipo1arquero = 0;
-        }
-        if (isset($_POST["equipo2arquero"])) {
-            $equipo2arquero = $_POST["equipo2arquero"];
-        } else {
-            $equipo2arquero = 0;
-        }
+        //Arqueros deshabilitada debido a que sacamos la tabla de valla menos vencida
+//        if (isset($_POST["equipo1arquero"])) {
+//            $equipo1arquero = $_POST["equipo1arquero"];
+//        } else {
+//            $equipo1arquero = 0;
+//        }
+//        if (isset($_POST["equipo2arquero"])) {
+//            $equipo2arquero = $_POST["equipo2arquero"];
+//        } else {
+//            $equipo2arquero = 0;
+//        }
         if (isset($_POST["jugador1id"])) {
             $jugador1id = $_POST["jugador1id"];
+            //Esta linea la puse para que no se compa la tabla de vallas menos vencida al no elegir arquero
+            $equipo1arquero = $jugador1id[0];
         } else {
             $jugador1id = array();
         }
@@ -389,6 +393,8 @@ class content extends Admin_Controller {
         }
         if (isset($_POST["jugador2id"])) {
             $jugador2id = $_POST["jugador2id"];
+            //Esta linea la puse para que no se compa la tabla de vallas menos vencida al no elegir arquero
+            $equipo2arquero = $jugador2id[0];
         } else {
             $jugador2id = array();
         }

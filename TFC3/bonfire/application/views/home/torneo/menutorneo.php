@@ -51,7 +51,7 @@
             <li><a href="#tabs-5">Tabla de posiciones</a></li>
             <?php } ?>
             <li><a href="#tabs-6">Goleadores</a></li>
-            <li><a href="#tabs-7">Valla menos vencida</a></li>
+            <!--<li><a href="#tabs-7">Valla menos vencida</a></li>-->
             <li><a href="#tabs-8">Amonestaciones</a></li>
         </ul>
     </div>
@@ -78,9 +78,9 @@
     <div id="tabs-6" class="clearfix tournament-home">
         <?php $this->load->view('home/torneo/partes/goleadores'); ?>
     </div>
-    <div id="tabs-7" class="clearfix tournament-home">
-        <?php $this->load->view('home/torneo/partes/vallaMenosVencida'); ?>
-    </div>
+<!--    <div id="tabs-7" class="clearfix tournament-home">
+        <!?php $this->load->view('home/torneo/partes/vallaMenosVencida'); ?>
+    </div>-->
     <div id="tabs-8" class="clearfix tournament-home">
         <?php $this->load->view('home/torneo/partes/sanciones'); ?>
     </div>
