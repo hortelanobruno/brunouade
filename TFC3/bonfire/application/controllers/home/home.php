@@ -45,6 +45,7 @@ class Home extends Front_Controller {
      */
     public function index() {
         $data['torneos'] = $this->torneos_model->get_last_4_torneos();
+        $data['torneos_all'] = $this->torneos_model->get_all_torneos();
         $data['news'] = $this->noticias_model->get_last_10_news();
         $data['proximos_partidos'] = $this->torneos_model->get_proximos_partidos(5);
         $this->load->view('home/partes/header',$data);
