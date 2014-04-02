@@ -8,12 +8,19 @@
 
         <div class="mt20 pb20">
             <div id="pageView-title" class="f24 b wp90 tl mauto" style="border-bottom:1px solid #D7D7D7">
-                <?php echo $torneo['nombre'] ?>	</div>
+                <?php
+                if (isset($torneo['nombre'])) {
+                    echo $torneo['nombre'];
+                }
+                ?>	</div>
 
             <div class="wp100">
                 <div class="wp100 f24 b tc mauto">
-
-                    <img style="max-height:150px;max-width:45%;" class="mb5" src="<?php echo $torneo['logo_grande'] ?>" />
+                    <img style="max-height:150px;max-width:45%;" class="mb5" 
+                    <?php if (isset($torneo['nombre'])) { ?>
+                             src="<?php echo $torneo['logo_grande'] ?>" 
+                         <?php } ?>
+                         />
                 </div>
 
             </div>
