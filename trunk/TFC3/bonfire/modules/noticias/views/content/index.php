@@ -10,8 +10,10 @@
 
                 <th>Torneo</th>
                 <th>Titulo</th>
+                <th>Subtitulo</th>
                 <th>Contenido</th>
                 <th>Fecha</th>
+                <th>Foto Portada</th>
             </tr>
         </thead>
         <?php if (isset($records) && is_array($records) && count($records)) : ?>
@@ -41,8 +43,10 @@
                         <?php endif; ?>
 
                         <td><?php e($record->titulo) ?></td>
+                        <td><?php e($record->subtitulo) ?></td>
                         <td><?php //e($record->contenido)   ?></td>
                         <td><?php e($record->fecha) ?></td>
+                        <td><?php e($record->foto_portada) ?></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
