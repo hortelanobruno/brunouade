@@ -47,8 +47,10 @@
             <li><a href="#tabs-2">Reglamento</a></li>
             <li><a href="#tabs-3">Equipos</a></li>
             <li><a href="#tabs-4">Fixture</a></li>
-            <?php if ( $torneo['categoria'] == 1 ) { ?>
-            <li><a href="#tabs-5">Tabla de posiciones</a></li>
+            <?php if (isset($torneo['categoria'])) { ?>
+                <?php if ($torneo['categoria'] == 1) { ?>
+                    <li><a href="#tabs-5">Tabla de posiciones</a></li>
+                <?php } ?>
             <?php } ?>
             <li><a href="#tabs-6">Goleadores</a></li>
             <!--<li><a href="#tabs-7">Valla menos vencida</a></li>-->
@@ -70,17 +72,19 @@
     <div id="tabs-4" class="clearfix tournament-home">
         <?php $this->load->view('home/torneo/partes/fixture'); ?>
     </div>
-    <?php if ( $torneo['categoria'] == 1 ) { ?>
-    <div id="tabs-5" class="clearfix tournament-home">
-        <?php $this->load->view('home/torneo/partes/tablaPosiciones'); ?>
-    </div>
+    <?php if (isset($torneo['categoria'])) { ?>
+        <?php if ($torneo['categoria'] == 1) { ?>
+            <div id="tabs-5" class="clearfix tournament-home">
+                <?php $this->load->view('home/torneo/partes/tablaPosiciones'); ?>
+            </div>
+        <?php } ?>
     <?php } ?>
     <div id="tabs-6" class="clearfix tournament-home">
         <?php $this->load->view('home/torneo/partes/goleadores'); ?>
     </div>
-<!--    <div id="tabs-7" class="clearfix tournament-home">
-        <!?php $this->load->view('home/torneo/partes/vallaMenosVencida'); ?>
-    </div>-->
+    <!--    <div id="tabs-7" class="clearfix tournament-home">
+            <!?php $this->load->view('home/torneo/partes/vallaMenosVencida'); ?>
+        </div>-->
     <div id="tabs-8" class="clearfix tournament-home">
         <?php $this->load->view('home/torneo/partes/sanciones'); ?>
     </div>
@@ -88,7 +92,7 @@
 <?php
 
 function getSelectedTab($issetnoticia) {
-    if($issetnoticia){
+    if ($issetnoticia) {
         return 1;
     }
     return 0;
