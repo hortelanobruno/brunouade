@@ -36,6 +36,7 @@ class Home extends Front_Controller {
         parent::__construct();
         $this->load->model('noticias_model');
         $this->load->model('torneos_model');
+        $this->load->model('sedes_model');
     }
 
     /**
@@ -48,6 +49,7 @@ class Home extends Front_Controller {
         $data['torneos_all'] = $this->torneos_model->get_all_torneos();
         $data['news'] = $this->noticias_model->get_last_10_news();
         $data['proximos_partidos'] = $this->torneos_model->get_proximos_partidos(5);
+        $data['sedes'] = $this->sedes_model->get_sedes();
         $this->load->view('home/partes/header',$data);
         $this->load->view('home/home/index',$data);
         $this->load->view('home/partes/footer',$data);
