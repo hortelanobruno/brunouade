@@ -328,7 +328,7 @@
                                         </td><td class="registro" align="center">
                                             -
                                         </td><td class="texto registro">   
-                                            <a title="<?php echo $partida['equipo1'] ?>"><?php echo $partida['equipo1'] ?></a>
+                                            <a title="<?php echo $partida['equipo2'] ?>"><?php echo $partida['equipo2'] ?></a>
                                         </td><td class="registro" align="center" style="width:20px;">                                        
                                             <a title="Información del partido" href="/torneo/<?php echo $partida['idtorneo'] ?>/partido/<?php echo $partida['id'] ?>"><img src="/assets/imgs/commons/16soccerball_small.png" style="border-width:0px;"></a>
                                         </td>
