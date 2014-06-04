@@ -31,7 +31,7 @@
         <script>
             function initialize() {
                 var mapOptions = {
-                    zoom: 15,
+                    zoom: 12,
                     center: new google.maps.LatLng(-34.700000, -58.340000),
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
@@ -53,6 +53,14 @@
                     map: map,
                     icon: image,
                     title: 'Catedral II'
+                });
+                var image = '/assets/imgs/commons/icons/16/star_on.png';
+                var myLatLng = new google.maps.LatLng(-34.757828, -58.279970);
+                var beachMarker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    icon: image,
+                    title: 'Soccer'
                 });
             }
 
