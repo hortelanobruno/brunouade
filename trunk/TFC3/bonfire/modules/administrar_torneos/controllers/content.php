@@ -267,6 +267,7 @@ class content extends Admin_Controller {
             //Modificacion de torneo
             $return = $this->administrar_torneos_model->update($id, $data);
             $this->equipos_model->actualizar_equipos_en_torneo($id, $_POST["equipoelegidos"]);
+            $this->torneos_model->reload_tabla_posiciones($id, $_POST["equipoelegidos"], $data);
         }
 
         return $return;
