@@ -30,11 +30,10 @@ class Torneos_model extends CI_Model {
     public function delete_from_tabla_posiciones($id, $idfase, $idequipo) {
         $this->db->query("DELETE FROM tfc_torneo_tabla_posiciones where idtorneo =" . $id . " and idfase=" . $idfase . " and idequipo=" . $idequipo);
     }
-    
+
     public function delete_tabla_posiciones($idtorneo) {
         $this->db->query("DELETE FROM tfc_torneo_tabla_posiciones where idtorneo =" . $idtorneo);
     }
-    
 
     public function update_tabla_posiciones($id, $idfase, $idequipo, $data) {
         $this->db->query("UPDATE tfc_torneo_tabla_posiciones set puntos=" . $data['puntos'] . ",partidos_jugados=" . $data['partidos_jugados'] . ",partidos_ganados=" . $data['partidos_ganados'] . ",partidos_empatados=" . $data['partidos_empatados'] . ",partidos_perdidos=" . $data['partidos_perdidos'] . ",goles_a_favor=" . $data['goles_a_favor'] . ",goles_en_contra=" . $data['goles_en_contra'] . " where idtorneo =" . $id . " and idfase=" . $idfase . " and idequipo=" . $idequipo);
@@ -97,14 +96,23 @@ class Torneos_model extends CI_Model {
         }
     }
 
+    public function reload_tabla_posiciones($idtorneo, $equipos, $data) {
+        //Creacion tabla posiciones torneo de categoria: grupo
+        if ($data['categoria'] == 1) {
+            for ($i = 0; $i < count($equipos); $i++) {
+                $this->db->query("INSERT IGNORE INTO tfc_torneo_tabla_posiciones values (" . $idtorneo . ",1," . $equipos[$i] . ",0,0,0,0,0,0,0);");
+            }
+        }
+    }
+
     public function get_fase_torneo($data) {
         $torneo = $this->get_torneo($data['idtorneo']);
         if ($torneo['categoria'] == 1) {
             return 1;
         }
     }
-    
-    public function get_proximos_partidos($cant){
+
+    public function get_proximos_partidos($cant) {
         //SELECT id,fecha,idtorneo,idequipo1,idequipo2 FROM wi191562_tfc.tfc_partido where jugado=0 and fecha <> '0000-00-00 00:00:00' and fecha between DATE(now()) and DATE_ADD(now(),INTERVAL 7 DAY) order by fecha;
         //SELECT par.id,par.fecha,eq1.nombre as equipo1,eq2.nombre as equipo2 FROM wi191562_tfc.tfc_partido par join wi191562_tfc.tfc_equipo eq1 on par.idequipo1=eq1.id join wi191562_tfc.tfc_equipo eq2 on par.idequipo2=eq2.id where par.jugado=0 and par.fecha <> '0000-00-00 00:00:00' and par.fecha between DATE(now()) and DATE_ADD(now(),INTERVAL 7 DAY) order by par.fecha;
         $query = $this->db->query("SELECT par.id,par.idtorneo,par.fecha,eq1.nombre as equipo1,eq2.nombre as equipo2, par.idsede FROM tfc_partido par join tfc_equipo eq1 on par.idequipo1=eq1.id join tfc_equipo eq2 on par.idequipo2=eq2.id where par.jugado=0 and par.fecha <> '0000-00-00 00:00:00' and par.fecha between DATE(now()) and DATE_ADD(now(),INTERVAL 7 DAY) order by par.fecha");
